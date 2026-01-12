@@ -2,7 +2,9 @@ let productosGlobal = [];
 let productosFiltrados = [];
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-/* CARGA PRODUCTOS */
+/* ======================
+   CARGA DE PRODUCTOS
+====================== */
 fetch("productos.json")
   .then(res => res.json())
   .then(data => {
@@ -11,9 +13,14 @@ fetch("productos.json")
     crearFiltros(data);
     mostrarProductos(data);
     actualizarCarrito();
+  })
+  .catch(err => {
+    console.error("Error cargando productos:", err);
   });
 
-/* FILTROS */
+/* ======================
+   FILTROS
+====================== */
 function crearFiltros(productos) {
   const categorias = ["Todos", ...new Set(productos.map(p => p.categoria))];
   const nav = document.getElementById("filtros");
@@ -29,17 +36,20 @@ function crearFiltros(productos) {
 }
 
 function filtrar(cat, e) {
-  document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
+  document.querySelectorAll("#filtros button").forEach(b => b.classList.remove("active"));
   e.target.classList.add("active");
 
-  productosFiltrados = cat === "Todos"
-    ? productosGlobal
-    : productosGlobal.filter(p => p.categoria === cat);
+  productosFiltrados =
+    cat === "Todos"
+      ? productosGlobal
+      : productosGlobal.filter(p => p.categoria === cat);
 
   aplicarBusqueda();
 }
 
-/* MOSTRAR */
+/* ======================
+   MOSTRAR PRODUCTOS
+====================== */
 function mostrarProductos(productos) {
   const catalogo = document.getElementById("catalogo");
   catalogo.innerHTML = "";
@@ -49,9 +59,9 @@ function mostrarProductos(productos) {
     card.className = "producto";
 
     card.innerHTML = `
-      <img src="${p.imagen}">
+      <img src="${p.imagen}" alt="${p.nombre}">
       <div class="info">
-        <h3>${p.nombre}</h3>
+        <h2>${p.nombre}</h2>
         <p>${p.categoria}</p>
         <p class="precio">$${p.precio} MXN</p>
       </div>
@@ -67,27 +77,40 @@ function mostrarProductos(productos) {
   });
 }
 
-/* BUSCADOR */
-document.getElementById("buscador").addEventListener("input", aplicarBusqueda);
+/* ======================
+   BUSCADOR
+====================== */
+const buscador = document.getElementById("buscador");
+
+buscador.addEventListener("input", aplicarBusqueda);
 
 function aplicarBusqueda() {
-  const t = buscador.value.toLowerCase();
-  mostrarProductos(
-    productosFiltrados.filter(p =>
-      p.nombre.toLowerCase().includes(t) ||
-      p.categoria.toLowerCase().includes(t)
-    )
+  const texto = buscador.value.toLowerCase();
+
+  const resultado = productosFiltrados.filter(p =>
+    p.nombre.toLowerCase().includes(texto) ||
+    p.categoria.toLowerCase().includes(texto)
   );
+
+  mostrarProductos(resultado);
 }
 
-/* CARRITO */
-function agregarAlCarrito(p) {
-  const e = carrito.find(i => i.nombre === p.nombre);
-  e ? e.cantidad++ : carrito.push({ ...p, cantidad: 1 });
-  guardar();
+/* ======================
+   CARRITO
+====================== */
+function agregarAlCarrito(producto) {
+  const existente = carrito.find(p => p.nombre === producto.nombre);
+
+  if (existente) {
+    existente.cantidad++;
+  } else {
+    carrito.push({ ...producto, cantidad: 1 });
+  }
+
+  guardarCarrito();
 }
 
-function guardar() {
+function guardarCarrito() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
   actualizarCarrito();
 }
@@ -98,33 +121,58 @@ function actualizarCarrito() {
   const count = document.getElementById("count");
 
   lista.innerHTML = "";
-  let total = 0, items = 0;
+  let total = 0;
+  let items = 0;
 
   carrito.forEach(p => {
     total += p.precio * p.cantidad;
     items += p.cantidad;
-    lista.innerHTML += `<p>${p.nombre} x${p.cantidad}</p>`;
+
+    lista.innerHTML += `
+      <p>${p.nombre} x${p.cantidad}</p>
+    `;
   });
 
   totalTxt.textContent = `Total: $${total} MXN`;
   count.textContent = items;
 
-  document.getElementById("whatsBtn").href =
-    `https://wa.me/524761231612?text=${encodeURIComponent(JSON.stringify(carrito))}`;
+  actualizarWhatsApp(total);
 }
 
-document.getElementById("verCarrito").onclick = () =>
+/* ======================
+   WHATSAPP
+====================== */
+function actualizarWhatsApp(total) {
+  let mensaje = "Hola, quiero pedir:\n\n";
+
+  carrito.forEach(p => {
+    mensaje += `• ${p.nombre} x${p.cantidad}\n`;
+  });
+
+  mensaje += `\nTotal: $${total} MXN`;
+
+  document.getElementById("whatsBtn").href =
+    `https://wa.me/524761231612?text=${encodeURIComponent(mensaje)}`;
+}
+
+/* ======================
+   MODAL
+====================== */
+document.getElementById("verCarrito").onclick = () => {
   document.getElementById("modalCarrito").style.display = "block";
+};
 
 function cerrarCarrito() {
   document.getElementById("modalCarrito").style.display = "none";
 }
 
-/* MODO OSCURO */
+/* ======================
+   MODO OSCURO
+====================== */
 const btnTheme = document.getElementById("toggleTheme");
-const tema = localStorage.getItem("tema");
+const temaGuardado = localStorage.getItem("tema");
 
-if (tema === "dark") {
+if (temaGuardado === "dark") {
   document.body.classList.add("dark");
   btnTheme.textContent = "☀️";
 }
