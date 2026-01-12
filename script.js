@@ -19,7 +19,6 @@ fetch('productos.json')
            Comprar
         </a>
       `;
-
       catalogo.appendChild(card);
     });
   });
