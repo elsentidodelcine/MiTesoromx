@@ -6,7 +6,7 @@
   { "nombre": "Vaso Liso Cinepolis", "categoria": "Transformers", "precio": 50, "imagen": "img/transformers3.jpg" },
   { "nombre": "Vaso Liso Cinepolis 2", "categoria": "Transformers", "precio": 50, "imagen": "img/transformers4.jpg" },
   { "nombre": "Vaso 3D Cinepolis", "categoria": "Transformers", "precio": 100, "imagen": "img/transformers5.jpg" },
-  { "nombre": "Palomera Cinemex", "categoria": "Transformers", "precio": 250, "imagen": "img/transformers5.jpg" },
+  { "nombre": "Palomera Cinemex", "categoria": "Transformers", "precio": 250, "imagen": "img/transformers9.jpg" },
 
   { "nombre": "Producto 6", "categoria": "Star Wars", "precio": 450, "imagen": "img/marvelelektra.jpg" },
   { "nombre": "Producto 7", "categoria": "Anime", "precio": 350, "imagen": "img/producto7.jpg" },
