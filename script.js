@@ -1,3 +1,12 @@
+var carrito = JSON.parse(sessionStorage.getItem("carrito")) || [];
+
+// Guardar carrito
+function guardarCarrito() {
+  sessionStorage.setItem("carrito", JSON.stringify(carrito));
+  actualizarCarrito();
+}
+
+
 /* =========================
    VARIABLES GLOBALES
 ========================= */
