@@ -4,58 +4,70 @@
   <meta charset="UTF-8">
   <title>Mi Tesoro MX</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ESTILOS -->
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="data:,">
+
+  <!-- FIREBASE COMPAT (IMPORTANTE) -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
 
-<header>
-  <h1>🎬 Mi Tesoro MX</h1>
-  <p>Coleccionables y productos de cine</p>
+  <!-- HEADER -->
+  <header>
+    <h1>🎬 Mi Tesoro MX</h1>
+    <p>Coleccionables y productos de cine</p>
 
-  <div class="header-actions">
-    <input id="buscador" type="text" placeholder="Buscar producto...">
-    <button id="toggleTheme" class="theme-btn">🌙</button>
-    <button id="verCarrito">🛒 <span id="count">0</span></button>
+    <div class="header-actions">
+      <input id="buscador" type="text" placeholder="Buscar producto...">
+      <button id="toggleTheme" class="theme-btn">🌙</button>
+      <button id="verCarrito">🛒 <span id="count">0</span></button>
+    </div>
+  </header>
+
+  <!-- FILTROS -->
+  <nav id="filtros"></nav>
+
+  <!-- CATÁLOGO -->
+  <main id="catalogo"></main>
+
+  <!-- MODAL CARRITO -->
+  <div id="modalCarrito" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarCarrito()">✖</span>
+      <h2>Carrito</h2>
+      <div id="listaCarrito"></div>
+      <p id="total"></p>
+      <a id="whatsBtn" target="_blank" class="boton">
+        Pedir por WhatsApp
+      </a>
+    </div>
   </div>
-</header>
 
-<nav id="filtros"></nav>
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Mi Tesoro MX | Venta vía WhatsApp
+  </footer>
 
-<main id="catalogo"></main>
+  <!-- FIREBASE CONFIG (TU PROYECTO REAL) -->
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAO8H3lILZN_xW8qn9WrZvWWEJJbvZMneo",
+      authDomain: "mitesoromx.firebaseapp.com",
+      projectId: "mitesoromx",
+      storageBucket: "mitesoromx.firebasestorage.app",
+      messagingSenderId: "464430358974",
+      appId: "1:464430358974:web:ca764d4684632a22c219ef"
+    };
 
-<!-- MODAL CARRITO -->
-<div id="modalCarrito" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="cerrarCarrito()">✖</span>
-    <h2>Carrito</h2>
-    <div id="listaCarrito"></div>
-    <p id="total"></p>
-    <a id="whatsBtn" target="_blank" class="boton">Pedir por WhatsApp</a>
-  </div>
-</div>
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
 
-<footer>
-  © 2026 Mi Tesoro MX | Venta vía WhatsApp
-</footer>
+  <!-- TU JS PRINCIPAL -->
+  <script src="script.js"></script>
 
-<script>
-  const firebaseConfig = {
-    apiKey: "TU_API_KEY",
-    authDomain: "TU_AUTH_DOMAIN",
-    projectId: "TU_PROJECT_ID",
-    storageBucket: "TU_STORAGE",
-    messagingSenderId: "TU_SENDER_ID",
-    appId: "TU_APP_ID"
-  };
-
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
-</script>
-
-<script src="script.js"></script>
-  
 </body>
 </html>
