@@ -13,3 +13,125 @@
     "imagen": "img/marve6lelektra.jpg"
   }
 ]
+
+[
+  { "nombre": "Vaso Elektra Cinemex", "categoria": "Marvel", "precio": 150, "imagen": "img/marvelelektra.jpg" },
+  { "nombre": "Producto 2", "categoria": "Marvel", "precio": 200, "imagen": "img/producto2.jpg" },
+  { "nombre": "Producto 3", "categoria": "DC", "precio": 300, "imagen": "img/producto3.jpg" },
+  { "nombre": "Producto 4", "categoria": "DC", "precio": 250, "imagen": "img/producto4.jpg" },
+  { "nombre": "Producto 5", "categoria": "Star Wars", "precio": 500, "imagen": "img/producto5.jpg" },
+
+  { "nombre": "Producto 6", "categoria": "Star Wars", "precio": 450, "imagen": "img/producto6.jpg" },
+  { "nombre": "Producto 7", "categoria": "Anime", "precio": 350, "imagen": "img/producto7.jpg" },
+  { "nombre": "Producto 8", "categoria": "Anime", "precio": 400, "imagen": "img/producto8.jpg" },
+  { "nombre": "Producto 9", "categoria": "Películas", "precio": 600, "imagen": "img/producto9.jpg" },
+  { "nombre": "Producto 10", "categoria": "Películas", "precio": 550, "imagen": "img/producto10.jpg" },
+
+  { "nombre": "Producto 11", "categoria": "Marvel", "precio": 700, "imagen": "img/producto11.jpg" },
+  { "nombre": "Producto 12", "categoria": "Marvel", "precio": 650, "imagen": "img/producto12.jpg" },
+  { "nombre": "Producto 13", "categoria": "DC", "precio": 800, "imagen": "img/producto13.jpg" },
+  { "nombre": "Producto 14", "categoria": "DC", "precio": 900, "imagen": "img/producto14.jpg" },
+  { "nombre": "Producto 15", "categoria": "Star Wars", "precio": 1000, "imagen": "img/producto15.jpg" },
+
+  { "nombre": "Producto 16", "categoria": "Star Wars", "precio": 1100, "imagen": "img/producto16.jpg" },
+  { "nombre": "Producto 17", "categoria": "Anime", "precio": 750, "imagen": "img/producto17.jpg" },
+  { "nombre": "Producto 18", "categoria": "Anime", "precio": 720, "imagen": "img/producto18.jpg" },
+  { "nombre": "Producto 19", "categoria": "Películas", "precio": 680, "imagen": "img/producto19.jpg" },
+  { "nombre": "Producto 20", "categoria": "Películas", "precio": 640, "imagen": "img/producto20.jpg" },
+
+  { "nombre": "Producto 21", "categoria": "Marvel", "precio": 900, "imagen": "img/producto21.jpg" },
+  { "nombre": "Producto 22", "categoria": "Marvel", "precio": 880, "imagen": "img/producto22.jpg" },
+  { "nombre": "Producto 23", "categoria": "DC", "precio": 760, "imagen": "img/producto23.jpg" },
+  { "nombre": "Producto 24", "categoria": "DC", "precio": 820, "imagen": "img/producto24.jpg" },
+  { "nombre": "Producto 25", "categoria": "Star Wars", "precio": 1200, "imagen": "img/producto25.jpg" },
+
+  { "nombre": "Producto 26", "categoria": "Star Wars", "precio": 1300, "imagen": "img/producto26.jpg" },
+  { "nombre": "Producto 27", "categoria": "Anime", "precio": 560, "imagen": "img/producto27.jpg" },
+  { "nombre": "Producto 28", "categoria": "Anime", "precio": 590, "imagen": "img/producto28.jpg" },
+  { "nombre": "Producto 29", "categoria": "Películas", "precio": 610, "imagen": "img/producto29.jpg" },
+  { "nombre": "Producto 30", "categoria": "Películas", "precio": 630, "imagen": "img/producto30.jpg" },
+
+  { "nombre": "Producto 31", "categoria": "Marvel", "precio": 1400, "imagen": "img/producto31.jpg" },
+  { "nombre": "Producto 32", "categoria": "Marvel", "precio": 1450, "imagen": "img/producto32.jpg" },
+  { "nombre": "Producto 33", "categoria": "DC", "precio": 1500, "imagen": "img/producto33.jpg" },
+  { "nombre": "Producto 34", "categoria": "DC", "precio": 1550, "imagen": "img/producto34.jpg" },
+  { "nombre": "Producto 35", "categoria": "Star Wars", "precio": 1600, "imagen": "img/producto35.jpg" },
+
+  { "nombre": "Producto 36", "categoria": "Star Wars", "precio": 1650, "imagen": "img/producto36.jpg" },
+  { "nombre": "Producto 37", "categoria": "Anime", "precio": 980, "imagen": "img/producto37.jpg" },
+  { "nombre": "Producto 38", "categoria": "Anime", "precio": 1020, "imagen": "img/producto38.jpg" },
+  { "nombre": "Producto 39", "categoria": "Películas", "precio": 870, "imagen": "img/producto39.jpg" },
+  { "nombre": "Producto 40", "categoria": "Películas", "precio": 890, "imagen": "img/producto40.jpg" },
+
+  { "nombre": "Producto 41", "categoria": "Marvel", "precio": 1700, "imagen": "img/producto41.jpg" },
+  { "nombre": "Producto 42", "categoria": "Marvel", "precio": 1750, "imagen": "img/producto42.jpg" },
+  { "nombre": "Producto 43", "categoria": "DC", "precio": 1800, "imagen": "img/producto43.jpg" },
+  { "nombre": "Producto 44", "categoria": "DC", "precio": 1850, "imagen": "img/producto44.jpg" },
+  { "nombre": "Producto 45", "categoria": "Star Wars", "precio": 1900, "imagen": "img/producto45.jpg" },
+
+  { "nombre": "Producto 46", "categoria": "Star Wars", "precio": 1950, "imagen": "img/producto46.jpg" },
+  { "nombre": "Producto 47", "categoria": "Anime", "precio": 1100, "imagen": "img/producto47.jpg" },
+  { "nombre": "Producto 48", "categoria": "Anime", "precio": 1150, "imagen": "img/producto48.jpg" },
+  { "nombre": "Producto 49", "categoria": "Películas", "precio": 920, "imagen": "img/producto49.jpg" },
+  { "nombre": "Producto 50", "categoria": "Películas", "precio": 950, "imagen": "img/producto50.jpg" },
+
+  { "nombre": "Producto 51", "categoria": "Marvel", "precio": 2000, "imagen": "img/producto51.jpg" },
+  { "nombre": "Producto 52", "categoria": "Marvel", "precio": 2050, "imagen": "img/producto52.jpg" },
+  { "nombre": "Producto 53", "categoria": "DC", "precio": 2100, "imagen": "img/producto53.jpg" },
+  { "nombre": "Producto 54", "categoria": "DC", "precio": 2150, "imagen": "img/producto54.jpg" },
+  { "nombre": "Producto 55", "categoria": "Star Wars", "precio": 2200, "imagen": "img/producto55.jpg" },
+
+  { "nombre": "Producto 56", "categoria": "Star Wars", "precio": 2250, "imagen": "img/producto56.jpg" },
+  { "nombre": "Producto 57", "categoria": "Anime", "precio": 1250, "imagen": "img/producto57.jpg" },
+  { "nombre": "Producto 58", "categoria": "Anime", "precio": 1300, "imagen": "img/producto58.jpg" },
+  { "nombre": "Producto 59", "categoria": "Películas", "precio": 980, "imagen": "img/producto59.jpg" },
+  { "nombre": "Producto 60", "categoria": "Películas", "precio": 1000, "imagen": "img/producto60.jpg" },
+
+  { "nombre": "Producto 61", "categoria": "Marvel", "precio": 2300, "imagen": "img/producto61.jpg" },
+  { "nombre": "Producto 62", "categoria": "Marvel", "precio": 2350, "imagen": "img/producto62.jpg" },
+  { "nombre": "Producto 63", "categoria": "DC", "precio": 2400, "imagen": "img/producto63.jpg" },
+  { "nombre": "Producto 64", "categoria": "DC", "precio": 2450, "imagen": "img/producto64.jpg" },
+  { "nombre": "Producto 65", "categoria": "Star Wars", "precio": 2500, "imagen": "img/producto65.jpg" },
+
+  { "nombre": "Producto 66", "categoria": "Star Wars", "precio": 2550, "imagen": "img/producto66.jpg" },
+  { "nombre": "Producto 67", "categoria": "Anime", "precio": 1400, "imagen": "img/producto67.jpg" },
+  { "nombre": "Producto 68", "categoria": "Anime", "precio": 1450, "imagen": "img/producto68.jpg" },
+  { "nombre": "Producto 69", "categoria": "Películas", "precio": 1050, "imagen": "img/producto69.jpg" },
+  { "nombre": "Producto 70", "categoria": "Películas", "precio": 1100, "imagen": "img/producto70.jpg" },
+
+  { "nombre": "Producto 71", "categoria": "Marvel", "precio": 2600, "imagen": "img/producto71.jpg" },
+  { "nombre": "Producto 72", "categoria": "Marvel", "precio": 2650, "imagen": "img/producto72.jpg" },
+  { "nombre": "Producto 73", "categoria": "DC", "precio": 2700, "imagen": "img/producto73.jpg" },
+  { "nombre": "Producto 74", "categoria": "DC", "precio": 2750, "imagen": "img/producto74.jpg" },
+  { "nombre": "Producto 75", "categoria": "Star Wars", "precio": 2800, "imagen": "img/producto75.jpg" },
+
+  { "nombre": "Producto 76", "categoria": "Star Wars", "precio": 2850, "imagen": "img/producto76.jpg" },
+  { "nombre": "Producto 77", "categoria": "Anime", "precio": 1550, "imagen": "img/producto77.jpg" },
+  { "nombre": "Producto 78", "categoria": "Anime", "precio": 1600, "imagen": "img/producto78.jpg" },
+  { "nombre": "Producto 79", "categoria": "Películas", "precio": 1150, "imagen": "img/producto79.jpg" },
+  { "nombre": "Producto 80", "categoria": "Películas", "precio": 1200, "imagen": "img/producto80.jpg" },
+
+  { "nombre": "Producto 81", "categoria": "Marvel", "precio": 2900, "imagen": "img/producto81.jpg" },
+  { "nombre": "Producto 82", "categoria": "Marvel", "precio": 2950, "imagen": "img/producto82.jpg" },
+  { "nombre": "Producto 83", "categoria": "DC", "precio": 3000, "imagen": "img/producto83.jpg" },
+  { "nombre": "Producto 84", "categoria": "DC", "precio": 3050, "imagen": "img/producto84.jpg" },
+  { "nombre": "Producto 85", "categoria": "Star Wars", "precio": 3100, "imagen": "img/producto85.jpg" },
+
+  { "nombre": "Producto 86", "categoria": "Star Wars", "precio": 3150, "imagen": "img/producto86.jpg" },
+  { "nombre": "Producto 87", "categoria": "Anime", "precio": 1700, "imagen": "img/producto87.jpg" },
+  { "nombre": "Producto 88", "categoria": "Anime", "precio": 1750, "imagen": "img/producto88.jpg" },
+  { "nombre": "Producto 89", "categoria": "Películas", "precio": 1250, "imagen": "img/producto89.jpg" },
+  { "nombre": "Producto 90", "categoria": "Películas", "precio": 1300, "imagen": "img/producto90.jpg" },
+
+  { "nombre": "Producto 91", "categoria": "Marvel", "precio": 3200, "imagen": "img/producto91.jpg" },
+  { "nombre": "Producto 92", "categoria": "Marvel", "precio": 3250, "imagen": "img/producto92.jpg" },
+  { "nombre": "Producto 93", "categoria": "DC", "precio": 3300, "imagen": "img/producto93.jpg" },
+  { "nombre": "Producto 94", "categoria": "DC", "precio": 3350, "imagen": "img/producto94.jpg" },
+  { "nombre": "Producto 95", "categoria": "Star Wars", "precio": 3400, "imagen": "img/producto95.jpg" },
+
+  { "nombre": "Producto 96", "categoria": "Star Wars", "precio": 3450, "imagen": "img/producto96.jpg" },
+  { "nombre": "Producto 97", "categoria": "Anime", "precio": 1850, "imagen": "img/producto97.jpg" },
+  { "nombre": "Producto 98", "categoria": "Anime", "precio": 1900, "imagen": "img/producto98.jpg" },
+  { "nombre": "Producto 99", "categoria": "Películas", "precio": 1350, "imagen": "img/producto99.jpg" },
+  { "nombre": "Producto 100", "categoria": "Películas", "precio": 1400, "imagen": "img/producto100.jpg" }
+]
