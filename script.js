@@ -182,3 +182,23 @@ function actualizarWhatsApp(total) {
 window.onclick = e => {
   if (e.target === modal) cerrarCarrito();
 };
+
+/* =========================
+   MODO CLARO / OSCURO
+========================= */
+const themeBtn = document.getElementById("toggleTheme");
+const temaGuardado = localStorage.getItem("tema");
+
+if (temaGuardado === "dark") {
+  document.body.classList.add("dark");
+  themeBtn.textContent = "☀️";
+}
+
+themeBtn.onclick = () => {
+  document.body.classList.toggle("dark");
+
+  const esOscuro = document.body.classList.contains("dark");
+  themeBtn.textContent = esOscuro ? "☀️" : "🌙";
+  localStorage.setItem("tema", esOscuro ? "dark" : "light");
+};
+
