@@ -6,23 +6,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+
+<body class="dark">
 
 <header>
-  <h1>🎬 Mi Tesoro MX</h1>
-  <p>Coleccionables y productos de cine</p>
+  <div>
+    <h1>🎬 Mi Tesoro MX</h1>
+    <p>Coleccionables y productos de cine</p>
+  </div>
+
+  <div class="acciones">
+    <input type="text" id="buscador" placeholder="Buscar producto...">
+    <button id="toggleTema" title="Modo claro / oscuro">🌙</button>
+    <button id="verCarrito">
+      🛒 (<span id="count">0</span>)
+    </button>
+  </div>
 </header>
 
 <nav id="filtros"></nav>
 
 <main id="catalogo" class="catalogo"></main>
 
-<a href="https://wa.me/524761232612" class="whatsapp" target="_blank">💬</a>
+<!-- MODAL CARRITO -->
+<div id="modalCarrito" class="modal">
+  <div class="modal-content">
+    <h2>🛒 Tu carrito</h2>
+
+    <div id="listaCarrito"></div>
+
+    <p id="total"></p>
+
+    <a id="whatsBtn" target="_blank" class="boton">
+      Pedir por WhatsApp
+    </a>
+
+    <button onclick="cerrarCarrito()">Cerrar</button>
+  </div>
+</div>
 
 <footer>
-  <p>© 2026 Mi Tesoro MX | Venta vía WhatsApp</p>
+  <p>© 2026 <strong>Mi Tesoro MX</strong> · Venta vía WhatsApp</p>
 </footer>
 
+<!-- Scripts -->
+<script type="module" src="firebase.js"></script>
 <script src="script.js"></script>
+
 </body>
 </html>
