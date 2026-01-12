@@ -1,18 +1,4 @@
 
-[
-  {
-    "nombre": "Vaso Cinemex Marvel Elektra",
-    "precio": 150,
-    "categoria": "Marvel",
-    "imagen": "img/marvelelektra.jpg"
-  },
-  {
-    "nombre": "Figura Iron Man",
-    "precio": 1350,
-    "categoria": "Marvel",
-    "imagen": "img/marve6lelektra.jpg"
-  }
-]
 
 [
   { "nombre": "Vaso Elektra Cinemex", "categoria": "Marvel", "precio": 150, "imagen": "img/marvelelektra.jpg" },
