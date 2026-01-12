@@ -11,13 +11,14 @@ var carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 fetch("productos.json")
   .then(response => response.json())
   .then(data => {
-    // Solo los productos activos
-    const activos = data.filter(p => p.activo);
-    productosGlobal = activos;
-    productosFiltrados = activos;
+    // Asignar stock por defecto a cada producto
+    data.forEach(p => p.stock = 10);
 
-    crearFiltros(activos);
-    mostrarProductos(activos);
+    productosGlobal = data;
+    productosFiltrados = data;
+
+    crearFiltros(data);
+    mostrarProductos(data);
     actualizarCarrito();
   })
   .catch(error => {
@@ -128,18 +129,13 @@ function agregarAlCarrito(producto) {
 
   producto.stock--;
 
-  var encontrado = null;
-  carrito.forEach(function (p) {
-    if (p.id === producto.id) {
-      encontrado = p;
-    }
-  });
+  var encontrado = carrito.find(p => p.nombre === producto.nombre);
 
   if (encontrado) {
     encontrado.cantidad++;
   } else {
     carrito.push({
-      id: producto.id,
+      id: producto.nombre, // usamos nombre como ID
       nombre: producto.nombre,
       precio: producto.precio,
       cantidad: 1
