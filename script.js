@@ -1,25 +1,19 @@
-/* =========================
-   VARIABLES GLOBALES
-========================= */
 let productosGlobal = [];
 let productosFiltrados = [];
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-/* =========================
-   CARGA DE PRODUCTOS
-========================= */
+/* CARGA PRODUCTOS */
 fetch("productos.json")
   .then(res => res.json())
   .then(data => {
     productosGlobal = data;
     productosFiltrados = data;
     crearFiltros(data);
-    mostrarProductos(productosFiltrados);
+    mostrarProductos(data);
+    actualizarCarrito();
   });
 
-/* =========================
-   FILTROS POR CATEGORÍA
-========================= */
+/* FILTROS */
 function crearFiltros(productos) {
   const categorias = ["Todos", ...new Set(productos.map(p => p.categoria))];
   const nav = document.getElementById("filtros");
@@ -28,27 +22,24 @@ function crearFiltros(productos) {
   categorias.forEach(cat => {
     const btn = document.createElement("button");
     btn.textContent = cat;
-    btn.onclick = (e) => filtrar(cat, e);
+    btn.onclick = e => filtrar(cat, e);
     if (cat === "Todos") btn.classList.add("active");
     nav.appendChild(btn);
   });
 }
 
-function filtrar(categoria, e) {
+function filtrar(cat, e) {
   document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
   e.target.classList.add("active");
 
-  productosFiltrados =
-    categoria === "Todos"
-      ? productosGlobal
-      : productosGlobal.filter(p => p.categoria === categoria);
+  productosFiltrados = cat === "Todos"
+    ? productosGlobal
+    : productosGlobal.filter(p => p.categoria === cat);
 
   aplicarBusqueda();
 }
 
-/* =========================
-   MOSTRAR PRODUCTOS
-========================= */
+/* MOSTRAR */
 function mostrarProductos(productos) {
   const catalogo = document.getElementById("catalogo");
   catalogo.innerHTML = "";
@@ -60,145 +51,87 @@ function mostrarProductos(productos) {
     card.innerHTML = `
       <img src="${p.imagen}">
       <div class="info">
-        <h2>${p.nombre}</h2>
+        <h3>${p.nombre}</h3>
         <p>${p.categoria}</p>
         <p class="precio">$${p.precio} MXN</p>
-        <button class="boton" onclick='agregarAlCarrito(${JSON.stringify(p)})'>
-          Agregar al carrito
-        </button>
       </div>
     `;
 
+    const btn = document.createElement("button");
+    btn.className = "boton";
+    btn.textContent = "Agregar al carrito";
+    btn.onclick = () => agregarAlCarrito(p);
+
+    card.querySelector(".info").appendChild(btn);
     catalogo.appendChild(card);
   });
 }
 
-/* =========================
-   BUSCADOR AVANZADO
-========================= */
-const inputBuscador = document.getElementById("buscador");
-
-inputBuscador.addEventListener("input", aplicarBusqueda);
+/* BUSCADOR */
+document.getElementById("buscador").addEventListener("input", aplicarBusqueda);
 
 function aplicarBusqueda() {
-  const texto = inputBuscador.value.toLowerCase().trim();
-
-  if (texto === "") {
-    mostrarProductos(productosFiltrados);
-    return;
-  }
-
-  const resultado = productosFiltrados.filter(p =>
-    p.nombre.toLowerCase().includes(texto) ||
-    p.categoria.toLowerCase().includes(texto)
+  const t = buscador.value.toLowerCase();
+  mostrarProductos(
+    productosFiltrados.filter(p =>
+      p.nombre.toLowerCase().includes(t) ||
+      p.categoria.toLowerCase().includes(t)
+    )
   );
-
-  mostrarProductos(resultado);
 }
 
-/* =========================
-   CARRITO CON LOCALSTORAGE
-========================= */
-const modal = document.getElementById("modalCarrito");
-const listaCarrito = document.getElementById("listaCarrito");
-const totalTexto = document.getElementById("total");
-const contador = document.getElementById("count");
-
-carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-actualizarCarrito();
-
-document.getElementById("verCarrito").onclick = () => {
-  modal.style.display = "block";
-};
-
-function cerrarCarrito() {
-  modal.style.display = "none";
+/* CARRITO */
+function agregarAlCarrito(p) {
+  const e = carrito.find(i => i.nombre === p.nombre);
+  e ? e.cantidad++ : carrito.push({ ...p, cantidad: 1 });
+  guardar();
 }
 
-function agregarAlCarrito(producto) {
-  const existente = carrito.find(p => p.nombre === producto.nombre);
-
-  if (existente) {
-    existente.cantidad++;
-  } else {
-    carrito.push({ ...producto, cantidad: 1 });
-  }
-
-  guardarCarrito();
-}
-
-function quitarDelCarrito(nombre) {
-  carrito = carrito.filter(p => p.nombre !== nombre);
-  guardarCarrito();
-}
-
-function guardarCarrito() {
+function guardar() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
   actualizarCarrito();
 }
 
 function actualizarCarrito() {
-  listaCarrito.innerHTML = "";
-  let total = 0;
-  let items = 0;
+  const lista = document.getElementById("listaCarrito");
+  const totalTxt = document.getElementById("total");
+  const count = document.getElementById("count");
+
+  lista.innerHTML = "";
+  let total = 0, items = 0;
 
   carrito.forEach(p => {
     total += p.precio * p.cantidad;
     items += p.cantidad;
-
-    listaCarrito.innerHTML += `
-      <p>
-        ${p.nombre} x${p.cantidad}
-        <button onclick="quitarDelCarrito('${p.nombre}')">❌</button>
-      </p>
-    `;
+    lista.innerHTML += `<p>${p.nombre} x${p.cantidad}</p>`;
   });
 
-  totalTexto.textContent = `Total: $${total} MXN`;
-  contador.textContent = items;
-
-  actualizarWhatsApp(total);
-}
-
-/* =========================
-   WHATSAPP CON RESUMEN
-========================= */
-function actualizarWhatsApp(total) {
-  let mensaje = "Hola, quiero pedir:\n";
-
-  carrito.forEach(p => {
-    mensaje += `- ${p.nombre} x${p.cantidad}\n`;
-  });
-
-  mensaje += `\nTotal: $${total} MXN`;
+  totalTxt.textContent = `Total: $${total} MXN`;
+  count.textContent = items;
 
   document.getElementById("whatsBtn").href =
-    `https://wa.me/524761231612?text=${encodeURIComponent(mensaje)}`;
+    `https://wa.me/524761231612?text=${encodeURIComponent(JSON.stringify(carrito))}`;
 }
 
-/* =========================
-   CERRAR MODAL AL CLICK FUERA
-========================= */
-window.onclick = e => {
-  if (e.target === modal) cerrarCarrito();
-};
+document.getElementById("verCarrito").onclick = () =>
+  document.getElementById("modalCarrito").style.display = "block";
 
-/* =========================
-   MODO CLARO / OSCURO
-========================= */
-const themeBtn = document.getElementById("toggleTheme");
-const temaGuardado = localStorage.getItem("tema");
+function cerrarCarrito() {
+  document.getElementById("modalCarrito").style.display = "none";
+}
 
-if (temaGuardado === "dark") {
+/* MODO OSCURO */
+const btnTheme = document.getElementById("toggleTheme");
+const tema = localStorage.getItem("tema");
+
+if (tema === "dark") {
   document.body.classList.add("dark");
-  themeBtn.textContent = "☀️";
+  btnTheme.textContent = "☀️";
 }
 
-themeBtn.onclick = () => {
+btnTheme.onclick = () => {
   document.body.classList.toggle("dark");
-
-  const esOscuro = document.body.classList.contains("dark");
-  themeBtn.textContent = esOscuro ? "☀️" : "🌙";
-  localStorage.setItem("tema", esOscuro ? "dark" : "light");
+  const oscuro = document.body.classList.contains("dark");
+  btnTheme.textContent = oscuro ? "☀️" : "🌙";
+  localStorage.setItem("tema", oscuro ? "dark" : "light");
 };
-
