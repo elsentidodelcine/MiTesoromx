@@ -1,37 +1,54 @@
+/* =========================
+   VARIABLES GLOBALES
+========================= */
 let productosGlobal = [];
+let productosFiltrados = [];
+let carrito = [];
 
+/* =========================
+   CARGA DE PRODUCTOS
+========================= */
 fetch("productos.json")
   .then(res => res.json())
   .then(data => {
     productosGlobal = data;
+    productosFiltrados = data;
     crearFiltros(data);
-    mostrarProductos(data);
+    mostrarProductos(productosFiltrados);
   });
 
+/* =========================
+   FILTROS POR CATEGORÍA
+========================= */
 function crearFiltros(productos) {
   const categorias = ["Todos", ...new Set(productos.map(p => p.categoria))];
   const nav = document.getElementById("filtros");
+  nav.innerHTML = "";
 
   categorias.forEach(cat => {
     const btn = document.createElement("button");
     btn.textContent = cat;
-    btn.onclick = () => filtrar(cat);
+    btn.onclick = (e) => filtrar(cat, e);
     if (cat === "Todos") btn.classList.add("active");
     nav.appendChild(btn);
   });
 }
 
-function filtrar(categoria) {
+function filtrar(categoria, e) {
   document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
-  event.target.classList.add("active");
+  e.target.classList.add("active");
 
-  if (categoria === "Todos") {
-    mostrarProductos(productosGlobal);
-  } else {
-    mostrarProductos(productosGlobal.filter(p => p.categoria === categoria));
-  }
+  productosFiltrados =
+    categoria === "Todos"
+      ? productosGlobal
+      : productosGlobal.filter(p => p.categoria === categoria);
+
+  aplicarBusqueda();
 }
 
+/* =========================
+   MOSTRAR PRODUCTOS
+========================= */
 function mostrarProductos(productos) {
   const catalogo = document.getElementById("catalogo");
   catalogo.innerHTML = "";
@@ -46,11 +63,9 @@ function mostrarProductos(productos) {
         <h2>${p.nombre}</h2>
         <p>${p.categoria}</p>
         <p class="precio">$${p.precio} MXN</p>
-        <a class="boton"
-           href="https://wa.me/524761231612?text=Hola, me interesa ${p.nombre}"
-           target="_blank">
-           Comprar por WhatsApp
-        </a>
+        <button class="boton" onclick='agregarAlCarrito(${JSON.stringify(p)})'>
+          Agregar al carrito
+        </button>
       </div>
     `;
 
@@ -59,9 +74,31 @@ function mostrarProductos(productos) {
 }
 
 /* =========================
+   BUSCADOR AVANZADO
+========================= */
+const inputBuscador = document.getElementById("buscador");
+
+inputBuscador.addEventListener("input", aplicarBusqueda);
+
+function aplicarBusqueda() {
+  const texto = inputBuscador.value.toLowerCase().trim();
+
+  if (texto === "") {
+    mostrarProductos(productosFiltrados);
+    return;
+  }
+
+  const resultado = productosFiltrados.filter(p =>
+    p.nombre.toLowerCase().includes(texto) ||
+    p.categoria.toLowerCase().includes(texto)
+  );
+
+  mostrarProductos(resultado);
+}
+
+/* =========================
    CARRITO CON LOCALSTORAGE
 ========================= */
-
 const modal = document.getElementById("modalCarrito");
 const listaCarrito = document.getElementById("listaCarrito");
 const totalTexto = document.getElementById("total");
@@ -123,6 +160,9 @@ function actualizarCarrito() {
   actualizarWhatsApp(total);
 }
 
+/* =========================
+   WHATSAPP CON RESUMEN
+========================= */
 function actualizarWhatsApp(total) {
   let mensaje = "Hola, quiero pedir:\n";
 
@@ -133,6 +173,12 @@ function actualizarWhatsApp(total) {
   mensaje += `\nTotal: $${total} MXN`;
 
   document.getElementById("whatsBtn").href =
-    `https://wa.me/524761232612?text=${encodeURIComponent(mensaje)}`;
+    `https://wa.me/524761231612?text=${encodeURIComponent(mensaje)}`;
 }
 
+/* =========================
+   CERRAR MODAL AL CLICK FUERA
+========================= */
+window.onclick = e => {
+  if (e.target === modal) cerrarCarrito();
+};
