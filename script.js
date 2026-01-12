@@ -5,7 +5,26 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 /* ======================
    CARGA DE PRODUCTOS
 ====================== */
-fetch("productos.json")
+/*fetch("productos.json")*/
+db.collection("productos")
+  .where("activo", "==", true)
+  .get()
+  .then(snapshot => {
+    const data = snapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+
+    productosGlobal = data;
+    productosFiltrados = data;
+    crearFiltros(data);
+    mostrarProductos(data);
+    actualizarCarrito();
+  })
+  .catch(err => {
+    console.error("Error Firestore:", err);
+  });
+
   .then(res => res.json())
   .then(data => {
     productosGlobal = data;
