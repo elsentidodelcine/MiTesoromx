@@ -227,3 +227,17 @@ btnTheme.onclick = function () {
   btnTheme.textContent = oscuro ? "☀️" : "🌙";
   localStorage.setItem("tema", oscuro ? "dark" : "light");
 };
+
+// Botón para vaciar carrito
+document.getElementById("vaciarCarrito").onclick = function() {
+  if (confirm("¿Seguro que quieres vaciar todo el carrito?")) {
+    carrito = [];
+    guardarCarrito(); // Esto actualiza la vista y localStorage
+  }
+};
+
+// Opcional: borrar carrito al cerrar el navegador
+window.addEventListener("beforeunload", function() {
+  localStorage.removeItem("carrito");
+});
+
