@@ -57,3 +57,82 @@ function mostrarProductos(productos) {
     catalogo.appendChild(card);
   });
 }
+
+/* =========================
+   CARRITO CON LOCALSTORAGE
+========================= */
+
+const modal = document.getElementById("modalCarrito");
+const listaCarrito = document.getElementById("listaCarrito");
+const totalTexto = document.getElementById("total");
+const contador = document.getElementById("count");
+
+carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+actualizarCarrito();
+
+document.getElementById("verCarrito").onclick = () => {
+  modal.style.display = "block";
+};
+
+function cerrarCarrito() {
+  modal.style.display = "none";
+}
+
+function agregarAlCarrito(producto) {
+  const existente = carrito.find(p => p.nombre === producto.nombre);
+
+  if (existente) {
+    existente.cantidad++;
+  } else {
+    carrito.push({ ...producto, cantidad: 1 });
+  }
+
+  guardarCarrito();
+}
+
+function quitarDelCarrito(nombre) {
+  carrito = carrito.filter(p => p.nombre !== nombre);
+  guardarCarrito();
+}
+
+function guardarCarrito() {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  actualizarCarrito();
+}
+
+function actualizarCarrito() {
+  listaCarrito.innerHTML = "";
+  let total = 0;
+  let items = 0;
+
+  carrito.forEach(p => {
+    total += p.precio * p.cantidad;
+    items += p.cantidad;
+
+    listaCarrito.innerHTML += `
+      <p>
+        ${p.nombre} x${p.cantidad}
+        <button onclick="quitarDelCarrito('${p.nombre}')">❌</button>
+      </p>
+    `;
+  });
+
+  totalTexto.textContent = `Total: $${total} MXN`;
+  contador.textContent = items;
+
+  actualizarWhatsApp(total);
+}
+
+function actualizarWhatsApp(total) {
+  let mensaje = "Hola, quiero pedir:\n";
+
+  carrito.forEach(p => {
+    mensaje += `- ${p.nombre} x${p.cantidad}\n`;
+  });
+
+  mensaje += `\nTotal: $${total} MXN`;
+
+  document.getElementById("whatsBtn").href =
+    `https://wa.me/524761232612?text=${encodeURIComponent(mensaje)}`;
+}
+
