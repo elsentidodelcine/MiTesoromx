@@ -6,34 +6,22 @@ var productosFiltrados = [];
 var carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 /* =========================
-   CARGAR PRODUCTOS DESDE FIREBASE
+   CARGAR PRODUCTOS DESDE JSON
 ========================= */
-db.collection("productos")
-  .where("activo", "==", true)
-  .get()
-  .then(function (snapshot) {
-    var data = [];
+fetch("productos.json")
+  .then(response => response.json())
+  .then(data => {
+    // Solo los productos activos
+    const activos = data.filter(p => p.activo);
+    productosGlobal = activos;
+    productosFiltrados = activos;
 
-    snapshot.forEach(function (doc) {
-      var p = doc.data();
-      data.push({
-        id: doc.id,
-        nombre: p.nombre,
-        categoria: p.categoria,
-        precio: p.precio,
-        imagen: p.imagen,
-        stock: p.stock
-      });
-    });
-
-    productosGlobal = data;
-    productosFiltrados = data;
-    crearFiltros(data);
-    mostrarProductos(data);
+    crearFiltros(activos);
+    mostrarProductos(activos);
     actualizarCarrito();
   })
-  .catch(function (error) {
-    console.error("Error al cargar productos:", error);
+  .catch(error => {
+    console.error("Error al cargar productos desde JSON:", error);
   });
 
 /* =========================
