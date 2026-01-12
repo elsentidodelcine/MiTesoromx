@@ -3,41 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <title>Tienda de Cine</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background:#111;
-      color:#fff;
-      margin:0;
-      padding:20px;
-    }
-    .producto {
-      border:1px solid #444;
-      padding:15px;
-      margin-bottom:15px;
-      border-radius:8px;
-    }
-    img {
-      max-width:150px;
-      display:block;
-    }
-    a {
-      color:#00ffcc;
-      text-decoration:none;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<h1>Mi Tienda de Productos de Cine</h1>
+<header>
+  <h1>🎬 Mi Tesoro MX </h1>
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="https://facebook.com/ElSentidoDelCine" target="_blank">Facebook</a>
+  </nav>
+</header>
 
-<div class="producto">
-  <h2>Figura Batman</h2>
-  <img src="https://via.placeholder.com/150">
-  <p>Figura coleccionable edición especial</p>
-  <p><strong>$1,200 MXN</strong></p>
-  <a href="https://wa.me/521XXXXXXXXXX">Comprar por WhatsApp</a>
-</div>
+<main>
+  <div id="catalogo" class="catalogo"></div>
+</main>
 
+<a href="https://wa.me/521XXXXXXXXXX" class="whatsapp" target="_blank">💬</a>
+
+<script src="script.js"></script>
 </body>
 </html>
