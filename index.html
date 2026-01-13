@@ -4,17 +4,13 @@
   <meta charset="UTF-8">
   <title>Mi Tesoro MX</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- ESTILOS -->
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="data:,">
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="header-pro">
+<header class="header-pro">
   <div class="header-content">
-    
     <div class="brand">
       <h1>🎬 Mi Tesoro MX</h1>
       <p>Coleccionables auténticos de cine y cultura pop</p>
@@ -23,51 +19,41 @@
     <div class="header-actions">
       <div class="search-box">
         🔍
-        <input id="buscador" type="text" placeholder="Buscar Transformers, Marvel, vasos...">
+        <input id="buscador" type="text" placeholder="Buscar productos...">
       </div>
 
-      <button id="toggleTheme" class="theme-btn" title="Cambiar tema">🌙</button>
-
-      <button id="verCarrito" class="cart-btn">
-        🛒 <span id="count">0</span>
-      </button>
+      <button id="toggleTheme" class="theme-btn">🌙</button>
+      <button id="verCarrito" class="cart-btn">🛒 <span id="count">0</span></button>
 
       <a href="https://wa.me/524761232612" target="_blank" class="social-btn whatsapp">🟢</a>
       <a href="https://facebook.com/ElSentidoDelCine" target="_blank" class="social-btn facebook">🔵</a>
     </div>
-
   </div>
 </header>
 
+<nav id="filtros"></nav>
 
-  <!-- FILTROS -->
-  <nav id="filtros"></nav>
+<main id="catalogo"></main>
 
-  <!-- CATÁLOGO -->
-  <main id="catalogo"></main>
+<!-- PAGINACIÓN -->
+<div id="paginacion" class="paginacion"></div>
 
-  <!-- MODAL CARRITO -->
-  <div id="modalCarrito" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="cerrarCarrito()">✖</span>
-      <h2>Carrito</h2>
-      <div id="listaCarrito"></div>
-      <p id="total"></p>
-      <a id="whatsBtn" target="_blank" class="boton">
-        Pedir por WhatsApp
-      </a>
-      <button id="vaciarCarrito" class="boton">Vaciar carrito</button>
-    </div>
+<!-- MODAL -->
+<div id="modalCarrito" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="cerrarCarrito()">✖</span>
+    <h2>Carrito</h2>
+    <div id="listaCarrito"></div>
+    <p id="total"></p>
+    <a id="whatsBtn" target="_blank" class="boton">Pedir por WhatsApp</a>
+    <button id="vaciarCarrito" class="boton">Vaciar carrito</button>
   </div>
+</div>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 Mi Tesoro MX | Venta vía WhatsApp | 
-    <a href="politica-privacidad.html" target="_blank">Política de Privacidad</a>
-  </footer>
+<footer>
+  © 2026 Mi Tesoro MX | Venta vía WhatsApp
+</footer>
 
-  <!-- TU JS PRINCIPAL -->
-  <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
