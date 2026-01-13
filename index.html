@@ -12,26 +12,33 @@
 <body>
 
   <!-- HEADER -->
-  <header>
-    <h1>🎬 Mi Tesoro MX</h1>
-    <p>Coleccionables de Cine</p>
+  <header class="header-pro">
+  <div class="header-content">
     
-    <div class="social-links">
-      <a href="https://www.facebook.com/ElSentidoDelCine" target="_blank" class="social fb">
-        Facebook
-      </a>
-  
-      <a href="https://wa.me/524761232612" target="_blank" class="social wa">
-        WhatsApp
-      </a>
+    <div class="brand">
+      <h1>🎬 Mi Tesoro MX</h1>
+      <p>Coleccionables auténticos de cine y cultura pop</p>
     </div>
 
     <div class="header-actions">
-      <input id="buscador" type="text" placeholder="Buscar producto...">
-      <button id="toggleTheme" class="theme-btn">🌙</button>
-      <button id="verCarrito">🛒 <span id="count">0</span></button>
+      <div class="search-box">
+        🔍
+        <input id="buscador" type="text" placeholder="Buscar Transformers, Marvel, vasos...">
+      </div>
+
+      <button id="toggleTheme" class="theme-btn" title="Cambiar tema">🌙</button>
+
+      <button id="verCarrito" class="cart-btn">
+        🛒 <span id="count">0</span>
+      </button>
+
+      <a href="https://wa.me/524761231612" target="_blank" class="social-btn whatsapp">🟢</a>
+      <a href="https://facebook.com/TU_FACEBOOK" target="_blank" class="social-btn facebook">🔵</a>
     </div>
-  </header>
+
+  </div>
+</header>
+
 
   <!-- FILTROS -->
   <nav id="filtros"></nav>
