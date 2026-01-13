@@ -48,7 +48,31 @@
 
   { "nombre": "Vaso Caza Fantasma Figura Cinemex", "categoria": "CazaFantasmas", "precio": 80, "imagen": "img/fantasma1.jpg" },
   { "nombre": "Vaso Caza Fantasma Movie Center", "categoria": "CazaFantasmas", "precio": 30, "imagen": "img/fantasma2.jpg" },
-  { "nombre": "Vaso Led Caza Fantasma Cinepolis", "categoria": "CazaFantasmas", "precio": 150, "imagen": "img/fantasma3.jpg" }
+  { "nombre": "Vaso Led Caza Fantasma Cinepolis", "categoria": "CazaFantasmas", "precio": 150, "imagen": "img/fantasma3.jpg" },
+
+  { "nombre": "Vaso Jurassic World Cinemex Model1", "categoria": "Jurassic World", "precio": 80, "imagen": "img/jurassic1.jpg" },
+  { "nombre": "Vaso Jurassic World Cinemex Model2", "categoria": "Jurassic World", "precio": 80, "imagen": "img/jurassic2.jpg" },
+  { "nombre": "Vaso Jurassic World Cinepolis", "categoria": "Jurassic World", "precio": 80, "imagen": "img/jurassic3.jpg" },
+
+  { "nombre": "Vaso Coca Cola Elektra Cinemex", "categoria": "Marvel", "precio": 100, "imagen": "img/marvel1.jpg" },
+  { "nombre": "Vaso Guardianes de la Galaxia Cinepolis Model1", "categoria": "Marvel", "precio": 150, "imagen": "img/marvel2.jpg" },
+  { "nombre": "Vaso Guardianes de la Galaxia Cinepolis Model2", "categoria": "Marvel", "precio": 80, "imagen": "img/marvel3.jpg" },
+  { "nombre": "Vaso Guardianes de la Galaxia Movie Center", "categoria": "Marvel", "precio": 50, "imagen": "img/marvel4.jpg" },
+  { "nombre": "Vaso Deadpool y Wolverine Cinemex", "categoria": "Marvel", "precio": 100, "imagen": "img/marvel5.jpg" },
+  { "nombre": "Vaso Los 4 Fantasticos Mujer Insivible Cinepolis", "categoria": "Marvel", "precio": 250, "imagen": "img/marvel6.jpg" },
+  { "nombre": "Vaso Los 4 Fantasticos La Mole Cinepolis", "categoria": "Marvel", "precio": 250, "imagen": "img/marvel7.jpg" },
+  { "nombre": "Vaso Pantera Negra Cinepolis", "categoria": "Marvel", "precio": 30, "imagen": "img/marvel8.jpg" },
+  { "nombre": "Vaso Wakanda Por Siempre Movie Center", "categoria": "Marvel", "precio": 50, "imagen": "img/marvel9.jpg" },
+  { "nombre": "Vaso Doctor Strange Cinepolis", "categoria": "Marvel", "precio": 50, "imagen": "img/marvel10.jpg" },
+  { "nombre": "Termo Viuda Negra Cinepolis", "categoria": "Marvel", "precio": 150, "imagen": "img/marvel11.jpg" },
+  { "nombre": "Vaso Wolverine Figura Deadpool Cinemex", "categoria": "Marvel", "precio": 150, "imagen": "img/marvel12.jpg" },
+  { "nombre": "Vaso Ms Marvel Cinepolis", "categoria": "Marvel", "precio": 150, "imagen": "img/marvel13.jpg" },
+  { "nombre": "Vaso Monica Cinepolis", "categoria": "Marvel", "precio": 150, "imagen": "img/marvel14.jpg" },
+  { "nombre": "Vaso Kamala Khan Cinepolis", "categoria": "Marvel", "precio": 150, "imagen": "img/marvel15.jpg" },
+  { "nombre": "Vaso Thanos Avengers Cinepolis", "categoria": "Marvel", "precio": 130, "imagen": "img/marvel17.jpg" },
+  { "nombre": "Vaso Hulk Avengers Cinepolis", "categoria": "Marvel", "precio": 130, "imagen": "img/marvel18.jpg" },
+  { "nombre": "Vasos Tang Avengers", "categoria": "Marvel", "precio": 30, "imagen": "img/marvel19.jpg" },
+  { "nombre": "Vaso Avengers Figura Iron Man Cinemex", "categoria": "Marvel", "precio": 100, "imagen": "img/marvel20.jpg" }
 
   
 ]
