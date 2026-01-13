@@ -34,21 +34,21 @@
   { "nombre": "Vaso Ant Man Figura Cinepolis", "categoria": "Marvel", "precio": 640, "imagen": "img/antman6.jpg" },
 
   { "nombre": "Vaso Joker Cinepolis", "categoria": "DC", "precio": 100, "imagen": "img/dc1.jpg" },
-  { "nombre": "Vaso Blue Beetle Figura Cinemex", "categoria": "DC", "precio": 100, "imagen": "img/dc1.jpg" },
-  { "nombre": "Vaso Black Adam Cinemex", "categoria": "DC", "precio": 80, "imagen": "img/dc1.jpg" },
-  { "nombre": "Vaso The Flash Cinemex", "categoria": "DC", "precio": 100, "imagen": "img/dc1.jpg" },
-  { "nombre": "Vaso Shazam Cinemex", "categoria": "DC", "precio": 80, "imagen": "img/dc1.jpg" },
-  { "nombre": "Vaso Mini Batman Cinepolis", "categoria": "DC", "precio": 80, "imagen": "img/dc1.jpg" },
-  { "nombre": "Vaso Totem Batman Cinepolis", "categoria": "DC", "precio": 130, "imagen": "img/dc1.jpg" },
-  { "nombre": "Vaso Batman Trilogia Cinemex", "categoria": "DC", "precio": 80, "imagen": "img/dc1.jpg" },
-  { "nombre": "Palomera Superman Cinepolis", "categoria": "DC", "precio": 150, "imagen": "img/dc1.jpg" },
-  { "nombre": "Palomera Black Adam Cinepolis", "categoria": "DC", "precio": 100, "imagen": "img/dc1.jpg" },
-  { "nombre": "Palomera Aquaman Cinepolis", "categoria": "DC", "precio": 150, "imagen": "img/dc1.jpg" },
-  { "nombre": "Termo Wonder Woman Cinepolis", "categoria": "DC", "precio": 150, "imagen": "img/dc1.jpg" },
+  { "nombre": "Vaso Blue Beetle Figura Cinemex", "categoria": "DC", "precio": 100, "imagen": "img/dc2.jpg" },
+  { "nombre": "Vaso Black Adam Cinemex", "categoria": "DC", "precio": 80, "imagen": "img/dc3.jpg" },
+  { "nombre": "Vaso The Flash Cinemex", "categoria": "DC", "precio": 100, "imagen": "img/dc4.jpg" },
+  { "nombre": "Vaso Shazam Cinemex", "categoria": "DC", "precio": 80, "imagen": "img/dc5.jpg" },
+  { "nombre": "Vaso Mini Batman Cinepolis", "categoria": "DC", "precio": 80, "imagen": "img/dc6.jpg" },
+  { "nombre": "Vaso Totem Batman Cinepolis", "categoria": "DC", "precio": 130, "imagen": "img/dc7.jpg" },
+  { "nombre": "Vaso Batman Trilogia Cinemex", "categoria": "DC", "precio": 80, "imagen": "img/dc8.jpg" },
+  { "nombre": "Palomera Superman Cinepolis", "categoria": "DC", "precio": 150, "imagen": "img/dc9.jpg" },
+  { "nombre": "Palomera Black Adam Cinepolis", "categoria": "DC", "precio": 100, "imagen": "img/dc10.jpg" },
+  { "nombre": "Palomera Aquaman Cinepolis", "categoria": "DC", "precio": 150, "imagen": "img/dc11.jpg" },
+  { "nombre": "Termo Wonder Woman Cinepolis", "categoria": "DC", "precio": 150, "imagen": "img/dc12.jpg" },
 
   { "nombre": "Vaso Caza Fantasma Figura Cinemex", "categoria": "CazaFantasmas", "precio": 80, "imagen": "img/fantasma1.jpg" },
-  { "nombre": "Vaso Caza Fantasma Movie Center", "categoria": "CazaFantasmas", "precio": 30, "imagen": "img/fantasma1.jpg" },
-  { "nombre": "Vaso Led Caza Fantasma Cinepolis", "categoria": "CazaFantasmas", "precio": 150, "imagen": "img/fantasma1.jpg" }
+  { "nombre": "Vaso Caza Fantasma Movie Center", "categoria": "CazaFantasmas", "precio": 30, "imagen": "img/fantasma2.jpg" },
+  { "nombre": "Vaso Led Caza Fantasma Cinepolis", "categoria": "CazaFantasmas", "precio": 150, "imagen": "img/fantasma3.jpg" }
 
   
 ]
