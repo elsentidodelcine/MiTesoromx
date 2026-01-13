@@ -50,7 +50,17 @@ function mostrarProductos(lista) {
   lista.forEach(p => {
     const d = document.createElement("div");
     d.className = "producto";
+
+    let badgeHTML = "";
+
+    if (p.badge) {
+      badgeHTML = `<span class="badge ${p.badge}">${p.badge}</span>`;
+    } else if (p.stock !== undefined && p.stock <= 3) {
+      badgeHTML = `<span class="badge stock">Últimas piezas</span>`;
+    }
+
     d.innerHTML = `
+      ${badgeHTML}
       <img src="${p.imagen}">
       <div class="info">
         <h2>${p.nombre}</h2>
@@ -59,10 +69,12 @@ function mostrarProductos(lista) {
         <button class="boton">Agregar al carrito</button>
       </div>
     `;
+
     d.querySelector("button").onclick = () => agregarAlCarrito(p);
     c.appendChild(d);
   });
 }
+
 
 /* === BUSCADOR === */
 buscador.oninput = () => {
