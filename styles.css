@@ -209,3 +209,116 @@ footer {
   background: #25d366;
 }
 
+/* =========================
+   HEADER PRO
+========================= */
+
+.header-pro {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 25px 20px;
+  background: linear-gradient(
+    to bottom,
+    rgba(20,20,20,0.95),
+    rgba(10,10,10,0.85)
+  );
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 2.4rem;
+  letter-spacing: 1px;
+}
+
+.brand p {
+  margin: 5px 0 0;
+  opacity: 0.75;
+  font-size: 0.95rem;
+}
+
+/* ACCIONES */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* BUSCADOR */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 30px;
+}
+
+.search-box input {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  outline: none;
+  width: 220px;
+}
+
+/* BOTONES */
+.cart-btn {
+  background: rgba(255,255,255,0.08);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 20px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.theme-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* REDES */
+.social-btn {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.social-btn.whatsapp {
+  background: #25d366;
+  color: #000;
+}
+
+.social-btn.facebook {
+  background: #1877f2;
+  color: #fff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .search-box input {
+    width: 160px;
+  }
+}
+
+
