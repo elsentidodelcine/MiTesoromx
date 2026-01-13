@@ -196,7 +196,7 @@ function actualizarWhatsApp(total) {
   mensaje += "\nTotal: $" + total + " MXN";
 
   document.getElementById("whatsBtn").href =
-    "https://wa.me/524761231612?text=" + encodeURIComponent(mensaje);
+    "https://wa.me/524761232612?text=" + encodeURIComponent(mensaje);
 }
 
 /* =========================
