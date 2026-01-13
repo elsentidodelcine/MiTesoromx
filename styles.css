@@ -144,3 +144,43 @@ body {
   position: relative;
 }
 
+/* BADGES */
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  z-index: 2;
+}
+
+.badge.nuevo {
+  background: linear-gradient(135deg, #ff5252, #ff1744);
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
+}
+
+.badge.sin-stock {
+  background: #555;
+}
+
+/* Para poder posicionar el badge */
+.producto {
+  position: relative;
+}
+
+/* Producto agotado */
+.producto.agotado {
+  opacity: 0.6;
+}
+
+.producto.agotado .boton {
+  background: #aaa;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+
