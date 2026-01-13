@@ -26,12 +26,12 @@
   { "nombre": "Vaso Minion Cinepolis Model3", "categoria": "Minions", "precio": 80, "imagen": "img/minion8.jpg" },
   { "nombre": "Mini Cubeta Minion Cinemex", "categoria": "Minions", "precio": 30, "imagen": "img/minion9.jpg" },
 
-  { "nombre": "Vaso Ant Man Cinemex Model1", "categoria": "Marvel", "precio": 1100, "imagen": "img/antman1.jpg" },
-  { "nombre": "Vaso Ant Man Cinemex Model2", "categoria": "Marvel", "precio": 750, "imagen": "img/antman2.jpg" },
-  { "nombre": "Vaso Ant Man Cinepolis Model1", "categoria": "Marvel", "precio": 720, "imagen": "img/antman3.jpg" },
-  { "nombre": "Vaso Ant Man Cinepolis Model2", "categoria": "Marvel", "precio": 680, "imagen": "img/antman4.jpg" },
-  { "nombre": "Vaso Ant Man Cinepolis Model3", "categoria": "Marvel", "precio": 640, "imagen": "img/antman5.jpg" },
-  { "nombre": "Vaso Ant Man Figura Cinepolis", "categoria": "Marvel", "precio": 640, "imagen": "img/antman6.jpg" },
+  { "nombre": "Vaso Ant Man Cinemex Model1", "categoria": "Marvel", "precio": 80, "imagen": "img/antman1.jpg" },
+  { "nombre": "Vaso Ant Man Cinemex Model2", "categoria": "Marvel", "precio": 80, "imagen": "img/antman2.jpg" },
+  { "nombre": "Vaso Ant Man Cinepolis Model1", "categoria": "Marvel", "precio": 80, "imagen": "img/antman3.jpg" },
+  { "nombre": "Vaso Ant Man Cinepolis Model2", "categoria": "Marvel", "precio": 80, "imagen": "img/antman4.jpg" },
+  { "nombre": "Vaso Ant Man Cinepolis Model3", "categoria": "Marvel", "precio": 80, "imagen": "img/antman5.jpg" },
+  { "nombre": "Vaso Ant Man Figura Cinepolis", "categoria": "Marvel", "precio": 100, "imagen": "img/antman6.jpg" },
 
   { "nombre": "Vaso Joker Cinepolis", "categoria": "DC", "precio": 100, "imagen": "img/dc1.jpg" },
   { "nombre": "Vaso Blue Beetle Figura Cinemex", "categoria": "DC", "precio": 100, "imagen": "img/dc2.jpg" },
