@@ -109,3 +109,38 @@ body {
   background: var(--accent);
   color: #fff;
 }
+
+/* === BADGES === */
+.badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 6px 12px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 20px;
+  text-transform: uppercase;
+  z-index: 10;
+  letter-spacing: .5px;
+}
+
+.badge.nuevo {
+  background: linear-gradient(135deg, #00ffd5, #00c2a8);
+  color: #000;
+}
+
+.badge.oferta {
+  background: linear-gradient(135deg, #ff5252, #e53935);
+  color: #fff;
+}
+
+.badge.stock {
+  background: #ff9800;
+  color: #000;
+}
+
+/* para que el badge flote sobre la card */
+.producto {
+  position: relative;
+}
+
