@@ -72,7 +72,47 @@
   { "nombre": "Vaso Thanos Avengers Cinepolis", "categoria": "Marvel", "precio": 130, "imagen": "img/marvel17.jpg" },
   { "nombre": "Vaso Hulk Avengers Cinepolis", "categoria": "Marvel", "precio": 130, "imagen": "img/marvel18.jpg" },
   { "nombre": "Vasos Tang Avengers", "categoria": "Marvel", "precio": 30, "imagen": "img/marvel19.jpg" },
-  { "nombre": "Vaso Avengers Figura Iron Man Cinemex", "categoria": "Marvel", "precio": 100, "imagen": "img/marvel20.jpg" }
+  { "nombre": "Vaso Avengers Figura Iron Man Cinemex", "categoria": "Marvel", "precio": 100, "imagen": "img/marvel20.jpg" },
+
+  { "nombre": "Vaso Beetlejuice Movie Center", "categoria": "Beetle Juice", "precio": 50, "imagen": "img/beetle1.jpg" },
+  { "nombre": "Vaso Beetlejuice Figura Cinemex", "categoria": "Beetle Juice", "precio": 100, "imagen": "img/beetle2.jpg" },
+
+  { "nombre": "Palomera Patricio Bob Esponja Cinepolis", "categoria": "Infantil", "precio": 150, "imagen": "img/bob.jpg" },
+  { "nombre": "Vaso Borderlands Model1", "categoria": "Videojuegos", "precio": 50, "imagen": "img/borderlands1.jpg" },
+  { "nombre": "Vaso Borderlands Model2", "categoria": "Videojuegos", "precio": 50, "imagen": "img/borderlands2.jpg" },
+  { "nombre": "Vaso Cars 3 Cinepolis", "categoria": "Infantil", "precio": 80, "imagen": "img/cars.jpg" },
+  { "nombre": "Vaso Chicas Pesadas Cinepolis", "categoria": "Peliculas", "precio": 80, "imagen": "img/chicas.jpg" },
+  { "nombre": "Vaso Assasin Cred", "categoria": "Videojuegos", "precio": 80, "imagen": "img/creed.jpg" },
+  { "nombre": "Vaso Elementos Cinepolis", "categoria": "Infantil", "precio": 100, "imagen": "img/elementos.jpg" },
+  { "nombre": "Vaso Furiosa Cinemex", "categoria": "Peliculas", "precio": 50, "imagen": "img/furiosa.jpg" },
+  { "nombre": "Vaso Han Solo Cinepolis", "categoria": "Star Wars", "precio": 50, "imagen": "img/han.jpg" },
+  { "nombre": "Vaso Intensamente Movie Center", "categoria": "Infantil", "precio": 80, "imagen": "img/intensamente.jpg" },
+  { "nombre": "Cubeta Los Juegos del Hambre Cinepolis", "categoria": "Peliculas", "precio": 150, "imagen": "img/juegos.jpg" },
+
+  { "nombre": "Vaso Mario Bros Cinemex", "categoria": "Infantil", "precio": 80, "imagen": "img/chicas.jpg" },
+  { "nombre": "Cubeta Mision Imposible Cinemex", "categoria": "Peliculas", "precio": 80, "imagen": "img/chicas.jpg" },
+  { "nombre": "Vaso Ninjango Cinepolis", "categoria": "Infantil", "precio": 80, "imagen": "img/chicas.jpg" },
+  { "nombre": "Vaso El Padrino Cinemex", "categoria": "Peliculas", "precio": 80, "imagen": "img/chicas.jpg" },
+  { "nombre": "Cubeta Kung Fu Panda Cinemex", "categoria": "Infantil", "precio": 80, "imagen": "img/chicas.jpg" },
+  { "nombre": "Vaso Paw Patrol Cinemex", "categoria": "Infantil", "precio": 80, "imagen": "img/chicas.jpg" },
+  { "nombre": "Vaso Piratas del Caribe Cinepolis", "categoria": "Peliculas", "precio": 80, "imagen": "img/chicas.jpg" },
+  { "nombre": "Vaso Ralph Cinepolis", "categoria": "Infantil", "precio": 80, "imagen": "img/chicas.jpg" },
+  { "nombre": "Palomera El Señor de los Anillos Cinepolis", "categoria": "Peliculas", "precio": 80, "imagen": "img/chicas.jpg" },
+  { "nombre": "Vaso Slam Dunk Cinepolis", "categoria": "Infantil", "precio": 80, "imagen": "img/chicas.jpg" },
+  { "nombre": "Vaso Sonic Movie Center", "categoria": "Infantil", "precio": 80, "imagen": "img/chicas.jpg" },
+  { "nombre": "Vaso Soul Cinemex", "categoria": "Infantil", "precio": 80, "imagen": "img/chicas.jpg" },
+  { "nombre": "Vaso Glinda Wicked Movie Center", "categoria": "Peliculas", "precio": 80, "imagen": "img/chicas.jpg" },
+  { "nombre": "Vaso Wonka Cinepolis", "categoria": "Peliculas", "precio": 80, "imagen": "img/chicas.jpg" },
+
+  { "nombre": "Vaso Garfield Movie Center", "categoria": "Infantil", "precio": 50, "imagen": "img/gato1.jpg" },
+  { "nombre": "Vaso Garfield Cinemex", "categoria": "Infantil", "precio": 30, "imagen": "img/gato2.jpg" },
+  { "nombre": "Cubeta Garfield Cinemex", "categoria": "Infantil", "precio": 30, "imagen": "img/gato3.jpg" },
+
+  { "nombre": "Vaso Godzilla y King Kong Figura Cinemex", "categoria": "Godzilla", "precio": 100, "imagen": "img/kong1.jpg" },
+  { "nombre": "Vaso Godzilla y King Kong Carls Jr Model1", "categoria": "Godzilla", "precio": 50, "imagen": "img/kong2.jpg" },
+  { "nombre": "Vaso Godzilla y King Kong Carls Jr Model1", "categoria": "Godzilla", "precio": 50, "imagen": "img/kong3.jpg" },
+  { "nombre": "Vaso Godzilla y King Kong Carls Jr Model1", "categoria": "Godzilla", "precio": 50, "imagen": "img/kong4.jpg" },
+  { "nombre": "Vaso Godzilla y King Kong Movie Center", "categoria": "Godzilla", "precio": 30, "imagen": "img/kong5.jpg" }
 
   
 ]
