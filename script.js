@@ -44,34 +44,38 @@ function crearPaginacion() {
 
 /* === MOSTRAR === */
 function mostrarProductos(lista) {
-  const c = document.getElementById("catalogo");
-  c.innerHTML = "";
+  const catalogo = document.getElementById("catalogo");
+  catalogo.innerHTML = "";
 
-  lista.forEach(p => {
-    const d = document.createElement("div");
-    d.className = "producto";
+  lista.forEach((producto, index) => {
+    const div = document.createElement("div");
+    div.className = "producto";
 
-    let badgeHTML = "";
-
-    if (p.badge) {
-      badgeHTML = `<span class="badge ${p.badge}">${p.badge}</span>`;
-    } else if (p.stock !== undefined && p.stock <= 3) {
-      badgeHTML = `<span class="badge stock">Últimas piezas</span>`;
+    // Si no hay stock
+    if (producto.stock === 0) {
+      div.classList.add("agotado");
     }
 
-    d.innerHTML = `
-      ${badgeHTML}
-      <img src="${p.imagen}">
+    div.innerHTML = `
+      ${producto.badge ? `<span class="badge ${producto.badge}">${producto.badge}</span>` : ""}
+
+      <img src="${producto.imagen}" alt="${producto.nombre}">
+
       <div class="info">
-        <h2>${p.nombre}</h2>
-        <p>${p.categoria}</p>
-        <div class="precio">$${p.precio} MXN</div>
-        <button class="boton">Agregar al carrito</button>
+        <h2>${producto.nombre}</h2>
+        <p class="precio">$${producto.precio}</p>
+
+        ${
+          producto.stock > 0
+            ? `<button class="boton" onclick="agregarCarrito(${index})">
+                Agregar al carrito
+              </button>`
+            : `<button class="boton">Agotado</button>`
+        }
       </div>
     `;
 
-    d.querySelector("button").onclick = () => agregarAlCarrito(p);
-    c.appendChild(d);
+    catalogo.appendChild(div);
   });
 }
 
