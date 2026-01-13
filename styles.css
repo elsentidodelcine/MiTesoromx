@@ -179,3 +179,33 @@ footer {
   float: right;
   cursor: pointer;
 }
+
+.social-links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social {
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social:hover {
+  transform: scale(1.05);
+  opacity: 0.85;
+}
+
+.social.fb {
+  background: #1877f2;
+}
+
+.social.wa {
+  background: #25d366;
+}
+
