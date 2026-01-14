@@ -20,225 +20,7 @@ body {
   color: var(--text);
 }
 
-/* HEADER */
-.header-pro {
-  background: linear-gradient(180deg, #111, #222);
-  color: #fff;
-  padding: 24px;
-}
-
-.header-content {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.search-box input {
-  padding: 10px 14px;
-  border-radius: 20px;
-  border: none;
-}
-
-.cart-btn, .theme-btn {
-  margin-left: 10px;
-  padding: 10px 14px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-}
-
-/* FILTROS */
-.filtros {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  padding: 20px;
-  justify-content: center;
-}
-
-.filtros button {
-  padding: 8px 16px;
-  border-radius: 20px;
-  border: none;
-  background: var(--card);
-  cursor: pointer;
-  box-shadow: 0 4px 10px var(--shadow);
-}
-
-.filtros button.active {
-  background: var(--accent);
-  color: #fff;
-}
-
-/* CATÁLOGO */
-#catalogo {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 28px;
-  padding: 40px;
-}
-
-.producto {
-  background: var(--card);
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 12px 30px var(--shadow);
-  position: relative;
-}
-
-.producto img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-
-.info {
-  padding: 18px;
-}
-
-.precio {
-  color: var(--accent);
-  font-weight: bold;
-}
-
-.boton {
-  margin-top: 12px;
-  width: 100%;
-  padding: 12px;
-  border-radius: 14px;
-  border: none;
-  background: linear-gradient(135deg,#00ffd5,#00c2a8);
-  cursor: pointer;
-}
-
-/* BADGES */
-.badge {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.7rem;
-  font-weight: bold;
-}
-
-.badge.nuevo {
-  background: #00ffd5;
-  color: #000;
-}
-
-/* === PAGINACIÓN === */
-.paginacion {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  padding: 30px 0 50px;
-  flex-wrap: wrap;
-}
-
-.paginacion button {
-  padding: 8px 14px;
-  border-radius: 12px;
-  border: none;
-  background: var(--card);
-  color: var(--text);
-  box-shadow: 0 4px 12px var(--shadow);
-  cursor: pointer;
-  min-width: 40px;
-}
-
-.paginacion button.active {
-  background: var(--accent);
-  color: #fff;
-}
-
-.paginacion button:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-
-/* === MODAL CARRITO === */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.75);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-contenido {
-  background: var(--card);
-  color: var(--text);
-  width: 90%;
-  max-width: 420px;
-  padding: 24px;
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0,0,0,.6);
-  position: relative;
-  animation: pop .25s ease;
-}
-
-@keyframes pop {
-  from { transform: scale(.9); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-.cerrar {
-  position: absolute;
-  top: 14px;
-  right: 18px;
-  font-size: 22px;
-  cursor: pointer;
-  opacity: .6;
-}
-
-.cerrar:hover {
-  opacity: 1;
-}
-
-#listaCarrito p {
-  margin: 8px 0;
-  font-size: .9rem;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 6px;
-}
-
-#total {
-  font-weight: bold;
-  margin: 14px 0;
-  text-align: center;
-}
-
-.btn-whatsapp {
-  display: block;
-  text-align: center;
-  padding: 12px;
-  border-radius: 14px;
-  background: linear-gradient(135deg,#25D366,#1ebe5b);
-  color: #000;
-  font-weight: bold;
-  text-decoration: none;
-  margin-bottom: 10px;
-}
-
-.btn-vaciar {
-  width: 100%;
-  padding: 10px;
-  border-radius: 14px;
-  border: none;
-  background: #ff5252;
-  color: #fff;
-  cursor: pointer;
-}
-
-/* === HEADER PRO === */
+/* ================= HEADER ================= */
 .header-pro {
   background: linear-gradient(180deg,#111,#000);
   color: #fff;
@@ -252,6 +34,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .brand h1 {
@@ -310,7 +93,146 @@ body {
   margin-left: 4px;
 }
 
-/* === FOOTER PRO === */
+/* ================= FILTROS ================= */
+.filtros {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content: center;
+}
+
+.filtros button {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  background: var(--card);
+  cursor: pointer;
+  box-shadow: 0 4px 10px var(--shadow);
+}
+
+.filtros button.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ================= CATÁLOGO ================= */
+#catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 28px;
+  padding: 40px;
+}
+
+.producto {
+  background: var(--card);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px var(--shadow);
+  position: relative;
+}
+
+.producto img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.info {
+  padding: 18px;
+}
+
+.precio {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.boton {
+  margin-top: 12px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg,#00ffd5,#00c2a8);
+  cursor: pointer;
+}
+
+/* ================= BADGES ================= */
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.badge.nuevo {
+  background: #00ffd5;
+  color: #000;
+}
+
+/* ================= PAGINACIÓN ================= */
+.paginacion {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 30px 0 50px;
+  flex-wrap: wrap;
+}
+
+.paginacion button {
+  padding: 8px 14px;
+  border-radius: 12px;
+  border: none;
+  background: var(--card);
+  color: var(--text);
+  box-shadow: 0 4px 12px var(--shadow);
+  cursor: pointer;
+  min-width: 40px;
+}
+
+.paginacion button.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ================= MODAL CARRITO ================= */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.75);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-contenido {
+  background: var(--card);
+  color: var(--text);
+  width: 90%;
+  max-width: 420px;
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.6);
+  position: relative;
+}
+
+.cerrar {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ================= FOOTER ================= */
 .footer-pro {
   background: #000;
   color: #aaa;
@@ -323,7 +245,6 @@ body {
   margin: auto;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -332,31 +253,13 @@ body {
   color: #aaa;
   text-decoration: none;
   margin-right: 15px;
-  font-size: .85rem;
 }
 
 .footer-links a:hover {
   color: #fff;
 }
 
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .search-box input {
-    width: 120px;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-/* === WHATSAPP FLOAT === */
+/* ================= WHATSAPP FLOAT ================= */
 #whatsappFloat {
   position: fixed;
   bottom: 22px;
@@ -371,17 +274,10 @@ body {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  box-shadow: 0 8px 25px rgba(0,0,0,.4);
   z-index: 999;
-  transition: transform .25s ease, box-shadow .25s ease;
 }
 
-#whatsappFloat:hover {
-  transform: scale(1.08);
-  box-shadow: 0 12px 35px rgba(0,0,0,.6);
-}
-
-/* === LOADER === */
+/* ================= LOADER ================= */
 #loader {
   position: fixed;
   inset: 0;
@@ -406,18 +302,19 @@ body {
   to { transform: rotate(360deg); }
 }
 
-#loader p {
-  margin-top: 12px;
-  opacity: .7;
-}
-/* === ANIMACIÓN CARRITO === */
-.producto.added {
-  animation: added .6s ease;
-}
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-@keyframes added {
-  0% { transform: scale(1); }
-  40% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
+  .search-box input {
+    width: 120px;
+  }
 
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
