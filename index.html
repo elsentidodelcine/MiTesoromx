@@ -16,43 +16,37 @@
 </div>
 
 <!-- HEADER -->
-<header class="header-pro">
-  <div class="header-content">
+  <header class="header-pro">
+    <div class="header-content">
 
-    <div class="brand">
-      <h1>Mi Tesoro MX</h1>
-      <p>Coleccionables de cine</p>
-    </div>
-
-    <div class="header-actions">
-      <div class="search-box">
-        🔍
-        <input type="text" id="buscador" placeholder="Buscar...">
+      <div class="brand">
+        <h1>Mi Tesoro MX</h1>
+        <p>Coleccionables de cine</p>
       </div>
 
-      <select id="ordenar" class="icon-btn">
-        <option value="">Ordenar</option>
-        <option value="nombre-asc">Nombre A–Z</option>
-        <option value="nombre-desc">Nombre Z–A</option>
-        <option value="precio-asc">Precio ↑</option>
-        <option value="precio-desc">Precio ↓</option>
-      </select>
+      <div class="header-actions">
+        <div class="search-box">
+          🔍
+          <input type="text" id="buscador" placeholder="Buscar...">
+        </div>
 
-      <button id="toggleTheme" class="icon-btn">🌙</button>
+        <select id="ordenar" class="icon-btn">
+          <option value="">Ordenar</option>
+          <option value="nombre-asc">Nombre A–Z</option>
+          <option value="nombre-desc">Nombre Z–A</option>
+          <option value="precio-asc">Precio ↑</option>
+          <option value="precio-desc">Precio ↓</option>
+        </select>
 
-      <button id="verCarrito" class="icon-btn cart">
-        🛒 <span id="count">0</span>
-      </button>
-      <a href="https://wa.me/524761232612" target="_blank" class="icon-btn">
-  🟢
-</a>
+        <button id="toggleTheme" class="icon-btn">🌙</button>
 
-<a href="https://facebook.com/ElSentidoDelCine" target="_blank" class="icon-btn">
-  🔵
-</a>
-
-    </div>
-
+        <button id="verCarrito" class="icon-btn cart">
+          🛒 <span id="count">0</span>
+        </button>
+          <a href="https://wa.me/524761232612" target="_blank" class="icon-btn">🟢</a>
+          <a href="https://facebook.com/ElSentidoDelCine" target="_blank" class="icon-btn">🔵</a>
+         <a href="#" id="verEnvios">Métodos de Envío</a>
+      </div>
   </div>
 </header>
 
@@ -112,8 +106,39 @@
 </footer>
 
 
-<!-- JS -->
-<script src="script.js"></script>
-
-</body>
+      <!-- JS -->
+      <script src="script.js"></script>
+  
+      <!-- MODAL ENVÍOS -->
+      <div id="modalEnvios" class="modal">
+        <div class="modal-contenido">
+          <span class="cerrar" id="cerrarEnvios">×</span>
+      
+          <h2>📦 Métodos de Envío</h2>
+      
+          <div class="envio-item">
+            <h3>🚚 Envío Correos de México</h3>
+            <p>Tiempo estimado: 1 a 3 semanas</p>
+            <p>Costo: $80.00</p>
+          </div>
+      
+          <div class="envio-item">
+            <h3>⚡ Envío Estafeta o FEDEX</h3>
+            <p>Tiempo estimado: 1 a 7 días hábiles</p>
+            <p>Sujeto a disponibilidad y costos</p>
+          </div>
+      
+          <div class="envio-item">
+            <h3>📍 Entrega Local</h3>
+            <p>Solo en San Francisco del Rincón</p>
+            <p>Se coordina vía WhatsApp</p>
+          </div>
+          <p class="envio-nota">
+            📌 Todos los envíos se confirman por WhatsApp antes de realizar el pago.
+          </p>
+        </div>
+      </div>
+      <div id="enviosOverlay" class="overlay"></div>
+  
+  </body>
 </html>
