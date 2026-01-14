@@ -18,9 +18,12 @@ fetch("productos.json")
     productosFiltrados = data;
 
     crearFiltros(data);
-    render();
+    mostrarProductos(data);
     actualizarCarrito();
+
+    document.getElementById("loader").style.display = "none";
   });
+
 
 /* FILTROS */
 function crearFiltros(productos) {
