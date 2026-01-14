@@ -332,3 +332,23 @@ btnTheme.onclick = () => {
   localStorage.setItem("tema", oscuro ? "dark" : "light");
 };
 
+const btnEnvios = document.getElementById("verEnvios");
+const modalEnvios = document.getElementById("modalEnvios");
+const cerrarEnvios = document.getElementById("cerrarEnvios");
+const enviosOverlay = document.getElementById("enviosOverlay");
+
+btnEnvios.onclick = e => {
+  e.preventDefault();
+  modalEnvios.style.display = "flex";
+  enviosOverlay.classList.add("show");
+};
+
+cerrarEnvios.onclick = cerrarModalEnvios;
+enviosOverlay.onclick = cerrarModalEnvios;
+
+function cerrarModalEnvios() {
+  modalEnvios.style.display = "none";
+  enviosOverlay.classList.remove("show");
+}
+
+
