@@ -1,11 +1,11 @@
 [ 
-  { "nombre": "Vaso Totem Cinepolis", "categoria": "Transformers", "precio": 150, "imagen": "img/transformers1.jpg" ,"badge": "nuevo", "stock": 1}, 
-  { "nombre": "Vaso Liso Movie Center", "categoria": "Transformers", "precio": 50, "imagen": "img/transformers2.jpg" ,"badge": "nuevo", "stock": 1}, 
-  { "nombre": "Vaso Liso Cinepolis", "categoria": "Transformers", "precio": 50, "imagen": "img/transformers3.jpg" ,"badge": "nuevo", "stock": 1}, 
-  { "nombre": "Vaso Liso Cinepolis 2", "categoria": "Transformers", "precio": 50, "imagen": "img/transformers4.jpg" ,"badge": "nuevo", "stock": 1}, 
-  { "nombre": "Vaso 3D Cinepolis", "categoria": "Transformers", "precio": 100, "imagen": "img/transformers5.jpg" ,"badge": "nuevo", "stock": 1}, 
-  { "nombre": "Palomera Cinemex", "categoria": "Transformers", "precio": 250, "imagen": "img/transformers6.jpg" ,"badge": "nuevo", "stock": 1}, 
-  { "nombre": "Oferta Exclusiva - Llévate Todo", "categoria": "Transformers", "precio": 500, "imagen": "img/transformerso.jpg" ,"badge": "oferta", "stock": 1},
+  { "nombre": "Vaso Totem Cinepolis", "categoria": "Transformers", "precio": 150, "imagen": "img/trans6.jpg" ,"badge": "nuevo", "stock": 1}, 
+  { "nombre": "Vaso Liso Movie Center", "categoria": "Transformers", "precio": 50, "imagen": "img/trans1.jpg" ,"badge": "nuevo", "stock": 1}, 
+  { "nombre": "Vaso Liso Cinepolis", "categoria": "Transformers", "precio": 50, "imagen": "img/trans2.jpg" ,"badge": "nuevo", "stock": 1}, 
+  { "nombre": "Vaso Liso Cinepolis 2", "categoria": "Transformers", "precio": 50, "imagen": "img/trans4.jpg" ,"badge": "nuevo", "stock": 1}, 
+  { "nombre": "Vaso 3D Cinepolis", "categoria": "Transformers", "precio": 100, "imagen": "img/trans3.jpg" ,"badge": "nuevo", "stock": 1}, 
+  { "nombre": "Palomera Cinemex", "categoria": "Transformers", "precio": 250, "imagen": "img/trans5.jpg" ,"badge": "nuevo", "stock": 1}, 
+  { "nombre": "Oferta Exclusiva - Llévate Todo", "categoria": "Transformers", "precio": 500, "imagen": "img/trans7.jpg" ,"badge": "oferta", "stock": 1},
   
   { "nombre": "Vaso FastX Cinemex Model1", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "img/rapidos1.jpg" ,"badge": "nuevo", "stock": 1}, 
   { "nombre": "Vaso FastX Cinemex Model2", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "img/rapidos2.jpg" ,"badge": "nuevo", "stock": 1}, 
