@@ -188,3 +188,22 @@ function actualizarCarrito() {
   document.getElementById("count").textContent =
     carrito.reduce((a, b) => a + b.cantidad, 0);
 }
+
+/* =========================
+   MODO OSCURO / CLARO (FIX)
+========================= */
+const btnTheme = document.getElementById("toggleTheme");
+const temaGuardado = localStorage.getItem("tema");
+
+if (temaGuardado === "dark") {
+  document.body.classList.add("dark");
+  btnTheme.textContent = "☀️";
+}
+
+btnTheme.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  const oscuro = document.body.classList.contains("dark");
+  btnTheme.textContent = oscuro ? "☀️" : "🌙";
+  localStorage.setItem("tema", oscuro ? "dark" : "light");
+});
