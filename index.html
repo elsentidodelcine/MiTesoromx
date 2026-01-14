@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <title>Mi Tesoro MX</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="data:,">
 </head>
 <body>
 
@@ -18,28 +18,22 @@
 
     <div class="header-actions">
       <div class="search-box">
-        🔍
-        <input id="buscador" type="text" placeholder="Buscar productos...">
+        🔍 <input id="buscador" type="text" placeholder="Buscar productos...">
       </div>
 
       <button id="toggleTheme" class="theme-btn">🌙</button>
       <button id="verCarrito" class="cart-btn">🛒 <span id="count">0</span></button>
-
-      <a href="https://wa.me/524761232612" target="_blank" class="social-btn whatsapp">🟢</a>
-      <a href="https://facebook.com/ElSentidoDelCine" target="_blank" class="social-btn facebook">🔵</a>
     </div>
   </div>
 </header>
 
-<nav id="filtros" class="filtros-wrapper"></nav>
-
+<nav id="filtros" class="filtros"></nav>
 
 <main id="catalogo"></main>
 
-<!-- PAGINACIÓN -->
 <div id="paginacion" class="paginacion"></div>
 
-<!-- MODAL -->
+<!-- MODAL CARRITO -->
 <div id="modalCarrito" class="modal">
   <div class="modal-content">
     <span class="close" onclick="cerrarCarrito()">✖</span>
