@@ -275,3 +275,49 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+/* === FILTROS DINÁMICOS PRO === */
+.filtros-wrapper {
+  background: var(--bg);
+  padding: 16px 30px;
+  border-bottom: 1px solid var(--border);
+}
+
+#filtros {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+#filtros::-webkit-scrollbar {
+  display: none;
+}
+
+#filtros button {
+  flex-shrink: 0;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .25s ease;
+  white-space: nowrap;
+}
+
+#filtros button:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+#filtros button.active {
+  background: linear-gradient(135deg, #00ffd5, #00c2a8);
+  color: #000;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(0, 255, 213, 0.4);
+}
+
