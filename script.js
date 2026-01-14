@@ -1,7 +1,7 @@
 let productosGlobal = [];
 let productosFiltrados = [];
 let paginaActual = 1;
-const porPagina = 8;
+const porPagina = 12;
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
@@ -88,25 +88,23 @@ function render() {
 }
 
 /* MOSTRAR PRODUCTOS */
-function mostrarProductos() {
+function mostrarProductos(productos) {
   const catalogo = document.getElementById("catalogo");
   catalogo.innerHTML = "";
 
-  const inicio = (paginaActual - 1) * porPagina;
-  const visibles = productosFiltrados.slice(inicio, inicio + porPagina);
+  const inicio = (paginaActual - 1) * productosPorPagina;
+  const fin = inicio + productosPorPagina;
+  const productosPagina = productos.slice(inicio, fin);
 
-  visibles.forEach(p => {
+  productosPagina.forEach(p => {
     const card = document.createElement("div");
     card.className = "producto";
 
-    if (p.badge) {
-      card.innerHTML += `<span class="badge ${p.badge}">${p.badge}</span>`;
-    }
-
-    card.innerHTML += `
-      <img src="${p.imagen}" loading="lazy">
+    card.innerHTML = `
+      ${p.badge ? `<span class="badge nuevo">${p.badge}</span>` : ""}
+      <img src="${p.imagen}" alt="${p.nombre}">
       <div class="info">
-        <h3>${p.nombre}</h3>
+        <h2>${p.nombre}</h2>
         <p>${p.categoria}</p>
         <p class="precio">$${p.precio} MXN</p>
         <button class="boton">Agregar al carrito</button>
@@ -116,6 +114,8 @@ function mostrarProductos() {
     card.querySelector("button").onclick = () => agregarAlCarrito(p);
     catalogo.appendChild(card);
   });
+
+  crearPaginacion(productos);
 }
 
 /* PAGINACIÓN */
