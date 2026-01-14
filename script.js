@@ -50,6 +50,34 @@ function crearFiltros(productos) {
   });
 }
 
+const selectOrden = document.getElementById("ordenar");
+
+selectOrden.addEventListener("change", () => {
+  ordenarProductos();
+  paginaActual = 1;
+  render();
+});
+
+function ordenarProductos() {
+  const valor = selectOrden.value;
+
+  productosFiltrados.sort((a, b) => {
+    switch (valor) {
+      case "nombre-asc":
+        return a.nombre.localeCompare(b.nombre);
+      case "nombre-desc":
+        return b.nombre.localeCompare(a.nombre);
+      case "precio-asc":
+        return a.precio - b.precio;
+      case "precio-desc":
+        return b.precio - a.precio;
+      default:
+        return 0;
+    }
+  });
+}
+
+
 /* RENDER GENERAL */
 function render() {
   mostrarProductos();
