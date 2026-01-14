@@ -7,81 +7,67 @@
 
   <link rel="stylesheet" href="styles.css">
 </head>
-  <a id="whatsappFloat"
-   href="https://wa.me/524761232612"
-   target="_blank"
-   aria-label="WhatsApp"
->
-  💬
-</a>
-
 <body>
 
+<!-- LOADER -->
+<div id="loader">
+  <div class="spinner"></div>
+  <p>Cargando productos...</p>
+</div>
+
+<!-- HEADER -->
 <header class="header-pro">
   <div class="header-content">
 
     <div class="brand">
-      <h1>🎬 Mi Tesoro MX</h1>
-      <p>Coleccionables auténticos de cine y cultura pop</p>
+      <h1>Mi Tesoro MX</h1>
+      <p>Coleccionables de cine</p>
     </div>
 
     <div class="header-actions">
-
       <div class="search-box">
         🔍
-        <input id="buscador" type="text" placeholder="Buscar productos...">
+        <input type="text" id="buscador" placeholder="Buscar...">
       </div>
 
-      <button id="toggleTheme" class="theme-btn" title="Cambiar tema">🌙</button>
+      <select id="ordenar" class="icon-btn">
+        <option value="">Ordenar</option>
+        <option value="nombre-asc">Nombre A–Z</option>
+        <option value="nombre-desc">Nombre Z–A</option>
+        <option value="precio-asc">Precio ↑</option>
+        <option value="precio-desc">Precio ↓</option>
+      </select>
 
+      <button id="toggleTheme" class="icon-btn">🌙</button>
 
       <button id="verCarrito" class="icon-btn cart">
         🛒 <span id="count">0</span>
       </button>
-
-      <a href="https://wa.me/524761232612"
-         target="_blank"
-         class="icon-btn whatsapp"
-         title="WhatsApp">
-        🟢
-      </a>
-
-      <a href="https://facebook.com/ElSentidoDelCine"
-         target="_blank"
-         class="icon-btn facebook"
-         title="Facebook">
-        🔵
-      </a>
-
     </div>
+
   </div>
 </header>
 
-
+<!-- FILTROS -->
 <nav id="filtros" class="filtros"></nav>
-<div class="ordenador">
-  <label>Ordenar por:</label>
-  <select id="ordenar">
-    <option value="nombre-asc">Nombre A–Z</option>
-    <option value="nombre-desc">Nombre Z–A</option>
-    <option value="precio-asc">Precio menor → mayor</option>
-    <option value="precio-desc">Precio mayor → menor</option>
-  </select>
-</div>
 
-<main id="catalogo"></main>
-<div id="paginacion" class="paginacion"></div>
+<!-- CATÁLOGO -->
+<main>
+  <section id="catalogo"></section>
+  <div id="paginacion" class="paginacion"></div>
+</main>
 
-<!-- MODAL CARRITO -->
-<div id="modalCarrito" class="modal">
-  <div class="modal-contenido">
-    <span class="cerrar" onclick="cerrarCarrito()">×</span>
+<!-- CARRITO DRAWER -->
+<aside id="cartDrawer" class="cart-drawer">
+  <div class="cart-header">
+    <h2>🛒 Tu carrito</h2>
+    <button id="cerrarDrawer">✕</button>
+  </div>
 
-    <h2>🛒 Carrito</h2>
+  <div id="cartItems" class="cart-items"></div>
 
-    <div id="listaCarrito"></div>
-
-    <p id="total"></p>
+  <div class="cart-footer">
+    <p id="cartTotal">Total: $0 MXN</p>
 
     <a id="whatsBtn" class="btn-whatsapp" target="_blank">
       Pedir por WhatsApp
@@ -91,32 +77,33 @@
       Vaciar carrito
     </button>
   </div>
-</div>
+</aside>
 
+<!-- OVERLAY -->
+<div id="cartOverlay"></div>
 
+<!-- WHATSAPP FLOAT -->
+<a id="whatsappFloat"
+   href="https://wa.me/524761232612"
+   target="_blank">
+  💬
+</a>
+
+<!-- FOOTER -->
 <footer class="footer-pro">
   <div class="footer-content">
-
-    <p>
-      © 2026 <strong>Mi Tesoro MX</strong><br>
-      Venta directa vía WhatsApp
-    </p>
+    <p>© 2026 Mi Tesoro MX - El Sentido del Cine</p>
 
     <div class="footer-links">
-      <a href="https://wa.me/524761232612" target="_blank">WhatsApp</a>
+      <a href="politica-privacidad.html">Aviso de privacidad</a>
       <a href="https://facebook.com/ElSentidoDelCine" target="_blank">Facebook</a>
-      <a href="politica-privacidad.html" target="_blank">Aviso de Privacidad</a>
+      <a href="https://wa.me/524761232612" target="_blank">WhatsApp</a>
     </div>
-
   </div>
 </footer>
 
-
+<!-- JS -->
 <script src="script.js"></script>
+
 </body>
-  <div id="loader" class="loader">Cargando productos...</div>
-<main id="catalogo"></main>
-<div id="paginacion"></div>
-
-
 </html>
