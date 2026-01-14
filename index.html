@@ -44,15 +44,25 @@
 
 <!-- MODAL CARRITO -->
 <div id="modalCarrito" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="cerrarCarrito()">✖</span>
-    <h2>Carrito</h2>
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarCarrito()">×</span>
+
+    <h2>🛒 Carrito</h2>
+
     <div id="listaCarrito"></div>
+
     <p id="total"></p>
-    <a id="whatsBtn" target="_blank" class="boton">Pedir por WhatsApp</a>
-    <button id="vaciarCarrito" class="boton">Vaciar carrito</button>
+
+    <a id="whatsBtn" class="btn-whatsapp" target="_blank">
+      Pedir por WhatsApp
+    </a>
+
+    <button id="vaciarCarrito" class="btn-vaciar">
+      Vaciar carrito
+    </button>
   </div>
 </div>
+
 
 <footer>
   © 2026 Mi Tesoro MX | Venta vía WhatsApp
