@@ -351,4 +351,24 @@ function cerrarModalEnvios() {
   enviosOverlay.classList.remove("show");
 }
 
+const btnPagos = document.getElementById("verPagos");
+const modalPagos = document.getElementById("modalPagos");
+const cerrarPagos = document.getElementById("cerrarPagos");
+const pagosOverlay = document.getElementById("pagosOverlay");
+
+if (btnPagos) {
+  btnPagos.onclick = e => {
+    e.preventDefault();
+    modalPagos.style.display = "flex";
+    pagosOverlay.classList.add("show");
+  };
+}
+
+cerrarPagos.onclick = cerrarModalPagos;
+pagosOverlay.onclick = cerrarModalPagos;
+
+function cerrarModalPagos() {
+  modalPagos.style.display = "none";
+  pagosOverlay.classList.remove("show");
+}
 
