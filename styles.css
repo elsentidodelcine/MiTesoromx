@@ -364,4 +364,62 @@ body.dark .cart-qty button {
   color: #ff5252;
   font-size: 16px;
 }
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-contenido {
+  background: var(--bg, #111);
+  color: var(--text, #fff);
+  max-width: 500px;
+  width: 90%;
+  padding: 25px;
+  border-radius: 16px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,.6);
+}
+
+.modal-contenido h2 {
+  margin-bottom: 15px;
+}
+
+.envio-item {
+  margin-bottom: 15px;
+}
+
+.envio-item h3 {
+  margin-bottom: 5px;
+}
+
+.envio-nota {
+  margin-top: 20px;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.cerrar {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.overlay,
+#enviosOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  z-index: 998;
+}
+
+#enviosOverlay.show {
+  display: block;
+}
 
