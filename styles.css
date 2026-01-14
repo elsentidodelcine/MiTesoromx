@@ -362,5 +362,29 @@ body {
   }
 }
 
+/* === WHATSAPP FLOAT === */
+#whatsappFloat {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  width: 58px;
+  height: 58px;
+  background: #25d366;
+  color: #000;
+  font-size: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(0,0,0,.4);
+  z-index: 999;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+#whatsappFloat:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 35px rgba(0,0,0,.6);
+}
 
 
