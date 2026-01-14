@@ -295,3 +295,49 @@ btnTheme.onclick = () => {
   btnTheme.textContent = oscuro ? "☀️" : "🌙";
   localStorage.setItem("tema", oscuro ? "dark" : "light");
 };
+
+/* =========================
+   MODAL CARRITO (FIX)
+========================= */
+const btnCarrito = document.getElementById("verCarrito");
+const modalCarrito = document.getElementById("modalCarrito");
+
+if (btnCarrito) {
+  btnCarrito.addEventListener("click", () => {
+    modalCarrito.style.display = "flex";
+    renderCarrito();
+  });
+}
+
+function cerrarCarrito() {
+  modalCarrito.style.display = "none";
+}
+
+window.addEventListener("click", e => {
+  if (e.target === modalCarrito) cerrarCarrito();
+});
+
+function renderCarrito() {
+  const lista = document.getElementById("listaCarrito");
+  const totalTxt = document.getElementById("total");
+
+  lista.innerHTML = "";
+  let total = 0;
+
+  if (carrito.length === 0) {
+    lista.innerHTML = "<p>Tu carrito está vacío</p>";
+    totalTxt.textContent = "";
+    return;
+  }
+
+  carrito.forEach(p => {
+    total += p.precio * p.cantidad;
+
+    const item = document.createElement("p");
+    item.textContent = `${p.nombre} x${p.cantidad}`;
+    lista.appendChild(item);
+  });
+
+  totalTxt.textContent = `Total: $${total} MXN`;
+}
+
