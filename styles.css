@@ -149,3 +149,21 @@ body {
   background: var(--accent);
   color: #fff;
 }
+
+.ordenador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px 0;
+}
+
+.ordenador select {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: none;
+  background: var(--card);
+  box-shadow: 0 4px 10px var(--shadow);
+  cursor: pointer;
+}
+
