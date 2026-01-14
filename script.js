@@ -46,6 +46,8 @@ function crearFiltros(productos) {
         : productosGlobal.filter(p => p.categoria === cat);
 
       paginaActual = 1;
+      mostrarProductos(productosFiltrados);
+
       render();
     };
 
@@ -119,11 +121,20 @@ function mostrarProductos(productos) {
 }
 
 /* PAGINACIÓN */
-function crearPaginacion() {
-  const cont = document.getElementById("paginacion");
-  cont.innerHTML = "";
+function crearPaginacion(productos) {
+  const contenedor = document.getElementById("paginacion");
+  contenedor.innerHTML = "";
 
-  const totalPaginas = Math.ceil(productosFiltrados.length / porPagina);
+  const totalPaginas = Math.ceil(productos.length / productosPorPagina);
+
+  const btnPrev = document.createElement("button");
+  btnPrev.textContent = "←";
+  btnPrev.disabled = paginaActual === 1;
+  btnPrev.onclick = () => {
+    paginaActual--;
+    mostrarProductos(productosFiltrados);
+  };
+  contenedor.appendChild(btnPrev);
 
   for (let i = 1; i <= totalPaginas; i++) {
     const btn = document.createElement("button");
@@ -132,13 +143,34 @@ function crearPaginacion() {
 
     btn.onclick = () => {
       paginaActual = i;
-      render();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      mostrarProductos(productosFiltrados);
     };
 
-    cont.appendChild(btn);
+    contenedor.appendChild(btn);
   }
+
+  const btnNext = document.createElement("button");
+  btnNext.textContent = "→";
+  btnNext.disabled = paginaActual === totalPaginas;
+  btnNext.onclick = () => {
+    paginaActual++;
+    mostrarProductos(productosFiltrados);
+  };
+  contenedor.appendChild(btnNext);
 }
+
+function aplicarBusqueda() {
+  paginaActual = 1;
+  const texto = buscador.value.toLowerCase();
+
+  const resultado = productosFiltrados.filter(p =>
+    p.nombre.toLowerCase().includes(texto) ||
+    p.categoria.toLowerCase().includes(texto)
+  );
+
+  mostrarProductos(resultado);
+}
+
 
 /* BUSCADOR */
 document.getElementById("buscador").addEventListener("input", e => {
