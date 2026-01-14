@@ -289,11 +289,14 @@ function actualizarWhats(total) {
 
 document.getElementById("vaciarCarrito").onclick = () => {
   if (!confirm("¿Vaciar carrito?")) return;
+
   carrito = [];
   localStorage.removeItem("carrito");
-  actualizarCarritoUI();
-  render();
+
+  // Recargar página para reiniciar todo correctamente
+  location.reload();
 };
+
 
 /* =========================
    DRAWER CARRITO
