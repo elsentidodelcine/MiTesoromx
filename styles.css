@@ -416,4 +416,14 @@ body {
   margin-top: 12px;
   opacity: .7;
 }
+/* === ANIMACIÓN CARRITO === */
+.producto.added {
+  animation: added .6s ease;
+}
+
+@keyframes added {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
 
