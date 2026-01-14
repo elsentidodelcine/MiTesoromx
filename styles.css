@@ -199,14 +199,21 @@ body {
 }
 
 /* ================= MODALES (ENVÍOS / PAGOS) ================= */
+/* ================= MODALES FIX ================= */
 .modal {
   display: none;
   position: fixed;
   inset: 0;
-  z-index: 1000;
-  align-items: center;
+  background: rgba(0,0,0,.65);
+  z-index: 1300;
   justify-content: center;
+  align-items: center;
 }
+
+.modal.show {
+  display: flex;
+}
+
 
 .modal-contenido {
   background: var(--card);
