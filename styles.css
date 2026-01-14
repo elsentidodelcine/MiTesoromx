@@ -167,3 +167,81 @@ body {
   cursor: pointer;
 }
 
+/* === MODAL CARRITO === */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.75);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-contenido {
+  background: var(--card);
+  color: var(--text);
+  width: 90%;
+  max-width: 420px;
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.6);
+  position: relative;
+  animation: pop .25s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.cerrar {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 22px;
+  cursor: pointer;
+  opacity: .6;
+}
+
+.cerrar:hover {
+  opacity: 1;
+}
+
+#listaCarrito p {
+  margin: 8px 0;
+  font-size: .9rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+}
+
+#total {
+  font-weight: bold;
+  margin: 14px 0;
+  text-align: center;
+}
+
+.btn-whatsapp {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  border-radius: 14px;
+  background: linear-gradient(135deg,#25D366,#1ebe5b);
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.btn-vaciar {
+  width: 100%;
+  padding: 10px;
+  border-radius: 14px;
+  border: none;
+  background: #ff5252;
+  color: #fff;
+  cursor: pointer;
+}
+
+
