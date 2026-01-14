@@ -1,121 +1,223 @@
-let productosGlobal = [];
-let productosFiltrados = [];
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+/* =========================
+   VARIABLES GLOBALES
+========================= */
+var productosGlobal = [];
+var productosFiltrados = [];
+var carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-let paginaActual = 1;
-const productosPorPagina = 12;
-
-/* === CARGA === */
+/* =========================
+   CARGAR PRODUCTOS DESDE JSON
+========================= */
 fetch("productos.json")
-  .then(r => r.json())
+  .then(response => response.json())
   .then(data => {
+    data.forEach(p => {
+      if (p.stock === undefined) p.stock = 10;
+    });
+
     productosGlobal = data;
-    productosFiltrados = data;
-    crearFiltros(data);
-    render();
+    productosFiltrados = [...data];
+
+    crearFiltros(productosGlobal);
+    mostrarProductos(productosFiltrados);
     actualizarCarrito();
+  })
+  .catch(error => {
+    console.error("Error al cargar productos:", error);
   });
 
-/* === RENDER GENERAL === */
-function render() {
-  const inicio = (paginaActual - 1) * productosPorPagina;
-  const fin = inicio + productosPorPagina;
-  mostrarProductos(productosFiltrados.slice(inicio, fin));
-  crearPaginacion();
+/* =========================
+   FILTROS POR CATEGORÍA
+========================= */
+function crearFiltros(productos) {
+  var nav = document.getElementById("filtros");
+  nav.innerHTML = "";
+
+  var categorias = ["Todos"];
+  productos.forEach(p => {
+    if (!categorias.includes(p.categoria)) {
+      categorias.push(p.categoria);
+    }
+  });
+
+  categorias.forEach(cat => {
+    var btn = document.createElement("button");
+    btn.textContent = cat;
+    btn.dataset.categoria = cat;
+
+    if (cat === "Todos") btn.classList.add("active");
+
+    btn.addEventListener("click", function () {
+      document
+        .querySelectorAll("#filtros button")
+        .forEach(b => b.classList.remove("active"));
+
+      btn.classList.add("active");
+      filtrarCategoria(cat);
+    });
+
+    nav.appendChild(btn);
+  });
 }
 
-/* === PAGINACIÓN === */
-function crearPaginacion() {
-  const totalPaginas = Math.ceil(productosFiltrados.length / productosPorPagina);
-  const pag = document.getElementById("paginacion");
-  pag.innerHTML = "";
+function filtrarCategoria(cat) {
+  productosFiltrados = cat === "Todos"
+    ? [...productosGlobal]
+    : productosGlobal.filter(p => p.categoria === cat);
 
-  for (let i = 1; i <= totalPaginas; i++) {
-    const b = document.createElement("button");
-    b.textContent = i;
-    if (i === paginaActual) b.classList.add("active");
-    b.onclick = () => {
-      paginaActual = i;
-      render();
-    };
-    pag.appendChild(b);
-  }
+  aplicarBusqueda();
 }
 
-/* === MOSTRAR === */
-function mostrarProductos(lista) {
-  const catalogo = document.getElementById("catalogo");
+/* =========================
+   MOSTRAR PRODUCTOS
+========================= */
+function mostrarProductos(productos) {
+  var catalogo = document.getElementById("catalogo");
   catalogo.innerHTML = "";
 
-  lista.forEach((producto, index) => {
-    const div = document.createElement("div");
-    div.className = "producto";
+  productos.forEach(p => {
+    var card = document.createElement("div");
+    card.className = "producto";
 
-    // Si no hay stock
-    if (producto.stock === 0) {
-      div.classList.add("agotado");
-    }
-
-    div.innerHTML = `
-      ${producto.badge ? `<span class="badge ${producto.badge}">${producto.badge}</span>` : ""}
-
-      <img src="${producto.imagen}" alt="${producto.nombre}">
-
+    card.innerHTML = `
+      <img src="${p.imagen}" alt="${p.nombre}">
       <div class="info">
-        <h2>${producto.nombre}</h2>
-        <p class="precio">$${producto.precio}</p>
-
-        ${
-          producto.stock > 0
-            ? `<button class="boton" onclick="agregarCarrito(${index})">
-                Agregar al carrito
-              </button>`
-            : `<button class="boton">Agotado</button>`
-        }
+        <h2>${p.nombre}</h2>
+        <p class="categoria">${p.categoria}</p>
+        <p class="precio">$${p.precio} MXN</p>
       </div>
     `;
 
-    catalogo.appendChild(div);
+    var btn = document.createElement("button");
+    btn.className = "boton";
+    btn.textContent = "Agregar al carrito";
+    btn.onclick = () => agregarAlCarrito(p);
+
+    card.querySelector(".info").appendChild(btn);
+    catalogo.appendChild(card);
   });
 }
 
+/* =========================
+   BUSCADOR
+========================= */
+var buscador = document.getElementById("buscador");
+buscador.addEventListener("input", aplicarBusqueda);
 
-/* === BUSCADOR === */
-buscador.oninput = () => {
-  const t = buscador.value.toLowerCase();
-  productosFiltrados = productosGlobal.filter(p =>
-    p.nombre.toLowerCase().includes(t) ||
-    p.categoria.toLowerCase().includes(t)
+function aplicarBusqueda() {
+  var texto = buscador.value.toLowerCase();
+
+  var resultado = productosFiltrados.filter(p =>
+    p.nombre.toLowerCase().includes(texto) ||
+    p.categoria.toLowerCase().includes(texto)
   );
-  paginaActual = 1;
-  render();
-};
 
-/* === FILTROS === */
-function crearFiltros(p) {
-  const nav = document.getElementById("filtros");
-  const cats = ["Todos", ...new Set(p.map(x => x.categoria))];
-  nav.innerHTML = "";
-  cats.forEach(c => {
-    const b = document.createElement("button");
-    b.textContent = c;
-    b.onclick = () => {
-      productosFiltrados = c === "Todos" ? productosGlobal : productosGlobal.filter(p => p.categoria === c);
-      paginaActual = 1;
-      render();
-    };
-    nav.appendChild(b);
-  });
+  mostrarProductos(resultado);
 }
 
-/* === CARRITO === */
-function agregarAlCarrito(p) {
-  const e = carrito.find(i => i.nombre === p.nombre);
-  e ? e.cantidad++ : carrito.push({...p, cantidad:1});
+/* =========================
+   CARRITO
+========================= */
+function agregarAlCarrito(producto) {
+  if (producto.stock <= 0) {
+    alert("Producto agotado");
+    return;
+  }
+
+  producto.stock--;
+
+  var encontrado = carrito.find(p => p.nombre === producto.nombre);
+
+  if (encontrado) {
+    encontrado.cantidad++;
+  } else {
+    carrito.push({
+      nombre: producto.nombre,
+      precio: producto.precio,
+      cantidad: 1
+    });
+  }
+
+  guardarCarrito();
+}
+
+function guardarCarrito() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
   actualizarCarrito();
 }
 
 function actualizarCarrito() {
-  count.textContent = carrito.reduce((a,b)=>a+b.cantidad,0);
+  var lista = document.getElementById("listaCarrito");
+  var totalTxt = document.getElementById("total");
+  var count = document.getElementById("count");
+
+  lista.innerHTML = "";
+  var total = 0;
+  var items = 0;
+
+  carrito.forEach(p => {
+    total += p.precio * p.cantidad;
+    items += p.cantidad;
+
+    var item = document.createElement("p");
+    item.textContent = `${p.nombre} x${p.cantidad}`;
+    lista.appendChild(item);
+  });
+
+  totalTxt.textContent = `Total: $${total} MXN`;
+  count.textContent = items;
+
+  actualizarWhatsApp(total);
 }
+
+/* =========================
+   WHATSAPP
+========================= */
+function actualizarWhatsApp(total) {
+  var mensaje = "Hola, quiero pedir:\n\n";
+
+  carrito.forEach(p => {
+    mensaje += `- ${p.nombre} x${p.cantidad}\n`;
+  });
+
+  mensaje += `\nTotal: $${total} MXN`;
+
+  document.getElementById("whatsBtn").href =
+    "https://wa.me/524761232612?text=" + encodeURIComponent(mensaje);
+}
+
+/* =========================
+   MODAL CARRITO
+========================= */
+document.getElementById("verCarrito").onclick = () => {
+  document.getElementById("modalCarrito").style.display = "block";
+};
+
+function cerrarCarrito() {
+  document.getElementById("modalCarrito").style.display = "none";
+}
+
+document.getElementById("vaciarCarrito").onclick = () => {
+  if (confirm("¿Vaciar carrito?")) {
+    carrito = [];
+    guardarCarrito();
+  }
+};
+
+/* =========================
+   MODO OSCURO / CLARO
+========================= */
+var btnTheme = document.getElementById("toggleTheme");
+var tema = localStorage.getItem("tema");
+
+if (tema === "dark") {
+  document.body.classList.add("dark");
+  btnTheme.textContent = "☀️";
+}
+
+btnTheme.onclick = () => {
+  document.body.classList.toggle("dark");
+  var oscuro = document.body.classList.contains("dark");
+  btnTheme.textContent = oscuro ? "☀️" : "🌙";
+  localStorage.setItem("tema", oscuro ? "dark" : "light");
+};
