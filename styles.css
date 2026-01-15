@@ -601,4 +601,16 @@ body.dark .filtros button.active {
   background: var(--accent);
   color: #fff;
 }
+/* ================= VISIT COUNTER ================= */
+.visit-counter {
+  text-align: center;
+  padding: 12px 20px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+
+body.dark .visit-counter {
+  opacity: 0.9;
+}
 
