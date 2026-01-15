@@ -16,7 +16,9 @@ fetch("productos.json")
   .then(data => {
     data.forEach(p => {
       p.stock = 1;
-      p.badge = "Nuevo";
+
+      // 🔥 NUEVO: escasez real
+      p.badge = "Última pieza";
     });
 
     productosGlobal = data;
@@ -127,22 +129,19 @@ function mostrarProductos() {
     card.className = "producto";
 
     card.innerHTML = `
-      ${p.badge ? `<span class="badge nuevo">${p.badge}</span>` : ""}
+      <span class="badge nuevo">${p.badge}</span>
       <img src="${p.imagen}" alt="${p.nombre}" loading="lazy">
       <div class="info">
         <h2>${p.nombre}</h2>
         <p>${p.categoria}</p>
         <p class="precio">$${p.precio} MXN</p>
-        <button class="boton" ${p.stock <= 0 ? "disabled" : ""}>
-          ${p.stock <= 0 ? "Agotado" : "Agregar al carrito"}
+        <button class="boton">
+          Apartar pieza
         </button>
       </div>
     `;
 
-    const btn = card.querySelector("button");
-    if (p.stock > 0) {
-      btn.onclick = () => agregarAlCarrito(p, card);
-    }
+    card.querySelector("button").onclick = () => agregarAlCarrito(p, card);
 
     catalogo.appendChild(card);
   });
@@ -193,34 +192,29 @@ function crearPaginacion() {
    CARRITO
 ========================= */
 function agregarAlCarrito(producto, card) {
-  if (producto.stock <= 0) return;
-
-  producto.stock--;
-
   const encontrado = carrito.find(p => p.nombre === producto.nombre);
 
-  if (encontrado) {
-    encontrado.cantidad++;
-  } else {
-    carrito.push({
-      nombre: producto.nombre,
-      precio: producto.precio,
-      cantidad: 1
-    });
-  }
+  if (encontrado) return;
+
+  carrito.push({
+    nombre: producto.nombre,
+    precio: producto.precio,
+    cantidad: 1
+  });
 
   localStorage.setItem("carrito", JSON.stringify(carrito));
   actualizarCarritoUI();
 
+  // 🔥 NUEVO: abrir carrito automáticamente
+  drawer.classList.add("open");
+  overlay.classList.add("show");
+
   card.classList.add("added");
   setTimeout(() => card.classList.remove("added"), 600);
-
-  render();
 }
 
 function actualizarCarritoUI() {
-  document.getElementById("count").textContent =
-    carrito.reduce((a, b) => a + b.cantidad, 0);
+  document.getElementById("count").textContent = carrito.length;
 
   const items = document.getElementById("cartItems");
   const totalTxt = document.getElementById("cartTotal");
@@ -234,24 +228,12 @@ function actualizarCarritoUI() {
     return;
   }
 
-  carrito.forEach((p, index) => {
-    total += p.precio * p.cantidad;
+  carrito.forEach(p => {
+    total += p.precio;
 
     const div = document.createElement("div");
     div.className = "cart-item";
-
-    div.innerHTML = `
-      <strong>${p.nombre}</strong>
-
-      <div class="cart-qty">
-        <button onclick="cambiarCantidad(${index}, -1)">−</button>
-        <span>${p.cantidad}</span>
-        <button onclick="cambiarCantidad(${index}, 1)">+</button>
-      </div>
-
-      <button class="cart-remove" onclick="eliminarProducto(${index})">🗑</button>
-    `;
-
+    div.innerHTML = `<strong>${p.nombre}</strong>`;
     items.appendChild(div);
   });
 
@@ -259,44 +241,38 @@ function actualizarCarritoUI() {
   actualizarWhats(total);
 }
 
-function cambiarCantidad(index, cambio) {
-  carrito[index].cantidad += cambio;
-
-  if (carrito[index].cantidad <= 0) {
-    carrito.splice(index, 1);
-  }
-
-  localStorage.setItem("carrito", JSON.stringify(carrito));
-  actualizarCarritoUI();
-}
-
-function eliminarProducto(index) {
-  carrito.splice(index, 1);
-  localStorage.setItem("carrito", JSON.stringify(carrito));
-  actualizarCarritoUI();
-}
-
+/* =========================
+   WHATSAPP (CONVERSIÓN)
+========================= */
 function actualizarWhats(total) {
-  let msg = "Hola, quiero pedir:\n\n";
+  let msg =
+`Hola 👋
+Quiero apartar las siguientes piezas de *Mi Tesoro MX*:
+
+`;
+
   carrito.forEach(p => {
-    msg += `- ${p.nombre} x${p.cantidad}\n`;
+    msg += `• ${p.nombre}\n`;
   });
-  msg += `\nTotal: $${total} MXN`;
+
+  msg += `
+Total: $${total} MXN
+
+Quedo pendiente para confirmar disponibilidad 🙌`;
 
   document.getElementById("whatsBtn").href =
     "https://wa.me/524761232612?text=" + encodeURIComponent(msg);
 }
 
+/* =========================
+   VACIAR CARRITO
+========================= */
 document.getElementById("vaciarCarrito").onclick = () => {
   if (!confirm("¿Vaciar carrito?")) return;
-
   carrito = [];
   localStorage.removeItem("carrito");
-
-  // Recargar página para reiniciar todo correctamente
   location.reload();
 };
-
 
 /* =========================
    DRAWER CARRITO
@@ -334,70 +310,3 @@ btnTheme.onclick = () => {
   btnTheme.textContent = oscuro ? "☀️" : "🌙";
   localStorage.setItem("tema", oscuro ? "dark" : "light");
 };
-
-const btnEnvios = document.getElementById("verEnvios");
-const modalEnvios = document.getElementById("modalEnvios");
-const cerrarEnvios = document.getElementById("cerrarEnvios");
-const enviosOverlay = document.getElementById("enviosOverlay");
-
-btnEnvios.onclick = e => {
-  e.preventDefault();
-  modalEnvios.style.display = "flex";
-  enviosOverlay.classList.add("show");
-};
-
-cerrarEnvios.onclick = cerrarModalEnvios;
-enviosOverlay.onclick = cerrarModalEnvios;
-
-function cerrarModalEnvios() {
-  modalEnvios.style.display = "none";
-  enviosOverlay.classList.remove("show");
-}
-
-const btnPagos = document.getElementById("verPagos");
-const modalPagos = document.getElementById("modalPagos");
-const cerrarPagos = document.getElementById("cerrarPagos");
-const pagosOverlay = document.getElementById("pagosOverlay");
-
-if (btnPagos) {
-  btnPagos.onclick = e => {
-    e.preventDefault();
-    modalPagos.style.display = "flex";
-    pagosOverlay.classList.add("show");
-  };
-}
-
-cerrarPagos.onclick = cerrarModalPagos;
-pagosOverlay.onclick = cerrarModalPagos;
-
-function cerrarModalPagos() {
-  modalPagos.style.display = "none";
-  pagosOverlay.classList.remove("show");
-}
-
-/* ================= INFO MODAL ================= */
-
-function abrirInfo() {
-  document.getElementById("infoOverlay").style.display = "block";
-  document.getElementById("infoModal").style.display = "block";
-}
-
-function cerrarInfo() {
-  document.getElementById("infoOverlay").style.display = "none";
-  document.getElementById("infoModal").style.display = "none";
-}
-
-document.getElementById("infoOverlay").onclick = cerrarInfo;
-
-/* ================= REFRESH AL VACIAR CARRITO ================= */
-const btnVaciar = document.getElementById("vaciarCarrito");
-if (btnVaciar) {
-  btnVaciar.onclick = () => {
-    if (!confirm("¿Vaciar carrito?")) return;
-    carrito = [];
-    localStorage.removeItem("carrito");
-    location.reload();
-  };
-}
-
-
