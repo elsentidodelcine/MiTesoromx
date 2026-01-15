@@ -21,7 +21,7 @@
 
     <div class="brand">
       <h1>Mi Tesoro MX</h1>
-      <p>Coleccionables de cine</p>
+      <p>Coleccionables de Cine</p>
     </div>
 
     <div class="header-actions">
@@ -43,14 +43,15 @@
       <button id="verCarrito" class="icon-btn cart">
         🛒 <span id="count">0</span>
       </button>
+    </div>
   </div>
 </header>
 
-<!-- 🔥 BARRA DE CONFIANZA (OPCIÓN 1) -->
+<!-- ================= NUEVO: BARRA DE CONFIANZA (TIPO MERCADO LIBRE) ================= -->
 <section class="ml-trust">
   <div class="trust-item">
     🔒 <strong>Pagos seguros</strong>
-    <span>Transferencia y OXXO</span>
+    <span>Transferencia u OXXO</span>
   </div>
 
   <div class="trust-item">
@@ -64,6 +65,11 @@
   </div>
 </section>
 
+<!-- ================= NUEVO: MENSAJE DE ESCASEZ GLOBAL ================= -->
+<section class="scarcity-global">
+  ⚠️ Todas las piezas son únicas. Si se venden, se retiran del catálogo.
+</section>
+
 <!-- FILTROS -->
 <nav id="filtros" class="filtros"></nav>
 
@@ -73,12 +79,28 @@
   <div id="paginacion" class="paginacion"></div>
 </main>
 
+<!-- ================= NUEVO: INFO DE COMPRA ================= -->
+<section class="info-compra">
+  <h3>¿Cómo funciona la compra?</h3>
+  <ul>
+    <li>✔ Todas las piezas son originales y únicas</li>
+    <li>✔ Aparta tu pieza por WhatsApp</li>
+    <li>✔ Pago por transferencia u OXXO</li>
+    <li>✔ Envíos a todo México</li>
+  </ul>
+</section>
+
 <!-- CARRITO DRAWER -->
 <aside id="cartDrawer" class="cart-drawer">
   <div class="cart-header">
-    <h2>🛒 Tu carrito</h2>
+    <h2>🛒 Piezas apartadas</h2>
     <button id="cerrarDrawer">✕</button>
   </div>
+
+  <!-- NUEVO TEXTO DE CONFIANZA -->
+  <p class="cart-hint">
+    Estas piezas se reservan al confirmar por WhatsApp
+  </p>
 
   <div id="cartItems" class="cart-items"></div>
 
@@ -86,7 +108,7 @@
     <p id="cartTotal">Total: $0 MXN</p>
 
     <a id="whatsBtn" class="btn-whatsapp" target="_blank">
-      Pedir por WhatsApp
+      Confirmar por WhatsApp
     </a>
 
     <button id="vaciarCarrito" class="btn-vaciar">
@@ -108,7 +130,7 @@
 <!-- FOOTER -->
 <footer class="footer-pro">
   <div class="footer-content">
-    <p>© 2026 Mi Tesoro MX - El Sentido del Cine · Venta vía WhatsApp</p>
+    <p>© 2026 Mi Tesoro MX · El Sentido del Cine · Venta vía WhatsApp</p>
 
     <div class="footer-links">
       <a href="politica-privacidad.html" target="_blank">Política de Privacidad</a>
