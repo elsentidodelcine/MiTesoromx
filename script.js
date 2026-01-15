@@ -310,3 +310,24 @@ btnTheme.onclick = () => {
   btnTheme.textContent = oscuro ? "☀️" : "🌙";
   localStorage.setItem("tema", oscuro ? "dark" : "light");
 };
+
+/* =========================
+   CONTADOR DE VISITAS
+========================= */
+(function contadorVisitas() {
+  let visitas = localStorage.getItem("visitasPagina");
+
+  if (!visitas) {
+    visitas = 1;
+  } else {
+    visitas = parseInt(visitas) + 1;
+  }
+
+  localStorage.setItem("visitasPagina", visitas);
+
+  const el = document.getElementById("visitasCount");
+  if (el) {
+    el.textContent = visitas;
+  }
+})();
+
