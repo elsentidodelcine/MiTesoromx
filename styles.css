@@ -772,3 +772,57 @@ body.dark .cart-qty button {
 #cartOverlay.show {
   display: block;
 }
+
+/* ===============================
+   MEJORAS CARRITO – CONVERSIÓN
+   =============================== */
+
+/* Animación al agregar producto */
+.producto.added {
+  animation: productoPop .4s ease;
+}
+
+@keyframes productoPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+/* Textos informativos carrito */
+.cart-note,
+.cart-secure,
+.cart-timer {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Temporizador */
+.cart-timer {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Mensaje confianza */
+.cart-secure {
+  font-size: 0.8rem;
+}
+
+/* Pulso WhatsApp */
+.btn-whatsapp {
+  animation: whatsappPulse 2s infinite;
+}
+
+@keyframes whatsappPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
