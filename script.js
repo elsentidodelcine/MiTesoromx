@@ -283,7 +283,9 @@ const overlay = document.getElementById("cartOverlay");
 document.getElementById("verCarrito").onclick = () => {
   drawer.classList.add("open");
   overlay.classList.add("show");
+  iniciarTemporizador();
 };
+
 
 document.getElementById("cerrarDrawer").onclick = cerrarDrawer;
 overlay.onclick = cerrarDrawer;
@@ -330,4 +332,31 @@ btnTheme.onclick = () => {
     el.textContent = visitas;
   }
 })();
+
+function iniciarTemporizador() {
+  let limite = localStorage.getItem("limiteReserva");
+
+  if (!limite) {
+    limite = Date.now() + 24 * 60 * 60 * 1000;
+    localStorage.setItem("limiteReserva", limite);
+  }
+
+  const timer = document.getElementById("cartTimer");
+  if (!timer) return;
+
+  const intervalo = setInterval(() => {
+    const restante = limite - Date.now();
+
+    if (restante <= 0) {
+      clearInterval(intervalo);
+      timer.textContent = "Reserva expirada";
+      return;
+    }
+
+    const h = Math.floor(restante / 3600000);
+    const m = Math.floor((restante % 3600000) / 60000);
+
+    timer.textContent = `⏳ Reserva válida: ${h}h ${m}m`;
+  }, 1000);
+}
 
