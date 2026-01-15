@@ -442,3 +442,104 @@ body.dark .filtros button.active {
   transform: translateY(-2px);
 }
 
+/* ================= MERCADO LIBRE STYLE ================= */
+
+/* TRUST BAR */
+.ml-trust {
+  max-width: 1200px;
+  margin: 30px auto 10px;
+  padding: 20px;
+  background: var(--card);
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 20px;
+  box-shadow: 0 12px 30px var(--shadow);
+}
+
+.ml-trust-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.ml-trust-item span {
+  font-size: 28px;
+}
+
+.ml-trust-item strong {
+  display: block;
+  font-size: .95rem;
+}
+
+.ml-trust-item p {
+  margin: 0;
+  font-size: .8rem;
+  opacity: .75;
+}
+
+/* CARD HOVER PRO */
+.producto {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.producto:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 50px rgba(0,0,0,.45);
+}
+
+/* BOTÓN ML */
+.boton {
+  font-weight: 600;
+  letter-spacing: .3px;
+  transition: filter .2s ease;
+}
+
+.boton:hover {
+  filter: brightness(1.1);
+}
+
+/* MODAL INFO */
+.ml-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.65);
+  z-index: 998;
+}
+
+.ml-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: var(--card);
+  color: var(--text);
+  width: 90%;
+  max-width: 420px;
+  padding: 25px;
+  border-radius: 18px;
+  z-index: 999;
+  box-shadow: 0 20px 60px rgba(0,0,0,.6);
+}
+
+.ml-modal h2 {
+  margin-top: 0;
+}
+
+.ml-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* DARK FIX FILTROS */
+body.dark .filtros button {
+  background: #222;
+  color: #fff;
+}
+
+
