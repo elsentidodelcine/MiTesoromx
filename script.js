@@ -375,3 +375,29 @@ function cerrarModalPagos() {
   pagosOverlay.classList.remove("show");
 }
 
+/* ================= INFO MODAL ================= */
+
+function abrirInfo() {
+  document.getElementById("infoOverlay").style.display = "block";
+  document.getElementById("infoModal").style.display = "block";
+}
+
+function cerrarInfo() {
+  document.getElementById("infoOverlay").style.display = "none";
+  document.getElementById("infoModal").style.display = "none";
+}
+
+document.getElementById("infoOverlay").onclick = cerrarInfo;
+
+/* ================= REFRESH AL VACIAR CARRITO ================= */
+const btnVaciar = document.getElementById("vaciarCarrito");
+if (btnVaciar) {
+  btnVaciar.onclick = () => {
+    if (!confirm("¿Vaciar carrito?")) return;
+    carrito = [];
+    localStorage.removeItem("carrito");
+    location.reload();
+  };
+}
+
+
