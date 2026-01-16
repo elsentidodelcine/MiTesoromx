@@ -1037,3 +1037,93 @@ body.dark .testimonios {
   opacity: .8;
 }
 
+/* ================= CARRITO PRO ================= */
+
+.cart-item {
+  background: linear-gradient(135deg, rgba(0,0,0,.03), rgba(0,0,0,.08));
+  border-radius: 16px;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+body.dark .cart-item {
+  background: rgba(255,255,255,.06);
+}
+
+.cart-item strong {
+  font-size: .9rem;
+  line-height: 1.3;
+}
+
+.cart-qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-qty button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: #eaeaea;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+body.dark .cart-qty button {
+  background: #333;
+  color: #fff;
+}
+
+.cart-remove {
+  border: none;
+  background: none;
+  color: #ff5252;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* TOTAL */
+#cartTotal {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* WHATSAPP BOTÓN */
+.btn-whatsapp {
+  background: linear-gradient(135deg,#25d366,#1ebc59);
+  padding: 16px;
+  border-radius: 18px;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+.btn-whatsapp:hover {
+  transform: scale(1.03);
+}
+
+/* VACIAR */
+.btn-vaciar {
+  border: none;
+  background: none;
+  color: #ff6b6b;
+  font-size: .85rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* MENSAJE */
+.cart-hint {
+  font-size: .8rem;
+  opacity: .75;
+  text-align: center;
+  margin-bottom: 10px;
+}
