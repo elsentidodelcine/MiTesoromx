@@ -778,8 +778,15 @@ body.dark .cart-qty button {
    =============================== */
 
 /* Animación al agregar producto */
+
 .producto.added {
-  animation: productoPop .4s ease;
+  animation: added 0.6s ease;
+}
+
+@keyframes added {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 @keyframes productoPop {
