@@ -134,8 +134,7 @@ function mostrarProductos() {
 
   <div class="info">
     <h2>${p.nombre}</h2>
-    <span class="stock-mental">1 pieza disponible</span>
-    <span class="envio-mini">📦 Envíos a todo México</span>
+   
 
     <p class="precio">$${p.precio} MXN</p>
 
