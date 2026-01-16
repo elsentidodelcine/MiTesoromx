@@ -228,10 +228,19 @@ function actualizarCarritoUI() {
   let total = 0;
 
   if (carrito.length === 0) {
-    items.innerHTML = "<p>Tu carrito está vacío</p>";
-    totalTxt.textContent = "Total: $0 MXN";
-    return;
-  }
+  items.innerHTML = `
+    <div style="text-align:center; padding:40px 10px;">
+      <div style="font-size:40px;">🛒</div>
+      <p><strong>Aún no eliges tu tesoro</strong></p>
+      <p style="font-size:.85rem; opacity:.7">
+        Todas las piezas son únicas
+      </p>
+    </div>
+  `;
+  totalTxt.textContent = "Total: $0 MXN";
+  return;
+}
+
 
   carrito.forEach(p => {
     total += p.precio;
