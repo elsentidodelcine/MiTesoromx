@@ -129,17 +129,22 @@ function mostrarProductos() {
     card.className = "producto";
 
     card.innerHTML = `
-      <span class="badge nuevo">${p.badge}</span>
-      <img src="${p.imagen}" alt="${p.nombre}" loading="lazy">
-      <div class="info">
-        <h2>${p.nombre}</h2>
-        <p>${p.categoria}</p>
-        <p class="precio">$${p.precio} MXN</p>
-        <button class="boton">
-          Apartar pieza
-        </button>
-      </div>
-    `;
+  ${p.badge ? `<span class="badge unico">ÚNICO</span>` : ""}
+  <img src="${p.imagen}" alt="${p.nombre}" loading="lazy">
+
+  <div class="info">
+    <h2>${p.nombre}</h2>
+    <span class="stock-mental">1 pieza disponible</span>
+    <span class="envio-mini">📦 Envíos a todo México</span>
+
+    <p class="precio">$${p.precio} MXN</p>
+
+    <button class="boton" ${p.stock <= 0 ? "disabled" : ""}>
+      ${p.stock <= 0 ? "Vendido" : "Agregar al carrito"}
+    </button>
+  </div>
+`;
+
 
     card.querySelector("button").onclick = () => agregarAlCarrito(p, card);
 
