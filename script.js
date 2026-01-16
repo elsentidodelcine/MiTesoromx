@@ -197,26 +197,42 @@ function crearPaginacion() {
    CARRITO
 ========================= */
 function agregarAlCarrito(producto, card) {
+  if (producto.stock <= 0) return;
+
+  producto.stock--;
+
   const encontrado = carrito.find(p => p.nombre === producto.nombre);
 
-  if (encontrado) return;
-
-  carrito.push({
-    nombre: producto.nombre,
-    precio: producto.precio,
-    cantidad: 1
-  });
+  if (encontrado) {
+    encontrado.cantidad++;
+  } else {
+    carrito.push({
+      nombre: producto.nombre,
+      precio: producto.precio,
+      cantidad: 1
+    });
+  }
 
   localStorage.setItem("carrito", JSON.stringify(carrito));
   actualizarCarritoUI();
 
-  // 🔥 NUEVO: abrir carrito automáticamente
-  drawer.classList.add("open");
-  overlay.classList.add("show");
+  // Animación botón
+  const btn = card.querySelector(".boton");
+  const textoOriginal = btn.textContent;
+  btn.textContent = "✓ Agregado";
+  btn.disabled = true;
 
-  card.classList.add("added");
-  setTimeout(() => card.classList.remove("added"), 600);
+  setTimeout(() => {
+    btn.textContent = textoOriginal;
+    btn.disabled = false;
+  }, 1200);
+
+  // Toast
+  mostrarToast(producto.nombre);
+
+  render();
 }
+
 
 function actualizarCarritoUI() {
   document.getElementById("count").textContent = carrito.length;
@@ -381,3 +397,25 @@ document.querySelectorAll('.faq-question').forEach(btn => {
     answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
   });
 });
+const toast = document.getElementById("cartToast");
+const toastText = document.getElementById("toastText");
+
+function mostrarToast(nombreProducto) {
+  toastText.textContent = `"${nombreProducto}" se agregó al carrito`;
+  toast.style.display = "block";
+
+  clearTimeout(window.toastTimeout);
+  window.toastTimeout = setTimeout(() => {
+    toast.style.display = "none";
+  }, 3500);
+}
+
+document.getElementById("toastCerrar").onclick = () => {
+  toast.style.display = "none";
+};
+
+document.getElementById("toastVerCarrito").onclick = () => {
+  toast.style.display = "none";
+  drawer.classList.add("open");
+  overlay.classList.add("show");
+};
