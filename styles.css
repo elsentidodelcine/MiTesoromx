@@ -946,4 +946,94 @@ body.dark .cart-qty button {
 .cart-legal-mini a:hover {
   text-decoration: underline;
 }
+/* ================= TRUST SECTION ================= */
+.trust-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.trust-grid {
+  max-width: 1000px;
+  margin: 30px auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap: 20px;
+}
+
+.trust-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px var(--shadow);
+  font-size: .95rem;
+}
+
+.trust-card span {
+  display: block;
+  font-size: .8rem;
+  opacity: .7;
+}
+
+/* ================= TESTIMONIOS ================= */
+.testimonios {
+  padding: 50px 20px;
+  background: rgba(0,0,0,.03);
+  text-align: center;
+}
+
+body.dark .testimonios {
+  background: rgba(255,255,255,.04);
+}
+
+.testimonios-grid {
+  max-width: 800px;
+  margin: 30px auto 0;
+  display: grid;
+  gap: 20px;
+}
+
+.testimonio {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px var(--shadow);
+  font-size: .9rem;
+}
+
+.testimonio span {
+  display: block;
+  margin-top: 8px;
+  font-size: .75rem;
+  opacity: .6;
+}
+
+/* ================= FAQ ================= */
+.faq {
+  padding: 50px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.faq-item {
+  margin-bottom: 12px;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: var(--card);
+  box-shadow: 0 8px 20px var(--shadow);
+  text-align: left;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.faq-answer {
+  display: none;
+  padding: 12px 14px;
+  font-size: .85rem;
+  opacity: .8;
+}
 
