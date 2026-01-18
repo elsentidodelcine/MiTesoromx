@@ -180,6 +180,28 @@
   { "nombre": "Cartas YuGiOh Monster Model17", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi17.jpg" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Cartas YuGiOh Monster Model18", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi18.jpg" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Cartas YuGiOh Monster Model19", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi19.jpg" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Cartas YuGiOh Monster Model20", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi20.jpg" ,"badge": "nuevo", "stock": 1}
+  { "nombre": "Cartas YuGiOh Monster Model20", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi20.jpg" ,"badge": "nuevo", "stock": 1},
+  
+  { "nombre": "Cartas YuGiOh Monster Model21", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi21.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model22", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi22.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model23", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi23.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model24", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi24.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model25", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi25.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model26", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi26.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model27", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi27.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model28", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi28.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model29", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi29.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model30", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi30.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model31", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi31.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model32", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi32.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model33", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi33.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model34", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi34.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model35", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi35.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model36", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi36.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model37", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi37.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model38", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi38.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model39", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi39.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model40", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi40.jpg" ,"badge": "nuevo", "stock": 1}
+  
 
 ]
