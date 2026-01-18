@@ -1370,4 +1370,45 @@ body.dark .paso {
 body.dark .paso p {
   color: #ddd;
 }
+.pasos-carrito {
+  background: #f5f5f5;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px 0;
+}
+
+.titulo-pasos {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.pasos-carrito ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pasos-carrito li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.pasos-carrito span {
+  width: 22px;
+  height: 22px;
+  background: #000;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 22px;
+}
+
+/* Modo oscuro */
+body.dark .pasos-carrito {
+  background: #1e1e1e;
+}
 
