@@ -1314,3 +1314,60 @@ body.dark .btn-cancelar {
   }
 }
 
+.como-funciona {
+  margin: 60px auto;
+  max-width: 1100px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.como-funciona h2 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.pasos-compra {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.paso {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.paso:hover {
+  transform: translateY(-5px);
+}
+
+.paso span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: #000;
+  color: #fff;
+  border-radius: 50%;
+  font-weight: bold;
+  line-height: 40px;
+  margin-bottom: 10px;
+}
+
+.paso p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* MODO OSCURO (si lo usas) */
+body.dark .paso {
+  background: #1e1e1e;
+  color: #f1f1f1;
+}
+
+body.dark .paso p {
+  color: #ddd;
+}
+
