@@ -201,7 +201,19 @@
   { "nombre": "Cartas YuGiOh Monster Model37", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi37.jpg" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Cartas YuGiOh Monster Model38", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi38.jpg" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Cartas YuGiOh Monster Model39", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi39.jpg" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Cartas YuGiOh Monster Model40", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi40.jpg" ,"badge": "nuevo", "stock": 1}
+  { "nombre": "Cartas YuGiOh Monster Model40", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi40.jpg" ,"badge": "nuevo", "stock": 1},
+
+  { "nombre": "Cartas YuGiOh Monster Model41", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi41.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model42", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi42.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model43", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi43.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model44", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi44.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model45", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi45.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model46", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi46.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model47", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi47.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model48", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi48.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Cartas YuGiOh Monster Model49", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi49.jpg" ,"badge": "nuevo", "stock": 1},
+
+  { "nombre": "Cartas YuGiOh Monster Model50", "categoria": "YuGiOh", "precio": 50, "imagen": "yugi/yugi50.jpg" ,"badge": "nuevo", "stock": 1}
   
 
 ]
