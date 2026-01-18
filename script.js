@@ -286,6 +286,7 @@ function actualizarWhats(total) {
 `Hola 👋
 Quiero apartar las siguientes piezas de *Mi Tesoro MX*:
 
+🛒 *Productos:* 
 `;
 
   carrito.forEach(p => {
@@ -293,13 +294,20 @@ Quiero apartar las siguientes piezas de *Mi Tesoro MX*:
   });
 
   msg += `
-Total: $${total} MXN
+💰 *Total:* $${total} MXN
+🔒 *Apartado:* 30% del total / pago total
 
-Quedo pendiente para confirmar disponibilidad 🙌`;
+📦 *Envío:* 
+📍 *Código Postal:* 
+
+Quedo atento(a) para confirmar disponibilidad 🙌
+Gracias ✨
+`;
 
   document.getElementById("whatsBtn").href =
     "https://wa.me/524761232612?text=" + encodeURIComponent(msg);
 }
+
 
 /* =========================
    VACIAR CARRITO
