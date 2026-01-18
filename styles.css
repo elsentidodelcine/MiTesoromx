@@ -1411,4 +1411,22 @@ body.dark .paso p {
 body.dark .pasos-carrito {
   background: #1e1e1e;
 }
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: #000;
+}
+
+.logo img {
+  height: 45px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    height: 38px;
+  }
+}
 
