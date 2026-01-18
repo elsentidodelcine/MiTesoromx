@@ -130,7 +130,11 @@ function mostrarProductos() {
 
     card.innerHTML = `
   ${p.badge ? `<span class="badge unico">ÚNICO</span>` : ""}
-  <img src="${p.imagen}" alt="${p.nombre}" loading="lazy">
+  <img src="${p.imagen}"
+     alt="${p.nombre}"
+     loading="lazy"
+     onclick="openImageModal('${p.imagen}')">
+
 
   <div class="info">
     <h2>${p.nombre}</h2>
