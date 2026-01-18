@@ -300,12 +300,26 @@ Quedo pendiente para confirmar disponibilidad 🙌`;
 /* =========================
    VACIAR CARRITO
 ========================= */
-document.getElementById("vaciarCarrito").onclick = () => {
-  if (!confirm("¿Vaciar carrito?")) return;
+const vaciarBtn = document.getElementById("vaciarCarrito");
+const confirmModal = document.getElementById("confirmModal");
+const confirmVaciar = document.getElementById("confirmVaciar");
+const cancelVaciar = document.getElementById("cancelVaciar");
+
+vaciarBtn.addEventListener("click", () => {
+  confirmModal.classList.add("show");
+});
+
+cancelVaciar.addEventListener("click", () => {
+  confirmModal.classList.remove("show");
+});
+
+confirmVaciar.addEventListener("click", () => {
   carrito = [];
-  localStorage.removeItem("carrito");
-  location.reload();
-};
+  guardarCarrito();
+  renderCarrito();
+  confirmModal.classList.remove("show");
+});
+
 
 /* =========================
    DRAWER CARRITO
