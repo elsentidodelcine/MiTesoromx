@@ -295,7 +295,7 @@ Quiero apartar las siguientes piezas de *Mi Tesoro MX*:
 
   msg += `
  *Total:* $${total} MXN
- *Tipo de Pago: Anticipo/Total
+ *Tipo de Pago:* Anticipo/Total
 
  *Envío:* 
  *Código Postal:* 
