@@ -14,7 +14,7 @@
   { "nombre": "Vaso Fast 7 Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "imgs/rapidos4.png" ,"badge": "nuevo", "stock": 1}, 
   { "nombre": "Vaso Fast 8 Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 50, "imagen": "imgs/rapidos5.png" ,"badge": "nuevo", "stock": 1}, 
   { "nombre": "Palomera FastX Movie Center RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "imgs/rapidos6.png" ,"badge": "nuevo", "stock": 1}, 
-  { "nombre": "Oferta Exclusiva - Llévate Todo Rapidos y Furiosos", "categoria": "RapidosyFuriosos", "precio": 500, "imagen": "imgs/rapidos8.png" ,"badge": "oferta", "stock": 1},
+  { "nombre": "Oferta Exclusiva - Llévate Todo Rapidos y Furiosos", "categoria": "RapidosyFuriosos", "precio": 350, "imagen": "imgs/rapidos8.png" ,"badge": "oferta", "stock": 1},
   
   { "nombre": "Vaso Minion Cinemex Model1 Minions", "categoria": "Minions", "precio": 50, "imagen": "imgs/minion1.png" ,"badge": "nuevo", "stock": 1}, 
   { "nombre": "Vaso Minion Cinemex Model2 Minions", "categoria": "Minions", "precio": 50, "imagen": "imgs/minion2.png" ,"badge": "nuevo", "stock": 1}, 
@@ -47,13 +47,17 @@
   { "nombre": "Palomera Aquaman Cinepolis DC", "categoria": "DC", "precio": 150, "imagen": "img/dc11.jpg" ,"badge": "nuevo", "stock": 1}, 
   { "nombre": "Termo Wonder Woman Cinepolis DC", "categoria": "DC", "precio": 150, "imagen": "img/dc12.jpg" ,"badge": "nuevo", "stock": 1}, 
   
-  { "nombre": "Vaso Caza Fantasma Figura Cinemex CazaFantasmas", "categoria": "CazaFantasmas", "precio": 80, "imagen": "img/fantasma1.jpg" ,"badge": "nuevo", "stock": 1}, 
-  { "nombre": "Vaso Caza Fantasma Movie Center CazaFantasmas", "categoria": "CazaFantasmas", "precio": 30, "imagen": "img/fantasma2.jpg" ,"badge": "nuevo", "stock": 1}, 
-  { "nombre": "Vaso Led Caza Fantasma Cinepolis CazaFantasmas", "categoria": "CazaFantasmas", "precio": 150, "imagen": "img/fantasma3.jpg" ,"badge": "nuevo", "stock": 1}, 
+  { "nombre": "Vaso Caza Fantasma Figura Cinemex CazaFantasmas", "categoria": "CazaFantasmas", "precio": 80, "imagen": "imgs/fantasma3.jpg" ,"badge": "nuevo", "stock": 1}, 
+  { "nombre": "Vaso Caza Fantasma Movie Center CazaFantasmas", "categoria": "CazaFantasmas", "precio": 30, "imagen": "imgs/fantasma1.jpg" ,"badge": "nuevo", "stock": 1}, 
+  { "nombre": "Vaso Led Caza Fantasma Cinepolis CazaFantasmas", "categoria": "CazaFantasmas", "precio": 150, "imagen": "imgs/fantasma2.jpg" ,"badge": "nuevo", "stock": 1}, 
+  { "nombre": "Oferta Exclusiva - Llévate Todo CazaFantasmas", "categoria": "CazaFantasmas", "precio": 200, "imagen": "imgs/fantasma4.png" ,"badge": "oferta", "stock": 1},
   
-  { "nombre": "Vaso Jurassic World Cinemex Model1 Jurassic World", "categoria": "Jurassic World", "precio": 80, "imagen": "img/jurassic1.jpg" ,"badge": "nuevo", "stock": 1}, 
-  { "nombre": "Vaso Jurassic World Cinemex Model2 Jurassic World", "categoria": "Jurassic World", "precio": 80, "imagen": "img/jurassic2.jpg" ,"badge": "nuevo", "stock": 1}, 
-  { "nombre": "Vaso Jurassic World Cinepolis Jurassic World", "categoria": "Jurassic World", "precio": 80, "imagen": "img/jurassic3.jpg" ,"badge": "nuevo", "stock": 1}, 
+  { "nombre": "Vaso Jurassic World Cinemex Model1 Jurassic World", "categoria": "Jurassic World", "precio": 80, "imagen": "imgs/dino3.jpg" ,"badge": "nuevo", "stock": 1}, 
+  { "nombre": "Vaso Jurassic World Cinemex Model2 Jurassic World", "categoria": "Jurassic World", "precio": 80, "imagen": "imgs/dino2.jpg" ,"badge": "nuevo", "stock": 1}, 
+  { "nombre": "Vaso Jurassic World Cinepolis Jurassic World", "categoria": "Jurassic World", "precio": 80, "imagen": "imgs/dino1.jpg" ,"badge": "nuevo", "stock": 1}, 
+  { "nombre": "Oferta Exclusiva - Llévate Todo Jurassic World", "categoria": "Jurassic World", "precio": 200, "imagen": "imgs/dino4.png" ,"badge": "oferta", "stock": 1},
+
+  { "nombre": "Palomera Iron Man 100 Disney Cinemex Marvel", "categoria": "Marvel", "precio": 400, "imagen": "imgs/ironman1.png" ,"badge": "nuevo", "stock": 1},
   
   { "nombre": "Vaso Coca Cola Elektra Cinemex Marvel", "categoria": "Marvel", "precio": 100, "imagen": "img/marvel1.jpg" ,"badge": "nuevo", "stock": 1}, 
   { "nombre": "Vaso Guardianes de la Galaxia Cinepolis Model1 Marvel", "categoria": "Marvel", "precio": 150, "imagen": "img/marvel2.jpg" ,"badge": "nuevo", "stock": 1}, 
@@ -75,12 +79,16 @@
   { "nombre": "Vasos Tang Avengers Marvel", "categoria": "Marvel", "precio": 30, "imagen": "img/marvel19.jpg" ,"badge": "nuevo", "stock": 1}, 
   { "nombre": "Vaso Avengers Figura Iron Man Cinemex Marvel", "categoria": "Marvel", "precio": 100, "imagen": "img/marvel20.jpg" ,"badge": "nuevo", "stock": 1}, 
   
-  { "nombre": "Vaso Beetlejuice Movie Center Beetle Juice", "categoria": "Beetle Juice", "precio": 50, "imagen": "img/beetle1.jpg" ,"badge": "nuevo", "stock": 1}, 
-  { "nombre": "Vaso Beetlejuice Figura Cinemex Beetle Juice", "categoria": "Beetle Juice", "precio": 100, "imagen": "img/beetle2.jpg" ,"badge": "nuevo", "stock": 1}, 
+  { "nombre": "Vaso Beetlejuice Movie Center Beetle Juice", "categoria": "Beetle Juice", "precio": 50, "imagen": "imgs/bee1.png" ,"badge": "nuevo", "stock": 1}, 
+  { "nombre": "Vaso Beetlejuice Figura Cinemex Beetle Juice", "categoria": "Beetle Juice", "precio": 100, "imagen": "imgs/bee2.png" ,"badge": "nuevo", "stock": 1}, 
+  { "nombre": "Oferta Exclusiva - Llévate Todo Beetle Juice", "categoria": "Beetle Juice", "precio": 120, "imagen": "imgss/bee3.png" ,"badge": "oferta", "stock": 1},
   
   { "nombre": "Palomera Patricio Bob Esponja Cinepolis", "categoria": "Infantil", "precio": 150, "imagen": "img/bob.jpg" ,"badge": "nuevo", "stock": 1}, 
-  { "nombre": "Vaso Borderlands Model1 ", "categoria": "Videojuegos", "precio": 50, "imagen": "img/borderlands1.jpg" ,"badge": "nuevo", "stock": 1}, 
-  { "nombre": "Vaso Borderlands Model2", "categoria": "Videojuegos", "precio": 50, "imagen": "img/borderlands2.jpg" ,"badge": "nuevo", "stock": 1}, 
+  
+  { "nombre": "Vaso Borderlands Model1 ", "categoria": "Videojuegos", "precio": 50, "imagen": "imgs/bor1.png" ,"badge": "nuevo", "stock": 1}, 
+  { "nombre": "Vaso Borderlands Model2", "categoria": "Videojuegos", "precio": 50, "imagen": "imgs/bor2.png" ,"badge": "nuevo", "stock": 1}, 
+  { "nombre": "Oferta Exclusiva - Llévate Todo Borderlands", "categoria": "Videojuegos", "precio": 60, "imagen": "imgs/bor3.png" ,"badge": "oferta", "stock": 1},
+  
   { "nombre": "Vaso Cars 3 Cinepolis", "categoria": "Infantil", "precio": 80, "imagen": "img/cars.jpg" ,"badge": "nuevo", "stock": 1}, 
   { "nombre": "Vaso Chicas Pesadas Cinepolis", "categoria": "Peliculas", "precio": 80, "imagen": "img/chicas.jpg" ,"badge": "nuevo", "stock": 1}, 
   { "nombre": "Vaso Assasin Cred", "categoria": "Videojuegos", "precio": 80, "imagen": "img/creed.jpg" ,"badge": "nuevo", "stock": 1}, 
@@ -97,6 +105,8 @@
   { "nombre": "Vaso Paw Patrol Cinemex", "categoria": "Infantil", "precio": 80, "imagen": "img/pawpatrol.jpg" ,"badge": "nuevo", "stock": 1}, 
   { "nombre": "Vaso Piratas del Caribe Cinepolis", "categoria": "Peliculas", "precio": 80, "imagen": "img/piratas.jpg" ,"badge": "nuevo", "stock": 1}, 
   { "nombre": "Vaso Ralph Cinepolis", "categoria": "Infantil", "precio": 80, "imagen": "img/ralph.jpg" ,"badge": "nuevo", "stock": 1}, 
+
+  { "nombre": "Vaso Totem Sin Tapa Mulan Cinepolis", "categoria": "Peliculas", "precio": 100, "imagen": "imgs/mulan.png" ,"badge": "nuevo", "stock": 1}, 
   
   { "nombre": "Palomera El Señor de los Anillos Cinepolis", "categoria": "Peliculas", "precio": 80, "imagen": "img/señor.jpg" ,"badge": "nuevo", "stock": 1}, 
   { "nombre": "Vaso Slam Dunk Cinepolis", "categoria": "Infantil", "precio": 80, "imagen": "img/slam.jpg" ,"badge": "nuevo", "stock": 1}, 
