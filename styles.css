@@ -1233,3 +1233,84 @@ body.dark .cart-toast {
   cursor: pointer;
   font-weight: bold;
 }
+
+/* ================= CONFIRM MODAL ================= */
+
+.confirm-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1400;
+}
+
+.confirm-modal.show {
+  display: flex;
+}
+
+.confirm-box {
+  background: var(--card);
+  color: var(--text);
+  width: 90%;
+  max-width: 360px;
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,.6);
+  animation: popIn .25s ease;
+}
+
+.confirm-box h3 {
+  margin-top: 0;
+}
+
+.confirm-box p {
+  font-size: .9rem;
+  opacity: .85;
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-cancelar {
+  flex: 1;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-confirmar {
+  flex: 1;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg,#ff5252,#ff1744);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+body.dark .btn-cancelar {
+  background: #333;
+  color: #fff;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
