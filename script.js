@@ -456,3 +456,17 @@ imageModal.addEventListener("click", (e) => {
     imageModal.style.display = "none";
   }
 });
+
+function scrollToCatalogo() {
+  const catalogo = document.getElementById("catalogo");
+  if (!catalogo) return;
+
+  const offset = 80; // altura del header
+  const top = catalogo.getBoundingClientRect().top + window.pageYOffset - offset;
+
+  window.scrollTo({
+    top,
+    behavior: "smooth"
+  });
+}
+
