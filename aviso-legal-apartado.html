@@ -1,143 +1,183 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Aviso legal de apartado | Mi Tesoro MX</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aviso Legal – Mi Tesoro MX</title>
 
-  <style>
-    .aviso-legal {
-  padding: 60px 20px;
-  background: #fafafa;
-}
+<style>
+  :root {
+    --bg: #0f0f0f;
+    --card: #161616;
+    --text: #e6e6e6;
+    --muted: #9a9a9a;
+    --accent: #c59d5f;
+    --border: #262626;
+  }
 
-.aviso-container {
-  max-width: 850px;
-  margin: auto;
-  background: #fff;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.08);
-}
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.8;
+  }
 
-.aviso-logo {
-  text-align: center;
-  margin-bottom: 20px;
-}
+  .wrap {
+    max-width: 760px;
+    margin: 60px auto;
+    padding: 0 20px;
+  }
 
-.aviso-logo img {
-  height: 70px;
-}
+  .card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 45px 40px;
+    border: 1px solid var(--border);
+  }
 
-.aviso-container h1 {
-  text-align: center;
-  margin-bottom: 25px;
-}
+  .brand {
+    text-align: center;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
 
-.aviso-container h2 {
-  margin-top: 30px;
-  margin-bottom: 10px;
-}
+  h1 {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 35px;
+    font-weight: 600;
+  }
 
-.aviso-container p {
-  line-height: 1.7;
-  margin-bottom: 15px;
-}
+  h2 {
+    font-size: 1.05rem;
+    margin-top: 35px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 
-.aviso-alerta {
-  background: #fff3cd;
-  border-left: 4px solid #ffc107;
-  padding: 15px;
-  border-radius: 8px;
-  margin-top: 25px;
-  font-size: 0.95rem;
-}
+  p {
+    margin: 14px 0;
+    color: var(--text);
+  }
 
-.aviso-footer {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 0.85rem;
-  opacity: 0.7;
-}
+  strong {
+    color: #fff;
+    font-weight: 600;
+  }
 
-  </style>
+  .note {
+    margin: 30px 0;
+    padding: 18px 20px;
+    border-left: 3px solid var(--accent);
+    background: #121212;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+
+  .contact a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .contact a:hover {
+    text-decoration: underline;
+  }
+
+  footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  @media (max-width: 600px) {
+    .card {
+      padding: 35px 25px;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+    }
+  }
+</style>
 </head>
+
 <body>
 
-  <section class="aviso-legal">
-  <div class="aviso-container">
+  <div class="wrap">
+    <div class="card">
 
-    <!-- Logo -->
-    <div class="aviso-logo">
-      <img src="img/logo.jpg" alt="Mi Tesoro MX">
+      <div class="brand">Mi Tesoro MX</div>
+
+      <h1>Aviso Legal – Condiciones de Apartado</h1>
+
+      <p>
+        El presente aviso establece los términos y condiciones aplicables a la modalidad
+        de <strong>apartado con anticipo</strong> ofrecida por <strong>Mi Tesoro MX</strong>.
+      </p>
+
+      <p>
+        Debido a que todas las piezas comercializadas son <strong>únicas</strong> y de
+        disponibilidad limitada, el apartado de cualquier producto requiere un
+        <strong>anticipo equivalente al 30% del valor total del artículo</strong>.
+      </p>
+
+      <p>
+        El apartado se considerará válido únicamente una vez recibido el anticipo.
+        A partir de ese momento, la pieza será retirada temporalmente del catálogo
+        y reservada para el comprador.
+      </p>
+
+      <h2>📦 Envío</h2>
+      <p>
+        El <strong>envío del producto se realizará únicamente cuando el pago total haya
+        sido liquidado</strong>. El anticipo garantiza la reserva, pero no activa el envío.
+      </p>
+
+      <h2>⏳ Plazo de pago</h2>
+      <p>
+        El comprador contará con un plazo máximo de
+        <strong>30 días naturales</strong> para liquidar el saldo restante, contados a
+        partir de la fecha de recepción del anticipo, salvo acuerdo distinto confirmado
+        previamente.
+      </p>
+
+      <h2>↩️ Cancelaciones</h2>
+      <p>
+        En caso de cancelación del apartado, se realizará el reembolso del monto abonado,
+        descontando una <strong>amonestación del 10% del valor total del producto</strong>,
+        correspondiente a gastos administrativos y pérdida de oportunidad de venta.
+      </p>
+
+      <div class="note">
+        ⚠️ Al realizar el anticipo, el comprador manifiesta su aceptación expresa de los
+        presentes términos y condiciones. Todas las piezas están sujetas a disponibilidad
+        al momento de la confirmación del anticipo.
+      </div>
+
+      <div class="contact">
+        <h2>📲 Contacto</h2>
+        <p>
+          Para solicitar un apartado es indispensable contactar previamente mediante
+          mensaje privado. Todas las condiciones serán confirmadas directamente por
+          <strong>WhatsApp</strong>.
+        </p>
+      </div>
+
+      <footer>
+        Última actualización: 2026 · El Sentido del Cine - Mi Tesoro MX 
+      </footer>
+
     </div>
-
-    <h1>Aviso Legal – Condiciones de Apartado con Anticipo</h1>
-
-    <p>
-      El presente aviso establece los términos y condiciones aplicables a la modalidad
-      de <strong>apartado con anticipo</strong> ofrecida por <strong>Mi Tesoro MX</strong>.
-    </p>
-
-    <p>
-      Debido a que todas las piezas comercializadas son <strong>únicas</strong> y de
-      <strong>disponibilidad limitada</strong>, el apartado de cualquier producto requiere
-      un <strong>anticipo equivalente al 30% del valor total del artículo</strong>.
-    </p>
-
-    <p>
-      El apartado se considerará válido y confirmado únicamente una vez recibido el
-      anticipo correspondiente. A partir de ese momento, la pieza será retirada
-      temporalmente del catálogo y reservada para el comprador.
-    </p>
-
-    <h2>📦 Envío del Pedido</h2>
-
-    <p>
-      El <strong>envío del producto se realizará únicamente hasta que el pago total del
-      artículo haya sido liquidado</strong>. El anticipo garantiza la reserva de la pieza,
-      pero no activa el envío.
-    </p>
-
-    <h2>⏳ Plazo de Pago</h2>
-
-    <p>
-      El comprador contará con un plazo máximo de
-      <strong>30 (treinta) días naturales</strong> para liquidar el saldo restante, contados
-      a partir de la fecha de recepción del anticipo, salvo acuerdo distinto previamente
-      confirmado por escrito.
-    </p>
-
-    <h2>↩️ Cancelaciones y Reembolsos</h2>
-
-    <p>
-      En caso de que el comprador decida cancelar el apartado o manifieste la imposibilidad
-      de continuar con el pago, se realizará el reembolso del monto abonado,
-      <strong>descontando una amonestación equivalente al 10% del valor total del producto</strong>,
-      correspondiente a gastos administrativos, gestión y pérdida de oportunidad de venta.
-    </p>
-
-    <div class="aviso-alerta">
-      ⚠️ Esta modalidad de apartado aplica para cualquier pieza, sujeta a disponibilidad
-      al momento de la confirmación del anticipo. Al realizar el anticipo, el comprador
-      manifiesta su conformidad y aceptación expresa de los presentes términos y condiciones.
-    </div>
-
-    <h2>📲 Contacto</h2>
-
-    <p>
-      Para solicitar un apartado, es indispensable contactar previamente mediante
-      <strong>mensaje privado</strong>. Todas las condiciones serán confirmadas directamente
-      por <strong>WhatsApp</strong>.
-    </p>
-
-    <p class="aviso-footer">
-      Última actualización: 2026 · <strong>Mi Tesoro MX</strong> – El Sentido del Cine
-    </p>
-
   </div>
-</section>
-
 
 </body>
 </html>
