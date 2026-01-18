@@ -283,10 +283,10 @@ function actualizarCarritoUI() {
 ========================= */
 function actualizarWhats(total) {
   let msg =
-`Hola 👋
+`Hola 
 Quiero apartar las siguientes piezas de *Mi Tesoro MX*:
 
-🛒 *Productos:* 
+ *Productos:* 
 `;
 
   carrito.forEach(p => {
@@ -294,14 +294,14 @@ Quiero apartar las siguientes piezas de *Mi Tesoro MX*:
   });
 
   msg += `
-💰 *Total:* $${total} MXN
-🔒 *Apartado:* 30% del total / pago total
+ *Total:* $${total} MXN
+ *Tipo de Pago: Anticipo/Total
 
-📦 *Envío:* 
-📍 *Código Postal:* 
+ *Envío:* 
+ *Código Postal:* 
 
-Quedo atento(a) para confirmar disponibilidad 🙌
-Gracias ✨
+Quedo atento(a) para confirmar disponibilidad 
+Gracias 
 `;
 
   document.getElementById("whatsBtn").href =
