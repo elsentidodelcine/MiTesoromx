@@ -319,10 +319,21 @@ cancelVaciar.addEventListener("click", () => {
 
 confirmVaciar.addEventListener("click", () => {
   carrito = [];
-  guardarCarrito();
-  renderCarrito();
+  localStorage.removeItem("carrito");
+
+  actualizarCarritoUI();
+  render();
+
   confirmModal.classList.remove("show");
+
+  // Opcional: cerrar el drawer
+  cerrarDrawer();
+
+  // Opcional: subir al catálogo
+  scrollToCatalogo();
 });
+
+
 
 
 /* =========================
