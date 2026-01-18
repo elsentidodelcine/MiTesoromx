@@ -179,9 +179,11 @@ function crearPaginacion() {
     if (i === paginaActual) btn.classList.add("active");
 
     btn.onclick = () => {
-      paginaActual = i;
-      render();
-    };
+     paginaActual = i;
+     render();
+     scrollToCatalogo();
+   };
+
 
     cont.appendChild(btn);
   }
@@ -190,9 +192,11 @@ function crearPaginacion() {
   next.textContent = "→";
   next.disabled = paginaActual === total;
   next.onclick = () => {
-    paginaActual++;
-    render();
-  };
+     paginaActual++;
+     render();
+     scrollToCatalogo();
+   };
+
   cont.appendChild(next);
 }
 
