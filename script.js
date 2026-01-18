@@ -418,3 +418,23 @@ document.getElementById("toastVerCarrito").onclick = () => {
   drawer.classList.add("open");
   overlay.classList.add("show");
 };
+const imageModal = document.getElementById("imageModal");
+const modalImage = document.getElementById("modalImage");
+const closeImageModal = document.getElementById("closeImageModal");
+
+// función reutilizable
+function openImageModal(src) {
+  modalImage.src = src;
+  imageModal.style.display = "flex";
+}
+
+// cerrar modal
+closeImageModal.addEventListener("click", () => {
+  imageModal.style.display = "none";
+});
+
+imageModal.addEventListener("click", (e) => {
+  if (e.target === imageModal) {
+    imageModal.style.display = "none";
+  }
+});
