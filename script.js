@@ -522,5 +522,11 @@ function scrollToCatalogo() {
   });
 
 
+document.addEventListener("click", e => {
+  const img = e.target.closest(".producto-img");
+  if (!img) return;
+
+  openImageModal(img.dataset.full);
+});
 
 
