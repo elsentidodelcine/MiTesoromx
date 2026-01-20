@@ -160,12 +160,6 @@ function mostrarProductos() {
 
 
 
-    card.querySelector("button").onclick = () => agregarAlCarrito(p, card);
-
-    catalogo.appendChild(card);
-  });
-}
-
 /* =========================
    PAGINACIÓN
 ========================= */
