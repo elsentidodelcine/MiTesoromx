@@ -476,9 +476,13 @@ const closeImageModal = document.getElementById("closeImageModal");
 
 // función reutilizable
 function openImageModal(src) {
+  const preload = document.getElementById("preloadImage");
+  if (preload) preload.href = src;
+
   modalImage.src = src;
   imageModal.style.display = "flex";
 }
+
 
 // cerrar modal
 closeImageModal.addEventListener("click", () => {
