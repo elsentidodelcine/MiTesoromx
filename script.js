@@ -129,24 +129,35 @@ function mostrarProductos() {
     card.className = "producto";
 
     card.innerHTML = `
-  ${p.badge ? `<span class="badge unico">ÚNICO</span>` : ""}
-  <img src="${p.imagen}"
-     alt="${p.nombre}"
-     loading="lazy"
-     onclick="openImageModal('${p.imagen}')">
+      ${p.badge ? `<span class="badge unico">ÚNICO</span>` : ""}
 
+      <div class="img-wrapper">
+        <img 
+          src="${p.imagen}"
+          alt="${p.nombre}"
+          loading="lazy"
+          width="300"
+          height="300"
+          class="producto-img"
+          data-full="${p.imagen}"
+        >
+      </div>
 
-  <div class="info">
-    <h2>${p.nombre}</h2>
-   
+      <div class="info">
+        <h2>${p.nombre}</h2>
+        <p class="precio">$${p.precio} MXN</p>
 
-    <p class="precio">$${p.precio} MXN</p>
+        <button class="boton" ${p.stock <= 0 ? "disabled" : ""}>
+          ${p.stock <= 0 ? "Vendido" : "Agregar al carrito"}
+        </button>
+      </div>
+    `;
 
-    <button class="boton" ${p.stock <= 0 ? "disabled" : ""}>
-      ${p.stock <= 0 ? "Vendido" : "Agregar al carrito"}
-    </button>
-  </div>
-`;
+    card.querySelector("button").onclick = () => agregarAlCarrito(p, card);
+    catalogo.appendChild(card);
+  });
+}
+
 
 
     card.querySelector("button").onclick = () => agregarAlCarrito(p, card);
