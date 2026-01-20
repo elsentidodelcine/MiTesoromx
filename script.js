@@ -221,6 +221,7 @@ function agregarAlCarrito(producto, card) {
     carrito.push({
       nombre: producto.nombre,
       precio: producto.precio,
+      imagen: producto.imagen, // ✅ AQUÍ SE AGREGA
       cantidad: 1
     });
   }
@@ -244,6 +245,7 @@ function agregarAlCarrito(producto, card) {
 
   render();
 }
+
 
 
 function actualizarCarritoUI() {
