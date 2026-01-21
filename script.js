@@ -295,20 +295,6 @@ function actualizarCarritoUI() {
 }
 
 
-
-  carrito.forEach(p => {
-    total += p.precio;
-
-    const div = document.createElement("div");
-    div.className = "cart-item";
-    div.innerHTML = `<strong>${p.nombre}</strong>`;
-    items.appendChild(div);
-  });
-
-  totalTxt.textContent = `Total: $${total} MXN`;
-  actualizarWhats(total);
-}
-
 /* =========================
    WHATSAPP (CONVERSIÓN)
 ========================= */
