@@ -1495,3 +1495,97 @@ body.dark .pasos-carrito {
   opacity: 1;
   color: red;
 }
+
+/* CONTENEDOR ITEMS CARRITO */
+.cart-items {
+  padding: 20px;
+}
+
+/* TARJETA DE PRODUCTO */
+.cart-item {
+  display: flex;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 16px;
+  background: var(--card-bg, #f7f7f7);
+  margin-bottom: 18px;
+  align-items: center;
+}
+
+/* IMAGEN PRODUCTO */
+.cart-item img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* TEXTO PRODUCTO */
+.cart-item-info h4 {
+  font-size: 1rem;
+  margin: 0 0 4px;
+}
+
+.cart-item-info .precio {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #d32f2f;
+}
+
+.cart-item-info .cantidad {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* BOTÓN ELIMINAR */
+.cart-item-remove {
+  margin-left: auto;
+  font-size: 20px;
+  color: #e53935;
+  cursor: pointer;
+}
+
+.cart-footer {
+  padding: 14px 18px;
+  border-top: 1px solid rgba(0,0,0,.05);
+}
+
+/* TOTAL */
+#cartTotal {
+  font-size: 1rem;
+  margin: 6px 0;
+}
+
+/* TEXTO LEGAL */
+.cart-legal-mini {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+/* PASOS */
+.pasos-carrito {
+  font-size: 0.8rem;
+}
+
+.pasos-carrito ul li {
+  margin-bottom: 4px;
+}
+
+/* BOTÓN WHATSAPP */
+.btn-whatsapp {
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+/* BOTÓN VACIAR */
+.btn-vaciar {
+  font-size: 0.75rem;
+  padding: 6px;
+}
+.cart-items {
+  max-height: 55vh;
+  overflow-y: auto;
+}
+
