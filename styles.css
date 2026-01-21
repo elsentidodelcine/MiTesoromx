@@ -1449,3 +1449,49 @@ body.dark .pasos-carrito {
   transform: scale(1.05);
 }
 
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 12px;
+  background: #f4f4f4;
+  margin-bottom: 10px;
+}
+
+.cart-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cart-info {
+  flex: 1;
+}
+
+.cart-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cart-price,
+.cart-qty {
+  font-size: 0.8rem;
+  margin: 2px 0;
+  opacity: 0.8;
+}
+
+.cart-remove {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.cart-remove:hover {
+  opacity: 1;
+  color: red;
+}
