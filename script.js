@@ -247,7 +247,7 @@ function agregarAlCarrito(producto, card) {
 }
 
 
-
+/* ACTUALIZAR EL CARRTIO */
 function actualizarCarritoUI() {
   const contenedor = document.getElementById("cartItems");
   const totalEl = document.getElementById("cartTotal");
@@ -258,42 +258,61 @@ function actualizarCarritoUI() {
   let total = 0;
   let totalItems = 0;
 
+  if (carrito.length === 0) {
+    contenedor.innerHTML = `
+      <div style="text-align:center; padding:40px 10px;">
+        <div style="font-size:40px;">🛒</div>
+        <p><strong>Aún no eliges tu tesoro</strong></p>
+        <p style="font-size:.85rem; opacity:.7">
+          Todas las piezas son únicas
+        </p>
+      </div>
+    `;
+    totalEl.textContent = "Total: $0 MXN";
+    countEl.textContent = 0;
+    return;
+  }
+
   carrito.forEach((p, index) => {
-  const subtotal = p.precio * p.cantidad;
-  total += subtotal;
+    const subtotal = p.precio * p.cantidad;
+    total += subtotal;
+    totalItems += p.cantidad;
 
-  const div = document.createElement("div");
-  div.className = "cart-item";
-  div.innerHTML = `
-    <img src="${p.imagen || 'placeholder.png'}" alt="${p.nombre}">
+    const div = document.createElement("div");
+    div.className = "cart-item";
 
-    <div class="cart-item-info">
-      <h4>${p.nombre}</h4>
-      <div class="precio">$${p.precio} MXN</div>
-      <div class="cantidad">Cantidad: ${p.cantidad}</div>
-      <div class="subtotal">Subtotal: $${subtotal} MXN</div>
-    </div>
+    div.innerHTML = `
+      <img src="${p.imagen}" alt="${p.nombre}">
 
-    <span class="cart-item-remove" data-index="${index}">✕</span>
-  `;
+      <div class="cart-item-info">
+        <h4>${p.nombre}</h4>
+        <div class="precio">$${p.precio} MXN</div>
+        <div class="cantidad">Cantidad: ${p.cantidad}</div>
+        <div class="subtotal">Subtotal: $${subtotal} MXN</div>
+      </div>
 
-  items.appendChild(div);
-});
+      <span class="cart-item-remove" data-index="${index}">✕</span>
+    `;
 
+    contenedor.appendChild(div);
+  });
 
   totalEl.textContent = `Total: $${total} MXN`;
   countEl.textContent = totalItems;
 
-  // Botones eliminar
-  document.querySelectorAll(".cart-remove").forEach(btn => {
-    btn.addEventListener("click", e => {
+  // listeners eliminar (UNO SOLO)
+  document.querySelectorAll(".cart-item-remove").forEach(btn => {
+    btn.onclick = e => {
       const index = e.target.dataset.index;
-      eliminarProductoCarrito(index);
-    });
+      const card = e.target.closest(".cart-item");
+      eliminarProducto(index, card);
+    };
   });
 
   localStorage.setItem("carrito", JSON.stringify(carrito));
+  actualizarWhats(total);
 }
+
 
 
 /* =========================
@@ -539,11 +558,8 @@ document.addEventListener("click", e => {
 
   openImageModal(img.dataset.full);
 });
-function eliminarProductoCarrito(index) {
-  carrito.splice(index, 1);
-  actualizarCarritoUI();
-}
 
+/* ELIMINAR PRODUCTOS DEL CARRITO */
 function eliminarProducto(index, elemento) {
   // animación salida
   elemento.classList.add("remove");
