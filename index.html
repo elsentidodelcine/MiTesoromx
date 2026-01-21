@@ -4,23 +4,26 @@
   <meta charset="UTF-8">
   <title>Mi Tesoro MX</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preload" href="styles.css" as="style">
-  <link rel="icon" href="favicon.png">
+
+  <!-- FAVICON CORRECTO -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- CSS NORMAL (SIN PRELOAD MAL USADO) -->
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<!-- LOADER -->
+<!-- ================= LOADER ================= -->
 <div id="loader">
   <div class="spinner"></div>
   <p>Cargando productos...</p>
 </div>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 <header class="header-pro">
   <div class="header-content">
     <div class="brand">
-      
       <h1>Mi Tesoro MX</h1>
       <p>Coleccionables de Cine</p>
     </div>
@@ -48,49 +51,50 @@
   </div>
 </header>
 
-<!-- BARRA DE CONFIANZA -->
-
-
-<!-- FILTROS -->
+<!-- ================= FILTROS ================= -->
 <nav id="filtros" class="filtros"></nav>
 
-<!-- CATÁLOGO -->
+<!-- ================= CATÁLOGO ================= -->
 <main>
+  <!-- AQUÍ SE RENDERIZAN LOS PRODUCTOS DESDE JS -->
+  <!-- IMPORTANTE: en JS usa thumbnails + loading="lazy" -->
   <section id="catalogo"></section>
+
   <div id="paginacion" class="paginacion"></div>
 </main>
 
-<!-- CARRITO -->
+<!-- ================= CARRITO DRAWER ================= -->
 <aside id="cartDrawer" class="cart-drawer">
+
   <div class="cart-header">
-    
     <h2>🛒 Tu Carrito</h2>
-    <button id="cerrarDrawer">✕</button>
+    <button id="cerrarDrawer" aria-label="Cerrar carrito">✕</button>
   </div>
 
+  <!-- ITEMS -->
   <div id="cartItems" class="cart-items"></div>
 
-
+  <!-- FOOTER CARRITO -->
   <div class="cart-footer">
+
     <p id="cartTotal">Total: $0 MXN</p>
-  <p class="cart-legal-mini">
-  📌 Apartados requieren <strong>30% de anticipo</strong>.  
-  <a href="aviso-legal-apartado.html" target="_blank">
-    Ver condiciones
-  </a>
-</p>
+
+    <p class="cart-legal-mini">
+      📌 Apartados requieren <strong>30% de anticipo</strong>.  
+      <a href="aviso-legal-apartado.html" target="_blank">Ver condiciones</a>
+    </p>
+
+    <!-- PASOS -->
     <div class="pasos-carrito">
-  <p class="titulo-pasos">¿Qué sigue?</p>
-
-  <ul>
-    <li><span>1</span> Confirma tu pedido por WhatsApp</li>
-    <li><span>2</span> Realiza el pago</li>
-    <li><span>3</span> Preparamos tu envío</li>
-    <li><span>4</span> Enviamos tu envío</li>
-    <li><span>5</span> Seguimiento hasta que te llegue</li>
-  </ul>
-</div>
-
+      <p class="titulo-pasos">¿Qué sigue?</p>
+      <ul>
+        <li><span>1</span> Confirma tu pedido por WhatsApp</li>
+        <li><span>2</span> Realiza el pago</li>
+        <li><span>3</span> Preparamos tu envío</li>
+        <li><span>4</span> Enviamos tu pedido</li>
+        <li><span>5</span> Seguimiento hasta que te llegue</li>
+      </ul>
+    </div>
 
     <a id="whatsBtn" class="btn-whatsapp" target="_blank">
       Confirmar por WhatsApp
@@ -99,15 +103,17 @@
     <button id="vaciarCarrito" class="btn-vaciar">
       Vaciar carrito
     </button>
+
   </div>
 </aside>
 
 <div id="cartOverlay"></div>
 
-<!-- WHATSAPP FLOAT -->
+<!-- ================= WHATSAPP FLOAT ================= -->
 <a id="whatsappFloat" href="https://wa.me/524761232612" target="_blank">
   💬
 </a>
+
 <!-- ================= CONFIANZA ================= -->
 <section class="trust-section">
   <h2>¿Por Qué Comprar en Mi Tesoro MX?</h2>
@@ -125,105 +131,74 @@
   <div class="testimonios-grid">
     <div class="testimonio">
       ⭐⭐⭐⭐⭐
-      <p>Todo muy bien, confié en él y no me ha decepcionado ya casi completo la colección de Disney y palomeras especiales.</p>
+      <p>Todo muy bien, confié en él y no me ha decepcionado.</p>
       <span>— Sheeqo Tomas Vaca</span>
     </div>
     <div class="testimonio">
       ⭐⭐⭐⭐⭐
-      <p>Tardo en enviar, pero el producto es tal cual lo publicó, lo recomiendo mucho.</p>
+      <p>Producto tal cual lo publicado, recomendado.</p>
       <span>— Joel Cordero</span>
     </div>
   </div>
 </section>
-  
-<!-- COMO FUNCIONA -->
+
+<!-- ================= COMO FUNCIONA ================= -->
 <section class="como-funciona">
   <h2>¿Cómo funciona la compra?</h2>
-
   <div class="pasos-compra">
-    <div class="paso">
-      <span>1</span>
-      <p>Elige tu producto y agrégalo al carrito.</p>
-    </div>
-
-    <div class="paso">
-      <span>2</span>
-      <p>Confirma tu pedido por WhatsApp.</p>
-    </div>
-
-    <div class="paso">
-      <span>3</span>
-      <p>Realiza el anticipo para apartar tu pieza o págalo por completo.</p>
-    </div>
-
-    <div class="paso">
-      <span>4</span>
-      <p>Tu pedido se prepara con cuidado.</p>
-    </div>
-
-    <div class="paso">
-      <span>5</span>
-      <p>Enviamos tu producto al día siguiente hábil.</p>
-    </div>
-
+    <div class="paso"><span>1</span><p>Agrega productos al carrito</p></div>
+    <div class="paso"><span>2</span><p>Confirma por WhatsApp</p></div>
+    <div class="paso"><span>3</span><p>Paga o aparta</p></div>
+    <div class="paso"><span>4</span><p>Preparamos tu pedido</p></div>
+    <div class="paso"><span>5</span><p>Envío al día siguiente</p></div>
   </div>
 </section>
 
-<!-- ================= FAQ ================= -->
-
-
-<!-- ================= FOOTER PRO ================= -->
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 <footer class="footer-pro">
   <div class="footer-content">
-   
-    <p>© 2026  El Sentido del Cine - Mi Tesoro MX - Venta Vía WhatsApp</p>
+    <p>© 2026 El Sentido del Cine - Mi Tesoro MX</p>
 
     <div class="footer-links">
       <a href="politica-privacidad.html" target="_blank">Política de Privacidad</a>
-      <a href="aviso-legal-apartado.html" target="_blank">Aviso Legal de Apartado</a>
+      <a href="aviso-legal-apartado.html" target="_blank">Aviso Legal</a>
       <a href="faq.html" target="_blank">Preguntas Frecuentes</a>
       <a href="https://facebook.com/ElSentidoDelCine" target="_blank">Facebook</a>
       <a href="https://wa.me/524761232612" target="_blank">WhatsApp</a>
-      <span style="font-size:.75rem; opacity:.7; text-align:center">
-  
-</span>
-
     </div>
   </div>
 </footer>
-<!-- TOAST CARRITO -->
+
+<!-- ================= TOAST ================= -->
 <div id="cartToast" class="cart-toast">
   <strong id="toastTitle">Agregado al carrito</strong>
   <p id="toastText"></p>
-
   <div class="toast-actions">
     <button id="toastVerCarrito">Ver carrito</button>
     <button id="toastCerrar">✕</button>
   </div>
 </div>
-<!-- MODAL IMAGEN PRODUCTO -->
+
+<!-- ================= MODAL IMAGEN ================= -->
 <div id="imageModal" class="image-modal">
   <span class="close-modal" id="closeImageModal">✕</span>
   <img id="modalImage" src="" alt="Imagen del producto">
 </div>
-<!-- MODAL CONFIRMACIÓN VACIAR CARRITO -->
+
+<!-- ================= MODAL CONFIRMAR ================= -->
 <div id="confirmModal" class="confirm-modal">
   <div class="confirm-box">
     <h3>¿Vaciar carrito?</h3>
-    <p>Esta acción eliminará todos los productos de tu carrito.</p>
-
+    <p>Esta acción eliminará todos los productos.</p>
     <div class="confirm-actions">
-      <button id="cancelVaciar" class="btn-cancelar">
-        Cancelar
-      </button>
-      <button id="confirmVaciar" class="btn-confirmar">
-        Sí, vaciar
-      </button>
+      <button id="cancelVaciar" class="btn-cancelar">Cancelar</button>
+      <button id="confirmVaciar" class="btn-confirmar">Sí, vaciar</button>
     </div>
   </div>
 </div>
 
+<!-- JS -->
 <script src="script.js"></script>
+
 </body>
 </html>
