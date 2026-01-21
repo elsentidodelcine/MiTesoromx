@@ -544,4 +544,14 @@ function eliminarProductoCarrito(index) {
   actualizarCarritoUI();
 }
 
+function eliminarProducto(index, elemento) {
+  // animación salida
+  elemento.classList.add("remove");
+
+  setTimeout(() => {
+    carrito.splice(index, 1);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    actualizarCarritoUI();
+  }, 300);
+}
 
