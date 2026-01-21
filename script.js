@@ -128,17 +128,21 @@ function mostrarProductos() {
     const card = document.createElement("div");
     card.className = "producto";
 
+    // 👉 generar thumbnail automáticamente
+    const thumb = p.imagen.replace("/imgs/", "/thumbs/");
+
     card.innerHTML = `
       ${p.badge ? `<span class="badge unico">ÚNICO</span>` : ""}
 
       <div class="img-wrapper">
-        <img 
-          src="${p.imagen}"
+        <img
+          src="${thumb}"
           alt="${p.nombre}"
+          class="producto-img"
           loading="lazy"
+          decoding="async"
           width="300"
           height="300"
-          class="producto-img"
           data-full="${p.imagen}"
         >
       </div>
@@ -152,6 +156,13 @@ function mostrarProductos() {
         </button>
       </div>
     `;
+
+    /* 👉 abrir imagen grande SOLO al dar click */
+    const img = card.querySelector(".producto-img");
+    img.addEventListener("click", () => {
+      document.getElementById("modalImage").src = img.dataset.full;
+      document.getElementById("imageModal").classList.add("active");
+    });
 
     card.querySelector("button").onclick = () => agregarAlCarrito(p, card);
     catalogo.appendChild(card);
