@@ -247,9 +247,11 @@ function agregarAlCarrito(producto, card) {
 }
 
 
-/* ACTUALIZAR EL CARRTIO */
+/* ACTUALIZAR EL CARRITO */
 function actualizarCarritoUI() {
   const contenedor = document.getElementById("cartItems");
+  const totalEl = document.getElementById("cartTotal");
+
   contenedor.innerHTML = "";
 
   let total = 0;
@@ -277,17 +279,20 @@ function actualizarCarritoUI() {
     contenedor.appendChild(div);
   });
 
-  document.getElementById("cartTotal").textContent =
-    `Total: $${total} MXN`;
+  totalEl.textContent = `Total: $${total} MXN`;
 
-  // eventos eliminar (MISMA clase que tu CSS)
+  /* EVENTOS ELIMINAR (CON ANIMACIÓN) */
   document.querySelectorAll(".cart-remove").forEach(btn => {
     btn.onclick = e => {
       const index = e.target.dataset.index;
-      eliminarProductoCarrito(index);
+      const item = e.target.closest(".cart-item");
+      eliminarProducto(index, item);
     };
   });
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
 }
+
 
 
 
