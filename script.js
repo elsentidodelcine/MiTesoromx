@@ -250,68 +250,45 @@ function agregarAlCarrito(producto, card) {
 /* ACTUALIZAR EL CARRTIO */
 function actualizarCarritoUI() {
   const contenedor = document.getElementById("cartItems");
-  const totalEl = document.getElementById("cartTotal");
-  const countEl = document.getElementById("count");
-
   contenedor.innerHTML = "";
 
   let total = 0;
-  let totalItems = 0;
-
-  if (carrito.length === 0) {
-    contenedor.innerHTML = `
-      <div style="text-align:center; padding:40px 10px;">
-        <div style="font-size:40px;">🛒</div>
-        <p><strong>Aún no eliges tu tesoro</strong></p>
-        <p style="font-size:.85rem; opacity:.7">
-          Todas las piezas son únicas
-        </p>
-      </div>
-    `;
-    totalEl.textContent = "Total: $0 MXN";
-    countEl.textContent = 0;
-    return;
-  }
 
   carrito.forEach((p, index) => {
     const subtotal = p.precio * p.cantidad;
     total += subtotal;
-    totalItems += p.cantidad;
 
     const div = document.createElement("div");
     div.className = "cart-item";
 
     div.innerHTML = `
-      <img src="${p.imagen}" alt="${p.nombre}">
+      <img src="${p.imagen || 'placeholder.png'}" class="cart-img" alt="${p.nombre}">
 
-      <div class="cart-item-info">
-        <h4>${p.nombre}</h4>
-        <div class="precio">$${p.precio} MXN</div>
-        <div class="cantidad">Cantidad: ${p.cantidad}</div>
-        <div class="subtotal">Subtotal: $${subtotal} MXN</div>
+      <div class="cart-info">
+        <p class="cart-name">${p.nombre}</p>
+        <p class="cart-price">$${p.precio} MXN</p>
+        <p class="cart-qty">Cantidad: ${p.cantidad}</p>
+        <p class="cart-qty"><strong>Subtotal:</strong> $${subtotal} MXN</p>
       </div>
 
-      <span class="cart-item-remove" data-index="${index}">✕</span>
+      <button class="cart-remove" data-index="${index}">✕</button>
     `;
 
     contenedor.appendChild(div);
   });
 
-  totalEl.textContent = `Total: $${total} MXN`;
-  countEl.textContent = totalItems;
+  document.getElementById("cartTotal").textContent =
+    `Total: $${total} MXN`;
 
-  // listeners eliminar (UNO SOLO)
-  document.querySelectorAll(".cart-item-remove").forEach(btn => {
+  // eventos eliminar (MISMA clase que tu CSS)
+  document.querySelectorAll(".cart-remove").forEach(btn => {
     btn.onclick = e => {
       const index = e.target.dataset.index;
-      const card = e.target.closest(".cart-item");
-      eliminarProducto(index, card);
+      eliminarProductoCarrito(index);
     };
   });
-
-  localStorage.setItem("carrito", JSON.stringify(carrito));
-  actualizarWhats(total);
 }
+
 
 
 
