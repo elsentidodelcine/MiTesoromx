@@ -249,27 +249,51 @@ function agregarAlCarrito(producto, card) {
 
 
 function actualizarCarritoUI() {
-  document.getElementById("count").textContent = carrito.length;
+  const contenedor = document.getElementById("cartItems");
+  const totalEl = document.getElementById("cartTotal");
+  const countEl = document.getElementById("count");
 
-  const items = document.getElementById("cartItems");
-  const totalTxt = document.getElementById("cartTotal");
+  contenedor.innerHTML = "";
 
-  items.innerHTML = "";
   let total = 0;
+  let totalItems = 0;
 
-  if (carrito.length === 0) {
-  items.innerHTML = `
-    <div style="text-align:center; padding:40px 10px;">
-      <div style="font-size:40px;">🛒</div>
-      <p><strong>Aún no eliges tu tesoro</strong></p>
-      <p style="font-size:.85rem; opacity:.7">
-        Todas las piezas son únicas
-      </p>
-    </div>
-  `;
-  totalTxt.textContent = "Total: $0 MXN";
-  return;
+  carrito.forEach((item, index) => {
+    total += item.precio * item.cantidad;
+    totalItems += item.cantidad;
+
+    const div = document.createElement("div");
+    div.className = "cart-item";
+
+    div.innerHTML = `
+      <img src="${item.imagen}" alt="${item.nombre}" class="cart-img">
+
+      <div class="cart-info">
+        <p class="cart-name">${item.nombre}</p>
+        <p class="cart-price">$${item.precio} MXN</p>
+        <p class="cart-qty">Cantidad: ${item.cantidad}</p>
+      </div>
+
+      <button class="cart-remove" data-index="${index}">✕</button>
+    `;
+
+    contenedor.appendChild(div);
+  });
+
+  totalEl.textContent = `Total: $${total} MXN`;
+  countEl.textContent = totalItems;
+
+  // Botones eliminar
+  document.querySelectorAll(".cart-remove").forEach(btn => {
+    btn.addEventListener("click", e => {
+      const index = e.target.dataset.index;
+      eliminarProductoCarrito(index);
+    });
+  });
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
 }
+
 
 
   carrito.forEach(p => {
@@ -528,5 +552,9 @@ document.addEventListener("click", e => {
 
   openImageModal(img.dataset.full);
 });
+function eliminarProductoCarrito(index) {
+  carrito.splice(index, 1);
+  actualizarCarritoUI();
+}
 
 
