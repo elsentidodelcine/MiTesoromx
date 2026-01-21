@@ -128,8 +128,8 @@ function mostrarProductos() {
     const card = document.createElement("div");
     card.className = "producto";
 
-    // 👉 generar thumbnail automáticamente
-    const thumb = p.imagen.replace("/imgs/", "/thumbs/");
+    // 🔥 THUMB AUTOMÁTICO
+    const thumb = p.imagen.replace("imgs/", "thumbs/");
 
     card.innerHTML = `
       ${p.badge ? `<span class="badge unico">ÚNICO</span>` : ""}
@@ -157,14 +157,14 @@ function mostrarProductos() {
       </div>
     `;
 
-    /* 👉 abrir imagen grande SOLO al dar click */
+    // 👉 abrir imagen grande SOLO al hacer click
     const img = card.querySelector(".producto-img");
     img.addEventListener("click", () => {
       document.getElementById("modalImage").src = img.dataset.full;
-      document.getElementById("imageModal").classList.add("active");
+      document.getElementById("imageModal").style.display = "flex";
     });
 
-    card.querySelector("button").onclick = () => agregarAlCarrito(p, card);
+    card.querySelector(".boton").onclick = () => agregarAlCarrito(p, card);
     catalogo.appendChild(card);
   });
 }
