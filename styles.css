@@ -1589,3 +1589,10 @@ body.dark .pasos-carrito {
   overflow-y: auto;
 }
 
+.cart-item.remove {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
