@@ -258,27 +258,28 @@ function actualizarCarritoUI() {
   let total = 0;
   let totalItems = 0;
 
-  carrito.forEach((item, index) => {
-    total += item.precio * item.cantidad;
-    totalItems += item.cantidad;
+  carrito.forEach((p, index) => {
+  const subtotal = p.precio * p.cantidad;
+  total += subtotal;
 
-    const div = document.createElement("div");
-    div.className = "cart-item";
+  const div = document.createElement("div");
+  div.className = "cart-item";
+  div.innerHTML = `
+    <img src="${p.imagen || 'placeholder.png'}" alt="${p.nombre}">
 
-    div.innerHTML = `
-      <img src="${item.imagen}" alt="${item.nombre}" class="cart-img">
+    <div class="cart-item-info">
+      <h4>${p.nombre}</h4>
+      <div class="precio">$${p.precio} MXN</div>
+      <div class="cantidad">Cantidad: ${p.cantidad}</div>
+      <div class="subtotal">Subtotal: $${subtotal} MXN</div>
+    </div>
 
-      <div class="cart-info">
-        <p class="cart-name">${item.nombre}</p>
-        <p class="cart-price">$${item.precio} MXN</p>
-        <p class="cart-qty">Cantidad: ${item.cantidad}</p>
-      </div>
+    <span class="cart-item-remove" data-index="${index}">✕</span>
+  `;
 
-      <button class="cart-remove" data-index="${index}">✕</button>
-    `;
+  items.appendChild(div);
+});
 
-    contenedor.appendChild(div);
-  });
 
   totalEl.textContent = `Total: $${total} MXN`;
   countEl.textContent = totalItems;
