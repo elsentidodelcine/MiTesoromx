@@ -175,7 +175,7 @@ function mostrarProductos() {
         <p class="precio">$${p.precio} MXN</p>
 
         <button class="boton" ${p.stock <= 0 ? "disabled" : ""}>
-          ${p.stock <= 0 ? "Vendido" : "Agregar al carrito"}
+          ${p.stock <= 0 ? "Apartado" : "Agregar al carrito"}
         </button>
       </div>
     `;
@@ -270,12 +270,13 @@ function agregarAlCarrito(producto, card) {
    actualizarContadorCarrito();
 
   // Animación botón
-  const btn = card.querySelector(".boton");
-  const textoOriginal = btn.textContent;
-  btn.textContent = "✓ Agregado";
-  btn.disabled = true;
+    const btn = card.querySelector(".boton");
+    btn.textContent = "Apartado";
+    btn.disabled = true;
+    btn.classList.add("apartado"); // opcional para estilizar
 
-  setTimeout(() => {
+
+    setTimeout(() => {
     btn.textContent = textoOriginal;
     btn.disabled = false;
   }, 1200);
@@ -575,16 +576,33 @@ function scrollToCatalogo() {
 
 /* ELIMINAR PRODUCTOS DEL CARRITO */
 function eliminarProducto(index, elemento) {
-  // animación salida
-  elemento.classList.add("remove");
+    // animación salida
+    elemento.classList.add("remove");
 
-  setTimeout(() => {
-    carrito.splice(index, 1);
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-    actualizarCarritoUI();
-     actualizarContadorCarrito();
-  }, 300);
+    setTimeout(() => {
+        const productoEliminado = carrito[index];
+
+        // Remover del carrito
+        carrito.splice(index, 1);
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        actualizarCarritoUI();
+        actualizarContadorCarrito();
+
+        // Restaurar botón de agregar
+        const catalogoItems = document.querySelectorAll(".producto");
+        catalogoItems.forEach(card => {
+            const nombre = card.querySelector("h2")?.textContent;
+            if (nombre === productoEliminado?.nombre) {
+                const btn = card.querySelector(".boton");
+                btn.textContent = "Agregar al carrito";
+                btn.disabled = false;
+                btn.classList.remove("apartado");
+            }
+        });
+
+    }, 300);
 }
+
 
 let startX = 0;
 
