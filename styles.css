@@ -28,11 +28,11 @@ body {
 
 
 /* ================= HEADER ================= */
-.header-pro {
+/*.header-pro {
   background: linear-gradient(180deg,#111,#000);
   color: #fff;
   padding: 20px;
-}
+}*/
 
 .header-content {
   max-width: 1300px;
@@ -1414,13 +1414,14 @@ body.dark .paso p {
 body.dark .pasos-carrito {
   background: #1e1e1e;
 }
-.header {
+
+/*.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 12px 20px;
   background: #000;
-}
+}*/
 
 .logo img {
   height: 45px;
@@ -1945,3 +1946,47 @@ body.dark .main-header .whatsapp-btn {
 body.dark .main-header .theme-btn {
   color: #fff;
 }
+
+/* =========================
+   HEADER FINAL (ÚNICO)
+========================= */
+
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,.88);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  color: var(--text);
+}
+
+.main-header a {
+  color: inherit;
+}
+
+/* ===== DARK MODE ===== */
+
+body.dark .main-header {
+  background: rgba(18,18,18,.95);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+body.dark .main-header * {
+  color: var(--text);
+}
+
+body.dark .main-header .cart-btn {
+  background: #fff;
+  color: #111;
+}
+
+body.dark .main-header .cart-btn span {
+  background: var(--accent);
+  color: #fff;
+}
+
