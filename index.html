@@ -21,35 +21,38 @@
 </div>
 
 <!-- ================= HEADER ================= -->
-<header class="header-pro">
-  <div class="header-content">
-    <div class="brand">
+<header class="main-header">
+  <div class="header-left">
+    <span class="logo-icon">🎬</span>
+    <div class="logo-text">
       <h1>Mi Tesoro MX</h1>
-      <p>Coleccionables de Cine</p>
-    </div>
-
-    <div class="header-actions">
-      <div class="search-box">
-        🔍
-        <input type="text" id="buscador" placeholder="Buscar...">
-      </div>
-
-      <select id="ordenar" class="icon-btn">
-        <option value="">Ordenar</option>
-        <option value="nombre-asc">Nombre A–Z</option>
-        <option value="nombre-desc">Nombre Z–A</option>
-        <option value="precio-asc">Precio ↑</option>
-        <option value="precio-desc">Precio ↓</option>
-      </select>
-
-      <button id="toggleTheme" class="icon-btn">🌙</button>
-
-      <button id="verCarrito" class="icon-btn cart">
-        🛒 <span id="count">0</span>
-      </button>
+      <span>Coleccionables de Cine y Artículos de Colección</span>
     </div>
   </div>
+
+  <nav class="header-center">
+    <a href="#catalogo">Catálogo</a>
+    <a href="#beneficios">Beneficios</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+
+  <div class="header-right">
+    <button id="verCarrito" class="cart-btn">
+      🛒 <span id="cartCount">0</span>
+    </button>
+
+    <a
+      href="https://wa.me/524761232612"
+      target="_blank"
+      class="whatsapp-btn"
+    >
+      WhatsApp
+    </a>
+
+    <button id="toggleTheme" class="theme-btn">🌙</button>
+  </div>
 </header>
+
 
 <!-- ================= FILTROS ================= -->
 <nav id="filtros" class="filtros"></nav>
