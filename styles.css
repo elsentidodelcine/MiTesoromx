@@ -1781,3 +1781,133 @@ body.dark .pasos-carrito {
   }
 }
 
+/* =========================
+   HEADER NUEVO – OVERRIDES
+========================= */
+
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,.88);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+/* LOGO */
+.main-header .header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main-header .logo-icon {
+  font-size: 26px;
+}
+
+.main-header .logo-text h1 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.main-header .logo-text span {
+  font-size: 12px;
+  color: #777;
+}
+
+/* NAV */
+.main-header .header-center {
+  display: flex;
+  gap: 20px;
+}
+
+.main-header .header-center a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  position: relative;
+}
+
+.main-header .header-center a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #e50914;
+  transition: width .3s ease;
+}
+
+.main-header .header-center a:hover::after {
+  width: 100%;
+}
+
+/* ACCIONES */
+.main-header .header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.main-header .cart-btn {
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.main-header .cart-btn span {
+  background: #e50914;
+  padding: 2px 6px;
+  border-radius: 12px;
+  margin-left: 6px;
+  font-size: 12px;
+}
+
+.main-header .whatsapp-btn {
+  background: #25D366;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.main-header .theme-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* MODO OSCURO */
+body.dark .main-header {
+  background: rgba(18,18,18,.9);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+body.dark .main-header .logo-text span {
+  color: #aaa;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .main-header .header-center {
+    display: none;
+  }
+
+  .main-header .logo-text span {
+    display: none;
+  }
+}
+
+
