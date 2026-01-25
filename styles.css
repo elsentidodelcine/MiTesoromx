@@ -1621,4 +1621,35 @@ body.dark .pasos-carrito {
 }
 
 
+/* ===== FIX HEADER MOBILE (SAFE) ===== */
+
+.header-content {
+  flex-wrap: nowrap !important;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 0;
+}
+
+.search-box input {
+  width: 100%;
+}
+
+.header-actions {
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .brand p {
+    display: none;
+  }
+
+  .icon-btn {
+    width: 34px;
+    height: 34px;
+  }
+}
 
