@@ -477,8 +477,6 @@ document.querySelectorAll('.faq-question').forEach(btn => {
     answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
   });
 });
-const toast = document.getElementById("cartToast");
-const toastText = document.getElementById("toastText");
 
 function mostrarToast(nombreProducto) {
   toastText.textContent = `"${nombreProducto}" se agregó al carrito`;
