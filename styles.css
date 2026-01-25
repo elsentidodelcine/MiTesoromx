@@ -33,9 +33,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
+  gap: 12px;
+  flex-wrap: nowrap; /* 🔥 CLAVE */
 }
+
 
 .brand h1 {
   margin: 0;
@@ -55,21 +56,14 @@ body {
 }
 
 .search-box {
-  background: #222;
-  padding: 8px 14px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  flex: 1;
+  min-width: 0; /* 🔥 evita overflow */
 }
 
 .search-box input {
-  background: transparent;
-  border: none;
-  outline: none;
-  color: #fff;
-  width: 180px;
+  width: 100%;
 }
+
 
 .icon-btn {
   background: #222;
