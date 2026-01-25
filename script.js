@@ -326,6 +326,8 @@ function actualizarCarritoUI() {
   });
 
   localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    actualizarEstadoVaciar();
 }
 
 
@@ -366,27 +368,15 @@ Gracias
 /* =========================
    VACIAR CARRITO
 ========================= */
-const vaciarBtn = document.getElementById("vaciarCarrito");
-const confirmVaciar = document.getElementById("confirmVaciar");
-const cancelVaciar = document.getElementById("cancelVaciar");
 
-if (vaciarBtn) {
-    vaciarBtn.addEventListener("click", () => {
-        confirmModal.classList.add("show");
-    });
+function actualizarEstadoVaciar() {
+    const btnVaciar = document.getElementById("vaciarCarrito");
+
+    if (!btnVaciar) return;
+
+    btnVaciar.disabled = carrito.length === 0;
 }
 
-if (cancelVaciar) {
-    cancelVaciar.addEventListener("click", () => {
-        confirmModal.classList.add("show");
-    });
-}
-
-if (confirmVaciar) {
-    confirmVaciar.addEventListener("click", () => {
-        confirmModal.classList.add("show");
-    });
-}
 
 
 /* =========================
@@ -566,14 +556,6 @@ function scrollToCatalogo() {
   });
 
 
-document.addEventListener("click", e => {
-    const img = e.target.closest(".producto-img");
-    if (!img) return;
-
-    openImageModal(img.dataset.full);
-});
-
-
 /* ELIMINAR PRODUCTOS DEL CARRITO */
 function eliminarProducto(index, elemento) {
   // animación salida
@@ -643,12 +625,14 @@ function actualizarContadorCarrito() {
 if (btnVaciarCarrito) {
     btnVaciarCarrito.addEventListener("click", () => {
         confirmModal.style.display = "flex";
+        confirmModal.classList.add("activo");
     });
 }
 
 // Cancelar vaciado
 if (cancelVaciar) {
     cancelVaciar.addEventListener("click", () => {
+        confirmModal.classList.remove("activo");
         confirmModal.style.display = "none";
     });
 }
@@ -657,13 +641,34 @@ if (cancelVaciar) {
 if (confirmVaciar) {
     confirmVaciar.addEventListener("click", () => {
         carrito = [];
-        guardarCarrito();
-        renderCarrito();
-        actualizarContador();
+        localStorage.removeItem("carrito");
 
+        actualizarCarritoUI();
+        actualizarContadorCarrito();
+        actualizarEstadoVaciar();
+        mostrarToastVaciado();
+
+        confirmModal.classList.remove("activo");
         confirmModal.style.display = "none";
     });
 }
+
+
+function mostrarToastVaciado() {
+    const toast = document.getElementById("cartToast");
+    const title = document.getElementById("toastTitle");
+    const text = document.getElementById("toastText");
+
+    title.textContent = "Carrito vaciado";
+    text.textContent = "Tu carrito quedó vacío";
+
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 3000);
+}
+
 
 
 

@@ -1242,11 +1242,11 @@ body.dark .cart-toast {
 .confirm-modal {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,.6);
+    background: rgba(0,0,0,0.5);
     display: none;
     align-items: center;
     justify-content: center;
-    z-index: 1400;
+    z-index: 999;
 }
 
 .confirm-modal.show {
@@ -1254,15 +1254,19 @@ body.dark .cart-toast {
 }
 
 .confirm-box {
-    background: var(--card);
-    color: var(--text);
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
     width: 90%;
-    max-width: 360px;
-    padding: 25px;
-    border-radius: 18px;
-    text-align: center;
-    box-shadow: 0 20px 60px rgba(0,0,0,.6);
-    animation: popIn .25s ease;
+    max-width: 320px;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.25s ease;
+}
+
+.confirm-modal.activo .confirm-box {
+    transform: scale(1);
+    opacity: 1;
 }
 
 .confirm-box h3 {
@@ -1998,3 +2002,10 @@ body.dark .main-header .cart-btn span {
     background: var(--accent);
     color: #fff;
 }
+
+.btn-vaciar:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
