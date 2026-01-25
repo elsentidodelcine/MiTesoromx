@@ -280,7 +280,7 @@ function actualizarCarritoUI() {
       <div class="cart-info">
         <p class="cart-name">${p.nombre}</p>
         <p class="cart-price">$${p.precio} MXN</p>
-        <p class="cart-qty">Cantidad: ${p.cantidad}</p>
+        <p class="cart-qty">Cantidad: 1</p>
         <p class="cart-qty"><strong>Subtotal:</strong> $${subtotal} MXN</p>
       </div>
 
