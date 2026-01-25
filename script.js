@@ -312,6 +312,10 @@ function actualizarCarritoUI() {
     `;
 
     contenedor.appendChild(div);
+      // Agregar al final de actualizarCarritoUI()
+      const total = carrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
+      actualizarWhats(total);
+
   });
 
   totalEl.textContent = `Total: $${total} MXN`;
@@ -624,9 +628,14 @@ function actualizarContadorCarrito() {
 // Abrir modal de confirmación
 if (btnVaciarCarrito) {
     btnVaciarCarrito.addEventListener("click", () => {
-        confirmModal.style.display = "flex";
-        confirmModal.classList.add("activo");
+        carrito = [];
+        localStorage.removeItem("carrito");
+        actualizarCarritoUI();
+        actualizarContadorCarrito();
+        actualizarEstadoVaciar();
+        mostrarToastVaciado();
     });
+
 }
 
 // Cancelar vaciado
