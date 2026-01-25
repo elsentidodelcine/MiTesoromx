@@ -32,13 +32,13 @@
 
 
   { "nombre": "Vaso Ant Man Cinepolis Model1 Marvel", "categoria": "Marvel", "precio": 50, "imagen": "thumbs/antman.png" },
-  { "nombre": "Vaso Ant Man Cinepolis Model2 Marvel", "categoria": "Marvel", "precio": 80, "imagen": "thumbs/antman1.png" },
-  { "nombre": "Vaso Ant Man Cinepolis Model3 Marvel", "categoria": "Marvel", "precio": 50, "imagen": "thumbs/antman3.jpg" },
-  { "nombre": "Vaso Ant Man Cinemex Model1 Marvel", "categoria": "Marvel", "precio": 80, "imagen": "thumbs/antman4.jpg" },
+  { "nombre": "Vaso Ant Man Cinepolis Model2 Marvel", "categoria": "Marvel", "precio": 80, "imagen": "thumbs/antman2.png" },
+  { "nombre": "Vaso Ant Man Cinepolis Model3 Marvel", "categoria": "Marvel", "precio": 50, "imagen": "thumbs/wasp.png" },
+  { "nombre": "Vaso Ant Man Cinemex Model1 Marvel", "categoria": "Marvel", "precio": 80, "imagen": "thumbs/wasp2.png" },
   { "nombre": "Oferta Exclusiva - Llévate Todo Ant Man", "categoria": "Marvel", "precio": 200, "imagen": "thumbs/antman3.png" ,"badge": "oferta", "stock": 1},
 
 
-  { "nombre": "Vaso Mini Batman Cinepolis DC", "categoria": "DC", "precio": 80, "imagen": "thumbs/batman2.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Mini Batman Cinepolis DC", "categoria": "DC", "precio": 80, "imagen": "thumbs/batman2.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Totem Batman Cinepolis DC", "categoria": "DC", "precio": 80, "imagen": "thumbs/batman1.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Batman", "categoria": "DC", "precio": 130, "imagen": "thumbs/batman3.png" ,"badge": "oferta", "stock": 1},
 
@@ -60,7 +60,7 @@
 
 
   { "nombre": "Vaso Los 4 Fantasticos Mujer Insivible Cinepolis Marvel", "categoria": "Marvel", "precio": 250, "imagen": "thumbs/cuatro1.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vaso Los 4 Fantasticos La Mole Cinepolis Marvel", "categoria": "Marvel", "precio": 250, "imagen": "thumbs/cuatro12.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Los 4 Fantasticos La Mole Cinepolis Marvel", "categoria": "Marvel", "precio": 250, "imagen": "thumbs/cuatro12.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Los 4 Fantasticos", "categoria": "Marvel", "precio": 400, "imagen": "thumbs/cuatro3.png" ,"badge": "oferta", "stock": 1},
 
 
