@@ -1911,3 +1911,37 @@ body.dark .main-header .logo-text span {
 }
 
 
+/* =========================
+   HEADER + MODO OSCURO FIX
+========================= */
+
+body.dark .main-header {
+  background: rgba(18, 18, 18, 0.95);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+body.dark .main-header .logo-text h1 {
+  color: #fff;
+}
+
+body.dark .main-header .header-center a {
+  color: #eee;
+}
+
+body.dark .main-header .cart-btn {
+  background: #fff;
+  color: #111;
+}
+
+body.dark .main-header .cart-btn span {
+  background: #e50914;
+  color: #fff;
+}
+
+body.dark .main-header .whatsapp-btn {
+  background: #1ebe57;
+}
+
+body.dark .main-header .theme-btn {
+  color: #fff;
+}
