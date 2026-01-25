@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const sharp = require("sharp");
 
-const ORIGEN = path.join(__dirname, "imgs");
+const ORIGEN = path.join(__dirname, "yugi");
 const DESTINO = path.join(__dirname, "thumbs");
 
 // crear carpeta thumbs si no existe
