@@ -11,6 +11,8 @@ const productosPorPagina = 12;
 ========================= */
 const toast = document.getElementById("cartToast");
 const toastText = document.getElementById("toastText");
+const toastCerrar = document.getElementById("toastCerrar");
+const toastVerCarrito = document.getElementById("toastVerCarrito");
 
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -490,7 +492,7 @@ function mostrarToast(nombreProducto) {
 }
 
 
-const toastCerrar = document.getElementById("toastCerrar");
+
 if (toastCerrar) {
     toastCerrar.onclick = () => {
         toast.style.display = "none";
@@ -498,9 +500,9 @@ if (toastCerrar) {
 }
 
 
-const toastCerrar = document.getElementById("toastVerCarrito");
-if (toastCerrar) {
-    toastCerrar.onclick = () => {
+
+if (toastVerCarrito) {
+    toastVerCarrito.onclick = () => {
         toast.style.display = "none";
     };
 }
