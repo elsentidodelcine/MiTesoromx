@@ -276,27 +276,7 @@ body {
 }
 
 /* ================= FOOTER ================= */
-.footer-pro {
-    background: #000;
-    color: #aaa;
-    padding: 30px 20px;
-    margin-top: 60px;
-}
 
-.footer-content {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.footer-links a {
-    color: #aaa;
-    text-decoration: none;
-    margin-right: 15px;
-}
 
 .footer-links a:hover {
     color: #fff;
@@ -356,10 +336,7 @@ body {
         width: 120px;
     }
 
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
+
 }
 
 /* ================= CARRITO DRAWER FIX ================= */
@@ -2048,34 +2025,7 @@ body.dark .main-header .cart-btn span {
     border-top: 1px solid rgba(255,255,255,.08);
 }
 
-.footer-container {
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 40px;
-}
 
-.footer-brand p {
-    font-size: .95rem;
-    margin: 12px 0 16px;
-    color: #aaa;
-}
-
-.footer-logo {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.footer-logo span {
-    background: linear-gradient(90deg,#ff5252,#ff1744);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
 
 .footer-links h4,
 .footer-trust h4 {
@@ -2084,13 +2034,6 @@ body.dark .main-header .cart-btn span {
     font-size: 1rem;
 }
 
-.footer-links a {
-    display: block;
-    margin-bottom: 10px;
-    color: #bbb;
-    text-decoration: none;
-    transition: color .25s ease;
-}
 
 .footer-links a:hover {
     color: #ff5252;
@@ -2205,13 +2148,7 @@ body.dark .main-header .cart-btn span {
     color: #f44336;
 }
 
-.footer-copy {
-    flex-basis: 100%;
-    text-align: center;
-    margin-top: 20px;
-    font-size: 0.9rem;
-    color: #888;
-}
+
 
 /* Responsive para móviles */
 @media (max-width: 768px) {
@@ -2253,4 +2190,42 @@ body.dark .main-header .cart-btn span {
     color: white;
     cursor: pointer;
     user-select: none;
+}
+
+/* FOOTER LIMPIO Y BONITO */
+.footer {
+    background: #111; /* fondo oscuro */
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-links {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: #ccc;
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ff5252; /* acento rojo */
+}
+
+.footer-copy {
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+    .footer-links a {
+        display: block;
+        margin: 6px 0;
+    }
 }
