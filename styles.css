@@ -409,16 +409,17 @@ body {
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,.55);
-    z-index: 1100;
+    z-index: 900; /* MÁS BAJO que el confirm */
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity .3s ease;
 }
 
 #cartOverlay.show {
     opacity: 1;
-    pointer-events: all;
+    pointer-events: auto;
 }
+
 
 /* ================= FILTROS EN MODO OSCURO ================= */
 body.dark .filtros button {
@@ -821,8 +822,10 @@ body.dark .cart-qty button {
 
 /* Pulso WhatsApp */
 .btn-whatsapp {
-    animation: whatsappPulse 2s infinite;
+    position: relative;
+    z-index: 1;
 }
+
 
 @keyframes whatsappPulse {
     0% {
@@ -1239,35 +1242,6 @@ body.dark .cart-toast {
 
 /* ================= CONFIRM MODAL ================= */
 
-.confirm-modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-}
-
-.confirm-modal.show {
-    display: flex;
-}
-
-.confirm-box {
-    background: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    width: 90%;
-    max-width: 320px;
-    transform: scale(0.9);
-    opacity: 0;
-    transition: all 0.25s ease;
-}
-
-.confirm-modal.activo .confirm-box {
-    transform: scale(1);
-    opacity: 1;
-}
 
 .confirm-box h3 {
     margin-top: 0;
@@ -2009,3 +1983,168 @@ body.dark .main-header .cart-btn span {
     pointer-events: none;
 }
 
+/* ===============================
+   MODAL CONFIRMACIÓN (VACÍAR)
+================================ */
+
+.confirm-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.65);
+    z-index: 9999; /* MÁS ALTO QUE EL CARRITO */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm-modal {
+    background: #1e1e1e;
+    color: #fff;
+    padding: 24px;
+    border-radius: 14px;
+    width: 90%;
+    max-width: 360px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.6);
+}
+
+.confirm-modal h3,
+.confirm-modal p {
+    color: #fff;
+}
+
+.confirm-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.confirm-actions button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-cancelar {
+    background: #333;
+    color: #fff;
+}
+
+.btn-confirmar {
+    background: #c62828;
+    color: #fff;
+}
+
+/* ===============================
+   FOOTER PRO
+================================ */
+
+.footer-pro {
+    background: radial-gradient(circle at top, #1c1c1c, #0f0f0f);
+    color: #ccc;
+    padding: 50px 20px 20px;
+    border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 40px;
+}
+
+.footer-brand p {
+    font-size: .95rem;
+    margin: 12px 0 16px;
+    color: #aaa;
+}
+
+.footer-logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-logo span {
+    background: linear-gradient(90deg,#ff5252,#ff1744);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-links h4,
+.footer-trust h4 {
+    margin-bottom: 14px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.footer-links a {
+    display: block;
+    margin-bottom: 10px;
+    color: #bbb;
+    text-decoration: none;
+    transition: color .25s ease;
+}
+
+.footer-links a:hover {
+    color: #ff5252;
+}
+
+/* TRUST LIST */
+.footer-trust ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-trust li {
+    margin-bottom: 8px;
+    font-size: .9rem;
+}
+
+/* SOCIALS */
+.footer-socials {
+    display: flex;
+    gap: 12px;
+}
+
+.social {
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: .85rem;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.social.whatsapp {
+    background: #25D366;
+    color: #fff;
+}
+
+.social.facebook {
+    background: #1877F2;
+    color: #fff;
+}
+
+/* BOTTOM */
+.footer-bottom {
+    margin-top: 40px;
+    text-align: center;
+    font-size: .85rem;
+    color: #777;
+    border-top: 1px solid rgba(255,255,255,.08);
+    padding-top: 16px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .footer-socials {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
