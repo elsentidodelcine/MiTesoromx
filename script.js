@@ -183,6 +183,17 @@ function mostrarProductos() {
 
     card.querySelector(".boton").onclick = () => agregarAlCarrito(p, card);
     catalogo.appendChild(card);
+    
+        // ================= MODAL DE IMAGEN =================
+        // Asignar click a cada imagen del producto para abrir el modal
+              const img = card.querySelector(".producto-img");
+              if (img) {
+                  img.addEventListener("click", () => {
+                      const srcGrande = img.dataset.full || img.src;
+                      openImageModal(srcGrande);
+                  });
+              }
+
   });
 }
 
@@ -357,9 +368,9 @@ Quiero apartar las siguientes piezas de *Mi Tesoro MX*:
 
   msg += `
  *Total:* $${total} MXN
- *Tipo de Pago:* Anticipo/Total
+ *Tipo de Pago:* Selecciona  - Apartado o Pago Total
 
- *Envío:* 
+ *Envío:* Selecciona - Correos de México, Estafeta o Fedex
  *Código Postal:* 
 
 Quedo atento(a) para confirmar disponibilidad 
