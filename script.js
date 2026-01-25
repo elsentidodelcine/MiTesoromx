@@ -14,6 +14,12 @@ const toastText = document.getElementById("toastText");
 const toastCerrar = document.getElementById("toastCerrar");
 const toastVerCarrito = document.getElementById("toastVerCarrito");
 
+const btnVaciarCarrito = document.getElementById("vaciarCarrito");
+const confirmModal = document.getElementById("confirmModal");
+const confirmVaciar = document.getElementById("confirmVaciar");
+const cancelVaciar = document.getElementById("cancelVaciar");
+
+
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
@@ -498,6 +504,8 @@ if (toastCerrar) {
 if (toastVerCarrito) {
     toastVerCarrito.onclick = () => {
         toast.style.display = "none";
+        drawer.classList.add("open");
+        overlay.classList.add("show");
     };
 }
 
@@ -631,5 +639,32 @@ function actualizarContadorCarrito() {
     contador.textContent = totalItems;
   }
 }
+
+// Abrir modal de confirmación
+if (btnVaciarCarrito) {
+    btnVaciarCarrito.addEventListener("click", () => {
+        confirmModal.style.display = "flex";
+    });
+}
+
+// Cancelar vaciado
+if (cancelVaciar) {
+    cancelVaciar.addEventListener("click", () => {
+        confirmModal.style.display = "none";
+    });
+}
+
+// Confirmar vaciado
+if (confirmVaciar) {
+    confirmVaciar.addEventListener("click", () => {
+        carrito = [];
+        guardarCarrito();
+        renderCarrito();
+        actualizarContador();
+
+        confirmModal.style.display = "none";
+    });
+}
+
 
 
