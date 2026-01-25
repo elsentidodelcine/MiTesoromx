@@ -20,6 +20,13 @@ body {
   color: var(--text);
 }
 
+.boton.reservado {
+  background: #999;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+
 /* ================= HEADER ================= */
 .header-pro {
   background: linear-gradient(180deg,#111,#000);
