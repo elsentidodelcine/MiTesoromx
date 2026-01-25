@@ -564,3 +564,41 @@ function eliminarProducto(index, elemento) {
   }, 300);
 }
 
+let startX = 0;
+
+document.addEventListener("touchstart", e => {
+  const item = e.target.closest(".cart-item");
+  if (!item) return;
+  startX = e.touches[0].clientX;
+  item.classList.add("swiping");
+});
+
+document.addEventListener("touchmove", e => {
+  const item = e.target.closest(".cart-item");
+  if (!item) return;
+
+  const diff = e.touches[0].clientX - startX;
+  if (diff < 0) {
+    item.style.transform = `translateX(${diff}px)`;
+  }
+});
+
+document.addEventListener("touchend", e => {
+  const item = e.target.closest(".cart-item");
+  if (!item) return;
+
+  item.classList.remove("swiping");
+  const transform = item.style.transform;
+  const moved = transform ? parseInt(transform.replace(/[^\-0-9]/g, "")) : 0;
+
+  if (moved < -80) {
+    item.classList.add("removed");
+    setTimeout(() => {
+      item.querySelector(".cart-remove")?.click();
+    }, 200);
+  } else {
+    item.style.transform = "";
+  }
+});
+
+
