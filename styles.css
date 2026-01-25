@@ -1,283 +1,1991 @@
-/* =====================================================
-MI TESORO MX – CSS OPTIMIZADO Y LIMPIO
-Autor: Nehomar
-Descripción:
-
-* Un solo estilo por componente
-* Compatible con modo oscuro
-* Orden profesional y mantenible
-  ===================================================== */
-
-/* =====================================================
-
-1. VARIABLES GLOBALES
-   Colores, sombras y base visual
-   ===================================================== */
-
 :root {
---bg: #f4f4f4;
---text: #111;
---card: #ffffff;
---accent: #c62828;
---shadow: rgba(0,0,0,0.15);
+  --bg: #f4f4f4;
+  --text: #111;
+  --card: #fff;
+  --accent: #c62828;
+  --shadow: rgba(0,0,0,0.15);
 }
 
 body.dark {
---bg: #121212;
---text: #f5f5f5;
---card: #1e1e1e;
---shadow: rgba(0,0,0,0.6);
+  --bg: #121212;
+  --text: #f5f5f5;
+  --card: #1e1e1e;
+  --shadow: rgba(0,0,0,0.6);
 }
-
-/* =====================================================
-2. ESTILOS BASE
-===================================================== */
 
 body {
-margin: 0;
-font-family: Inter, Arial, sans-serif;
-background: var(--bg);
-color: var(--text);
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
 
-a {
-color: inherit;
-text-decoration: none;
+.boton.reservado {
+  background: #999;
+  color: #fff;
+  cursor: not-allowed;
 }
 
-button {
-font-family: inherit;
+
+/* ================= HEADER ================= */
+/*.header-pro {
+  background: linear-gradient(180deg,#111,#000);
+  color: #fff;
+  padding: 20px;
+}*/
+
+.header-content {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: nowrap; /* 🔥 CLAVE */
 }
 
-/* =====================================================
-3. HEADER PRINCIPAL
-===================================================== */
 
-.main-header {
-position: sticky;
-top: 0;
-z-index: 1000;
-background: rgba(255,255,255,.9);
-backdrop-filter: blur(10px);
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding: 12px 24px;
-border-bottom: 1px solid rgba(0,0,0,.08);
+.brand h1 {
+  margin: 0;
+  font-size: 1.6rem;
 }
 
-.header-left {
-display: flex;
-align-items: center;
-gap: 10px;
+.brand p {
+  margin: 0;
+  font-size: .85rem;
+  opacity: .7;
 }
 
-.logo-text h1 {
-font-size: 18px;
-margin: 0;
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0; /* 🔥 no se aplastan */
 }
 
-.logo-text span {
-font-size: 12px;
-opacity: .7;
+
+.search-box {
+  flex: 1;
+  min-width: 0; /* 🔥 evita overflow */
 }
 
-.header-right {
-display: flex;
-gap: 12px;
-align-items: center;
+.search-box input {
+  width: 100%;
 }
 
-.cart-btn {
-background: #111;
-color: #fff;
-border: none;
-padding: 8px 14px;
-border-radius: 20px;
-cursor: pointer;
+
+.icon-btn {
+  background: #222;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.cart-btn span {
-background: var(--accent);
-padding: 2px 6px;
-border-radius: 12px;
-font-size: 12px;
-margin-left: 6px;
+.icon-btn.cart span {
+  font-size: .7rem;
+  background: #ff5252;
+  padding: 2px 6px;
+  border-radius: 12px;
+  margin-left: 4px;
 }
 
-/* =====================================================
-4. FILTROS
-===================================================== */
-
+/* ================= FILTROS ================= */
 .filtros {
-display: flex;
-gap: 10px;
-padding: 20px;
-justify-content: center;
-flex-wrap: wrap;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content: center;
 }
 
 .filtros button {
-padding: 8px 16px;
-border-radius: 20px;
-border: none;
-background: var(--card);
-box-shadow: 0 4px 10px var(--shadow);
-cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  background: var(--card);
+  cursor: pointer;
+  box-shadow: 0 4px 10px var(--shadow);
 }
 
 .filtros button.active {
-background: var(--accent);
-color: #fff;
+  background: var(--accent);
+  color: #fff;
 }
 
-/* =====================================================
-5. CATÁLOGO Y PRODUCTOS
-===================================================== */
-
+/* ================= CATÁLOGO ================= */
 #catalogo {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-gap: 28px;
-padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 28px;
+  padding: 40px;
 }
 
 .producto {
-background: var(--card);
-border-radius: 18px;
-box-shadow: 0 12px 30px var(--shadow);
-overflow: hidden;
-transition: transform .25s ease;
-}
-
-.producto:hover {
-transform: translateY(-6px);
+  background: var(--card);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px var(--shadow);
+  position: relative;
 }
 
 .producto img {
-width: 100%;
-height: 220px;
-object-fit: cover;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
 }
 
 .info {
-padding: 18px;
+  padding: 18px;
 }
 
 .precio {
-color: var(--accent);
-font-weight: bold;
+  color: var(--accent);
+  font-weight: bold;
 }
 
 .boton {
-margin-top: 12px;
-width: 100%;
-padding: 12px;
-border-radius: 14px;
-border: none;
-background: linear-gradient(135deg,#00ffd5,#00c2a8);
-cursor: pointer;
-font-weight: 600;
+  margin-top: 12px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg,#00ffd5,#00c2a8);
+  cursor: pointer;
 }
 
-/* =====================================================
-6. CARRITO – DRAWER
-===================================================== */
+/* ================= BADGES ================= */
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
 
+.badge.nuevo {
+  background: #00ffd5;
+  color: #000;
+}
+
+/* ================= PAGINACIÓN ================= */
+.paginacion {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 30px 0 50px;
+  flex-wrap: wrap;
+}
+
+.paginacion button {
+  padding: 8px 14px;
+  border-radius: 12px;
+  border: none;
+  background: var(--card);
+  color: var(--text);
+  box-shadow: 0 4px 12px var(--shadow);
+  cursor: pointer;
+  min-width: 40px;
+}
+
+.paginacion button.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ================= MODALES (ENVÍOS / PAGOS) ================= */
+/* ================= MODALES FIX ================= */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.65);
+  z-index: 1300;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.show {
+  display: flex;
+}
+
+
+.modal-contenido {
+  background: var(--card);
+  color: var(--text);
+  max-width: 500px;
+  width: 90%;
+  padding: 25px;
+  border-radius: 18px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,.6);
+}
+
+.modal-contenido h2 {
+  margin-bottom: 15px;
+}
+
+.cerrar {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* Envíos */
+.envio-item,
+.pago-item {
+  margin-bottom: 15px;
+}
+
+.envio-item h3,
+.pago-item h3 {
+  margin-bottom: 5px;
+}
+
+.envio-nota,
+.pago-nota {
+  margin-top: 20px;
+  font-size: 0.9em;
+  opacity: 0.85;
+}
+
+/* ================= OVERLAY ================= */
+.overlay,
+#enviosOverlay,
+#pagosOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  z-index: 998;
+}
+
+#enviosOverlay.show,
+#pagosOverlay.show {
+  display: block;
+}
+
+/* ================= FOOTER ================= */
+.footer-pro {
+  background: #000;
+  color: #aaa;
+  padding: 30px 20px;
+  margin-top: 60px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #aaa;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+/* ================= WHATSAPP FLOAT ================= */
+#whatsappFloat {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  width: 58px;
+  height: 58px;
+  background: #25d366;
+  color: #000;
+  font-size: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 999;
+}
+
+/* ================= LOADER ================= */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #ccc;
+  border-top: 4px solid var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-box input {
+    width: 120px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ================= CARRITO DRAWER FIX ================= */
 .cart-drawer {
-position: fixed;
-top: 0;
-right: -420px;
-width: 380px;
-height: 100vh;
-background: var(--card);
-box-shadow: -20px 0 40px rgba(0,0,0,.4);
-z-index: 1200;
-display: flex;
-flex-direction: column;
-transition: right .35s ease;
+  position: fixed;
+  top: 0;
+  right: -420px; /* oculto */
+  width: 360px;
+  max-width: 90%;
+  height: 100vh;
+  background: var(--card);
+  box-shadow: -20px 0 40px rgba(0,0,0,.4);
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s ease;
 }
 
 .cart-drawer.open {
-right: 0;
+  right: 0;
 }
 
+/* Header carrito */
 .cart-header {
-padding: 18px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-border-bottom: 1px solid rgba(0,0,0,.1);
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0,0,0,.1);
 }
 
+/* Items */
 .cart-items {
-flex: 1;
-padding: 16px;
-overflow-y: auto;
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+/* Footer carrito */
+.cart-footer {
+  padding: 15px;
+  border-top: 1px solid rgba(0,0,0,.1);
+}
+
+/* Overlay */
+#cartOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  z-index: 1100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#cartOverlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ================= FILTROS EN MODO OSCURO ================= */
+body.dark .filtros button {
+  background: #2a2a2a;
+  color: #f5f5f5;
+  box-shadow: 0 4px 12px rgba(0,0,0,.6);
+}
+
+body.dark .filtros button:hover {
+  background: #333;
+}
+
+body.dark .filtros button.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+
+.filtros button {
+  transition: background .2s ease, color .2s ease, transform .15s ease;
+}
+
+.filtros button:hover {
+  transform: translateY(-2px);
+}
+
+/* ================= MERCADO LIBRE STYLE ================= */
+
+/* TRUST BAR */
+.ml-trust {
+  max-width: 1200px;
+  margin: 30px auto 10px;
+  padding: 20px;
+  background: var(--card);
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 20px;
+  box-shadow: 0 12px 30px var(--shadow);
+}
+
+.ml-trust-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.ml-trust-item span {
+  font-size: 28px;
+}
+
+.ml-trust-item strong {
+  display: block;
+  font-size: .95rem;
+}
+
+.ml-trust-item p {
+  margin: 0;
+  font-size: .8rem;
+  opacity: .75;
+}
+
+/* CARD HOVER PRO */
+.producto {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.producto:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 50px rgba(0,0,0,.45);
+}
+
+/* BOTÓN ML */
+.boton {
+  font-weight: 600;
+  letter-spacing: .3px;
+  transition: filter .2s ease;
+}
+
+.boton:hover {
+  filter: brightness(1.1);
+}
+
+/* MODAL INFO */
+.ml-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.65);
+  z-index: 998;
+}
+
+.ml-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: var(--card);
+  color: var(--text);
+  width: 90%;
+  max-width: 420px;
+  padding: 25px;
+  border-radius: 18px;
+  z-index: 999;
+  box-shadow: 0 20px 60px rgba(0,0,0,.6);
+}
+
+.ml-modal h2 {
+  margin-top: 0;
+}
+
+.ml-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* DARK FIX FILTROS */
+body.dark .filtros button {
+  background: #222;
+  color: #fff;
+}
+
+/* ================= CONVERSIÓN PRO ================= */
+
+.badge.unico {
+  background: linear-gradient(135deg,#ff5252,#ff1744);
+  color: #fff;
+}
+
+.stock-mental {
+  display: block;
+  font-size: 0.75rem;
+  opacity: .75;
+  margin-bottom: 6px;
+}
+
+.envio-mini {
+  font-size: .7rem;
+  opacity: .7;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.boton {
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+.boton:hover {
+  transform: scale(1.02);
+}
+
+/* ================= CARRITO ================= */
+
+.cart-hint {
+  font-size: .8rem;
+  opacity: .7;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* ================= TRUST STRIP ================= */
+
+.trust-strip {
+  text-align: center;
+  padding: 25px 10px;
+  font-size: .85rem;
+  opacity: .7;
+}
+
+/* ================= DARK MODE FIX FILTROS ================= */
+
+body.dark .filtros button {
+  background: #1e1e1e;
+  color: #f5f5f5;
+}
+
+body.dark .filtros button.active {
+  background: var(--accent);
+  color: #fff;
+}
+/* ================= VISIT COUNTER ================= */
+.visit-counter {
+  text-align: center;
+  padding: 12px 20px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+
+body.dark .visit-counter {
+  opacity: 0.9;
+}
+
+/* =======================
+   CARRITO DRAWER PRO
+======================= */
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: -420px;
+  width: 380px;
+  height: 100vh;
+  background: var(--card);
+  color: var(--text);
+  box-shadow: -20px 0 40px rgba(0,0,0,.4);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  transition: right .35s ease;
+}
+
+.cart-drawer.open {
+  right: 0;
+}
+
+body.dark .cart-drawer {
+  background: #1a1a1a;
+}
+
+/* HEADER */
+.cart-header {
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.cart-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.cart-header button {
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* ITEMS */
+.cart-items {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .cart-item {
-display: flex;
-gap: 12px;
-padding: 14px;
-border-radius: 14px;
-background: var(--card);
-box-shadow: 0 6px 16px var(--shadow);
-margin-bottom: 12px;
+  background: rgba(0,0,0,.05);
+  padding: 14px;
+  border-radius: 14px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+body.dark .cart-item {
+  background: rgba(255,255,255,.06);
+}
+
+.cart-item strong {
+  font-size: .9rem;
+}
+
+/* CANTIDAD */
+.cart-qty {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cart-qty button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: #eee;
+}
+
+body.dark .cart-qty button {
+  background: #333;
+  color: #fff;
+}
+
+.cart-remove {
+  background: none;
+  border: none;
+  color: #ff5252;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* FOOTER */
+.cart-footer {
+  padding: 18px 20px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#cartTotal {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* WHATSAPP */
+.btn-whatsapp {
+  background: linear-gradient(135deg,#25d366,#1ebc59);
+  color: #000;
+  padding: 14px;
+  text-align: center;
+  border-radius: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform .2s;
+}
+
+.btn-whatsapp:hover {
+  transform: scale(1.03);
+}
+
+/* VACIAR */
+.btn-vaciar {
+  background: none;
+  border: none;
+  color: #ff6b6b;
+  font-size: .85rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* OVERLAY */
+#cartOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  z-index: 1000;
+  display: none;
+}
+
+#cartOverlay.show {
+  display: block;
+}
+
+/* ===============================
+   MEJORAS CARRITO – CONVERSIÓN
+   =============================== */
+
+/* Animación al agregar producto */
+
+.producto.added {
+  animation: added 0.6s ease;
+}
+
+@keyframes added {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes productoPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+/* Textos informativos carrito */
+.cart-note,
+.cart-secure,
+.cart-timer {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Temporizador */
+.cart-timer {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Mensaje confianza */
+.cart-secure {
+  font-size: 0.8rem;
+}
+
+/* Pulso WhatsApp */
+.btn-whatsapp {
+  animation: whatsappPulse 2s infinite;
+}
+
+@keyframes whatsappPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* ===============================
+   CARRITO – REDISEÑO VISUAL PRO
+   =============================== */
+
+/* Item del carrito */
+.cart-item {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 14px 16px;
+  box-shadow: 0 6px 18px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.cart-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px var(--shadow);
+}
+
+/* Nombre producto */
+.cart-item strong {
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+/* Precio */
+.cart-price {
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Controles */
+.cart-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+/* Cantidad */
+.cart-qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-qty button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: #eee;
+  transition: background .2s ease, transform .15s ease;
+}
+
+.cart-qty button:hover {
+  transform: scale(1.1);
+}
+
+body.dark .cart-qty button {
+  background: #333;
+  color: #fff;
+}
+
+/* Eliminar */
+.cart-remove {
+  background: none;
+  border: none;
+  color: #ff5252;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform .15s ease;
+}
+
+.cart-remove:hover {
+  transform: scale(1.2);
+}
+
+/* Mensajes informativos */
+.cart-note {
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.75;
+  margin-bottom: 6px;
+}
+
+.cart-secure {
+  text-align: center;
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.cart-timer {
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.cart-legal-mini {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.cart-legal-mini a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.cart-legal-mini a:hover {
+  text-decoration: underline;
+}
+/* ================= TRUST SECTION ================= */
+.trust-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.trust-grid {
+  max-width: 1000px;
+  margin: 30px auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap: 20px;
+}
+
+.trust-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px var(--shadow);
+  font-size: .95rem;
+}
+
+.trust-card span {
+  display: block;
+  font-size: .8rem;
+  opacity: .7;
+}
+
+/* ================= TESTIMONIOS ================= */
+.testimonios {
+  padding: 50px 20px;
+  background: rgba(0,0,0,.03);
+  text-align: center;
+}
+
+body.dark .testimonios {
+  background: rgba(255,255,255,.04);
+}
+
+.testimonios-grid {
+  max-width: 800px;
+  margin: 30px auto 0;
+  display: grid;
+  gap: 20px;
+}
+
+.testimonio {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px var(--shadow);
+  font-size: .9rem;
+}
+
+.testimonio span {
+  display: block;
+  margin-top: 8px;
+  font-size: .75rem;
+  opacity: .6;
+}
+
+/* ================= FAQ ================= */
+.faq {
+  padding: 50px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.faq-item {
+  margin-bottom: 12px;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: var(--card);
+  box-shadow: 0 8px 20px var(--shadow);
+  text-align: left;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.faq-answer {
+  display: none;
+  padding: 12px 14px;
+  font-size: .85rem;
+  opacity: .8;
+}
+
+/* ================= CARRITO PRO ================= */
+
+.cart-item {
+  background: linear-gradient(135deg, rgba(0,0,0,.03), rgba(0,0,0,.08));
+  border-radius: 16px;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+body.dark .cart-item {
+  background: rgba(255,255,255,.06);
+}
+
+.cart-item strong {
+  font-size: .9rem;
+  line-height: 1.3;
+}
+
+.cart-qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-qty button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: #eaeaea;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+body.dark .cart-qty button {
+  background: #333;
+  color: #fff;
+}
+
+.cart-remove {
+  border: none;
+  background: none;
+  color: #ff5252;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* TOTAL */
+#cartTotal {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* WHATSAPP BOTÓN */
+.btn-whatsapp {
+  background: linear-gradient(135deg,#25d366,#1ebc59);
+  padding: 16px;
+  border-radius: 18px;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+.btn-whatsapp:hover {
+  transform: scale(1.03);
+}
+
+/* VACIAR */
+.btn-vaciar {
+  border: none;
+  background: none;
+  color: #ff6b6b;
+  font-size: .85rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* MENSAJE */
+.cart-hint {
+  font-size: .8rem;
+  opacity: .75;
+  text-align: center;
+  margin-bottom: 10px;
+}
+/* ================= TOAST CARRITO ================= */
+
+.cart-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--card);
+  color: var(--text);
+  width: 280px;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,.3);
+  z-index: 2000;
+  display: none;
+  animation: slideIn .35s ease;
+}
+
+.cart-toast strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: .95rem;
+}
+
+.cart-toast p {
+  font-size: .85rem;
+  opacity: .8;
+  margin: 0 0 10px;
+}
+
+.toast-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toast-actions button {
+  border: none;
+  cursor: pointer;
+  font-size: .8rem;
+}
+
+#toastVerCarrito {
+  background: var(--accent);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 10px;
+}
+
+#toastCerrar {
+  background: none;
+  font-size: 16px;
+  opacity: .6;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+body.dark .cart-toast {
+  background: #1e1e1e;
+}
+
+/* MODAL IMAGEN */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.image-modal img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.6);
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ================= CONFIRM MODAL ================= */
+
+.confirm-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1400;
+}
+
+.confirm-modal.show {
+  display: flex;
+}
+
+.confirm-box {
+  background: var(--card);
+  color: var(--text);
+  width: 90%;
+  max-width: 360px;
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,.6);
+  animation: popIn .25s ease;
+}
+
+.confirm-box h3 {
+  margin-top: 0;
+}
+
+.confirm-box p {
+  font-size: .9rem;
+  opacity: .85;
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-cancelar {
+  flex: 1;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-confirmar {
+  flex: 1;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg,#ff5252,#ff1744);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+body.dark .btn-cancelar {
+  background: #333;
+  color: #fff;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.como-funciona {
+  margin: 60px auto;
+  max-width: 1100px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.como-funciona h2 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.pasos-compra {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.paso {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.paso:hover {
+  transform: translateY(-5px);
+}
+
+.paso span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: #000;
+  color: #fff;
+  border-radius: 50%;
+  font-weight: bold;
+  line-height: 40px;
+  margin-bottom: 10px;
+}
+
+.paso p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* MODO OSCURO (si lo usas) */
+body.dark .paso {
+  background: #1e1e1e;
+  color: #f1f1f1;
+}
+
+body.dark .paso p {
+  color: #ddd;
+}
+.pasos-carrito {
+  background: #f5f5f5;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px 0;
+}
+
+.titulo-pasos {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.pasos-carrito ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pasos-carrito li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.pasos-carrito span {
+  width: 22px;
+  height: 22px;
+  background: #000;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 22px;
+}
+
+/* Modo oscuro */
+body.dark .pasos-carrito {
+  background: #1e1e1e;
+}
+
+/*.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: #000;
+}*/
+
+.logo img {
+  height: 45px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    height: 38px;
+  }
+}
+.img-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #111;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.producto-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: zoom-in;
+  transition: transform 0.25s ease;
+}
+
+.producto-img:hover {
+  transform: scale(1.05);
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 12px;
+  background: #f4f4f4;
+  margin-bottom: 10px;
+}
+
+.cart-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cart-info {
+  flex: 1;
+}
+
+.cart-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cart-price,
+.cart-qty {
+  font-size: 0.8rem;
+  margin: 2px 0;
+  opacity: 0.8;
+}
+
+.cart-remove {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.cart-remove:hover {
+  opacity: 1;
+  color: red;
+}
+
+/* CONTENEDOR ITEMS CARRITO */
+.cart-items {
+  padding: 20px;
+}
+
+/* TARJETA DE PRODUCTO */
+.cart-item {
+  display: flex;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 16px;
+  background: var(--card-bg, #f7f7f7);
+  margin-bottom: 18px;
+  align-items: center;
+}
+
+/* IMAGEN PRODUCTO */
+.cart-item img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* TEXTO PRODUCTO */
+.cart-item-info h4 {
+  font-size: 1rem;
+  margin: 0 0 4px;
+}
+
+.cart-item-info .precio {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #d32f2f;
+}
+
+.cart-item-info .cantidad {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* BOTÓN ELIMINAR */
+.cart-item-remove {
+  margin-left: auto;
+  font-size: 20px;
+  color: #e53935;
+  cursor: pointer;
 }
 
 .cart-footer {
-padding: 16px;
-border-top: 1px solid rgba(0,0,0,.1);
+  padding: 14px 18px;
+  border-top: 1px solid rgba(0,0,0,.05);
 }
 
-/* =====================================================
-7. BOTÓN WHATSAPP
-===================================================== */
+/* TOTAL */
+#cartTotal {
+  font-size: 1rem;
+  margin: 6px 0;
+}
+
+/* TEXTO LEGAL */
+.cart-legal-mini {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+/* PASOS */
+.pasos-carrito {
+  font-size: 0.8rem;
+}
+
+.pasos-carrito ul li {
+  margin-bottom: 4px;
+}
+
+/* BOTÓN WHATSAPP */
+.btn-whatsapp {
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+/* BOTÓN VACIAR */
+.btn-vaciar {
+  font-size: 0.75rem;
+  padding: 6px;
+}
+.cart-items {
+  max-height: 55vh;
+  overflow-y: auto;
+}
+
+.cart-item.remove {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Para que los iconos no se muevan en movil */
+@media (max-width: 600px) {
+  .header-content {
+    gap: 8px;
+  }
+
+  .brand h1 {
+    font-size: 1.2rem;
+  }
+
+  .brand p {
+    display: none; /* limpia espacio */
+  }
+
+  .search-box {
+    padding: 6px 10px;
+  }
+
+  .search-box input {
+    font-size: 0.9rem;
+  }
+
+  .icon-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
+}
+
+
+/* ===== FIX HEADER MOBILE (SAFE) ===== */
+
+.header-content {
+  flex-wrap: nowrap !important;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 0;
+}
+
+.search-box input {
+  width: 100%;
+}
+
+.header-actions {
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .brand p {
+    display: none;
+  }
+
+  .icon-btn {
+    width: 34px;
+    height: 34px;
+  }
+}
+/* ===============================
+   FIX DEFINITIVO CARRITO MOBILE
+   =============================== */
+
+/* CONTENEDOR ITEMS */
+.cart-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+/* ITEM */
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 14px;
+  background: var(--card);
+  box-shadow: 0 6px 16px var(--shadow);
+  margin-bottom: 12px;
+
+  /* swipe */
+  touch-action: pan-y;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* IMAGEN */
+.cart-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* INFO */
+.cart-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.cart-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.cart-price {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: bold;
+  margin: 2px 0;
+}
+
+.cart-qty {
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+
+/* BOTÓN ELIMINAR */
+.cart-remove {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #ff5252;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ===== SWIPE STATES ===== */
+
+.cart-item.swiping {
+  transition: none;
+}
+
+.cart-item.swipe-left {
+  transform: translateX(-80px);
+  opacity: 0.7;
+}
+
+.cart-item.removed {
+  opacity: 0;
+  transform: translateX(-120px);
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== FOOTER MÁS COMPACTO ===== */
+
+.cart-footer {
+  padding: 14px 16px;
+}
+
+.cart-legal-mini {
+  font-size: 0.7rem;
+  margin-bottom: 8px;
+}
+
+.pasos-carrito {
+  font-size: 0.75rem;
+}
 
 .btn-whatsapp {
-background: linear-gradient(135deg,#25d366,#1ebc59);
-color: #000;
-padding: 14px;
-border-radius: 14px;
-font-weight: bold;
-text-align: center;
-display: block;
+  padding: 12px;
+  font-size: 0.9rem;
 }
 
-/* =====================================================
-8. FOOTER
-===================================================== */
+/* ===== MOBILE EXTRA ===== */
+@media (max-width: 480px) {
+  .cart-img {
+    width: 56px;
+    height: 56px;
+  }
 
-.footer-pro {
-background: #000;
-color: #aaa;
-padding: 30px 20px;
+  .cart-name {
+    font-size: 0.85rem;
+  }
 }
 
-/* =====================================================
-9. MODO OSCURO – AJUSTES
-===================================================== */
+/* =========================
+   HEADER NUEVO – OVERRIDES
+========================= */
+
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,.88);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+/* LOGO */
+.main-header .header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main-header .logo-icon {
+  font-size: 26px;
+}
+
+.main-header .logo-text h1 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.main-header .logo-text span {
+  font-size: 12px;
+  color: #777;
+}
+
+/* NAV */
+.main-header .header-center {
+  display: flex;
+  gap: 20px;
+}
+
+.main-header .header-center a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  position: relative;
+}
+
+.main-header .header-center a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #e50914;
+  transition: width .3s ease;
+}
+
+.main-header .header-center a:hover::after {
+  width: 100%;
+}
+
+/* ACCIONES */
+.main-header .header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.main-header .cart-btn {
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.main-header .cart-btn span {
+  background: #e50914;
+  padding: 2px 6px;
+  border-radius: 12px;
+  margin-left: 6px;
+  font-size: 12px;
+}
+
+.main-header .whatsapp-btn {
+  background: #25D366;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.main-header .theme-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* MODO OSCURO */
+body.dark .main-header {
+  background: rgba(18,18,18,.9);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+body.dark .main-header .logo-text span {
+  color: #aaa;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .main-header .header-center {
+    display: none;
+  }
+
+  .main-header .logo-text span {
+    display: none;
+  }
+}
+
+
+/* =========================
+   HEADER + MODO OSCURO FIX
+========================= */
 
 body.dark .main-header {
-background: rgba(18,18,18,.95);
+  background: rgba(18, 18, 18, 0.95);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-body.dark .cart-btn {
-background: #fff;
-color: #111;
+body.dark .main-header .logo-text h1 {
+  color: #fff;
 }
 
-/* =====================================================
-10. RESPONSIVE
-===================================================== */
-
-@media (max-width: 768px) {
-.logo-text span {
-display: none;
+body.dark .main-header .header-center a {
+  color: #eee;
 }
 
-#catalogo {
-padding: 20px;
+body.dark .main-header .cart-btn {
+  background: #fff;
+  color: #111;
 }
+
+body.dark .main-header .cart-btn span {
+  background: #e50914;
+  color: #fff;
+}
+
+body.dark .main-header .whatsapp-btn {
+  background: #1ebe57;
+}
+
+body.dark .main-header .theme-btn {
+  color: #fff;
+}
+
+/* =========================
+   HEADER FINAL (ÚNICO)
+========================= */
+
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,.88);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  color: var(--text);
+}
+
+.main-header a {
+  color: inherit;
+}
+
+/* ===== DARK MODE ===== */
+
+body.dark .main-header {
+  background: rgba(18,18,18,.95);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+body.dark .main-header * {
+  color: var(--text);
+}
+
+body.dark .main-header .cart-btn {
+  background: #fff;
+  color: #111;
+}
+
+body.dark .main-header .cart-btn span {
+  background: var(--accent);
+  color: #fff;
 }
