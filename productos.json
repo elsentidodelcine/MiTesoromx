@@ -85,8 +85,8 @@
   
   { "nombre": "Palomera Patricio Bob Esponja Cinepolis", "categoria": "Infantil", "precio": 150, "imagen": "img/bob.jpg" ,"badge": "nuevo", "stock": 1},
   
-  { "nombre": "Vaso Borderlands Model1 ", "categoria": "Videojuegos", "precio": 50, "imagen": "imgs/thumbs.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vaso Borderlands Model2", "categoria": "Videojuegos", "precio": 50, "imagen": "imgs/thumbs.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Borderlands Model1 ", "categoria": "Videojuegos", "precio": 50, "imagen": "thumbs/bor1.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Borderlands Model2", "categoria": "Videojuegos", "precio": 50, "imagen": "thumbs/bor2.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Borderlands", "categoria": "Videojuegos", "precio": 60, "imagen": "thumbs/bor3.png" ,"badge": "oferta", "stock": 1},
   
   { "nombre": "Vaso Cars 3 Cinepolis", "categoria": "Infantil", "precio": 80, "imagen": "img/cars.jpg" ,"badge": "nuevo", "stock": 1}, 

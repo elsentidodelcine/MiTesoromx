@@ -367,7 +367,6 @@ Gracias
    VACIAR CARRITO
 ========================= */
 const vaciarBtn = document.getElementById("vaciarCarrito");
-const confirmModal = document.getElementById("confirmModal");
 const confirmVaciar = document.getElementById("confirmVaciar");
 const cancelVaciar = document.getElementById("cancelVaciar");
 
