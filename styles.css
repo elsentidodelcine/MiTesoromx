@@ -1883,6 +1883,15 @@ body.dark .pasos-carrito {
     font-weight: 600;
 }
 
+.main-header .facebook-btn {
+    background: #1877F2;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
 .main-header .theme-btn {
     background: transparent;
     border: none;
