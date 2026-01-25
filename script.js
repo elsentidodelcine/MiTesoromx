@@ -664,9 +664,18 @@ if (btnVaciarCarrito) {
         actualizarCarritoUI();
         actualizarContadorCarrito();
         actualizarEstadoVaciar();
+
+        // 🔹 RESTAURAR TODOS LOS BOTONES DEL CATALOGO
+        const catalogoItems = document.querySelectorAll(".producto");
+        catalogoItems.forEach(card => {
+            const btn = card.querySelector(".boton");
+            btn.textContent = "Agregar al carrito";
+            btn.disabled = false;
+            btn.classList.remove("apartado");
+        });
+
         mostrarToastVaciado();
     });
-
 }
 
 // Cancelar vaciado
@@ -686,6 +695,16 @@ if (confirmVaciar) {
         actualizarCarritoUI();
         actualizarContadorCarrito();
         actualizarEstadoVaciar();
+
+        // 🔹 RESTAURAR TODOS LOS BOTONES DEL CATALOGO
+        const catalogoItems = document.querySelectorAll(".producto");
+        catalogoItems.forEach(card => {
+            const btn = card.querySelector(".boton");
+            btn.textContent = "Agregar al carrito";
+            btn.disabled = false;
+            btn.classList.remove("apartado");
+        });
+
         mostrarToastVaciado();
 
         confirmModal.classList.remove("activo");
