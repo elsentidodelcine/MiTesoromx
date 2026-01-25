@@ -2229,3 +2229,123 @@ body.dark .main-header .cart-btn span {
         margin: 6px 0;
     }
 }
+
+
+/* Header general */
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    flex-wrap: wrap; /* 🔹 permite que los elementos bajen a otra línea */
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    min-width: 200px;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    margin-right: 10px;
+}
+
+.logo-text h1 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.logo-text span {
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.header-center {
+    display: flex;
+    gap: 15px;
+    flex: 1 1 auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+
+.header-center a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+}
+
+/* Botones dentro del header */
+.cart-btn,
+.whatsapp-btn,
+.facebook-btn,
+.theme-btn {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+}
+
+/* ==================== MEDIA QUERY PARA MÓVIL ==================== */
+@media screen and (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-left, .header-center, .header-right {
+        width: 100%;
+        justify-content: flex-start;
+        margin: 5px 0;
+    }
+
+    .header-center {
+        justify-content: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .header-right {
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    .logo-text h1 {
+        font-size: 1rem;
+    }
+
+    .logo-text span {
+        font-size: 0.7rem;
+    }
+}
+/* Contenedor del producto */
+.img-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* mantiene cuadrado */
+    overflow: hidden;
+    border-radius: 14px;
+    background: #000; /* color de fondo si la imagen tarda en cargar */
+}
+
+/* Imagen */
+.producto-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cubre todo el contenedor, sin bordes negros */
+    cursor: zoom-in;
+    transition: transform 0.25s ease;
+}
+
+.producto-img:hover {
+    transform: scale(1.05);
+}
