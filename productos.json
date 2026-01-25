@@ -74,11 +74,21 @@
 
 
   { "nombre": "Funko 975 Sulley Pixar", "categoria": "Funko", "precio": 500, "imagen": "thumbs/funko1.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Funko 1130 Tigger Disney", "categoria": "Funko", "precio": 300, "imagen": "thumbs/funko8.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Funko 580 Iron Man Marvel", "categoria": "Funko", "precio": 500, "imagen": "thumbs/funko6.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Funko 626 Iron Man Game Verse", "categoria": "Funko", "precio": 250, "imagen": "thumbs/funko7.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Funko 561 Chuckles Toy Story", "categoria": "Funko", "precio": 1000, "imagen": "thumbs/funko5.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Funko 976 Woody Toy Story", "categoria": "Funko", "precio": 500, "imagen": "thumbs/funko4.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Funko 1234 Vigilante Peacemaker DC", "categoria": "Funko", "precio": 500, "imagen": "thumbs/funko2.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Funko 1236 Eagly Peacemaker DC", "categoria": "Funko", "precio": 500, "imagen": "thumbs/funko3.png" ,"badge": "nuevo", "stock": 1},
 
 
   { "nombre": "Vaso Garfield Movie Center", "categoria": "Infantil", "precio": 50, "imagen": "thumbs/gato.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Paw Patrol Cinemex", "categoria": "Infantil", "precio": 80, "imagen": "thumbs/paw.png" ,"badge": "nuevo", "stock": 1},
-
+  { "nombre": "Vaso Bob Esponja Figura Bob Esponja", "categoria": "Infantil", "precio": 300, "imagen": "thumbs/bob2.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Bob Esponja Figura Gary", "categoria": "Infantil", "precio": 300, "imagen": "thumbs/bob1.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Bob Esponja Figura Calamardo", "categoria": "Infantil", "precio": 300, "imagen": "thumbs/bob3.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Oferta Exclusiva - Llévate Todo Bob Esponja", "categoria": "Infantil", "precio": 750, "imagen": "thumbs/bob4.png" ,"badge": "oferta", "stock": 1},
 
   { "nombre": "Vaso Guardianes de la Galaxia Cinepolis Model2 Marvel", "categoria": "Marvel", "precio": 80, "imagen": "thumbs/guardianes1.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Guardianes de la Galaxia Movie Center Marvel", "categoria": "Marvel", "precio": 50, "imagen": "thumbs/guardianes2.png" ,"badge": "nuevo", "stock": 1},
@@ -99,7 +109,7 @@
   { "nombre": "Vaso Beetlejuice Figura Cinemex Beetle Juice", "categoria": "Beetle Juice", "precio": 100, "imagen": "thumbs/bee2.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Beetle Juice", "categoria": "Beetle Juice", "precio": 120, "imagen": "thumbs/bee3.png" ,"badge": "oferta", "stock": 1},
 
-
+  { "nombre": "Postal El Cadaver de la Novia", "categoria": "Boletos", "precio": 100, "imagen": "thumbs/boleto1.png" ,"badge": "nuevo", "stock": 1},
 
 
 
