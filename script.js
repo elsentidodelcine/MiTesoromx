@@ -174,12 +174,6 @@ function mostrarProductos() {
       </div>
     `;
 
-    // 👉 abrir imagen grande SOLO al hacer click
-    const img = card.querySelector(".producto-img");
-    img.addEventListener("click", () => {
-      document.getElementById("modalImage").src = img.dataset.full;
-      document.getElementById("imageModal").style.display = "flex";
-    });
 
     card.querySelector(".boton").onclick = () => agregarAlCarrito(p, card);
     catalogo.appendChild(card);
@@ -514,12 +508,10 @@ const closeImageModal = document.getElementById("closeImageModal");
 
 // función reutilizable
 function openImageModal(src) {
-  const preload = document.getElementById("preloadImage");
-  if (preload) preload.href = src;
-
-  modalImage.src = src;
-  imageModal.style.display = "flex";
+    modalImage.src = src; // 👉 IMAGEN GRANDE
+    imageModal.style.display = "flex";
 }
+
 
 
 // cerrar modal
@@ -568,11 +560,12 @@ function scrollToCatalogo() {
 
 
 document.addEventListener("click", e => {
-  const img = e.target.closest(".producto-img");
-  if (!img) return;
+    const img = e.target.closest(".producto-img");
+    if (!img) return;
 
-  openImageModal(img.dataset.full);
+    openImageModal(img.dataset.full);
 });
+
 
 /* ELIMINAR PRODUCTOS DEL CARRITO */
 function eliminarProducto(index, elemento) {
