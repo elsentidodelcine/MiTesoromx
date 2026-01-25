@@ -27,6 +27,7 @@ fetch("productos.json")
     crearFiltros(productosGlobal);
     render();
     actualizarCarritoUI();
+    actualizarContadorCarrito();
 
     document.getElementById("loader").style.display = "none";
   })
@@ -239,6 +240,7 @@ function agregarAlCarrito(producto, card) {
 
   localStorage.setItem("carrito", JSON.stringify(carrito));
   actualizarCarritoUI();
+   actualizarContadorCarrito();
 
   // Animación botón
   const btn = card.querySelector(".boton");
@@ -360,6 +362,7 @@ confirmVaciar.addEventListener("click", () => {
   localStorage.removeItem("carrito");
 
   actualizarCarritoUI();
+   actualizarContadorCarrito();
   render();
 
   confirmModal.classList.remove("show");
@@ -561,6 +564,7 @@ function eliminarProducto(index, elemento) {
     carrito.splice(index, 1);
     localStorage.setItem("carrito", JSON.stringify(carrito));
     actualizarCarritoUI();
+     actualizarContadorCarrito();
   }, 300);
 }
 
@@ -600,5 +604,20 @@ document.addEventListener("touchend", e => {
     item.style.transform = "";
   }
 });
+
+/* CONTADOR DEL CARRITO AL AGREGAR PRODUCTOS */
+function actualizarContadorCarrito() {
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  const totalItems = carrito.reduce(
+    (acc, p) => acc + p.cantidad,
+    0
+  );
+
+  const contador = document.getElementById("cartCount");
+  if (contador) {
+    contador.textContent = totalItems;
+  }
+}
 
 
