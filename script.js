@@ -6,6 +6,13 @@ let productosFiltrados = [];
 let paginaActual = 1;
 const productosPorPagina = 12;
 
+/* =========================
+   TOAST ELEMENTOS (SUBIR ARRIBA)
+========================= */
+const toast = document.getElementById("cartToast");
+const toastText = document.getElementById("toastText");
+
+
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 /* =========================
