@@ -78,11 +78,14 @@ function crearFiltros(productos) {
 ========================= */
 const selectOrden = document.getElementById("ordenar");
 
-selectOrden.addEventListener("change", () => {
-  ordenarProductos();
-  paginaActual = 1;
-  render();
-});
+if (selectOrden) {
+    selectOrden.addEventListener("change", () => {
+        ordenarProductos();
+        paginaActual = 1;
+        render();
+    });
+}
+
 
 function ordenarProductos() {
   const v = selectOrden.value;
@@ -101,17 +104,21 @@ function ordenarProductos() {
 /* =========================
    BUSCADOR
 ========================= */
-document.getElementById("buscador").addEventListener("input", e => {
-  const texto = e.target.value.toLowerCase();
+const buscador = document.getElementById("buscador");
+if (buscador) {
+    buscador.addEventListener("input", e => {
+        const texto = e.target.value.toLowerCase();
 
-  productosFiltrados = productosGlobal.filter(p =>
-    p.nombre.toLowerCase().includes(texto) ||
-    p.categoria.toLowerCase().includes(texto)
-  );
+        productosFiltrados = productosGlobal.filter(p =>
+            p.nombre.toLowerCase().includes(texto) ||
+            p.categoria.toLowerCase().includes(texto)
+        );
 
-  paginaActual = 1;
-  render();
-});
+        paginaActual = 1;
+        render();
+    });
+}
+
 
 /* =========================
    RENDER GENERAL
@@ -362,32 +369,23 @@ const confirmModal = document.getElementById("confirmModal");
 const confirmVaciar = document.getElementById("confirmVaciar");
 const cancelVaciar = document.getElementById("cancelVaciar");
 
-vaciarBtn.addEventListener("click", () => {
-  confirmModal.classList.add("show");
-});
+if (vaciarBtn) {
+    vaciarBtn.addEventListener("click", () => {
+        confirmModal.classList.add("show");
+    });
+}
 
-cancelVaciar.addEventListener("click", () => {
-  confirmModal.classList.remove("show");
-});
+if (cancelVaciar) {
+    cancelVaciar.addEventListener("click", () => {
+        confirmModal.classList.add("show");
+    });
+}
 
-confirmVaciar.addEventListener("click", () => {
-  carrito = [];
-  localStorage.removeItem("carrito");
-
-  actualizarCarritoUI();
-   actualizarContadorCarrito();
-  render();
-
-  confirmModal.classList.remove("show");
-
-  // Opcional: cerrar el drawer
-  cerrarDrawer();
-
-  // Opcional: subir al catálogo
-  scrollToCatalogo();
-});
-
-
+if (confirmVaciar) {
+    confirmVaciar.addEventListener("click", () => {
+        confirmModal.classList.add("show");
+    });
+}
 
 
 /* =========================
@@ -485,24 +483,29 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 });
 
 function mostrarToast(nombreProducto) {
-  toastText.textContent = `"${nombreProducto}" se agregó al carrito`;
-  toast.style.display = "block";
+    if (!toast || !toastText) return;
 
-  clearTimeout(window.toastTimeout);
-  window.toastTimeout = setTimeout(() => {
-    toast.style.display = "none";
-  }, 3500);
+    toastText.textContent = `"${nombreProducto}" se agregó al carrito`;
+    toast.style.display = "block";
 }
 
-document.getElementById("toastCerrar").onclick = () => {
-  toast.style.display = "none";
-};
 
-document.getElementById("toastVerCarrito").onclick = () => {
-  toast.style.display = "none";
-  drawer.classList.add("open");
-  overlay.classList.add("show");
-};
+const toastCerrar = document.getElementById("toastCerrar");
+if (toastCerrar) {
+    toastCerrar.onclick = () => {
+        toast.style.display = "none";
+    };
+}
+
+
+const toastCerrar = document.getElementById("toastVerCarrito");
+if (toastCerrar) {
+    toastCerrar.onclick = () => {
+        toast.style.display = "none";
+    };
+}
+
+
 const imageModal = document.getElementById("imageModal");
 const modalImage = document.getElementById("modalImage");
 const closeImageModal = document.getElementById("closeImageModal");
@@ -518,9 +521,12 @@ function openImageModal(src) {
 
 
 // cerrar modal
-closeImageModal.addEventListener("click", () => {
-  imageModal.style.display = "none";
-});
+if (closeImageModal) {
+    closeImageModal.addEventListener("click", () => {
+        imageModal.style.display = "none";
+    });
+}
+
 
 imageModal.addEventListener("click", (e) => {
   if (e.target === imageModal) {
