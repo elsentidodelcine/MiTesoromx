@@ -313,12 +313,14 @@ function actualizarCarritoUI() {
 
     contenedor.appendChild(div);
       // Agregar al final de actualizarCarritoUI()
-      const total = carrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
-      actualizarWhats(total);
+
+
 
   });
 
   totalEl.textContent = `Total: $${total} MXN`;
+
+    actualizarWhats(total);
 
   /* EVENTOS ELIMINAR (CON ANIMACIÓN) */
   document.querySelectorAll(".cart-remove").forEach(btn => {
@@ -668,7 +670,7 @@ function mostrarToastVaciado() {
     const title = document.getElementById("toastTitle");
     const text = document.getElementById("toastText");
 
-    title.textContent = "Carrito vaciado";
+    title.textContent = "Se agregó al carrito";
     text.textContent = "Tu carrito quedó vacío";
 
     toast.classList.add("show");
