@@ -284,7 +284,13 @@ function actualizarCarritoUI() {
     div.className = "cart-item";
 
     div.innerHTML = `
-      <img src="${p.imagen || 'placeholder.png'}" class="cart-img" alt="${p.nombre}">
+      <img 
+        src="${p.imagen}"
+        class="cart-img"
+        alt="${p.nombre}"
+        onerror="this.src='imgs/placeholder.png'"
+      >
+
 
       <div class="cart-info">
         <p class="cart-name">${p.nombre}</p>
