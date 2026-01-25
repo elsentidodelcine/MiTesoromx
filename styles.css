@@ -52,8 +52,10 @@ body {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  flex-shrink: 0; /* 🔥 no se aplastan */
 }
+
 
 .search-box {
   flex: 1;
@@ -1588,5 +1590,35 @@ body.dark .pasos-carrito {
   transform: translateX(40px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
+/* Para que los iconos no se muevan en movil */
+@media (max-width: 600px) {
+  .header-content {
+    gap: 8px;
+  }
+
+  .brand h1 {
+    font-size: 1.2rem;
+  }
+
+  .brand p {
+    display: none; /* limpia espacio */
+  }
+
+  .search-box {
+    padding: 6px 10px;
+  }
+
+  .search-box input {
+    font-size: 0.9rem;
+  }
+
+  .icon-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
+}
+
 
 
