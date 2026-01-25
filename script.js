@@ -248,44 +248,47 @@ function crearPaginacion() {
    CARRITO
 ========================= */
 function agregarAlCarrito(producto, card) {
-  if (producto.stock <= 0) return;
+    if (producto.stock <= 0) return;
 
-  producto.stock--;
+    producto.stock--;
 
-  const encontrado = carrito.find(p => p.nombre === producto.nombre);
+    const encontrado = carrito.find(p => p.nombre === producto.nombre);
 
-  if (encontrado) {
-    encontrado.cantidad++;
-  } else {
-    carrito.push({
-      nombre: producto.nombre,
-      precio: producto.precio,
-      imagen: producto.imagen, // ✅ AQUÍ SE AGREGA
-      cantidad: 1
-    });
-  }
+    if (encontrado) {
+        encontrado.cantidad++;
+    } else {
+        carrito.push({
+            nombre: producto.nombre,
+            precio: producto.precio,
+            imagen: producto.imagen,
+            cantidad: 1
+        });
+    }
 
-  localStorage.setItem("carrito", JSON.stringify(carrito));
-  actualizarCarritoUI();
-   actualizarContadorCarrito();
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    actualizarCarritoUI();
+    actualizarContadorCarrito();
 
-  // Animación botón
+    // Animación botón
     const btn = card.querySelector(".boton");
+    const textoOriginal = btn.textContent; // ← guardamos el texto original
     btn.textContent = "Apartado";
     btn.disabled = true;
     btn.classList.add("apartado"); // opcional para estilizar
 
-
+    // Restaurar después de 1.2 segundos
     setTimeout(() => {
-    btn.textContent = textoOriginal;
-    btn.disabled = false;
-  }, 1200);
+        btn.textContent = textoOriginal;
+        btn.disabled = false;
+        btn.classList.remove("apartado");
+    }, 1200);
 
-  // Toast
-  mostrarToast(producto.nombre);
+    // Toast
+    mostrarToast(producto.nombre);
 
-  render();
+    // NO llamamos a render aquí para no reiniciar los botones
 }
+
 
 
 /* ACTUALIZAR EL CARRITO */
