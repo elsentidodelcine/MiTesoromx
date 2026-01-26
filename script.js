@@ -30,11 +30,11 @@ fetch("productos.json")
   .then(r => r.json())
   .then(data => {
     data.forEach(p => {
-      p.stock = 1;
+     p.stock = 1;
+     p.stockInicial = 1; 
+     p.badge = "Última pieza";
+   });
 
-      // 🔥 NUEVO: escasez real
-      p.badge = "Última pieza";
-    });
 
     productosGlobal = data;
     productosFiltrados = data;
@@ -664,9 +664,17 @@ if (btnVaciarCarrito) {
     btnVaciarCarrito.addEventListener("click", () => {
         carrito = [];
         localStorage.removeItem("carrito");
+          //  RESTAURAR STOCK
+         productosGlobal.forEach(p => {
+             p.stock = p.stockInicial;
+         });
+         
+         
+
         actualizarCarritoUI();
         actualizarContadorCarrito();
         actualizarEstadoVaciar();
+        render(); //  vuelve a dibujar botones correctamente
 
         // 🔹 RESTAURAR TODOS LOS BOTONES DEL CATALOGO
         const catalogoItems = document.querySelectorAll(".producto");
