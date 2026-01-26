@@ -4,18 +4,18 @@
   { "nombre": "Vaso Liso Movie Center Transformers", "categoria": "Transformers", "precio": 50, "imagen": "thumbs/trans1.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Liso Cinepolis Transformers", "categoria": "Transformers", "precio": 50, "imagen": "thumbs/trans2.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Liso Cinepolis 2 Transformers", "categoria": "Transformers", "precio": 50, "imagen": "thumbs/trans4.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vaso 3D Cinepolis Transformers", "categoria": "Transformers", "precio": 100, "imagen": "thumbs/trans3.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso 3D Cinepolis Transformers", "categoria": "Transformers", "precio": 80, "imagen": "thumbs/trans3.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Palomera Cinemex Transformers", "categoria": "Transformers", "precio": 250, "imagen": "thumbs/trans5.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Oferta Exclusiva - Llévate Todo Transformers", "categoria": "Transformers", "precio": 500, "imagen": "thumbs/trans7.png" ,"badge": "oferta", "stock": 1},
+  { "nombre": "Oferta Exclusiva - Llévate Todo Transformers", "categoria": "Transformers", "precio": 450, "imagen": "thumbs/trans7.png" ,"badge": "oferta", "stock": 1},
 
 
   { "nombre": "Vaso FastX Cinemex Model1 RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "thumbs/rapidos1.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso FastX Cinemex Model2 RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "thumbs/rapidos2.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso FastX Cinemex Model3 RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "thumbs/rapidos7.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vaso FastX Movie Center RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 30, "imagen": "thumbs/rapidos3.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso FastX Movie Center RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 50, "imagen": "thumbs/rapidos3.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Fast 7 Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "thumbs/rapidos4.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vaso Fast 8 Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 50, "imagen": "thumbs/rapidos5.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Palomera FastX Movie Center RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "thumbs/rapidos6.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Fast 8 Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "thumbs/rapidos5.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Palomera FastX Movie Center RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 30, "imagen": "thumbs/rapidos6.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Rapidos y Furiosos", "categoria": "RapidosyFuriosos", "precio": 350, "imagen": "thumbs/rapidos8.png" ,"badge": "oferta", "stock": 1},
 
 
@@ -23,10 +23,10 @@
   { "nombre": "Vaso Minion Cinemex Model2 Minions", "categoria": "Minions", "precio": 50, "imagen": "thumbs/minion2.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Minion Cinemex Model3 Minions", "categoria": "Minions", "precio": 50, "imagen": "thumbs/minion9.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Minion Cinepolis Model1 Minions", "categoria": "Minions", "precio": 80, "imagen": "thumbs/minion3.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vaso Minion Cinepolis Model2 Minions", "categoria": "Minions", "precio": 30, "imagen": "thumbs/minion4.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Minion Cinepolis Model2 Minions", "categoria": "Minions", "precio": 80, "imagen": "thumbs/minion4.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Minion Movie Center Minions", "categoria": "Minions", "precio": 30, "imagen": "thumbs/minion6.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Cubeta Minion Cinemex Minions", "categoria": "Minions", "precio": 250, "imagen": "thumbs/minion7.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vaso Minion Cinepolis Model3 Minions", "categoria": "Minions", "precio": 80, "imagen": "thumbs/minion5.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Minion Cinepolis Model3 Minions", "categoria": "Minions", "precio": 30, "imagen": "thumbs/minion5.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Mini Cubeta Minion Cinemex Minions", "categoria": "Minions", "precio": 30, "imagen": "thumbs/minion8.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Minions", "categoria": "Minions", "precio": 500, "imagen": "thumbs/minion10.png" ,"badge": "oferta", "stock": 1},
 
