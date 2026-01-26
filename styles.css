@@ -2369,3 +2369,109 @@ body.dark .main-header .cart-btn span {
   }
 }
 
+/* =========================
+   MENU HAMBURGUESA
+========================= */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .header-center {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--card);
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 0;
+    display: none;
+    z-index: 1000;
+  }
+
+  .header-center.open {
+    display: flex;
+  }
+
+  .header-center a {
+    font-size: 16px;
+  }
+}
+
+/* =========================
+   MENU HAMBURGUESA ANIMADO
+========================= */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  transition: transform 0.3s ease;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .header-center {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--card);
+    flex-direction: column;
+    gap: 18px;
+    padding: 22px 0;
+    display: flex;
+    align-items: center;
+
+    /* animación */
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.35s ease;
+    z-index: 1000;
+  }
+
+  .header-center.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .header-center a {
+    font-size: 16px;
+    color: var(--text);
+    transition: color 0.2s ease;
+  }
+
+  .header-center a:hover {
+    color: var(--primary);
+  }
+}
+
+/* =========================
+   DARK MODE MENU
+========================= */
+body.dark .header-center {
+  background: #121212;
+}
+
+body.dark .menu-toggle {
+  color: #fff;
+}
