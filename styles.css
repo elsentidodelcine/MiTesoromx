@@ -2349,3 +2349,23 @@ body.dark .main-header .cart-btn span {
 .producto-img:hover {
     transform: scale(1.05);
 }
+
+@media (max-width: 768px) {
+  .main-header {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .header-center {
+    display: flex !important;
+    width: 100%;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .header-center a {
+    font-size: 14px;
+  }
+}
+
