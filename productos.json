@@ -126,7 +126,7 @@
 
 
   { "nombre": "Vaso Mini Batman Cinepolis DC", "categoria": "DC", "precio": 80, "imagen": "thumbs/batman2.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vaso Batman Trilogia Cinemex DC", "categoria": "DC", "precio": 80, "imagen": "thumbs/batman1.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Batman Trilogia Cinemex DC", "categoria": "DC", "precio": 80, "imagen": "thumbs/batman1.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Totem Batman Cinepolis DC", "categoria": "DC", "precio": 80, "imagen": "thumbs/dc13.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Batman", "categoria": "DC", "precio": 130, "imagen": "thumbs/batman3.png" ,"badge": "oferta", "stock": 1},
 
@@ -136,6 +136,7 @@
   { "nombre": "Vaso Shazam Cinemex DC", "categoria": "DC", "precio": 50, "imagen": "thumbs/shazam.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Shazam Cinepolis DC", "categoria": "DC", "precio": 120, "imagen": "thumbs/dc14.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Palomera Black Adam Cinepolis DC", "categoria": "DC", "precio": 100, "imagen": "thumbs/dc12.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Oferta Exclusiva - Llévate Todo Shazam/Black", "categoria": "DC", "precio": 200, "imagen": "thumbs/oferta5.png" ,"badge": "oferta", "stock": 1},
 
   { "nombre": "Palomera Superman Cinepolis DC", "categoria": "DC", "precio": 150, "imagen": "thumbs/superman.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Palomera Superman Periodico Cinepolis DC", "categoria": "DC", "precio": 250, "imagen": "thumbs/super1.png" ,"badge": "nuevo", "stock": 1},
