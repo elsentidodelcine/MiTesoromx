@@ -2,109 +2,83 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aviso Legal – Condiciones de Apartado | Mi Tesoro MX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
 
     <style>
-        :root {
-          --bg: #0f0f0f;
-          --card: #161616;
-          --text: #e6e6e6;
-          --muted: #9a9a9a;
-          --accent: #c59d5f;
-          --border: #262626;
-        }
+        /* =============================
+           AVISO LEGAL – APARTADOS
+           (LEGAL STYLE UNIFICADO)
+        ============================= */
 
-        body {
-          margin: 0;
-          background: var(--bg);
-          color: var(--text);
-          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-          line-height: 1.8;
-        }
-
-        .wrap {
-          max-width: 760px;
-          margin: 60px auto;
-          padding: 0 20px;
-        }
-
-        .card {
+        .legal-container {
+          max-width: 900px;
+          margin: 4rem auto;
+          padding: 2.5rem;
           background: var(--card);
           border-radius: 14px;
-          padding: 45px 40px;
           border: 1px solid var(--border);
         }
 
-        .brand {
+        .legal-container h1 {
+          font-size: 2rem;
+          margin-bottom: 1.2rem;
           text-align: center;
-          font-size: 0.85rem;
-          letter-spacing: 1px;
-          color: var(--muted);
-          margin-bottom: 10px;
         }
 
-        h1 {
+        .legal-container .subtitle {
           text-align: center;
-          font-size: 1.6rem;
-          margin-bottom: 35px;
-          font-weight: 600;
+          font-size: .95rem;
+          opacity: .7;
+          margin-bottom: 2.5rem;
         }
 
-        h2 {
-          font-size: 1.05rem;
-          margin-top: 35px;
-          margin-bottom: 10px;
-          font-weight: 600;
+        .legal-section {
+          margin-bottom: 2.4rem;
+        }
+
+        .legal-section h2 {
+          font-size: 1.15rem;
+          margin-bottom: .6rem;
           display: flex;
           align-items: center;
-          gap: 8px;
+          gap: .5rem;
         }
 
-        p {
-          margin: 14px 0;
-          color: var(--text);
+        .legal-section p {
+          font-size: .95rem;
+          line-height: 1.75;
+          opacity: .9;
+          margin-bottom: .8rem;
         }
 
-        strong {
-          color: #fff;
-          font-weight: 600;
-        }
-
-        .note {
-          margin: 30px 0;
-          padding: 18px 20px;
-          border-left: 3px solid var(--accent);
-          background: #121212;
+        .legal-highlight {
+          background: rgba(197, 157, 95, .08);
+          border-left: 4px solid var(--accent);
+          padding: 1.2rem 1.3rem;
           border-radius: 8px;
-          font-size: 0.95rem;
-          color: var(--muted);
+          margin: 2rem 0;
+          font-size: .95rem;
+          opacity: .85;
         }
 
-        .contact a {
-          color: var(--accent);
-          text-decoration: none;
-          font-weight: 600;
-        }
-
-        .contact a:hover {
-          text-decoration: underline;
-        }
-
-        footer {
-          margin-top: 40px;
+        .legal-footer {
+          margin-top: 3rem;
           text-align: center;
-          font-size: 0.8rem;
-          color: var(--muted);
+          font-size: .85rem;
+          opacity: .7;
         }
 
         @media (max-width: 600px) {
-          .card {
-            padding: 35px 25px;
+          .legal-container {
+            padding: 2rem 1.4rem;
+            margin: 3rem 1rem;
           }
 
-          h1 {
-            font-size: 1.4rem;
+          .legal-container h1 {
+            font-size: 1.6rem;
           }
         }
     </style>
@@ -112,13 +86,35 @@
 
 <body>
 
-<div class="wrap">
-    <div class="card">
+<!-- HEADER GLOBAL -->
+<header class="main-header">
+    <div class="header-left">
+        <span class="logo-icon">🎬</span>
+        <div class="logo-text">
+            <strong>Mi Tesoro MX</strong>
+            <span>Coleccionables de Cine y Artículos de Colección</span>
+        </div>
+    </div>
+    <button id="menuToggle" class="menu-toggle" aria-label="Abrir menú">
+        ☰
+    </button>
 
-        <div class="brand">Mi Tesoro MX</div>
+    <nav class="header-center">
+        <a href="index.html">Inicio</a>
+        <a href="mitesoromx.html">Quiénes Somos</a>
+        <a href="faq.html">Preguntas Frecuentes</a>
+    </nav>
+</header>
 
-        <h1>Aviso Legal – Condiciones de Apartado</h1>
+<!-- CONTENIDO -->
+<main class="legal-container">
 
+    <h1>Aviso Legal – Condiciones de Apartado</h1>
+    <p class="subtitle">
+        Última actualización: 2026 · Mi Tesoro MX
+    </p>
+
+    <div class="legal-section">
         <p>
             El presente aviso establece los términos y condiciones aplicables a la modalidad
             de <strong>apartado con anticipo</strong> ofrecida por <strong>Mi Tesoro MX</strong>.
@@ -135,13 +131,17 @@
             A partir de ese momento, la pieza será retirada temporalmente del catálogo
             y reservada para el comprador.
         </p>
+    </div>
 
+    <div class="legal-section">
         <h2>📦 Envío</h2>
         <p>
             El <strong>envío del producto se realizará únicamente cuando el pago total haya
             sido liquidado</strong>. El anticipo garantiza la reserva, pero no activa el envío.
         </p>
+    </div>
 
+    <div class="legal-section">
         <h2>⏳ Plazo de pago</h2>
         <p>
             El comprador contará con un plazo máximo de
@@ -149,35 +149,51 @@
             partir de la fecha de recepción del anticipo, salvo acuerdo distinto confirmado
             previamente.
         </p>
+    </div>
 
+    <div class="legal-section">
         <h2>↩️ Cancelaciones</h2>
         <p>
             En caso de cancelación del apartado, se realizará el reembolso del monto abonado,
             descontando una <strong>penalización del 10% del valor total del producto</strong>,
             correspondiente a gastos administrativos y pérdida de oportunidad de venta.
         </p>
-
-        <div class="note">
-            ⚠️ Al realizar el anticipo, el comprador manifiesta su aceptación expresa de los
-            presentes términos y condiciones. Todas las piezas están sujetas a disponibilidad
-            al momento de la confirmación del anticipo.
-        </div>
-
-        <div class="contact">
-            <h2>📲 Contacto</h2>
-            <p>
-                Para solicitar un apartado es indispensable contactar previamente mediante
-                mensaje privado. Todas las condiciones serán confirmadas directamente por
-                <strong>WhatsApp</strong>.
-            </p>
-        </div>
-
-        <footer>
-            © 2026 Mi Tesoro MX - Todos los derechos reservados
-        </footer>
-
     </div>
-</div>
+
+    <div class="legal-highlight">
+        ⚠️ Al realizar el anticipo, el comprador manifiesta su aceptación expresa de los
+        presentes términos y condiciones. Todas las piezas están sujetas a disponibilidad
+        al momento de la confirmación del anticipo.
+    </div>
+
+    <div class="legal-section">
+        <h2>📲 Contacto</h2>
+        <p>
+            Para solicitar un apartado es indispensable contactar previamente mediante
+            mensaje privado. Todas las condiciones serán confirmadas directamente por
+            <strong>WhatsApp</strong>.
+        </p>
+    </div>
+
+    <div class="legal-footer">
+        © 2026 Mi Tesoro MX<br>
+        Todos los derechos reservados
+    </div>
+
+</main>
+
+<footer class="footer">
+    <div class="footer-links">
+        <a href="politica-privacidad.html">Política de Privacidad</a>
+        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>
+        <a href="https://facebook.com/ElSentidoDelCine">Facebook</a>
+        <a href="https://wa.me/524761232612">WhatsApp</a>
+    </div>
+
+    <div class="footer-copy">
+        <p>© 2026 Mi Tesoro MX - Todos los derechos reservados</p>
+    </div>
+</footer>
 
 </body>
 </html>
