@@ -30,11 +30,11 @@ fetch("productos.json")
   .then(r => r.json())
   .then(data => {
     data.forEach(p => {
-      p.stock = 1;
+     p.stock = 1;
+     p.stockInicial = 1; 
+     p.badge = "Última pieza";
+   });
 
-      // 🔥 NUEVO: escasez real
-      p.badge = "Última pieza";
-    });
 
     productosGlobal = data;
     productosFiltrados = data;
@@ -273,15 +273,7 @@ function agregarAlCarrito(producto, card) {
     const btn = card.querySelector(".boton");
     const textoOriginal = btn.textContent; // ← guardamos el texto original
     btn.textContent = "Apartado";
-    btn.disabled = true;
-    btn.classList.add("apartado"); // opcional para estilizar
-
-    // Restaurar después de 1.2 segundos
-    setTimeout(() => {
-        btn.textContent = textoOriginal;
-        btn.disabled = false;
-        btn.classList.remove("apartado");
-    }, 1200);
+    btn.classList.add("apartado");
 
     // Toast
     mostrarToast(producto.nombre);
@@ -585,17 +577,27 @@ function eliminarProducto(index, elemento) {
     setTimeout(() => {
         const productoEliminado = carrito[index];
 
+        // 🔥 DEVOLVER STOCK
+        const productoOriginal = productosGlobal.find(
+            p => p.nombre === productoEliminado.nombre
+        );
+
+        if (productoOriginal) {
+            productoOriginal.stock = productoOriginal.stockInicial;
+        }
+
         // Remover del carrito
         carrito.splice(index, 1);
         localStorage.setItem("carrito", JSON.stringify(carrito));
+
         actualizarCarritoUI();
         actualizarContadorCarrito();
 
-        // Restaurar botón de agregar
+        // Restaurar botón visual
         const catalogoItems = document.querySelectorAll(".producto");
         catalogoItems.forEach(card => {
             const nombre = card.querySelector("h2")?.textContent;
-            if (nombre === productoEliminado?.nombre) {
+            if (nombre === productoEliminado.nombre) {
                 const btn = card.querySelector(".boton");
                 btn.textContent = "Agregar al carrito";
                 btn.disabled = false;
@@ -604,6 +606,7 @@ function eliminarProducto(index, elemento) {
         });
 
     }, 300);
+
 }
 
 
@@ -664,9 +667,17 @@ if (btnVaciarCarrito) {
     btnVaciarCarrito.addEventListener("click", () => {
         carrito = [];
         localStorage.removeItem("carrito");
+          //  RESTAURAR STOCK
+         productosGlobal.forEach(p => {
+             p.stock = p.stockInicial;
+         });
+         
+         
+
         actualizarCarritoUI();
         actualizarContadorCarrito();
         actualizarEstadoVaciar();
+        render(); //  vuelve a dibujar botones correctamente
 
         // 🔹 RESTAURAR TODOS LOS BOTONES DEL CATALOGO
         const catalogoItems = document.querySelectorAll(".producto");
@@ -729,6 +740,39 @@ function mostrarToastVaciado() {
     setTimeout(() => {
         toast.classList.remove("show");
     }, 3000);
+}
+
+
+(() => {
+  const menuToggle = document.getElementById("menuToggle");
+  const headerMenu = document.querySelector(".header-center");
+
+  if (!menuToggle || !headerMenu) return;
+
+  menuToggle.addEventListener("click", () => {
+    const abierto = headerMenu.classList.toggle("open");
+    menuToggle.textContent = abierto ? "✕" : "☰";
+  });
+
+  headerMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      headerMenu.classList.remove("open");
+      menuToggle.textContent = "☰";
+    });
+  });
+})();
+
+
+function restaurarBotonProducto(productoId) {
+  const boton = document.querySelector(
+    `.btn-agregar[data-id="${productoId}"]`
+  );
+
+  if (!boton) return;
+
+  boton.textContent = "Agregar al carrito";
+  boton.disabled = false;
+  boton.classList.remove("apartado");
 }
 
 
