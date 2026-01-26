@@ -2,80 +2,40 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preguntas Frecuentes | Mi Tesoro MX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
 
     <style>
-        :root {
-          --bg: #0f1115;
-          --card: #171a21;
-          --text: #e6e8ee;
-          --muted: #9aa0b3;
-          --accent: #c9a24d;
-          --border: #262a36;
-        }
+        /* =============================
+           FAQ – ESTILO LEGAL UNIFICADO
+        ============================= */
 
-        * {
-          box-sizing: border-box;
-        }
-
-        body {
-          margin: 0;
-          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-          background: var(--bg);
-          color: var(--text);
-        }
-
-        /* ================= HEADER ================= */
-        header {
-          background: #0b0d12;
-          border-bottom: 1px solid var(--border);
-          padding: 18px 20px;
-          text-align: center;
-        }
-
-        header h1 {
-          font-size: 1.4rem;
-          margin: 0;
-          color: var(--accent);
-          letter-spacing: 0.5px;
-        }
-
-        header p {
-          margin: 4px 0 0;
-          font-size: 0.8rem;
-          color: var(--muted);
-        }
-
-        /* ================= CONTENIDO ================= */
-        main {
+        .legal-container {
           max-width: 900px;
-          margin: 40px auto;
-          padding: 0 20px;
-        }
-
-        .card {
+          margin: 4rem auto;
+          padding: 2.5rem;
           background: var(--card);
+          border-radius: 14px;
           border: 1px solid var(--border);
-          border-radius: 18px;
-          padding: 28px;
         }
 
-        .card h2 {
+        .legal-container h1 {
           text-align: center;
-          font-size: 1.6rem;
-          margin-bottom: 6px;
+          font-size: 2rem;
+          margin-bottom: .5rem;
         }
 
-        .subtitle {
+        .legal-container .subtitle {
           text-align: center;
-          font-size: 0.9rem;
-          color: var(--muted);
-          margin-bottom: 30px;
+          font-size: .95rem;
+          opacity: .7;
+          margin-bottom: 2.5rem;
         }
 
         .search-box {
-          margin-bottom: 30px;
+          margin-bottom: 2.5rem;
         }
 
         .search-box input {
@@ -83,42 +43,45 @@
           padding: 14px 16px;
           border-radius: 12px;
           border: 1px solid var(--border);
-          background: #11141a;
-          color: var(--text);
-          font-size: 0.95rem;
+          background: transparent;
+          color: inherit;
+          font-size: .95rem;
           outline: none;
         }
 
         .search-box input::placeholder {
-          color: var(--muted);
+          opacity: .6;
         }
 
         .faq-category {
-          margin-bottom: 35px;
+          margin-bottom: 3rem;
         }
 
-        .faq-category h3 {
-          font-size: 1.05rem;
-          margin-bottom: 14px;
+        .faq-category h2 {
+          font-size: 1.15rem;
+          margin-bottom: 1rem;
           color: var(--accent);
+          display: flex;
+          align-items: center;
+          gap: .5rem;
         }
 
         details {
-          background: #11141a;
           border: 1px solid var(--border);
           border-radius: 12px;
           padding: 14px 18px;
           margin-bottom: 10px;
+          background: transparent;
         }
 
         details[open] {
-          background: #1c202b;
+          background: rgba(255,255,255,.02);
         }
 
         summary {
           cursor: pointer;
           font-weight: 600;
-          font-size: 0.95rem;
+          font-size: .95rem;
           list-style: none;
         }
 
@@ -128,181 +91,178 @@
 
         details p {
           margin-top: 12px;
-          font-size: 0.9rem;
-          line-height: 1.6;
-          color: var(--muted);
+          font-size: .9rem;
+          line-height: 1.7;
+          opacity: .8;
         }
 
-        /* ================= FOOTER ================= */
-        footer {
-          border-top: 1px solid var(--border);
-          margin-top: 50px;
-          padding: 25px 20px;
+        .legal-footer {
+          margin-top: 3rem;
           text-align: center;
-          font-size: 0.8rem;
-          color: var(--muted);
+          font-size: .85rem;
+          opacity: .7;
         }
 
-        footer a {
-          color: var(--accent);
-          text-decoration: none;
-          font-weight: 600;
-          margin: 0 6px;
-        }
+        @media (max-width: 600px) {
+          .legal-container {
+            padding: 2rem 1.4rem;
+            margin: 3rem 1rem;
+          }
 
-        footer a:hover {
-          text-decoration: underline;
+          .legal-container h1 {
+            font-size: 1.6rem;
+          }
         }
     </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Mi Tesoro MX</h1>
-    <p>El Sentido del Cine</p>
+<!-- HEADER GLOBAL -->
+<header class="main-header">
+    <div class="header-left">
+        <span class="logo-icon">🎬</span>
+        <div class="logo-text">
+            <strong>Mi Tesoro MX</strong>
+            <span>Coleccionables de Cine y Artículos de Colección</span>
+        </div>
+    </div>
+    <button id="menuToggle" class="menu-toggle" aria-label="Abrir menú">
+        ☰
+    </button>
+
+    <nav class="header-center">
+        <a href="index.html">Inicio</a>
+        <a href="mitesoromx.html">Quiénes Somos</a>
+        <a href="faq.html">Preguntas Frecuentes</a>
+    </nav>
 </header>
 
-<main>
+<!-- CONTENIDO -->
+<main class="legal-container">
 
-    <div class="card">
-        <h2>❓ Preguntas Frecuentes</h2>
-        <p class="subtitle">
-            Resolvemos tus dudas antes de comprar
-        </p>
+    <h1>Preguntas Frecuentes</h1>
+    <p class="subtitle">
+        Información clara antes de realizar tu compra
+    </p>
 
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Buscar una pregunta…">
-        </div>
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Buscar una pregunta…">
+    </div>
 
-        <!-- COMPRAS -->
-        <section class="faq-category">
-            <h3>🛒 Compras</h3>
+    <!-- COMPRAS -->
+    <section class="faq-category">
+        <h2>🛒 Compras</h2>
 
-            <details>
-                <summary>¿Cómo puedo comprar un producto?</summary>
-                <p>
-                    Agrega los productos al carrito y confirma tu pedido directamente por WhatsApp,
-                    donde validamos disponibilidad y forma de pago.
-                </p>
-            </details>
+        <details>
+            <summary>¿Cómo puedo comprar un producto?</summary>
+            <p>
+                Puedes agregar productos al carrito y confirmar tu pedido directamente por
+                WhatsApp, donde validamos disponibilidad y forma de pago.
+            </p>
+        </details>
 
-            <details>
-                <summary>¿Los productos son originales?</summary>
-                <p>
-                    Sí. Todas las piezas son originales y seleccionadas para colección.
-                </p>
-            </details>
+        <details>
+            <summary>¿Los productos son originales?</summary>
+            <p>
+                Sí. Todos los artículos son originales y seleccionados para colección.
+            </p>
+        </details>
 
-            <details>
-                <summary>¿Hay reposición de productos?</summary>
-                <p>
-                    No. Todos los artículos son piezas únicas y no se reponen.
-                </p>
-            </details>
-        </section>
+        <details>
+            <summary>¿Hay reposición de productos?</summary>
+            <p>
+                No. Todos los productos son piezas únicas y no se reponen.
+            </p>
+        </details>
+    </section>
 
-        <!-- PAGOS -->
-        <section class="faq-category">
-            <h3>💰 Pagos</h3>
+    <!-- PAGOS -->
+    <section class="faq-category">
+        <h2>💰 Pagos</h2>
 
-            <details>
-                <summary>¿Qué métodos de pago aceptan?</summary>
-                <p>
-                    Transferencia bancaria y efectivo.
-                    No solicitamos datos de tarjetas.
-                </p>
-            </details>
+        <details>
+            <summary>¿Qué métodos de pago aceptan?</summary>
+            <p>
+                Transferencia bancaria y efectivo. No solicitamos datos de tarjetas.
+            </p>
+        </details>
 
-            <details>
-                <summary>¿Cuándo se confirma mi compra?</summary>
-                <p>
-                    Una vez recibido y verificado el pago.
-                </p>
-            </details>
-        </section>
+        <details>
+            <summary>¿Cuándo se confirma mi compra?</summary>
+            <p>
+                Una vez recibido y validado el pago.
+            </p>
+        </details>
+    </section>
 
-        <!-- ENVÍOS -->
-        <section class="faq-category">
-            <h3>📦 Envíos</h3>
+    <!-- ENVÍOS -->
+    <section class="faq-category">
+        <h2>📦 Envíos</h2>
 
-            <details>
-                <summary>¿Realizan envíos a todo México?</summary>
-                <p>
-                    Sí, enviamos a toda la República Mexicana.
-                </p>
-            </details>
+        <details>
+            <summary>¿Realizan envíos a todo México?</summary>
+            <p>
+                Sí, realizamos envíos a toda la República Mexicana.
+            </p>
+        </details>
 
-            <details>
-                <summary>¿Cuánto cuesta el envío?</summary>
-                <p>
-                    Correos de México: $80 MXN (1 producto)<br>
-                    Correos de México: $100 MXN (varios productos)<br>
-                    Estafeta y FedEx: se cotiza según paquetería.
-                </p>
-            </details>
+        <details>
+            <summary>¿Cuánto cuesta el envío?</summary>
+            <p>
+                Correos de México: $80 MXN (un producto)<br>
+                Correos de México: $100 MXN (varios productos)<br>
+                Estafeta y FedEx: se cotiza directamente con la paquetería.
+            </p>
+        </details>
 
-            <details>
-                <summary>¿Cuándo se envía mi pedido?</summary>
-                <p>
-                    Al día siguiente de la confirmación del pago, de lunes a viernes.
-                </p>
-            </details>
-        </section>
+        <details>
+            <summary>¿Cuándo se envía mi pedido?</summary>
+            <p>
+                Al día siguiente de la confirmación del pago, de lunes a viernes.
+            </p>
+        </details>
+    </section>
 
-        <!-- APARTADOS -->
-        <section class="faq-category">
-            <h3>📌 Apartados</h3>
+    <!-- APARTADOS -->
+    <section class="faq-category">
+        <h2>📌 Apartados</h2>
 
-            <details>
-                <summary>¿Puedo apartar un producto?</summary>
-                <p>
-                    Sí, con un anticipo del 30% del valor total.
-                </p>
-            </details>
+        <details>
+            <summary>¿Puedo apartar un producto?</summary>
+            <p>
+                Sí. Se ofrece apartado con anticipo del 30% del valor total.
+            </p>
+        </details>
 
-            <details>
-                <summary>¿Cuál es el plazo para liquidar?</summary>
-                <p>
-                    Hasta 30 días naturales.
-                </p>
-            </details>
-        </section>
+        <details>
+            <summary>¿Cuánto tiempo tengo para liquidar?</summary>
+            <p>
+                El plazo máximo es de 30 días naturales.
+            </p>
+        </details>
+    </section>
 
+    <div class="legal-footer">
+        © 2026 Mi Tesoro MX<br>
+        Todos los derechos reservados
     </div>
 
 </main>
 
-<footer class="footer-global">
-    <div class="footer-wrap">
+<!-- FOOTER GLOBAL -->
+<footer class="footer">
+    <div class="footer-links">
+        <a href="politica-privacidad.html">Política de Privacidad</a>
+        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>
+        <a href="https://facebook.com/ElSentidoDelCine">Facebook</a>
+        <a href="https://wa.me/524761232612">WhatsApp</a>
+    </div>
 
-        <div class="footer-brand">
-            <strong>Mi Tesoro MX</strong>
-            <span>El Sentido del Cine</span>
-        </div>
-
-        <nav class="footer-links">
-            <a href="index.html">Inicio</a>
-            <a href="apartados.html">Apartados</a>
-            <a href="terminos.html">Términos y Condiciones</a>
-            <a href="privacidad.html">Política de Privacidad</a>
-            <a href="sobre.html">Sobre Mi Tesoro MX</a>
-        </nav>
-
-        <div class="footer-contact">
-            <span>Contacto directo:</span>
-            <a href="https://wa.me/524761232612" target="_blank">
-                WhatsApp +52 476 123 2612
-            </a>
-        </div>
-
-        <div class="footer-copy">
-            © 2026 Mi Tesoro MX · Todos los derechos reservados
-        </div>
-
+    <div class="footer-copy">
+        <p>© 2026 Mi Tesoro MX - Todos los derechos reservados</p>
     </div>
 </footer>
-
 
 <script>
     const searchInput = document.getElementById("searchInput");
