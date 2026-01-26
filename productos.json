@@ -56,6 +56,7 @@
 
   { "nombre": "Palomera Iron Man 100 Disney Cinemex Marvel", "categoria": "Marvel", "precio": 400, "imagen": "thumbs/ironman1.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Avengers Figura Iron Man Cinemex Marvel", "categoria": "Marvel", "precio": 50, "imagen": "thumbs/ironman2.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Oferta Exclusiva - Llévate Todo Iron Man", "categoria": "Marvel", "precio": 400, "imagen": "thumbs/oferta.png" ,"badge": "oferta", "stock": 1},
 
 
   { "nombre": "Vaso Los 4 Fantasticos Mujer Insivible Cinepolis Marvel", "categoria": "Marvel", "precio": 250, "imagen": "thumbs/cuatro1.png" ,"badge": "nuevo", "stock": 1},
