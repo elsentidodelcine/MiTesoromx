@@ -273,15 +273,7 @@ function agregarAlCarrito(producto, card) {
     const btn = card.querySelector(".boton");
     const textoOriginal = btn.textContent; // ← guardamos el texto original
     btn.textContent = "Apartado";
-    btn.disabled = true;
-    btn.classList.add("apartado"); // opcional para estilizar
-
-    // Restaurar después de 1.2 segundos
-    setTimeout(() => {
-        btn.textContent = textoOriginal;
-        btn.disabled = false;
-        btn.classList.remove("apartado");
-    }, 1200);
+    btn.classList.add("apartado");
 
     // Toast
     mostrarToast(producto.nombre);
@@ -585,17 +577,27 @@ function eliminarProducto(index, elemento) {
     setTimeout(() => {
         const productoEliminado = carrito[index];
 
+        // 🔥 DEVOLVER STOCK
+        const productoOriginal = productosGlobal.find(
+            p => p.nombre === productoEliminado.nombre
+        );
+
+        if (productoOriginal) {
+            productoOriginal.stock = productoOriginal.stockInicial;
+        }
+
         // Remover del carrito
         carrito.splice(index, 1);
         localStorage.setItem("carrito", JSON.stringify(carrito));
+
         actualizarCarritoUI();
         actualizarContadorCarrito();
 
-        // Restaurar botón de agregar
+        // Restaurar botón visual
         const catalogoItems = document.querySelectorAll(".producto");
         catalogoItems.forEach(card => {
             const nombre = card.querySelector("h2")?.textContent;
-            if (nombre === productoEliminado?.nombre) {
+            if (nombre === productoEliminado.nombre) {
                 const btn = card.querySelector(".boton");
                 btn.textContent = "Agregar al carrito";
                 btn.disabled = false;
@@ -604,6 +606,7 @@ function eliminarProducto(index, elemento) {
         });
 
     }, 300);
+
 }
 
 
@@ -758,6 +761,19 @@ function mostrarToastVaciado() {
     });
   });
 })();
+
+
+function restaurarBotonProducto(productoId) {
+  const boton = document.querySelector(
+    `.btn-agregar[data-id="${productoId}"]`
+  );
+
+  if (!boton) return;
+
+  boton.textContent = "Agregar al carrito";
+  boton.disabled = false;
+  boton.classList.remove("apartado");
+}
 
 
 
