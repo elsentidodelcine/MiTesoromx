@@ -760,23 +760,7 @@ menuToggle.addEventListener("click", () => {
   menuToggle.textContent = abierto ? "✕" : "☰";
 });
 
-const menuToggle = document.getElementById("menuToggle");
-const headerMenu = document.querySelector(".header-center");
 
-if (menuToggle && headerMenu) {
-  menuToggle.addEventListener("click", () => {
-    const abierto = headerMenu.classList.toggle("open");
-    menuToggle.textContent = abierto ? "✕" : "☰";
-  });
-
-  // cerrar menú al hacer click en un link
-  headerMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      headerMenu.classList.remove("open");
-      menuToggle.textContent = "☰";
-    });
-  });
-}
 
 window.addEventListener("scroll", () => {
   if (headerMenu.classList.contains("open")) {
