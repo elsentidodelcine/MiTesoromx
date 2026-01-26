@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidad – Mi Tesoro MX</title>
+    <title>Política de Privacidad | Mi Tesoro MX</title>
 
     <style>
         :root {
@@ -23,6 +23,33 @@
           line-height: 1.8;
         }
 
+        /* ===== HEADER LEGAL ===== */
+        header {
+          padding: 18px 20px;
+          border-bottom: 1px solid var(--border);
+          text-align: center;
+          background: #0d0d0d;
+        }
+
+        header .brand {
+          font-size: 0.9rem;
+          letter-spacing: 1px;
+          color: var(--muted);
+        }
+
+        header a {
+          display: inline-block;
+          margin-top: 6px;
+          font-size: 0.8rem;
+          color: var(--accent);
+          text-decoration: none;
+          font-weight: 600;
+        }
+
+        header a:hover {
+          text-decoration: underline;
+        }
+
         .wrap {
           max-width: 760px;
           margin: 60px auto;
@@ -34,14 +61,6 @@
           border-radius: 14px;
           padding: 45px 40px;
           border: 1px solid var(--border);
-        }
-
-        .brand {
-          text-align: center;
-          font-size: 0.85rem;
-          letter-spacing: 1px;
-          color: var(--muted);
-          margin-bottom: 10px;
         }
 
         h1 {
@@ -90,11 +109,25 @@
           text-decoration: underline;
         }
 
-        footer {
-          margin-top: 40px;
+        /* ===== FOOTER GLOBAL ===== */
+        footer.footer-global {
+          border-top: 1px solid var(--border);
+          margin-top: 60px;
+          padding: 30px 20px;
           text-align: center;
           font-size: 0.8rem;
           color: var(--muted);
+        }
+
+        footer.footer-global a {
+          color: var(--accent);
+          margin: 0 8px;
+          text-decoration: none;
+          font-weight: 600;
+        }
+
+        footer.footer-global a:hover {
+          text-decoration: underline;
         }
 
         @media (max-width: 600px) {
@@ -111,10 +144,30 @@
 
 <body>
 
+<!-- HEADER -->
+<header class="main-header">
+    <div class="header-left">
+        <span class="logo-icon">🎬</span>
+        <div class="logo-text">
+            <strong>Mi Tesoro MX</strong>
+            <span>Coleccionables de Cine y Artículos de Colección</span>
+        </div>
+    </div>
+    <button id="menuToggle" class="menu-toggle" aria-label="Abrir menú">
+        ☰
+    </button>
+
+    <nav class="header-center">
+        <a href="index.html">Inicio</a>
+        <a href="mitesoromx.html">Quiénes Somos</a>
+        <a href="aviso-legal-apartado.html">Apartados</a>
+        <a href="faq.html">Preguntas Frecuentes</a>
+    </nav>
+</header>
+
+<!-- CONTENIDO -->
 <div class="wrap">
     <div class="card">
-
-        <div class="brand">Mi Tesoro MX</div>
 
         <h1>Política de Privacidad</h1>
 
@@ -176,21 +229,29 @@
 
         <h2>📲 Contacto</h2>
         <p>
-            Si tienes dudas sobre esta política o sobre el uso de tu información,
-            puedes contactarnos directamente vía WhatsApp:
+            Para cualquier duda relacionada con esta política:
             <br><br>
             👉 <a href="https://wa.me/524761232612" target="_blank">
             +52 476 123 2612
         </a>
         </p>
 
-        <footer>
-            Última actualización: 2026<br>
-            © 2026 Mi Tesoro MX - Todos los derechos reservados
-        </footer>
-
     </div>
 </div>
+
+<!-- FOOTER GLOBAL -->
+<footer class="footer">
+    <div class="footer-links">
+        <a href="politica-privacidad.html">Política de Privacidad</a>
+        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>
+        <a href="https://facebook.com/ElSentidoDelCine">Facebook</a>
+        <a href="https://wa.me/524761232612">WhatsApp</a>
+    </div>
+
+    <div class="footer-copy">
+        <p>© 2026 Mi Tesoro MX - Todos los derechos reservados</p>
+    </div>
+</footer>
 
 </body>
 </html>
