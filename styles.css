@@ -1864,16 +1864,6 @@ body.dark .main-header .logo-text span {
     color: #aaa;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .main-header .header-center {
-        display: none;
-    }
-
-    .main-header .logo-text span {
-        display: none;
-    }
-}
 
 
 /* =========================
@@ -2475,3 +2465,60 @@ body.dark .header-center {
 body.dark .menu-toggle {
   color: #fff;
 }
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: relative;
+    z-index: 2001; /* 🔥 MÁS ALTO QUE EL HEADER */
+  }
+}
+
+/* =========================
+   FIX HEADER MOBILE FINAL
+========================= */
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+    z-index: 3000; /* 🔥 encima de todo */
+  }
+
+  .header-center {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    background: var(--card);
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 22px 0;
+
+    /* estado cerrado */
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+
+    transition: all 0.35s ease;
+    z-index: 2000;
+  }
+
+  .header-center.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+

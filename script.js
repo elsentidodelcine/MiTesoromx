@@ -740,34 +740,25 @@ function mostrarToastVaciado() {
 }
 
 
-const menuToggle = document.getElementById("menuToggle");
-const headerMenu = document.querySelector(".header-center");
+(() => {
+  const menuToggle = document.getElementById("menuToggle");
+  const headerMenu = document.querySelector(".header-center");
 
-if (menuToggle && headerMenu) {
+  if (!menuToggle || !headerMenu) return;
+
   menuToggle.addEventListener("click", () => {
-    headerMenu.classList.toggle("open");
+    const abierto = headerMenu.classList.toggle("open");
+    menuToggle.textContent = abierto ? "✕" : "☰";
   });
-}
 
-document.querySelectorAll(".header-center a").forEach(link => {
-  link.addEventListener("click", () => {
-    headerMenu.classList.remove("open");
+  headerMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      headerMenu.classList.remove("open");
+      menuToggle.textContent = "☰";
+    });
   });
-});
+})();
 
-menuToggle.addEventListener("click", () => {
-  const abierto = headerMenu.classList.toggle("open");
-  menuToggle.textContent = abierto ? "✕" : "☰";
-});
-
-
-
-window.addEventListener("scroll", () => {
-  if (headerMenu.classList.contains("open")) {
-    headerMenu.classList.remove("open");
-    menuToggle.textContent = "☰";
-  }
-});
 
 
 
