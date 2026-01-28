@@ -2546,6 +2546,58 @@ body.dark .menu-toggle {
   font-weight: 600;
   text-align: center;
 }
+/* ================= FILTROS MOBILE ================= */
+@media (max-width: 768px) {
+    .filtros {
+        max-height: 52px; /* altura de 1 fila */
+        overflow: hidden;
+        position: relative;
+        transition: max-height .3s ease;
+    }
+
+    .filtros.expandido {
+        max-height: 500px; /* suficiente para todas */
+    }
+
+    .filtros-toggle {
+        display: block;
+        margin: 10px auto 0;
+        background: none;
+        border: none;
+        color: var(--accent);
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonio {
+        padding: 14px;
+        font-size: 0.85rem;
+    }
+
+    .testimonios-grid {
+        gap: 14px;
+    }
+
+    .testimonio span {
+        font-size: 0.7rem;
+    }
+}
+@media (max-width: 768px) {
+    .testimonio {
+        display: none;
+    }
+
+    .testimonio:first-child {
+        display: block;
+    }
+
+    .testimonios.expandido .testimonio {
+        display: block;
+    }
+}
 
 
 

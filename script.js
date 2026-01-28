@@ -787,6 +787,28 @@ function restaurarBotonProducto(productoId) {
   boton.classList.remove("apartado");
 }
 
+const toggleFiltros = document.getElementById("toggleFiltros");
+const filtros = document.querySelector(".filtros");
+
+if (toggleFiltros && filtros) {
+  toggleFiltros.addEventListener("click", () => {
+    filtros.classList.toggle("expandido");
+    toggleFiltros.textContent = filtros.classList.contains("expandido")
+      ? "Ocultar categorías ▴"
+      : "Más categorías ▾";
+  });
+}
+const toggleOpiniones = document.getElementById("toggleOpiniones");
+const testimonios = document.querySelector(".testimonios");
+
+if (toggleOpiniones && testimonios) {
+  toggleOpiniones.addEventListener("click", () => {
+    testimonios.classList.toggle("expandido");
+    toggleOpiniones.textContent = testimonios.classList.contains("expandido")
+      ? "Ocultar opiniones ▴"
+      : "Ver más opiniones ▾";
+  });
+}
 
 
 
