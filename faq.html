@@ -270,6 +270,26 @@
 </footer>
 
 <script>
+
+    (() => {
+  const menuToggle = document.getElementById("menuToggle");
+  const headerMenu = document.querySelector(".header-center");
+
+  if (!menuToggle || !headerMenu) return;
+
+  menuToggle.addEventListener("click", () => {
+    const abierto = headerMenu.classList.toggle("open");
+    menuToggle.textContent = abierto ? "✕" : "☰";
+  });
+
+  headerMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      headerMenu.classList.remove("open");
+      menuToggle.textContent = "☰";
+    });
+  });
+})();
+
     const searchInput = document.getElementById("searchInput");
     const detailsElements = document.querySelectorAll("details");
 
@@ -281,7 +301,6 @@
       });
     });
 </script>
-<!-- JS -->
-<script src="script.js"></script>
+
 </body>
 </html>

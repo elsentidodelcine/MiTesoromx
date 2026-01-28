@@ -159,7 +159,7 @@
 
   { "nombre": "Vaso Totem Sin Tapa Mulan Cinepolis", "categoria": "Peliculas", "precio": 100, "imagen": "thumbs/mulan.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Palomera Los Juegos del Hambre Cinepolis", "categoria": "Peliculas", "precio": 150, "imagen": "thumbs/peli1.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Palomera El Señor de los Anillos Cinepolis", "categoria": "Peliculas", "precio": 150, "imagen": "thumbs/peli2.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Palomera El Señor de los Anillos Cinepolis", "categoria": "Peliculas", "precio": 150, "imagen": "thumbs/peli2.png" ,"badge": "nuevo", "stock": 0},
   { "nombre": "Palomera Mision Imposible Cinepolis", "categoria": "Peliculas", "precio": 150, "imagen": "thumbs/peli3.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Avatar Fuego y Cenizas Cinepolis", "categoria": "Peliculas", "precio": 150, "imagen": "thumbs/peli4.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Avatar La Forma del Agua Movie Center", "categoria": "Peliculas", "precio": 80, "imagen": "thumbs/peli5.png" ,"badge": "nuevo", "stock": 1},
