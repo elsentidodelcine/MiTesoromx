@@ -2651,4 +2651,118 @@ body.dark .descripcion-oferta {
 }
 
 
+.ver-mas-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+
+  margin: 2rem auto 0;
+  padding: .6rem 1.2rem;
+
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  color: var(--text);
+  font-size: .85rem;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: all .25s ease;
+}
+
+@media (hover: hover) {
+  .ver-mas-btn:hover {
+    background: var(--card);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+}
+@media (max-width: 768px) {
+  .ver-mas-btn {
+    width: 100%;
+    font-size: .9rem;
+  }
+}
+
+.filtros-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+
+  margin: 2rem auto;
+  padding: .6rem 1.3rem;
+
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  color: var(--text);
+  font-size: .85rem;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: all .25s ease;
+}
+@media (hover: hover) {
+  .filtros-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--card);
+  }
+}
+
+@media (max-width: 768px) {
+  .filtros-toggle {
+    width: 100%;
+    font-size: .9rem;
+  }
+}
+
+/* ===============================
+   BOTONES "VER MÁS" (CATEGORÍAS / OPINIONES)
+================================ */
+
+.filtros-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+
+    margin: 24px auto;
+    padding: 10px 20px;
+
+    background: transparent;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 999px;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+
+    cursor: pointer;
+    transition: all .25s ease;
+}
+
+/* Hover solo escritorio */
+@media (hover: hover) {
+    .filtros-toggle:hover {
+        background: var(--card);
+        border-color: var(--accent);
+        color: var(--accent);
+        transform: translateY(-2px);
+    }
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+    .filtros-toggle {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+}
+
+
 

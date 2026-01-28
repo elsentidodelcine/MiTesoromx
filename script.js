@@ -35,8 +35,10 @@ fetch("productos.json")
       p.stockInicial = p.stock;
 
       // Badge automático
-      if (p.stock === 1) p.badge = "Última pieza";
-      if (p.stock === 0) p.badge = "AGOTADO";
+      if (!p.badge) {
+        if (p.stock === 1) p.badge = "Última pieza";
+        if (p.stock === 0) p.badge = "AGOTADO";
+      }
     });
 
 
