@@ -365,9 +365,14 @@ body {
 /* Items */
 .cart-items {
     flex: 1;
-    padding: 15px;
+    padding: 20px;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-height: 55vh;
 }
+
 
 /* Footer carrito */
 .cart-footer {
@@ -638,28 +643,6 @@ body.dark .cart-drawer {
     cursor: pointer;
 }
 
-/* ITEMS */
-.cart-items {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.cart-item {
-    background: rgba(0,0,0,.05);
-    padding: 14px;
-    border-radius: 14px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 10px;
-}
-
-body.dark .cart-item {
-    background: rgba(255,255,255,.06);
-}
 
 .cart-item strong {
     font-size: .9rem;
@@ -814,17 +797,6 @@ body.dark .cart-qty button {
    CARRITO – REDISEÑO VISUAL PRO
    =============================== */
 
-/* Item del carrito */
-.cart-item {
-    background: var(--card);
-    border-radius: 16px;
-    padding: 14px 16px;
-    box-shadow: 0 6px 18px var(--shadow);
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    transition: transform .2s ease, box-shadow .2s ease;
-}
 
 .cart-item:hover {
     transform: translateY(-2px);
@@ -1023,18 +995,7 @@ body.dark .testimonios {
 
 /* ================= CARRITO PRO ================= */
 
-.cart-item {
-    background: linear-gradient(135deg, rgba(0,0,0,.03), rgba(0,0,0,.08));
-    border-radius: 16px;
-    padding: 16px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 10px;
-}
 
-body.dark .cart-item {
-    background: rgba(255,255,255,.06);
-}
 
 .cart-item strong {
     font-size: .9rem;
@@ -1391,15 +1352,7 @@ body.dark .pasos-carrito {
     transform: scale(1.05);
 }
 
-.cart-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px;
-    border-radius: 12px;
-    background: #f4f4f4;
-    margin-bottom: 10px;
-}
+
 
 .cart-img {
     width: 60px;
@@ -1438,21 +1391,8 @@ body.dark .pasos-carrito {
     color: red;
 }
 
-/* CONTENEDOR ITEMS CARRITO */
-.cart-items {
-    padding: 20px;
-}
 
 /* TARJETA DE PRODUCTO */
-.cart-item {
-    display: flex;
-    gap: 14px;
-    padding: 16px;
-    border-radius: 16px;
-    background: var(--card-bg, #f7f7f7);
-    margin-bottom: 18px;
-    align-items: center;
-}
 
 /* IMAGEN PRODUCTO */
 .cart-item img {
@@ -1526,10 +1466,7 @@ body.dark .pasos-carrito {
     font-size: 0.75rem;
     padding: 6px;
 }
-.cart-items {
-    max-height: 55vh;
-    overflow-y: auto;
-}
+
 
 .cart-item.remove {
     opacity: 0;
@@ -1603,11 +1540,6 @@ body.dark .pasos-carrito {
    =============================== */
 
 /* CONTENEDOR ITEMS */
-.cart-items {
-    flex: 1;
-    overflow-y: auto;
-    padding: 16px;
-}
 
 /* ITEM */
 .cart-item {
@@ -1624,6 +1556,11 @@ body.dark .pasos-carrito {
     touch-action: pan-y;
     transition: transform 0.25s ease, opacity 0.25s ease;
 }
+
+body.dark .cart-item {
+    background: rgba(255,255,255,.06);
+}
+
 
 /* IMAGEN */
 .cart-img {
