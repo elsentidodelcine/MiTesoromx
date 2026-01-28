@@ -2599,23 +2599,55 @@ body.dark .menu-toggle {
     }
 }
 
-.filtros-toggle {
-    display: none;
-}
 
-@media (min-width: 769px) {
-    .filtros-toggle {
-        display: none !important;
-    }
-}
-
+/* ===== DESCRIPCIÓN OFERTA ===== */
 .descripcion-oferta {
   font-size: 0.9rem;
-  color: #b45309;
-  background: #fff7ed;
-  padding: 0.4rem 0.6rem;
-  border-radius: 6px;
-  margin: 0.4rem 0 0.6rem;
+  color: #444;
+  margin: 6px 0 10px;
+  line-height: 1.4;
+}
+
+body.dark .descripcion-oferta {
+  color: #ccc;
+}
+
+
+
+
+/* ===== BOTÓN MÁS CATEGORÍAS ===== */
+
+/* BASE (MÓVIL) */
+.filtros-toggle {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0;
+}
+
+/* ESCRITORIO */
+@media (min-width: 769px) {
+    .filtros-toggle {
+        justify-content: flex-start;
+        margin: 10px 0 20px;
+    }
+}
+/* ===== VER MÁS OPINIONES ===== */
+
+/* BASE (MÓVIL) */
+.ver-mas-opiniones {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* ESCRITORIO */
+@media (min-width: 769px) {
+    .ver-mas-opiniones {
+        width: auto;
+        display: inline-block;
+        margin-top: 30px;
+    }
 }
 
 

@@ -186,13 +186,13 @@ function mostrarProductos() {
 
        <p class="precio">$${p.precio} MXN</p>
 
-
        ${
          p.stock > 0
            ? `<button class="boton">Agregar al carrito</button>`
            : `<span class="sin-stock">AGOTADO</span>`
        }
      </div>
+
 
     `;
 
