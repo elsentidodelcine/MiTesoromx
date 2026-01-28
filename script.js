@@ -30,10 +30,15 @@ fetch("productos.json")
   .then(r => r.json())
   .then(data => {
     data.forEach(p => {
-     p.stock = 1;
-     p.stockInicial = 1; 
-     p.badge = "Última pieza";
-   });
+      // RESPETAR EL STOCK DEL JSON
+      p.stock = Number(p.stock) || 0;
+      p.stockInicial = p.stock;
+
+      // Badge automático
+      if (p.stock === 1) p.badge = "Última pieza";
+      if (p.stock === 0) p.badge = "AGOTADO";
+    });
+
 
 
     productosGlobal = data;
