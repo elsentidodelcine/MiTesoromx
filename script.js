@@ -170,18 +170,25 @@ function mostrarProductos() {
         >
       </div>
 
-      <div class="info">
-        <h2>${p.nombre}</h2>
-        <p class="precio">$${p.precio} MXN</p>
+     <div class="info">
+       <h2>${p.nombre}</h2>
+       <p class="precio">$${p.precio} MXN</p>
 
-        <button class="boton" ${p.stock <= 0 ? "disabled" : ""}>
-          ${p.stock <= 0 ? "Apartado" : "Agregar al carrito"}
-        </button>
-      </div>
+       ${
+         p.stock > 0
+           ? `<button class="boton">Agregar al carrito</button>`
+           : `<span class="sin-stock">AGOTADO</span>`
+       }
+     </div>
+
     `;
 
 
-    card.querySelector(".boton").onclick = () => agregarAlCarrito(p, card);
+    const btn = card.querySelector(".boton");
+    if (btn) {
+      btn.onclick = () => agregarAlCarrito(p, card);
+    }
+
     catalogo.appendChild(card);
     
         // ================= MODAL DE IMAGEN =================

@@ -2536,6 +2536,16 @@ body.dark .menu-toggle {
   white-space: nowrap;
   border: 0;
 }
+.sin-stock {
+  display: inline-block;
+  padding: 10px 14px;
+  background: #222;
+  color: #c59d5f;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
 
 
 
