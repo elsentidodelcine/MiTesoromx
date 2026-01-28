@@ -2599,5 +2599,24 @@ body.dark .menu-toggle {
     }
 }
 
+.filtros-toggle {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .filtros-toggle {
+        display: none !important;
+    }
+}
+
+.descripcion-oferta {
+  font-size: 0.9rem;
+  color: #b45309;
+  background: #fff7ed;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  margin: 0.4rem 0 0.6rem;
+}
+
 
 

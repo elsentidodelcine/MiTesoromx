@@ -177,7 +177,15 @@ function mostrarProductos() {
 
      <div class="info">
        <h2>${p.nombre}</h2>
+
+       ${
+         p.badge === "oferta" && p.descripcion
+           ? `<p class="descripcion-oferta">${p.descripcion}</p>`
+           : ""
+       }
+
        <p class="precio">$${p.precio} MXN</p>
+
 
        ${
          p.stock > 0
