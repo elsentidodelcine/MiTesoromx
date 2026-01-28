@@ -6,138 +6,162 @@
     <title>Política de Privacidad | Mi Tesoro MX</title>
 
     <style>
-        :root {
-          --bg: #0f0f0f;
-          --card: #161616;
-          --text: #e6e6e6;
-          --muted: #9a9a9a;
-          --accent: #c59d5f;
-          --border: #262626;
+        :root{
+          --bg:#0f0f0f;
+          --card:#161616;
+          --text:#e6e6e6;
+          --muted:#9a9a9a;
+          --accent:#c59d5f;
+          --border:#262626;
         }
 
-        body {
-          margin: 0;
-          background: var(--bg);
-          color: var(--text);
-          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-          line-height: 1.8;
+        *{box-sizing:border-box}
+
+        body{
+          margin:0;
+          background:var(--bg);
+          color:var(--text);
+          font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+          line-height:1.8;
         }
 
-        /* ===== HEADER LEGAL ===== */
-        header {
-          padding: 18px 20px;
-          border-bottom: 1px solid var(--border);
-          text-align: center;
-          background: #0d0d0d;
+        /* ===== HEADER ===== */
+        .main-header{
+          position:sticky;
+          top:0;
+          z-index:100;
+          background:#0d0d0d;
+          border-bottom:1px solid var(--border);
+          padding:14px 20px;
+          display:flex;
+          align-items:center;
+          justify-content:space-between;
         }
 
-        header .brand {
-          font-size: 0.85rem;
-          letter-spacing: 1px;
-          color: var(--muted);
+        .header-left{
+          display:flex;
+          align-items:center;
+          gap:10px;
         }
 
-        header a {
-          display: inline-block;
-          margin-top: 6px;
-          font-size: 0.8rem;
-          color: var(--accent);
-          text-decoration: none;
-          font-weight: 600;
+        .logo-icon{
+          font-size:1.4rem;
         }
 
-        header a:hover {
-          text-decoration: underline;
+        .logo-text strong{
+          display:block;
+          font-size:.9rem;
         }
 
-        .wrap {
-          max-width: 760px;
-          margin: 60px auto;
-          padding: 0 20px;
+        .logo-text span{
+          font-size:.7rem;
+          color:var(--muted);
         }
 
-        .card {
-          background: var(--card);
-          border-radius: 14px;
-          padding: 45px 40px;
-          border: 1px solid var(--border);
+        .menu-toggle{
+          display:none;
+          background:none;
+          border:none;
+          color:#fff;
+          font-size:1.6rem;
+          cursor:pointer;
         }
 
-        h1 {
-          text-align: center;
-          font-size: 1.6rem;
-          margin-bottom: 35px;
-          font-weight: 600;
+        /* NAV */
+        .header-center{
+          display:flex;
+          gap:20px;
         }
 
-        h2 {
-          font-size: 1.05rem;
-          margin-top: 35px;
-          margin-bottom: 10px;
-          font-weight: 600;
-          display: flex;
-          align-items: center;
-          gap: 8px;
+        .header-center a{
+          color:var(--text);
+          text-decoration:none;
+          font-size:.85rem;
+          font-weight:500;
         }
 
-        p {
-          margin: 14px 0;
+        .header-center a:hover{
+          color:var(--accent);
         }
 
-        strong {
-          color: #fff;
-          font-weight: 600;
-        }
+        /* ===== MOBILE MENU ===== */
+        @media(max-width:768px){
+          .menu-toggle{display:block}
 
-        .note {
-          margin: 30px 0;
-          padding: 18px 20px;
-          border-left: 3px solid var(--accent);
-          background: #121212;
-          border-radius: 8px;
-          font-size: 0.95rem;
-          color: var(--muted);
-        }
-
-        a {
-          color: var(--accent);
-          text-decoration: none;
-          font-weight: 600;
-        }
-
-        a:hover {
-          text-decoration: underline;
-        }
-
-        /* ===== FOOTER LEGAL ===== */
-        footer {
-          border-top: 1px solid var(--border);
-          margin-top: 60px;
-          padding: 30px 20px;
-          text-align: center;
-          font-size: 0.8rem;
-          color: var(--muted);
-        }
-
-        footer a {
-          color: var(--accent);
-          margin: 0 8px;
-          text-decoration: none;
-          font-weight: 600;
-        }
-
-        footer a:hover {
-          text-decoration: underline;
-        }
-
-        @media (max-width: 600px) {
-          .card {
-            padding: 35px 25px;
+          .header-center{
+            position:absolute;
+            top:100%;
+            left:0;
+            right:0;
+            background:#0d0d0d;
+            border-bottom:1px solid var(--border);
+            flex-direction:column;
+            gap:0;
+            display:none;
           }
 
-          h1 {
-            font-size: 1.4rem;
+          .header-center.open{
+            display:flex;
           }
+
+          .header-center a{
+            padding:14px 20px;
+            border-top:1px solid var(--border);
+          }
+        }
+
+        /* ===== CONTENT ===== */
+        .wrap{
+          max-width:760px;
+          margin:60px auto;
+          padding:0 20px;
+        }
+
+        .card{
+          background:var(--card);
+          border-radius:14px;
+          padding:45px 40px;
+          border:1px solid var(--border);
+        }
+
+        h1{
+          text-align:center;
+          font-size:1.6rem;
+          margin-bottom:35px;
+        }
+
+        h2{
+          font-size:1.05rem;
+          margin-top:35px;
+          display:flex;
+          gap:8px;
+        }
+
+        .note{
+          margin:30px 0;
+          padding:18px 20px;
+          border-left:3px solid var(--accent);
+          background:#121212;
+          border-radius:8px;
+          font-size:.95rem;
+          color:var(--muted);
+        }
+
+        a{color:var(--accent);font-weight:600;text-decoration:none}
+
+        /* ===== FOOTER ===== */
+        footer{
+          border-top:1px solid var(--border);
+          margin-top:60px;
+          padding:30px 20px;
+          text-align:center;
+          font-size:.8rem;
+          color:var(--muted);
+        }
+
+        footer a{
+          color:var(--accent);
+          margin:0 8px;
         }
     </style>
 </head>
@@ -149,12 +173,11 @@
         <span class="logo-icon">🎬</span>
         <div class="logo-text">
             <strong>Mi Tesoro MX</strong>
-            <span>Coleccionables de Cine y Artículos de Colección</span>
+            <span>Coleccionables de Cine</span>
         </div>
     </div>
-    <button id="menuToggle" class="menu-toggle" aria-label="Abrir menú">
-        ☰
-    </button>
+
+    <button id="menuToggle" class="menu-toggle" aria-label="Abrir menú">☰</button>
 
     <nav class="header-center">
         <a href="index.html">Inicio</a>
@@ -169,102 +192,46 @@
 
         <h1>Política de Privacidad</h1>
 
-        <p>
-            En <strong>Mi Tesoro MX</strong> respetamos tu privacidad y valoramos la confianza
-            que depositas en nosotros al contactarnos para adquirir nuestros productos.
-        </p>
+        <p>En <strong>Mi Tesoro MX</strong> respetamos tu privacidad y valoramos la confianza que depositas en nosotros.</p>
 
         <h2>📋 Información que recopilamos</h2>
-        <p>
-            Únicamente recopilamos tu <strong>nombre</strong> y
-            <strong>número de WhatsApp</strong> cuando nos contactas para realizar un pedido
-            o solicitar información.
-        </p>
+        <p>Nombre y número de WhatsApp únicamente para atención y pedidos.</p>
 
-        <div class="note">
-            ❌ No solicitamos ni almacenamos datos bancarios, tarjetas de crédito,
-            contraseñas ni información financiera sensible.
-        </div>
-
-        <h2>🎯 Uso de la información</h2>
-        <p>La información proporcionada se utiliza exclusivamente para:</p>
-
-        <div class="note">
-            ✔️ Atender tu solicitud o pedido<br>
-            ✔️ Coordinar la entrega o envío del producto<br>
-            ✔️ Brindar atención personalizada vía WhatsApp
-        </div>
-
-        <h2>📦 Envíos y terceros</h2>
-        <p>
-            Algunos datos podrán ser compartidos únicamente con la empresa de mensajería
-            seleccionada por el cliente (<strong>Correos de México, Estafeta o FedEx</strong>)
-            para completar la entrega.
-        </p>
-
-        <h2>🔐 Protección de tus datos</h2>
-        <p>
-            Tu información no se comparte, vende ni cede a terceros bajo ninguna circunstancia,
-            salvo lo estrictamente necesario para la gestión del envío.
-        </p>
-
-        <h2>🌐 Plataformas externas</h2>
-        <p>
-            La comunicación se realiza a través de <strong>WhatsApp</strong>, servicio operado
-            por Meta Platforms Inc. Al iniciar contacto, el usuario acepta también las políticas
-            de dicha plataforma.
-        </p>
-
-        <h2>⚖️ Derechos del usuario</h2>
-        <p>
-            Puedes solicitar en cualquier momento la eliminación de tus datos de contacto.
-            No es necesario crear cuentas ni registrarse para comprar en Mi Tesoro MX.
-        </p>
+        <div class="note">❌ No almacenamos datos bancarios ni sensibles.</div>
 
         <h2>📲 Contacto</h2>
-        <p>
-            Para cualquier duda relacionada con esta política:
-            <br><br>
-            👉 <a href="https://wa.me/524761232612" target="_blank">+52 476 123 2612</a>
-        </p>
+        <p><a href="https://wa.me/524761232612" target="_blank">+52 476 123 2612</a></p>
 
     </div>
 </div>
 
-<!-- FOOTER GLOBAL -->
-<footer class="footer">
-    <div class="footer-links">
-        <a href="politica-privacidad.html">Política de Privacidad</a>
-        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>
-        <a href="https://facebook.com/ElSentidoDelCine">Facebook</a>
-        <a href="https://wa.me/524761232612">WhatsApp</a>
-    </div>
-
-    <div class="footer-copy">
-        <p>© 2026 Mi Tesoro MX - Todos los derechos reservados</p>
-    </div>
+<footer>
+    <a href="politica-privacidad.html">Política</a>
+    <a href="terminos-y-condiciones.html">Términos</a>
+    <a href="https://facebook.com/ElSentidoDelCine">Facebook</a>
+    <a href="https://wa.me/524761232612">WhatsApp</a>
+    <p>© 2026 Mi Tesoro MX</p>
 </footer>
 
 <script>
-
     (() => {
-  const menuToggle = document.getElementById("menuToggle");
-  const headerMenu = document.querySelector(".header-center");
+      const btn = document.getElementById("menuToggle");
+      const menu = document.querySelector(".header-center");
+      if(!btn || !menu) return;
 
-  if (!menuToggle || !headerMenu) return;
+      btn.addEventListener("click",()=>{
+        const open = menu.classList.toggle("open");
+        btn.textContent = open ? "✕" : "☰";
+      });
 
-  menuToggle.addEventListener("click", () => {
-    const abierto = headerMenu.classList.toggle("open");
-    menuToggle.textContent = abierto ? "✕" : "☰";
-  });
-
-  headerMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      headerMenu.classList.remove("open");
-      menuToggle.textContent = "☰";
-    });
-  });
-})();
+      menu.querySelectorAll("a").forEach(a=>{
+        a.addEventListener("click",()=>{
+          menu.classList.remove("open");
+          btn.textContent="☰";
+        });
+      });
+    })();
 </script>
+
 </body>
 </html>
