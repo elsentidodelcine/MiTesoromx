@@ -178,14 +178,14 @@
 
   { "nombre": "Libro The Legend of Zelda", "categoria": "Libros", "precio": 170, "imagen": "thumbs/zelda.png" ,"badge": "nuevo", "stock": 1},
 
-  { "nombre": "Vaso Los Autenticos Decadentes Cinemex", "categoria": "Conciertos", "precio": 100, "imagen": "thumbs/concierto1.png" },
-  { "nombre": "Vaso Moonspell Concierto", "categoria": "Conciertos", "precio": 100, "imagen": "thumbs/concierto2.png" },
-  { "nombre": "Vaso Lacrimosa Concierto", "categoria": "Conciertos", "precio": 100, "imagen": "thumbs/concierto3.png" },
-  { "nombre": "Vaso Rebelde RBD Concierto", "categoria": "Conciertos", "precio": 100, "imagen": "thumbs/concierto4.png" },
-  { "nombre": "Vaso Arch Enemy Concierto", "categoria": "Conciertos", "precio": 100, "imagen": "thumbs/concierto5.png" },
-  { "nombre": "Vaso Therion 1 Concierto", "categoria": "Conciertos", "precio": 100, "imagen": "thumbs/concierto6.png" },
-  { "nombre": "Vaso Therion 2 Concierto", "categoria": "Conciertos", "precio": 100, "imagen": "thumbs/concierto7.png" },
-  { "nombre": "Vaso Lacuna Coil Concierto", "categoria": "Conciertos", "precio": 100, "imagen": "thumbs/concierto8.png" },
+  { "nombre": "Vaso Los Autenticos Decadentes Cinemex", "categoria": "Conciertos", "precio": 100, "imagen": "thumbs/concierto1.png","badge": "nuevo", "stock": 1 },
+  { "nombre": "Vaso Moonspell Concierto", "categoria": "Conciertos", "precio": 100, "imagen": "thumbs/concierto2.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Lacrimosa Concierto", "categoria": "Conciertos", "precio": 100, "imagen": "thumbs/concierto3.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Rebelde RBD Concierto", "categoria": "Conciertos", "precio": 100, "imagen": "thumbs/concierto4.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Arch Enemy Concierto", "categoria": "Conciertos", "precio": 100, "imagen": "thumbs/concierto5.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Therion 1 Concierto", "categoria": "Conciertos", "precio": 100, "imagen": "thumbs/concierto6.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Therion 2 Concierto", "categoria": "Conciertos", "precio": 100, "imagen": "thumbs/concierto7.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Lacuna Coil Concierto", "categoria": "Conciertos", "precio": 100, "imagen": "thumbs/concierto8.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Conciertos", "categoria": "Conciertos", "precio": 600, "imagen": "thumbs/oferta1.png" ,"badge": "oferta", "stock": 1},
 
 
