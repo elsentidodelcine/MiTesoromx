@@ -112,14 +112,13 @@
   { "nombre": "Vaso Cars 3 Cinepolis", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/infantil6.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Palomera Cars Matte Cinemex Disney", "categoria": "Infantil", "precio": 400, "imagen": "thumbs/infantil14.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Cars", "categoria": "Infantil", "precio": 400, "imagen": "thumbs/bob4.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye el vaso y la palomera"},
-  { "nombre": "Vaso Intensamente Movie Center", "categoria": "Infantil", "precio": 80, "imagen": "thumbs/infantil5.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Palomera Intensamente 2 Movie Center", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/infantil11.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Oferta Exclusiva - Llévate Todo Intensamente", "categoria": "Infantil", "precio": 130, "imagen": "thumbs/bob4.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye el vaso y la palomera"},
+  { "nombre": "Vaso Intensamente Movie Center", "categoria": "Infantil", "precio": 80, "imagen": "thumbs/infantil5.png" ,"badge": "nuevo", "stock": 0},
+  { "nombre": "Palomera Intensamente 2 Movie Center", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/infantil11.png" ,"badge": "nuevo", "stock": 0},
   { "nombre": "Vaso Ralph Cinepolis", "categoria": "Infantil", "precio": 50, "imagen": "thumbs/infantil4.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vaso Mario Bros Cinemex", "categoria": "Infantil", "precio": 50, "imagen": "thumbs/infantil9.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Mario Bros Cinemex", "categoria": "Infantil", "precio": 50, "imagen": "thumbs/infantil9.png" ,"badge": "nuevo", "stock": 0},
   { "nombre": "Vaso Ninjango Cinepolis", "categoria": "Infantil", "precio": 50, "imagen": "thumbs/infantil8.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Sonic Movie Center", "categoria": "Infantil", "precio": 80, "imagen": "thumbs/infantil7.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vaso Slam Dunk Cinepolis", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/infantil10.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Slam Dunk Cinepolis", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/infantil10.png" ,"badge": "nuevo", "stock": 0},
   { "nombre": "Palomera Blanca Nieves Movie Center", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/infantil12.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Soul Cinemex", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/infantil13.png" ,"badge": "nuevo", "stock": 1},
 
@@ -175,7 +174,7 @@
   { "nombre": "Vaso Furiosa Cinemex", "categoria": "Peliculas", "precio": 50, "imagen": "thumbs/peli11.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Han Solo Cinepolis", "categoria": "Peliculas", "precio": 80, "imagen": "thumbs/peli12.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso El Padrino Cinemex", "categoria": "Peliculas", "precio": 100, "imagen": "thumbs/peli13.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vaso Palomera Wonka Cinepolis", "categoria": "Peliculas", "precio": 130, "imagen": "thumbs/peli14.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Palomera Wonka Cinepolis", "categoria": "Peliculas", "precio": 130, "imagen": "thumbs/peli14.png" ,"badge": "nuevo", "stock": 0},
 
 
   { "nombre": "Postal El Cadaver de la Novia", "categoria": "Boletos", "precio": 100, "imagen": "thumbs/boleto1.png" ,"badge": "nuevo", "stock": 1},
