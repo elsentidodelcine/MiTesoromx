@@ -44,7 +44,7 @@
 
   { "nombre": "Vaso Caza Fantasma Figura Cinemex CazaFantasmas", "categoria": "CazaFantasmas", "precio": 80, "imagen": "thumbs/fantasma3.png" ,"badge": "nuevo", "stock": 0},
   { "nombre": "Vaso Caza Fantasma Movie Center CazaFantasmas", "categoria": "CazaFantasmas", "precio": 30, "imagen": "thumbs/fantasma1.png" ,"badge": "nuevo", "stock": 0},
-  { "nombre": "Vaso Led Caza Fantasma Cinepolis CazaFantasmas", "categoria": "CazaFantasmas", "precio": 150, "imagen": "thumbs/fantasma2.png" ,"badge": "nuevo", "stock": 0},
+  { "nombre": "Vaso Leds Caza Fantasma Cinepolis CazaFantasmas", "categoria": "CazaFantasmas", "precio": 150, "imagen": "thumbs/fantasma2.png" ,"badge": "nuevo", "stock": 0},
   { "nombre": "Oferta Exclusiva - Llévate Todo CazaFantasmas", "categoria": "CazaFantasmas", "precio": 200, "imagen": "thumbs/fantasma4.png" ,"badge": "oferta", "stock": 0, "descripcion": "Incluye los 3 vasos"},
 
 
