@@ -32,14 +32,14 @@
 
 
   { "nombre": "Vaso Ant Man Cinepolis Model1 Marvel", "categoria": "Marvel", "precio": 60, "imagen": "thumbs/an1.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vaso Ant Man Cinepolis Model2 Marvel", "categoria": "Marvel", "precio": 80, "imagen": "thumbs/antman2.png" ,"badge": "nuevo", "stock": 0},
   { "nombre": "Vaso Ant Man Cinepolis Model3 Marvel", "categoria": "Marvel", "precio": 60, "imagen": "thumbs/an5.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Ant Man Cinepolis Model4 Marvel", "categoria": "Marvel", "precio": 60, "imagen": "thumbs/an6.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Ant Man Cinepolis Model5 Marvel", "categoria": "Marvel", "precio": 60, "imagen": "thumbs/an7.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Ant Man Cinemex Model1 Marvel", "categoria": "Marvel", "precio": 60, "imagen": "thumbs/an2.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Ant Man Cinemex Model2 Marvel", "categoria": "Marvel", "precio": 60, "imagen": "thumbs/an3.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Ant Man Cinemex Model3 Marvel", "categoria": "Marvel", "precio": 60, "imagen": "thumbs/an4.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Oferta Exclusiva - Llévate Todo Ant Man", "categoria": "Marvel", "precio": 400, "imagen": "thumbs/antman3.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 8 vasos"},
+  { "nombre": "Oferta Exclusiva - Llévate Todo Ant Man", "categoria": "Marvel", "precio": 400, "imagen": "thumbs/antman3.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 7 vasos"},
+  { "nombre": "Vaso Ant Man Cinepolis Model2 Marvel", "categoria": "Marvel", "precio": 80, "imagen": "thumbs/antman2.png" ,"badge": "nuevo", "stock": 0},
 
 
   { "nombre": "Vaso Caza Fantasma Figura Cinemex CazaFantasmas", "categoria": "CazaFantasmas", "precio": 80, "imagen": "thumbs/fantasma3.png" ,"badge": "nuevo", "stock": 0},
@@ -55,9 +55,7 @@
 
 
   { "nombre": "Palomera Iron Man 100 Disney Cinemex Marvel", "categoria": "Marvel", "precio": 400, "imagen": "thumbs/ironman1.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vaso Avengers Figura Iron Man Cinemex Marvel", "categoria": "Marvel", "precio": 50, "imagen": "thumbs/ironman2.png" ,"badge": "nuevo", "stock": 0},
-
-
+  
   { "nombre": "Vaso Los 4 Fantasticos Mujer Insivible Cinepolis Marvel", "categoria": "Marvel", "precio": 250, "imagen": "thumbs/cuatro1.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Los 4 Fantasticos La Mole Cinepolis Marvel", "categoria": "Marvel", "precio": 250, "imagen": "thumbs/cuatro12.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Los 4 Fantasticos", "categoria": "Marvel", "precio": 400, "imagen": "thumbs/cuatro3.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 2 vasos"},
@@ -76,7 +74,7 @@
   { "nombre": "Vaso Kamala Khan Cinepolis Marvel", "categoria": "Marvel", "precio": 150, "imagen": "thumbs/marvels3.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Equipo Marvels", "categoria": "Marvel", "precio": 350, "imagen": "thumbs/marvels4.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 3 vasos"},
 
-  { "nombre": "Vasos Tang Avengers Marvel", "categoria": "Marvel", "precio": 30, "imagen": "thumbs/tang.png" ,"badge": "nuevo", "stock": 0},
+  
   { "nombre": "Vaso Doctor Strange Marvel Cinepolis", "categoria": "Marvel", "precio": 50, "imagen": "thumbs/marvel10.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Termo Black Widow Marvel Cinepolis", "categoria": "Marvel", "precio": 130, "imagen": "thumbs/viuda.png" ,"badge": "nuevo", "stock": 1},
 
@@ -88,6 +86,8 @@
   { "nombre": "Vaso Totem Guardianes de la Galaxia Cinepolis Marvel", "categoria": "Marvel", "precio": 120, "imagen": "thumbs/marvel15.png" ,"badge": "nuevo", "stock": 0},
   { "nombre": "Oferta Exclusiva - Llévate Todo Guardianes de la Galaxia", "categoria": "Marvel", "precio": 150, "imagen": "thumbs/guardianes3.png" ,"badge": "oferta", "stock": 0, "descripcion": "Incluye los 3 vasos"},
 
+  { "nombre": "Vasos Tang Avengers Marvel", "categoria": "Marvel", "precio": 30, "imagen": "thumbs/tang.png" ,"badge": "nuevo", "stock": 0},
+  { "nombre": "Vaso Avengers Figura Iron Man Cinemex Marvel", "categoria": "Marvel", "precio": 50, "imagen": "thumbs/ironman2.png" ,"badge": "nuevo", "stock": 0},
 
   { "nombre": "Funko 975 Sulley Pixar", "categoria": "Funko", "precio": 500, "imagen": "thumbs/funko1.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Funko 1130 Tigger Disney", "categoria": "Funko", "precio": 300, "imagen": "thumbs/funko8.png" ,"badge": "nuevo", "stock": 1},
@@ -111,8 +111,7 @@
   { "nombre": "Vaso Cars 3 Cinepolis", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/infantil6.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Palomera Cars Matte Cinemex Disney", "categoria": "Infantil", "precio": 400, "imagen": "thumbs/infantil14.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Cars", "categoria": "Infantil", "precio": 400, "imagen": "thumbs/bob4.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye el vaso y la palomera"},
-  { "nombre": "Vaso Intensamente Movie Center", "categoria": "Infantil", "precio": 80, "imagen": "thumbs/infantil5.png" ,"badge": "nuevo", "stock": 0},
-  { "nombre": "Palomera Intensamente 2 Movie Center", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/infantil11.png" ,"badge": "nuevo", "stock": 0},
+  
   { "nombre": "Vaso Ralph Cinepolis", "categoria": "Infantil", "precio": 50, "imagen": "thumbs/infantil4.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Mario Bros Cinemex", "categoria": "Infantil", "precio": 50, "imagen": "thumbs/infantil9.png" ,"badge": "nuevo", "stock": 0},
   { "nombre": "Vaso Ninjango Cinepolis", "categoria": "Infantil", "precio": 50, "imagen": "thumbs/infantil8.png" ,"badge": "nuevo", "stock": 1},
@@ -126,6 +125,8 @@
   { "nombre": "Vaso Bob Esponja Figura Gary", "categoria": "Infantil", "precio": 300, "imagen": "thumbs/bob1.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Bob Esponja Figura Calamardo", "categoria": "Infantil", "precio": 300, "imagen": "thumbs/bob3.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Bob Esponja", "categoria": "Infantil", "precio": 850, "imagen": "thumbs/bob4.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 3 vasos y la palomera"},
+  { "nombre": "Vaso Intensamente Movie Center", "categoria": "Infantil", "precio": 80, "imagen": "thumbs/infantil5.png" ,"badge": "nuevo", "stock": 0},
+  { "nombre": "Palomera Intensamente 2 Movie Center", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/infantil11.png" ,"badge": "nuevo", "stock": 0},
 
 
   { "nombre": "Vaso Mini Batman Cinepolis DC", "categoria": "DC", "precio": 80, "imagen": "thumbs/batman2.png" ,"badge": "nuevo", "stock": 0},
