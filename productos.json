@@ -294,7 +294,7 @@
   { "nombre": "Palomera El Señor de los Anillos Cinepolis", "categoria": "Peliculas", "precio": 150, "imagen": "thumbs/peli2.png" ,"badge": "nuevo", "stock": 0},
 
   { "nombre": "Trilogía Vasos Volver al Futuro Cinemex", "categoria": "Peliculas", "precio": 1000, "imagen": "thumbs/regreso.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Trilogía Vasos Volver Al Futuro + Delorean", "categoria": "Peliculas", "precio": 500, "imagen": "thumbs/regreso2.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Trilogía Vasos Volver Al Futuro + Delorean", "categoria": "Peliculas", "precio": 1500, "imagen": "thumbs/regreso2.png" ,"badge": "nuevo", "stock": 1},
 
   { "nombre": "Vaso Avatar Fuego y Cenizas Cinepolis", "categoria": "Peliculas", "precio": 150, "imagen": "thumbs/peli4.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Avatar La Forma del Agua Movie Center", "categoria": "Peliculas", "precio": 80, "imagen": "thumbs/peli5.png" ,"badge": "nuevo", "stock": 1},
