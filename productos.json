@@ -41,8 +41,9 @@
   { "nombre": "Vaso Ant Man Cinemex Model1 Marvel", "categoria": "Marvel", "precio": 60, "imagen": "thumbs/an2.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Ant Man Cinemex Model2 Marvel", "categoria": "Marvel", "precio": 60, "imagen": "thumbs/an3.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Ant Man Cinemex Model3 Marvel", "categoria": "Marvel", "precio": 60, "imagen": "thumbs/an4.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Oferta Exclusiva - Llévate Todo Ant Man", "categoria": "Marvel", "precio": 400, "imagen": "thumbs/antman3.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 7 vasos"},
   { "nombre": "Vaso Ant Man Cinepolis Model2 Marvel", "categoria": "Marvel", "precio": 20, "imagen": "thumbs/antman2.png" ,"badge": "oferta", "stock": 1, "descripcion": "Detalles en todo el vaso"},
+  { "nombre": "Oferta Exclusiva - Llévate Todo Ant Man", "categoria": "Marvel", "precio": 340, "imagen": "thumbs/antman3.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 8 vasos"},
+
 
 
   { "nombre": "Vaso Leds Caza Fantasma Cinepolis CazaFantasmas", "categoria": "CazaFantasmas", "precio": 150, "imagen": "thumbs/caza.png" ,"badge": "nuevo", "stock": 1},
@@ -79,15 +80,15 @@
   { "nombre": "Vaso Los 4 Fantasticos La Mole Cinepolis Marvel", "categoria": "Marvel", "precio": 250, "imagen": "thumbs/cuatro12.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Los 4 Fantasticos", "categoria": "Marvel", "precio": 400, "imagen": "thumbs/cuatro3.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 2 vasos"},
 
-  { "nombre": "Vaso Deadpool Wolverine Cinepolis Marvel", "categoria": "Marvel", "precio": 100, "imagen": "thumbs/marvel16.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vaso Deadpool Wolverine Cinemex Marvel", "categoria": "Marvel", "precio": 130, "imagen": "thumbs/marvel17.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vaso Deadpool Wolverine Cinemex Buy Me Marvel", "categoria": "Marvel", "precio": 200, "imagen": "thumbs/deadpool5.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vaso Deadpool Wolverine Cinemex Zombie Marvel", "categoria": "Marvel", "precio": 200, "imagen": "thumbs/deadpool6.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vaso Deadpool Wolverine Movie Center Marvel", "categoria": "Marvel", "precio": 80, "imagen": "thumbs/deadpool7.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vaso Deadpool Wolverine Carls Jr Marvel", "categoria": "Marvel", "precio": 80, "imagen": "thumbs/deadpool8.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vaso Deadpool Cinepolis Marvel", "categoria": "Marvel", "precio": 100, "imagen": "thumbs/deadpool9.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Palomera Deadpool Cinepolis Marvel", "categoria": "Marvel", "precio": 400, "imagen": "thumbs/deadpool10.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vaso Deadpool Wolverine Cinemex Marvel Model2", "categoria": "Marvel", "precio": 100, "imagen": "thumbs/deadpool11.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Deadpool Wolverine Cinepolis Marvel", "categoria": "Deadpool", "precio": 100, "imagen": "thumbs/marvel16.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Deadpool Wolverine Cinemex Marvel", "categoria": "Deadpool", "precio": 130, "imagen": "thumbs/marvel17.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Deadpool Wolverine Cinemex Buy Me Marvel", "categoria": "Deadpool", "precio": 200, "imagen": "thumbs/deadpool5.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Deadpool Wolverine Cinemex Zombie Marvel", "categoria": "Deadpool", "precio": 200, "imagen": "thumbs/deadpool6.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Deadpool Wolverine Movie Center Marvel", "categoria": "Deadpool", "precio": 80, "imagen": "thumbs/deadpool7.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Deadpool Wolverine Carls Jr Marvel", "categoria": "Deadpool", "precio": 80, "imagen": "thumbs/deadpool8.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Deadpool Cinepolis Marvel", "categoria": "Deadpool", "precio": 100, "imagen": "thumbs/deadpool9.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Palomera Deadpool Cinepolis Marvel", "categoria": "Deadpool", "precio": 400, "imagen": "thumbs/deadpool10.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Deadpool Wolverine Cinemex Marvel Model2", "categoria": "Deadpool", "precio": 100, "imagen": "thumbs/deadpool11.png" ,"badge": "nuevo", "stock": 1},
 
   { "nombre": "Vaso Eternal Figura Marvel", "categoria": "Marvel", "precio": 50, "imagen": "thumbs/eterno.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Elektra Coca Cola Marvel", "categoria": "Marvel", "precio": 100, "imagen": "thumbs/marvel13.png" ,"badge": "nuevo", "stock": 1},
@@ -329,7 +330,7 @@
   { "nombre": "Libro The Legend of Zelda", "categoria": "Libros", "precio": 170, "imagen": "thumbs/zelda.png" ,"badge": "nuevo", "stock": 1},
 
   { "nombre": "Funko Pop Papa Emeritus I 241", "categoria": "Musica", "precio": 500, "imagen": "thumbs/rock1.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vinilo Ella La Que Se Fue Jose Alfredo Jimenez", "categoria": "Musica", "precio": 500, "imagen": "thumbs/rock1.png" ,"badge": "nuevo", "stock": 0},
+  { "nombre": "Vinilo Ella La Que Se Fue Jose Alfredo Jimenez", "categoria": "Musica", "precio": 500, "imagen": "thumbs/rock2.png" ,"badge": "nuevo", "stock": 0},
 
   { "nombre": "Vaso Los Autenticos Decadentes Cinemex", "categoria": "Conciertos", "precio": 100, "imagen": "thumbs/concierto1.png","badge": "nuevo", "stock": 1 },
   { "nombre": "Vaso Moonspell Concierto", "categoria": "Conciertos", "precio": 100, "imagen": "thumbs/concierto2.png" ,"badge": "nuevo", "stock": 1},
