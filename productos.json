@@ -7,7 +7,7 @@
   { "nombre": "Vaso Liso Cinepolis 2 Transformers", "categoria": "Transformers", "precio": 50, "imagen": "thumbs/trans4.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso 3D Cinepolis Transformers", "categoria": "Transformers", "precio": 80, "imagen": "thumbs/trans3.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Palomera Cinemex Transformers", "categoria": "Transformers", "precio": 250, "imagen": "thumbs/trans5.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Oferta Exclusiva - Llévate Todo Transformers", "categoria": "Transformers", "precio": 680, "imagen": "thumbs/trans7.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 5 vasos y la palomera"},
+  { "nombre": "Oferta Exclusiva - Llévate Todo Transformers", "categoria": "Transformers", "precio": 680, "imagen": "thumbs/trans7.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 6 vasos y la palomera"},
 
 
   { "nombre": "Vaso FastX Cinemex Model1 RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "thumbs/rapidos1.png" ,"badge": "nuevo", "stock": 1},
@@ -19,7 +19,7 @@
   { "nombre": "Palomera FastX Movie Center RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 30, "imagen": "thumbs/rapidos6.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Palomera Carro FastX Cinemex RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 600, "imagen": "thumbs/carro.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Hobbs y Shaw Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 50, "imagen": "thumbs/rapi.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Oferta Exclusiva - Llévate Todo Rapidos y Furiosos", "categoria": "RapidosyFuriosos", "precio": 1000, "imagen": "thumbs/rapidos8.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 6 vasos y la palomera"},
+  { "nombre": "Oferta Exclusiva - Llévate Todo Rapidos y Furiosos", "categoria": "RapidosyFuriosos", "precio": 1000, "imagen": "thumbs/rapidos8.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 6 vasos, 1 termo y la palomera"},
 
 
   { "nombre": "Vaso Minion Cinemex Model1 Minions", "categoria": "Minions", "precio": 50, "imagen": "thumbs/minion1.png" ,"badge": "nuevo", "stock": 1},
@@ -42,7 +42,7 @@
   { "nombre": "Vaso Ant Man Cinemex Model2 Marvel", "categoria": "Marvel", "precio": 60, "imagen": "thumbs/an3.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Ant Man Cinemex Model3 Marvel", "categoria": "Marvel", "precio": 60, "imagen": "thumbs/an4.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Ant Man", "categoria": "Marvel", "precio": 400, "imagen": "thumbs/antman3.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 7 vasos"},
-  { "nombre": "Vaso Ant Man Cinepolis Model2 Marvel", "categoria": "Marvel", "precio": 20, "imagen": "thumbs/antman2.png" ,"badge": "nuevo", "stock": 1, "descripcion": "Detalles en todo el vaso"},
+  { "nombre": "Vaso Ant Man Cinepolis Model2 Marvel", "categoria": "Marvel", "precio": 20, "imagen": "thumbs/antman2.png" ,"badge": "oferta", "stock": 1, "descripcion": "Detalles en todo el vaso"},
 
 
   { "nombre": "Vaso Leds Caza Fantasma Cinepolis CazaFantasmas", "categoria": "CazaFantasmas", "precio": 150, "imagen": "thumbs/caza.png" ,"badge": "nuevo", "stock": 1},
@@ -88,7 +88,6 @@
   { "nombre": "Vaso Deadpool Cinepolis Marvel", "categoria": "Marvel", "precio": 100, "imagen": "thumbs/deadpool9.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Palomera Deadpool Cinepolis Marvel", "categoria": "Marvel", "precio": 400, "imagen": "thumbs/deadpool10.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Deadpool Wolverine Cinemex Marvel Model2", "categoria": "Marvel", "precio": 100, "imagen": "thumbs/deadpool11.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Oferta Exclusiva - Llévate Todo Deadpool y Wolverine", "categoria": "Marvel", "precio": 1100, "imagen": "thumbs/oferta3.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 2 vasos"},
 
   { "nombre": "Vaso Eternal Figura Marvel", "categoria": "Marvel", "precio": 50, "imagen": "thumbs/eterno.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Elektra Coca Cola Marvel", "categoria": "Marvel", "precio": 100, "imagen": "thumbs/marvel13.png" ,"badge": "nuevo", "stock": 1},
