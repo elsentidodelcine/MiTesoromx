@@ -124,7 +124,7 @@
 
   { "nombre": "Funko Harley Quinn 352", "categoria": "Funko", "precio": 500, "imagen": "thumbs/harley1.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Funko Harley Quinn 299", "categoria": "Funko", "precio": 500, "imagen": "thumbs/harley2.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Funko Harley Quinn 1111", "categoria": "Funko", "precio": 150, "imagen": "thumbs/harley3.png" ,"badge": "nuevo", "stock": 1, "descripcion":  "Detalle en caja"},
+  { "nombre": "Funko Harley Quinn 1111", "categoria": "Funko", "precio": 150, "imagen": "thumbs/harley3.png" ,"badge": "oferta", "stock": 1, "descripcion":  "Detalle en caja"},
 
   { "nombre": "Funko 975 Sulley Pixar", "categoria": "Funko", "precio": 500, "imagen": "thumbs/funko1.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Funko 1130 Tigger Disney", "categoria": "Funko", "precio": 300, "imagen": "thumbs/funko8.png" ,"badge": "nuevo", "stock": 1},
