@@ -8,7 +8,7 @@
   { "nombre": "Vaso 3D Cinepolis Transformers", "categoria": "Transformers", "precio": 80, "imagen": "thumbs/trans3.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Palomera Cinemex Transformers", "categoria": "Transformers", "precio": 250, "imagen": "thumbs/trans5.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Transformers", "categoria": "Transformers", "precio": 680, "imagen": "thumbs/trans7.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 6 vasos y la palomera"},
-
+  { "nombre": "Bocina Genérica Transformers", "categoria": "Transformers", "precio": 150, "imagen": "thumbs/bocina.png" ,"badge": "oferta", "stock": 1, "descripcion": "Posibles detalles, sin cargador"},
 
   { "nombre": "Vaso FastX Cinemex Model1 RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "thumbs/rapidos1.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso FastX Cinemex Model2 RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "thumbs/rapidos2.png" ,"badge": "nuevo", "stock": 1},
@@ -90,6 +90,11 @@
   { "nombre": "Palomera Deadpool Cinepolis Marvel", "categoria": "Deadpool", "precio": 400, "imagen": "thumbs/deadpool10.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Deadpool Wolverine Cinemex Marvel Model2", "categoria": "Deadpool", "precio": 100, "imagen": "thumbs/deadpool11.png" ,"badge": "nuevo", "stock": 1},
 
+  { "nombre": "Funko Deadpool 320 Marvel", "categoria": "Deadpool", "precio": 500, "imagen": "thumbs/dead1.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Funko Deadpool 777 Marvel", "categoria": "Deadpool", "precio": 400, "imagen": "thumbs/dead2.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Funko Deadpool 1343 Marvel", "categoria": "Deadpool", "precio": 400, "imagen": "thumbs/dead3.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Funko Deadpool 779 Marvel", "categoria": "Deadpool", "precio": 400, "imagen": "thumbs/dead4.png" ,"badge": "nuevo", "stock": 1},
+
   { "nombre": "Vaso Eternal Figura Marvel", "categoria": "Marvel", "precio": 50, "imagen": "thumbs/eterno.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Elektra Coca Cola Marvel", "categoria": "Marvel", "precio": 100, "imagen": "thumbs/marvel13.png" ,"badge": "nuevo", "stock": 1},
 
@@ -100,8 +105,11 @@
 
   { "nombre": "Vaso Doctor Strange Marvel Cinepolis", "categoria": "Marvel", "precio": 50, "imagen": "thumbs/marvel10.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Luz Led Doctor Strange Marvel Cinepolis", "categoria": "Marvel", "precio": 150, "imagen": "thumbs/doctor1.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vaso Luz Led Doctor Strange Cinepolis + Funko 1008 Marvel", "categoria": "Marvel", "precio": 600, "imagen": "thumbs/doctor2.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Luz Led Doctor Strange Cinepolis + Funko 1008 Marvel", "categoria": "Marvel", "precio": 500, "imagen": "thumbs/doctor2.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Luz Led Doctor Strange Cinepolis + Funko 1008 + Ojo de Agamoto Marvel", "categoria": "Marvel", "precio": 1800, "imagen": "thumbs/doctor3.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Funko Doctor Strange 1008 Marvel", "categoria": "Marvel", "precio": 350, "imagen": "thumbs/doc2.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Funko Doctor Strange 1032 Marvel", "categoria": "Marvel", "precio": 300, "imagen": "thumbs/doc3.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Funko Doctor Strange 874 Marvel", "categoria": "Marvel", "precio": 300, "imagen": "thumbs/doc1.png" ,"badge": "nuevo", "stock": 1},
 
   { "nombre": "Vaso Termo Black Widow Marvel Cinepolis", "categoria": "Marvel", "precio": 130, "imagen": "thumbs/viuda.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Pantera Negra Marvel Cinepolis", "categoria": "Marvel", "precio": 30, "imagen": "thumbs/marvel12.png" ,"badge": "nuevo", "stock": 1},
@@ -121,11 +129,6 @@
 
 
 
-
-  { "nombre": "Funko Harley Quinn 352", "categoria": "Funko", "precio": 500, "imagen": "thumbs/harley1.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Funko Harley Quinn 299", "categoria": "Funko", "precio": 500, "imagen": "thumbs/harley2.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Funko Harley Quinn 1111", "categoria": "Funko", "precio": 150, "imagen": "thumbs/harley3.png" ,"badge": "oferta", "stock": 1, "descripcion":  "Detalle en caja"},
-
   { "nombre": "Funko 975 Sulley Pixar", "categoria": "Funko", "precio": 500, "imagen": "thumbs/funko1.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Funko 1130 Tigger Disney", "categoria": "Funko", "precio": 300, "imagen": "thumbs/funko8.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Funko 580 Iron Man Marvel", "categoria": "Funko", "precio": 500, "imagen": "thumbs/funko6.png" ,"badge": "nuevo", "stock": 1},
@@ -136,7 +139,15 @@
   { "nombre": "Funko 1236 Eagly Peacemaker DC", "categoria": "Funko", "precio": 500, "imagen": "thumbs/funko3.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Funko Naruto Kakashi Anbu 994", "categoria": "Funko", "precio": 500, "imagen": "thumbs/naruto1.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Funko Muzan Demon Slayer 871", "categoria": "Funko", "precio": 500, "imagen": "thumbs/muzan.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Funko Pinocchio Disney 1029", "categoria": "Funko", "precio": 1000, "imagen": "thumbs/pinocho.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Funko Robin DC 377", "categoria": "Funko", "precio": 200, "imagen": "thumbs/robin.png" ,"badge": "nuevo", "stock": 1, "descripcion":  "Detalle en caja"},
+  { "nombre": "Funko Scarlet Witch Marvel 1034", "categoria": "Funko", "precio": 500, "imagen": "thumbs/wanda.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Funko Scarlet Witch Marvel 823", "categoria": "Funko", "precio": 700, "imagen": "thumbs/wanda.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Funko Jean Grey 645 Marvel", "categoria": "Funko", "precio": 200, "imagen": "thumbs/xmen.png" ,"badge": "nuevo", "stock": 1},
 
+  { "nombre": "Funko YuGiOh 1061 Yami Bakura", "categoria": "Funko", "precio": 300, "imagen": "thumbs/yugi3.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Funko YuGiOh 716 Maximillion Pegasus", "categoria": "Funko", "precio": 300, "imagen": "thumbs/yugi1.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Funko YuGiOh 389 Blue Eyes White Dragon Pirata", "categoria": "Funko", "precio": 100, "imagen": "thumbs/yugi2.png" ,"badge": "nuevo", "stock": 1},
 
 
   { "nombre": "Vaso Joker Cinepolis DC", "categoria": "Joker", "precio": 100, "imagen": "thumbs/joker.png" ,"badge": "nuevo", "stock": 1},
@@ -148,6 +159,11 @@
   { "nombre": "Funko Joker 36", "categoria": "Joker", "precio": 500, "imagen": "thumbs/joker9.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Funko Joker 359", "categoria": "Joker", "precio": 500, "imagen": "thumbs/joker10.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Funko Joker 337", "categoria": "Joker", "precio": 500, "imagen": "thumbs/joker11.png" ,"badge": "nuevo", "stock": 1},
+
+  { "nombre": "Funko Harley Quinn 352", "categoria": "Joker", "precio": 500, "imagen": "thumbs/harley1.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Funko Harley Quinn 299", "categoria": "Joker", "precio": 500, "imagen": "thumbs/harley2.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Funko Harley Quinn 1111", "categoria": "Joker", "precio": 150, "imagen": "thumbs/harley3.png" ,"badge": "oferta", "stock": 1, "descripcion":  "Detalle en caja"},
+
 
 
 
@@ -196,9 +212,22 @@
   { "nombre": "Vaso Bob Esponja Figura Gary", "categoria": "Infantil", "precio": 300, "imagen": "thumbs/bob1.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Bob Esponja Figura Gary + Figura Vuala", "categoria": "Infantil", "precio": 350, "imagen": "thumbs/gary.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Bob Esponja Figura Calamardo", "categoria": "Infantil", "precio": 300, "imagen": "thumbs/bob3.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Paquete Calamardo", "categoria": "Infantil", "precio": 800, "imagen": "thumbs/calamardo.png" ,"badge": "nuevo", "stock": 1},
 
   { "nombre": "Vaso Intensamente Movie Center", "categoria": "Infantil", "precio": 80, "imagen": "thumbs/infantil5.png" ,"badge": "nuevo", "stock": 0},
   { "nombre": "Palomera Intensamente 2 Movie Center", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/infantil11.png" ,"badge": "nuevo", "stock": 0},
+
+
+
+
+
+  { "nombre": "2 Carros Hot Wheels", "categoria": "Hot Wheels", "precio": 150, "imagen": "thumbs/carro2.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "3 Carros Hot Wheels", "categoria": "Hot Wheels", "precio": 300, "imagen": "thumbs/carro3.png" ,"badge": "nuevo", "stock": 1},
+
+
+  { "nombre": "Villa Navideña Coca Cola", "categoria": "Vintage", "precio": 120, "imagen": "thumbs/coca.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Nintendo 64", "categoria": "Vintage", "precio": 5000, "imagen": "thumbs/nintendo.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Señor Cara de Papa Toy Story", "categoria": "Vintage", "precio": 300, "imagen": "thumbs/papa.png" ,"badge": "nuevo", "stock": 1},
 
 
 
@@ -329,7 +358,10 @@
 
   { "nombre": "Libro The Legend of Zelda", "categoria": "Libros", "precio": 170, "imagen": "thumbs/zelda.png" ,"badge": "nuevo", "stock": 1},
 
+  { "nombre": "Funko Pop Freddie Mercury Queen 184", "categoria": "Musica", "precio": 300, "imagen": "thumbs/queen.png" ,"badge": "oferta", "stock": 1, "descripcion": "Detale en caja"},
+  { "nombre": "Póster Cinepólis Queen Rock Montreal", "categoria": "Musica", "precio": 300, "imagen": "thumbs/queen2.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Funko Pop Papa Emeritus I 241", "categoria": "Musica", "precio": 500, "imagen": "thumbs/rock1.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Funko Iron Maiden 250", "categoria": "Musica", "precio": 400, "imagen": "thumbs/iron.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vinilo Ella La Que Se Fue Jose Alfredo Jimenez", "categoria": "Musica", "precio": 500, "imagen": "thumbs/rock2.png" ,"badge": "nuevo", "stock": 0},
 
   { "nombre": "Vaso Los Autenticos Decadentes Cinemex", "categoria": "Conciertos", "precio": 100, "imagen": "thumbs/concierto1.png","badge": "nuevo", "stock": 1 },
