@@ -162,7 +162,11 @@ function mostrarProductos() {
     const thumb = p.imagen.replace("imgs/", "thumbs/");
 
     card.innerHTML = `
-      ${p.badge ? `<span class="badge unico">ÚNICO</span>` : ""}
+     ${
+       p.badge
+         ? `<span class="badge ${p.badge.toLowerCase()}">${p.badge.toUpperCase()}</span>`
+         : ""
+     }
 
       <div class="img-wrapper">
         <img
