@@ -529,6 +529,16 @@ body.dark .filtros button {
     color: #fff;
 }
 
+.badge.oferta {
+    background: linear-gradient(135deg,#ff5252,#ff1744);
+    color: #fff;
+}
+
+.badge.nuevo {
+  background: #00c853;
+  color: #fff;
+}
+
 .stock-mental {
     display: block;
     font-size: 0.75rem;
@@ -2700,6 +2710,8 @@ body.dark .descripcion-oferta {
         font-size: 0.9rem;
     }
 }
+
+
 
 
 
