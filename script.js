@@ -178,6 +178,7 @@ function mostrarProductos() {
           width="300"
           height="300"
           data-full="${p.imagen}"
+          data-full="${p.imagen}"
         >
       </div>
 

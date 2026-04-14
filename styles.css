@@ -529,6 +529,11 @@ body.dark .filtros button {
     color: #fff;
 }
 
+.badge.ultimo {
+    background: linear-gradient(135deg,#ff5252,#ff1744);
+    color: #fff;
+}
+
 .badge.oferta {
     background: linear-gradient(135deg,#ff5252,#ff1744);
     color: #fff;
@@ -538,6 +543,7 @@ body.dark .filtros button {
   background: #00c853;
   color: #fff;
 }
+
 
 .stock-mental {
     display: block;

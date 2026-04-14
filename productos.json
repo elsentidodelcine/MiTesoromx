@@ -1,54 +1,68 @@
 [
 
-  { "nombre": "Palomera Iron Man 100 Disney Cinemex Marvel", "categoria": "Iron Man", "precio": 400, "imagen": "thumbs/ironman1.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Iron Man Avengers Cinepolis Marvel", "categoria": "Iron Man", "precio": 150, "imagen": "thumbs/iron5.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Palomera Guantelete Iron Man Cinemex Marvel", "categoria": "Iron Man", "precio": 400, "imagen": "thumbs/guante2.png" ,"badge": "unico", "stock": 1},
+  { "nombre": "Vaso Ant Man Cinepolis Model1 Marvel", "categoria": "Ant Man", "precio": 60, "imagen": "thumbs/an1.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Ant Man Cinepolis Model3 Marvel", "categoria": "Ant Man", "precio": 60, "imagen": "thumbs/an5.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Ant Man Cinepolis Model4 Marvel", "categoria": "Ant Man", "precio": 60, "imagen": "thumbs/an6.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Ant Man Cinepolis Model5 Marvel", "categoria": "Ant Man", "precio": 60, "imagen": "thumbs/an7.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Ant Man Cinemex Model1 Marvel", "categoria": "Ant Man", "precio": 60, "imagen": "thumbs/an2.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Ant Man Cinemex Model2 Marvel", "categoria": "Ant Man", "precio": 60, "imagen": "thumbs/an3.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Ant Man Cinemex Model3 Marvel", "categoria": "Ant Man", "precio": 60, "imagen": "thumbs/an4.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Ant Man Cinepolis Model2 Marvel", "categoria": "Ant Man", "precio": 20, "imagen": "thumbs/antman2.png" ,"badge": "oferta", "stock": 1, "descripcion": "Detalles en todo el vaso"},
+  { "nombre": "Oferta Exclusiva - Llévate Todo Ant Man", "categoria": "Ant Man", "precio": 340, "imagen": "thumbs/antman3.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 8 vasos"},
+
+  { "nombre": "Postal El Cadaver de la Novia", "categoria": "Boletos", "precio": 100, "imagen": "thumbs/boleto1.png" ,"badge": "ultimo", "stock": 1},
+
+  { "nombre": "Vaso Godzilla Carls Jr Model1 ", "categoria": "Godzilla", "precio": 50, "imagen": "thumbs/god.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Godzilla Carls Jr Model2 ", "categoria": "Godzilla", "precio": 50, "imagen": "thumbs/god1.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Godzilla Carls Jr Model3 ", "categoria": "Godzilla", "precio": 50, "imagen": "thumbs/god2.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Godzilla Movie Center ", "categoria": "Godzilla", "precio": 50, "imagen": "thumbs/god3.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Godzilla Cinemex Figura", "categoria": "Godzilla", "precio": 80, "imagen": "thumbs/god4.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Oferta Exclusiva - Llévate Todo Godzilla", "categoria": "Godzilla", "precio": 200, "imagen": "thumbs/oferta2.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 5 vasos"},
+
+  { "nombre": "Funko 1130 Tigger Disney", "categoria": "Infantil", "precio": 300, "imagen": "thumbs/funko8.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Funko 975 Sulley Pixar", "categoria": "Infantil", "precio": 500, "imagen": "thumbs/funko1.png" ,"badge": "ultimo", "stock": 1},
+
+  { "nombre": "Palomera Iron Man 100 Disney Cinemex Marvel", "categoria": "Iron Man", "precio": 400, "imagen": "thumbs/ironman1.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Iron Man Avengers Cinepolis Marvel", "categoria": "Iron Man", "precio": 150, "imagen": "thumbs/iron5.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Palomera Guantelete Iron Man Cinemex Marvel", "categoria": "Iron Man", "precio": 400, "imagen": "thumbs/guante2.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Iron Man", "categoria": "Iron Man", "precio": 850, "imagen": "thumbs/dino4.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye 1 vaso y 2 palomeras"},
-  { "nombre": "Funko Iron Man 626 Marvel", "categoria": "Iron Man", "precio": 150, "imagen": "thumbs/davengers11.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Funko 580 Iron Man Marvel", "categoria": "Iron Man", "precio": 500, "imagen": "thumbs/funko6.png" ,"badge": "unico", "stock": 1},
+  { "nombre": "Funko Iron Man 626 Marvel", "categoria": "Iron Man", "precio": 150, "imagen": "thumbs/davengers11.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Funko 580 Iron Man Marvel", "categoria": "Iron Man", "precio": 500, "imagen": "thumbs/funko6.png" ,"badge": "ultimo", "stock": 1},
 
-
-
-  { "nombre": "Vaso Minion Cinemex Model1 Minions", "categoria": "Minions", "precio": 50, "imagen": "thumbs/minion1.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Minion Cinemex Model2 Minions", "categoria": "Minions", "precio": 50, "imagen": "thumbs/minion2.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Minion Cinemex Model3 Minions", "categoria": "Minions", "precio": 50, "imagen": "thumbs/minion9.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Minion Cinepolis Model1 Minions", "categoria": "Minions", "precio": 80, "imagen": "thumbs/minion3.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Minion Cinepolis Model2 Minions", "categoria": "Minions", "precio": 80, "imagen": "thumbs/minion4.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Minion Movie Center Minions", "categoria": "Minions", "precio": 30, "imagen": "thumbs/minion6.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Cubeta Minion Cinemex Minions", "categoria": "Minions", "precio": 250, "imagen": "thumbs/minion7.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Minion Cinepolis Model3 Minions", "categoria": "Minions", "precio": 30, "imagen": "thumbs/minion5.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Mini Cubeta Minion Cinemex Minions", "categoria": "Minions", "precio": 30, "imagen": "thumbs/minion8.png" ,"badge": "unico", "stock": 1},
+  { "nombre": "Vaso Minion Cinemex Model1 Minions", "categoria": "Minions", "precio": 50, "imagen": "thumbs/minion1.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Minion Cinemex Model2 Minions", "categoria": "Minions", "precio": 50, "imagen": "thumbs/minion2.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Minion Cinemex Model3 Minions", "categoria": "Minions", "precio": 50, "imagen": "thumbs/minion9.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Minion Cinepolis Model1 Minions", "categoria": "Minions", "precio": 80, "imagen": "thumbs/minion3.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Minion Cinepolis Model2 Minions", "categoria": "Minions", "precio": 80, "imagen": "thumbs/minion4.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Minion Movie Center Minions", "categoria": "Minions", "precio": 30, "imagen": "thumbs/minion6.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Cubeta Minion Cinemex Minions", "categoria": "Minions", "precio": 250, "imagen": "thumbs/minion7.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Minion Cinepolis Model3 Minions", "categoria": "Minions", "precio": 30, "imagen": "thumbs/minion5.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Mini Cubeta Minion Cinemex Minions", "categoria": "Minions", "precio": 30, "imagen": "thumbs/minion8.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Minions", "categoria": "Minions", "precio": 500, "imagen": "thumbs/minion10.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 7 vasos y las 2 palomeras"},
 
-
-
-  { "nombre": "Vaso FastX Cinemex Model1 RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "thumbs/rapidos1.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso FastX Cinemex Model2 RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "thumbs/rapidos2.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso FastX Cinemex Model3 RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "thumbs/rapidos7.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso FastX Movie Center RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 50, "imagen": "thumbs/rapidos3.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Fast 7 Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "thumbs/rapidos4.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Fast 8 Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "thumbs/rapidos5.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Palomera FastX Movie Center RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 30, "imagen": "thumbs/rapidos6.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Palomera Carro FastX Cinemex RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 600, "imagen": "thumbs/carro.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Hobbs y Shaw Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 50, "imagen": "thumbs/rapi.png" ,"badge": "unico", "stock": 1},
+  { "nombre": "Vaso FastX Cinemex Model1 RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "thumbs/rapidos1.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso FastX Cinemex Model2 RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "thumbs/rapidos2.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso FastX Cinemex Model3 RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "thumbs/rapidos7.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso FastX Movie Center RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 50, "imagen": "thumbs/rapidos3.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Fast 7 Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "thumbs/rapidos4.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Fast 8 Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "thumbs/rapidos5.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Palomera FastX Movie Center RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 30, "imagen": "thumbs/rapidos6.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Palomera Carro FastX Cinemex RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 600, "imagen": "thumbs/carro.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Hobbs y Shaw Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 50, "imagen": "thumbs/rapi.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Rapidos y Furiosos", "categoria": "RapidosyFuriosos", "precio": 1000, "imagen": "thumbs/rapidos8.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 6 vasos, 1 termo y las 2 palomeras"},
 
+  { "nombre": "Funko 976 Woody Toy Story", "categoria": "Toy Story", "precio": 500, "imagen": "thumbs/funko4.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Toy Story Movie Center", "categoria": "Toy Story", "precio": 80, "imagen": "thumbs/toy6.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Toy Story Cinepolis", "categoria": "Toy Story", "precio": 100, "imagen": "thumbs/toy5.png" ,"badge": "oferta", "stock": 1, "descripcion":  "Detalles en vaso"},
+  { "nombre": "Funko Chuckles Toy 561 Story", "categoria": "Toy Story", "precio": 1000, "imagen": "thumbs/ifunko9.png" ,"badge": "ultimo", "stock": 1},
 
-
-  { "nombre": "Funko 976 Woody Toy Story", "categoria": "Toy Story", "precio": 500, "imagen": "thumbs/funko4.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Toy Story Movie Center", "categoria": "Toy Story", "precio": 80, "imagen": "thumbs/toy6.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Toy Story Cinepolis", "categoria": "Toy Story", "precio": 100, "imagen": "thumbs/toy5.png" ,"badge": "unico", "stock": 1, "descripcion":  "Detalles en vaso"},
-  { "nombre": "Funko Chuckles Toy 561 Story", "categoria": "Toy Story", "precio": 1000, "imagen": "thumbs/ifunko9.png" ,"badge": "nuevo", "stock": 1},
-
-
-
-  { "nombre": "Vaso One Cinepolis Transformers", "categoria": "Transformers", "precio": 150, "imagen": "thumbs/trans.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Totem Cinepolis Transformers", "categoria": "Transformers", "precio": 150, "imagen": "thumbs/trans6.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Liso Movie Center Transformers", "categoria": "Transformers", "precio": 50, "imagen": "thumbs/trans1.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Liso Cinepolis Transformers", "categoria": "Transformers", "precio": 50, "imagen": "thumbs/trans2.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Liso Cinepolis 2 Transformers", "categoria": "Transformers", "precio": 50, "imagen": "thumbs/trans4.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso 3D Cinepolis Transformers", "categoria": "Transformers", "precio": 80, "imagen": "thumbs/trans3.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Palomera Cinemex Transformers", "categoria": "Transformers", "precio": 250, "imagen": "thumbs/trans5.png" ,"badge": "unico", "stock": 1},
+  { "nombre": "Vaso One Cinepolis Transformers", "categoria": "Transformers", "precio": 150, "imagen": "thumbs/trans.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Totem Cinepolis Transformers", "categoria": "Transformers", "precio": 150, "imagen": "thumbs/trans6.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Liso Movie Center Transformers", "categoria": "Transformers", "precio": 50, "imagen": "thumbs/trans1.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Liso Cinepolis Transformers", "categoria": "Transformers", "precio": 50, "imagen": "thumbs/trans2.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Liso Cinepolis 2 Transformers", "categoria": "Transformers", "precio": 50, "imagen": "thumbs/trans4.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso 3D Cinepolis Transformers", "categoria": "Transformers", "precio": 80, "imagen": "thumbs/trans3.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Palomera Cinemex Transformers", "categoria": "Transformers", "precio": 250, "imagen": "thumbs/trans5.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Transformers", "categoria": "Transformers", "precio": 680, "imagen": "thumbs/trans7.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 6 vasos y la palomera"},
   { "nombre": "Bocina Genérica Transformers", "categoria": "Transformers", "precio": 150, "imagen": "thumbs/bocina.png" ,"badge": "oferta", "stock": 1, "descripcion": "Posibles detalles, sin cargador"},
 
@@ -60,15 +74,7 @@
 
 
 
-  { "nombre": "Vaso Ant Man Cinepolis Model1 Marvel", "categoria": "Marvel", "precio": 60, "imagen": "thumbs/an1.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Ant Man Cinepolis Model3 Marvel", "categoria": "Marvel", "precio": 60, "imagen": "thumbs/an5.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Ant Man Cinepolis Model4 Marvel", "categoria": "Marvel", "precio": 60, "imagen": "thumbs/an6.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Ant Man Cinepolis Model5 Marvel", "categoria": "Marvel", "precio": 60, "imagen": "thumbs/an7.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Ant Man Cinemex Model1 Marvel", "categoria": "Marvel", "precio": 60, "imagen": "thumbs/an2.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Ant Man Cinemex Model2 Marvel", "categoria": "Marvel", "precio": 60, "imagen": "thumbs/an3.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Ant Man Cinemex Model3 Marvel", "categoria": "Marvel", "precio": 60, "imagen": "thumbs/an4.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Ant Man Cinepolis Model2 Marvel", "categoria": "Marvel", "precio": 20, "imagen": "thumbs/antman2.png" ,"badge": "oferta", "stock": 1, "descripcion": "Detalles en todo el vaso"},
-  { "nombre": "Oferta Exclusiva - Llévate Todo Ant Man", "categoria": "Marvel", "precio": 340, "imagen": "thumbs/antman3.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 8 vasos"},
+
 
 
 
@@ -169,13 +175,12 @@
 
 
 
-  { "nombre": "Funko 975 Sulley Pixar", "categoria": "Funko", "precio": 500, "imagen": "thumbs/funko1.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Funko 1130 Tigger Disney", "categoria": "Funko", "precio": 300, "imagen": "thumbs/funko8.png" ,"badge": "unico", "stock": 1},
 
 
 
-  { "nombre": "Funko 1234 Vigilante Peacemaker DC", "categoria": "Funko", "precio": 500, "imagen": "thumbs/funko2.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Funko 1236 Eagly Peacemaker DC", "categoria": "Funko", "precio": 500, "imagen": "thumbs/funko3.png" ,"badge": "unico", "stock": 1},
+
+
+
 
   { "nombre": "Funko Muzan Demon Slayer 871", "categoria": "Funko", "precio": 500, "imagen": "thumbs/muzan.png" ,"badge": "unico", "stock": 1},
   { "nombre": "Funko Pinocchio Disney 1029", "categoria": "Funko", "precio": 1000, "imagen": "thumbs/pinocho.png" ,"badge": "unico", "stock": 1},
@@ -488,7 +493,7 @@
 
 
 
-  { "nombre": "Postal El Cadaver de la Novia", "categoria": "Boletos", "precio": 100, "imagen": "thumbs/boleto1.png" ,"badge": "unico", "stock": 1},
+
 
   { "nombre": "Libro The Legend of Zelda", "categoria": "Libros", "precio": 170, "imagen": "thumbs/zelda.png" ,"badge": "unico", "stock": 1},
 
@@ -516,12 +521,7 @@
   { "nombre": "Vaso Lacuna Coil Concierto", "categoria": "Musica", "precio": 100, "imagen": "thumbs/concierto8.png" ,"badge": "unico", "stock": 1},
 
 
-  { "nombre": "Vaso Godzilla Carls Jr Model1 ", "categoria": "Godzilla", "precio": 50, "imagen": "thumbs/god.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Godzilla Carls Jr Model2 ", "categoria": "Godzilla", "precio": 50, "imagen": "thumbs/god1.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Godzilla Carls Jr Model3 ", "categoria": "Godzilla", "precio": 50, "imagen": "thumbs/god2.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Godzilla Movie Center ", "categoria": "Godzilla", "precio": 50, "imagen": "thumbs/god3.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Godzilla Cinemex Figura", "categoria": "Godzilla", "precio": 80, "imagen": "thumbs/god4.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Oferta Exclusiva - Llévate Todo Godzilla", "categoria": "Godzilla", "precio": 200, "imagen": "thumbs/oferta2.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 5 vasos"},
+
 
 
 
