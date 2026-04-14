@@ -348,10 +348,13 @@
   { "nombre": "Vaso Borderlands Model2", "categoria": "Videojuegos", "precio": 50, "imagen": "thumbs/bor2.png" ,"badge": "unico", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Borderlands", "categoria": "Videojuegos", "precio": 60, "imagen": "thumbs/bor3.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 2 vasos"},
 
-  { "nombre": "3 Cubos Mario Bros Cinemex + Postal Cinepolis", "categoria": "Videojuegos", "precio": 500, "imagen": "thumbs/bmario.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "1 Vaso Mario Bros Cinepolis Luz Led + Postal Cinepolis", "categoria": "Videojuegos", "precio": 500, "imagen": "thumbs/bmario1.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "3 Vasos Mario Bros Cinemex + Cinepolis + Cinepolis Luz Led", "categoria": "Videojuegos", "precio": 500, "imagen": "thumbs/mario1.png" ,"badge": "unico", "stock": 1},
-  { "nombre": "Vaso Mario Bros Cinemex", "categoria": "Videojuegos", "precio": 50, "imagen": "thumbs/infantil9.png" ,"badge": "unico", "stock": 0},
+  { "nombre": "3 Cubos Mario Bros Cinemex + Postal Cinepolis", "categoria": "Mario Bros", "precio": 500, "imagen": "thumbs/bmario.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "1 Vaso Mario Bros Cinepolis Luz Led + Postal Cinepolis", "categoria": "Mario Bros", "precio": 500, "imagen": "thumbs/bmario1.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "2 Vasos Mario Bros Cinemex + Cinepolis", "categoria": "Mario Bros", "precio": 100, "imagen": "thumbs/mar4.jpeg" ,"badge": "unico", "stock": 1},
+  { "nombre": "Vaso Mario Bros Cinemex", "categoria": "Mario Bros", "precio": 50, "imagen": "thumbs/infantil9.png" ,"badge": "unico", "stock": 0},
+  { "nombre": "Palomera Mario Bros Cinepolis Luz Led", "categoria": "Mario Bros", "precio": 355, "imagen": "thumbs/mar1.jpeg" ,"badge": "nuevo", "stock": 0},
+  { "nombre": "Vaso Peach Mario Bros Cinepolis", "categoria": "Mario Bros", "precio": 300, "imagen": "thumbs/mar3.jpeg" ,"badge": "nuevo", "stock": 0},
+  { "nombre": "Vaso Yoshi Mario Bros Cinepolis", "categoria": "Mario Bros", "precio": 300, "imagen": "thumbs/mar2.jpeg" ,"badge": "nuevo", "stock": 0},
 
 
   { "nombre": "Album de Estampas Fortnite Panini Model1", "categoria": "Videojuegos", "precio": 100, "imagen": "thumbs/halbum9.png" ,"badge": "nuevo", "stock": 1},
