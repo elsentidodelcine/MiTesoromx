@@ -178,7 +178,7 @@
   { "nombre": "Vaso Toy Story Movie Center", "categoria": "Toy Story", "precio": 80, "imagen": "thumbs/toy6.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Toy Story Cinepolis", "categoria": "Toy Story", "precio": 100, "imagen": "thumbs/toy5.png" ,"badge": "oferta", "stock": 1, "descripcion":  "Detalles en vaso"},
   { "nombre": "Funko Chuckles Toy 561 Story", "categoria": "Toy Story", "precio": 1000, "imagen": "thumbs/ifunko9.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Señor Cara de Papa Toy Story", "categoria": "Vintage", "precio": 300, "imagen": "thumbs/papa.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Señor Cara de Papa Toy Story", "categoria": "Toy Story", "precio": 300, "imagen": "thumbs/papa.png" ,"badge": "ultimo", "stock": 1},
 
   { "nombre": "Vaso One Cinepolis Transformers", "categoria": "Transformers", "precio": 150, "imagen": "thumbs/trans.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Totem Cinepolis Transformers", "categoria": "Transformers", "precio": 150, "imagen": "thumbs/trans6.png" ,"badge": "ultimo", "stock": 1},
@@ -421,7 +421,7 @@
 
   { "nombre": "3 Cubos Mario Bros Cinemex + Postal Cinepolis", "categoria": "Mario Bros", "precio": 500, "imagen": "thumbs/bmario.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "1 Vaso Mario Bros Cinepolis Luz Led + Postal Cinepolis", "categoria": "Mario Bros", "precio": 500, "imagen": "thumbs/bmario1.png" ,"badge": "nuevo", "stock": 0},
-  { "nombre": "2 Vasos Mario Bros Cinemex + Cinepolis", "categoria": "Mario Bros", "precio": 100, "imagen": "thumbs/mar4.jpeg" ,"badge": "unico", "stock": 1},
+  { "nombre": "2 Vasos Mario Bros Cinemex + Cinepolis", "categoria": "Mario Bros", "precio": 100, "imagen": "thumbs/mar4.jpeg" ,"badge": "oferta", "stock": 1, "descripcion":  "Detalles desgaste de atras en ambos vasos"},
   { "nombre": "Vaso Mario Bros Cinemex", "categoria": "Mario Bros", "precio": 50, "imagen": "thumbs/infantil9.png" ,"badge": "unico", "stock": 0},
   { "nombre": "Palomera Mario Bros Cinepolis Luz Led", "categoria": "Mario Bros", "precio": 355, "imagen": "thumbs/mar1.jpeg" ,"badge": "nuevo", "stock": 0},
   { "nombre": "Vaso Peach Mario Bros Cinepolis", "categoria": "Mario Bros", "precio": 300, "imagen": "thumbs/mar3.jpeg" ,"badge": "nuevo", "stock": 0},
@@ -549,8 +549,8 @@
   { "nombre": "Album de Estampas Russia 2018 Panini Model1", "categoria": "Album Estampas", "precio": 50, "imagen": "thumbs/halbum2.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Album de Estampas Liga Bancomer Panini Model1", "categoria": "Album Estampas", "precio": 20, "imagen": "thumbs/halbum3.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Album de Estampas La Era de Hielo Panini Model1", "categoria": "Album Estampas", "precio": 20, "imagen": "thumbs/halbum4.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Album de Estampas Toy Story 4 Panini Model1", "categoria": "Album Estampas", "precio": 20, "imagen": "thumbs/halbum5.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Album de Estampas Lightyear Panini Model1", "categoria": "Album Estampas", "precio": 25, "imagen": "thumbs/halbum6.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Album de Estampas Toy Story 4 Panini Model1", "categoria": "Toy Story", "precio": 20, "imagen": "thumbs/halbum5.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Album de Estampas Lightyear Panini Model1", "categoria": "Toy Story", "precio": 25, "imagen": "thumbs/halbum6.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Album de Estampas Dory Panini Model1", "categoria": "Album Estampas", "precio": 20, "imagen": "thumbs/halbum7.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Album de Estampas La Bella y la Bestia Panini Model1", "categoria": "Album Estampas", "precio": 20, "imagen": "thumbs/halbum8.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Album de Estampas Un Verano de Misterio Panini Model1", "categoria": "Album Estampas", "precio": 25, "imagen": "thumbs/halbum11.png" ,"badge": "nuevo", "stock": 1},
