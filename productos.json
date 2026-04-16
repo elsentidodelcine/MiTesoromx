@@ -1,9 +1,9 @@
 [
 
-  { "nombre": "PREVENTA Caja Zapatillas El Diablo Viste a la Moda 2 Cinepolis", "categoria": "Preventa", "precio": 450, "imagen": "thumbs/preventa2.jpeg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "PREVENTA Termo El Diablo Viste a la Moda 2 Cinemex", "categoria": "Preventa", "precio": 450, "imagen": "thumbs/preventa4.jpeg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "PREVENTA Termo Michael Cinepolis", "categoria": "Preventa", "precio": 355, "imagen": "thumbs/preventa3.jpeg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "PREVENTA Vasos Michael Cinemex", "categoria": "Preventa", "precio": 355, "imagen": "thumbs/preventa1.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "PREVENTA ANTICIPADA Caja Zapatillas El Diablo Viste a la Moda 2 Cinepolis", "categoria": "Preventa", "precio": 450, "imagen": "thumbs/preventa2.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "PREVENTA ANTICIPADA Termo El Diablo Viste a la Moda 2 Cinemex", "categoria": "Preventa", "precio": 450, "imagen": "thumbs/preventa4.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "PREVENTA ANTICIPADA Termo Michael Cinepolis", "categoria": "Preventa", "precio": 355, "imagen": "thumbs/preventa3.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "PREVENTA ANTICIPADA Vasos Michael Cinemex", "categoria": "Preventa", "precio": 355, "imagen": "thumbs/preventa1.jpeg" ,"badge": "preventa", "stock": 1},
 
 
 
