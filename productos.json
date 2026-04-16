@@ -30,7 +30,7 @@
   { "nombre": "Oferta Exclusiva - Llévate Todo Ant Man", "categoria": "Ant Man", "precio": 340, "imagen": "thumbs/antman3.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 8 vasos"},
 
   { "nombre": "3 Figuras Bob Esponja Little Bites Bimbo", "categoria": "Bob Esponja", "precio": 120, "imagen": "thumbs/esponja20.jpeg" ,"badge": "exclusivo", "stock": 1},
-  { "nombre": "5 Figuras Bob Esponja Marinela Coleccion Completa", "categoria": "Bob Esponja", "precio": 500, "imagen": "thumbs/esponja20.jpeg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "5 Figuras Bob Esponja Marinela Coleccion Completa", "categoria": "Bob Esponja", "precio": 500, "imagen": "thumbs/esponja21.jpeg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "3 Figuras Bob Esponja Calamardo y Patricio", "categoria": "Bob Esponja", "precio": 500, "imagen": "thumbs/cesponja1.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "4 Figuras Arenita Vuala y Marinela", "categoria": "Bob Esponja", "precio": 100, "imagen": "thumbs/cesponja3.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "3 Figuras Don Cangrejo KFC, Vuala y Marinela", "categoria": "Bob Esponja", "precio": 100, "imagen": "thumbs/cesponja4.png" ,"badge": "nuevo", "stock": 1},
