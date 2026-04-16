@@ -544,6 +544,15 @@ body.dark .filtros button {
   color: #fff;
 }
 
+.badge.exclusivo {
+  background: #ff6d00;
+  color: #fff;
+}
+
+.badge.preventa {
+  background: #7b1fa2;
+  color: #fff;
+}
 
 .stock-mental {
     display: block;
@@ -1673,9 +1682,7 @@ body.dark .cart-item {
     }
 }
 
-/* =========================
-   HEADER NUEVO – OVERRIDES
-========================= */
+
 
 .main-header {
     position: sticky;

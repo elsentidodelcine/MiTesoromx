@@ -1,5 +1,13 @@
 [
 
+  { "nombre": "PREVENTA Caja Zapatillas El Diablo Viste a la Moda 2 Cinepolis", "categoria": "Preventa", "precio": 450, "imagen": "thumbs/preventa2.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "PREVENTA Termo El Diablo Viste a la Moda 2 Cinemex", "categoria": "Preventa", "precio": 450, "imagen": "thumbs/preventa4.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "PREVENTA Termo Michael Cinepolis", "categoria": "Preventa", "precio": 355, "imagen": "thumbs/preventa3.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "PREVENTA Vasos Michael Cinemex", "categoria": "Preventa", "precio": 355, "imagen": "thumbs/preventa1.jpeg" ,"badge": "preventa", "stock": 1},
+
+
+
+
   { "nombre": "Album de Estampas Copa America Panini Model1", "categoria": "Album Estampas", "precio": 50, "imagen": "thumbs/halbum1.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Album de Estampas Russia 2018 Panini Model1", "categoria": "Album Estampas", "precio": 50, "imagen": "thumbs/halbum2.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Album de Estampas Liga Bancomer Panini Model1", "categoria": "Album Estampas", "precio": 20, "imagen": "thumbs/halbum3.png" ,"badge": "nuevo", "stock": 1},
@@ -21,6 +29,8 @@
   { "nombre": "Vaso Ant Man Cinepolis Model2 Marvel", "categoria": "Ant Man", "precio": 20, "imagen": "thumbs/antman2.png" ,"badge": "oferta", "stock": 1, "descripcion": "Detalles en todo el vaso"},
   { "nombre": "Oferta Exclusiva - Llévate Todo Ant Man", "categoria": "Ant Man", "precio": 340, "imagen": "thumbs/antman3.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 8 vasos"},
 
+  { "nombre": "3 Figuras Bob Esponja Little Bites Bimbo", "categoria": "Bob Esponja", "precio": 120, "imagen": "thumbs/esponja20.jpeg" ,"badge": "exclusiva", "stock": 1},
+  { "nombre": "5 Figuras Bob Esponja Marinela Coleccion Completa", "categoria": "Bob Esponja", "precio": 500, "imagen": "thumbs/esponja20.jpeg" ,"badge": "exclusiva", "stock": 1},
   { "nombre": "3 Figuras Bob Esponja Calamardo y Patricio", "categoria": "Bob Esponja", "precio": 500, "imagen": "thumbs/cesponja1.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "4 Figuras Arenita Vuala y Marinela", "categoria": "Bob Esponja", "precio": 100, "imagen": "thumbs/cesponja3.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "3 Figuras Don Cangrejo KFC, Vuala y Marinela", "categoria": "Bob Esponja", "precio": 100, "imagen": "thumbs/cesponja4.png" ,"badge": "nuevo", "stock": 1},
@@ -184,6 +194,8 @@
 
   { "nombre": "Libro The Legend of Zelda", "categoria": "Libros", "precio": 170, "imagen": "thumbs/zelda.png" ,"badge": "ultimo", "stock": 1},
 
+  { "nombre": "1 Vaso Mario Bros Cinepolis Con Llavero", "categoria": "Mario Bros", "precio": 300, "imagen": "thumbs/mario20.jpeg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "1 Vaso Mario Bros Movie Center", "categoria": "Mario Bros", "precio": 100, "imagen": "thumbs/mario22.jpeg" ,"badge": "exclusivo", "stock": 1},
 
   { "nombre": "3 Cubos Mario Bros Cinemex + Postal Cinepolis", "categoria": "Mario Bros", "precio": 500, "imagen": "thumbs/bmario.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "1 Vaso Mario Bros Cinepolis Luz Led + Postal Cinepolis", "categoria": "Mario Bros", "precio": 500, "imagen": "thumbs/bmario1.png" ,"badge": "nuevo", "stock": 0},
@@ -232,6 +244,7 @@
   { "nombre": "Vaso Totem Guardianes de la Galaxia Cinepolis Marvel", "categoria": "Marvel", "precio": 120, "imagen": "thumbs/marvel15.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Oferta Exclusiva - Llévate Todo Guardianes de la Galaxia", "categoria": "Marvel", "precio": 150, "imagen": "thumbs/guardianes3.png" ,"badge": "oferta", "stock": 0, "descripcion": "Incluye los 3 vasos"},
   { "nombre": "Album de Estampas Guardianes de la Galaxia Model1", "categoria": "Marvel", "precio": 20, "imagen": "thumbs/davengers13.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Album de Estampas Guardianes de la Galaxia Model2", "categoria": "Marvel", "precio": 20, "imagen": "thumbs/guardianes20.jpeg" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Capitan America Marvel Cinepolis", "categoria": "Marvel", "precio": 130, "imagen": "thumbs/cap.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Capitan America Marvel Walmart", "categoria": "Marvel", "precio": 30, "imagen": "thumbs/cap2.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Figura Capitan America Marvel", "categoria": "Marvel", "precio": 150, "imagen": "thumbs/davengers6.png" ,"badge": "nuevo", "stock": 1},
@@ -332,6 +345,8 @@
   { "nombre": "Vaso Hobbs y Shaw Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 50, "imagen": "thumbs/rapi.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Rapidos y Furiosos", "categoria": "RapidosyFuriosos", "precio": 1000, "imagen": "thumbs/rapidos8.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 6 vasos, 1 termo y las 2 palomeras"},
 
+  { "nombre": "Vaso SpiderMan Busto Cinemex", "categoria": "SpiderMan", "precio": 150, "imagen": "thumbs/spider30.jpeg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Vaso SpiderMan Busto Cinemex + Palomera SpiderMan Mano Cinepolis", "categoria": "SpiderMan", "precio": 550, "imagen": "thumbs/spider31.jpeg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso SpiderMan Busto Cinepolis", "categoria": "SpiderMan", "precio": 150, "imagen": "thumbs/spider1.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Palomera SpiderMan Busto Cinepolis", "categoria": "SpiderMan", "precio": 400, "imagen": "thumbs/spider2.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Palomera SpiderMan Cinemex", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/spider3.png" ,"badge": "ultimo", "stock": 1},
@@ -387,6 +402,7 @@
   { "nombre": "Figura Yoda Star Wars", "categoria": "Star Wars", "precio": 150, "imagen": "thumbs/gstarwars11.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Figura Baby Yoda Star Wars", "categoria": "Star Wars", "precio": 500, "imagen": "thumbs/gstarwars12.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Han Solo Cinepolis", "categoria": "Star Wars", "precio": 80, "imagen": "thumbs/peli12.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Funko Gigante Bebe Yoda", "categoria": "Star Wars", "precio": 1000, "imagen": "thumbs/yoda20.jpeg" ,"badge": "exclusivo", "stock": 1},
 
   { "nombre": "Funko 976 Woody Toy Story", "categoria": "Toy Story", "precio": 500, "imagen": "thumbs/funko4.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Toy Story Movie Center", "categoria": "Toy Story", "precio": 80, "imagen": "thumbs/toy6.png" ,"badge": "ultimo", "stock": 1},
