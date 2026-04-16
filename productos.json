@@ -29,8 +29,8 @@
   { "nombre": "Vaso Ant Man Cinepolis Model2 Marvel", "categoria": "Ant Man", "precio": 20, "imagen": "thumbs/antman2.png" ,"badge": "oferta", "stock": 1, "descripcion": "Detalles en todo el vaso"},
   { "nombre": "Oferta Exclusiva - Llévate Todo Ant Man", "categoria": "Ant Man", "precio": 340, "imagen": "thumbs/antman3.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 8 vasos"},
 
-  { "nombre": "3 Figuras Bob Esponja Little Bites Bimbo", "categoria": "Bob Esponja", "precio": 120, "imagen": "thumbs/esponja20.jpeg" ,"badge": "exclusiva", "stock": 1},
-  { "nombre": "5 Figuras Bob Esponja Marinela Coleccion Completa", "categoria": "Bob Esponja", "precio": 500, "imagen": "thumbs/esponja20.jpeg" ,"badge": "exclusiva", "stock": 1},
+  { "nombre": "3 Figuras Bob Esponja Little Bites Bimbo", "categoria": "Bob Esponja", "precio": 120, "imagen": "thumbs/esponja20.jpeg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "5 Figuras Bob Esponja Marinela Coleccion Completa", "categoria": "Bob Esponja", "precio": 500, "imagen": "thumbs/esponja20.jpeg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "3 Figuras Bob Esponja Calamardo y Patricio", "categoria": "Bob Esponja", "precio": 500, "imagen": "thumbs/cesponja1.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "4 Figuras Arenita Vuala y Marinela", "categoria": "Bob Esponja", "precio": 100, "imagen": "thumbs/cesponja3.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "3 Figuras Don Cangrejo KFC, Vuala y Marinela", "categoria": "Bob Esponja", "precio": 100, "imagen": "thumbs/cesponja4.png" ,"badge": "nuevo", "stock": 1},
@@ -195,7 +195,7 @@
   { "nombre": "Libro The Legend of Zelda", "categoria": "Libros", "precio": 170, "imagen": "thumbs/zelda.png" ,"badge": "ultimo", "stock": 1},
 
   { "nombre": "1 Vaso Mario Bros Cinepolis Con Llavero", "categoria": "Mario Bros", "precio": 300, "imagen": "thumbs/mario20.jpeg" ,"badge": "exclusivo", "stock": 1},
-  { "nombre": "1 Vaso Mario Bros Movie Center", "categoria": "Mario Bros", "precio": 100, "imagen": "thumbs/mario22.jpeg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "1 Vaso Mario Bros Movie Center", "categoria": "Mario Bros", "precio": 100, "imagen": "thumbs/mario21.jpeg" ,"badge": "exclusivo", "stock": 1},
 
   { "nombre": "3 Cubos Mario Bros Cinemex + Postal Cinepolis", "categoria": "Mario Bros", "precio": 500, "imagen": "thumbs/bmario.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "1 Vaso Mario Bros Cinepolis Luz Led + Postal Cinepolis", "categoria": "Mario Bros", "precio": 500, "imagen": "thumbs/bmario1.png" ,"badge": "nuevo", "stock": 0},
