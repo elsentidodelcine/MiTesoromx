@@ -4,8 +4,6 @@
   { "nombre": "Album de Estampas Russia 2018 Panini Model1", "categoria": "Album Estampas", "precio": 50, "imagen": "thumbs/halbum2.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Album de Estampas Liga Bancomer Panini Model1", "categoria": "Album Estampas", "precio": 20, "imagen": "thumbs/halbum3.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Album de Estampas La Era de Hielo Panini Model1", "categoria": "Album Estampas", "precio": 20, "imagen": "thumbs/halbum4.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Album de Estampas Toy Story 4 Panini Model1", "categoria": "Toy Story", "precio": 20, "imagen": "thumbs/halbum5.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Album de Estampas Lightyear Panini Model1", "categoria": "Toy Story", "precio": 25, "imagen": "thumbs/halbum6.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Album de Estampas Dory Panini Model1", "categoria": "Album Estampas", "precio": 20, "imagen": "thumbs/halbum7.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Album de Estampas La Bella y la Bestia Panini Model1", "categoria": "Album Estampas", "precio": 20, "imagen": "thumbs/halbum8.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Album de Estampas Un Verano de Misterio Panini Model1", "categoria": "Album Estampas", "precio": 25, "imagen": "thumbs/halbum11.png" ,"badge": "nuevo", "stock": 1},
@@ -395,6 +393,8 @@
   { "nombre": "Vaso Toy Story Cinepolis", "categoria": "Toy Story", "precio": 100, "imagen": "thumbs/toy5.png" ,"badge": "oferta", "stock": 1, "descripcion":  "Detalles en vaso"},
   { "nombre": "Funko Chuckles Toy 561 Story", "categoria": "Toy Story", "precio": 1000, "imagen": "thumbs/ifunko9.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Señor Cara de Papa Toy Story", "categoria": "Toy Story", "precio": 300, "imagen": "thumbs/papa.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Album de Estampas Toy Story 4 Panini Model1", "categoria": "Toy Story", "precio": 20, "imagen": "thumbs/halbum5.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Album de Estampas Lightyear Panini Model1", "categoria": "Toy Story", "precio": 25, "imagen": "thumbs/halbum6.png" ,"badge": "nuevo", "stock": 1},
 
   { "nombre": "Vaso One Cinepolis Transformers", "categoria": "Transformers", "precio": 150, "imagen": "thumbs/trans.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Totem Cinepolis Transformers", "categoria": "Transformers", "precio": 150, "imagen": "thumbs/trans6.png" ,"badge": "ultimo", "stock": 1},
