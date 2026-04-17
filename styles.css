@@ -2724,6 +2724,28 @@ body.dark .descripcion-oferta {
     }
 }
 
+.banner-dia-nino {
+  width: 100%;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #ff4d6d, #ff9a3c);
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.banner-content h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.banner-content p {
+  margin-top: 8px;
+  font-size: 16px;
+}
+
 
 
 
