@@ -2,8 +2,8 @@
 
   { "nombre": "PREVENTA ANTICIPADA Caja Zapatillas El Diablo Viste a la Moda 2 Cinepolis", "categoria": "Preventa", "precio": 450, "imagen": "thumbs/preventa2.jpeg" ,"badge": "preventa", "stock": 1},
   { "nombre": "PREVENTA ANTICIPADA Termo El Diablo Viste a la Moda 2 Cinemex", "categoria": "Preventa", "precio": 450, "imagen": "thumbs/preventa4.jpeg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "PREVENTA ANTICIPADA Termo Michael Cinepolis", "categoria": "Preventa", "precio": 355, "imagen": "thumbs/preventa3.jpeg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "PREVENTA ANTICIPADA Vasos Michael Cinemex", "categoria": "Preventa", "precio": 355, "imagen": "thumbs/preventa1.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Termo Michael Cinepolis", "categoria": "Preventa", "precio": 355, "imagen": "thumbs/preventa3.jpeg" ,"badge": "preventa", "stock": 0},
+  { "nombre": "Vaso Michael Cinemex", "categoria": "Preventa", "precio": 355, "imagen": "thumbs/preventa1.jpeg" ,"badge": "preventa", "stock": 0},
 
 
 
@@ -139,8 +139,8 @@
   { "nombre": "Vaso Unidos Model1 Cinepolis", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/infantil2.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Unidos Model2 Cinepolis", "categoria": "Infantil", "precio": 80, "imagen": "thumbs/infantil3.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Unidos", "categoria": "Infantil", "precio": 130, "imagen": "thumbs/bob4.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 2 vasos"},
-  { "nombre": "Vaso Cars 3 Cinepolis", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/infantil6.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Palomera Cars Matte Cinemex Disney", "categoria": "Infantil", "precio": 400, "imagen": "thumbs/infantil14.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Cars 3 Cinepolis", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/infantil6.png" ,"badge": "ultimo", "stock": 0},
+  { "nombre": "Palomera Cars Matte Cinemex Disney", "categoria": "Infantil", "precio": 400, "imagen": "thumbs/infantil14.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Oferta Exclusiva - Llévate Todo Cars", "categoria": "Infantil", "precio": 400, "imagen": "thumbs/bob4.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye el vaso y la palomera"},
   { "nombre": "Vaso Ralph Cinepolis", "categoria": "Infantil", "precio": 50, "imagen": "thumbs/infantil4.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Ninjango Cinepolis", "categoria": "Infantil", "precio": 50, "imagen": "thumbs/infantil8.png" ,"badge": "ultimo", "stock": 1},
@@ -148,7 +148,7 @@
   { "nombre": "Vaso Slam Dunk Cinepolis", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/infantil10.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Palomera Blanca Nieves Movie Center", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/infantil12.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Soul Cinemex", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/infantil13.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Vaso Totem Sin Tapa Mulan Cinepolis", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/mulan.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Totem Sin Tapa Mulan Cinepolis", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/mulan.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Intensamente Movie Center", "categoria": "Infantil", "precio": 80, "imagen": "thumbs/infantil5.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Palomera Intensamente 2 Movie Center", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/infantil11.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Funko Robin Hood 53 Disney", "categoria": "Infantil", "precio": 700, "imagen": "thumbs/ifunko6.png" ,"badge": "nuevo", "stock": 1},
@@ -228,7 +228,7 @@
   { "nombre": "Vaso Kamala Khan Cinepolis Marvel", "categoria": "Marvel", "precio": 150, "imagen": "thumbs/marvels3.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Equipo Marvels", "categoria": "Marvel", "precio": 350, "imagen": "thumbs/marvels4.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 3 vasos"},
   { "nombre": "Vaso Doctor Strange Marvel Cinepolis", "categoria": "Marvel", "precio": 50, "imagen": "thumbs/marvel10.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Vaso Luz Led Doctor Strange Marvel Cinepolis", "categoria": "Marvel", "precio": 150, "imagen": "thumbs/doctor1.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Luz Led Doctor Strange Marvel Cinepolis", "categoria": "Marvel", "precio": 150, "imagen": "thumbs/doctor1.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Luz Led Doctor Strange Cinepolis + Funko 1008 Marvel", "categoria": "Marvel", "precio": 500, "imagen": "thumbs/doctor2.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Luz Led Doctor Strange Cinepolis + Funko 1008 + Ojo de Agamoto Marvel", "categoria": "Marvel", "precio": 1800, "imagen": "thumbs/doctor3.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Doctor Strange Ojo de Agamoto Marvel", "categoria": "Marvel", "precio": 1300, "imagen": "thumbs/davengers2.png" ,"badge": "nuevo", "stock": 1},
@@ -376,7 +376,7 @@
   { "nombre": "Funko SpiderMan SE", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/aspiderman20.png" ,"badge": "nuevo", "stock": 1},
 
   { "nombre": "Vaso Rogue One Cinepolis Star Wars", "categoria": "Star Wars", "precio": 100, "imagen": "thumbs/star13.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Palomera Casco Cinepolis Star Wars", "categoria": "Star Wars", "precio": 100, "imagen": "thumbs/star3.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Palomera Casco Cinepolis Star Wars", "categoria": "Star Wars", "precio": 100, "imagen": "thumbs/star3.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso R2D2 Cinepolis Star Wars", "categoria": "Star Wars", "precio": 130, "imagen": "thumbs/star1.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "2 Vasos Cinepolis Star Wars", "categoria": "Star Wars", "precio": 300, "imagen": "thumbs/star2.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko BB8 SE Star Wars", "categoria": "Star Wars", "precio": 300, "imagen": "thumbs/star14.png" ,"badge": "ultimo", "stock": 1},
