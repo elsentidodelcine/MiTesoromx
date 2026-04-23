@@ -167,7 +167,7 @@
   { "nombre": "Vaso Iron Man Avengers Cinepolis Marvel", "categoria": "Iron Man", "precio": 150, "imagen": "thumbs/iron5.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Palomera Guantelete Iron Man Cinemex Marvel", "categoria": "Iron Man", "precio": 400, "imagen": "thumbs/guante2.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Iron Man", "categoria": "Iron Man", "precio": 850, "imagen": "thumbs/dino4.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye 1 vaso y 2 palomeras"},
-  { "nombre": "Funko Iron Man 626 Marvel", "categoria": "Iron Man", "precio": 150, "imagen": "thumbs/davengers11.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Funko Iron Man 626 Marvel", "categoria": "Iron Man", "precio": 150, "imagen": "thumbs/davengers11.png" ,"badge": "oferta", "stock": 1, "descripcion":  "Detalle en caja"},
   { "nombre": "Funko 580 Iron Man Marvel", "categoria": "Iron Man", "precio": 500, "imagen": "thumbs/funko6.png" ,"badge": "ultimo", "stock": 1},
 
   { "nombre": "Vaso Joker Cinepolis DC", "categoria": "Joker", "precio": 100, "imagen": "thumbs/joker.png" ,"badge": "ultimo", "stock": 1},
@@ -302,7 +302,7 @@
   { "nombre": "Funko Naruto As Nine Tails 1233", "categoria": "Naruto", "precio": 1000, "imagen": "thumbs/enaruto11.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Mangas de Naruto (1-42, 44-57) y 3 especiales", "categoria": "Naruto", "precio": 4720, "imagen": "thumbs/enaruto1.png" ,"badge": "nuevo", "stock": 1},
 
-  { "nombre": "Vaso Animales Fantasticos Cinepolis", "categoria": "Peliculas", "precio": 150, "imagen": "thumbs/harry.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Animales Fantasticos Cinepolis", "categoria": "Peliculas", "precio": 100, "imagen": "thumbs/harry.png" ,"badge": "oferta", "stock": 1, "descripcion":  "Detalle en boca de la tapa"},
   { "nombre": "Album de Estampas Animales Fantasticos Panini", "categoria": "Peliculas", "precio": 20, "imagen": "thumbs/halbum15.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Jack Walamrt", "categoria": "Peliculas", "precio": 50, "imagen": "thumbs/jack.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko Jack Skellington 69 Disney", "categoria": "Peliculas", "precio": 500, "imagen": "thumbs/ifunko1.png" ,"badge": "nuevo", "stock": 1},
