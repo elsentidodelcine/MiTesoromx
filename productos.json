@@ -144,7 +144,7 @@
   { "nombre": "Oferta Exclusiva - Llévate Todo Unidos", "categoria": "Infantil", "precio": 130, "imagen": "thumbs/bob4.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 2 vasos"},
   { "nombre": "Vaso Cars 3 Cinepolis", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/infantil6.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Palomera Cars Matte Cinemex Disney", "categoria": "Infantil", "precio": 400, "imagen": "thumbs/infantil14.png" ,"badge": "ultimo", "stock": 0},
-  { "nombre": "Oferta Exclusiva - Llévate Todo Cars", "categoria": "Infantil", "precio": 400, "imagen": "thumbs/bob4.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye el vaso y la palomera"},
+  { "nombre": "Oferta Exclusiva - Llévate Todo Cars", "categoria": "Infantil", "precio": 400, "imagen": "thumbs/bob4.png" ,"badge": "oferta", "stock": 0, "descripcion": "Incluye el vaso y la palomera"},
   { "nombre": "Vaso Ralph Cinepolis", "categoria": "Infantil", "precio": 50, "imagen": "thumbs/infantil4.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Ninjango Cinepolis", "categoria": "Infantil", "precio": 50, "imagen": "thumbs/infantil8.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Sonic Movie Center", "categoria": "Infantil", "precio": 80, "imagen": "thumbs/infantil7.png" ,"badge": "ultimo", "stock": 1},
