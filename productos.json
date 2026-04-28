@@ -1,9 +1,7 @@
 [
 
-  { "nombre": "FELIZ DIA DEL NIÑO", "categoria": "Preventa", "precio": 0, "imagen": "thumbs/nino3.jpeg" ,"badge": "preventa", "stock": 1},
-
   { "nombre": "PREVENTA ANTICIPADA Caja Zapatillas El Diablo Viste a la Moda 2 Cinepolis", "categoria": "Preventa", "precio": 450, "imagen": "thumbs/preventa2.jpeg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "PREVENTA ANTICIPADA Termo El Diablo Viste a la Moda 2 Cinemex", "categoria": "Preventa", "precio": 450, "imagen": "thumbs/preventa4.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "PREVENTA ANTICIPADA Termo El Diablo Viste a la Moda 2 Cinemex", "categoria": "Preventa", "precio": 310, "imagen": "thumbs/preventa4.jpeg" ,"badge": "preventa", "stock": 1},
   { "nombre": "Termo Michael Cinepolis", "categoria": "Preventa", "precio": 355, "imagen": "thumbs/preventa3.jpeg" ,"badge": "preventa", "stock": 0},
   { "nombre": "Vaso Michael Cinemex", "categoria": "Preventa", "precio": 355, "imagen": "thumbs/preventa1.jpeg" ,"badge": "preventa", "stock": 0},
 
@@ -275,7 +273,7 @@
   { "nombre": "Calendario Nacion Grita 2017", "categoria": "Musica", "precio": 200, "imagen": "thumbs/jfigura6.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Funko Pop Freddie Mercury Queen 184", "categoria": "Musica", "precio": 300, "imagen": "thumbs/queen.png" ,"badge": "oferta", "stock": 1, "descripcion": "Detalle en caja"},
   { "nombre": "Póster Cinepólis Queen Rock Montreal", "categoria": "Musica", "precio": 300, "imagen": "thumbs/queen2.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Funko Pop Papa Emeritus I 241", "categoria": "Musica", "precio": 500, "imagen": "thumbs/rock1.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Funko Pop Papa Emeritus I 241", "categoria": "Musica", "precio": 500, "imagen": "thumbs/rock1.png" ,"badge": "nuevo", "stock": 0},
   { "nombre": "Funko Pop Papa Emeritus Nihil 169", "categoria": "Musica", "precio": 500, "imagen": "thumbs/ifunko7.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Funko Iron Maiden 250", "categoria": "Musica", "precio": 400, "imagen": "thumbs/iron.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vinilo Ella La Que Se Fue Jose Alfredo Jimenez", "categoria": "Musica", "precio": 500, "imagen": "thumbs/rock2.png" ,"badge": "ultimo", "stock": 0},
@@ -302,7 +300,7 @@
   { "nombre": "Funko Naruto As Nine Tails 1233", "categoria": "Naruto", "precio": 1000, "imagen": "thumbs/enaruto11.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Mangas de Naruto (1-42, 44-57) y 3 especiales", "categoria": "Naruto", "precio": 4720, "imagen": "thumbs/enaruto1.png" ,"badge": "nuevo", "stock": 1},
 
-  { "nombre": "Vaso Animales Fantasticos Cinepolis", "categoria": "Peliculas", "precio": 100, "imagen": "thumbs/harry.png" ,"badge": "oferta", "stock": 1, "descripcion":  "Detalle en boca de la tapa"},
+  { "nombre": "Vaso Animales Fantasticos Cinepolis", "categoria": "Peliculas", "precio": 100, "imagen": "thumbs/harry.png" ,"badge": "oferta", "stock": 0, "descripcion":  "Detalle en boca de la tapa"},
   { "nombre": "Album de Estampas Animales Fantasticos Panini", "categoria": "Peliculas", "precio": 20, "imagen": "thumbs/halbum15.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Jack Walamrt", "categoria": "Peliculas", "precio": 50, "imagen": "thumbs/jack.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko Jack Skellington 69 Disney", "categoria": "Peliculas", "precio": 500, "imagen": "thumbs/ifunko1.png" ,"badge": "nuevo", "stock": 1},
@@ -317,10 +315,9 @@
   { "nombre": "Palomera El Señor de los Anillos Cinepolis", "categoria": "Peliculas", "precio": 150, "imagen": "thumbs/peli2.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Trilogía Vasos Volver al Futuro Cinemex", "categoria": "Peliculas", "precio": 1000, "imagen": "thumbs/regreso.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Trilogía Vasos Volver Al Futuro + Delorean", "categoria": "Peliculas", "precio": 1500, "imagen": "thumbs/regreso2.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Vaso Avatar Fuego y Cenizas Cinepolis", "categoria": "Peliculas", "precio": 150, "imagen": "thumbs/peli4.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Avatar Fuego y Cenizas Cinepolis", "categoria": "Peliculas", "precio": 150, "imagen": "thumbs/peli4.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Avatar La Forma del Agua Movie Center", "categoria": "Peliculas", "precio": 80, "imagen": "thumbs/peli5.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Vaso Avatar La Forma del Agua Cinepolis", "categoria": "Peliculas", "precio": 150, "imagen": "thumbs/avatar.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Oferta Exclusiva - Llévate Todo Avatar", "categoria": "Peliculas", "precio": 280, "imagen": "thumbs/oferta5.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye los 3 vasos"},
+  { "nombre": "Vaso Avatar La Forma del Agua Cinepolis", "categoria": "Peliculas", "precio": 215, "imagen": "thumbs/avatar.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Palomera Los Juegos del Hambre Cinepolis", "categoria": "Peliculas", "precio": 150, "imagen": "thumbs/peli1.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Los Juegos del Hambre Cinepolis", "categoria": "Peliculas", "precio": 150, "imagen": "thumbs/juegos.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Oferta Exclusiva - Llévate Todo Los Juegos del Hambre", "categoria": "Peliculas", "precio": 230, "imagen": "thumbs/bee3.png" ,"badge": "oferta", "stock": 1, "descripcion": "Incluye 1 vaso y 1 palomera"},
