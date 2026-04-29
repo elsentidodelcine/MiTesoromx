@@ -394,8 +394,8 @@
 
   { "nombre": "Peon SpiderMan", "categoria": "SpiderMan", "precio": 150, "imagen": "thumbs/spider30.jpeg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Funko 1560 SpiderMan", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/spider31.jpeg" ,"badge": "exclusivo", "stock": 1},
-  { "nombre": "Vaso SpiderMan Busto Cinemex", "categoria": "SpiderMan", "precio": 150, "imagen": "thumbs/spider30.jpeg" ,"badge": "exclusivo", "stock": 0},
-  { "nombre": "Vaso SpiderMan Busto Cinemex + Palomera SpiderMan Mano Cinepolis", "categoria": "SpiderMan", "precio": 550, "imagen": "thumbs/spider31.jpeg" ,"badge": "exclusivo", "stock": 0},
+  { "nombre": "Vaso SpiderMan Busto Cinemex", "categoria": "SpiderMan", "precio": 150, "imagen": "thumbs/aspiderman14.png" ,"badge": "exclusivo", "stock": 0},
+  { "nombre": "Vaso SpiderMan Busto Cinemex + Palomera SpiderMan Mano Cinepolis", "categoria": "SpiderMan", "precio": 550, "imagen": "thumbs/aspiderman13.png.jpeg" ,"badge": "exclusivo", "stock": 0},
   { "nombre": "Vaso SpiderMan Busto Cinepolis", "categoria": "SpiderMan", "precio": 150, "imagen": "thumbs/spider1.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Palomera SpiderMan Busto Cinepolis", "categoria": "SpiderMan", "precio": 400, "imagen": "thumbs/spider2.png" ,"badge": "ultimo", "stock":0},
   { "nombre": "Palomera SpiderMan Cinemex", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/spider3.png" ,"badge": "ultimo", "stock": 1},
