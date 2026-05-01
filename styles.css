@@ -2724,41 +2724,41 @@ body.dark .descripcion-oferta {
     }
 }
 
+/* Evita que padding rompa el ancho */
+* {
+  box-sizing: border-box;
+}
+
 .banner-dia-madres {
   width: 100%;
+  max-width: 100%;
   margin: 20px 0;
-  padding: 25px;
+  padding: 20px;
   border-radius: 16px;
   background: linear-gradient(90deg, #ff758c, #ffb199, #ffd6e0);
   color: #5a2a2a;
   text-align: center;
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  font-family: 'Segoe UI', sans-serif;
-  position: relative;
-  overflow: hidden;
+  overflow: hidden; /* 👈 clave para que nada se salga */
 }
 
-/* Detalle decorativo sutil */
-.banner-dia-madres::before {
-  content: "🌸";
-  font-size: 40px;
-  position: absolute;
-  top: 10px;
-  left: 15px;
-  opacity: 0.3;
+/* Evita desbordes de texto */
+.banner-content {
+  max-width: 100%;
+  word-wrap: break-word;
 }
 
-.banner-dia-madres::after {
-  content: "💖";
-  font-size: 40px;
-  position: absolute;
-  bottom: 10px;
-  right: 15px;
-  opacity: 0.3;
+/* Ajuste para celulares */
+@media (max-width: 600px) {
+  .banner-dia-madres {
+    padding: 15px;
+  }
+
+  .banner-dia-madres h2 {
+    font-size: 20px;
+  }
+
+  .banner-dia-madres p {
+    font-size: 14px;
+  }
 }
-
-
-
-
-
