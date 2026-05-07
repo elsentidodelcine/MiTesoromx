@@ -14,7 +14,7 @@
   { "nombre": "Album de Estampas La Era de Hielo Panini Model1", "categoria": "Album Estampas", "precio": 20, "imagen": "thumbs/halbum4.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Album de Estampas Dory Panini Model1", "categoria": "Album Estampas", "precio": 20, "imagen": "thumbs/halbum7.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Album de Estampas La Bella y la Bestia Panini Model1", "categoria": "Album Estampas", "precio": 20, "imagen": "thumbs/halbum8.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Album de Estampas Un Verano de Misterio Panini Model1", "categoria": "Album Estampas", "precio": 25, "imagen": "thumbs/halbum11.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Album de Estampas Un Verano de Misterio Panini Model1", "categoria": "Album Estampas", "precio": 25, "imagen": "thumbs/halbum11.png" ,"badge": "nuevo", "stock": 0},
   { "nombre": "Album de Estampas AAA Aniversario 25 Panini", "categoria": "Album Estampas", "precio": 100, "imagen": "thumbs/halbum16.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Album de Estampas WWE Superstars con Estampas Panini", "categoria": "Album Estampas", "precio": 1000, "imagen": "thumbs/halbum17.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Album de Estampas Calaveritas Panini", "categoria": "Album Estampas", "precio": 500, "imagen": "thumbs/halbum18.png" ,"badge": "nuevo", "stock": 1},
@@ -45,7 +45,7 @@
   { "nombre": "Vaso Bob Esponja Figura Calamardo", "categoria": "Bob Esponja", "precio": 300, "imagen": "thumbs/bob3.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Figura Llavero Plankton", "categoria": "Bob Esponja", "precio": 100, "imagen": "thumbs/bob30.jpeg" ,"badge": "exclusivo", "stock": 1},
 
-  { "nombre": "Postal El Cadaver de la Novia", "categoria": "Boletos", "precio": 100, "imagen": "thumbs/boleto1.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Postal El Cadaver de la Novia", "categoria": "Boletos", "precio": 100, "imagen": "thumbs/boleto1.png" ,"badge": "ultimo", "stock": 0},
 
   { "nombre": "Vaso Leds Caza Fantasma Cinepolis CazaFantasmas", "categoria": "CazaFantasmas", "precio": 150, "imagen": "thumbs/caza.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Caza Fantasma Figura Cinemex CazaFantasmas", "categoria": "CazaFantasmas", "precio": 80, "imagen": "thumbs/fantasma3.png" ,"badge": "ultimo", "stock": 0},
@@ -85,7 +85,7 @@
   { "nombre": "Termo Wonder Woman Verde Cinepolis DC", "categoria": "DC", "precio": 150, "imagen": "thumbs/wonder5.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko Wonder Woman 393 DC", "categoria": "DC", "precio": 200, "imagen": "thumbs/fdc5.png" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Funko Wonder Woman 393 + Vaso Wonder Woman + Llavero Cinepolis DC", "categoria": "DC", "precio": 400, "imagen": "thumbs/fdc6.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Figura Parque Jurasico y wonder Woman", "categoria": "DC", "precio": 100, "imagen": "thumbs/dc30.jpeg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Figura Wonder Woman", "categoria": "DC", "precio": 50, "imagen": "thumbs/dc30.jpeg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Figura Mr Freeze", "categoria": "DC", "precio": 100, "imagen": "thumbs/dc31.jpeg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Figuras Robin", "categoria": "DC", "precio": 200, "imagen": "thumbs/dc32.jpeg" ,"badge": "exclusivo", "stock": 1},
 
@@ -116,11 +116,11 @@
   { "nombre": "Funko YuGiOh 716 Maximillion Pegasus", "categoria": "Funko", "precio": 300, "imagen": "thumbs/yugi1.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko YuGiOh 389 Blue Eyes White Dragon Pirata", "categoria": "Funko", "precio": 100, "imagen": "thumbs/yugi2.png" ,"badge": "ultimo", "stock": 1},
 
-  { "nombre": "Vaso Godzilla Carls Jr Model1 ", "categoria": "Godzilla", "precio": 50, "imagen": "thumbs/god.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Godzilla Carls Jr Model1 ", "categoria": "Godzilla", "precio": 50, "imagen": "thumbs/god.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Godzilla Carls Jr Model2 ", "categoria": "Godzilla", "precio": 50, "imagen": "thumbs/god1.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Vaso Godzilla Carls Jr Model3 ", "categoria": "Godzilla", "precio": 50, "imagen": "thumbs/god2.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Godzilla Carls Jr Model3 ", "categoria": "Godzilla", "precio": 50, "imagen": "thumbs/god2.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Godzilla Movie Center ", "categoria": "Godzilla", "precio": 50, "imagen": "thumbs/god3.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Vaso Godzilla Cinemex Figura", "categoria": "Godzilla", "precio": 80, "imagen": "thumbs/god4.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Godzilla Cinemex Incluye Figura King Kong", "categoria": "Godzilla", "precio": 130, "imagen": "thumbs/god4.png" ,"badge": "ultimo", "stock": 1},
 
 
   { "nombre": "2 Carros Hot Wheels", "categoria": "Hot Wheels", "precio": 150, "imagen": "thumbs/carro2.png" ,"badge": "ultimo", "stock": 1},
@@ -145,7 +145,7 @@
   { "nombre": "Vaso Paw Patrol Movie Center", "categoria": "Infantil", "precio": 80, "imagen": "thumbs/paw.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Como Entrenar a tu Dragon Movie Center", "categoria": "Infantil", "precio": 400, "imagen": "thumbs/drago.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Como Entrenar a tu Dragon Movie Center", "categoria": "Infantil", "precio": 400, "imagen": "thumbs/drago.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vaso Elementos Cinepolis", "categoria": "Infantil", "precio": 80, "imagen": "thumbs/infantil1.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Elementos Cinemex", "categoria": "Infantil", "precio": 80, "imagen": "thumbs/infantil1.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Unidos Model1 Cinepolis", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/infantil2.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Unidos Model2 Cinepolis", "categoria": "Infantil", "precio": 80, "imagen": "thumbs/infantil3.png" ,"badge": "ultimo", "stock": 1},
 
@@ -198,10 +198,10 @@
   { "nombre": "Vaso Jurassic World Cinemex Model1 Jurassic World", "categoria": "Jurassic World", "precio": 80, "imagen": "thumbs/dino3.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Jurassic World Cinemex Model2 Jurassic World", "categoria": "Jurassic World", "precio": 80, "imagen": "thumbs/dino2.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Jurassic World Cinepolis Jurassic World", "categoria": "Jurassic World", "precio": 80, "imagen": "thumbs/dino1.png" ,"badge": "ultimo", "stock": 1},
-
-  { "nombre": "Album de Estampas Jurassic World Model1", "categoria": "Jurassic World", "precio": 25, "imagen": "thumbs/halbum12.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Album de Estampas Jurassic World Model2", "categoria": "Jurassic World", "precio": 20, "imagen": "thumbs/halbum13.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Album de Estampas Jurassic World Model3", "categoria": "Jurassic World", "precio": 25, "imagen": "thumbs/halbum14.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Figura Parque Jurasico", "categoria": "DC", "precio": 50, "imagen": "thumbs/dc30.jpeg" ,"badge": "exclusivo", "stock": 0},
+  { "nombre": "Album de Estampas Jurassic World Model1", "categoria": "Jurassic World", "precio": 25, "imagen": "thumbs/halbum12.png" ,"badge": "nuevo", "stock": 0},
+  { "nombre": "Album de Estampas Jurassic World Model2", "categoria": "Jurassic World", "precio": 20, "imagen": "thumbs/halbum13.png" ,"badge": "nuevo", "stock": 0},
+  { "nombre": "Album de Estampas Jurassic World Model3", "categoria": "Jurassic World", "precio": 25, "imagen": "thumbs/halbum14.png" ,"badge": "nuevo", "stock": 0},
 
   { "nombre": "Libro The Legend of Zelda", "categoria": "Libros", "precio": 170, "imagen": "thumbs/zelda.png" ,"badge": "ultimo", "stock": 1},
 
@@ -253,13 +253,13 @@
   { "nombre": "Vaso Guardianes de la Galaxia Movie Center Marvel", "categoria": "Marvel", "precio": 50, "imagen": "thumbs/guardianes2.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Totem Guardianes de la Galaxia Cinepolis Marvel", "categoria": "Marvel", "precio": 120, "imagen": "thumbs/marvel15.png" ,"badge": "ultimo", "stock": 0},
 
-  { "nombre": "Album de Estampas Guardianes de la Galaxia Model1", "categoria": "Marvel", "precio": 20, "imagen": "thumbs/davengers13.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Album de Estampas Guardianes de la Galaxia Model2", "categoria": "Marvel", "precio": 20, "imagen": "thumbs/guardianes20.jpeg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Album de Estampas Guardianes de la Galaxia Model1", "categoria": "Marvel", "precio": 20, "imagen": "thumbs/davengers13.png" ,"badge": "nuevo", "stock": 0},
+  { "nombre": "Album de Estampas Guardianes de la Galaxia Model2", "categoria": "Marvel", "precio": 20, "imagen": "thumbs/guardianes20.jpeg" ,"badge": "nuevo", "stock": 0},
   { "nombre": "Vaso Capitan America Marvel Cinepolis", "categoria": "Marvel", "precio": 130, "imagen": "thumbs/cap.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Capitan America Marvel Walmart", "categoria": "Marvel", "precio": 30, "imagen": "thumbs/cap2.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Figura Capitan America Marvel", "categoria": "Marvel", "precio": 150, "imagen": "thumbs/davengers6.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Album de Estampas Avengers Model1", "categoria": "Marvel", "precio": 20, "imagen": "thumbs/davengers8.png" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Album de Estampas Avengers Model2", "categoria": "Marvel", "precio": 20, "imagen": "thumbs/davengers12.png" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Album de Estampas Avengers Model1", "categoria": "Marvel", "precio": 20, "imagen": "thumbs/davengers8.png" ,"badge": "nuevo", "stock": 0},
+  { "nombre": "Album de Estampas Avengers Model2", "categoria": "Marvel", "precio": 20, "imagen": "thumbs/davengers12.png" ,"badge": "nuevo", "stock": 0},
   { "nombre": "Vasos Tang Avengers Marvel", "categoria": "Marvel", "precio": 30, "imagen": "thumbs/tang.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Avengers Figura Iron Man Cinemex Marvel", "categoria": "Marvel", "precio": 50, "imagen": "thumbs/ironman2.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Figura Moon Knight Marvel", "categoria": "Marvel", "precio": 150, "imagen": "thumbs/davengers4.png" ,"badge": "nuevo", "stock": 1},
