@@ -2729,36 +2729,72 @@ body.dark .descripcion-oferta {
   box-sizing: border-box;
 }
 
-.banner-dia-madres {
-  width: 100%;
-  max-width: 100%;
-  margin: 20px 0;
-  padding: 20px;
-  border-radius: 16px;
-  background: linear-gradient(90deg, #ff758c, #ffb199, #ffd6e0);
-  color: #5a2a2a;
-  text-align: center;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  overflow: hidden; /* 👈 clave para que nada se salga */
+.banner-envio-gratis{
+    width: 100%;
+    background: linear-gradient(135deg, #1f1f1f, #2d2d2d);
+    border: 1px solid #3f3f3f;
+    border-radius: 16px;
+    padding: 25px 20px;
+    box-sizing: border-box;
+    margin: 20px 0;
+    overflow: hidden;
 }
 
-/* Evita desbordes de texto */
-.banner-content {
-  max-width: 100%;
-  word-wrap: break-word;
+.banner-content{
+    text-align: center;
+    color: #ffffff;
+}
+
+.banner-content h2{
+    margin: 0 0 15px;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.banner-content p{
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #d7d7d7;
+}
+
+.banner-content strong{
+    color: #ffffff;
+}
+
+.banner-note{
+    display: block;
+    margin-top: 18px;
+    font-size: 13px;
+    color: #9f9f9f;
+}
+
+@media (max-width: 768px){
+    .banner-content h2{
+        font-size: 22px;
+    }
+
+    .banner-content p{
+        font-size: 15px;
+    }
+
+    .banner-envio-gratis{
+        padding: 20px 15px;
+    }
 }
 
 /* Ajuste para celulares */
 @media (max-width: 600px) {
-  .banner-dia-madres {
+  .banner-envio-gratis {
     padding: 15px;
   }
 
-  .banner-dia-madres h2 {
+  .banner-envio-gratis h2 {
     font-size: 20px;
   }
 
-  .banner-dia-madres p {
+  .banner-envio-gratis p {
     font-size: 14px;
   }
 }
