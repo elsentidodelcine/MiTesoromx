@@ -81,6 +81,50 @@
             font-size: 1.6rem;
           }
         }
+
+        /* =============================
+   BANNER APARTADOS SUSPENDIDOS
+============================= */
+
+.apartados-banner {
+  background: linear-gradient(135deg, #8b0000, #b22222);
+  color: #fff;
+  max-width: 900px;
+  margin: 2rem auto 0;
+  padding: 1rem 1.4rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.08);
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,.18);
+}
+
+.apartados-banner strong {
+  display: block;
+  font-size: 1.05rem;
+  margin-bottom: .35rem;
+}
+
+.apartados-banner p {
+  margin: 0;
+  font-size: .92rem;
+  line-height: 1.6;
+  opacity: .95;
+}
+
+@media (max-width: 600px) {
+  .apartados-banner {
+    margin: 1.2rem 1rem 0;
+    padding: .95rem 1rem;
+  }
+
+  .apartados-banner strong {
+    font-size: .95rem;
+  }
+
+  .apartados-banner p {
+    font-size: .85rem;
+  }
+}
     </style>
 </head>
 
@@ -106,6 +150,15 @@
         <a href="faq.html">Preguntas Frecuentes</a>
     </nav>
 </header>
+<!-- BANNER APARTADOS -->
+<div class="apartados-banner">
+    <strong>⚠️ Apartados suspendidos temporalmente</strong>
+    <p>
+        A partir del 15 de mayo de 2026, los apartados se encuentran
+        temporalmente no disponibles hasta nuevo aviso.
+        Agradecemos su comprensión.
+    </p>
+</div>
 
 <!-- CONTENIDO -->
 <main class="legal-container">
