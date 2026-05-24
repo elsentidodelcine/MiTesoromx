@@ -1,5 +1,14 @@
 [
 
+  { "nombre": "Palomera Grogu Cinemex", "categoria": "Preventa", "precio": 490, "imagen": "thumbs/grogu20.jpeg" ,"badge": "preventa", "stock": 0},
+  { "nombre": "Vaso The Mandaloriano Cinemex", "categoria": "Preventa", "precio": 380, "imagen": "thumbs/grogu23.jpeg" ,"badge": "preventa", "stock": 0},
+  { "nombre": "Palomera Grogu y Mandaloriano Cinepolis", "categoria": "Preventa", "precio": 899, "imagen": "thumbs/grogu21.jpeg" ,"badge": "preventa", "stock": 0},
+  { "nombre": "Vaso The Mandaloriano ATAT Cinepolis", "categoria": "Preventa", "precio": 299, "imagen": "thumbs/grogu22.jpeg" ,"badge": "preventa", "stock": 0},
+  { "nombre": "Caja Zapatillas El Diablo Viste a la Moda 2 Cinepolis", "categoria": "Preventa", "precio": 450, "imagen": "thumbs/preventa2.jpeg" ,"badge": "preventa", "stock": 0},
+  { "nombre": "Termo El Diablo Viste a la Moda 2 Cinemex", "categoria": "Preventa", "precio": 310, "imagen": "thumbs/preventa4.jpeg" ,"badge": "preventa", "stock": 0},
+  { "nombre": "Termo Michael Cinepolis", "categoria": "Preventa", "precio": 355, "imagen": "thumbs/preventa3.jpeg" ,"badge": "preventa", "stock": 0},
+  { "nombre": "Vaso Michael Cinemex", "categoria": "Preventa", "precio": 355, "imagen": "thumbs/preventa1.jpeg" ,"badge": "preventa", "stock": 0},
+
   { "nombre": "Album de Estampas Copa America Panini Model1", "categoria": "Album Estampas", "precio": 50, "imagen": "thumbs/halbum1.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Album de Estampas Russia 2018 Panini Model1", "categoria": "Album Estampas", "precio": 200, "imagen": "thumbs/halbum2.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Album de Estampas Liga Bancomer Panini Model1", "categoria": "Album Estampas", "precio": 20, "imagen": "thumbs/halbum3.png" ,"badge": "ultimo", "stock": 1},
@@ -128,7 +137,7 @@
   { "nombre": "5 Carros Hot Wheels", "categoria": "Hot Wheels", "precio": 750, "imagen": "thumbs/cars3.jpeg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "5 Carros Hot Wheels", "categoria": "Hot Wheels", "precio": 750, "imagen": "thumbs/cars4.jpeg" ,"badge": "exclusivo", "stock": 1},
 
-  { "nombre": "Maquina del Misterio Scoob Cinemex", "categoria": "Infantil", "precio": 500, "imagen": "thumbs/infantil30.jpeg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Maquina del Misterio Scoob Cinemex", "categoria": "Infantil", "precio": 500, "imagen": "thumbs/infantil30.jpeg" ,"badge": "nuevo", "stock": 0},
   { "nombre": "Funko Pinocchio Disney 1029", "categoria": "Infantil", "precio": 1000, "imagen": "thumbs/pinocho.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko 1130 Tigger Disney", "categoria": "Infantil", "precio": 300, "imagen": "thumbs/funko8.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko 975 Sulley Pixar", "categoria": "Infantil", "precio": 500, "imagen": "thumbs/funko1.png" ,"badge": "ultimo", "stock": 1},
@@ -433,7 +442,7 @@
   { "nombre": "Palomera Casco Cinepolis Star Wars", "categoria": "Star Wars", "precio": 100, "imagen": "thumbs/star3.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso R2D2 Cinepolis Star Wars", "categoria": "Star Wars", "precio": 130, "imagen": "thumbs/star1.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "2 Vasos Cinepolis Star Wars", "categoria": "Star Wars", "precio": 300, "imagen": "thumbs/star2.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Funko BB8 SE Star Wars", "categoria": "Star Wars", "precio": 300, "imagen": "thumbs/star14.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Funko BB8 SE Star Wars", "categoria": "Star Wars", "precio": 300, "imagen": "thumbs/star14.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Funko Boba Fett 480 Star Wars", "categoria": "Star Wars", "precio": 400, "imagen": "thumbs/star12.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko Bo Katan 497 Star Wars", "categoria": "Star Wars", "precio": 450, "imagen": "thumbs/star11.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko Dark Trooper 488 Star Wars", "categoria": "Star Wars", "precio": 400, "imagen": "thumbs/star10.png" ,"badge": "ultimo", "stock": 1},

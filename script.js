@@ -401,7 +401,7 @@ Gracias
 `;
 
   document.getElementById("whatsBtn").href =
-    "https://wa.me/524761232612?text=" + encodeURIComponent(msg);
+    "https://wa.me/524761002824?text=" + encodeURIComponent(msg);
 }
 
 
