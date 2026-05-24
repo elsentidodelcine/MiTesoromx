@@ -292,7 +292,7 @@
   { "nombre": "Funko Pop Freddie Mercury Queen 184", "categoria": "Musica", "precio": 300, "imagen": "thumbs/queen.png" ,"badge": "oferta", "stock": 1, "descripcion": "Detalle en caja"},
   { "nombre": "Póster Cinepólis Queen Rock Montreal", "categoria": "Musica", "precio": 300, "imagen": "thumbs/queen2.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko Pop Papa Emeritus I 241", "categoria": "Musica", "precio": 500, "imagen": "thumbs/rock1.png" ,"badge": "ultimo", "stock": 0},
-  { "nombre": "Funko Pop Papa Emeritus Nihil 169", "categoria": "Musica", "precio": 500, "imagen": "thumbs/ifunko7.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Funko Pop Papa Emeritus Nihil 169", "categoria": "Musica", "precio": 500, "imagen": "thumbs/ifunko7.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Funko Iron Maiden 250", "categoria": "Musica", "precio": 400, "imagen": "thumbs/iron.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vinilo Ella La Que Se Fue Jose Alfredo Jimenez", "categoria": "Musica", "precio": 500, "imagen": "thumbs/rock2.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso EPICA Concierto Sinfonico", "categoria": "Musica", "precio": 300, "imagen": "thumbs/jfigura5.png","badge": "ultimo", "stock": 1 },
