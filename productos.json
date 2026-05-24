@@ -1,7 +1,7 @@
 [
 
   { "nombre": "Palomera Grogu Cinemex", "categoria": "Preventa", "precio": 490, "imagen": "thumbs/grogu20.jpeg" ,"badge": "preventa", "stock": 0},
-  { "nombre": "Vaso The Mandaloriano Cinemex", "categoria": "Preventa", "precio": 380, "imagen": "thumbs/grogu23.jpeg" ,"badge": "preventa", "stock": 0},
+  { "nombre": "Vaso The Mandaloriano Cinemex", "categoria": "Preventa", "precio": 380, "imagen": "thumbs/grogu22.jpeg" ,"badge": "preventa", "stock": 0},
   { "nombre": "Palomera Grogu y Mandaloriano Cinepolis", "categoria": "Preventa", "precio": 899, "imagen": "thumbs/grogu21.jpeg" ,"badge": "preventa", "stock": 0},
   { "nombre": "Vaso The Mandaloriano ATAT Cinepolis", "categoria": "Preventa", "precio": 299, "imagen": "thumbs/grogu22.jpeg" ,"badge": "preventa", "stock": 0},
   { "nombre": "Caja Zapatillas El Diablo Viste a la Moda 2 Cinepolis", "categoria": "Preventa", "precio": 450, "imagen": "thumbs/preventa2.jpeg" ,"badge": "preventa", "stock": 0},
@@ -65,7 +65,7 @@
   { "nombre": "Palomera Black Adam Cinepolis DC", "categoria": "DC", "precio": 100, "imagen": "thumbs/dc12.png" ,"badge": "ultimo", "stock": 1},
 
 
-  { "nombre": "Palomera Superman Periodico Cinepolis DC", "categoria": "DC", "precio": 250, "imagen": "thumbs/super1.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Palomera Superman Periodico Cinepolis DC", "categoria": "DC", "precio": 250, "imagen": "thumbs/super1.png" ,"badge": "oferta", "stock": 1, "descripcion":  "Detalle en caja"},
   { "nombre": "Palomera Aquaman Cinepolis DC", "categoria": "DC", "precio": 150, "imagen": "thumbs/dc15.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Aquaman Cinepolis DC", "categoria": "DC", "precio": 150, "imagen": "thumbs/aquaman.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Blue Beetle Figura Cinemex DC", "categoria": "DC", "precio": 100, "imagen": "thumbs/dc11.png" ,"badge": "ultimo", "stock": 1},
@@ -163,7 +163,7 @@
   { "nombre": "1 Figura Mr Increible Disney", "categoria": "Infantil", "precio": 500, "imagen": "thumbs/jfigura1.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "2 Figuras Mr Increible y Dash Disney", "categoria": "Infantil", "precio": 500, "imagen": "thumbs/jfigura2.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Los Increibles Cinepolis", "categoria": "Infantil", "precio": 130, "imagen": "thumbs/bebe.png" ,"badge": "ultimo", "stock": 0},
-  { "nombre": "Figura Unidos Barley", "categoria": "Infantil", "precio": 200, "imagen": "thumbs/infantil30.jpeg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Figura Unidos Barley", "categoria": "Infantil", "precio": 200, "imagen": "thumbs/unidosf.jpeg" ,"badge": "exclusivo", "stock": 1},
 
   { "nombre": "Vaso Elementos Cinemex", "categoria": "Infantil", "precio": 80, "imagen": "thumbs/infantil1.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Cars 3 Cinepolis", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/infantil6.png" ,"badge": "ultimo", "stock": 0},
@@ -210,7 +210,7 @@
 
   { "nombre": "Libro The Legend of Zelda", "categoria": "Libros", "precio": 170, "imagen": "thumbs/zelda.png" ,"badge": "ultimo", "stock": 1},
 
-  { "nombre": "Palomera Yoshi cinepolis Sellada", "categoria": "Mario Bros", "precio": 1500, "imagen": "thumbs/yoshi.jpeg" ,"badge": "exclusivo", "stock": 0},
+  { "nombre": "Palomera Yoshi cinepolis Sellada", "categoria": "Mario Bros", "precio": 1500, "imagen": "thumbs/yoshi.jpeg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "1 Vaso Mario Bros Cinepolis Con Llavero", "categoria": "Mario Bros", "precio": 300, "imagen": "thumbs/mario20.jpeg" ,"badge": "exclusivo", "stock": 0},
   { "nombre": "1 Vaso Mario Bros Movie Center", "categoria": "Mario Bros", "precio": 100, "imagen": "thumbs/mario21.jpeg" ,"badge": "exclusivo", "stock": 1},
 
@@ -238,7 +238,7 @@
   { "nombre": "2 Vasos Cinemex Marvel", "categoria": "Marvel", "precio": 200, "imagen": "thumbs/marvels.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Los 4 Fantasticos Mujer Insivible Cinepolis Marvel", "categoria": "Marvel", "precio": 250, "imagen": "thumbs/cuatro1.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Los 4 Fantasticos La Mole Cinepolis Marvel", "categoria": "Marvel", "precio": 250, "imagen": "thumbs/cuatro12.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Vaso Los 4 Fantasticos La Antorcha Cinepolis MArvel", "categoria": "Marvel", "precio": 350, "imagen": "thumbs/fantastico.jpeg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Los 4 Fantasticos La Antorcha Cinepolis MArvel", "categoria": "Marvel", "precio": 350, "imagen": "thumbs/fantastico30.jpeg" ,"badge": "nuevo", "stock": 1},
 
   { "nombre": "Vaso Eternal Figura Marvel", "categoria": "Marvel", "precio": 50, "imagen": "thumbs/eterno.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Elektra Coca Cola Marvel", "categoria": "Marvel", "precio": 100, "imagen": "thumbs/marvel13.png" ,"badge": "ultimo", "stock": 1},
@@ -439,7 +439,7 @@
   { "nombre": "Funko SpiderMan 1073", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/aspiderman19.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko SpiderMan SE", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/aspiderman20.png" ,"badge": "ultimo", "stock": 1},
 
-  { "nombre": "Vaso The Mandalorian and Grogu Cinepolis", "categoria": "Mario Bros", "precio": 350, "imagen": "thumbs/grogu.jpeg" ,"badge": "exclusivo", "stock": 0},
+  { "nombre": "Vaso The Mandalorian and Grogu Cinepolis", "categoria": "Star Wars", "precio": 350, "imagen": "thumbs/grogu.jpeg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso Rogue One Cinepolis Star Wars", "categoria": "Star Wars", "precio": 100, "imagen": "thumbs/star13.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Palomera Casco Cinepolis Star Wars", "categoria": "Star Wars", "precio": 100, "imagen": "thumbs/star3.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso R2D2 Cinepolis Star Wars", "categoria": "Star Wars", "precio": 130, "imagen": "thumbs/star1.png" ,"badge": "ultimo", "stock": 0},
