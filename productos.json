@@ -210,6 +210,7 @@
 
   { "nombre": "Libro The Legend of Zelda", "categoria": "Libros", "precio": 170, "imagen": "thumbs/zelda.png" ,"badge": "ultimo", "stock": 1},
 
+  { "nombre": "Palomera Yoshi cinepolis Sellada", "categoria": "Mario Bros", "precio": 1500, "imagen": "thumbs/yoshi.jpeg" ,"badge": "exclusivo", "stock": 0},
   { "nombre": "1 Vaso Mario Bros Cinepolis Con Llavero", "categoria": "Mario Bros", "precio": 300, "imagen": "thumbs/mario20.jpeg" ,"badge": "exclusivo", "stock": 0},
   { "nombre": "1 Vaso Mario Bros Movie Center", "categoria": "Mario Bros", "precio": 100, "imagen": "thumbs/mario21.jpeg" ,"badge": "exclusivo", "stock": 1},
 
@@ -438,6 +439,7 @@
   { "nombre": "Funko SpiderMan 1073", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/aspiderman19.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko SpiderMan SE", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/aspiderman20.png" ,"badge": "ultimo", "stock": 1},
 
+  { "nombre": "Vaso The Mandalorian and Grogu Cinepolis", "categoria": "Mario Bros", "precio": 350, "imagen": "thumbs/grogu.jpeg" ,"badge": "exclusivo", "stock": 0},
   { "nombre": "Vaso Rogue One Cinepolis Star Wars", "categoria": "Star Wars", "precio": 100, "imagen": "thumbs/star13.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Palomera Casco Cinepolis Star Wars", "categoria": "Star Wars", "precio": 100, "imagen": "thumbs/star3.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso R2D2 Cinepolis Star Wars", "categoria": "Star Wars", "precio": 130, "imagen": "thumbs/star1.png" ,"badge": "ultimo", "stock": 0},
