@@ -1,7 +1,7 @@
 [
 
-  { "nombre": "Palomera Metalica Amos del Universo Cinepolis", "categoria": "Preventa", "precio": 389, "imagen": "thumbs/heman10.jpeg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "Vaso Espada Amos del Universo Cinepolis", "categoria": "Preventa", "precio": 815, "imagen": "thumbs/heman11.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Palomera Metalica Amos del Universo Cinepolis", "categoria": "Preventa", "precio": 389, "imagen": "thumbs/heman11.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Vaso Espada Amos del Universo Cinepolis", "categoria": "Preventa", "precio": 815, "imagen": "thumbs/heman10.jpeg" ,"badge": "preventa", "stock": 1},
   { "nombre": "3 Vasos Amos del Universo Cinemex", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/heman12.jpeg" ,"badge": "preventa", "stock": 1},
 
   { "nombre": "Peluche Jax Digital Circus Cinemex", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/ditial10.jpeg" ,"badge": "preventa", "stock": 1},
