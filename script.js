@@ -191,12 +191,18 @@ function mostrarProductos() {
            : ""
        }
 
-       <p class="precio">$${p.precio} MXN</p>
+      ${
+        p.precio == 9
+          ? `<p class="precio proximamente-precio">💰 Precio por confirmar</p>`
+          : `<p class="precio">$${p.precio} MXN</p>`
+      }
 
        ${
-         p.stock > 0
-           ? `<button class="boton">Agregar al carrito</button>`
-           : `<span class="sin-stock">AGOTADO</span>`
+         p.precio == 9
+           ? `<button class="boton proximamente" disabled>Próximamente</button>`
+           : p.stock > 0
+             ? `<button class="boton">Agregar al carrito</button>`
+             : `<span class="sin-stock">AGOTADO</span>`
        }
      </div>
 

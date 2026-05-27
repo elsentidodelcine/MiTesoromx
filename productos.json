@@ -1,5 +1,13 @@
 [
 
+  { "nombre": "Palomera Metalica Amos del Universo Cinepolis", "categoria": "Preventa", "precio": 389, "imagen": "thumbs/heman10.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Vaso Espada Amos del Universo Cinepolis", "categoria": "Preventa", "precio": 815, "imagen": "thumbs/heman11.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "3 Vasos Amos del Universo Cinemex", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/heman12.jpeg" ,"badge": "preventa", "stock": 1},
+
+  { "nombre": "Peluche Jax Digital Circus Cinemex", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/ditial10.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Peluche Ponmi Digital Circus Cinemex", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/ditial11.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "3 Vasos Digital Circus Cinemex", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/ditial12.jpeg" ,"badge": "preventa", "stock": 1},
+
   { "nombre": "Palomera Grogu Cinemex", "categoria": "Preventa", "precio": 490, "imagen": "thumbs/grogu20.jpeg" ,"badge": "preventa", "stock": 0},
   { "nombre": "Vaso The Mandaloriano Cinemex", "categoria": "Preventa", "precio": 380, "imagen": "thumbs/grogu22.jpeg" ,"badge": "preventa", "stock": 0},
   { "nombre": "Palomera Grogu y Mandaloriano Cinepolis", "categoria": "Preventa", "precio": 899, "imagen": "thumbs/grogu21.jpeg" ,"badge": "preventa", "stock": 0},

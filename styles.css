@@ -2795,3 +2795,18 @@ body.dark .descripcion-oferta {
         font-size: 10px;
     }
 }
+
+.boton.proximamente{
+    background:#999;
+    cursor:not-allowed;
+    opacity:.7;
+}
+
+.boton.proximamente:hover{
+    transform:none;
+}
+
+.proximamente-precio{
+    font-style: italic;
+    opacity: .8;
+}
