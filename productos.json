@@ -69,13 +69,7 @@
   { "nombre": "Funko Peacemaker Vigilante 1234", "categoria": "DC", "precio": 400, "imagen": "thumbs/fdc13.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Shazam Cinemex DC", "categoria": "DC", "precio": 50, "imagen": "thumbs/shazam.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Shazam Cinepolis DC", "categoria": "DC", "precio": 120, "imagen": "thumbs/dc14.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Vaso Black Adam Cinepolis DC", "categoria": "DC", "precio": 150, "imagen": "thumbs/black.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Palomera Black Adam Cinepolis DC", "categoria": "DC", "precio": 100, "imagen": "thumbs/dc12.png" ,"badge": "ultimo", "stock": 1},
-
-
   { "nombre": "Palomera Superman Periodico Cinepolis DC", "categoria": "DC", "precio": 250, "imagen": "thumbs/super1.png" ,"badge": "oferta", "stock": 1, "descripcion":  "Detalle en caja"},
-  { "nombre": "Palomera Aquaman Cinepolis DC", "categoria": "DC", "precio": 150, "imagen": "thumbs/dc15.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Vaso Aquaman Cinepolis DC", "categoria": "DC", "precio": 150, "imagen": "thumbs/aquaman.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Blue Beetle Figura Cinemex DC", "categoria": "DC", "precio": 100, "imagen": "thumbs/dc11.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso The Flash Cinemex DC", "categoria": "DC", "precio": 100, "imagen": "thumbs/dc10.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Termo The Flash Cinepolis DC", "categoria": "DC", "precio": 150, "imagen": "thumbs/flash3.png" ,"badge": "ultimo", "stock": 1},
@@ -85,12 +79,6 @@
   { "nombre": "Funko Robin DC 377", "categoria": "DC", "precio": 200, "imagen": "thumbs/robin.png" ,"badge": "oferta", "stock": 1, "descripcion":  "Detalle en caja"},
   { "nombre": "Album de Estampas Batman Panini Model1", "categoria": "DC", "precio": 100, "imagen": "thumbs/fdc1.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Album de Estampas Batman Panini Model2", "categoria": "DC", "precio": 20, "imagen": "thumbs/fdc2.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Vaso Mini Batman Cinepolis DC", "categoria": "DC", "precio": 80, "imagen": "thumbs/batman2.png" ,"badge": "ultimo", "stock": 0},
-  { "nombre": "Vaso Batman Trilogia Cinemex DC", "categoria": "DC", "precio": 80, "imagen": "thumbs/batman1.png" ,"badge": "ultimo", "stock": 0},
-  { "nombre": "Vaso Totem Batman Cinepolis DC", "categoria": "DC", "precio": 80, "imagen": "thumbs/dc13.png" ,"badge": "ultimo", "stock": 0},
-  { "nombre": "Palomera Superman Cinepolis DC", "categoria": "DC", "precio": 150, "imagen": "thumbs/superman.png" ,"badge": "ultimo", "stock": 0},
-
-  { "nombre": "Vaso Liga de la Justicia Cinepolis DC", "categoria": "DC", "precio": 130, "imagen": "thumbs/liga.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Album de Estampas Liga de la Justicia Panini Model1", "categoria": "DC", "precio": 20, "imagen": "thumbs/fdc3.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Termo Linterna Verde Cinepolis DC", "categoria": "DC", "precio": 150, "imagen": "thumbs/linterna.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Termo Wonder Woman Verde Cinepolis DC", "categoria": "DC", "precio": 150, "imagen": "thumbs/wonder5.png" ,"badge": "ultimo", "stock": 1},
@@ -99,6 +87,16 @@
   { "nombre": "Figura Wonder Woman", "categoria": "DC", "precio": 50, "imagen": "thumbs/dc30.jpeg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Figura Mr Freeze", "categoria": "DC", "precio": 100, "imagen": "thumbs/dc31.jpeg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Figuras Robin", "categoria": "DC", "precio": 200, "imagen": "thumbs/dc32.jpeg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Vaso Black Adam Cinepolis DC", "categoria": "DC", "precio": 150, "imagen": "thumbs/black.png" ,"badge": "ultimo", "stock": 0},
+  { "nombre": "Palomera Black Adam Cinepolis DC", "categoria": "DC", "precio": 100, "imagen": "thumbs/dc12.png" ,"badge": "ultimo", "stock": 0},
+
+  { "nombre": "Vaso Mini Batman Cinepolis DC", "categoria": "DC", "precio": 80, "imagen": "thumbs/batman2.png" ,"badge": "ultimo", "stock": 0},
+  { "nombre": "Vaso Batman Trilogia Cinemex DC", "categoria": "DC", "precio": 80, "imagen": "thumbs/batman1.png" ,"badge": "ultimo", "stock": 0},
+  { "nombre": "Vaso Totem Batman Cinepolis DC", "categoria": "DC", "precio": 80, "imagen": "thumbs/dc13.png" ,"badge": "ultimo", "stock": 0},
+  { "nombre": "Palomera Superman Cinepolis DC", "categoria": "DC", "precio": 150, "imagen": "thumbs/superman.png" ,"badge": "ultimo", "stock": 0},
+  { "nombre": "Vaso Liga de la Justicia Cinepolis DC", "categoria": "DC", "precio": 130, "imagen": "thumbs/liga.png" ,"badge": "ultimo", "stock": 0},
+  { "nombre": "Palomera Aquaman Cinepolis DC", "categoria": "DC", "precio": 150, "imagen": "thumbs/dc15.png" ,"badge": "ultimo", "stock": 0},
+  { "nombre": "Vaso Aquaman Cinepolis DC", "categoria": "DC", "precio": 150, "imagen": "thumbs/aquaman.png" ,"badge": "ultimo", "stock": 0},
 
   { "nombre": "Vaso Deadpool Wolverine Cinepolis Marvel", "categoria": "Deadpool", "precio": 100, "imagen": "thumbs/marvel16.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Deadpool Wolverine Cinemex Marvel", "categoria": "Deadpool", "precio": 130, "imagen": "thumbs/marvel17.png" ,"badge": "ultimo", "stock": 1},
@@ -407,11 +405,11 @@
   { "nombre": "Vaso FastX Cinemex Model2 RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "thumbs/rapidos2.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso FastX Cinemex Model3 RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "thumbs/rapidos7.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso FastX Movie Center RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 50, "imagen": "thumbs/rapidos3.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Palomera Carro FastX Cinemex RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 600, "imagen": "thumbs/carro.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Fast 7 Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "thumbs/rapidos4.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Fast 8 Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "thumbs/rapidos5.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Palomera FastX Movie Center RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 30, "imagen": "thumbs/rapidos6.png" ,"badge": "ultimo", "stock": 0},
-  { "nombre": "Palomera Carro FastX Cinemex RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 600, "imagen": "thumbs/carro.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Vaso Hobbs y Shaw Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 50, "imagen": "thumbs/rapi.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Hobbs y Shaw Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 50, "imagen": "thumbs/rapi.png" ,"badge": "ultimo", "stock": 0},
 
 
   { "nombre": "Peon SpiderMan", "categoria": "SpiderMan", "precio": 150, "imagen": "thumbs/spider30.jpeg" ,"badge": "exclusivo", "stock": 1},
@@ -482,11 +480,11 @@
 
   { "nombre": "Funko 976 Woody Toy Story", "categoria": "Toy Story", "precio": 500, "imagen": "thumbs/funko4.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Toy Story Movie Center", "categoria": "Toy Story", "precio": 80, "imagen": "thumbs/toy6.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Vaso Toy Story Cinepolis", "categoria": "Toy Story", "precio": 100, "imagen": "thumbs/toy5.png" ,"badge": "oferta", "stock": 1, "descripcion":  "Detalles en vaso"},
   { "nombre": "Funko Chuckles Toy 561 Story", "categoria": "Toy Story", "precio": 1000, "imagen": "thumbs/ifunko9.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Señor Cara de Papa Toy Story", "categoria": "Toy Story", "precio": 300, "imagen": "thumbs/papa.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Album de Estampas Toy Story 4 Panini Model1", "categoria": "Toy Story", "precio": 20, "imagen": "thumbs/halbum5.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Album de Estampas Lightyear Panini Model1", "categoria": "Toy Story", "precio": 25, "imagen": "thumbs/halbum6.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Toy Story Cinepolis", "categoria": "Toy Story", "precio": 100, "imagen": "thumbs/toy5.png" ,"badge": "oferta", "stock": 0, "descripcion":  "Detalles en vaso"},
 
   { "nombre": "Vaso One Cinepolis Transformers", "categoria": "Transformers", "precio": 150, "imagen": "thumbs/trans.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Totem Cinepolis Transformers", "categoria": "Transformers", "precio": 150, "imagen": "thumbs/trans6.png" ,"badge": "ultimo", "stock": 1},
