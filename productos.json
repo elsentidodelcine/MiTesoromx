@@ -1,21 +1,21 @@
 [
 
-  { "nombre": "Palomera Metalica Amos del Universo Cinepolis", "categoria": "Preventa", "precio": 389, "imagen": "thumbs/heman11.jpeg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "Vaso Espada Amos del Universo Cinepolis", "categoria": "Preventa", "precio": 815, "imagen": "thumbs/heman10.jpeg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "3 Vasos Amos del Universo Cinemex", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/heman12.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Palomera Metalica Amos del Universo Cinepolis", "categoria": "Preventa", "precio": 389, "imagen": "thumbs/toy60.jpeg" ,"badge": "preventa", "stock": 0},
+  { "nombre": "Vaso Espada Amos del Universo Cinepolis", "categoria": "Preventa", "precio": 815, "imagen": "thumbs/toy59.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "3 Vasos Amos del Universo Cinemex", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/toy58.jpeg" ,"badge": "preventa", "stock": 1},
 
-  { "nombre": "Peluche Jax Digital Circus Cinemex", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/ditial10.jpeg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "Peluche Ponmi Digital Circus Cinemex", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/ditial11.jpeg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "3 Vasos Digital Circus Cinemex", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/ditial12.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Peluche Jax Digital Circus Cinemex", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/toy55.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Peluche Ponmi Digital Circus Cinemex", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/toy56.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "3 Vasos Digital Circus Cinemex", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/toy57.jpeg" ,"badge": "preventa", "stock": 1},
 
-  { "nombre": "Palomera Grogu Cinemex", "categoria": "Preventa", "precio": 490, "imagen": "thumbs/grogu20.jpeg" ,"badge": "preventa", "stock": 0},
-  { "nombre": "Vaso The Mandaloriano Cinemex", "categoria": "Preventa", "precio": 380, "imagen": "thumbs/grogu22.jpeg" ,"badge": "preventa", "stock": 0},
-  { "nombre": "Palomera Grogu y Mandaloriano Cinepolis", "categoria": "Preventa", "precio": 899, "imagen": "thumbs/grogu21.jpeg" ,"badge": "preventa", "stock": 0},
-  { "nombre": "Vaso The Mandaloriano ATAT Cinepolis", "categoria": "Preventa", "precio": 299, "imagen": "thumbs/grogu22.jpeg" ,"badge": "preventa", "stock": 0},
-  { "nombre": "Caja Zapatillas El Diablo Viste a la Moda 2 Cinepolis", "categoria": "Preventa", "precio": 450, "imagen": "thumbs/preventa2.jpeg" ,"badge": "preventa", "stock": 0},
-  { "nombre": "Termo El Diablo Viste a la Moda 2 Cinemex", "categoria": "Preventa", "precio": 310, "imagen": "thumbs/preventa4.jpeg" ,"badge": "preventa", "stock": 0},
-  { "nombre": "Termo Michael Cinepolis", "categoria": "Preventa", "precio": 355, "imagen": "thumbs/preventa3.jpeg" ,"badge": "preventa", "stock": 0},
-  { "nombre": "Vaso Michael Cinemex", "categoria": "Preventa", "precio": 355, "imagen": "thumbs/preventa1.jpeg" ,"badge": "preventa", "stock": 0},
+  { "nombre": "Palomera/Vaso Buzz Toy Story Cinepolis", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/toy50.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Palomera Pelota Toy Story Cinepolis", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/toy51.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "3 Vasos Toy Story Cinepolis", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/toy52.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Palomera Hamm Toy Story Cinemex", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/toy53.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Palomera Buzz Toy Story Cinemex", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/toy54.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "5 Vasos Apilables Toy Story Cinepolis", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/toy52.jpeg" ,"badge": "preventa", "stock": 1},
+
+
 
   { "nombre": "Album de Estampas Copa America Panini Model1", "categoria": "Album Estampas", "precio": 50, "imagen": "thumbs/halbum1.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Album de Estampas Russia 2018 Panini Model1", "categoria": "Album Estampas", "precio": 200, "imagen": "thumbs/halbum2.png" ,"badge": "ultimo", "stock": 1},
