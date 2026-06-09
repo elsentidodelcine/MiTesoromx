@@ -203,7 +203,7 @@ function mostrarProductos() {
         p.precio == 9
           ? `<button class="boton proximamente" disabled>Próximamente</button>`
           : p.precio == 3
-            ? `<button class="boton proximamente" disabled>En espera de restock</button>`
+            ? `<button class="boton proximamente" disabled>Próximamente</button>`
             : p.stock > 0
               ? `<button class="boton">Agregar al carrito</button>`
               : `<span class="sin-stock">AGOTADO</span>`
