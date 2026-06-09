@@ -194,16 +194,20 @@ function mostrarProductos() {
       ${
         p.precio == 9
           ? `<p class="precio proximamente-precio">💰 Precio por confirmar</p>`
-          : `<p class="precio">$${p.precio} MXN</p>`
+          : p.precio == 3
+            ? `<p class="precio proximamente-precio">⏳ En espera de restock</p>`
+            : `<p class="precio">$${p.precio} MXN</p>`
       }
 
-       ${
-         p.precio == 9
-           ? `<button class="boton proximamente" disabled>Próximamente</button>`
-           : p.stock > 0
-             ? `<button class="boton">Agregar al carrito</button>`
-             : `<span class="sin-stock">AGOTADO</span>`
-       }
+      ${
+        p.precio == 9
+          ? `<button class="boton proximamente" disabled>Próximamente</button>`
+          : p.precio == 3
+            ? `<button class="boton proximamente" disabled>En espera de restock</button>`
+            : p.stock > 0
+              ? `<button class="boton">Agregar al carrito</button>`
+              : `<span class="sin-stock">AGOTADO</span>`
+      }
      </div>
 
 
@@ -399,7 +403,7 @@ Quiero comprar las siguientes piezas de *Mi Tesoro MX*:
  *Total:* $${total} MXN
  *Tipo de Pago:* Selecciona  - Apartado o Pago Total
 
- 
+
  *Código Postal:* 
 
 Quedo atento(a) para confirmar disponibilidad 
