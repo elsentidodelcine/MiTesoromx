@@ -386,7 +386,7 @@ function actualizarCarritoUI() {
 function actualizarWhats(total) {
   let msg =
 `Hola 
-Quiero apartar las siguientes piezas de *Mi Tesoro MX*:
+Quiero comprar las siguientes piezas de *Mi Tesoro MX*:
 
  *Productos:* 
 `;
@@ -399,7 +399,7 @@ Quiero apartar las siguientes piezas de *Mi Tesoro MX*:
  *Total:* $${total} MXN
  *Tipo de Pago:* Selecciona  - Apartado o Pago Total
 
- *Envío:* Selecciona - Correos de México, Estafeta o Fedex
+ 
  *Código Postal:* 
 
 Quedo atento(a) para confirmar disponibilidad 
