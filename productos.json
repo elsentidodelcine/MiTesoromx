@@ -1,5 +1,6 @@
 [
 
+  { "nombre": "Balon Palomera Mundial Cinepolis", "categoria": "Preventa", "precio": 250, "imagen": "thumbs/balon.jpg" ,"badge": "preventa", "stock": 1},
   { "nombre": "Palomera Buzz Toy Story Cinemex", "categoria": "Preventa", "precio": 740, "imagen": "thumbs/toy54.jpeg" ,"badge": "preventa", "stock": 1},
   { "nombre": "Palomera Hamm Toy Story Cinemex", "categoria": "Preventa", "precio": 740, "imagen": "thumbs/toy53.jpeg" ,"badge": "preventa", "stock": 1},
   { "nombre": "2 Vasos de 3 (a elegir) Amos del Universo Cinemex", "categoria": "Preventa", "precio": 480, "imagen": "thumbs/toy58.jpeg" ,"badge": "preventa", "stock": 1},
@@ -11,11 +12,11 @@
   { "nombre": "Palomera/Vaso Buzz Toy Story Cinepolis", "categoria": "Preventa", "precio": 3, "imagen": "thumbs/toy50.jpeg" ,"badge": "preventa", "stock": 0},
   { "nombre": "1 Vaso de 3 (a elegir) Toy Story Cinepolis", "categoria": "Preventa", "precio": 3, "imagen": "thumbs/toy52.jpeg" ,"badge": "preventa", "stock": 0},
 
-  { "nombre": "Vaso Supergirl Cinepolis", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/x.jpeg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "2 Vasos Supergirl Cinemex", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/x.jpeg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "Peluche Krypto Supergirl Cinemex", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/x.jpeg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "2 Vasos Minions Figura Cinepolis", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/x.jpeg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "Palomera Minions Cinepolis", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/x.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Vaso Supergirl Cinepolis", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/supergirl.jpg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "2 Vasos Supergirl Cinemex", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/supergirl2.jpg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Peluche Krypto Supergirl Cinemex", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/peluche.jpg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "2 Vasos Minions Figura Cinepolis", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/mini10.jpg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Palomera Minions Cinepolis", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/mini11.jpg" ,"badge": "preventa", "stock": 1},
 
   { "nombre": "Palomera/Vaso Buzz Toy Story Cinepolis", "categoria": "Preventa", "precio": 649, "imagen": "thumbs/toy50.jpeg" ,"badge": "preventa", "stock": 0},
   { "nombre": "Palomera Pelota Toy Story Cinepolis", "categoria": "Preventa", "precio": 885, "imagen": "thumbs/toy51.jpeg" ,"badge": "preventa", "stock": 0},
