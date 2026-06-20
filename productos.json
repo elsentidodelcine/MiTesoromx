@@ -2,7 +2,7 @@
 
   { "nombre": "Balon Palomera Mundial Cinepolis", "categoria": "Preventa", "precio": 250, "imagen": "thumbs/balon.jpg" ,"badge": "preventa", "stock": 1},
 
-  { "nombre": "Vaso Supergirl Cinepolis", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/supergirl.jpg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Vaso Supergirl Cinepolis", "categoria": "Preventa", "precio": 455, "imagen": "thumbs/supergirl.jpg" ,"badge": "preventa", "stock": 1},
 
   { "nombre": "2 Vasos Supergirl Cinemex", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/supergirl2.jpg" ,"badge": "preventa", "stock": 1},
   { "nombre": "Peluche Krypto Supergirl Cinemex", "categoria": "Preventa", "precio": 410, "imagen": "thumbs/peluche.jpg" ,"badge": "preventa", "stock": 1},
