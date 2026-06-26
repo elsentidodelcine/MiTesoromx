@@ -1,12 +1,14 @@
 [
 
   { "nombre": "Balon Palomera Mundial Cinepolis", "categoria": "Preventa", "precio": 250, "imagen": "thumbs/balon.jpg" ,"badge": "preventa", "stock": 1},
-
+  { "nombre": "5 Vasos Apilables Toy Story Cinepolis", "categoria": "Preventa", "precio": 500, "imagen": "thumbs/toy61.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Palomera Hamm Toy Story Cinemex", "categoria": "Preventa", "precio": 740, "imagen": "thumbs/toy53.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Vaso de Woody Toy Story Cinepolis", "categoria": "Preventa", "precio": 500, "imagen": "thumbs/toy52.jpeg" ,"badge": "preventa", "stock": 0},
   { "nombre": "Vaso Supergirl Cinepolis", "categoria": "Preventa", "precio": 455, "imagen": "thumbs/supergirl.jpg" ,"badge": "preventa", "stock": 1},
 
-  { "nombre": "2 Vasos Supergirl Cinemex", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/supergirl2.jpg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "2 Vasos Supergirl Cinemex", "categoria": "Preventa", "precio": 760, "imagen": "thumbs/supergirl2.jpg" ,"badge": "preventa", "stock": 1},
   { "nombre": "Peluche Krypto Supergirl Cinemex", "categoria": "Preventa", "precio": 410, "imagen": "thumbs/peluche.jpg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "Palomera Lobo Supergirl Cinemex", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/lobo.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Palomera Lobo Supergirl Cinemex", "categoria": "Preventa", "precio": 720, "imagen": "thumbs/lobo.jpeg" ,"badge": "preventa", "stock": 1},
 
   { "nombre": "2 Vasos Minions Figura Cinepolis", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/mini10.jpg" ,"badge": "preventa", "stock": 1},
   { "nombre": "Palomera Minions Cinepolis", "categoria": "Preventa", "precio": 9, "imagen": "thumbs/mini11.jpg" ,"badge": "preventa", "stock": 1},
@@ -14,7 +16,7 @@
 
 
   { "nombre": "Palomera Buzz Toy Story Cinemex", "categoria": "Preventa", "precio": 740, "imagen": "thumbs/toy54.jpeg" ,"badge": "preventa", "stock": 0},
-  { "nombre": "Palomera Hamm Toy Story Cinemex", "categoria": "Preventa", "precio": 740, "imagen": "thumbs/toy53.jpeg" ,"badge": "preventa", "stock": 0},
+
   { "nombre": "2 Vasos de 3 (a elegir) Amos del Universo Cinemex", "categoria": "Preventa", "precio": 480, "imagen": "thumbs/toy58.jpeg" ,"badge": "preventa", "stock": 0},
   { "nombre": "2 Vasos de 4 (a elegir) Toy Story 5 Cinemex", "categoria": "Preventa", "precio": 460, "imagen": "thumbs/vasoscine.jpeg" ,"badge": "preventa", "stock": 0},
   { "nombre": "1 Vaso 3D Toy Story 5 Cinemex", "categoria": "Preventa", "precio": 360, "imagen": "thumbs/toy666.jpeg" ,"badge": "preventa", "stock": 0},
