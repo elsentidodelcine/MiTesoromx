@@ -1,15 +1,15 @@
 [
 
-  { "nombre": "Palomera SpiderMan Cinemex", "categoria": "Preventa", "precio": 480, "imagen": "thumbs/peter1.jpg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "Vaso 3D SpiderMan Cinemex", "categoria": "Preventa", "precio": 360, "imagen": "thumbs/peter2.jpg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "2 de 4 Vasos Con Figurin SpiderMan Cinemex", "categoria": "Preventa", "precio": 480, "imagen": "thumbs/peter3.jpg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Palomera SpiderMan Cinemex", "categoria": "Preventa", "precio": 480, "imagen": "thumbs/peter1.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Vaso 3D SpiderMan Cinemex", "categoria": "Preventa", "precio": 360, "imagen": "thumbs/peter2.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "2 de 4 Vasos Con Figurin SpiderMan Cinemex", "categoria": "Preventa", "precio": 480, "imagen": "thumbs/peter3.jpeg" ,"badge": "preventa", "stock": 1},
 
-  { "nombre": "Palomera SpiderMan Cinepolis", "categoria": "Preventa", "precio": 485, "imagen": "thumbs/peter4.jpg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "Vaso Modelo 1 SpiderMan Cinepolis", "categoria": "Preventa", "precio": 345, "imagen": "thumbs/peter5.jpg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "Vaso Modelo 2 SpiderMan Cinepolis", "categoria": "Preventa", "precio": 345, "imagen": "thumbs/peter6.jpg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Palomera SpiderMan Cinepolis", "categoria": "Preventa", "precio": 485, "imagen": "thumbs/peter4.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Vaso Modelo 1 SpiderMan Cinepolis", "categoria": "Preventa", "precio": 345, "imagen": "thumbs/peter5.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Vaso Modelo 2 SpiderMan Cinepolis", "categoria": "Preventa", "precio": 345, "imagen": "thumbs/peter6.jpeg" ,"badge": "preventa", "stock": 1},
 
-  { "nombre": "Vaso SpiderMan Movie Center", "categoria": "Preventa", "precio": 160, "imagen": "thumbs/peter7.jpg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "Palomera SpiderMan Movie Center", "categoria": "Preventa", "precio": 250, "imagen": "thumbs/peter8.jpg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Vaso SpiderMan Movie Center", "categoria": "Preventa", "precio": 160, "imagen": "thumbs/peter7.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Palomera SpiderMan Movie Center", "categoria": "Preventa", "precio": 250, "imagen": "thumbs/peter8.jpeg" ,"badge": "preventa", "stock": 1},
 
 
 
@@ -477,6 +477,7 @@
   { "nombre": "1 Lata Jumex Episodio 1", "categoria": "Star Wars", "precio": 150, "imagen": "thumbs/stars22.jpeg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Nave Halcon Milenario", "categoria": "Star Wars", "precio": 200, "imagen": "thumbs/stars23.jpeg" ,"badge": "exclusivo", "stock": 0},
 
+  { "nombre": "Vaso Toy Story 5 Cinepolis", "categoria": "Toy Story", "precio": 400, "imagen": "thumbs/woody99.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko 976 Woody Toy Story", "categoria": "Toy Story", "precio": 500, "imagen": "thumbs/funko4.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Toy Story Movie Center", "categoria": "Toy Story", "precio": 80, "imagen": "thumbs/toy6.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko Chuckles Toy 561 Story", "categoria": "Toy Story", "precio": 1000, "imagen": "thumbs/ifunko9.png" ,"badge": "ultimo", "stock": 1},
