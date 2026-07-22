@@ -154,7 +154,7 @@
 
   { "nombre": "Vaso Garfield Movie Center", "categoria": "Infantil", "precio": 50, "imagen": "thumbs/coleccionable48.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Cubeta Garfield Cinemex", "categoria": "Infantil", "precio": 30, "imagen": "thumbs/coleccionable47.jpg" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Vaso con Figura Garfield Cinemex", "categoria": "Infantil", "precio": 150, "imagen": "thumbs/coleccionable49.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso con Figura Garfield Cinemex", "categoria": "Infantil", "precio": 150, "imagen": "thumbs/coleccionable49.jpg" ,"badge": "nuevo", "stock": 0},
 
   { "nombre": "Vaso Paw Patrol Movie Center", "categoria": "Infantil", "precio": 80, "imagen": "thumbs/coleccionable63.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Como Entrenar a tu Dragon Movie Center", "categoria": "Infantil", "precio": 400, "imagen": "thumbs/coleccionable76.jpg" ,"badge": "exclusivo", "stock": 1},
@@ -210,11 +210,12 @@
   { "nombre": "Funko Harley Quinn 376", "categoria": "Joker", "precio": 500, "imagen": "thumbs/fdc8.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko Harley Quinn 371", "categoria": "Joker", "precio": 500, "imagen": "thumbs/fdc14.png" ,"badge": "ultimo", "stock": 1},
 
-  { "nombre": "Cubeta Modelo 1 Jurassic World Cinemex", "categoria": "Jurassic World", "precio": 30, "imagen": "thumbs/coleccionable53.jpg" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Cubeta Modelo 2 Jurassic World Cinemex", "categoria": "Jurassic World", "precio": 30, "imagen": "thumbs/coleccionable54.jpg" ,"badge": "nuevo", "stock": 1},
+
   { "nombre": "Vaso Jurassic World Cinemex Model1 Jurassic World", "categoria": "Jurassic World", "precio": 80, "imagen": "thumbs/coleccionable58.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Jurassic World Cinemex Model2 Jurassic World", "categoria": "Jurassic World", "precio": 80, "imagen": "thumbs/coleccionable56.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Jurassic World Cinepolis Jurassic World", "categoria": "Jurassic World", "precio": 80, "imagen": "thumbs/coleccionable57.jpg" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Cubeta Modelo 1 Jurassic World Cinemex", "categoria": "Jurassic World", "precio": 30, "imagen": "thumbs/coleccionable53.jpg" ,"badge": "nuevo", "stock": 0},
+  { "nombre": "Cubeta Modelo 2 Jurassic World Cinemex", "categoria": "Jurassic World", "precio": 30, "imagen": "thumbs/coleccionable54.jpg" ,"badge": "nuevo", "stock": 0},
   { "nombre": "Figura Parque Jurasico", "categoria": "Jurassic World", "precio": 50, "imagen": "thumbs/dc30.jpeg" ,"badge": "exclusivo", "stock": 0},
   { "nombre": "Album de Estampas Jurassic World Model1", "categoria": "Jurassic World", "precio": 25, "imagen": "thumbs/halbum12.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Album de Estampas Jurassic World Model2", "categoria": "Jurassic World", "precio": 20, "imagen": "thumbs/halbum13.png" ,"badge": "ultimo", "stock": 0},
@@ -477,12 +478,12 @@
   { "nombre": "Funko BB8 SE Star Wars", "categoria": "Star Wars", "precio": 300, "imagen": "thumbs/star14.png" ,"badge": "ultimo", "stock": 0},
 
   { "nombre": "Vaso Toy Story 5 Cinepolis", "categoria": "Toy Story", "precio": 400, "imagen": "thumbs/coleccionable50.jpg" ,"badge": "exclusivo", "stock": 1},
-  { "nombre": "Vaso Toy Story 5 Movie Center", "categoria": "Toy Story", "precio": 160, "imagen": "thumbs/coleccionable52.jpg" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Funko 976 Woody Toy Story", "categoria": "Toy Story", "precio": 500, "imagen": "thumbs/funko4.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Buzz Story Movie Center", "categoria": "Toy Story", "precio": 80, "imagen": "thumbs/coleccionable51.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko Chuckles Toy 561 Story", "categoria": "Toy Story", "precio": 1000, "imagen": "thumbs/ifunko9.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Album de Estampas Toy Story 4 Panini Model1", "categoria": "Toy Story", "precio": 20, "imagen": "thumbs/halbum5.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Album de Estampas Lightyear Panini Model1", "categoria": "Toy Story", "precio": 25, "imagen": "thumbs/halbum6.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Toy Story 5 Movie Center", "categoria": "Toy Story", "precio": 160, "imagen": "thumbs/coleccionable52.jpg" ,"badge": "nuevo", "stock": 0},
   { "nombre": "Vaso Toy Story Cinepolis", "categoria": "Toy Story", "precio": 100, "imagen": "thumbs/toy5.png" ,"badge": "oferta", "stock": 0, "descripcion":  "Detalles en vaso"},
   { "nombre": "Señor Cara de Papa Toy Story", "categoria": "Toy Story", "precio": 300, "imagen": "thumbs/papa.png" ,"badge": "ultimo", "stock": 0},
 
