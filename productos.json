@@ -151,17 +151,12 @@
   { "nombre": "2 Vasos de Mickey y Mini Cinemex", "categoria": "Infantil", "precio": 300, "imagen": "thumbs/mickey.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Shrek 2 Cinemex", "categoria": "Infantil", "precio": 150, "imagen": "thumbs/coleccionable74.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Cerveza Duff Los Simpson con Autografo", "categoria": "Infantil", "precio": 500, "imagen": "thumbs/simpson.png" ,"badge": "ultimo", "stock": 1},
-
-  { "nombre": "Vaso Garfield Movie Center", "categoria": "Infantil", "precio": 50, "imagen": "thumbs/coleccionable48.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Cubeta Garfield Cinemex", "categoria": "Infantil", "precio": 30, "imagen": "thumbs/coleccionable47.jpg" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Vaso con Figura Garfield Cinemex", "categoria": "Infantil", "precio": 150, "imagen": "thumbs/coleccionable49.jpg" ,"badge": "nuevo", "stock": 0},
-
   { "nombre": "Vaso Paw Patrol Movie Center", "categoria": "Infantil", "precio": 80, "imagen": "thumbs/coleccionable63.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Como Entrenar a tu Dragon Movie Center", "categoria": "Infantil", "precio": 400, "imagen": "thumbs/coleccionable76.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "2 Vasos Unidos  Cinepolis", "categoria": "Infantil", "precio": 200, "imagen": "thumbs/coleccionable61.jpg" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Vaso Ralph Cinepolis", "categoria": "Infantil", "precio": 50, "imagen": "thumbs/coleccionable73.jpg" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Figura Unidos Barley", "categoria": "Infantil", "precio": 200, "imagen": "thumbs/unidosf.jpeg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso Ninjango Cinepolis", "categoria": "Infantil", "precio": 50, "imagen": "thumbs/coleccionable66.jpg" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Vaso Sonic Movie Center", "categoria": "Infantil", "precio": 80, "imagen": "thumbs/coleccionable68.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Soul Cinemex", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/coleccionable75.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko Robin Hood 53 Disney", "categoria": "Infantil", "precio": 700, "imagen": "thumbs/ifunko6.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko Buggy The Clown One Piece 1276", "categoria": "Infantil", "precio": 500, "imagen": "thumbs/ifunko8.png" ,"badge": "ultimo", "stock": 1},
@@ -169,8 +164,12 @@
   { "nombre": "Funko Pokemon Charizard 843", "categoria": "Infantil", "precio": 500, "imagen": "thumbs/ifunko14.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "1 Figura Mr Increible Disney", "categoria": "Infantil", "precio": 500, "imagen": "thumbs/jfigura1.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "2 Figuras Mr Increible y Dash Disney", "categoria": "Infantil", "precio": 500, "imagen": "thumbs/jfigura2.png" ,"badge": "ultimo", "stock": 1},
+
   { "nombre": "Vaso Los Increibles Cinepolis", "categoria": "Infantil", "precio": 130, "imagen": "thumbs/bebe.png" ,"badge": "ultimo", "stock": 0},
-  { "nombre": "Figura Unidos Barley", "categoria": "Infantil", "precio": 200, "imagen": "thumbs/unidosf.jpeg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Vaso Garfield Movie Center", "categoria": "Infantil", "precio": 50, "imagen": "thumbs/coleccionable48.jpg" ,"badge": "ultimo", "stock": 0},
+  { "nombre": "Vaso con Figura Garfield Cinemex", "categoria": "Infantil", "precio": 150, "imagen": "thumbs/coleccionable49.jpg" ,"badge": "nuevo", "stock": 0},
+  { "nombre": "Vaso Ralph Cinepolis", "categoria": "Infantil", "precio": 50, "imagen": "thumbs/coleccionable73.jpg" ,"badge": "ultimo", "stock": 0},
+  { "nombre": "Vaso Sonic Movie Center", "categoria": "Infantil", "precio": 80, "imagen": "thumbs/coleccionable68.jpg" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Maquina del Misterio Scoob Cinemex", "categoria": "Infantil", "precio": 500, "imagen": "thumbs/infantil30.jpeg" ,"badge": "nuevo", "stock": 0},
   { "nombre": "Vaso Elementos Cinemex", "categoria": "Infantil", "precio": 80, "imagen": "thumbs/infantil1.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Cars 3 Cinepolis", "categoria": "Infantil", "precio": 100, "imagen": "thumbs/infantil6.png" ,"badge": "ultimo", "stock": 0},
@@ -194,7 +193,6 @@
 
 
   { "nombre": "Vaso Joker Cinepolis DC", "categoria": "Joker", "precio": 100, "imagen": "thumbs/coleccionable105.jpg" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Vaso Joker Cinemex DC", "categoria": "Joker", "precio": 150, "imagen": "thumbs/coleccionable106.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Palomera Joker Cinemex DC", "categoria": "Joker", "precio": 600, "imagen": "thumbs/coleccionable104.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko Joker 414", "categoria": "Joker", "precio": 300, "imagen": "thumbs/joker6.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko Joker 53", "categoria": "Joker", "precio": 450, "imagen": "thumbs/joker7.png" ,"badge": "ultimo", "stock": 1},
@@ -209,6 +207,7 @@
   { "nombre": "Funko Harley Quinn 1111", "categoria": "Joker", "precio": 150, "imagen": "thumbs/harley3.png" ,"badge": "oferta", "stock": 1, "descripcion":  "Detalle en caja"},
   { "nombre": "Funko Harley Quinn 376", "categoria": "Joker", "precio": 500, "imagen": "thumbs/fdc8.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko Harley Quinn 371", "categoria": "Joker", "precio": 500, "imagen": "thumbs/fdc14.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Joker Cinemex DC", "categoria": "Joker", "precio": 150, "imagen": "thumbs/coleccionable106.jpg" ,"badge": "ultimo", "stock": 0},
 
 
   { "nombre": "Vaso Jurassic World Cinemex Model1 Jurassic World", "categoria": "Jurassic World", "precio": 80, "imagen": "thumbs/coleccionable58.jpg" ,"badge": "ultimo", "stock": 1},
