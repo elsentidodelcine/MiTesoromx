@@ -2810,3 +2810,132 @@ body.dark .descripcion-oferta {
     font-style: italic;
     opacity: .8;
 }
+
+/* ===========================
+   BANNER SPIDERMAN
+=========================== */
+
+.banner-spiderman{
+    max-width:1200px;
+    margin:2rem auto 1rem;
+    padding:2rem;
+    border-radius:16px;
+
+    background:linear-gradient(135deg,#c8102e,#0057b8);
+
+    color:#fff;
+
+    overflow:hidden;
+
+    position:relative;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
+
+    text-align:center;
+}
+
+.banner-spiderman::before{
+
+    content:"🕷️";
+
+    position:absolute;
+
+    right:30px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    font-size:6rem;
+
+    opacity:.12;
+
+}
+
+.banner-spiderman h2{
+
+    font-size:2rem;
+
+    margin-bottom:.8rem;
+
+}
+
+.banner-spiderman p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    font-size:1.05rem;
+
+    line-height:1.7;
+
+    opacity:.95;
+
+}
+
+.banner-btn{
+
+    display:inline-block;
+
+    margin-top:1.5rem;
+
+    background:#fff;
+
+    color:#c8102e;
+
+    padding:14px 28px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.25s;
+
+}
+
+.banner-btn:hover{
+
+    background:#ffe082;
+
+    transform:translateY(-3px);
+
+}
+
+@media(max-width:768px){
+
+.banner-spiderman{
+
+padding:1.5rem;
+
+margin:1rem;
+
+}
+
+.banner-spiderman h2{
+
+font-size:1.5rem;
+
+}
+
+.banner-spiderman p{
+
+font-size:.95rem;
+
+}
+
+.banner-spiderman::before{
+
+display:none;
+
+}
+
+.banner-btn{
+
+width:100%;
+
+}
+
+}
