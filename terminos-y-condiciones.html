@@ -39,7 +39,7 @@
 
         <br><br>
 
-        • <a href="aviso-legal-preventas.html">Aviso Legal de Preventas</a><br>
+        • <a href="preventas.html">Aviso Legal de Preventas</a><br>
         • <a href="aviso-legal-apartado.html">Aviso Legal de Apartados</a>
     </div>
 
@@ -57,15 +57,19 @@
         <h2>🎬 Productos</h2>
 
         <p>
-            Mi Tesoro MX comercializa principalmente coleccionables de cine pertenecientes a su colección personal, así como productos adquiridos directamente en cadenas de cine o distribuidores autorizados.
+            Mi Tesoro MX comercializa principalmente coleccionables de cine pertenecientes a su colección personal, así como artículos adquiridos directamente en cadenas de cine y distribuidores autorizados.
         </p>
 
         <p>
-            Debido a la naturaleza de estos artículos, algunos productos pueden presentar ligeros detalles propios de fabricación, empaque, almacenamiento o transporte, los cuales no afectan su funcionamiento ni se consideran defectos.
+            Salvo que se indique expresamente lo contrario, <strong>todas las fotografías publicadas corresponden al producto real que recibirá el cliente</strong>. Únicamente los productos identificados como <strong>PREVENTA</strong> podrán mostrar imágenes promocionales, renders o material proporcionado por el fabricante o la cadena de cine.
         </p>
 
         <p>
-            Las imágenes publicadas podrán corresponder al producto real, fotografías promocionales o imágenes ilustrativas. Cuando existan diferencias entre ellas y el producto final, prevalecerá el artículo efectivamente entregado.
+            Si un producto disponible presenta algún detalle estético, daño en el empaque, desgaste o cualquier otra condición relevante, <strong>Mi Tesoro MX informará previamente al cliente y proporcionará fotografías donde pueda apreciarse dicho detalle antes de confirmar la compra.</strong>
+        </p>
+
+        <p>
+            Una vez que el cliente confirme la compra con conocimiento de dichas condiciones, se entenderá que acepta el estado físico del producto y no procederán reclamaciones posteriores relacionadas con los detalles previamente informados.
         </p>
     </div>
 
@@ -197,5 +201,40 @@
         <p>WhatsApp oficial: <a href="https://wa.me/524761002824">+52 476 100 28 24</a></p>
     </div>
 </main>
+
+footer class="footer">
+<div class="footer-links">
+    <a href="politica-privacidad.html">Política de Privacidad</a>
+    <a href="terminos-y-condiciones.html">Términos y Condiciones</a>
+    <a href="https://facebook.com/ElSentidoDelCine">Facebook</a>
+    <a href="https://wa.me/524761002824">WhatsApp</a>
+</div>
+
+<div class="footer-copy">
+    <p>© 2026 Mi Tesoro MX - Todos los derechos reservados</p>
+</div>
+</footer>
+
+<script>
+    (() => {
+      const menuToggle = document.getElementById("menuToggle");
+      const headerMenu = document.querySelector(".header-center");
+
+      if (!menuToggle || !headerMenu) return;
+
+      menuToggle.addEventListener("click", () => {
+        const abierto = headerMenu.classList.toggle("open");
+        menuToggle.textContent = abierto ? "✕" : "☰";
+      });
+
+      headerMenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          headerMenu.classList.remove("open");
+          menuToggle.textContent = "☰";
+        });
+      });
+    })();
+</script>
+
 </body>
 </html>
