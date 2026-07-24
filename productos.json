@@ -8,8 +8,8 @@
   { "nombre": "Vaso Modelo 1 SpiderMan Cinepolis", "categoria": "Preventa", "precio": 345, "imagen": "thumbs/peter5.jpeg" ,"badge": "preventa", "stock": 1},
   { "nombre": "Vaso Modelo 2 SpiderMan Cinepolis", "categoria": "Preventa", "precio": 345, "imagen": "thumbs/peter6.jpeg" ,"badge": "preventa", "stock": 1},
 
-  { "nombre": "Vaso SpiderMan Movie Center", "categoria": "Preventa", "precio": 200, "imagen": "thumbs/peter7.jpeg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "Palomera SpiderMan Movie Center", "categoria": "Preventa", "precio": 250, "imagen": "thumbs/peter8.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Vaso SpiderMan Movie Center", "categoria": "Preventa", "precio": 200, "imagen": "thumbs/peter8.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Palomera SpiderMan Movie Center", "categoria": "Preventa", "precio": 250, "imagen": "thumbs/peter7.jpeg" ,"badge": "preventa", "stock": 1},
 
 
 
