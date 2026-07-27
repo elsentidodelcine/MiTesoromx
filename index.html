@@ -14,11 +14,11 @@
 
 <body>
 
-<!-- ================= LOADER ================= -->
-<div id="loader">
-  <div class="spinner"></div>
-  <p>Cargando productos...</p>
-</div>
+    <!-- ================= LOADER ================= -->
+    <div id="loader">
+      <div class="spinner"></div>
+      <p>Preparando el catálogo...</p>
+    </div>
 
 <!-- ================= HEADER ================= -->
 <header class="main-header">
@@ -26,7 +26,7 @@
     <span class="logo-icon">🎬</span>
     <div class="logo-text">
       <h1>Mi Tesoro MX</h1>
-      <span>Coleccionables de Cine y Artículos de Colección</span>
+      <span>Coleccionables de Cine</span>
     </div>
   </div>
 
@@ -35,16 +35,14 @@
     </button>
 
   <nav class="header-center">
-      <a href="mitesoromx.html">Quiénes Somos</a>
-      <a href="envios.html">Envíos</a>
+      <a href="index.html">Inicio</a>
       <a href="#catalogo">Catálogo</a>
-      <a href="aviso-legal-apartado.html">Apartados</a>
       <a href="preventas.html">Preventas</a>
-    <a href="faq.html">Preguntas Frecuentes</a>
+      <a href="envios.html">Envíos</a>
+      <a href="aviso-legal-apartado.html">Apartados</a>
+      <a href="faq.html">Preguntas Frecuentes</a>
+      <a href="mitesoromx.html">Nosotros</a>
   </nav>
-
-
-
 
     <div class="header-right">
     <button id="verCarrito" class="cart-btn">
@@ -55,46 +53,81 @@
   </div>
 </header>
 
+<section class="hero">
+    <h2>Coleccionables Oficiales de Cine</h2>
+    <p> Palomeras • Vasos • Promocionales • Funkos • Ediciones Exclusivas </p>
+    <a href="#catalogo"> Ver Catálogo </a>
+</section>
+
 <!-- ================= FILTROS ================= -->
 <nav id="filtros" class="filtros"></nav>
 <button class="filtros-toggle" id="toggleFiltros">
     Más categorías ▾
 </button>
 
-<div class="banner-spiderman">
 
+
+<section class="banner-spiderman">
     <div class="banner-content">
-
-        <h2>🕷️ ¡Ya está disponible la preventa de Spider-Man!</h2>
-
+        <h2>🕷️ Preventa Exclusiva Spider-Man</h2>
         <p>
-            Aparta desde hoy los nuevos coleccionables de <strong>Spider-Man</strong>.
-            Vasos, palomeras y promocionales exclusivos por tiempo limitado.
+            Aparta hoy vasos, palomeras y coleccionables antes de que se agoten.
         </p>
-
         <a href="preventas.html" class="banner-btn">
-            Ver Preventa
+            Ver Términos y Condiciones de Preventa
         </a>
-
     </div>
-
-</div>
+</section>
 
 <!-- Banner Promoción -->
 <div class="banner-envio-gratis">
     <div class="banner-content">
-        <h2>🚚 Envío Gratis en Compras Mayores a $550</h2>
+        <h2>🚚 Envío Gratis</h2>
         <p>
-            Aprovecha envío gratis por Correos de México en pedidos mayores a <strong>$550 MXN</strong>.<br><br>
-            Disponible en todos nuestros coleccionables de cine con la leyenda "último" y "Nuevo".
+            En compras mayores a $550 MXN por Correos de México.
+        </p>
+        <p>
+            Válido únicamente en productos participantes.
         </p>
         <span class="banner-note">
-            *Promoción válida por tiempo limitado.
-            Esta promoción no aplica en el sistema de apartados, ni preventas, ni producto exclusivo.
+            *No aplica en preventas, apartados ni exclusivos.
         </span>
     </div>
 </div>
 
+<!-- ================= CONFIANZA ================= -->
+<section class="trust-section">
+    <h2>¿Por Qué Comprar en Mi Tesoro MX?</h2>
+    <div class="trust-grid">
+        <div class="trust-card">✅ <strong>Productos Originales</strong></div>
+        <div class="trust-card">📦 <strong>Empaque Seguro</strong></div>
+        <div class="trust-card">🚚 <strong>Envíos a Todo México</strong></div>
+        <div class="trust-card">💬 <strong>Atención Personalizada</strong></div>
+    </div>
+</section>
+
+
+
+<!-- ================= COMO FUNCIONA ================= -->
+<section class="como-funciona">
+    <h2>¿Cómo funciona tu compra?</h2>
+    <div class="pasos-compra">
+        <div class="paso"><span>① Agrega al carrito</span></div>
+        <div class="paso"><span>② Confirma por WhatsApp</span></div>
+        <div class="paso"><span>③ Realiza tu pago</span></div>
+        <div class="paso"><span>④ Preparamos tu pedido</span></div>
+        <div class="paso"><span>⑤ Recíbelo en casa</span></div>
+    </div>
+</section>
+
+<section class="catalogo-title">
+    <h2>
+        Explora nuestro catálogo
+    </h2>
+    <p>
+        Más de 500 coleccionables disponibles
+    </p>
+</section>
 
 <!-- ================= CATÁLOGO ================= -->
 <main>
@@ -105,163 +138,120 @@
   <div id="paginacion" class="paginacion"></div>
 </main>
 
-<!-- ================= CARRITO DRAWER ================= -->
-<aside id="cartDrawer" class="cart-drawer">
+    <!-- ================= CARRITO DRAWER ================= -->
+    <aside id="cartDrawer" class="cart-drawer">
 
-  <div class="cart-header">
-    <h2>🛒 Tu Carrito</h2>
-    <button id="cerrarDrawer" aria-label="Cerrar carrito">✕</button>
-  </div>
+      <div class="cart-header">
+        <h2>🛒 Tu Carrito</h2>
+        <button id="cerrarDrawer" aria-label="Cerrar carrito">✕</button>
+      </div>
 
-  <!-- ITEMS -->
-  <div id="cartItems" class="cart-items"></div>
+      <!-- ITEMS -->
+      <div id="cartItems" class="cart-items"></div>
 
-  <!-- FOOTER CARRITO -->
-  <div class="cart-footer">
+      <!-- FOOTER CARRITO -->
+      <div class="cart-footer">
+        <p id="cartTotal">Tu carrito está vacío.
 
-    <p id="cartTotal">Total: $0 MXN</p>
+            Comienza agregando tus coleccionables favoritos.</p>
+          <p class="cart-legal-mini">
+            📌 ¿Quieres pagar después?
+              Puedes apartar tu pedido con un anticipo del 30%.
+            <a href="aviso-legal-apartado.html" target="_blank">Ver condiciones</a>
+          </p>
 
-      <p class="cart-legal-mini">
-        📌 ¿Quieres pagar después?
+          <!-- PASOS -->
+        <div class="pasos-carrito">
+          <p class="titulo-pasos">¿Qué sigue?</p>
+          <ul>
+            <li><span>1</span> Confirma tu pedido por WhatsApp</li>
+            <li><span>2</span> Realiza el pago</li>
+            <li><span>3</span> Preparamos tu envío</li>
+            <li><span>4</span> Enviamos tu pedido</li>
+            <li><span>5</span> Seguimiento hasta que te llegue</li>
+          </ul>
+        </div>
+          <p class="cart-legal-mini">
+              Al dar clic en <strong>Confirmar por WhatsApp</strong> aceptas nuestros términos y condiciones de <a href="terminos-y-condiciones.html" target="_blank">venta</a>,
+              <a href="aviso-legal-apartado.html" target="_blank">apartados</a> y <a href="preventas.html" target="_blank">preventas</a>.
+          </p>
+        <a id="whatsBtn" class="btn-whatsapp" target="_blank">
+          Confirmar por WhatsApp
+        </a>
 
-          Puedes apartar tu pedido con un anticipo del 30%.
+        <button id="vaciarCarrito" class="btn-vaciar">
+          Vaciar carrito
+        </button>
 
-        <a href="aviso-legal-apartado.html" target="_blank">Ver condiciones</a>
-      </p>
+      </div>
+    </aside>
 
+    <div id="cartOverlay"></div>
 
-      <!-- PASOS -->
-    <div class="pasos-carrito">
-      <p class="titulo-pasos">¿Qué sigue?</p>
-      <ul>
-        <li><span>1</span> Confirma tu pedido por WhatsApp</li>
-        <li><span>2</span> Realiza el pago</li>
-        <li><span>3</span> Preparamos tu envío</li>
-        <li><span>4</span> Enviamos tu pedido</li>
-        <li><span>5</span> Seguimiento hasta que te llegue</li>
-      </ul>
-    </div>
-      <p class="cart-legal-mini">
-          Al dar clic en <strong>Confirmar por WhatsApp</strong> aceptas nuestros términos y condiciones de <a href="terminos-y-condiciones.html" target="_blank">venta</a>,
-          <a href="aviso-legal-apartado.html" target="_blank">apartados</a> y <a href="preventas.html" target="_blank">preventas</a>.
-      </p>
-    <a id="whatsBtn" class="btn-whatsapp" target="_blank">
-      Confirmar por WhatsApp
+    <!-- ================= WHATSAPP FLOAT ================= -->
+    <a id="whatsappFloat" href="https://wa.me/524761002824" target="_blank">
+      💬
+        ¿Necesitas ayuda?
     </a>
 
-    <button id="vaciarCarrito" class="btn-vaciar">
-      Vaciar carrito
-    </button>
-
-  </div>
-</aside>
-
-<div id="cartOverlay"></div>
-
-<!-- ================= WHATSAPP FLOAT ================= -->
-<a id="whatsappFloat" href="https://wa.me/524761002824" target="_blank">
-  💬
-</a>
-
-<!-- ================= CONFIANZA ================= -->
-<section class="trust-section">
-  <h2>¿Por Qué Comprar en Mi Tesoro MX?</h2>
-  <div class="trust-grid">
-    <div class="trust-card">🎬 <strong>Productos Originales</strong><span>Coleccionables auténticos de cine</span></div>
-    <div class="trust-card">🤝 <strong>Atención Personalizada</strong><span>Atención personalizada en todo momento</span></div>
-    <div class="trust-card">📦 <strong>Empaque Seguro</strong><span>Empaque protegido y seguimiento</span></div>
-    <div class="trust-card">💬 <strong>Atención Real por WhatsApp</strong><span>Hablas con una persona, no con un bot</span></div>
-  </div>
-</section>
-
-
-
-<!-- ================= COMO FUNCIONA ================= -->
-<section class="como-funciona">
-  <h2>¿Cómo funciona tu compra?</h2>
-  <div class="pasos-compra">
-    <div class="paso"><span>1</span><p>Elige tus productos y agrégalos al carrito</p></div>
-    <div class="paso"><span>2</span><p>Confirma tu pedido por WhatsApp</p></div>
-    <div class="paso"><span>3</span><p>Realiza el pago completo o apartado</p></div>
-    <div class="paso"><span>4</span><p>Preparamos tu pedido con cuidado</p></div>
-    <div class="paso"><span>5</span><p>Envío al día siguiente hábil</p></div>
-  </div>
-</section>
-
-<!-- ================= TESTIMONIOS ================= -->
-<section class="testimonios">
-    <h2>Opiniones de Clientes</h2>
-    <div class="testimonios-grid">
-        <button class="filtros-toggle" id="toggleOpiniones">
-            Ver más opiniones ▾
-        </button>
-        <div class="testimonio">
-            ⭐⭐⭐⭐⭐
-            <p>"Todo muy bien, confié en él y no me ha decepcionado. El producto llegó en excelentes condiciones"</p>
-            <span>— Sheeqo Tomas Vaca, León GTO</span>
+    <!-- ================= TESTIMONIOS ================= -->
+    <section class="testimonios">
+        <h2>Opiniones de Clientes</h2>
+        <div class="testimonios-grid">
+            <button class="filtros-toggle" id="toggleOpiniones">
+                Ver más opiniones ▾
+            </button>
+            <div class="testimonio">
+                🙂
+                ⭐⭐⭐⭐⭐
+                <p>"Todo muy bien, confié en él y no me ha decepcionado. El producto llegó en excelentes condiciones"</p>
+                <span>— Sheeqo Tomas Vaca, León GTO</span>
+            </div>
+            <div class="testimonio">
+                🙂
+                ⭐⭐⭐⭐⭐
+                <p>Producto tal cual se muestra en las fotos. Entrega rápida y buena atención.</p>
+                <span>— Joel Cordero, Guadalajara</span>
+            </div>
+            <div class="testimonio">
+                🙂
+                ⭐⭐⭐⭐⭐
+                <p>Gracias Mi Tesoro MX, por conseguirme la palomera de Taylor Swift. Llegó en buen estado y súper confiable.</p>
+                <span>— Barajas Melina, Querétaro</span>
+            </div>
         </div>
-        <div class="testimonio">
-            ⭐⭐⭐⭐⭐
-            <p>Producto tal cual se muestra en las fotos. Entrega rápida y buena atención.</p>
-            <span>— Joel Cordero, Guadalajara</span>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="politica-privacidad.html">Política de Privacidad</a>
+            <a href="terminos-y-condiciones.html">Términos y Condiciones</a>
+            <a href="https://facebook.com/ElSentidoDelCine">Facebook</a>
+            <a href="https://wa.me/524761002824">Whatsapp</a>
         </div>
-        <div class="testimonio">
-            ⭐⭐⭐⭐⭐
-            <p>Gracias Mi Tesoro MX, por conseguirme la palomera de Taylor Swift. Llegó en buen estado y súper confiable.</p>
-            <span>— Barajas Melina, Querétaro</span>
+        <div class="footer-copy">
+            <p>© 2026 Mi Tesoro MX - Todos los derechos reservados</p>
         </div>
+    </footer>
+
+    <!-- ================= TOAST ================= -->
+    <div id="cartToast" class="cart-toast">
+      <strong id="toastTitle">Agregado al carrito</strong>
+      <p id="toastText"></p>
+      <div class="toast-actions">
+        <button id="toastVerCarrito">Ver carrito</button>
+        <button id="toastCerrar">✕</button>
+      </div>
     </div>
-</section>
 
-<!-- ================= FOOTER ================= -->
-<!-- FOOTER MODERNO -->
-<footer class="footer">
-    <div class="footer-links">
-        <a href="politica-privacidad.html">Política de Privacidad</a>
-        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>
-        <a href="https://facebook.com/ElSentidoDelCine">Facebook</a>
-        <a href="https://wa.me/524761002824">Whatsapp</a>
+    <!-- ================= MODAL IMAGEN ================= -->
+    <div id="imageModal" class="image-modal">
+      <span class="close-modal" id="closeImageModal">✕</span>
+      <img id="modalImage" src="" alt="Imagen del producto">
     </div>
 
-    <div class="footer-copy">
-        <p>© 2026 Mi Tesoro MX - Todos los derechos reservados</p>
-    </div>
-</footer>
-
-
-
-
-
-<!-- ================= TOAST ================= -->
-<div id="cartToast" class="cart-toast">
-  <strong id="toastTitle">Agregado al carrito</strong>
-  <p id="toastText"></p>
-  <div class="toast-actions">
-    <button id="toastVerCarrito">Ver carrito</button>
-    <button id="toastCerrar">✕</button>
-  </div>
-</div>
-
-<!-- ================= MODAL IMAGEN ================= -->
-<div id="imageModal" class="image-modal">
-  <span class="close-modal" id="closeImageModal">✕</span>
-  <img id="modalImage" src="" alt="Imagen del producto">
-</div>
-
-<!-- ================= MODAL CONFIRMAR =================
-<div id="confirmModal" class="confirm-modal">
-  <div class="confirm-box">
-    <h3>¿Vaciar carrito?</h3>
-    <p>Esta acción eliminará todos los productos.</p>
-    <div class="confirm-actions">
-      <button id="cancelVaciar" class="btn-cancelar">Cancelar</button>
-      <button id="confirmVaciar" class="btn-confirmar">Sí, vaciar</button>
-    </div>
-  </div>
-</div> -->
-
-<!-- JS -->
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>

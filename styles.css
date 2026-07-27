@@ -133,6 +133,7 @@ body {
     overflow: hidden;
     box-shadow: 0 12px 30px var(--shadow);
     position: relative;
+    border:1px solid rgba(0,0,0,.05);
 }
 
 .info {
@@ -2814,63 +2815,85 @@ body.dark .descripcion-oferta {
 /* ===========================
    BANNER SPIDERMAN
 =========================== */
+/*=========================
+  BANNERS PROMOCIONALES
+==========================*/
 
+.banner-envio-gratis,
 .banner-spiderman{
+
+    width:100%;
     max-width:1200px;
-    margin:2rem auto 1rem;
-    padding:2rem;
-    border-radius:16px;
 
-    background:linear-gradient(135deg,#c8102e,#0057b8);
+    margin:18px auto;
 
-    color:#fff;
+    padding:18px 22px;
+
+    border-radius:12px;
 
     overflow:hidden;
 
-    position:relative;
+    box-sizing:border-box;
 
-    box-shadow:0 12px 30px rgba(0,0,0,.25);
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+}
+
+.banner-envio-gratis{
+
+    background:linear-gradient(135deg,#1f1f1f,#2d2d2d);
+
+    border:1px solid #3f3f3f;
+
+}
+
+.banner-spiderman{
+
+    background:linear-gradient(135deg,#d50000,#1565c0);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.banner-content{
 
     text-align:center;
-}
 
-.banner-spiderman::before{
-
-    content:"🕷️";
-
-    position:absolute;
-
-    right:30px;
-
-    top:50%;
-
-    transform:translateY(-50%);
-
-    font-size:6rem;
-
-    opacity:.12;
+    color:#fff;
 
 }
 
-.banner-spiderman h2{
+.banner-content h2{
 
-    font-size:2rem;
+    margin:0 0 10px;
 
-    margin-bottom:.8rem;
+    font-size:1.45rem;
+
+    line-height:1.35;
 
 }
 
-.banner-spiderman p{
+.banner-content p{
 
-    max-width:700px;
+    margin:0;
 
-    margin:auto;
+    font-size:.95rem;
 
-    font-size:1.05rem;
+    line-height:1.6;
 
-    line-height:1.7;
+    color:#e7e7e7;
 
-    opacity:.95;
+}
+
+.banner-note{
+
+    display:block;
+
+    margin-top:12px;
+
+    font-size:.75rem;
+
+    opacity:.75;
 
 }
 
@@ -2878,19 +2901,19 @@ body.dark .descripcion-oferta {
 
     display:inline-block;
 
-    margin-top:1.5rem;
+    margin-top:18px;
+
+    padding:12px 26px;
+
+    border-radius:40px;
 
     background:#fff;
 
-    color:#c8102e;
-
-    padding:14px 28px;
-
-    border-radius:50px;
+    color:#d50000;
 
     text-decoration:none;
 
-    font-weight:bold;
+    font-weight:700;
 
     transition:.25s;
 
@@ -2898,37 +2921,32 @@ body.dark .descripcion-oferta {
 
 .banner-btn:hover{
 
-    background:#ffe082;
+    transform:translateY(-2px);
 
-    transform:translateY(-3px);
+    background:#ffe082;
 
 }
 
 @media(max-width:768px){
 
+.banner-envio-gratis,
 .banner-spiderman{
 
-padding:1.5rem;
+margin:12px;
 
-margin:1rem;
-
-}
-
-.banner-spiderman h2{
-
-font-size:1.5rem;
+padding:16px;
 
 }
 
-.banner-spiderman p{
+.banner-content h2{
 
-font-size:.95rem;
+font-size:1.15rem;
 
 }
 
-.banner-spiderman::before{
+.banner-content p{
 
-display:none;
+font-size:.9rem;
 
 }
 
