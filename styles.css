@@ -335,7 +335,8 @@ body.dark .cart-btn {
 
 /* ================= BANNERS ================= */
 .banner-envio-gratis,
-.banner-spiderman {
+.banner-spiderman,
+.banner-mercadolibre {
   max-width: 1100px;
   margin: 24px auto;
   padding: 22px 24px;
@@ -354,6 +355,42 @@ body.dark .cart-btn {
   background: linear-gradient(135deg, #b71c1c, #1565c0);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #fff;
+}
+
+/* Mercado Libre */
+.banner-mercadolibre {
+  background: linear-gradient(135deg, #fff159 0%, #ffe600 45%, #2d3277 100%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: #111;
+}
+
+.banner-mercadolibre .banner-content h2 {
+  color: #111;
+}
+
+.banner-mercadolibre .banner-content p {
+  color: #222;
+  opacity: 0.95;
+}
+
+.banner-ml-note {
+  margin-top: 10px !important;
+  font-size: 0.9rem !important;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 10px 14px;
+  border-radius: 10px;
+  display: inline-block;
+  max-width: 560px;
+}
+
+.banner-btn-ml {
+  background: #2d3277 !important;
+  color: #fff !important;
+}
+
+.banner-btn-ml:hover {
+  background: #1a1f5c !important;
+  transform: translateY(-2px);
 }
 
 .banner-content {
@@ -1488,7 +1525,8 @@ body.dark .btn-cancelar {
   }
 
   .banner-envio-gratis,
-  .banner-spiderman {
+  .banner-spiderman,
+  .banner-mercadolibre {
     margin: 16px 14px;
     padding: 16px;
   }
@@ -1500,6 +1538,10 @@ body.dark .btn-cancelar {
   .banner-btn {
     width: 100%;
     text-align: center;
+  }
+
+  .banner-ml-note {
+    font-size: 0.82rem !important;
   }
 
   .pasos-compra {
@@ -1538,5 +1580,123 @@ body.dark .btn-cancelar {
 
   .pasos-compra {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ================= PÁGINAS LEGALES ================= */
+.legal-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+
+.legal-container > h1 {
+  margin: 0 0 8px;
+  font-size: clamp(1.5rem, 4vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.legal-container .subtitle {
+  margin: 0 0 32px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.legal-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+}
+
+.legal-section h2 {
+  margin: 0 0 12px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.legal-section h3 {
+  margin: 18px 0 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.legal-section p {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.legal-section p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-section a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.legal-section a:hover {
+  opacity: 0.85;
+}
+
+.legal-highlight {
+  background: rgba(198, 40, 40, 0.08);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 16px 18px;
+  margin: 14px 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+body.dark .legal-highlight {
+  background: rgba(198, 40, 40, 0.15);
+}
+
+.legal-highlight strong {
+  color: var(--accent);
+}
+
+/* Breadcrumb / back link for legal pages */
+.legal-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.legal-back:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .legal-container {
+    padding: 28px 16px 48px;
+  }
+
+  .legal-section {
+    padding: 18px 16px;
+  }
+
+  .legal-section h2 {
+    font-size: 1.05rem;
+  }
+
+  .legal-section p {
+    font-size: 0.9rem;
   }
 }
