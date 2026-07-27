@@ -181,7 +181,9 @@ function mostrarProductos() {
     const img = card.querySelector(".producto-img");
     if (img) {
       img.addEventListener("click", () => {
-        openImageModal(img.dataset.full || img.src);
+        // Prioridad: data-full (imgs/) → si no, convertir el thumb a full
+        const full = img.dataset.full || img.src;
+        openImageModal(full);
       });
     }
 
@@ -578,23 +580,57 @@ btnTheme?.addEventListener("click", () => {
   localStorage.setItem("tema", oscuro ? "dark" : "light");
 });
 
-/* ---------- MODAL IMAGEN ---------- */
-function openImageModal(src) {
-  if (!modalImage || !imageModal) return;
-  modalImage.src = src;
-  imageModal.classList.add("show");
-  imageModal.style.display = "flex";
+/* ---------- MODAL IMAGEN (versión completa, sin recorte) ---------- */
+function toFullImageUrl(src) {
+  if (!src) return "";
+  // Nunca abrir el thumbnail: siempre la versión de imgs/
+  let full = src;
+  full = full.replace(/\/thumbs\//g, "/imgs/");
+  full = full.replace(/thumbs\//g, "imgs/");
+  return full;
 }
 
-closeImageModal?.addEventListener("click", () => {
+function openImageModal(src) {
+  if (!modalImage || !imageModal) return;
+
+  const fullSrc = toFullImageUrl(src);
+  modalImage.src = fullSrc;
+  modalImage.alt = "Imagen completa del producto";
+
+  // Por si la full falla, intentar el src original
+  modalImage.onerror = () => {
+    if (modalImage.src !== src && src) {
+      modalImage.onerror = null;
+      modalImage.src = src;
+    }
+  };
+
+  imageModal.classList.add("show");
+  imageModal.style.display = "flex";
+  document.body.style.overflow = "hidden"; // evita scroll del fondo
+}
+
+function closeImageModalFn() {
+  if (!imageModal) return;
   imageModal.classList.remove("show");
   imageModal.style.display = "none";
-});
+  document.body.style.overflow = "";
+  if (modalImage) modalImage.src = "";
+}
+
+closeImageModal?.addEventListener("click", closeImageModalFn);
 
 imageModal?.addEventListener("click", (e) => {
+  // Cerrar solo si se hace clic en el fondo (no en la imagen)
   if (e.target === imageModal) {
-    imageModal.classList.remove("show");
-    imageModal.style.display = "none";
+    closeImageModalFn();
+  }
+});
+
+// Cerrar con tecla Escape
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && imageModal?.classList.contains("show")) {
+    closeImageModalFn();
   }
 });
 

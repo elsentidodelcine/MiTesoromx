@@ -1241,38 +1241,55 @@ body.dark .pasos-carrito li span {
 .image-modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.92);
   display: none;
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  padding: 20px;
+  padding: 16px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .image-modal.show {
   display: flex;
 }
 
+/* Imagen completa, sin recorte (solo al hacer clic) */
 .image-modal img {
-  max-width: 90vw;
-  max-height: 85vh;
+  max-width: min(96vw, 1200px);
+  max-height: 92vh;
   width: auto;
   height: auto;
-  object-fit: contain;
-  border-radius: 12px;
+  object-fit: contain;      /* muestra la imagen completa */
+  object-position: center;
+  border-radius: 10px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  background: transparent;
 }
 
 .close-modal {
-  position: absolute;
-  top: 18px;
-  right: 22px;
+  position: fixed;
+  top: 16px;
+  right: 20px;
   font-size: 1.8rem;
   color: #fff;
   cursor: pointer;
   font-weight: 700;
   line-height: 1;
-  z-index: 1;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.45);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.close-modal:hover {
+  background: rgba(0, 0, 0, 0.7);
 }
 
 /* ================= CONFIRM MODAL ================= */
