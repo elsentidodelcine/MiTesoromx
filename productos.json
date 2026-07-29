@@ -1,12 +1,12 @@
 [
 
-  { "nombre": "Palomera SpiderMan Cinemex", "categoria": "Preventa", "precio": 480, "imagen": "thumbs/peter1.jpeg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "Vaso 3D SpiderMan Cinemex", "categoria": "Preventa", "precio": 380, "imagen": "thumbs/peter2.jpeg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "2 de 4 Vasos Con Figurin SpiderMan Cinemex", "categoria": "Preventa", "precio": 500, "imagen": "thumbs/peter3.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Palomera SpiderMan Cinemex", "categoria": "Preventa", "precio": 480, "imagen": "thumbs/peter1.jpeg" ,"badge": "preventa", "stock": 0},
+  { "nombre": "Vaso 3D SpiderMan Cinemex", "categoria": "Preventa", "precio": 380, "imagen": "thumbs/peter2.jpeg" ,"badge": "preventa", "stock": 0},
+  { "nombre": "2 de 4 Vasos Con Figurin SpiderMan Cinemex", "categoria": "Preventa", "precio": 500, "imagen": "thumbs/peter3.jpeg" ,"badge": "preventa", "stock": 0},
 
-  { "nombre": "Palomera SpiderMan Cinepolis", "categoria": "Preventa", "precio": 485, "imagen": "thumbs/peter4.jpeg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "Vaso Modelo 1 SpiderMan Cinepolis", "categoria": "Preventa", "precio": 345, "imagen": "thumbs/peter5.jpeg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "Vaso Modelo 2 SpiderMan Cinepolis", "categoria": "Preventa", "precio": 345, "imagen": "thumbs/peter6.jpeg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Palomera SpiderMan Cinepolis", "categoria": "Preventa", "precio": 485, "imagen": "thumbs/peter4.jpeg" ,"badge": "preventa", "stock": 0},
+  { "nombre": "Vaso Modelo 1 SpiderMan Cinepolis", "categoria": "Preventa", "precio": 345, "imagen": "thumbs/peter5.jpeg" ,"badge": "preventa", "stock": 0},
+  { "nombre": "Vaso Modelo 2 SpiderMan Cinepolis", "categoria": "Preventa", "precio": 345, "imagen": "thumbs/peter6.jpeg" ,"badge": "preventa", "stock": 0},
 
   { "nombre": "Vaso SpiderMan Movie Center", "categoria": "Preventa", "precio": 200, "imagen": "thumbs/peter8.jpeg" ,"badge": "preventa", "stock": 1},
   { "nombre": "Palomera SpiderMan Movie Center", "categoria": "Preventa", "precio": 250, "imagen": "thumbs/peter7.jpeg" ,"badge": "preventa", "stock": 1},
