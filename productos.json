@@ -401,7 +401,7 @@
   { "nombre": "Postal 3D SpiderMan Cinepolis", "categoria": "SpiderMan", "precio": 100, "imagen": "imgs/spidern24.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Palomera SpiderMan Cinepolis", "categoria": "SpiderMan", "precio": 500, "imagen": "imgs/spidern2.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso SpiderMan Movie Center", "categoria": "SpiderMan", "precio": 200, "imagen": "imgs/spidern17.jpg" ,"badge": "exclusivo", "stock": 1},
-  { "nombre": "Vaso Modelo 1 SpiderMan Cinepolis", "categoria": "SpiderMan", "precio": 500, "imagen": "imgs/spidern15.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Vaso Modelo 1 SpiderMan Cinepolis", "categoria": "SpiderMan", "precio": 500, "imagen": "imgs/spidern15.jpg" ,"badge": "exclusivo", "stock": 0},
   { "nombre": "Vaso Modelo 2 SpiderMan Cinepolis", "categoria": "SpiderMan", "precio": 400, "imagen": "imgs/spidern26.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso 3D SpiderMan Cinemex", "categoria": "SpiderMan", "precio": 500, "imagen": "imgs/spidern14.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Peon SpiderMan", "categoria": "SpiderMan", "precio": 150, "imagen": "imgs/spider30.jpeg" ,"badge": "exclusivo", "stock": 1},
