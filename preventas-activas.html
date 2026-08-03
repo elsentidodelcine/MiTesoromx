@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Preventas activas de coleccionables de cine – Mi Tesoro MX.">
+  <title>Preventas activas | Mi Tesoro MX</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="header-left">
+      <span class="logo-icon" aria-hidden="true">🎬</span>
+      <div class="logo-text">
+        <h1>Mi Tesoro MX</h1>
+        <span>Coleccionables de Cine</span>
+      </div>
+    </div>
+    <button id="menuToggle" class="menu-toggle" aria-label="Abrir menú">☰</button>
+    <nav class="header-center">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#catalogo">Catálogo</a>
+      <a href="preventas.html">Términos preventa</a>
+      <a href="preventas-activas.html">Preventas activas</a>
+      <a href="faq.html">FAQ</a>
+      <a href="blog.html">Blog</a>
+      <a href="mitesoromx.html">Nosotros</a>
+    </nav>
+    <div class="header-right">
+      <a href="index.html" class="cart-btn" style="text-decoration:none;">🛒 Catálogo</a>
+      <button id="toggleTheme" class="theme-btn">🌙</button>
+    </div>
+  </header>
+
+  <div class="horario-bar">💬 WhatsApp: lun–sáb 10:00–20:00 · Dom 11:00–18:00 (hora Centro)</div>
+
+  <section class="page-hero">
+    <h1>Preventas activas</h1>
+    <p>Reserva anticipada de coleccionables · Comisión $100 ya incluida en el precio</p>
+  </section>
+
+  <div class="content-grid">
+    <a href="index.html" class="legal-back">← Volver al inicio</a>
+
+    <div class="card-block">
+      <p>
+        Aquí publicamos las preventas vigentes. El precio mostrado en catálogo
+        <strong>ya incluye la comisión de servicio de $100 MXN</strong> por producto.
+        La disponibilidad depende del cine o proveedor.
+      </p>
+      <p>
+        Lee el <a href="preventas.html">aviso legal de preventas</a> antes de apartar.
+        ¿Dudas? <a href="https://wa.me/524761002824" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>.
+      </p>
+    </div>
+
+    <!-- EDITA ESTAS TARJETAS CUANDO ABRAS O CIERRES PREVENTAS -->
+    <div class="card-block preventa-card">
+      <div class="badge-row">
+        <span class="preventa-status abierta">ABIERTA</span>
+        <span class="badge preventa" style="position:static;">PREVENTA</span>
+      </div>
+      <h2>🕷️ Spider-Man — vasos, palomeras y coleccionables</h2>
+      <p>
+        Preventa exclusiva. Aparta antes de que se agoten las piezas disponibles en cine.
+      </p>
+      <ul>
+        <li><strong>Estado:</strong> Abierta</li>
+        <li><strong>Comisión:</strong> $100 ya incluida en el precio publicado</li>
+        <li><strong>Pago:</strong> En fecha oficial de preventa / según se indique por WhatsApp</li>
+      </ul>
+      <p>
+        <a href="index.html#catalogo" class="banner-btn banner-btn-ml" style="display:inline-block;margin-top:8px;">
+          Ver en catálogo
+        </a>
+        &nbsp;
+        <a href="preventas.html" style="font-size:0.9rem;font-weight:600;color:var(--accent);">Términos de preventa →</a>
+      </p>
+    </div>
+
+    <div class="card-block preventa-card">
+      <div class="badge-row">
+        <span class="preventa-status proxima">PRÓXIMAMENTE</span>
+      </div>
+      <h2>Próximos estrenos de cine</h2>
+      <p>
+        Cuando se anuncie preventa de nuevos promocionales, los publicaremos aquí y en el catálogo con etiqueta PREVENTA.
+      </p>
+      <p>
+        <a href="https://wa.me/524761002824?text=Hola%2C%20quiero%20que%20me%20avisen%20de%20nuevas%20preventas"
+           target="_blank" rel="noopener" class="btn-avisarme" style="display:inline-block;max-width:320px;">
+          🔔 Avisarme de nuevas preventas
+        </a>
+      </p>
+    </div>
+
+    <div class="card-block">
+      <h2>📌 Resumen rápido</h2>
+      <ul>
+        <li>Precio de preventa = precio cine + gestión (comisión $100 <strong>ya incluida</strong>).</li>
+        <li>Si no se consigue el producto por causas ajenas → reembolso 100%.</li>
+        <li>Si cancelas cuando ya se consiguió → la comisión de ese artículo no es reembolsable.</li>
+        <li>Detalle completo en <a href="preventas.html">Aviso legal – Preventas</a>.</li>
+      </ul>
+    </div>
+
+    <p style="font-size:0.8rem;color:var(--text-muted);text-align:center;">
+      * Actualiza manualmente las tarjetas de esta página cuando abras, pauses o cierres una preventa.
+    </p>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="preventas.html">Términos preventa</a>
+      <a href="faq.html">FAQ</a>
+      <a href="https://wa.me/524761002824" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+    <p class="footer-horario">💬 Atención WhatsApp: lun–sáb 10:00–20:00 · Dom 11:00–18:00</p>
+    <div class="footer-copy"><p>© 2026 Mi Tesoro MX — Todos los derechos reservados</p></div>
+  </footer>
+
+  <script>
+    (() => {
+      const menuToggle = document.getElementById("menuToggle");
+      const headerMenu = document.querySelector(".header-center");
+      if (!menuToggle || !headerMenu) return;
+      menuToggle.addEventListener("click", () => {
+        const abierto = headerMenu.classList.toggle("open");
+        menuToggle.textContent = abierto ? "✕" : "☰";
+      });
+      headerMenu.querySelectorAll("a").forEach((l) => l.addEventListener("click", () => {
+        headerMenu.classList.remove("open");
+        menuToggle.textContent = "☰";
+      }));
+    })();
+    const btnTheme = document.getElementById("toggleTheme");
+    if (localStorage.getItem("tema") === "dark") {
+      document.body.classList.add("dark");
+      if (btnTheme) btnTheme.textContent = "☀️";
+    }
+    btnTheme?.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      const o = document.body.classList.contains("dark");
+      btnTheme.textContent = o ? "☀️" : "🌙";
+      localStorage.setItem("tema", o ? "dark" : "light");
+    });
+  </script>
+</body>
+</html>
