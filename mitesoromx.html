@@ -1,134 +1,251 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Conoce a Mi Tesoro MX – coleccionables originales de cine, atención personalizada y envíos a todo México.">
-  <title>Nosotros | Mi Tesoro MX</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conoce Mi Tesoro MX: tienda de coleccionables originales de cine en México. Palomeras, vasos, Funkos, preventas y envíos a todo el país.">
+    <title>Nosotros | Mi Tesoro MX</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header class="main-header">
+<header class="main-header">
     <div class="header-left">
-      <span class="logo-icon" aria-hidden="true">🎬</span>
-      <div class="logo-text">
-        <h1>Mi Tesoro MX</h1>
-        <span>Coleccionables de Cine</span>
-      </div>
+        <span class="logo-icon" aria-hidden="true">🎬</span>
+        <div class="logo-text">
+            <h1>Mi Tesoro MX</h1>
+            <span>Coleccionables de Cine</span>
+        </div>
     </div>
     <button id="menuToggle" class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
-    <nav class="header-center" id="mainNav">
-      <a href="index.html">Inicio</a>
-      <a href="index.html#catalogo">Catálogo</a>
-      <a href="preventas.html">Preventas</a>
-      <a href="preventas-activas.html">Preventas activas</a>
-      <a href="faq.html">FAQ</a>
-      <a href="blog.html">Blog</a>
-      <a href="mitesoromx.html">Nosotros</a>
+    <nav class="header-center" id="mainNav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#catalogo">Catálogo</a>
+        <a href="preventas.html">Preventas</a>
+        <a href="preventas-activas.html">Preventas activas</a>
+        <a href="envios.html">Envíos</a>
+        <a href="faq.html">FAQ</a>
+        <a href="blog.html">Blog</a>
+        <a href="mitesoromx.html">Nosotros</a>
     </nav>
     <div class="header-right">
-      <a href="index.html" class="cart-btn" style="text-decoration:none;">🛒 Catálogo</a>
-      <button id="toggleTheme" class="theme-btn" aria-label="Cambiar tema">🌙</button>
+        <a href="index.html#catalogo" class="cart-btn" style="text-decoration:none;">🛒 Catálogo</a>
+        <button id="toggleTheme" class="theme-btn" aria-label="Cambiar tema">🌙</button>
     </div>
-  </header>
+</header>
 
-  <div class="horario-bar">💬 WhatsApp: lun–sáb 10:00–20:00 · Dom 11:00–18:00 (hora Centro)</div>
+<div class="horario-bar">💬 WhatsApp: lun–sáb 10:00–20:00 · Dom 11:00–18:00 (hora Centro de México)</div>
 
-  <section class="page-hero">
+<section class="page-hero">
     <h1>Nosotros</h1>
-    <p>La historia detrás de Mi Tesoro MX</p>
-  </section>
+    <p>Coleccionables de cine con trato real, claro y de confianza</p>
+</section>
 
-  <div class="content-grid">
+<main class="content-grid">
     <a href="index.html" class="legal-back">← Volver al inicio</a>
 
-    <div class="card-block">
-      <h2>🎬 ¿Quiénes somos?</h2>
-      <p>
-        <strong>Mi Tesoro MX</strong> es una tienda dedicada a coleccionables oficiales de cine:
-        palomeras, vasos, promocionales, Funkos y ediciones exclusivas.
-      </p>
-      <p>
-        Trabajamos de forma cercana, con atención personalizada por WhatsApp, porque sabemos que
-        cada pieza importa para quien colecciona.
-      </p>
-    </div>
+    <section class="card-block">
+        <h2>🎬 ¿Qué es Mi Tesoro MX?</h2>
+        <p>
+            <strong>Mi Tesoro MX</strong> es una tienda especializada en <strong>coleccionables oficiales de cine</strong>:
+            palomeras, vasos promocionales, Funkos, álbumes, ediciones exclusivas y piezas de estreno.
+        </p>
+        <p>
+            No somos un marketplace genérico. Somos un proyecto enfocado en coleccionistas de México que buscan
+            <strong>productos originales</strong>, información honesta y un proceso de compra simple:
+            eliges en la web y confirmas por WhatsApp.
+        </p>
+        <p>
+            Nuestro catálogo supera las <strong>500 referencias</strong> entre piezas disponibles, preventas y ediciones limitadas.
+            Muchas de ellas no se reponen: cuando se agotan, suelen quedar fuera de circulación.
+        </p>
+    </section>
 
-    <div class="card-block">
-      <h2>💎 Nuestro compromiso</h2>
-      <ul>
-        <li><strong>Productos originales</strong> — seleccionados para colección.</li>
-        <li><strong>Trato honesto</strong> — en preventas y apartados te explicamos condiciones desde el inicio.</li>
-        <li><strong>Empaque seguro</strong> — cuidamos que lleguen en buen estado.</li>
-        <li><strong>Envíos a todo México</strong> — Correos, Estafeta o FedEx según el caso.</li>
-      </ul>
-    </div>
+    <section class="card-block">
+        <h2>📦 ¿Qué puedes encontrar aquí?</h2>
+        <ul>
+            <li><strong>Palomeras de cine</strong> — ediciones de estreno y promocionales de cartelera.</li>
+            <li><strong>Vasos coleccionables</strong> — combos y piezas oficiales de película.</li>
+            <li><strong>Funkos y figuras</strong> — personajes y series ligadas al cine y entretenimiento.</li>
+            <li><strong>Álbumes y estampas</strong> — coleccionables impresos y ediciones especiales.</li>
+            <li><strong>Preventas</strong> — reserva anticipada cuando el cine aún no libera el producto al público general.</li>
+            <li><strong>Apartados</strong> — reserva con anticipo del 30% y liquidación en un plazo definido.</li>
+        </ul>
+    </section>
 
-    <div class="card-block">
-      <h2>🛒 Cómo compramos y vendemos</h2>
-      <p>
-        Puedes armar tu pedido en la web y confirmarlo por WhatsApp. También estamos en
-        <a href="https://listado.mercadolibre.com.mx/_CustId_225063561" target="_blank" rel="noopener">Mercado Libre</a>
-        (allí los precios son más altos por comisiones de la plataforma; en esta página encuentras los mejores precios).
-      </p>
-    </div>
+    <section class="card-block">
+        <h2>🤝 Cómo trabajamos contigo</h2>
+        <p>El flujo está pensado para que sepas en todo momento qué sigue:</p>
+        <ol>
+            <li>Exploras el <a href="index.html#catalogo">catálogo</a> y agregas productos al carrito.</li>
+            <li>Confirmas el pedido por <strong>WhatsApp</strong> (+52 476 100 28 24).</li>
+            <li>Validamos disponibilidad y te indicamos forma de pago (transferencia o efectivo en entrega personal).</li>
+            <li>Cuando confirmamos el pago, preparamos el pedido con empaque seguro.</li>
+            <li>Enviamos a todo México y, cuando aplica, te compartimos número de guía.</li>
+        </ol>
+        <p>
+            <strong>No solicitamos datos de tarjetas.</strong> Todo el pago se coordina de forma directa y transparente.
+        </p>
+    </section>
 
-    <div class="card-block">
-      <h2>📍 Atención</h2>
-      <p>
-        <strong>WhatsApp:</strong>
-        <a href="https://wa.me/524761002824" target="_blank" rel="noopener">+52 476 100 28 24</a>
-      </p>
-      <p><strong>Horario:</strong> lunes a sábado 10:00–20:00 · domingo 11:00–18:00 (hora del Centro de México).</p>
-      <p>
-        Facebook:
-        <a href="https://facebook.com/ElSentidoDelCine" target="_blank" rel="noopener">El Sentido del Cine</a>
-      </p>
-    </div>
+    <section class="card-block">
+        <h2>💎 En qué creemos</h2>
+        <ul>
+            <li><strong>Originalidad</strong> — priorizamos piezas oficiales y de colección, no réplicas dudosas.</li>
+            <li><strong>Claridad</strong> — preventas, apartados y envíos tienen reglas publicadas (FAQ y avisos legales).</li>
+            <li><strong>Cercanía</strong> — atención personalizada por WhatsApp, no un bot anónimo.</li>
+            <li><strong>Cuidado del pedido</strong> — empaque pensado para vasos, palomeras y piezas delicadas.</li>
+            <li><strong>Precios justos en web</strong> — en esta página encuentras mejores precios que en Mercado Libre, donde las comisiones de la plataforma encarecen el artículo.</li>
+        </ul>
+    </section>
 
-    <div class="card-block">
-      <h2>📋 Para el día a día (operación)</h2>
-      <p style="font-size:0.88rem;color:var(--text-muted)">
-        Notas útiles para mantener stock y apartados al día (úsalas en tu flujo de WhatsApp):
-      </p>
-      <p><strong>Recordatorio apartado (día 15):</strong></p>
-      <div class="plantilla-box">Hola 👋 Te escribimos de Mi Tesoro MX.
-Tu apartado de *[PRODUCTO]* sigue activo.
-Te quedan aprox. 15 días para liquidar (plazo de 30 días).
-¿Te apoyamos con el saldo o tienes alguna duda?</div>
-      <p><strong>Recordatorio apartado (día 25):</strong></p>
-      <div class="plantilla-box">Hola 👋 Recordatorio de Mi Tesoro MX.
-Tu apartado de *[PRODUCTO]* vence en unos días.
-Si deseas conservarlo, confirma el pago del saldo restante.
-Cualquier duda, aquí estamos.</div>
-      <p><strong>Pedido enviado + guía:</strong></p>
-      <div class="plantilla-box">¡Hola! Tu pedido ya fue enviado 📦
-Paquetería: *[CORREOS/ESTAFETA/FEDEX]*
-Número de guía: *[GUIA]*
-Puedes rastrearlo en la página de la paquetería.
-¡Gracias por confiar en Mi Tesoro MX!</div>
-      <p style="font-size:0.85rem;color:var(--text-muted);margin-top:12px">
-        <strong>Stock:</strong> actualiza <code>productos.json</code> cada vez que vendas en web o Mercado Libre,
-        para no ofrecer piezas ya apartadas.
-      </p>
-    </div>
-  </div>
+    <section class="card-block">
+        <h2>🕷️ Preventas y apartados</h2>
+        <p>
+            Parte importante de nuestro trabajo es conseguir piezas de estreno o edición limitada.
+            Por eso manejamos dos modalidades especiales:
+        </p>
+        <p>
+            <strong>Preventa:</strong> reservamos anticipadamente productos que el cine o proveedor aún no tiene
+            en venta general. El precio publicado <strong>ya incluye una comisión de servicio de $100 MXN</strong>
+            por producto (gestión, búsqueda y adquisición). Si por causas ajenas no se consigue la pieza,
+            reembolsamos el 100%. Detalle completo en el
+            <a href="preventas.html">aviso legal de preventas</a> y en
+            <a href="preventas-activas.html">preventas activas</a>.
+        </p>
+        <p>
+            <strong>Apartado:</strong> puedes reservar con un <strong>anticipo del 30%</strong> y liquidar el resto
+            en un plazo máximo de <strong>30 días naturales</strong> (salvo acuerdo distinto).
+            Condiciones en el <a href="aviso-legal-apartado.html">aviso de apartados</a>.
+        </p>
+    </section>
 
-  <footer class="footer">
+    <section class="card-block">
+        <h2>🚚 Envíos a todo México</h2>
+        <p>Enviamos a toda la República. Tarifas orientativas con Correos de México:</p>
+        <ul>
+            <li>1 a 3 productos: <strong>$80 MXN</strong></li>
+            <li>3 a 10 productos: <strong>$100 MXN</strong></li>
+            <li>Estafeta o FedEx: cotización según peso, tamaño y destino</li>
+        </ul>
+        <p>
+            <strong>Envío gratis</strong> en compras mayores a <strong>$550 MXN</strong> por Correos de México
+            (solo productos participantes; no aplica en preventas, apartados ni exclusivos).
+        </p>
+        <p>Más información en <a href="envios.html">Envíos</a> y en la <a href="faq.html">FAQ</a>.</p>
+    </section>
+
+    <section class="card-block">
+        <h2>🛒 También en Mercado Libre</h2>
+        <p>
+            Para quienes prefieren comprar con la protección de la plataforma, también estamos en Mercado Libre:
+        </p>
+        <p>
+            <a href="https://listado.mercadolibre.com.mx/_CustId_225063561" target="_blank" rel="noopener">
+                Ver tienda en Mercado Libre →
+            </a>
+        </p>
+        <p class="faq-note">
+            ⚠️ Los precios en Mercado Libre son <strong>más elevados</strong> por las comisiones de la plataforma.
+            En <strong>esta web</strong> encuentras los mejores precios y el mismo trato de siempre.
+        </p>
+    </section>
+
+    <section class="card-block">
+        <h2>💬 Contacto y horario</h2>
+        <p>
+            <strong>WhatsApp:</strong>
+            <a href="https://wa.me/524761002824" target="_blank" rel="noopener">+52 476 100 28 24</a>
+        </p>
+        <p>
+            <strong>Horario de atención:</strong><br>
+            Lunes a sábado: 10:00 – 20:00<br>
+            Domingo: 11:00 – 18:00<br>
+            <span style="color:var(--text-muted);font-size:0.9rem;">Hora del Centro de México. Los pagos fuera de horario se validan el siguiente día hábil.</span>
+        </p>
+        <p>
+            <strong>Facebook:</strong>
+            <a href="https://facebook.com/ElSentidoDelCine" target="_blank" rel="noopener">El Sentido del Cine</a>
+        </p>
+    </section>
+
+    <section class="card-block">
+        <h2>📄 Documentos y políticas</h2>
+        <ul>
+            <li><a href="preventas.html">Aviso legal de preventas</a></li>
+            <li><a href="aviso-legal-apartado.html">Aviso legal de apartados</a></li>
+            <li><a href="envios.html">Información de envíos</a></li>
+            <li><a href="terminos-y-condiciones.html">Términos y condiciones</a></li>
+            <li><a href="politica-privacidad.html">Política de privacidad</a></li>
+            <li><a href="faq.html">Preguntas frecuentes</a></li>
+        </ul>
+    </section>
+
+    <section class="card-block">
+        <h2>🛠️ Plantillas útiles (operación diaria)</h2>
+        <p style="font-size:0.9rem;color:var(--text-muted);">
+            Textos listos para copiar en WhatsApp. Sustituye lo que está entre asteriscos.
+        </p>
+
+        <p><strong>1) Pedido recibido</strong></p>
+        <div class="plantilla-box">Hola 👋 Gracias por tu mensaje.
+            Recibimos tu interés en: *[LISTA DE PRODUCTOS]*
+            Total estimado: *$XXX MXN* (+ envío si aplica).
+            Te confirmamos disponibilidad y datos de pago en este chat.</div>
+
+        <p><strong>2) Pago confirmado</strong></p>
+        <div class="plantilla-box">¡Pago confirmado! ✅
+            Ya quedó reservado tu pedido.
+            En breve lo preparamos para envío/entrega.
+            Cualquier duda, aquí estamos.</div>
+
+        <p><strong>3) Pedido enviado + guía</strong></p>
+        <div class="plantilla-box">¡Tu pedido ya salió! 📦
+            Paquetería: *[CORREOS / ESTAFETA / FEDEX]*
+            Guía: *[NÚMERO]*
+            Puedes rastrearlo en el sitio de la paquetería.
+            ¡Gracias por confiar en Mi Tesoro MX!</div>
+
+        <p><strong>4) Recordatorio apartado (aprox. día 15)</strong></p>
+        <div class="plantilla-box">Hola 👋 Te escribimos de Mi Tesoro MX.
+            Tu apartado de *[PRODUCTO]* sigue activo.
+            El plazo de liquidación es de 30 días; vas a la mitad del periodo.
+            ¿Te apoyamos con el saldo o tienes alguna duda?</div>
+
+        <p><strong>5) Recordatorio apartado (aprox. día 25)</strong></p>
+        <div class="plantilla-box">Hola 👋 Recordatorio de Mi Tesoro MX.
+            Tu apartado de *[PRODUCTO]* está por vencer.
+            Si deseas conservarlo, confirma el pago del saldo restante a la brevedad.
+            Estamos para ayudarte.</div>
+
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-top:14px;">
+            <strong>Stock:</strong> cada vez que vendas en la web o en Mercado Libre, actualiza el campo
+            <code>stock</code> en <code>productos.json</code> para no ofrecer piezas ya vendidas.
+        </p>
+    </section>
+
+    <div class="faq-cta">
+        <p>¿Listo para ver el catálogo?</p>
+        <a href="index.html#catalogo" class="banner-btn banner-btn-ml">Explorar coleccionables</a>
+    </div>
+</main>
+
+<footer class="footer">
     <div class="footer-links">
-      <a href="faq.html">FAQ</a>
-      <a href="blog.html">Blog</a>
-      <a href="https://wa.me/524761002824" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="faq.html">FAQ</a>
+        <a href="blog.html">Blog</a>
+        <a href="preventas-activas.html">Preventas activas</a>
+        <a href="https://facebook.com/ElSentidoDelCine" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://wa.me/524761002824" target="_blank" rel="noopener">WhatsApp</a>
     </div>
     <p class="footer-horario">💬 Atención WhatsApp: lun–sáb 10:00–20:00 · Dom 11:00–18:00</p>
     <div class="footer-copy"><p>© 2026 Mi Tesoro MX — Todos los derechos reservados</p></div>
-  </footer>
+</footer>
 
-  <script>
+<script>
     (() => {
       const menuToggle = document.getElementById("menuToggle");
       const headerMenu = document.querySelector(".header-center");
@@ -156,6 +273,6 @@ Puedes rastrearlo en la página de la paquetería.
       btnTheme.textContent = oscuro ? "☀️" : "🌙";
       localStorage.setItem("tema", oscuro ? "dark" : "light");
     });
-  </script>
+</script>
 </body>
 </html>
