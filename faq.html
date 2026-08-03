@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Términos y condiciones de preventas de coleccionables de cine – Mi Tesoro MX.">
-    <title>Preventas | Mi Tesoro MX</title>
+    <meta name="description" content="Preguntas frecuentes sobre compras, pagos, envíos, apartados y preventas – Mi Tesoro MX.">
+    <title>Preguntas Frecuentes | Mi Tesoro MX</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,6 +26,7 @@
 
     <nav class="header-center" id="mainNav" aria-label="Navegación principal">
         <a href="index.html">Inicio</a>
+        <a href="index.html#catalogo">Catálogo</a>
         <a href="preventas.html">Preventas</a>
         <a href="envios.html">Envíos</a>
         <a href="aviso-legal-apartado.html">Apartados</a>
@@ -41,121 +42,294 @@
     </div>
 </header>
 
-<!-- CONTENIDO -->
+<!-- CONTENIDO FAQ -->
 <main class="legal-container">
+    <a href="index.html" class="legal-back">← Volver al inicio</a>
 
     <h1>Preguntas Frecuentes</h1>
-    <p class="subtitle">
-        Información clara antes de realizar tu compra
-    </p>
+    <p class="subtitle">Respuestas claras antes de realizar tu compra en Mi Tesoro MX</p>
 
-    <div class="search-box">
-        <label for="searchInput" class="visually-hidden">
-            Buscar en preguntas frecuentes
-        </label>
-        <input
-                type="text"
-                id="searchInput"
-                placeholder="Buscar una pregunta…"
-        >
+    <!-- Buscador FAQ -->
+    <div class="faq-search-wrap">
+        <div class="faq-search-box">
+            <span aria-hidden="true">🔍</span>
+            <input
+                    type="search"
+                    id="faqSearch"
+                    placeholder="Buscar una pregunta… (ej. envío, apartado, preventa)"
+                    autocomplete="off"
+                    aria-label="Buscar en preguntas frecuentes"
+            >
+        </div>
+        <p id="faqSearchInfo" class="search-results-info" hidden></p>
     </div>
 
-
     <!-- COMPRAS -->
-    <section class="faq-category">
+    <section class="faq-category" data-category="compras">
         <h2>🛒 Compras</h2>
 
-        <details>
+        <details class="faq-item">
             <summary>¿Cómo puedo comprar un producto?</summary>
-            <p>
-                Puedes agregar productos al carrito y confirmar tu pedido directamente por
-                WhatsApp, donde validamos disponibilidad y forma de pago.
-            </p>
+            <div class="faq-answer">
+                <p>El proceso es sencillo:</p>
+                <ol>
+                    <li>Explora el <a href="index.html#catalogo">catálogo</a> y agrega los productos al carrito.</li>
+                    <li>Abre el carrito y pulsa <strong>Confirmar por WhatsApp</strong>.</li>
+                    <li>Te respondemos para validar disponibilidad y acordar la forma de pago.</li>
+                    <li>Una vez confirmado el pago, preparamos y enviamos tu pedido.</li>
+                </ol>
+                <p>También puedes escribirnos directamente a WhatsApp: <a href="https://wa.me/524761002824" target="_blank" rel="noopener">+52 476 100 28 24</a>.</p>
+            </div>
         </details>
 
-        <details>
+        <details class="faq-item">
             <summary>¿Los productos son originales?</summary>
-            <p>
-                Sí. Todos los artículos son originales y seleccionados para colección.
-            </p>
+            <div class="faq-answer">
+                <p>Sí. Todos los artículos que ofrecemos son <strong>coleccionables originales</strong> (palomeras, vasos, promocionales, Funkos y ediciones exclusivas de cine), seleccionados para colección.</p>
+            </div>
         </details>
 
-        <details>
+        <details class="faq-item">
             <summary>¿Hay reposición de productos?</summary>
-            <p>
-                No. Todos los productos son piezas únicas y no se reponen.
-            </p>
+            <div class="faq-answer">
+                <p>En la mayoría de los casos <strong>no</strong>. Muchos productos son piezas limitadas o de edición especial y, una vez agotados, no se reponen.</p>
+                <p>Si un artículo está en espera de restock, se indica en la ficha del producto. Te recomendamos apartar o comprar cuanto antes si te interesa algo en particular.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Las fotos del catálogo son exactas?</summary>
+            <div class="faq-answer">
+                <p>Las fotos muestran el producto real en la medida de lo posible. En preventas o lanzamientos nuevos, a veces se usan imágenes promocionales o renders del fabricante.</p>
+                <p>El producto final puede tener pequeñas diferencias de color, acabado o empaque respecto a esas imágenes. Al hacer clic en la foto del catálogo puedes verla ampliada.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Puedo comprar varios productos en un solo pedido?</summary>
+            <div class="faq-answer">
+                <p>Sí. Puedes agregar varios artículos al carrito y confirmarlos juntos por WhatsApp. Así simplificamos el pago y, cuando aplica, el envío.</p>
+            </div>
         </details>
     </section>
 
     <!-- PAGOS -->
-    <section class="faq-category">
+    <section class="faq-category" data-category="pagos">
         <h2>💰 Pagos</h2>
 
-        <details>
+        <details class="faq-item">
             <summary>¿Qué métodos de pago aceptan?</summary>
-            <p>
-                Transferencia bancaria y efectivo. No solicitamos datos de tarjetas.
-            </p>
+            <div class="faq-answer">
+                <p>Aceptamos:</p>
+                <ul>
+                    <li><strong>Transferencia bancaria</strong></li>
+                    <li><strong>Efectivo</strong> (en entregas personales, cuando se coordine)</li>
+                </ul>
+                <p><strong>No solicitamos datos de tarjetas</strong> ni enlaces de pago sospechosos. Todo se coordina de forma clara por WhatsApp.</p>
+            </div>
         </details>
 
-        <details>
+        <details class="faq-item">
             <summary>¿Cuándo se confirma mi compra?</summary>
-            <p>
-                Una vez recibido y validado el pago.
-            </p>
+            <div class="faq-answer">
+                <p>Tu compra se confirma <strong>cuando recibimos y validamos el pago</strong>. El envío de un comprobante no garantiza la reserva hasta que te confirmemos por WhatsApp.</p>
+                <p>Los pagos hechos fuera de horario de atención pueden confirmarse al siguiente día hábil.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Emiten factura?</summary>
+            <div class="faq-answer">
+                <p>Si necesitas factura, indícalo al confirmar tu pedido por WhatsApp y te orientamos sobre los datos y el proceso correspondientes.</p>
+            </div>
         </details>
     </section>
 
     <!-- ENVÍOS -->
-    <section class="faq-category">
+    <section class="faq-category" data-category="envios">
         <h2>📦 Envíos</h2>
 
-        <details>
+        <details class="faq-item">
             <summary>¿Realizan envíos a todo México?</summary>
-            <p>
-                Sí, realizamos envíos a toda la República Mexicana.
-            </p>
+            <div class="faq-answer">
+                <p>Sí. Enviamos a <strong>toda la República Mexicana</strong>.</p>
+                <p>También podemos coordinar entrega personal en algunas zonas (consulta por WhatsApp).</p>
+            </div>
         </details>
 
-        <details>
+        <details class="faq-item">
             <summary>¿Cuánto cuesta el envío?</summary>
-            <p>
-                <li>Correos de México 1 a 3 Productos: $80 MXN</li>
-                <li>Correos de México 3 a 10 Productos: $100 MXN</li>
-                <li>Estafeta o FedEx: cotización personalizada</li>
-            </p>
+            <div class="faq-answer">
+                <p>Tarifas orientativas con <strong>Correos de México</strong>:</p>
+                <ul>
+                    <li>1 a 3 productos: <strong>$80 MXN</strong></li>
+                    <li>3 a 10 productos: <strong>$100 MXN</strong></li>
+                </ul>
+                <p><strong>Estafeta o FedEx:</strong> cotización personalizada según peso, tamaño y destino.</p>
+                <p class="faq-note">
+                    🚚 <strong>Envío gratis</strong> en compras mayores a <strong>$550 MXN</strong> por Correos de México
+                    (solo productos participantes; no aplica en preventas, apartados ni exclusivos).
+                </p>
+                <p>Más detalles en la página de <a href="envios.html">Envíos</a>.</p>
+            </div>
         </details>
 
-        <details>
+        <details class="faq-item">
             <summary>¿Cuándo se envía mi pedido?</summary>
-            <p>
-                Al día siguiente de la confirmación del pago, de lunes a viernes.
-            </p>
+            <div class="faq-answer">
+                <p>Por lo general enviamos <strong>al día siguiente de confirmar el pago</strong>, de lunes a viernes.</p>
+                <p>Una vez entregado el paquete a la paquetería, los tiempos de entrega dependen de la empresa de envío. Te compartimos el número de seguimiento cuando esté disponible.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Qué pasa si mi dirección está mal o incompleta?</summary>
+            <div class="faq-answer">
+                <p>Es responsabilidad del cliente proporcionar nombre, dirección, código postal y teléfono correctos.</p>
+                <p>Mi Tesoro MX no se hace responsable de retrasos, devoluciones o pérdidas por datos incorrectos, pero te apoyamos en el seguimiento del envío cuando sea posible.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Empacan bien los coleccionables?</summary>
+            <div class="faq-answer">
+                <p>Sí. Usamos empaque seguro para proteger vasos, palomeras y piezas delicadas durante el traslado. Aun así, una vez en manos de la paquetería, los tiempos y posibles incidencias dependen de ellos; te ayudamos a gestionar cualquier problema.</p>
+            </div>
         </details>
     </section>
 
     <!-- APARTADOS -->
-    <section class="faq-category">
+    <section class="faq-category" data-category="apartados">
         <h2>📌 Apartados</h2>
 
-        <details>
+        <details class="faq-item">
             <summary>¿Puedo apartar un producto?</summary>
-            <p>
-                Sí. Se ofrece apartado con anticipo del 30% del valor total.
-            </p>
+            <div class="faq-answer">
+                <p>Sí. Puedes apartar con un <strong>anticipo del 30%</strong> del valor total del producto (o del pedido, según se acuerde).</p>
+                <p>El apartado solo es válido cuando confirmamos la recepción del anticipo. Consulta las condiciones completas en <a href="aviso-legal-apartado.html">Apartados</a>.</p>
+            </div>
         </details>
 
-        <details>
-            <summary>¿Cuánto tiempo tengo para liquidar?</summary>
-            <p>
-                El plazo máximo es de 30 días naturales.
-            </p>
+        <details class="faq-item">
+            <summary>¿Cuánto tiempo tengo para liquidar un apartado?</summary>
+            <div class="faq-answer">
+                <p>El plazo máximo es de <strong>30 días naturales</strong> a partir de la confirmación del apartado, salvo que se acuerde otro plazo por escrito.</p>
+                <p>Si no se liquida a tiempo, el apartado puede cancelarse según las políticas publicadas.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Qué pasa si cancelo un apartado?</summary>
+            <div class="faq-answer">
+                <p>Depende del estado del pedido y de las condiciones del apartado. Te recomendamos leer el <a href="aviso-legal-apartado.html">aviso legal de apartados</a> y consultarnos por WhatsApp antes de cancelar para conocer el procedimiento exacto.</p>
+            </div>
         </details>
     </section>
 
+    <!-- PREVENTAS -->
+    <section class="faq-category" data-category="preventas">
+        <h2>🕷️ Preventas</h2>
 
+        <details class="faq-item">
+            <summary>¿Qué es una preventa?</summary>
+            <div class="faq-answer">
+                <p>Es la reserva anticipada de un coleccionable que aún no está disponible de forma general (por ejemplo, promocionales de cine). Nosotros gestionamos la búsqueda y adquisición cuando el cine o proveedor lo libera.</p>
+                <p>Los productos en preventa suelen estar marcados con la etiqueta <strong>PREVENTA</strong>.</p>
+            </div>
+        </details>
 
+        <details class="faq-item">
+            <summary>¿La comisión de preventa está incluida en el precio?</summary>
+            <div class="faq-answer">
+                <p>Sí. Las preventas incluyen una <strong>comisión de servicio de $100 MXN por producto</strong>, y <strong>el precio publicado ya la incluye</strong>. No se cobran $100 extra después.</p>
+                <p>Esa comisión cubre gestión, apartado, búsqueda, seguimiento y adquisición del coleccionable.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Qué pasa si no consiguen el producto de preventa?</summary>
+            <div class="faq-answer">
+                <p>Si por causas ajenas a nosotros no es posible conseguir el coleccionable, <strong>reembolsamos el 100% de lo pagado</strong>, incluyendo la comisión de servicio de ese producto. No se cobra envío en ese caso.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Puedo cancelar una preventa?</summary>
+            <div class="faq-answer">
+                <p>Si el producto <strong>aún no se ha conseguido</strong>, aplica el reembolso según disponibilidad.</p>
+                <p>Si el producto <strong>ya fue conseguido o asegurado</strong>, la comisión de servicio de $100 MXN por ese artículo <strong>no es reembolsable</strong> en cancelaciones voluntarias del cliente. El resto del importe se maneja según el <a href="preventas.html">aviso legal de preventas</a> (incluye plazos de reembolso).</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Garantizan conseguir todas las piezas si pido varias?</summary>
+            <div class="faq-answer">
+                <p>Hacemos todo lo posible, pero <strong>no se puede garantizar</strong> la totalidad cuando el cine o proveedor limita compras o el inventario es reducido.</p>
+                <p>Si solo se consigue una parte del pedido, recibes esas unidades y se reembolsa el 100% de lo pagado por las que no se lograron (incluida su comisión).</p>
+            </div>
+        </details>
+    </section>
+
+    <!-- MERCADO LIBRE -->
+    <section class="faq-category" data-category="mercadolibre">
+        <h2>🛒 Mercado Libre</h2>
+
+        <details class="faq-item">
+            <summary>¿Tienen tienda en Mercado Libre?</summary>
+            <div class="faq-answer">
+                <p>Sí. También nos encuentras en Mercado Libre:</p>
+                <p>
+                    <a href="https://listado.mercadolibre.com.mx/_CustId_225063561" target="_blank" rel="noopener">
+                        Ver tienda en Mercado Libre
+                    </a>
+                </p>
+                <p class="faq-note">
+                    ⚠️ <strong>Los precios en Mercado Libre son más elevados</strong> por las comisiones de la plataforma.
+                    En esta página web encuentras los mejores precios.
+                </p>
+            </div>
+        </details>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="faq-category" data-category="contacto">
+        <h2>💬 Contacto y ayuda</h2>
+
+        <details class="faq-item">
+            <summary>¿Cómo los contacto?</summary>
+            <div class="faq-answer">
+                <p>El canal principal es <strong>WhatsApp</strong>:</p>
+                <p>
+                    <a href="https://wa.me/524761002824" target="_blank" rel="noopener">
+                        +52 476 100 28 24
+                    </a>
+                </p>
+                <p>También puedes seguirnos o escribirnos por Facebook:
+                    <a href="https://facebook.com/ElSentidoDelCine" target="_blank" rel="noopener">El Sentido del Cine</a>.
+                </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Dónde veo los términos legales?</summary>
+            <div class="faq-answer">
+                <ul>
+                    <li><a href="preventas.html">Aviso legal de preventas</a></li>
+                    <li><a href="aviso-legal-apartado.html">Aviso legal de apartados</a></li>
+                    <li><a href="envios.html">Información de envíos</a></li>
+                    <li><a href="terminos-y-condiciones.html">Términos y condiciones</a></li>
+                    <li><a href="politica-privacidad.html">Política de privacidad</a></li>
+                </ul>
+            </div>
+        </details>
+    </section>
+
+    <div class="faq-cta">
+        <p>¿No encontraste tu respuesta?</p>
+        <a href="https://wa.me/524761002824" class="banner-btn banner-btn-ml" target="_blank" rel="noopener">
+            Escríbenos por WhatsApp
+        </a>
+    </div>
 </main>
 
 <!-- FOOTER -->
@@ -171,7 +345,6 @@
     </div>
 </footer>
 
-<!-- Script mínimo: menú + tema (sin catálogo/carrito) -->
 <script>
     /* Menú hamburguesa */
     (() => {
@@ -194,22 +367,59 @@
       });
     })();
 
-    /* Tema oscuro / claro */
+    /* Tema */
     const btnTheme = document.getElementById("toggleTheme");
     const temaGuardado = localStorage.getItem("tema");
-
     if (temaGuardado === "dark") {
       document.body.classList.add("dark");
       if (btnTheme) btnTheme.textContent = "☀️";
     }
-
     btnTheme?.addEventListener("click", () => {
       document.body.classList.toggle("dark");
       const oscuro = document.body.classList.contains("dark");
       btnTheme.textContent = oscuro ? "☀️" : "🌙";
       localStorage.setItem("tema", oscuro ? "dark" : "light");
     });
+
+    /* Buscador FAQ */
+    (() => {
+      const input = document.getElementById("faqSearch");
+      const info = document.getElementById("faqSearchInfo");
+      if (!input) return;
+
+      const items = [...document.querySelectorAll(".faq-item")];
+      const categories = [...document.querySelectorAll(".faq-category")];
+
+      input.addEventListener("input", () => {
+        const q = input.value.toLowerCase().trim();
+        let visibles = 0;
+
+        items.forEach((item) => {
+          const text = item.textContent.toLowerCase();
+          const match = !q || text.includes(q);
+          item.hidden = !match;
+          if (match) visibles++;
+        });
+
+        categories.forEach((cat) => {
+          const hasVisible = [...cat.querySelectorAll(".faq-item")].some((i) => !i.hidden);
+          cat.hidden = !hasVisible;
+        });
+
+        if (!info) return;
+        if (q) {
+          info.hidden = false;
+          info.textContent =
+            visibles === 0
+              ? `Sin resultados para "${input.value}"`
+              : visibles === 1
+                ? `1 pregunta encontrada`
+                : `${visibles} preguntas encontradas`;
+        } else {
+          info.hidden = true;
+        }
+      });
+    })();
 </script>
 </body>
 </html>
-
