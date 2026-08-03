@@ -2,156 +2,43 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Aviso Legal – Condiciones de Apartado | Mi Tesoro MX</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="description" content="Términos y condiciones de preventas de coleccionables de cine – Mi Tesoro MX.">
+    <title>Preventas | Mi Tesoro MX</title>
     <link rel="stylesheet" href="styles.css">
-
-    <style>
-        /* =============================
-           AVISO LEGAL – APARTADOS
-           (LEGAL STYLE UNIFICADO)
-        ============================= */
-
-        .legal-container {
-          max-width: 900px;
-          margin: 4rem auto;
-          padding: 2.5rem;
-          background: var(--card);
-          border-radius: 14px;
-          border: 1px solid var(--border);
-        }
-
-        .legal-container h1 {
-          font-size: 2rem;
-          margin-bottom: 1.2rem;
-          text-align: center;
-        }
-
-        .legal-container .subtitle {
-          text-align: center;
-          font-size: .95rem;
-          opacity: .7;
-          margin-bottom: 2.5rem;
-        }
-
-        .legal-section {
-          margin-bottom: 2.4rem;
-        }
-
-        .legal-section h2 {
-          font-size: 1.15rem;
-          margin-bottom: .6rem;
-          display: flex;
-          align-items: center;
-          gap: .5rem;
-        }
-
-        .legal-section p {
-          font-size: .95rem;
-          line-height: 1.75;
-          opacity: .9;
-          margin-bottom: .8rem;
-        }
-
-        .legal-highlight {
-          background: rgba(197, 157, 95, .08);
-          border-left: 4px solid var(--accent);
-          padding: 1.2rem 1.3rem;
-          border-radius: 8px;
-          margin: 2rem 0;
-          font-size: .95rem;
-          opacity: .85;
-        }
-
-        .legal-footer {
-          margin-top: 3rem;
-          text-align: center;
-          font-size: .85rem;
-          opacity: .7;
-        }
-
-        @media (max-width: 600px) {
-          .legal-container {
-            padding: 2rem 1.4rem;
-            margin: 3rem 1rem;
-          }
-
-          .legal-container h1 {
-            font-size: 1.6rem;
-          }
-        }
-
-        /* =============================
-   BANNER APARTADOS SUSPENDIDOS
-============================= */
-
-.apartados-banner {
-  background: linear-gradient(135deg, #8b0000, #b22222);
-  color: #fff;
-  max-width: 900px;
-  margin: 2rem auto 0;
-  padding: 1rem 1.4rem;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,.08);
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,.18);
-}
-
-.apartados-banner strong {
-  display: block;
-  font-size: 1.05rem;
-  margin-bottom: .35rem;
-}
-
-.apartados-banner p {
-  margin: 0;
-  font-size: .92rem;
-  line-height: 1.6;
-  opacity: .95;
-}
-
-@media (max-width: 600px) {
-  .apartados-banner {
-    margin: 1.2rem 1rem 0;
-    padding: .95rem 1rem;
-  }
-
-  .apartados-banner strong {
-    font-size: .95rem;
-  }
-
-  .apartados-banner p {
-    font-size: .85rem;
-  }
-}
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<!-- HEADER GLOBAL -->
+<!-- HEADER -->
 <header class="main-header">
     <div class="header-left">
-        <span class="logo-icon">🎬</span>
+        <span class="logo-icon" aria-hidden="true">🎬</span>
         <div class="logo-text">
-            <strong>Mi Tesoro MX</strong>
+            <h1>Mi Tesoro MX</h1>
             <span>Coleccionables de Cine</span>
         </div>
     </div>
-    <button id="menuToggle" class="menu-toggle" aria-label="Abrir menú">
-        ☰
-    </button>
 
-    <nav class="header-center">
+    <button id="menuToggle" class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+    <nav class="header-center" id="mainNav" aria-label="Navegación principal">
         <a href="index.html">Inicio</a>
-        <a href="#catalogo">Catálogo</a>
         <a href="preventas.html">Preventas</a>
         <a href="envios.html">Envíos</a>
         <a href="aviso-legal-apartado.html">Apartados</a>
-        <a href="faq.html">Preguntas Frecuentes</a>
+        <a href="faq.html">FAQ</a>
         <a href="mitesoromx.html">Nosotros</a>
     </nav>
+
+    <div class="header-right">
+        <a href="index.html" class="cart-btn" aria-label="Ir al catálogo" style="text-decoration:none;">
+            🛒 Catálogo
+        </a>
+        <button id="toggleTheme" class="theme-btn" aria-label="Cambiar tema">🌙</button>
+    </div>
 </header>
 <!-- BANNER APARTADOS -->
 
@@ -349,38 +236,58 @@
 
 </main>
 
+<!-- FOOTER -->
 <footer class="footer">
     <div class="footer-links">
         <a href="politica-privacidad.html">Política de Privacidad</a>
         <a href="terminos-y-condiciones.html">Términos y Condiciones</a>
-        <a href="https://facebook.com/ElSentidoDelCine">Facebook</a>
-        <a href="https://wa.me/524761002824">WhatsApp</a>
+        <a href="https://facebook.com/ElSentidoDelCine" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://wa.me/524761002824" target="_blank" rel="noopener">WhatsApp</a>
     </div>
-
     <div class="footer-copy">
-        <p>© 2026 Mi Tesoro MX - Todos los derechos reservados</p>
+        <p>© 2026 Mi Tesoro MX — Todos los derechos reservados</p>
     </div>
 </footer>
+
+<!-- Script mínimo: menú + tema (sin catálogo/carrito) -->
 <script>
-
+    /* Menú hamburguesa */
     (() => {
-  const menuToggle = document.getElementById("menuToggle");
-  const headerMenu = document.querySelector(".header-center");
+      const menuToggle = document.getElementById("menuToggle");
+      const headerMenu = document.querySelector(".header-center");
+      if (!menuToggle || !headerMenu) return;
 
-  if (!menuToggle || !headerMenu) return;
+      menuToggle.addEventListener("click", () => {
+        const abierto = headerMenu.classList.toggle("open");
+        menuToggle.textContent = abierto ? "✕" : "☰";
+        menuToggle.setAttribute("aria-expanded", abierto);
+      });
 
-  menuToggle.addEventListener("click", () => {
-    const abierto = headerMenu.classList.toggle("open");
-    menuToggle.textContent = abierto ? "✕" : "☰";
-  });
+      headerMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          headerMenu.classList.remove("open");
+          menuToggle.textContent = "☰";
+          menuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    })();
 
-  headerMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      headerMenu.classList.remove("open");
-      menuToggle.textContent = "☰";
+    /* Tema oscuro / claro */
+    const btnTheme = document.getElementById("toggleTheme");
+    const temaGuardado = localStorage.getItem("tema");
+
+    if (temaGuardado === "dark") {
+      document.body.classList.add("dark");
+      if (btnTheme) btnTheme.textContent = "☀️";
+    }
+
+    btnTheme?.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      const oscuro = document.body.classList.contains("dark");
+      btnTheme.textContent = oscuro ? "☀️" : "🌙";
+      localStorage.setItem("tema", oscuro ? "dark" : "light");
     });
-  });
-})();
 </script>
 </body>
 </html>
+
