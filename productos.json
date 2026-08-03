@@ -1,19 +1,7 @@
 [
 
-  { "nombre": "Palomera SpiderMan Cinemex", "categoria": "Preventa", "precio": 480, "imagen": "thumbs/peter1.jpeg" ,"badge": "preventa", "stock": 0},
-  { "nombre": "Vaso 3D SpiderMan Cinemex", "categoria": "Preventa", "precio": 380, "imagen": "thumbs/peter2.jpeg" ,"badge": "preventa", "stock": 0},
-  { "nombre": "2 de 4 Vasos Con Figurin SpiderMan Cinemex", "categoria": "Preventa", "precio": 500, "imagen": "thumbs/peter3.jpeg" ,"badge": "preventa", "stock": 0},
-
-  { "nombre": "Palomera SpiderMan Cinepolis", "categoria": "Preventa", "precio": 485, "imagen": "thumbs/peter4.jpeg" ,"badge": "preventa", "stock": 0},
-  { "nombre": "Vaso Modelo 1 SpiderMan Cinepolis", "categoria": "Preventa", "precio": 345, "imagen": "thumbs/peter5.jpeg" ,"badge": "preventa", "stock": 0},
-  { "nombre": "Vaso Modelo 2 SpiderMan Cinepolis", "categoria": "Preventa", "precio": 345, "imagen": "thumbs/peter6.jpeg" ,"badge": "preventa", "stock": 0},
 
   { "nombre": "Vaso SpiderMan Movie Center", "categoria": "Preventa", "precio": 200, "imagen": "thumbs/peter8.jpeg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "Palomera SpiderMan Movie Center", "categoria": "Preventa", "precio": 250, "imagen": "thumbs/peter7.jpeg" ,"badge": "preventa", "stock": 1},
-
-
-
-
 
 
   { "nombre": "Album de Estampas Copa America Panini Model1", "categoria": "Album Estampas", "precio": 50, "imagen": "thumbs/halbum1.png" ,"badge": "ultimo", "stock": 1},
@@ -409,17 +397,23 @@
   { "nombre": "Palomera FastX Movie Center RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 30, "imagen": "thumbs/rapidos6.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Hobbs y Shaw Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 50, "imagen": "thumbs/rapi.png" ,"badge": "ultimo", "stock": 0},
 
-
+  { "nombre": "Postal MacroXE SpiderMan Cinepolis", "categoria": "SpiderMan", "precio": 150, "imagen": "thumbs/spidern25.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Postal 3D SpiderMan Cinepolis", "categoria": "SpiderMan", "precio": 100, "imagen": "thumbs/spidern24.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Palomera SpiderMan Cinepolis", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/spidern2.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Vaso SpiderMan Movie Center", "categoria": "SpiderMan", "precio": 200, "imagen": "thumbs/spidern17.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Vaso Modelo 1 SpiderMan Cinepolis", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/spidern15.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Vaso Modelo 2 SpiderMan Cinepolis", "categoria": "SpiderMan", "precio": 400, "imagen": "thumbs/spidern26.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Vaso 3D SpiderMan Cinemex", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/spidern14.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Peon SpiderMan", "categoria": "SpiderMan", "precio": 150, "imagen": "thumbs/spider30.jpeg" ,"badge": "exclusivo", "stock": 1},
-  { "nombre": "Funko 1560 SpiderMan", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/spider31.jpeg" ,"badge": "exclusivo", "stock": 1},
-  { "nombre": "Vaso SpiderMan Busto Cinemex", "categoria": "SpiderMan", "precio": 300, "imagen": "thumbs/aspiderman14.png" ,"badge": "exclusivo", "stock": 1},
-  { "nombre": "Vaso SpiderMan Busto Cinepolis", "categoria": "SpiderMan", "precio": 300, "imagen": "thumbs/spider1.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Palomera SpiderMan Busto Cinepolis", "categoria": "SpiderMan", "precio": 600, "imagen": "thumbs/spider2.png" ,"badge": "ultimo", "stock":1},
-  { "nombre": "Palomera SpiderMan Cinemex", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/spider3.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "3 Vasos SpiderMan Cinemex Cinepolis", "categoria": "SpiderMan", "precio": 800, "imagen": "thumbs/spider4.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "3 Vasos SpiderMan Cinemex", "categoria": "SpiderMan", "precio": 800, "imagen": "thumbs/spider5.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Palomera SpiderMan Mano Cinepolis", "categoria": "SpiderMan", "precio": 600, "imagen": "thumbs/spider6.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Vaso SpiderMan Cinepolis", "categoria": "SpiderMan", "precio": 150, "imagen": "thumbs/spider7.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Funko 1560 SpiderMan", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/spidern7.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Vaso SpiderMan Busto Cinemex", "categoria": "SpiderMan", "precio": 300, "imagen": "thumbs/spidern20.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Vaso SpiderMan Busto Cinepolis", "categoria": "SpiderMan", "precio": 300, "imagen": "thumbs/spidern19.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Palomera SpiderMan Busto Cinepolis", "categoria": "SpiderMan", "precio": 600, "imagen": "thumbs/spidern22.jpg" ,"badge": "exclusivo", "stock":1},
+  { "nombre": "Palomera SpiderMan Cinemex", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/spidern23.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "5 Vasos SpiderMan Multiverso Cinemex", "categoria": "SpiderMan", "precio": 1000, "imagen": "thumbs/spidern13.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Vaso SpiderMan Multiverso Cinepolis", "categoria": "SpiderMan", "precio": 200, "imagen": "thumbs/spidern16.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Palomera SpiderMan Mano Cinepolis", "categoria": "SpiderMan", "precio": 600, "imagen": "thumbs/spidern21.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Vaso SpiderMan Cinepolis", "categoria": "SpiderMan", "precio": 200, "imagen": "thumbs/spidern18.png" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso SpiderMan Movie Center", "categoria": "SpiderMan", "precio": 200, "imagen": "thumbs/spider8.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko SpiderMan WebMan 1560", "categoria": "SpiderMan", "precio": 250, "imagen": "thumbs/spider9.png" ,"badge": "unico", "stock": 1},
   { "nombre": "Album de Estampas SpiderMan Panini Model1", "categoria": "SpiderMan", "precio": 20, "imagen": "thumbs/aspiderman1.png" ,"badge": "ultimo", "stock": 1},
@@ -431,15 +425,18 @@
   { "nombre": "Figura SpiderMan", "categoria": "SpiderMan", "precio": 150, "imagen": "thumbs/aspiderman7.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Figura Iron Spider", "categoria": "SpiderMan", "precio": 150, "imagen": "thumbs/aspiderman8.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Figura Venom", "categoria": "SpiderMan", "precio": 150, "imagen": "thumbs/aspiderman18.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Funko SpiderMan 574", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/aspiderman12.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Funko SpiderMan 1160", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/aspiderman11.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Funko SpiderGirl 955", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/aspiderman9.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Funko SpiderMan 1159", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/aspiderman10.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Funko SpiderMan 913", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/aspiderman15.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Funko SpiderMan 923", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/aspiderman16.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Funko SpiderMan 395", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/aspiderman17.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Funko SpiderMan 1073", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/aspiderman19.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Funko SpiderMan SE", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/aspiderman20.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Funko SpiderMan 574", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/spidern11.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Funko SpiderMan 1160", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/spidern3.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Funko SpiderGirl 955", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/spidern9.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Funko SpiderMan 1159", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/spidern5.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Funko SpiderMan 913", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/spidern3.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Funko SpiderMan 923", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/spidern12.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Funko SpiderMan 395", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/spidern10.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Funko SpiderMan 1073", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/spidern6.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Funko SpiderMan SE", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/spidern8.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Palomera SpiderMan Movie Center", "categoria": "SpiderMan", "precio": 250, "imagen": "thumbs/spidern1.jpg" ,"badge": "exclusivo", "stock": 0},
+  { "nombre": "Palomera SpiderMan Cinemex", "categoria": "Preventa", "precio": 480, "imagen": "thumbs/peter1.jpeg" ,"badge": "preventa", "stock": 0},
+  { "nombre": "2 de 4 Vasos Con Figurin SpiderMan Cinemex", "categoria": "Preventa", "precio": 500, "imagen": "thumbs/peter3.jpeg" ,"badge": "preventa", "stock": 0},
 
   { "nombre": "Vaso The Mandalorian and Grogu Cinepolis", "categoria": "Star Wars", "precio": 350, "imagen": "thumbs/coleccionable86.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso Rogue One Cinepolis Star Wars", "categoria": "Star Wars", "precio": 100, "imagen": "thumbs/coleccionable83.jpg" ,"badge": "ultimo", "stock": 1},
