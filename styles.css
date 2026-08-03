@@ -510,6 +510,89 @@ body.dark .paso span {
   color: var(--text-muted);
 }
 
+/* ================= BUSCADOR ================= */
+.search-wrap {
+  max-width: 560px;
+  margin: 8px auto 4px;
+  padding: 0 20px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 10px 16px;
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-box:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.15);
+}
+
+.search-icon {
+  font-size: 1rem;
+  opacity: 0.6;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.search-box input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0;
+}
+
+.search-box input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.8;
+}
+
+.search-clear {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.search-clear:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+body.dark .search-clear {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+body.dark .search-clear:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.search-results-info {
+  margin: 10px 0 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
 /* ================= FILTROS ================= */
 .filtros-wrap {
   max-width: 1200px;

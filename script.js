@@ -6,6 +6,8 @@ let productosGlobal = [];
 let productosFiltrados = [];
 let paginaActual = 1;
 const productosPorPagina = 12;
+let categoriaActual = "Todos";
+let textoBusqueda = "";
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
@@ -57,7 +59,7 @@ fetch("productos.json")
     }
   });
 
-/* ---------- FILTROS ---------- */
+/* ---------- FILTROS + BÚSQUEDA ---------- */
 function crearFiltros(productos) {
   const nav = document.getElementById("filtros");
   if (!nav) return;
@@ -69,24 +71,100 @@ function crearFiltros(productos) {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.textContent = cat;
-    if (cat === "Todos") btn.classList.add("active");
+    if (cat === categoriaActual) btn.classList.add("active");
 
     btn.onclick = (e) => {
       document.querySelectorAll("#filtros button").forEach((b) => b.classList.remove("active"));
       e.target.classList.add("active");
-
-      productosFiltrados =
-        cat === "Todos"
-          ? [...productosGlobal]
-          : productosGlobal.filter((p) => p.categoria === cat);
-
-      paginaActual = 1;
-      render();
+      categoriaActual = cat;
+      aplicarFiltros();
     };
 
     nav.appendChild(btn);
   });
 }
+
+function aplicarFiltros() {
+  let lista = [...productosGlobal];
+
+  // Filtro por categoría
+  if (categoriaActual && categoriaActual !== "Todos") {
+    lista = lista.filter((p) => p.categoria === categoriaActual);
+  }
+
+  // Filtro por búsqueda (nombre o categoría)
+  if (textoBusqueda) {
+    const q = textoBusqueda.toLowerCase().trim();
+    lista = lista.filter(
+      (p) =>
+        (p.nombre && p.nombre.toLowerCase().includes(q)) ||
+        (p.categoria && p.categoria.toLowerCase().includes(q)) ||
+        (p.descripcion && p.descripcion.toLowerCase().includes(q))
+    );
+  }
+
+  productosFiltrados = lista;
+  paginaActual = 1;
+  actualizarInfoBusqueda();
+  render();
+}
+
+function actualizarInfoBusqueda() {
+  const info = document.getElementById("searchResultsInfo");
+  const clearBtn = document.getElementById("limpiarBusqueda");
+  if (!info) return;
+
+  if (textoBusqueda) {
+    info.hidden = false;
+    const n = productosFiltrados.length;
+    info.textContent =
+      n === 0
+        ? `Sin resultados para "${textoBusqueda}"`
+        : n === 1
+          ? `1 producto encontrado para "${textoBusqueda}"`
+          : `${n} productos encontrados para "${textoBusqueda}"`;
+  } else {
+    info.hidden = true;
+    info.textContent = "";
+  }
+
+  if (clearBtn) {
+    clearBtn.hidden = !textoBusqueda;
+  }
+}
+
+/* Inicializar buscador */
+(() => {
+  const buscador = document.getElementById("buscador");
+  const clearBtn = document.getElementById("limpiarBusqueda");
+  if (!buscador) return;
+
+  let debounceTimer;
+  buscador.addEventListener("input", () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+      textoBusqueda = buscador.value;
+      aplicarFiltros();
+    }, 200);
+  });
+
+  // Enter → ir al catálogo
+  buscador.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      textoBusqueda = buscador.value;
+      aplicarFiltros();
+      scrollToCatalogo();
+    }
+  });
+
+  clearBtn?.addEventListener("click", () => {
+    buscador.value = "";
+    textoBusqueda = "";
+    aplicarFiltros();
+    buscador.focus();
+  });
+})();
 
 /* ---------- RENDER ---------- */
 function render() {
@@ -104,8 +182,10 @@ function mostrarProductos() {
   const pagina = productosFiltrados.slice(inicio, fin);
 
   if (pagina.length === 0) {
-    catalogo.innerHTML =
-      '<p style="grid-column:1/-1;text-align:center;padding:40px;opacity:.7">No hay productos en esta categoría.</p>';
+    const msg = textoBusqueda
+      ? `No se encontraron productos para "<strong>${escapeHtml(textoBusqueda)}</strong>". Prueba con otro nombre.`
+      : "No hay productos en esta categoría.";
+    catalogo.innerHTML = `<p style="grid-column:1/-1;text-align:center;padding:40px;opacity:.75">${msg}</p>`;
     return;
   }
 
