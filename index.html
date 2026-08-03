@@ -38,6 +38,8 @@
         <a href="envios.html">Envíos</a>
         <a href="aviso-legal-apartado.html">Apartados</a>
         <a href="faq.html">FAQ</a>
+        <a href="preventas-activas.html">Preventas activas</a>
+        <a href="blog.html">Blog</a>
         <a href="mitesoromx.html">Nosotros</a>
     </nav>
 
@@ -48,6 +50,11 @@
         <button id="toggleTheme" class="theme-btn" aria-label="Cambiar tema">🌙</button>
     </div>
 </header>
+
+<!-- HORARIO -->
+<div class="horario-bar">
+    💬 WhatsApp: lun–sáb 10:00–18:00 · Dom 11:00–14:00 (hora Centro)
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -74,7 +81,7 @@
         <p>Aparta hoy vasos, palomeras y coleccionables antes de que se agoten.</p>
         <a href="preventas.html" class="banner-btn">Ver términos de preventa</a>
     </div>
-</section> -->
+</section>-->
 
 <section class="banner-envio-gratis" aria-label="Envío gratis">
     <div class="banner-content">
@@ -156,7 +163,18 @@
     <p id="searchResultsInfo" class="search-results-info" hidden></p>
 </div>
 
-<!-- FILTROS -->
+<!-- FILTROS EXTRA -->
+<div class="filtros-extra-wrap">
+    <div class="filtros-extra" id="filtrosExtra" role="group" aria-label="Filtros rápidos">
+        <button type="button" class="filtro-extra active" data-filtro="todos">Todos</button>
+        <button type="button" class="filtro-extra" data-filtro="disponibles">Disponibles</button>
+        <button type="button" class="filtro-extra" data-filtro="preventa">Preventa</button>
+        <button type="button" class="filtro-extra" data-filtro="oferta">Oferta</button>
+        <button type="button" class="filtro-extra" data-filtro="ultima">Última pieza</button>
+    </div>
+</div>
+
+<!-- FILTROS CATEGORÍA -->
 <div class="filtros-wrap">
     <nav id="filtros" class="filtros" aria-label="Filtros por categoría"></nav>
     <button class="filtros-toggle" id="toggleFiltros" type="button">
@@ -170,9 +188,45 @@
     <div id="paginacion" class="paginacion" aria-label="Paginación"></div>
 </main>
 
-<!-- TESTIMONIOS -->
+<!-- CÓMO PAGAR -->
+<section class="como-pagar" id="como-pagar">
+    <h2>¿Cómo pagar?</h2>
+    <p class="como-pagar-intro">Proceso claro y seguro. No pedimos datos de tarjeta.</p>
+    <div class="pasos-pago">
+        <div class="paso-pago">
+            <span class="paso-num">1</span>
+            <strong>Confirma por WhatsApp</strong>
+            <p>Envías tu carrito y validamos disponibilidad.</p>
+        </div>
+        <div class="paso-pago">
+            <span class="paso-num">2</span>
+            <strong>Te indicamos el pago</strong>
+            <p>Transferencia bancaria o Depósito en OXXO.</p>
+        </div>
+        <div class="paso-pago">
+            <span class="paso-num">3</span>
+            <strong>Envías tu comprobante</strong>
+            <p>Por el mismo chat de WhatsApp.</p>
+        </div>
+        <div class="paso-pago">
+            <span class="paso-num">4</span>
+            <strong>Confirmamos y enviamos</strong>
+            <p>Validamos el pago y preparamos tu pedido.</p>
+        </div>
+    </div>
+    <p class="como-pagar-note">Horario de validación: lun–sáb 10:00–18:00. Pagos fuera de horario se confirman al siguiente día hábil.</p>
+</section>
+
+<!-- TESTIMONIOS / PRUEBA SOCIAL -->
 <section class="testimonios">
-    <h2>Opiniones de clientes</h2>
+    <h2>Lo que dicen nuestros clientes</h2>
+    <p class="testimonios-sub">Coleccionistas reales de todo México</p>
+    <div class="social-stats">
+        <div class="social-stat"><strong>+500</strong><span>coleccionables</span></div>
+        <div class="social-stat"><strong>Envíos</strong><span>a todo México</span></div>
+        <div class="social-stat"><strong>WhatsApp</strong><span>atención directa</span></div>
+        <div class="social-stat"><strong>Originales</strong><span>100% cine</span></div>
+    </div>
     <div class="testimonios-grid">
         <article class="testimonio">
             <div class="stars">⭐⭐⭐⭐⭐</div>
@@ -189,6 +243,16 @@
             <p>"Gracias Mi Tesoro MX por conseguirme la palomera de Taylor Swift. Llegó en buen estado y súper confiable."</p>
             <span>— Barajas Melina, Querétaro</span>
         </article>
+        <article class="testimonio">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>"Excelente trato y muy honestos con las preventas. Me avisaron de todo el proceso."</p>
+            <span>— Cliente verificado, CDMX</span>
+        </article>
+        <article class="testimonio">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>"El empaque venía súper protegido. La palomera llegó impecable. Ya van varios pedidos con ellos."</p>
+            <span>— Coleccionista, Monterrey</span>
+        </article>
     </div>
     <button class="ver-mas-opiniones" id="toggleOpiniones" type="button">
         Ver más opiniones ▾
@@ -200,9 +264,13 @@
     <div class="footer-links">
         <a href="politica-privacidad.html">Política de Privacidad</a>
         <a href="terminos-y-condiciones.html">Términos y Condiciones</a>
+        <a href="faq.html">FAQ</a>
+        <a href="blog.html">Blog</a>
+        <a href="mitesoromx.html">Nosotros</a>
         <a href="https://facebook.com/ElSentidoDelCine" target="_blank" rel="noopener">Facebook</a>
         <a href="https://wa.me/524761002824" target="_blank" rel="noopener">WhatsApp</a>
     </div>
+    <p class="footer-horario">💬 Atención WhatsApp: lun–sáb 10:00–20:00 · Dom 11:00–18:00</p>
     <div class="footer-copy">
         <p>© 2026 Mi Tesoro MX — Todos los derechos reservados</p>
     </div>
@@ -220,9 +288,22 @@
     <div class="cart-footer">
         <p id="cartTotal">Tu carrito está vacío</p>
 
+        <!-- Envío gratis dinámico -->
+        <div id="envioGratisBar" class="envio-gratis-bar" hidden>
+            <div class="envio-gratis-text" id="envioGratisText"></div>
+            <div class="envio-gratis-track">
+                <div class="envio-gratis-fill" id="envioGratisFill"></div>
+            </div>
+        </div>
+
         <p class="cart-legal-mini">
-            📌 ¿Quieres pagar después? Puedes apartar con anticipo del 30%.
+            📌 ¿Quieres pagar después? Puedes apartar con anticipo del <strong>30%</strong>.
             <a href="aviso-legal-apartado.html" target="_blank">Ver condiciones</a>
+        </p>
+
+        <p class="cart-legal-mini cart-legal-resumen">
+            🕷️ Preventas: comisión $100 <strong>ya incluida</strong> en el precio.
+            <a href="preventas.html" target="_blank">Más info</a>
         </p>
 
         <div class="pasos-carrito">

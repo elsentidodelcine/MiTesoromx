@@ -8,6 +8,10 @@ let paginaActual = 1;
 const productosPorPagina = 12;
 let categoriaActual = "Todos";
 let textoBusqueda = "";
+let filtroExtra = "todos"; // todos | disponibles | preventa | oferta | ultima
+
+const ENVIO_GRATIS_MIN = 550; // MXN — Correos de México, productos participantes
+const WA_NUMERO = "524761002824";
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
@@ -84,6 +88,10 @@ function crearFiltros(productos) {
   });
 }
 
+function badgeTexto(p) {
+  return (p.badge || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
 function aplicarFiltros() {
   let lista = [...productosGlobal];
 
@@ -92,7 +100,24 @@ function aplicarFiltros() {
     lista = lista.filter((p) => p.categoria === categoriaActual);
   }
 
-  // Filtro por búsqueda (nombre o categoría)
+  // Filtros extra
+  if (filtroExtra === "disponibles") {
+    lista = lista.filter((p) => p.stock > 0 && p.precio != 9 && p.precio != 3);
+  } else if (filtroExtra === "preventa") {
+    lista = lista.filter((p) => badgeTexto(p).includes("preventa"));
+  } else if (filtroExtra === "oferta") {
+    lista = lista.filter((p) => badgeTexto(p).includes("oferta"));
+  } else if (filtroExtra === "ultima") {
+    lista = lista.filter(
+      (p) =>
+        p.stock === 1 ||
+        badgeTexto(p).includes("ultima") ||
+        badgeTexto(p).includes("último") ||
+        badgeTexto(p).includes("ultimo")
+    );
+  }
+
+  // Filtro por búsqueda
   if (textoBusqueda) {
     const q = textoBusqueda.toLowerCase().trim();
     lista = lista.filter(
@@ -108,6 +133,21 @@ function aplicarFiltros() {
   actualizarInfoBusqueda();
   render();
 }
+
+/* Filtros extra (Disponibles / Preventa / Oferta / Última) */
+(() => {
+  const cont = document.getElementById("filtrosExtra");
+  if (!cont) return;
+  cont.querySelectorAll(".filtro-extra").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      cont.querySelectorAll(".filtro-extra").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      filtroExtra = btn.dataset.filtro || "todos";
+      aplicarFiltros();
+      scrollToCatalogo();
+    });
+  });
+})();
 
 function actualizarInfoBusqueda() {
   const info = document.getElementById("searchResultsInfo");
@@ -222,7 +262,14 @@ function mostrarProductos() {
           accionHTML = `<button class="boton" type="button">Agregar al carrito</button>`;
         }
       } else {
-        accionHTML = `<span class="sin-stock">AGOTADO</span>`;
+        const msgAviso = encodeURIComponent(
+          `Hola, me gustaría que me avisen cuando vuelva a haber stock de:\n*${p.nombre}*\n\nGracias.`
+        );
+        accionHTML = `
+          <span class="sin-stock">AGOTADO</span>
+          <a class="btn-avisarme" href="https://wa.me/${WA_NUMERO}?text=${msgAviso}" target="_blank" rel="noopener">
+            🔔 Avisarme por WhatsApp
+          </a>`;
       }
     }
 
@@ -390,6 +437,7 @@ function actualizarCarritoUI() {
   if (carrito.length === 0) {
     totalEl.textContent = "Tu carrito está vacío";
     actualizarWhats(0);
+    actualizarEnvioGratisBar(0);
     actualizarEstadoVaciar();
     return;
   }
@@ -423,6 +471,7 @@ function actualizarCarritoUI() {
 
   totalEl.textContent = `Total: $${total.toLocaleString("es-MX")} MXN`;
   actualizarWhats(total);
+  actualizarEnvioGratisBar(total);
 
   // Eventos cantidad
   contenedor.querySelectorAll(".cart-qty-btn").forEach((btn) => {
@@ -558,6 +607,32 @@ function actualizarContadorCarrito() {
 function actualizarEstadoVaciar() {
   if (btnVaciarCarrito) {
     btnVaciarCarrito.disabled = carrito.length === 0;
+  }
+}
+
+/* Barra envío gratis ($550 Correos, productos participantes) */
+function actualizarEnvioGratisBar(total) {
+  const bar = document.getElementById("envioGratisBar");
+  const text = document.getElementById("envioGratisText");
+  const fill = document.getElementById("envioGratisFill");
+  if (!bar || !text || !fill) return;
+
+  if (!total || total <= 0) {
+    bar.hidden = true;
+    return;
+  }
+
+  bar.hidden = false;
+  const pct = Math.min(100, Math.round((total / ENVIO_GRATIS_MIN) * 100));
+  fill.style.width = pct + "%";
+
+  if (total >= ENVIO_GRATIS_MIN) {
+    text.innerHTML = `🎉 ¡Posible <strong>envío gratis</strong> por Correos! (productos participantes)`;
+    fill.classList.add("completo");
+  } else {
+    const falta = ENVIO_GRATIS_MIN - total;
+    text.innerHTML = `Te faltan <strong>$${falta.toLocaleString("es-MX")} MXN</strong> para envío gratis por Correos*`;
+    fill.classList.remove("completo");
   }
 }
 
