@@ -47,6 +47,10 @@
   { "nombre": "Vaso Caza Fantasma Movie Center CazaFantasmas", "categoria": "CazaFantasmas", "precio": 30, "imagen": "thumbs/fantasma1.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Leds Caza Fantasma Cinepolis CazaFantasmas", "categoria": "CazaFantasmas", "precio": 150, "imagen": "thumbs/fantasma2.png" ,"badge": "ultimo", "stock": 0},
 
+  { "nombre": "Villa Navideña Coca Cola", "categoria": "CocaCola", "precio": 120, "imagen": "thumbs/coca.png" ,"badge": "ultimo", "stock": 0},
+  { "nombre": "2 Vasos Coca Cola Navideño Cinemex", "categoria": "CocaCola", "precio": 700, "imagen": "thumbs/coca30.jpeg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "3 Figuras Coca Cola Navideña", "categoria": "CocaCola", "precio": 100, "imagen": "thumbs/vintage10.jpeg" ,"badge": "exclusivo", "stock": 1},
+
 
   { "nombre": "Vaso Supergirl Cinepolis DC", "categoria": "DC", "precio": 450, "imagen": "thumbs/coleccionable110.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso Supergirl Cinemex DC", "categoria": "DC", "precio": 380, "imagen": "thumbs/coleccionable111.jpg" ,"badge": "exclusivo", "stock": 1},
@@ -413,9 +417,8 @@
   { "nombre": "5 Vasos SpiderMan Multiverso Cinemex", "categoria": "SpiderMan", "precio": 1000, "imagen": "thumbs/spidern13.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso SpiderMan Multiverso Cinepolis", "categoria": "SpiderMan", "precio": 200, "imagen": "thumbs/spidern16.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Palomera SpiderMan Mano Cinepolis", "categoria": "SpiderMan", "precio": 600, "imagen": "thumbs/spidern21.jpg" ,"badge": "exclusivo", "stock": 1},
-  { "nombre": "Vaso SpiderMan Cinepolis", "categoria": "SpiderMan", "precio": 200, "imagen": "thumbs/spidern18.png" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Vaso SpiderMan Cinepolis", "categoria": "SpiderMan", "precio": 200, "imagen": "thumbs/spidern18.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso SpiderMan Movie Center", "categoria": "SpiderMan", "precio": 200, "imagen": "thumbs/spider8.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Funko SpiderMan WebMan 1560", "categoria": "SpiderMan", "precio": 250, "imagen": "thumbs/spider9.png" ,"badge": "unico", "stock": 1},
   { "nombre": "Album de Estampas SpiderMan Panini Model1", "categoria": "SpiderMan", "precio": 20, "imagen": "thumbs/aspiderman1.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Album de Estampas SpiderMan Panini Model2", "categoria": "SpiderMan", "precio": 25, "imagen": "thumbs/aspiderman2.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Album de Estampas SpiderMan Panini Model3", "categoria": "SpiderMan", "precio": 50, "imagen": "thumbs/aspiderman3.png" ,"badge": "ultimo", "stock": 1},
@@ -435,8 +438,8 @@
   { "nombre": "Funko SpiderMan 1073", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/spidern6.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Funko SpiderMan SE", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/spidern8.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Palomera SpiderMan Movie Center", "categoria": "SpiderMan", "precio": 250, "imagen": "thumbs/spidern1.jpg" ,"badge": "exclusivo", "stock": 0},
-  { "nombre": "Palomera SpiderMan Cinemex", "categoria": "Preventa", "precio": 480, "imagen": "thumbs/peter1.jpeg" ,"badge": "preventa", "stock": 0},
-  { "nombre": "2 de 4 Vasos Con Figurin SpiderMan Cinemex", "categoria": "Preventa", "precio": 500, "imagen": "thumbs/peter3.jpeg" ,"badge": "preventa", "stock": 0},
+  { "nombre": "Palomera SpiderMan Cinemex", "categoria": "SpiderMan", "precio": 480, "imagen": "thumbs/peter1.jpeg" ,"badge": "preventa", "stock": 0},
+  { "nombre": "2 de 4 Vasos Con Figurin SpiderMan Cinemex", "categoria": "SpiderMan", "precio": 500, "imagen": "thumbs/peter3.jpeg" ,"badge": "preventa", "stock": 0},
 
   { "nombre": "Vaso The Mandalorian and Grogu Cinepolis", "categoria": "Star Wars", "precio": 350, "imagen": "thumbs/coleccionable86.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso Rogue One Cinepolis Star Wars", "categoria": "Star Wars", "precio": 100, "imagen": "thumbs/coleccionable83.jpg" ,"badge": "ultimo", "stock": 1},
@@ -496,10 +499,6 @@
   { "nombre": "Album de Estampas Assassins Creed Panini Model1", "categoria": "Videojuegos", "precio": 50, "imagen": "thumbs/halbum10.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Assassins Creed Cinepolis", "categoria": "Videojuegos", "precio": 80, "imagen": "thumbs/coleccionable70.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Figura Mortal Kombat 11 Command Spawn", "categoria": "Videojuegos", "precio": 1500, "imagen": "thumbs/ifunko13.png" ,"badge": "ultimo", "stock": 1},
-
-  { "nombre": "Villa Navideña Coca Cola", "categoria": "CocaCola", "precio": 120, "imagen": "thumbs/coca.png" ,"badge": "ultimo", "stock": 0},
-  { "nombre": "2 Vasos Coca Cola Navideño Cinemex", "categoria": "CocaCola", "precio": 700, "imagen": "thumbs/coca30.jpeg" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "3 Figuras Coca Cola Navideña", "categoria": "CocaCola", "precio": 100, "imagen": "thumbs/vintage10.jpeg" ,"badge": "exclusivo", "stock": 1},
 
   { "nombre": "Nintendo 64", "categoria": "Vintage", "precio": 5000, "imagen": "thumbs/nintendo.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "5 Figuras Alien Remix Mattel", "categoria": "Vintage", "precio": 1000, "imagen": "thumbs/jfigura3.png" ,"badge": "ultimo", "stock": 1},
