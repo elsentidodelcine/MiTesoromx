@@ -434,8 +434,8 @@
   { "nombre": "Funko SpiderMan 1073", "categoria": "SpiderMan", "precio": 500, "imagen": "imgs/spidern6.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Funko SpiderMan SE", "categoria": "SpiderMan", "precio": 500, "imagen": "imgs/spidern8.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Palomera SpiderMan Movie Center", "categoria": "SpiderMan", "precio": 250, "imagen": "imgs/spidern1.jpg" ,"badge": "exclusivo", "stock": 0},
-  { "nombre": "Palomera SpiderMan Cinemex", "categoria": "SpiderMan", "precio": 480, "imagen": "imgs/peter1.jpeg" ,"badge": "preventa", "stock": 0},
-  { "nombre": "2 de 4 Vasos Con Figurin SpiderMan Cinemex", "categoria": "SpiderMan", "precio": 500, "imagen": "imgs/peter3.jpeg" ,"badge": "preventa", "stock": 0},
+  { "nombre": "Palomera SpiderMan Cinemex", "categoria": "SpiderMan", "precio": 480, "imagen": "imgs/peter1.jpeg" ,"badge": "SpiderMan", "stock": 0},
+  { "nombre": "2 de 4 Vasos Con Figurin SpiderMan Cinemex", "categoria": "SpiderMan", "precio": 500, "imagen": "imgs/peter3.jpeg" ,"badge": "SpiderMan", "stock": 0},
 
   { "nombre": "Vaso The Mandalorian and Grogu Cinepolis", "categoria": "Star Wars", "precio": 350, "imagen": "imgs/coleccionable86.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso Rogue One Cinepolis Star Wars", "categoria": "Star Wars", "precio": 100, "imagen": "imgs/coleccionable83.jpg" ,"badge": "ultimo", "stock": 1},

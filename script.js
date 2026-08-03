@@ -100,6 +100,7 @@ function aplicarFiltros() {
     lista = lista.filter((p) => p.categoria === categoriaActual);
   }
 
+   // 9 = Precio proximamente
   // Filtros extra
   if (filtroExtra === "disponibles") {
     lista = lista.filter((p) => p.stock > 0 && p.precio != 9 && p.precio != 3);
@@ -108,6 +109,15 @@ function aplicarFiltros() {
   } else if (filtroExtra === "oferta") {
     lista = lista.filter((p) => badgeTexto(p).includes("oferta"));
   } else if (filtroExtra === "ultima") {
+    lista = lista.filter((p) => badgeTexto(p).includes("ultimo"));
+  } else if (filtroExtra === "exclusivo") {
+        lista = lista.filter((p) => badgeTexto(p).includes("exclusivo"));
+  } else if (filtroExtra === "nuevo") {
+        lista = lista.filter((p) => badgeTexto(p).includes("nuevo"));
+  }
+
+
+  /*else if (filtroExtra === "ultima") {
     lista = lista.filter(
       (p) =>
         p.stock === 1 ||
@@ -115,7 +125,7 @@ function aplicarFiltros() {
         badgeTexto(p).includes("último") ||
         badgeTexto(p).includes("ultimo")
     );
-  }
+  }*/
 
   // Filtro por búsqueda
   if (textoBusqueda) {
