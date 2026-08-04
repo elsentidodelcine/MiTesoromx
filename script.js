@@ -9,6 +9,7 @@ const productosPorPagina = 12;
 let categoriaActual = "Todos";
 let textoBusqueda = "";
 let filtroExtra = "todos"; // todos | disponibles | preventa | oferta | ultima
+let ordenActual = "default";
 
 const ENVIO_GRATIS_MIN = 550; // MXN — Correos de México, productos participantes
 const WA_NUMERO = "524761002824";
@@ -100,32 +101,20 @@ function aplicarFiltros() {
     lista = lista.filter((p) => p.categoria === categoriaActual);
   }
 
-   // 9 = Precio proximamente
-  // Filtros extra
-  if (filtroExtra === "disponibles") {
-    lista = lista.filter((p) => p.stock > 0 && p.precio != 9 && p.precio != 3);
-  } else if (filtroExtra === "preventa") {
-    lista = lista.filter((p) => badgeTexto(p).includes("preventa"));
-  } else if (filtroExtra === "oferta") {
-    lista = lista.filter((p) => badgeTexto(p).includes("oferta"));
-  } else if (filtroExtra === "ultima") {
-    lista = lista.filter((p) => badgeTexto(p).includes("ultimo"));
-  } else if (filtroExtra === "exclusivo") {
-        lista = lista.filter((p) => badgeTexto(p).includes("exclusivo"));
-  } else if (filtroExtra === "nuevo") {
-        lista = lista.filter((p) => badgeTexto(p).includes("nuevo"));
-  }
-
-
-  /*else if (filtroExtra === "ultima") {
-    lista = lista.filter(
-      (p) =>
-        p.stock === 1 ||
-        badgeTexto(p).includes("ultima") ||
-        badgeTexto(p).includes("último") ||
-        badgeTexto(p).includes("ultimo")
-    );
-  }*/
+ / Filtros extra
+   if (filtroExtra === "disponibles") {
+     lista = lista.filter((p) => p.stock > 0 && p.precio != 9 && p.precio != 3);
+   } else if (filtroExtra === "preventa") {
+     lista = lista.filter((p) => badgeTexto(p).includes("preventa"));
+   } else if (filtroExtra === "oferta") {
+     lista = lista.filter((p) => badgeTexto(p).includes("oferta"));
+   } else if (filtroExtra === "ultima") {
+     lista = lista.filter((p) => badgeTexto(p).includes("ultimo"));
+   } else if (filtroExtra === "exclusivo") {
+         lista = lista.filter((p) => badgeTexto(p).includes("exclusivo"));
+   } else if (filtroExtra === "nuevo") {
+         lista = lista.filter((p) => badgeTexto(p).includes("nuevo"));
+   }
 
   // Filtro por búsqueda
   if (textoBusqueda) {
@@ -138,11 +127,48 @@ function aplicarFiltros() {
     );
   }
 
+  // Ordenar
+  lista = ordenarLista(lista);
+
   productosFiltrados = lista;
   paginaActual = 1;
   actualizarInfoBusqueda();
   render();
 }
+
+function ordenarLista(lista) {
+  const arr = [...lista];
+  switch (ordenActual) {
+    case "precio-asc":
+      return arr.sort((a, b) => Number(a.precio) - Number(b.precio));
+    case "precio-desc":
+      return arr.sort((a, b) => Number(b.precio) - Number(a.precio));
+    case "nombre-asc":
+      return arr.sort((a, b) => (a.nombre || "").localeCompare(b.nombre || "", "es"));
+    case "nombre-desc":
+      return arr.sort((a, b) => (b.nombre || "").localeCompare(a.nombre || "", "es"));
+    case "stock-asc":
+      // Últimas piezas primero (stock bajo, pero > 0 arriba; agotados al final)
+      return arr.sort((a, b) => {
+        const sa = a.stock > 0 ? a.stock : 9999;
+        const sb = b.stock > 0 ? b.stock : 9999;
+        return sa - sb;
+      });
+    default:
+      return arr;
+  }
+}
+
+/* Select ordenar */
+(() => {
+  const sel = document.getElementById("ordenar");
+  if (!sel) return;
+  sel.addEventListener("change", () => {
+    ordenActual = sel.value || "default";
+    aplicarFiltros();
+    scrollToCatalogo();
+  });
+})();
 
 /* Filtros extra (Disponibles / Preventa / Oferta / Última) */
 (() => {
@@ -244,7 +270,13 @@ function mostrarProductos() {
     card.className = "producto";
     card.dataset.nombre = p.nombre;
 
-    const thumb = p.imagen ? p.imagen.replace("imgs/", "thumbs/") : "";
+    // Rutas de imagen:
+    // - En el catálogo (rápido): siempre thumbs/
+    // - Al hacer clic (completa): siempre imgs/
+    // Acepta que en el JSON pongas "imgs/..." o "thumbs/..."
+    const rutas = resolverRutasImagen(p.imagen);
+    const thumb = rutas.thumb;
+    const fullImg = rutas.full;
     const badgeClass = p.badge
       ? p.badge
           .toLowerCase()
@@ -294,8 +326,8 @@ function mostrarProductos() {
           decoding="async"
           width="300"
           height="300"
-          data-full="${p.imagen || ""}"
-          onerror="this.src='imgs/placeholder.png'"
+          data-full="${fullImg}"
+          onerror="this.onerror=null;this.src='${fullImg || "imgs/placeholder.png"}'"
         >
       </div>
       <div class="info">
@@ -745,14 +777,32 @@ btnTheme?.addEventListener("click", () => {
   localStorage.setItem("tema", oscuro ? "dark" : "light");
 });
 
-/* ---------- MODAL IMAGEN (versión completa, sin recorte) ---------- */
+/* ---------- IMÁGENES: thumbs (rápido) vs imgs (completa) ---------- */
+function resolverRutasImagen(ruta) {
+  if (!ruta) return { thumb: "", full: "" };
+
+  let full = ruta;
+  let thumb = ruta;
+
+  // Si viene de thumbs/ → la completa está en imgs/
+  if (/thumbs\//i.test(ruta)) {
+    full = ruta.replace(/thumbs\//i, "imgs/");
+    thumb = ruta;
+  } else if (/imgs\//i.test(ruta)) {
+    // Si viene de imgs/ → el thumb está en thumbs/
+    full = ruta;
+    thumb = ruta.replace(/imgs\//i, "thumbs/");
+  } else {
+    // Sin carpeta: asumimos que el archivo está en ambas con el mismo nombre
+    full = "imgs/" + ruta.replace(/^\/+/, "");
+    thumb = "thumbs/" + ruta.replace(/^\/+/, "");
+  }
+
+  return { thumb, full };
+}
+
 function toFullImageUrl(src) {
-  if (!src) return "";
-  // Nunca abrir el thumbnail: siempre la versión de imgs/
-  let full = src;
-  full = full.replace(/\/thumbs\//g, "/imgs/");
-  full = full.replace(/thumbs\//g, "imgs/");
-  return full;
+  return resolverRutasImagen(src).full || src || "";
 }
 
 function openImageModal(src) {
@@ -762,17 +812,19 @@ function openImageModal(src) {
   modalImage.src = fullSrc;
   modalImage.alt = "Imagen completa del producto";
 
-  // Por si la full falla, intentar el src original
+  // Si no existe imgs/..., no caigas al thumb recortado si podemos evitarlo:
+  // solo usa el src original como último recurso
   modalImage.onerror = () => {
-    if (modalImage.src !== src && src) {
-      modalImage.onerror = null;
+    modalImage.onerror = null;
+    // Intentar sin cambiar carpeta por si la ruta ya era válida
+    if (src && modalImage.src !== src) {
       modalImage.src = src;
     }
   };
 
   imageModal.classList.add("show");
   imageModal.style.display = "flex";
-  document.body.style.overflow = "hidden"; // evita scroll del fondo
+  document.body.style.overflow = "hidden";
 }
 
 function closeImageModalFn() {
@@ -879,3 +931,61 @@ document.addEventListener("touchend", (e) => {
     item.style.transform = "";
   }
 });
+
+/* ---------- VOLVER ARRIBA ---------- */
+(() => {
+  const btn = document.getElementById("btnVolverArriba");
+  if (!btn) return;
+
+  const toggle = () => {
+    if (window.scrollY > 400) {
+      btn.hidden = false;
+      btn.classList.add("visible");
+    } else {
+      btn.classList.remove("visible");
+      // pequeño delay para que la animación termine antes de hidden
+      setTimeout(() => {
+        if (window.scrollY <= 400) btn.hidden = true;
+      }, 200);
+    }
+  };
+
+  window.addEventListener("scroll", toggle, { passive: true });
+  toggle();
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+})();
+
+/* ---------- RECORDATORIO DE CARRITO ---------- */
+(() => {
+  // Solo si hay items guardados al cargar la página
+  if (!carrito || carrito.length === 0) return;
+
+  const totalItems = carrito.reduce((acc, p) => acc + (p.cantidad || 1), 0);
+  if (totalItems <= 0) return;
+
+  // Evitar molestar en cada refresh de la misma sesión
+  const key = "carritoRecordatorioShown";
+  if (sessionStorage.getItem(key)) return;
+  sessionStorage.setItem(key, "1");
+
+  // Esperar a que el loader se oculte
+  setTimeout(() => {
+    if (!toast || !toastText) return;
+    if (toastTitle) toastTitle.textContent = "🛒 Carrito guardado";
+    toastText.textContent =
+      totalItems === 1
+        ? "Tienes 1 producto en tu carrito"
+        : `Tienes ${totalItems} productos en tu carrito`;
+    toast.style.display = "block";
+    toast.classList.add("show");
+
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(() => {
+      toast.classList.remove("show");
+      toast.style.display = "none";
+    }, 5000);
+  }, 1200);
+})();
