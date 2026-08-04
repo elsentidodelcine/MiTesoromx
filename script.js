@@ -1021,7 +1021,7 @@ const PREVENTAS_ACTIVAS = [
     link: "preventas.html",
     linkTexto: "Ver términos de preventa",
     tema: "paw",
-  },
+  },/*
   {
     id: "nueva-peli",
     active: true, // ← la que se muestra
@@ -1030,8 +1030,8 @@ const PREVENTAS_ACTIVAS = [
     texto: "Proximamente.",
     link: "preventas.html",
     linkTexto: "Ver términos de preventa",
-    tema: "generic", // o "marvel" o "paw"
-  },
+    tema: "marvel", // o "marvel" o "paw"
+  },*/
 ];
 
 function renderBannerPreventa() {
