@@ -101,7 +101,7 @@ function aplicarFiltros() {
     lista = lista.filter((p) => p.categoria === categoriaActual);
   }
 
- / Filtros extra
+ // Filtros extra
    if (filtroExtra === "disponibles") {
      lista = lista.filter((p) => p.stock > 0 && p.precio != 9 && p.precio != 3);
    } else if (filtroExtra === "preventa") {
