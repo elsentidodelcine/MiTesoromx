@@ -9,21 +9,23 @@
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
 
-    <!-- Open Graph (WhatsApp / Facebook) -->
+    <!-- Open Graph (WhatsApp / Facebook / Telegram) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Mi Tesoro MX | Coleccionables de Cine">
     <meta property="og:description" content="Palomeras, vasos, Funkos y ediciones exclusivas. Envíos a todo México. Mejores precios que en Mercado Libre.">
     <meta property="og:url" content="https://mitesoromx.com/">
     <meta property="og:locale" content="es_MX">
     <meta property="og:site_name" content="Mi Tesoro MX">
-    <!-- Si tienes una imagen 1200x630, descomenta y pon la URL real:
+    <!-- Sube og-image.jpg (1200x630 px) a la raíz del sitio y ajusta la URL si tu dominio es otro -->
     <meta property="og:image" content="https://mitesoromx.com/og-image.jpg">
-    -->
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mi Tesoro MX | Coleccionables de Cine">
     <meta name="twitter:description" content="Palomeras, vasos, Funkos y ediciones exclusivas. Envíos a todo México.">
+    <meta name="twitter:image" content="https://mitesoromx.com/og-image.jpg">
 
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -92,18 +94,8 @@
     </div>
 </section>
 
-<!-- BANNERS PROMO -->
-<section class="banner-pawpatrol" aria-label="Preventa PAW Patrol">
-    <div class="banner-content">
-        <h2>🦴 Preventa PAW Patrol: The Dino Movie</h2>
-        <p>
-            Aparta hoy los coleccionables antes de que se agoten.
-        </p>
-        <a href="preventas.html" class="banner-btn banner-btn-paw">
-            Ver términos de preventa
-        </a>
-    </div>
-</section>
+<!-- BANNER PREVENTA ACTIVA (se llena con JS – fácil de actualizar) -->
+<section id="bannerPreventa" class="banner-preventa" aria-label="Preventa activa" hidden></section>
 
 <section class="banner-envio-gratis" aria-label="Envío gratis">
     <div class="banner-content">
@@ -378,10 +370,13 @@
 </aside>
 <div id="cartOverlay"></div>
 
-<!-- WHATSAPP FLOAT -->
-<a id="whatsappFloat" href="https://wa.me/524761002824" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-    💬
-</a>
+<!-- WHATSAPP FLOAT + estado de horario -->
+<div id="waFloatWrap" class="wa-float-wrap">
+    <span id="waStatus" class="wa-status" hidden></span>
+    <a id="whatsappFloat" href="https://wa.me/524761002824" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+        💬
+    </a>
+</div>
 
 <!-- VOLVER ARRIBA -->
 <button id="btnVolverArriba" class="btn-volver-arriba" type="button" aria-label="Volver arriba" hidden>

@@ -212,7 +212,6 @@
 
   { "nombre": "Vaso Mario Bros Movie Center", "categoria": "Mario Bros", "precio": 100, "imagen": "imgs/coleccionable82.jpg" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Mario Bros Cinemex", "categoria": "Mario Bros", "precio": 30, "imagen": "imgs/coleccionable80.jpg" ,"badge": "oferta", "stock": 1, "descripcion":  "Despintado de atrás"},
-  { "nombre": "Vaso Mario Bros Cinepolis", "categoria": "Mario Bros", "precio": 30, "imagen": "imgs/coleccionable81.jpg" ,"badge": "oferta", "stock": 1, "descripcion":  "Despintado de atrás"},
   { "nombre": "3 Cubos Mario Bros Cinemex + Postal Cinepolis", "categoria": "Mario Bros", "precio": 500, "imagen": "imgs/bmario.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "1 Vaso Mario Bros Cinepolis Luz Led + Postal Cinepolis", "categoria": "Mario Bros", "precio": 500, "imagen": "imgs/bmario1.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Mario Bros Cinemex", "categoria": "Mario Bros", "precio": 50, "imagen": "imgs/infantil9.png" ,"badge": "ultimo", "stock": 0},
@@ -220,6 +219,7 @@
   { "nombre": "Vaso Peach Mario Bros Cinepolis", "categoria": "Mario Bros", "precio": 300, "imagen": "imgs/mar3.jpeg" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Yoshi Mario Bros Cinepolis", "categoria": "Mario Bros", "precio": 300, "imagen": "imgs/mar2.jpeg" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Mario Bros Cinepolis Con Llavero", "categoria": "Mario Bros", "precio": 300, "imagen": "imgs/mario20.jpeg" ,"badge": "exclusivo", "stock": 0},
+  { "nombre": "Vaso Mario Bros Cinepolis", "categoria": "Mario Bros", "precio": 30, "imagen": "imgs/coleccionable81.jpg" ,"badge": "oferta", "stock": 0, "descripcion":  "Despintado de atrás"},
 
   { "nombre": "Vaso Los 4 Fantasticos Mujer Insivible Cinepolis Marvel", "categoria": "Marvel", "precio": 250, "imagen": "imgs/coleccionable3.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso Los 4 Fantasticos La Mole Cinepolis Marvel", "categoria": "Marvel", "precio": 250, "imagen": "imgs/coleccionable2.jpg" ,"badge": "exclusivo", "stock": 1},
@@ -248,7 +248,6 @@
   { "nombre": "Funko Doctor Strange 1032 Marvel", "categoria": "Marvel", "precio": 300, "imagen": "imgs/doc3.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko Doctor Strange 874 Marvel", "categoria": "Marvel", "precio": 300, "imagen": "imgs/doc.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko Black Widow 609 Marvel", "categoria": "Marvel", "precio": 150, "imagen": "imgs/davengers14.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Vaso Wakanda Por Siempre Movie Center", "categoria": "Marvel", "precio": 40, "imagen": "imgs/coleccionable5.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Guardianes de la Galaxia Cinepolis Model2 Marvel", "categoria": "Marvel", "precio": 80, "imagen": "imgs/guardianes1.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Guardianes de la Galaxia Movie Center Marvel", "categoria": "Marvel", "precio": 50, "imagen": "imgs/guardianes2.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Totem Guardianes de la Galaxia Cinepolis Marvel", "categoria": "Marvel", "precio": 120, "imagen": "imgs/marvel15.png" ,"badge": "ultimo", "stock": 0},
@@ -257,6 +256,7 @@
   { "nombre": "Vaso Luz Led Doctor Strange Marvel Cinepolis", "categoria": "Marvel", "precio": 150, "imagen": "imgs/doctor1.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "2 Vasos Cinemex Marvel", "categoria": "Marvel", "precio": 200, "imagen": "imgs/marvels.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Pantera Negra Marvel Cinepolis", "categoria": "Marvel", "precio": 30, "imagen": "imgs/marvel12.png" ,"badge": "ultimo", "stock": 0},
+  { "nombre": "Vaso Wakanda Por Siempre Movie Center", "categoria": "Marvel", "precio": 40, "imagen": "imgs/coleccionable5.jpg" ,"badge": "ultimo", "stock": 0},
 
 
   { "nombre": "Vaso Capitan America Marvel Cinepolis", "categoria": "Marvel", "precio": 130, "imagen": "imgs/cap.png" ,"badge": "ultimo", "stock": 0},
@@ -390,12 +390,12 @@
   { "nombre": "Vaso FastX Cinemex Model1 RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "imgs/coleccionable90.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso FastX Cinemex Model2 RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "imgs/coleccionable91.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso FastX Cinemex Model3 RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "imgs/coleccionable92.jpg" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Vaso FastX Movie Center RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 30, "imagen": "imgs/coleccionable93.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Palomera Carro FastX Cinemex RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 600, "imagen": "imgs/coleccionable89.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso Fast 7 Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "imgs/rapidos4.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Fast 8 Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "imgs/rapidos5.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Palomera FastX Movie Center RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 30, "imagen": "imgs/rapidos6.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Hobbs y Shaw Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 50, "imagen": "imgs/rapi.png" ,"badge": "ultimo", "stock": 0},
+  { "nombre": "Vaso FastX Movie Center RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 30, "imagen": "imgs/coleccionable93.jpg" ,"badge": "ultimo", "stock": 0},
 
   { "nombre": "Postal MacroXE SpiderMan Cinepolis", "categoria": "SpiderMan", "precio": 150, "imagen": "imgs/spidern25.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Postal 3D SpiderMan Cinepolis", "categoria": "SpiderMan", "precio": 100, "imagen": "imgs/spidern24.jpg" ,"badge": "exclusivo", "stock": 1},

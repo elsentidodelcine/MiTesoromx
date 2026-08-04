@@ -1006,3 +1006,27 @@ document.addEventListener("touchend", (e) => {
     }, 5000);
   }, 1200);
 })();
+
+
+const PREVENTAS_ACTIVAS = [
+  {
+    id: "paw-dino",
+    active: false, // ya no se muestra
+    emoji: "🦴",
+    titulo: "Preventa PAW Patrol: The Dino Movie",
+    texto: "Aparta hoy los coleccionables antes de que se agoten.",
+    link: "preventas.html",
+    linkTexto: "Ver términos de preventa",
+    tema: "paw",
+  },
+  {
+    id: "nueva-peli",
+    active: true, // ← la que se muestra
+    emoji: "🎬",
+    titulo: "Preventa Avengers Doomsday",
+    texto: "Proximamente.",
+    link: "preventas.html",
+    linkTexto: "Ver términos de preventa",
+    tema: "generic", // o "marvel" o "paw"
+  },
+];
