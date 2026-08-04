@@ -5,8 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Mi Tesoro MX – Coleccionables oficiales de cine: palomeras, vasos, Funkos y ediciones exclusivas. Envíos a todo México.">
     <title>Mi Tesoro MX | Coleccionables de Cine</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+
+    <!-- Open Graph (WhatsApp / Facebook) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mi Tesoro MX | Coleccionables de Cine">
+    <meta property="og:description" content="Palomeras, vasos, Funkos y ediciones exclusivas. Envíos a todo México. Mejores precios que en Mercado Libre.">
+    <meta property="og:url" content="https://mitesoromx.com/">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:site_name" content="Mi Tesoro MX">
+    <!-- Si tienes una imagen 1200x630, descomenta y pon la URL real:
+    <meta property="og:image" content="https://mitesoromx.com/og-image.jpg">
+    -->
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Mi Tesoro MX | Coleccionables de Cine">
+    <meta name="twitter:description" content="Palomeras, vasos, Funkos y ediciones exclusivas. Envíos a todo México.">
+
     <link rel="stylesheet" href="styles.css">
-    <!-- Opcional: Google Fonts Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -50,6 +69,11 @@
         <button id="toggleTheme" class="theme-btn" aria-label="Cambiar tema">🌙</button>
     </div>
 </header>
+
+<!-- HORARIO
+<div class="horario-bar">
+    💬 WhatsApp: lun–sáb 10:00–20:00 · Dom 11:00–18:00 (hora Centro)
+</div> -->
 
 <!-- HERO -->
 <section class="hero">
@@ -142,7 +166,7 @@
     <p>Más de 500 coleccionables disponibles</p>
 </div>
 
-<!-- BUSCADOR -->
+<!-- BUSCADOR + ORDENAR -->
 <div class="search-wrap">
     <div class="search-box">
         <span class="search-icon" aria-hidden="true">🔍</span>
@@ -155,6 +179,17 @@
         >
         <button type="button" id="limpiarBusqueda" class="search-clear" aria-label="Limpiar búsqueda" hidden>✕</button>
     </div>
+    <div class="ordenar-wrap">
+        <label for="ordenar" class="ordenar-label">Ordenar</label>
+        <select id="ordenar" aria-label="Ordenar productos">
+            <option value="default">Destacados</option>
+            <option value="precio-asc">Precio: menor a mayor</option>
+            <option value="precio-desc">Precio: mayor a menor</option>
+            <option value="nombre-asc">Nombre: A–Z</option>
+            <option value="nombre-desc">Nombre: Z–A</option>
+            <option value="stock-asc">Últimas piezas primero</option>
+        </select>
+    </div>
     <p id="searchResultsInfo" class="search-results-info" hidden></p>
 </div>
 
@@ -166,8 +201,6 @@
         <button type="button" class="filtro-extra" data-filtro="preventa">Preventa</button>
         <button type="button" class="filtro-extra" data-filtro="oferta">Oferta</button>
         <button type="button" class="filtro-extra" data-filtro="ultima">Última pieza</button>
-        <button type="button" class="filtro-extra" data-filtro="exclusivo">Exclusivo</button>
-        <button type="button" class="filtro-extra" data-filtro="nuevo">Nuevo</button>
     </div>
 </div>
 
@@ -218,6 +251,12 @@
 <section class="testimonios">
     <h2>Lo que dicen nuestros clientes</h2>
     <p class="testimonios-sub">Coleccionistas reales de todo México</p>
+    <div class="social-stats">
+        <div class="social-stat"><strong>+500</strong><span>coleccionables</span></div>
+        <div class="social-stat"><strong>Envíos</strong><span>a todo México</span></div>
+        <div class="social-stat"><strong>WhatsApp</strong><span>atención directa</span></div>
+        <div class="social-stat"><strong>Originales</strong><span>100% cine</span></div>
+    </div>
     <div class="testimonios-grid">
         <article class="testimonio">
             <div class="stars">⭐⭐⭐⭐⭐</div>
@@ -327,6 +366,11 @@
 <a id="whatsappFloat" href="https://wa.me/524761002824" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
     💬
 </a>
+
+<!-- VOLVER ARRIBA -->
+<button id="btnVolverArriba" class="btn-volver-arriba" type="button" aria-label="Volver arriba" hidden>
+    ↑
+</button>
 
 <!-- TOAST -->
 <div id="cartToast" class="cart-toast" role="status">
