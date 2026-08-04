@@ -49,6 +49,11 @@ fetch("productos.json")
     productosFiltrados = data;
 
     crearFiltros(productosGlobal);
+    const catalogoEl = document.getElementById("catalogo");
+    if (catalogoEl) {
+      catalogoEl.classList.remove("catalogo-skeleton");
+      catalogoEl.removeAttribute("aria-busy");
+    }
     render();
     actualizarCarritoUI();
     actualizarContadorCarrito();
@@ -58,10 +63,14 @@ fetch("productos.json")
   })
   .catch((err) => {
     console.error("Error cargando productos:", err);
-    const loader = document.getElementById("loader");
-    if (loader) {
-      loader.innerHTML = "<p>Error al cargar el catálogo. Recarga la página.</p>";
+    const catalogoEl = document.getElementById("catalogo");
+    if (catalogoEl) {
+      catalogoEl.classList.remove("catalogo-skeleton");
+      catalogoEl.innerHTML =
+        '<p style="grid-column:1/-1;text-align:center;padding:40px;opacity:.8">Error al cargar el catálogo. Recarga la página.</p>';
     }
+    const loader = document.getElementById("loader");
+    if (loader) loader.style.display = "none";
   });
 
 /* ---------- FILTROS + BÚSQUEDA ---------- */
@@ -101,20 +110,20 @@ function aplicarFiltros() {
     lista = lista.filter((p) => p.categoria === categoriaActual);
   }
 
- // Filtros extra
+  // Filtros extra
    if (filtroExtra === "disponibles") {
-     lista = lista.filter((p) => p.stock > 0 && p.precio != 9 && p.precio != 3);
-   } else if (filtroExtra === "preventa") {
-     lista = lista.filter((p) => badgeTexto(p).includes("preventa"));
-   } else if (filtroExtra === "oferta") {
-     lista = lista.filter((p) => badgeTexto(p).includes("oferta"));
-   } else if (filtroExtra === "ultima") {
-     lista = lista.filter((p) => badgeTexto(p).includes("ultimo"));
-   } else if (filtroExtra === "exclusivo") {
-         lista = lista.filter((p) => badgeTexto(p).includes("exclusivo"));
-   } else if (filtroExtra === "nuevo") {
-         lista = lista.filter((p) => badgeTexto(p).includes("nuevo"));
-   }
+      lista = lista.filter((p) => p.stock > 0 && p.precio != 9 && p.precio != 3);
+    } else if (filtroExtra === "preventa") {
+      lista = lista.filter((p) => badgeTexto(p).includes("preventa"));
+    } else if (filtroExtra === "oferta") {
+      lista = lista.filter((p) => badgeTexto(p).includes("oferta"));
+    } else if (filtroExtra === "ultima") {
+      lista = lista.filter((p) => badgeTexto(p).includes("ultimo"));
+    } else if (filtroExtra === "exclusivo") {
+          lista = lista.filter((p) => badgeTexto(p).includes("exclusivo"));
+    } else if (filtroExtra === "nuevo") {
+          lista = lista.filter((p) => badgeTexto(p).includes("nuevo"));
+    }
 
   // Filtro por búsqueda
   if (textoBusqueda) {
@@ -450,7 +459,7 @@ function agregarAlCarrito(producto, card) {
 
   localStorage.setItem("carrito", JSON.stringify(carrito));
   actualizarCarritoUI();
-  actualizarContadorCarrito();
+  actualizarContadorCarrito(true); // pulso en el botón del header
 
   // Animación
   if (card) {
@@ -640,10 +649,18 @@ function actualizarWhats(total) {
   }
 }
 
-function actualizarContadorCarrito() {
+function actualizarContadorCarrito(conPulso = false) {
   const totalItems = carrito.reduce((acc, p) => acc + p.cantidad, 0);
   const contador = document.getElementById("cartCount");
+  const cartBtn = document.getElementById("verCarrito");
   if (contador) contador.textContent = totalItems;
+  if (conPulso && cartBtn) {
+    cartBtn.classList.remove("cart-pulse");
+    // reflow para reiniciar animación
+    void cartBtn.offsetWidth;
+    cartBtn.classList.add("cart-pulse");
+    setTimeout(() => cartBtn.classList.remove("cart-pulse"), 700);
+  }
 }
 
 function actualizarEstadoVaciar() {

@@ -2479,6 +2479,202 @@ body.dark .envio-gratis-track {
   }
 }
 
+/* ================= SKELETON CATÁLOGO ================= */
+.catalogo-skeleton .skeleton-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  padding: 0 0 16px;
+  box-shadow: var(--shadow);
+}
+
+.skeleton-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(90deg, #e8e8e8 25%, #f4f4f4 50%, #e8e8e8 75%);
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.2s ease-in-out infinite;
+}
+
+body.dark .skeleton-img {
+  background: linear-gradient(90deg, #2a2a2a 25%, #333 50%, #2a2a2a 75%);
+  background-size: 200% 100%;
+}
+
+.skeleton-line {
+  height: 12px;
+  margin: 14px 16px 8px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #e8e8e8 25%, #f4f4f4 50%, #e8e8e8 75%);
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.2s ease-in-out infinite;
+}
+
+.skeleton-line.short {
+  width: 40%;
+  margin-top: 0;
+}
+
+.skeleton-btn {
+  height: 40px;
+  margin: 12px 16px 0;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #e8e8e8 25%, #f4f4f4 50%, #e8e8e8 75%);
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.2s ease-in-out infinite;
+}
+
+body.dark .skeleton-line,
+body.dark .skeleton-btn {
+  background: linear-gradient(90deg, #2a2a2a 25%, #333 50%, #2a2a2a 75%);
+  background-size: 200% 100%;
+}
+
+@keyframes skeletonShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.loader-mini {
+  display: none !important;
+}
+
+/* ================= HERO CON IMAGEN ================= */
+.hero-with-image {
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+  /* Cambia esta ruta por tu foto real */
+  background-image:
+    linear-gradient(135deg, rgba(20, 10, 10, 0.75), rgba(15, 15, 30, 0.7)),
+    url("imgs/hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-with-image .hero-overlay {
+  display: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-with-image h2,
+.hero-with-image p {
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* ================= MÉTODOS DE PAGO ================= */
+.metodos-pago {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.metodo-pago {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 18px;
+  min-width: 130px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.metodo-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.metodo-pago strong {
+  font-size: 0.9rem;
+}
+
+.metodo-pago span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ================= PULSO CARRITO ================= */
+.cart-btn.cart-pulse {
+  animation: cartPulse 0.65s ease;
+}
+
+.cart-btn.cart-pulse span {
+  animation: cartBadgePop 0.65s ease;
+}
+
+@keyframes cartPulse {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.12); }
+  60% { transform: scale(0.96); }
+  100% { transform: scale(1); }
+}
+
+@keyframes cartBadgePop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.35); }
+  100% { transform: scale(1); }
+}
+
+/* ================= PÁGINA 404 ================= */
+.page-404 {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.page-404 .code {
+  font-size: clamp(4rem, 15vw, 7rem);
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  margin: 0 0 8px;
+}
+
+.page-404 h1 {
+  margin: 0 0 12px;
+  font-size: 1.5rem;
+}
+
+.page-404 p {
+  margin: 0 0 28px;
+  color: var(--text-muted);
+  max-width: 400px;
+}
+
+.page-404 .btn-home {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.page-404 .btn-home:hover {
+  background: var(--accent-hover, #a61e1e);
+  transform: translateY(-2px);
+}
 
 /* ================= BANNER PAW PATROL ================= */
 .banner-pawpatrol {
