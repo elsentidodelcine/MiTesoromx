@@ -1007,7 +1007,10 @@ document.addEventListener("touchend", (e) => {
   }, 1200);
 })();
 
-
+/* =========================================================
+   PREVENTA ACTIVA (banner rotativo / fácil de editar)
+   Solo marca active: true en la preventa vigente.
+   ========================================================= */
 const PREVENTAS_ACTIVAS = [
   {
     id: "paw-dino",
@@ -1030,3 +1033,173 @@ const PREVENTAS_ACTIVAS = [
     tema: "generic", // o "marvel" o "paw"
   },
 ];
+
+function renderBannerPreventa() {
+  const el = document.getElementById("bannerPreventa");
+  if (!el) return;
+
+  const activas = PREVENTAS_ACTIVAS.filter((p) => p.active);
+  if (activas.length === 0) {
+    el.hidden = true;
+    el.innerHTML = "";
+    return;
+  }
+
+  // Si hay varias activas, rota cada 6s
+  let idx = 0;
+  const pintar = () => {
+    const p = activas[idx % activas.length];
+    el.hidden = false;
+    el.className = `banner-preventa banner-preventa--${p.tema || "generic"}`;
+    el.setAttribute("aria-label", p.titulo);
+    el.innerHTML = `
+      <div class="banner-content">
+        <h2>${p.emoji || "🎬"} ${escapeHtml(p.titulo)}</h2>
+        <p>${escapeHtml(p.texto || "")}</p>
+        <a href="${p.link || "preventas.html"}" class="banner-btn banner-btn-preventa">
+          ${escapeHtml(p.linkTexto || "Ver preventa")}
+        </a>
+      </div>
+    `;
+    idx++;
+  };
+
+  pintar();
+  if (activas.length > 1) {
+    setInterval(pintar, 6000);
+  }
+}
+
+renderBannerPreventa();
+
+/* =========================================================
+   HORARIO WHATSAPP (zona Centro de México)
+   Lun–Sáb 10:00–20:00 · Dom 11:00–18:00
+   ========================================================= */
+function obtenerEstadoWhatsApp() {
+  try {
+    const ahora = new Date(
+      new Date().toLocaleString("en-US", { timeZone: "America/Mexico_City" })
+    );
+    const dia = ahora.getDay(); // 0=dom ... 6=sab
+    const minutos = ahora.getHours() * 60 + ahora.getMinutes();
+
+    let inicio, fin;
+    if (dia === 0) {
+      // domingo
+      inicio = 11 * 60;
+      fin = 18 * 60;
+    } else {
+      // lun–sáb
+      inicio = 10 * 60;
+      fin = 20 * 60;
+    }
+
+    const abierto = minutos >= inicio && minutos < fin;
+    return {
+      abierto,
+      etiqueta: abierto ? "En línea" : "Fuera de horario",
+      detalle: abierto
+        ? "Respondemos hoy"
+        : dia === 0 && minutos >= fin
+          ? "Te respondemos mañana a las 10:00"
+          : minutos < inicio
+            ? dia === 0
+              ? "Abrimos hoy a las 11:00"
+              : "Abrimos hoy a las 10:00"
+            : "Te respondemos mañana a las 10:00",
+    };
+  } catch (e) {
+    return { abierto: true, etiqueta: "", detalle: "" };
+  }
+}
+
+function actualizarEstadoWhatsApp() {
+  const status = document.getElementById("waStatus");
+  const floatBtn = document.getElementById("whatsappFloat");
+  const wrap = document.getElementById("waFloatWrap");
+  if (!status || !floatBtn) return;
+
+  const est = obtenerEstadoWhatsApp();
+  status.hidden = false;
+  status.textContent = est.abierto ? "● En línea" : "○ Fuera de horario";
+  status.className = "wa-status " + (est.abierto ? "online" : "offline");
+  status.title = est.detalle;
+  wrap?.classList.toggle("wa-offline", !est.abierto);
+
+  // Mensaje prellenado según horario
+  const msg = est.abierto
+    ? "Hola, quiero información sobre un producto de Mi Tesoro MX."
+    : `Hola, escribo fuera de horario. ${est.detalle}. Me interesa un producto de Mi Tesoro MX.`;
+  floatBtn.href = `https://wa.me/${WA_NUMERO}?text=${encodeURIComponent(msg)}`;
+  floatBtn.setAttribute("aria-label", `WhatsApp – ${est.etiqueta}. ${est.detalle}`);
+}
+
+actualizarEstadoWhatsApp();
+setInterval(actualizarEstadoWhatsApp, 60 * 1000);
+
+/* =========================================================
+   LISTA DE ESPERA (Avisarme)
+   Guarda en localStorage los productos que el cliente pidió avisar.
+   Tú los ves cuando te escriben por WA; además puedes consultar
+   en consola: verListaEspera()
+   ========================================================= */
+const LISTA_ESPERA_KEY = "listaEsperaMiTesoro";
+
+function obtenerListaEspera() {
+  try {
+    return JSON.parse(localStorage.getItem(LISTA_ESPERA_KEY)) || [];
+  } catch {
+    return [];
+  }
+}
+
+function guardarEnListaEspera(nombreProducto) {
+  const lista = obtenerListaEspera();
+  const existe = lista.find((x) => x.nombre === nombreProducto);
+  if (existe) {
+    existe.veces = (existe.veces || 1) + 1;
+    existe.ultima = new Date().toISOString();
+  } else {
+    lista.push({
+      nombre: nombreProducto,
+      veces: 1,
+      primera: new Date().toISOString(),
+      ultima: new Date().toISOString(),
+    });
+  }
+  localStorage.setItem(LISTA_ESPERA_KEY, JSON.stringify(lista));
+}
+
+// Helper para ti: abre la consola del navegador y escribe verListaEspera()
+window.verListaEspera = function () {
+  const lista = obtenerListaEspera();
+  console.table(lista);
+  return lista;
+};
+
+// Enlazar clicks de "Avisarme" (delegación, por si se re-renderiza el catálogo)
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest(".btn-avisarme");
+  if (!btn) return;
+  const card = btn.closest(".producto");
+  const nombre = card?.dataset?.nombre || card?.querySelector("h2")?.textContent;
+  if (nombre) {
+    guardarEnListaEspera(nombre.trim());
+    // Feedback rápido
+    if (toast && toastText) {
+      if (toastTitle) toastTitle.textContent = "Lista de espera";
+      toastText.textContent = `Te avisaremos por WhatsApp cuando haya stock de "${nombre.trim()}"`;
+      toast.style.display = "block";
+      toast.classList.add("show");
+      clearTimeout(toast._timer);
+      toast._timer = setTimeout(() => {
+        toast.classList.remove("show");
+        toast.style.display = "none";
+      }, 3500);
+    }
+  }
+});
+
+
+
