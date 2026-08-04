@@ -2478,3 +2478,72 @@ body.dark .envio-gratis-track {
     width: 100%;
   }
 }
+
+
+/* ================= BANNER PAW PATROL ================= */
+.banner-pawpatrol {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 22px 24px;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  background: linear-gradient(135deg, #1565c0 0%, #42a5f5 45%, #ffca28 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.banner-pawpatrol .banner-content {
+  text-align: center;
+}
+
+.banner-pawpatrol .banner-content h2 {
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.banner-pawpatrol .banner-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.95;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.banner-btn-paw {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 11px 24px;
+  border-radius: 999px;
+  background: #fff;
+  color: #1565c0;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.banner-btn-paw:hover {
+  transform: translateY(-2px);
+  background: #fff59d;
+  color: #0d47a1;
+}
+
+@media (max-width: 768px) {
+  .banner-pawpatrol {
+    margin: 16px 14px;
+    padding: 16px;
+  }
+
+  .banner-pawpatrol .banner-content h2 {
+    font-size: 1.15rem;
+  }
+
+  .banner-btn-paw {
+    width: 100%;
+    text-align: center;
+  }
+}

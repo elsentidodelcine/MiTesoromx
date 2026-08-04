@@ -32,11 +32,8 @@
 </head>
 <body>
 
-<!-- LOADER -->
-<div id="loader">
-    <div class="spinner"></div>
-    <p>Preparando el catálogo...</p>
-</div>
+<!-- LOADER (mínimo; el catálogo muestra skeleton) -->
+<div id="loader" class="loader-mini" hidden></div>
 
 <!-- HEADER -->
 <header class="main-header">
@@ -57,9 +54,8 @@
         <a href="envios.html">Envíos</a>
         <a href="aviso-legal-apartado.html">Apartados</a>
         <a href="faq.html">FAQ</a>
-        <!-- <a href="preventas-activas.html">Preventas activas</a> -->
-         <a href="blog.html">Blog</a>
-         <a href="mitesoromx.html">Nosotros</a>
+        <a href="blog.html">Blog</a>
+        <a href="mitesoromx.html">Nosotros</a>
     </nav>
 
     <div class="header-right">
@@ -75,11 +71,14 @@
     💬 WhatsApp: lun–sáb 10:00–20:00 · Dom 11:00–18:00 (hora Centro)
 </div> -->
 
-<!-- HERO -->
-<section class="hero">
-    <h2>Coleccionables de Cine</h2>
-    <p>Palomeras · Vasos · Promocionales · Funkos · Álbumes · Figuras · Vintage</p>
-    <a href="#catalogo">Ver Catálogo</a>
+<!-- HERO (pon tu foto en imgs/hero.jpg para fondo real) -->
+<section class="hero hero-with-image">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h2>Coleccionables de Cine</h2>
+        <p>Palomeras · Vasos · Promocionales · Funkos · Álbumes · Figuras · Vintage</p>
+        <a href="#catalogo">Ver Catálogo</a>
+    </div>
 </section>
 
 <!-- TRUST -->
@@ -93,14 +92,18 @@
     </div>
 </section>
 
-<!-- BANNERS PROMO
-<section class="banner-spiderman" aria-label="Preventa Spider-Man">
+<!-- BANNERS PROMO -->
+<section class="banner-pawpatrol" aria-label="Preventa PAW Patrol">
     <div class="banner-content">
-        <h2>🕷️ Preventa Exclusiva Spider-Man</h2>
-        <p>Aparta hoy vasos, palomeras y coleccionables antes de que se agoten.</p>
-        <a href="preventas.html" class="banner-btn">Ver términos de preventa</a>
+        <h2>🦴 Preventa PAW Patrol: The Dino Movie</h2>
+        <p>
+            Aparta hoy vasos, palomeras y coleccionables antes de que se agoten.
+        </p>
+        <a href="preventas.html" class="banner-btn banner-btn-paw">
+            Ver términos de preventa
+        </a>
     </div>
-</section>-->
+</section>
 
 <section class="banner-envio-gratis" aria-label="Envío gratis">
     <div class="banner-content">
@@ -201,11 +204,13 @@
         <button type="button" class="filtro-extra" data-filtro="preventa">Preventa</button>
         <button type="button" class="filtro-extra" data-filtro="oferta">Oferta</button>
         <button type="button" class="filtro-extra" data-filtro="ultima">Última pieza</button>
+        <button type="button" class="filtro-extra" data-filtro="exclusivo">Exclusivo</button>
+        <button type="button" class="filtro-extra" data-filtro="nuevo">Nuevo</button>
     </div>
 </div>
 
 <!-- FILTROS CATEGORÍA -->
-<!-- <div class="filtros-wrap">
+<div class="filtros-wrap">
     <nav id="filtros" class="filtros" aria-label="Filtros por categoría"></nav>
     <button class="filtros-toggle" id="toggleFiltros" type="button">
         Más categorías ▾
@@ -214,7 +219,17 @@
 
 <!-- CATÁLOGO -->
 <main>
-    <section id="catalogo" aria-label="Catálogo de productos"></section>
+    <section id="catalogo" class="catalogo-skeleton" aria-label="Catálogo de productos" aria-busy="true">
+        <!-- Skeleton mientras carga productos.json -->
+        <div class="skeleton-card" aria-hidden="true"><div class="skeleton-img"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div><div class="skeleton-btn"></div></div>
+        <div class="skeleton-card" aria-hidden="true"><div class="skeleton-img"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div><div class="skeleton-btn"></div></div>
+        <div class="skeleton-card" aria-hidden="true"><div class="skeleton-img"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div><div class="skeleton-btn"></div></div>
+        <div class="skeleton-card" aria-hidden="true"><div class="skeleton-img"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div><div class="skeleton-btn"></div></div>
+        <div class="skeleton-card" aria-hidden="true"><div class="skeleton-img"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div><div class="skeleton-btn"></div></div>
+        <div class="skeleton-card" aria-hidden="true"><div class="skeleton-img"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div><div class="skeleton-btn"></div></div>
+        <div class="skeleton-card" aria-hidden="true"><div class="skeleton-img"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div><div class="skeleton-btn"></div></div>
+        <div class="skeleton-card" aria-hidden="true"><div class="skeleton-img"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div><div class="skeleton-btn"></div></div>
+    </section>
     <div id="paginacion" class="paginacion" aria-label="Paginación"></div>
 </main>
 
@@ -222,6 +237,25 @@
 <section class="como-pagar" id="como-pagar">
     <h2>¿Cómo pagar?</h2>
     <p class="como-pagar-intro">Proceso claro y seguro. No pedimos datos de tarjeta.</p>
+
+    <div class="metodos-pago">
+        <div class="metodo-pago">
+            <span class="metodo-icon" aria-hidden="true">🏦</span>
+            <strong>Transferencia</strong>
+            <span>SPEI / banco</span>
+        </div>
+        <div class="metodo-pago">
+            <span class="metodo-icon" aria-hidden="true">🏪</span>
+            <strong>OXXO</strong>
+            <span>Depósito en tienda</span>
+        </div>
+        <div class="metodo-pago">
+            <span class="metodo-icon" aria-hidden="true">💬</span>
+            <strong>WhatsApp</strong>
+            <span>Confirmación directa</span>
+        </div>
+    </div>
+
     <div class="pasos-pago">
         <div class="paso-pago">
             <span class="paso-num">1</span>
@@ -231,7 +265,7 @@
         <div class="paso-pago">
             <span class="paso-num">2</span>
             <strong>Te indicamos el pago</strong>
-            <p>Transferencia bancaria o Depósito en OXXO.</p>
+            <p>Transferencia bancaria o depósito en OXXO.</p>
         </div>
         <div class="paso-pago">
             <span class="paso-num">3</span>
