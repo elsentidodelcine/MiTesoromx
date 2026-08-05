@@ -11,6 +11,7 @@ let textoBusqueda = "";
 let filtroExtra = "todos"; // todos | disponibles | preventa | oferta | ultima
 let ordenActual = "default";
 let franquiciaActual = "todas";
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
 const ENVIO_GRATIS_MIN = 550; // MXN — Correos de México, productos participantes
 const WA_NUMERO = "524761002824";
@@ -150,7 +151,27 @@ function aplicarFiltros() {
   productosFiltrados = lista;
   paginaActual = 1;
   actualizarInfoBusqueda();
+  actualizarContadorProductos();
   render();
+}
+
+function actualizarContadorProductos() {
+  const el = document.getElementById("contadorProductos");
+  if (!el) return;
+
+  const total = productosFiltrados.length;
+  const inicio = (paginaActual - 1) * productosPorPagina + 1;
+  const fin = Math.min(paginaActual * productosPorPagina, total);
+
+  if (total === 0) {
+    el.textContent = "";
+    return;
+  }
+
+  el.textContent =
+    total === 1
+      ? "1 producto"
+      : `Mostrando ${inicio}–${fin} de ${total} productos`;
 }
 
 function ordenarLista(lista) {
@@ -292,6 +313,7 @@ function actualizarInfoBusqueda() {
 function render() {
   mostrarProductos();
   crearPaginacion();
+  actualizarContadorProductos();
 }
 
 function mostrarProductos() {
@@ -305,9 +327,59 @@ function mostrarProductos() {
 
   if (pagina.length === 0) {
     const msg = textoBusqueda
-      ? `No se encontraron productos para "<strong>${escapeHtml(textoBusqueda)}</strong>". Prueba con otro nombre.`
-      : "No hay productos en esta categoría.";
-    catalogo.innerHTML = `<p style="grid-column:1/-1;text-align:center;padding:40px;opacity:.75">${msg}</p>`;
+      ? `
+        <div class="sin-resultados">
+          <p class="sin-resultados-title">Sin resultados para “${escapeHtml(textoBusqueda)}”</p>
+          <p class="sin-resultados-sub">Prueba con otro nombre, franquicia o quita algunos filtros.</p>
+          <button type="button" class="btn-limpiar-filtros" id="btnLimpiarFiltros">
+            Limpiar búsqueda y filtros
+          </button>
+        </div>
+      `
+      : `
+        <div class="sin-resultados">
+          <p class="sin-resultados-title">No hay productos en esta selección</p>
+          <p class="sin-resultados-sub">Prueba con otra franquicia o filtro.</p>
+          <button type="button" class="btn-limpiar-filtros" id="btnLimpiarFiltros">
+            Ver todos los productos
+          </button>
+        </div>
+      `;
+
+    catalogo.innerHTML = msg;
+
+    document.getElementById("btnLimpiarFiltros")?.addEventListener("click", () => {
+      // Reset búsqueda
+      const buscador = document.getElementById("buscador");
+      if (buscador) buscador.value = "";
+      textoBusqueda = "";
+
+      // Reset filtros extra
+      filtroExtra = "todos";
+      document.querySelectorAll("#filtrosExtra .filtro-extra").forEach((b) => {
+        b.classList.remove("active");
+        b.setAttribute("aria-pressed", "false");
+      });
+      const btnTodos = document.querySelector('#filtrosExtra [data-filtro="todos"]');
+      if (btnTodos) {
+        btnTodos.classList.add("active");
+        btnTodos.setAttribute("aria-pressed", "true");
+      }
+
+      // Reset franquicia
+      franquiciaActual = "todas";
+      document.querySelectorAll("#filtrosFranquicia .filtro-extra").forEach((b) => {
+        b.classList.remove("active");
+        b.setAttribute("aria-pressed", "false");
+      });
+      const btnFranq = document.querySelector('#filtrosFranquicia [data-franquicia="todas"]');
+      if (btnFranq) {
+        btnFranq.classList.add("active");
+        btnFranq.setAttribute("aria-pressed", "true");
+      }
+
+      aplicarFiltros();
+    });
     return;
   }
 
@@ -334,6 +406,7 @@ function mostrarProductos() {
     let precioHTML = "";
     let accionHTML = "";
     const viendo = Math.floor(Math.random() * 5) + 2; // entre 2 y 6
+    const esFavorito = wishlist.includes(p.nombre);
 
     if (p.precio == 9) {
       precioHTML = `<p class="precio proximamente-precio">💰 Precio por confirmar</p>`;
@@ -385,7 +458,20 @@ function mostrarProductos() {
             : ""
         }
             ${precioHTML}
-            <p class="viendo-ahora">👀 ${viendo} persona${viendo === 1 ? "" : "s"} viendo esto</p>
+            ${
+              p.stock === 1 && p.precio != 9 && p.precio != 3
+                ? `<p class="ultima-pieza">🔥 Última pieza</p>`
+                : ""
+            }
+            ${
+              p.stock > 0 && p.precio != 9 && p.precio != 3
+                ? `<p class="viendo-ahora">👀 ${viendo} persona${viendo === 1 ? "" : "s"} viendo esto</p>`
+                : ""
+            }
+            <button type="button" class="btn-wishlist ${esFavorito ? "activo" : ""}"
+              data-nombre="${escapeHtml(p.nombre)}" aria-label="Agregar a favoritos">
+              ${esFavorito ? "❤️" : "🤍"}
+            </button>
             ${accionHTML}
       </div>
     `;
@@ -416,6 +502,38 @@ function escapeHtml(str) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 }
+
+document.getElementById("btnSeguirComprando")?.addEventListener("click", () => {
+  if (typeof closeDrawerWithFocus === "function") {
+    closeDrawerWithFocus();
+  } else if (typeof cerrarDrawer === "function") {
+    cerrarDrawer();
+  } else {
+    drawer?.classList.remove("open");
+    overlay?.classList.remove("show");
+  }
+  scrollToCatalogo();
+});
+
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest(".btn-wishlist");
+  if (!btn) return;
+
+  const nombre = btn.dataset.nombre;
+  const idx = wishlist.indexOf(nombre);
+
+  if (idx >= 0) {
+    wishlist.splice(idx, 1);
+    btn.classList.remove("activo");
+    btn.textContent = "🤍";
+  } else {
+    wishlist.push(nombre);
+    btn.classList.add("activo");
+    btn.textContent = "❤️";
+  }
+
+  localStorage.setItem("wishlist", JSON.stringify(wishlist));
+});
 
 /* ---------- PAGINACIÓN ---------- */
 function crearPaginacion() {

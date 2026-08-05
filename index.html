@@ -106,7 +106,7 @@
     </div>
 </section>
 
-<!-- BANNER MERCADO LIBRE
+<!-- BANNER MERCADO LIBRE -->
 <section class="banner-mercadolibre" aria-label="Mercado Libre">
     <div class="banner-content">
         <h2>🛒 ¡Ya estamos en Mercado Libre!</h2>
@@ -126,7 +126,7 @@
             Ver tienda en Mercado Libre
         </a>
     </div>
-</section>-->
+</section>
 
 <!-- CÓMO FUNCIONA -->
 <section class="como-funciona">
@@ -186,6 +186,7 @@
         </select>
     </div>
     <p id="searchResultsInfo" class="search-results-info" hidden></p>
+    <p id="contadorProductos" class="contador-productos"></p>
 </div>
 
 <!-- FILTROS EXTRA -->
@@ -198,11 +199,18 @@
         <button type="button" class="filtro-extra" data-filtro="ultima" aria-pressed="false">Última pieza</button>
         <button type="button" class="filtro-extra" data-filtro="exclusivo" aria-pressed="false">Exclusivo</button>
         <button type="button" class="filtro-extra" data-filtro="nuevo" aria-pressed="false">Nuevo</button>
-        <button type="button" class="filtro-extra" data-filtro="nuevo" aria-pressed="false">Marvel</button>
-        <button type="button" class="filtro-extra" data-filtro="nuevo" aria-pressed="false">DC</button>
-        <button type="button" class="filtro-extra" data-filtro="nuevo" aria-pressed="false">Star Wars</button>
     </div>
 </div>
+
+<!-- FILTROS POR FRANQUICIA -->
+<div class="filtros-extra-wrap" style="margin-top: 6px;">
+    <div class="filtros-extra" id="filtrosFranquicia" role="group" aria-label="Filtros por franquicia">
+        <button type="button" class="filtro-extra" data-franquicia="marvel" aria-pressed="false">Marvel</button>
+        <button type="button" class="filtro-extra" data-franquicia="starwars" aria-pressed="false">Star Wars</button>
+        <button type="button" class="filtro-extra" data-franquicia="dc" aria-pressed="false">DC</button>
+    </div>
+</div>
+
 
 <!-- FILTROS CATEGORÍA
 <div class="filtros-wrap">
@@ -361,6 +369,10 @@
             <a href="aviso-legal-apartado.html" target="_blank">apartados</a> y
             <a href="preventas.html" target="_blank">preventas</a>.
         </p>
+
+        <button type="button" id="btnSeguirComprando" class="btn-seguir-comprando">
+            Seguir comprando
+        </button>
 
         <a id="whatsBtn" class="btn-whatsapp" href="https://wa.me/524761002824" target="_blank" rel="noopener">
             Confirmar por WhatsApp

@@ -2536,6 +2536,12 @@ body.dark .skeleton-btn {
   100% { background-position: -200% 0; }
 }
 
+.skeleton-img,
+.skeleton-line,
+.skeleton-btn {
+  animation-duration: 1.4s; /* un poco más suave */
+}
+
 .loader-mini {
   display: none !important;
 }
@@ -3001,4 +3007,106 @@ input:focus-visible {
 
 body.dark .viendo-ahora {
   opacity: 0.85;
+}
+
+.ultima-pieza {
+  margin: 2px 0 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #e53935;
+}
+
+.btn-seguir-comprando {
+  display: block;
+  width: 100%;
+  padding: 11px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-seguir-comprando:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .cart-toast {
+    top: auto;
+    bottom: 90px;   /* arriba del botón de WhatsApp */
+    right: 12px;
+    left: 12px;
+    width: auto;
+    max-width: none;
+  }
+}
+
+.sin-resultados {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 48px 20px;
+}
+
+.sin-resultados-title {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.sin-resultados-sub {
+  margin: 0 0 18px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.btn-limpiar-filtros {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 11px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.contador-productos {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 8px 0 0;
+}
+
+.btn-wishlist {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s;
+}
+
+.btn-wishlist:hover {
+  transform: scale(1.1);
+}
+
+body.dark .btn-wishlist {
+  background: rgba(30, 30, 30, 0.9);
 }
