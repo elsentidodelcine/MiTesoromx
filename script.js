@@ -1181,7 +1181,6 @@ function actualizarEstadoWhatsApp() {
 
   // Mensaje prellenado según horario
   const msg = est.abierto
-    const msg = est.abierto
       ? "Hola, quiero información sobre un producto de *Mi Tesoro MX*."
       : `Hola, escribo fuera de horario (${est.detalle}). Me interesa un producto de *Mi Tesoro MX*.`;
   floatBtn.href = `https://wa.me/${WA_NUMERO}?text=${encodeURIComponent(msg)}`;
