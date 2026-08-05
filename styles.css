@@ -2991,3 +2991,14 @@ input:focus-visible {
     padding: 12px;
   }
 }
+
+.viendo-ahora {
+  margin: 2px 0 0;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  opacity: 0.9;
+}
+
+body.dark .viendo-ahora {
+  opacity: 0.85;
+}

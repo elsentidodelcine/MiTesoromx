@@ -10,6 +10,7 @@ let categoriaActual = "Todos";
 let textoBusqueda = "";
 let filtroExtra = "todos"; // todos | disponibles | preventa | oferta | ultima
 let ordenActual = "default";
+let franquiciaActual = "todas";
 
 const ENVIO_GRATIS_MIN = 550; // MXN — Correos de México, productos participantes
 const WA_NUMERO = "524761002824";
@@ -125,6 +126,13 @@ function aplicarFiltros() {
           lista = lista.filter((p) => badgeTexto(p).includes("nuevo"));
     }
 
+    // Filtro por franquicia
+    if (franquiciaActual && franquiciaActual !== "todas") {
+      lista = lista.filter((p) => detectarFranquicia(p.nombre) === franquiciaActual);
+    }
+
+
+
   // Filtro por búsqueda
   if (textoBusqueda) {
     const q = textoBusqueda.toLowerCase().trim();
@@ -196,6 +204,27 @@ function ordenarLista(lista) {
       btn.setAttribute("aria-pressed", "true");
 
       filtroExtra = btn.dataset.filtro || "todos";
+      aplicarFiltros();
+      scrollToCatalogo();
+    });
+  });
+})();
+
+/* Filtros por franquicia */
+(() => {
+  const cont = document.getElementById("filtrosFranquicia");
+  if (!cont) return;
+
+  cont.querySelectorAll(".filtro-extra").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      cont.querySelectorAll(".filtro-extra").forEach((b) => {
+        b.classList.remove("active");
+        b.setAttribute("aria-pressed", "false");
+      });
+      btn.classList.add("active");
+      btn.setAttribute("aria-pressed", "true");
+
+      franquiciaActual = btn.dataset.franquicia || "todas";
       aplicarFiltros();
       scrollToCatalogo();
     });
@@ -304,6 +333,7 @@ function mostrarProductos() {
 
     let precioHTML = "";
     let accionHTML = "";
+    const viendo = Math.floor(Math.random() * 5) + 2; // entre 2 y 6
 
     if (p.precio == 9) {
       precioHTML = `<p class="precio proximamente-precio">💰 Precio por confirmar</p>`;
@@ -354,8 +384,9 @@ function mostrarProductos() {
             ? `<p class="descripcion-oferta">${escapeHtml(p.descripcion)}</p>`
             : ""
         }
-        ${precioHTML}
-        ${accionHTML}
+            ${precioHTML}
+            <p class="viendo-ahora">👀 ${viendo} persona${viendo === 1 ? "" : "s"} viendo esto</p>
+            ${accionHTML}
       </div>
     `;
 
@@ -664,18 +695,23 @@ function actualizarBotonesCatalogo() {
 }
 
 function actualizarWhats(total) {
-  let msg = `Hola 👋\nQuiero comprar las siguientes piezas de *Mi Tesoro MX*:\n\n*Productos:*\n`;
+  let msg = `Hola 👋\nSoy cliente de *Mi Tesoro MX* y quiero confirmar este pedido:\n\n`;
 
+  msg += `*Productos:*\n`;
   carrito.forEach((p) => {
-    msg += `• ${p.nombre} x${p.cantidad}\n`;
+    const sub = Number(p.precio) * p.cantidad;
+    msg += `• ${p.nombre}\n  Cantidad: ${p.cantidad}  |  $${Number(p.precio).toLocaleString("es-MX")} c/u\n`;
   });
 
-  msg += `\n*Total:* $${Number(total).toLocaleString("es-MX")} MXN\n*Tipo de Pago:* (Apartado / Pago Total)\n\n*Código Postal:* \n\nQuedo atento(a) para confirmar disponibilidad.\n¡Gracias!`;
+  msg += `\n*Total:* $${Number(total).toLocaleString("es-MX")} MXN\n`;
+  msg += `*Tipo de pago:* (Apartado 30% / Pago total)\n`;
+  msg += `*Código Postal:* \n`;
+  msg += `*Ciudad / Estado:* \n\n`;
+  msg += `Quedo atento(a) para confirmar disponibilidad y forma de envío.\n¡Gracias! 🎬`;
 
   const whatsBtn = document.getElementById("whatsBtn");
   if (whatsBtn) {
-    whatsBtn.href =
-      "https://wa.me/524761002824?text=" + encodeURIComponent(msg);
+    whatsBtn.href = `https://wa.me/${WA_NUMERO}?text=${encodeURIComponent(msg)}`;
   }
 }
 
@@ -1145,8 +1181,9 @@ function actualizarEstadoWhatsApp() {
 
   // Mensaje prellenado según horario
   const msg = est.abierto
-    ? "Hola, quiero información sobre un producto de Mi Tesoro MX."
-    : `Hola, escribo fuera de horario. ${est.detalle}. Me interesa un producto de Mi Tesoro MX.`;
+    const msg = est.abierto
+      ? "Hola, quiero información sobre un producto de *Mi Tesoro MX*."
+      : `Hola, escribo fuera de horario (${est.detalle}). Me interesa un producto de *Mi Tesoro MX*.`;
   floatBtn.href = `https://wa.me/${WA_NUMERO}?text=${encodeURIComponent(msg)}`;
   floatBtn.setAttribute("aria-label", `WhatsApp – ${est.etiqueta}. ${est.detalle}`);
 }
@@ -1286,6 +1323,21 @@ document.addEventListener("keydown", (e) => {
     closeImageModalFn();
   }
 });
+
+function detectarFranquicia(nombre) {
+  const n = (nombre || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+  if (/spider|marvel|avenger|iron man|captain|thor|hulk|deadpool|x-men|wolverine|venom|doctor strange|black panther|guardian/.test(n)) {
+    return "marvel";
+  }
+  if (/star wars|darth|vader|yoda|mandalorian|grogu|jedi|sith|baby yoda|stormtrooper|bb-8|r2-d2/.test(n)) {
+    return "starwars";
+  }
+  if (/\bdc\b|batman|superman|wonder woman|joker|flash|aquaman|harley|justice league/.test(n)) {
+    return "dc";
+  }
+  return "otros";
+}
 
 
 
