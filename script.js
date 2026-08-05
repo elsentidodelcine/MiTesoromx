@@ -493,24 +493,35 @@ function actualizarCarritoUI() {
   contenedor.innerHTML = "";
   let total = 0;
 
-  if (carrito.length === 0) {
-    totalEl.innerHTML = `
-      <span style="display:block;margin-bottom:8px">Tu carrito está vacío</span>
-      <button type="button" id="btnVerCatalogoDesdeCarrito"
-        style="background:var(--accent);color:#fff;border:none;padding:10px 18px;
-               border-radius:999px;font-weight:600;cursor:pointer;font-size:0.9rem">
-        Ver catálogo
-      </button>
-    `;
-    document.getElementById("btnVerCatalogoDesdeCarrito")?.addEventListener("click", () => {
-      closeDrawerWithFocus();
-      scrollToCatalogo();
-    });
-    actualizarWhats(0);
-    actualizarEnvioGratisBar(0);
-    actualizarEstadoVaciar();
-    return;
-  }
+ if (carrito.length === 0) {
+   totalEl.innerHTML = `
+     <div class="cart-empty">
+       <p class="cart-empty-title">Tu carrito está vacío</p>
+       <p class="cart-empty-sub">Explora el catálogo y agrega tus coleccionables favoritos.</p>
+       <button type="button" id="btnVerCatalogoDesdeCarrito" class="btn-ver-catalogo">
+         Ver catálogo
+       </button>
+     </div>
+   `;
+
+   document.getElementById("btnVerCatalogoDesdeCarrito")?.addEventListener("click", () => {
+     // Cierra el drawer (usa la función que tengas)
+     if (typeof closeDrawerWithFocus === "function") {
+       closeDrawerWithFocus();
+     } else if (typeof cerrarDrawer === "function") {
+       cerrarDrawer();
+     } else {
+       drawer?.classList.remove("open");
+       overlay?.classList.remove("show");
+     }
+     scrollToCatalogo();
+   });
+
+   actualizarWhats(0);
+   actualizarEnvioGratisBar(0);
+   actualizarEstadoVaciar();
+   return;
+ }
 
   carrito.forEach((p, index) => {
     const subtotal = p.precio * p.cantidad;

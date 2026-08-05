@@ -2765,3 +2765,229 @@ input:focus-visible {
     scroll-behavior: auto !important;
   }
 }
+
+/* ========== CARRITO MÓVIL – más espacio para productos ========== */
+@media (max-width: 768px) {
+  .cart-drawer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cart-header {
+    padding: 12px 14px;
+  }
+
+  .cart-header h2 {
+    font-size: 1rem;
+  }
+
+  .cart-items {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .cart-item {
+    padding: 10px;
+  }
+
+  .cart-img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .cart-footer {
+    padding: 12px 14px 16px;
+    gap: 8px;
+  }
+
+  /* Ocultar o compactar lo menos importante en móvil */
+  .pasos-carrito {
+    display: none; /* Los pasos ya se explican en la página, no hacen falta aquí */
+  }
+
+  .cart-legal-mini {
+    font-size: 0.7rem;
+    line-height: 1.35;
+  }
+
+  /* Dejar solo 1 o 2 textos legales, no todos */
+  .cart-legal-resumen {
+    display: none;
+  }
+
+  #cartTotal {
+    font-size: 1.05rem;
+  }
+
+  .envio-gratis-bar {
+    padding: 8px 10px;
+  }
+
+  .envio-gratis-text {
+    font-size: 0.72rem;
+  }
+
+  .btn-whatsapp {
+    padding: 13px;
+    font-size: 0.92rem;
+  }
+
+  .btn-vaciar {
+    padding: 4px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-btn {
+    padding: 6px 10px;
+    font-size: 0.82rem;
+  }
+
+  .cart-btn span {
+    font-size: 0.65rem;
+    padding: 1px 6px;
+    min-width: 18px;
+  }
+
+  .theme-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+  }
+}
+
+/* ================= BANNER PREVENTA (dinámico) ================= */
+.banner-preventa {
+  max-width: 1100px;
+  margin: 28px auto 24px;          /* más espacio arriba y abajo */
+  padding: 22px 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.banner-preventa .banner-content {
+  text-align: center;
+}
+
+.banner-preventa .banner-content h2 {
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.banner-preventa .banner-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.95;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.banner-preventa .banner-btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 11px 24px;
+  border-radius: 999px;
+  background: #fff;
+  color: #1565c0;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.banner-preventa .banner-btn:hover {
+  transform: translateY(-2px);
+  background: #fff59d;
+  color: #0d47a1;
+}
+
+/* Temas */
+.banner-preventa--paw {
+  background: linear-gradient(135deg, #1565c0 0%, #42a5f5 45%, #ffca28 100%);
+}
+
+.banner-preventa--marvel {
+  background: linear-gradient(135deg, #b71c1c 0%, #c62828 40%, #1a237e 100%);
+}
+
+.banner-preventa--generic {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d1a1a 50%, #1a1a2d 100%);
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+  .banner-preventa {
+    margin: 20px 14px 16px;
+    padding: 16px;
+  }
+
+  .banner-preventa .banner-content h2 {
+    font-size: 1.15rem;
+  }
+
+  .banner-preventa .banner-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ================= CARRITO VACÍO ================= */
+.cart-empty {
+  text-align: center;
+  padding: 8px 0 4px;
+}
+
+.cart-empty-title {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.cart-empty-sub {
+  margin: 0 0 14px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.btn-ver-catalogo {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 11px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-ver-catalogo:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .cart-empty-title {
+    font-size: 1rem;
+  }
+
+  .cart-empty-sub {
+    font-size: 0.8rem;
+  }
+
+  .btn-ver-catalogo {
+    width: 100%;
+    padding: 12px;
+  }
+}

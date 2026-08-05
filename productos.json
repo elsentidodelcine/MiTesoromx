@@ -56,7 +56,7 @@
   { "nombre": "Funko Peacemaker Vigilante 1234", "categoria": "DC", "precio": 400, "imagen": "imgs/fdc13.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Shazam Cinemex y 1 Vaso Cinepoilis DC", "categoria": "DC", "precio": 200, "imagen": "imgs/coleccionable97.jpg" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Termo Superman Cinepolis DC", "categoria": "DC", "precio": 150, "imagen": "imgs/coleccionable108.jpg" ,"badge": "nuevo", "stock": 0},
-  { "nombre": "Vaso Superman Cinepolis DC", "categoria": "DC", "precio": 100, "imagen": "imgs/coleccionable109.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Superman Cinepolis DC", "categoria": "DC", "precio": 150, "imagen": "imgs/coleccionable109.jpg" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Blue Beetle con Figura Cinemex DC", "categoria": "DC", "precio": 130, "imagen": "imgs/coleccionable95.jpg" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso The Flash Cinemex DC", "categoria": "DC", "precio": 100, "imagen": "imgs/coleccionable103.jpg" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Termo The Flash Cinepolis DC", "categoria": "DC", "precio": 150, "imagen": "imgs/coleccionable101.jpg" ,"badge": "nuevo", "stock": 1},
