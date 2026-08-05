@@ -97,18 +97,6 @@
 <!-- BANNER PREVENTA ACTIVA (se llena con JS – fácil de actualizar) -->
 <section id="bannerPreventa" class="banner-preventa" aria-label="Preventa activa" hidden></section>
 
-<section class="banner-pawpatrol" aria-label="Preventa PAW Patrol">
-    <div class="banner-content">
-        <h2>🦴 Preventa PAW Patrol: The Dino Movie</h2>
-        <p>
-            Aparta hoy los coleccionables antes de que se agoten.
-        </p>
-        <a href="preventas.html" class="banner-btn banner-btn-paw">
-            Ver términos de preventa
-        </a>
-    </div>
-</section>
-
 <section class="banner-envio-gratis" aria-label="Envío gratis">
     <div class="banner-content">
         <h2>🚚 Envío Gratis</h2>
@@ -118,7 +106,7 @@
     </div>
 </section>
 
-<!-- BANNER MERCADO LIBRE -->
+<!-- BANNER MERCADO LIBRE
 <section class="banner-mercadolibre" aria-label="Mercado Libre">
     <div class="banner-content">
         <h2>🛒 ¡Ya estamos en Mercado Libre!</h2>
@@ -138,7 +126,7 @@
             Ver tienda en Mercado Libre
         </a>
     </div>
-</section>
+</section>-->
 
 <!-- CÓMO FUNCIONA -->
 <section class="como-funciona">
@@ -203,13 +191,13 @@
 <!-- FILTROS EXTRA -->
 <div class="filtros-extra-wrap">
     <div class="filtros-extra" id="filtrosExtra" role="group" aria-label="Filtros rápidos">
-        <button type="button" class="filtro-extra active" data-filtro="todos">Todos</button>
-        <button type="button" class="filtro-extra" data-filtro="disponibles">Disponibles</button>
-        <button type="button" class="filtro-extra" data-filtro="preventa">Preventa</button>
-        <button type="button" class="filtro-extra" data-filtro="oferta">Oferta</button>
-        <button type="button" class="filtro-extra" data-filtro="ultima">Última pieza</button>
-        <button type="button" class="filtro-extra" data-filtro="exclusivo">Exclusivo</button>
-        <button type="button" class="filtro-extra" data-filtro="nuevo">Nuevo</button>
+        <button type="button" class="filtro-extra active" data-filtro="todos" aria-pressed="true">Todos</button>
+        <button type="button" class="filtro-extra" data-filtro="disponibles" aria-pressed="false">Disponibles</button>
+        <button type="button" class="filtro-extra" data-filtro="preventa" aria-pressed="false">Preventa</button>
+        <button type="button" class="filtro-extra" data-filtro="oferta" aria-pressed="false">Oferta</button>
+        <button type="button" class="filtro-extra" data-filtro="ultima" aria-pressed="false">Última pieza</button>
+        <button type="button" class="filtro-extra" data-filtro="exclusivo" aria-pressed="false">Exclusivo</button>
+        <button type="button" class="filtro-extra" data-filtro="nuevo" aria-pressed="false">Nuevo</button>
     </div>
 </div>
 

@@ -185,8 +185,16 @@ function ordenarLista(lista) {
   if (!cont) return;
   cont.querySelectorAll(".filtro-extra").forEach((btn) => {
     btn.addEventListener("click", () => {
-      cont.querySelectorAll(".filtro-extra").forEach((b) => b.classList.remove("active"));
+      // Quitar active y aria-pressed de todos
+      cont.querySelectorAll(".filtro-extra").forEach((b) => {
+        b.classList.remove("active");
+        b.setAttribute("aria-pressed", "false");
+      });
+
+      // Poner active y aria-pressed al que se clickeó
       btn.classList.add("active");
+      btn.setAttribute("aria-pressed", "true");
+
       filtroExtra = btn.dataset.filtro || "todos";
       aplicarFiltros();
       scrollToCatalogo();
@@ -486,7 +494,18 @@ function actualizarCarritoUI() {
   let total = 0;
 
   if (carrito.length === 0) {
-    totalEl.textContent = "Tu carrito está vacío";
+    totalEl.innerHTML = `
+      <span style="display:block;margin-bottom:8px">Tu carrito está vacío</span>
+      <button type="button" id="btnVerCatalogoDesdeCarrito"
+        style="background:var(--accent);color:#fff;border:none;padding:10px 18px;
+               border-radius:999px;font-weight:600;cursor:pointer;font-size:0.9rem">
+        Ver catálogo
+      </button>
+    `;
+    document.getElementById("btnVerCatalogoDesdeCarrito")?.addEventListener("click", () => {
+      closeDrawerWithFocus();
+      scrollToCatalogo();
+    });
     actualizarWhats(0);
     actualizarEnvioGratisBar(0);
     actualizarEstadoVaciar();
@@ -693,20 +712,6 @@ function actualizarEnvioGratisBar(total) {
     text.innerHTML = `Te faltan <strong>$${falta.toLocaleString("es-MX")} MXN</strong> para envío gratis por Correos*`;
     fill.classList.remove("completo");
   }
-}
-
-/* ---------- DRAWER ---------- */
-document.getElementById("verCarrito")?.addEventListener("click", () => {
-  drawer.classList.add("open");
-  overlay.classList.add("show");
-});
-
-document.getElementById("cerrarDrawer")?.addEventListener("click", cerrarDrawer);
-overlay?.addEventListener("click", cerrarDrawer);
-
-function cerrarDrawer() {
-  drawer.classList.remove("open");
-  overlay.classList.remove("show");
 }
 
 /* ---------- VACIAR CARRITO (con confirmación) ---------- */
@@ -1014,14 +1019,14 @@ document.addEventListener("touchend", (e) => {
 const PREVENTAS_ACTIVAS = [
   {
     id: "paw-dino",
-    active: false, // ya no se muestra
+    active: true, // ya no se muestra
     emoji: "🦴",
     titulo: "Preventa PAW Patrol: The Dino Movie",
     texto: "Aparta hoy los coleccionables antes de que se agoten.",
     link: "preventas.html",
     linkTexto: "Ver términos de preventa",
     tema: "paw",
-  },/*
+  },
   {
     id: "nueva-peli",
     active: true, // ← la que se muestra
@@ -1031,7 +1036,7 @@ const PREVENTAS_ACTIVAS = [
     link: "preventas.html",
     linkTexto: "Ver términos de preventa",
     tema: "marvel", // o "marvel" o "paw"
-  },*/
+  },
 ];
 
 function renderBannerPreventa() {
@@ -1198,6 +1203,76 @@ document.addEventListener("click", (e) => {
         toast.style.display = "none";
       }, 3500);
     }
+  }
+});
+
+
+/* ---------- FOCUS TRAP + ESCAPE ---------- */
+function trapFocus(container) {
+  const focusable = container.querySelectorAll(
+    'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+  );
+  if (!focusable.length) return () => {};
+
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+
+  function handleKey(e) {
+    if (e.key !== "Tab") return;
+    if (e.shiftKey) {
+      if (document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      }
+    } else {
+      if (document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  }
+
+  container.addEventListener("keydown", handleKey);
+  first.focus();
+
+  return () => container.removeEventListener("keydown", handleKey);
+}
+
+let releaseFocusTrap = null;
+let lastFocusedElement = null;
+
+function openDrawer() {
+  lastFocusedElement = document.activeElement;
+  drawer.classList.add("open");
+  overlay.classList.add("show");
+  releaseFocusTrap = trapFocus(drawer);
+}
+
+function closeDrawerWithFocus() {
+  drawer.classList.remove("open");
+  overlay.classList.remove("show");
+  if (releaseFocusTrap) releaseFocusTrap();
+  releaseFocusTrap = null;
+  lastFocusedElement?.focus();
+}
+
+// Reemplaza los listeners del carrito
+document.getElementById("verCarrito")?.addEventListener("click", openDrawer);
+document.getElementById("cerrarDrawer")?.addEventListener("click", closeDrawerWithFocus);
+overlay?.addEventListener("click", closeDrawerWithFocus);
+
+// Escape cierra drawer y modales
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "Escape") return;
+
+  if (drawer?.classList.contains("open")) {
+    closeDrawerWithFocus();
+  }
+  if (confirmOverlay?.classList.contains("show")) {
+    confirmOverlay.classList.remove("show");
+  }
+  if (imageModal?.classList.contains("show")) {
+    closeImageModalFn();
   }
 });
 
