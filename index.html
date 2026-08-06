@@ -95,8 +95,17 @@
     </div>
 </section>
 
-<!-- BANNER PREVENTA ACTIVA (se llena con JS – fácil de actualizar) -->
-<section id="bannerPreventa" class="banner-preventa" aria-label="Preventa activa" hidden></section>
+<!-- CARRUSEL PREVENTAS -->
+<section class="carousel-preventas" aria-label="Preventas activas">
+    <div class="carousel-track" id="carouselTrack">
+        <!-- Se llena con JS -->
+    </div>
+
+    <button type="button" class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Anterior">‹</button>
+    <button type="button" class="carousel-btn carousel-next" id="carouselNext" aria-label="Siguiente">›</button>
+
+    <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Indicadores de preventa"></div>
+</section>
 
 <section class="banner-envio-gratis" aria-label="Envío gratis">
     <div class="banner-content">

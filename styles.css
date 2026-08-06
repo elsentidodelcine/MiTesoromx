@@ -3110,3 +3110,217 @@ body.dark .viendo-ahora {
 body.dark .btn-wishlist {
   background: rgba(30, 30, 30, 0.9);
 }
+
+/* ================= CARRUSEL PREVENTAS ================= */
+.carousel-preventas {
+  max-width: 1100px;
+  margin: 28px auto 24px;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+  will-change: transform;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  padding: 28px 24px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-sizing: border-box;
+}
+
+.carousel-slide .banner-content {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.carousel-slide h2 {
+  margin: 0 0 8px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-slide p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.95;
+  line-height: 1.5;
+}
+
+.carousel-slide .banner-btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 11px 24px;
+  border-radius: 999px;
+  background: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: transform 0.2s, background 0.2s, color 0.2s;
+}
+
+.carousel-slide .banner-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* === TEMAS === */
+.carousel-slide--paw {
+  background: linear-gradient(135deg, #1565c0 0%, #42a5f5 45%, #ffca28 100%);
+}
+.carousel-slide--paw .banner-btn {
+  color: #1565c0;
+}
+.carousel-slide--paw .banner-btn:hover {
+  background: #fff59d;
+  color: #0d47a1;
+}
+
+.carousel-slide--marvel {
+  background: linear-gradient(135deg, #b71c1c 0%, #c62828 40%, #1a237e 100%);
+}
+.carousel-slide--marvel .banner-btn {
+  color: #b71c1c;
+}
+.carousel-slide--marvel .banner-btn:hover {
+  background: #ffcdd2;
+  color: #7f0000;
+}
+
+.carousel-slide--harry {
+  background: linear-gradient(135deg, #1a237e 0%, #283593 40%, #4a148c 70%, #f9a825 100%);
+}
+.carousel-slide--harry .banner-btn {
+  color: #1a237e;
+}
+.carousel-slide--harry .banner-btn:hover {
+  background: #ffe082;
+  color: #311b92;
+}
+
+.carousel-slide--ghost {
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 40%, #4a0000 100%);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+.carousel-slide--ghost .banner-btn {
+  background: #c62828;
+  color: #fff;
+}
+.carousel-slide--ghost .banner-btn:hover {
+  background: #ff5252;
+  color: #fff;
+}
+
+.carousel-slide--generic {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d1a1a 50%, #1a1a2d 100%);
+}
+.carousel-slide--generic .banner-btn {
+  color: #111;
+}
+
+/* Flechas */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.15s;
+  backdrop-filter: blur(4px);
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-prev { left: 12px; }
+.carousel-next { right: 12px; }
+
+/* Dots */
+.carousel-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 5;
+}
+
+.carousel-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.carousel-dot.active {
+  background: #fff;
+  transform: scale(1.25);
+}
+
+.carousel-dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+  .carousel-preventas {
+    margin: 20px 14px 16px;
+  }
+
+  .carousel-slide {
+    padding: 22px 16px 36px; /* espacio extra abajo para los dots */
+  }
+
+  .carousel-slide h2 {
+    font-size: 1.2rem;
+  }
+
+  .carousel-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 1.35rem;
+  }
+
+  .carousel-prev { left: 6px; }
+  .carousel-next { right: 6px; }
+
+  .carousel-slide .banner-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Respetar reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    transition: none;
+  }
+}

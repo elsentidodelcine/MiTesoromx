@@ -1178,13 +1178,13 @@ document.addEventListener("touchend", (e) => {
 })();
 
 /* =========================================================
-   PREVENTA ACTIVA (banner rotativo / fácil de editar)
-   Solo marca active: true en la preventa vigente.
+   CARRUSEL DE PREVENTAS
+   Solo marca active: true en las que quieras mostrar.
    ========================================================= */
 const PREVENTAS_ACTIVAS = [
   {
     id: "paw-dino",
-    active: true, // ya no se muestra
+    active: true,
     emoji: "🦴",
     titulo: "Preventa PAW Patrol: The Dino Movie",
     texto: "Aparta hoy los coleccionables antes de que se agoten.",
@@ -1193,16 +1193,167 @@ const PREVENTAS_ACTIVAS = [
     tema: "paw",
   },
   {
-    id: "nueva-peli",
-    active: true, // ← la que se muestra
-    emoji: "🎬",
-    titulo: "Preventa Avengers Doomsday",
-    texto: "Proximamente.",
+    id: "harry-potter",
+    active: true,
+    emoji: "⚡",
+    titulo: "Preventa Harry Potter",
+    texto: "Coleccionables mágicos en preventa. ¡No te quedes sin el tuyo!",
     link: "preventas.html",
     linkTexto: "Ver términos de preventa",
-    tema: "marvel", // o "marvel" o "paw"
+    tema: "harry",
+  },
+  {
+    id: "avengers-doomsday",
+    active: true,
+    emoji: "🦸",
+    titulo: "Preventa Avengers: Doomsday",
+    texto: "Próximamente. Aparta tus coleccionables Marvel.",
+    link: "preventas.html",
+    linkTexto: "Ver términos de preventa",
+    tema: "marvel",
+  },
+  {
+    id: "ghost-banda",
+    active: true,
+    emoji: "💀",
+    titulo: "Preventa Ghost – The Band",
+    texto: "Merch y coleccionables oficiales de la banda. Edición limitada.",
+    link: "preventas.html",
+    linkTexto: "Ver términos de preventa",
+    tema: "ghost",
   },
 ];
+
+function initCarouselPreventas() {
+  const track = document.getElementById("carouselTrack");
+  const dotsContainer = document.getElementById("carouselDots");
+  const btnPrev = document.getElementById("carouselPrev");
+  const btnNext = document.getElementById("carouselNext");
+  const wrapper = document.querySelector(".carousel-preventas");
+
+  if (!track || !dotsContainer || !wrapper) return;
+
+  const slidesData = PREVENTAS_ACTIVAS.filter((p) => p.active);
+  if (slidesData.length === 0) {
+    wrapper.hidden = true;
+    return;
+  }
+
+  wrapper.hidden = false;
+  let current = 0;
+  let autoplayTimer = null;
+  const AUTOPLAY_MS = 5500;
+
+  // Crear slides
+  track.innerHTML = slidesData
+    .map(
+      (p) => `
+    <div class="carousel-slide carousel-slide--${p.tema || "generic"}" role="group" aria-label="${escapeHtml(p.titulo)}">
+      <div class="banner-content">
+        <h2>${p.emoji || "🎬"} ${escapeHtml(p.titulo)}</h2>
+        <p>${escapeHtml(p.texto || "")}</p>
+        <a href="${p.link || "preventas.html"}" class="banner-btn">
+          ${escapeHtml(p.linkTexto || "Ver preventa")}
+        </a>
+      </div>
+    </div>
+  `
+    )
+    .join("");
+
+  // Crear dots
+  dotsContainer.innerHTML = slidesData
+    .map(
+      (_, i) =>
+        `<button type="button" class="carousel-dot${i === 0 ? " active" : ""}" data-index="${i}" aria-label="Ir a preventa ${i + 1}" role="tab"></button>`
+    )
+    .join("");
+
+  const dots = () => [...dotsContainer.querySelectorAll(".carousel-dot")];
+
+  function goTo(index) {
+    current = (index + slidesData.length) % slidesData.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots().forEach((d, i) => d.classList.toggle("active", i === current));
+  }
+
+  function next() {
+    goTo(current + 1);
+  }
+
+  function prev() {
+    goTo(current - 1);
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    if (slidesData.length <= 1) return;
+    autoplayTimer = setInterval(next, AUTOPLAY_MS);
+  }
+
+  function stopAutoplay() {
+    if (autoplayTimer) {
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  }
+
+  // Eventos
+  btnNext?.addEventListener("click", () => {
+    next();
+    startAutoplay();
+  });
+  btnPrev?.addEventListener("click", () => {
+    prev();
+    startAutoplay();
+  });
+
+  dotsContainer.addEventListener("click", (e) => {
+    const dot = e.target.closest(".carousel-dot");
+    if (!dot) return;
+    goTo(Number(dot.dataset.index));
+    startAutoplay();
+  });
+
+  // Swipe táctil
+  let startX = 0;
+  let isDragging = false;
+
+  track.addEventListener(
+    "touchstart",
+    (e) => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+      stopAutoplay();
+    },
+    { passive: true }
+  );
+
+  track.addEventListener(
+    "touchend",
+    (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      const diff = e.changedTouches[0].clientX - startX;
+      if (Math.abs(diff) > 50) {
+        diff < 0 ? next() : prev();
+      }
+      startAutoplay();
+    },
+    { passive: true }
+  );
+
+  // Pausar al pasar el mouse (desktop)
+  wrapper.addEventListener("mouseenter", stopAutoplay);
+  wrapper.addEventListener("mouseleave", startAutoplay);
+
+  // Iniciar
+  goTo(0);
+  startAutoplay();
+}
+
+// Llamar al iniciar
+initCarouselPreventas();
 
 function renderBannerPreventa() {
   const el = document.getElementById("bannerPreventa");
