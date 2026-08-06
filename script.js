@@ -1236,6 +1236,16 @@ const PREVENTAS_ACTIVAS = [
     linkTexto: "Ver términos de preventa",
     tema: "ghost",
   },
+  {
+    id: "mercado-libre",
+    active: true,
+    emoji: "🛒",
+    titulo: "¡Ya estamos en Mercado Libre!",
+    texto: "Compra con la seguridad y protección de Mercado Libre.<br><br><strong>⚠️ Los precios en Mercado Libre son más elevados</strong> por las comisiones de la plataforma. En esta página encuentras los mejores precios.",
+    link: "https://listado.mercadolibre.com.mx/_CustId_225063561",
+    linkTexto: "Ver tienda en Mercado Libre",
+    tema: "mercadolibre",
+  },
 ];
 
 function initCarouselPreventas() {
@@ -1265,8 +1275,12 @@ function initCarouselPreventas() {
     <div class="carousel-slide carousel-slide--${p.tema || "generic"}" role="group" aria-label="${escapeHtml(p.titulo)}">
       <div class="banner-content">
         <h2>${p.emoji || "🎬"} ${escapeHtml(p.titulo)}</h2>
-        <p>${escapeHtml(p.texto || "")}</p>
-        <a href="${p.link || "preventas.html"}" class="banner-btn">
+        <p>${p.texto || ""}</p>
+        <a
+          href="${p.link || "preventas.html"}"
+          class="banner-btn"
+          ${p.link?.startsWith("http") ? 'target="_blank" rel="noopener noreferrer"' : ""}
+        >
           ${escapeHtml(p.linkTexto || "Ver preventa")}
         </a>
       </div>
@@ -1390,8 +1404,12 @@ function renderBannerPreventa() {
     el.innerHTML = `
       <div class="banner-content">
         <h2>${p.emoji || "🎬"} ${escapeHtml(p.titulo)}</h2>
-        <p>${escapeHtml(p.texto || "")}</p>
-        <a href="${p.link || "preventas.html"}" class="banner-btn banner-btn-preventa">
+        <p>${p.texto || ""}</p>
+        <a
+          href="${p.link || "preventas.html"}"
+          class="banner-btn banner-btn-preventa"
+          ${p.link?.startsWith("http") ? 'target="_blank" rel="noopener noreferrer"' : ""}
+        >
           ${escapeHtml(p.linkTexto || "Ver preventa")}
         </a>
       </div>
