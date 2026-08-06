@@ -113,19 +113,25 @@ function aplicarFiltros() {
   }
 
   // Filtros extra
-   if (filtroExtra === "disponibles") {
-      lista = lista.filter((p) => p.stock > 0 && p.precio != 9 && p.precio != 3);
-    } else if (filtroExtra === "preventa") {
-      lista = lista.filter((p) => badgeTexto(p).includes("preventa"));
-    } else if (filtroExtra === "oferta") {
-      lista = lista.filter((p) => badgeTexto(p).includes("oferta"));
-    } else if (filtroExtra === "ultima") {
-      lista = lista.filter((p) => badgeTexto(p).includes("ultimo"));
-    } else if (filtroExtra === "exclusivo") {
-          lista = lista.filter((p) => badgeTexto(p).includes("exclusivo"));
-    } else if (filtroExtra === "nuevo") {
-          lista = lista.filter((p) => badgeTexto(p).includes("nuevo"));
-    }
+  if (filtroExtra === "disponibles") {
+    lista = lista.filter((p) => p.stock > 0 && p.precio != 9 && p.precio != 3);
+  } else if (filtroExtra === "preventa") {
+    lista = lista.filter((p) => badgeTexto(p).includes("preventa"));
+  } else if (filtroExtra === "oferta") {
+    lista = lista.filter((p) => badgeTexto(p).includes("oferta"));
+  } else if (filtroExtra === "ultima") {
+    lista = lista.filter((p) => badgeTexto(p).includes("ultimo"));
+  } else if (filtroExtra === "exclusivo") {
+    lista = lista.filter((p) => badgeTexto(p).includes("exclusivo"));
+  } else if (filtroExtra === "nuevo") {
+    lista = lista.filter((p) => badgeTexto(p).includes("nuevo"));
+  } else if (filtroExtra === "agotados") {
+    // Solo productos sin stock (no próximamente)
+    lista = lista.filter((p) => p.stock <= 0 && p.precio != 9 && p.precio != 3);
+  } else {
+    // "todos" y cualquier otro → ocultar agotados
+    lista = lista.filter((p) => p.stock > 0 || p.precio == 9 || p.precio == 3);
+  }
 
     // Filtro por franquicia
     if (franquiciaActual && franquiciaActual !== "todas") {
@@ -654,11 +660,8 @@ function actualizarCarritoUI() {
    `;
 
    document.getElementById("btnVerCatalogoDesdeCarrito")?.addEventListener("click", () => {
-     // Cierra el drawer (usa la función que tengas)
      if (typeof closeDrawerWithFocus === "function") {
        closeDrawerWithFocus();
-     } else if (typeof cerrarDrawer === "function") {
-       cerrarDrawer();
      } else {
        drawer?.classList.remove("open");
        overlay?.classList.remove("show");
@@ -669,7 +672,11 @@ function actualizarCarritoUI() {
    actualizarWhats(0);
    actualizarEnvioGratisBar(0);
    actualizarEstadoVaciar();
-   document.getElementById("btnSeguirComprando")?.classList.add("hidden");
+
+   // Ocultar "Seguir comprando"
+   const btnSeguir = document.getElementById("btnSeguirComprando");
+   if (btnSeguir) btnSeguir.style.display = "none";
+
    return;
  }
 
@@ -723,7 +730,7 @@ function actualizarCarritoUI() {
   });
 
   actualizarEstadoVaciar();
-  document.getElementById("btnSeguirComprando")?.classList.remove("hidden");
+
 }
 
 function cambiarCantidad(index, action) {
@@ -907,7 +914,7 @@ confirmVaciar?.addEventListener("click", () => {
   actualizarCarritoUI();
   actualizarContadorCarrito();
   actualizarEstadoVaciar();
-  document.getElementById("btnSeguirComprando")?.classList.remove("hidden");
+
   actualizarBotonesCatalogo();
 
   confirmOverlay?.classList.remove("show");
