@@ -3368,3 +3368,24 @@ body.dark .btn-wishlist {
 }.btn-seguir-comprando.hidden {
    display: none !important;
  }
+
+ @media (max-width: 768px) {
+
+     .site-logo{
+         width: 40px;
+         height: 40px;
+     }
+
+     .header-left{
+         gap: 8px;
+     }
+
+     .logo-text h1{
+         font-size: 1.1rem;
+     }
+
+     .logo-text span{
+         font-size: 0.75rem;
+     }
+
+ }
