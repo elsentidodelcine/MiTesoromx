@@ -3323,4 +3323,6 @@ body.dark .btn-wishlist {
   .carousel-track {
     transition: none;
   }
-}
+}.btn-seguir-comprando.hidden {
+   display: none !important;
+ }

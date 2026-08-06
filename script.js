@@ -669,6 +669,7 @@ function actualizarCarritoUI() {
    actualizarWhats(0);
    actualizarEnvioGratisBar(0);
    actualizarEstadoVaciar();
+   document.getElementById("btnSeguirComprando")?.classList.add("hidden");
    return;
  }
 
@@ -722,6 +723,7 @@ function actualizarCarritoUI() {
   });
 
   actualizarEstadoVaciar();
+  document.getElementById("btnSeguirComprando")?.classList.remove("hidden");
 }
 
 function cambiarCantidad(index, action) {
@@ -905,6 +907,7 @@ confirmVaciar?.addEventListener("click", () => {
   actualizarCarritoUI();
   actualizarContadorCarrito();
   actualizarEstadoVaciar();
+  document.getElementById("btnSeguirComprando")?.classList.remove("hidden");
   actualizarBotonesCatalogo();
 
   confirmOverlay?.classList.remove("show");
