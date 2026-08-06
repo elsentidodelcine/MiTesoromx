@@ -1,5 +1,12 @@
 [
 
+  { "nombre": "Vaso Casa Gryffindor Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry3.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Vaso Casa Ravenclaw  Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry1.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Vaso Casa Slytherin  Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry2.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Vaso Casa Hufflepuff Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry4.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Palomera Sombrero Harry Potter", "categoria": "Harry Potter", "precio": 959, "imagen": "imgs/harry5.jpg" ,"badge": "exclusivo", "stock": 1},
+
+
   { "nombre": "Album de Estampas Copa America Panini Model1", "categoria": "Album Estampas", "precio": 50, "imagen": "imgs/halbum1.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Album de Estampas Russia 2018 Panini Model1", "categoria": "Album Estampas", "precio": 200, "imagen": "imgs/halbum2.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Album de Estampas Liga Bancomer Panini Model1", "categoria": "Album Estampas", "precio": 20, "imagen": "imgs/halbum3.png" ,"badge": "ultimo", "stock": 1},
