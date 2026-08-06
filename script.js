@@ -466,7 +466,11 @@ function mostrarProductos() {
             ${precioHTML}
             ${
               p.stock === 1 && p.precio != 9 && p.precio != 3
-                ? `<p class="ultima-pieza">🔥 Última pieza</p>`
+                ? `<p class="ultima-pieza">${
+                    p.badge && p.badge.toLowerCase().includes("preventa")
+                      ? "🛒 Pide tu preventa ahora"
+                      : "🔥 Última pieza"
+                  }</p>`
                 : ""
             }
             ${
@@ -1197,7 +1201,7 @@ const PREVENTAS_ACTIVAS = [
     active: true,
     emoji: "🦴",
     titulo: "Preventa PAW Patrol: The Dino Movie",
-    texto: "Aparta hoy los coleccionables antes de que se agoten.",
+    texto: "** Próximamente **",
     link: "preventas.html",
     linkTexto: "Ver términos de preventa",
     tema: "paw",
@@ -1217,7 +1221,7 @@ const PREVENTAS_ACTIVAS = [
     active: true,
     emoji: "🦸",
     titulo: "Preventa Avengers: Doomsday",
-    texto: "Próximamente. Aparta tus coleccionables Marvel.",
+    texto: "** Próximamente **",
     link: "preventas.html",
     linkTexto: "Ver términos de preventa",
     tema: "marvel",
@@ -1227,7 +1231,7 @@ const PREVENTAS_ACTIVAS = [
     active: true,
     emoji: "💀",
     titulo: "Preventa Ghost – The Band",
-    texto: "Merch y coleccionables oficiales de la banda. Edición limitada.",
+    texto: "** Próximamente **",
     link: "preventas.html",
     linkTexto: "Ver términos de preventa",
     tema: "ghost",
