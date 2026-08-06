@@ -7,35 +7,667 @@
     <title>Mi Tesoro MX | Coleccionables de Cine</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+    <link rel="icon" href="imgs/logo.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="imgs/logo.png">
 
-    <!-- Open Graph (WhatsApp / Facebook) -->
+    <!-- Open Graph (WhatsApp / Facebook / Telegram) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Mi Tesoro MX | Coleccionables de Cine">
     <meta property="og:description" content="Palomeras, vasos, Funkos y ediciones exclusivas. Envíos a todo México. Mejores precios que en Mercado Libre.">
     <meta property="og:url" content="https://mitesoromx.com/">
     <meta property="og:locale" content="es_MX">
     <meta property="og:site_name" content="Mi Tesoro MX">
-    <!-- Si tienes una imagen 1200x630, descomenta y pon la URL real:
+    <!-- Sube og-image.jpg (1200x630 px) a la raíz del sitio y ajusta la URL si tu dominio es otro -->
     <meta property="og:image" content="https://mitesoromx.com/og-image.jpg">
-    -->
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mi Tesoro MX | Coleccionables de Cine">
     <meta name="twitter:description" content="Palomeras, vasos, Funkos y ediciones exclusivas. Envíos a todo México.">
+    <meta name="twitter:image" content="https://mitesoromx.com/og-image.jpg">
 
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0a0a0b;
+      --bg-card: #141416;
+      --bg-card-hover: #1c1c1f;
+      --border: #2a2a2e;
+      --text: #f4f4f5;
+      --text-muted: #a1a1aa;
+      --accent: #e11d48;        /* rojo cine */
+      --accent-soft: #be123c;
+      --gold: #f59e0b;
+      --gold-soft: #d97706;
+      --success: #22c55e;
+      --radius: 14px;
+      --shadow: 0 10px 40px -10px rgba(0,0,0,0.6);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ========== HEADER ========== */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 10, 11, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--accent), var(--gold));
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .logo-sub {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--accent);
+      color: white;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-soft);
+      transform: translateY(-1px);
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      position: relative;
+      padding: 4rem 1.5rem 3.5rem;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% -20%, rgba(225, 29, 72, 0.18), transparent);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(225, 29, 72, 0.15);
+      color: #fb7185;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, var(--accent), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 540px;
+      margin: 0 auto 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--text-muted);
+      background: rgba(255,255,255,0.04);
+    }
+
+    /* ========== FILTERS ========== */
+    .filters {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: center;
+    }
+
+    .filter-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+
+    /* ========== MAIN GRID ========== */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* ========== CARD ========== */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: #3f3f46;
+      box-shadow: var(--shadow);
+    }
+
+    .card-poster {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #1a1a1c;
+    }
+
+    .card-poster img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+
+    .card:hover .card-poster img {
+      transform: scale(1.05);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(6px);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+    }
+
+    .card-rating {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      background: rgba(0,0,0,0.8);
+      color: var(--gold);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.3rem 0.55rem;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .card-body {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-year {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      line-height: 1.25;
+    }
+
+    .card-title a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .card-title a:hover {
+      color: var(--accent);
+    }
+
+    .card-excerpt {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .platforms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .platform {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 5px;
+      background: rgba(255,255,255,0.06);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    .platform.netflix { color: #e50914; border-color: rgba(229,9,20,0.3); }
+    .platform.disney { color: #113ccf; border-color: rgba(17,60,207,0.3); }
+    .platform.prime { color: #00a8e1; border-color: rgba(0,168,225,0.3); }
+    .platform.cine { color: var(--gold); border-color: rgba(245,158,11,0.3); }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .btn-read {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: gap 0.2s;
+    }
+
+    .btn-read:hover {
+      gap: 0.5rem;
+    }
+
+    .letterboxd-link {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .letterboxd-link:hover {
+      color: #00e054;
+    }
+
+    /* ========== FEATURED (full review style) ========== */
+    .featured {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+    }
+
+    @media (max-width: 800px) {
+      .featured {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .featured-poster {
+      position: relative;
+      min-height: 320px;
+      background: #111;
+    }
+
+    .featured-poster img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+
+    .featured-body {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .featured-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.85rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      line-height: 1.2;
+    }
+
+    .featured-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .stars {
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+
+    .featured-text {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .featured-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    /* ========== PAGINATION ========== */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .page-btn {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .page-btn:hover,
+    .page-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+
+    .page-btn.disabled {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .footer-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-text {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .social {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      display: grid;
+      place-items: center;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: all 0.2s;
+    }
+
+    .social:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: #71717a;
+    }
+
+    .footer-copy a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .footer-copy a:hover {
+      color: var(--text);
+    }
+
+    /* ========== EMPTY / UTILS ========== */
+    .hidden { display: none !important; }
+
+    @media (max-width: 600px) {
+      .header-inner { padding: 0.85rem 1rem; }
+      .nav { gap: 0.75rem; }
+      .nav a:not(.btn-primary) { display: none; }
+      .hero { padding: 3rem 1rem 2.5rem; }
+      .main { padding: 0 1rem 3rem; }
+      .reviews-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
+
+<!-- LOADER (mínimo; el catálogo muestra skeleton) -->
+<div id="loader" class="loader-mini" hidden></div>
 
 <!-- HEADER -->
 <header class="main-header">
     <div class="header-left">
-        <span class="logo-icon" aria-hidden="true">🎬</span>
+        <img src="imgs/logo.png" alt="Mi Tesoro MX" class="site-logo">
         <div class="logo-text">
             <h1>Mi Tesoro MX</h1>
             <span>Coleccionables de Cine</span>
@@ -46,6 +678,7 @@
 
     <nav class="header-center" id="mainNav" aria-label="Navegación principal">
         <a href="index.html">Inicio</a>
+        <a href="#catalogo">Catálogo</a>
         <a href="preventas.html">Preventas</a>
         <a href="envios.html">Envíos</a>
         <a href="aviso-legal-apartado.html">Apartados</a>
@@ -55,242 +688,264 @@
     </nav>
 
     <div class="header-right">
+        <button id="verCarrito" class="cart-btn" aria-label="Ver carrito">
+            🛒 <span id="cartCount">0</span>
+        </button>
         <button id="toggleTheme" class="theme-btn" aria-label="Cambiar tema">🌙</button>
     </div>
 </header>
 
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="badge">Reseñas con personalidad</div>
+      <h1>Películas que <span>valen la pena</span><br>ver (y coleccionar)</h1>
+      <p>Clásicos, estrenos y joyas escondidas. Reseñas cortas, honestas y sin relleno. Si te gusta el cine, aquí tienes un buen lugar para descubrir qué ver esta noche.</p>
+      <div class="hero-actions">
+        <a href="#reseñas" class="btn-primary">Ver reseñas</a>
+        <a href="https://letterboxd.com" target="_blank" rel="noopener" class="btn-outline">Mi Letterboxd →</a>
+      </div>
+    </div>
+  </section>
 
-<section class="page-hero">
-    <h1>Blog</h1>
-    <p>Notas sobre el mundo del coleccionable de cine</p>
-</section>
+  <!-- FILTERS -->
+  <div class="filters" id="filtros">
+    <button class="filter-btn active" data-filter="todas">Todas</button>
+    <button class="filter-btn" data-filter="clasicos">Clásicos</button>
+    <button class="filter-btn" data-filter="nuevas">Nuevas</button>
+    <button class="filter-btn" data-filter="animacion">Animación</button>
+    <button class="filter-btn" data-filter="accion">Acción</button>
+  </div>
 
-<main class="content-grid">
+  <!-- MAIN -->
+  <main class="main" id="reseñas">
 
-    <p style="margin:0 0 24px;color:var(--text-muted);font-size:0.95rem;">
-        Artículos sobre palomeras, vasos promocionales, Funkos, álbumes y el hobby de coleccionar memorabilia de película.
-    </p>
+    <!-- FEATURED REVIEW (la más reciente o destacada) -->
+    <div class="section-title">Destacada</div>
+    <article class="featured" data-category="clasicos animacion">
+      <div class="featured-poster">
+        <!-- Cambia esta imagen por el póster real -->
+        <img src="https://image.tmdb.org/t/p/w780/uXDfjJbdP4ijW5hWSBrArwIHb0K.jpg" alt="Toy Story (1995)" loading="lazy"
+             onerror="this.src='https://via.placeholder.com/780x440/1a1a1c/666?text=Toy+Story'">
+      </div>
+      <div class="featured-body">
+        <div class="featured-label">Reseña de la semana</div>
+        <h2 class="featured-title">Toy Story (1995)</h2>
+        <div class="featured-meta">
+          <span class="stars">★★★★★</span>
+          <span>Animación · 81 min</span>
+        </div>
+        <p class="featured-text">
+          La película que nos enseñó que los juguetes también tienen corazón… y que Buzz Lightyear nunca va a volar (aunque él diga lo contrario). Toy Story no solo es la primera de Pixar: es pura magia. Amistad, humor y nostalgia que siguen funcionando igual de bien hoy que en 1995.
+        </p>
+        <div class="platforms" style="margin-bottom: 1.25rem;">
+          <span class="platform disney">Disney+</span>
+        </div>
+        <div class="featured-actions">
+          <a href="reseña-toy-story.html" class="btn-primary">Leer reseña completa</a>
+          <a href="https://letterboxd.com" target="_blank" rel="noopener" class="btn-outline">Ver en Letterboxd</a>
+        </div>
+      </div>
+    </article>
 
-    <div class="blog-list">
+    <!-- GRID DE RESEÑAS -->
+    <div class="section-title">Todas las reseñas</div>
+    <div class="reviews-grid" id="grid">
 
-        <!-- 1 -->
-        <article class="blog-card" id="historia-palomeras">
-            <div class="blog-date">Historia · Palomeras</div>
-            <h2>De simple cubeta a objeto de colección: la historia de las palomeras temáticas</h2>
-            <p>
-                Durante décadas, la palomera del cine fue solo un recipiente: primero bolsas de papel,
-                luego cajas de cartón en la posguerra, y más adelante el cubo redondo clásico.
-                Lo “de colección” llegó después.
-            </p>
-            <p>
-                En los años 90, los parques Disney popularizaron cubetas de diseño llamativo.
-                La industria de salas tomó nota. Con el tiempo, los estudios y las cadenas empezaron
-                a lanzar <strong>recipientes temáticos</strong> ligados a estrenos: formas de personajes,
-                cascos, cámaras, naves… piezas pensadas tanto para comer palomitas como para llevarse a casa.
-            </p>
-            <p>
-                Hoy ese mercado es enorme. Algunas cadenas estiman ingresos de decenas de millones
-                de dólares solo por estos “souvenirs” de dulcería. Lo que antes era desechable
-                se volvió <strong>memorabilia de estreno</strong>.
-            </p>
-            <span class="blog-tag">Palomeras</span>
-        </article>
+      <!-- CARD 1: Toy Story -->
+      <article class="card" data-category="clasicos animacion">
+        <div class="card-poster">
+          <img src="https://image.tmdb.org/t/p/w500/uXDfjJbdP4ijW5hWSBrArwIHb0K.jpg" alt="Toy Story" loading="lazy"
+               onerror="this.src='https://via.placeholder.com/500x280/1a1a1c/666?text=Toy+Story'">
+          <span class="card-badge">Clásico</span>
+          <span class="card-rating">★ 5.0</span>
+        </div>
+        <div class="card-body">
+          <div class="card-year">1995 · Animación</div>
+          <h3 class="card-title"><a href="reseña-toy-story.html">Toy Story</a></h3>
+          <p class="card-excerpt">La primera de Pixar y sigue siendo una de las mejores. Amistad, humor y corazón en estado puro. Ideal para ver con quien sea.</p>
+          <div class="platforms">
+            <span class="platform disney">Disney+</span>
+          </div>
+          <div class="card-footer">
+            <a href="reseña-toy-story.html" class="btn-read">Leer reseña →</a>
+            <a href="https://letterboxd.com" target="_blank" rel="noopener" class="letterboxd-link">Letterboxd</a>
+          </div>
+        </div>
+      </article>
 
-        <!-- 2 -->
-        <article class="blog-card" id="cuidado-palomeras">
-            <div class="blog-date">Cuidado · Palomeras y vasos</div>
-            <h2>Cómo cuidar tu palomera o vaso de cine para que dure años</h2>
-            <p>
-                El plástico, el vinil y las tintas de los promocionales de cine no siempre están
-                pensados para uso diario intenso. Si quieres conservar la pieza:
-            </p>
-            <ul>
-                <li><strong>Sol:</strong> evita dejarla horas bajo luz directa; decolora stickers y pigmentos.</li>
-                <li><strong>Lavado:</strong> preferible a mano, con agua tibia y jabón suave. Evita estropajos agresivos en zonas impresas.</li>
-                <li><strong>Lavavajillas y microondas:</strong> muchos diseños no lo resisten; el calor deforma o daña acabados.</li>
-                <li><strong>Alcohol y solventes:</strong> pueden borrar serigrafía o matear el brillo.</li>
-                <li><strong>Almacenaje:</strong> seco, sin apilar peso encima. Si guardas la caja original, mejor en posición estable.</li>
-            </ul>
-            <p>
-                Algunas piezas tienen luces, pajillas especiales o tapas: sécalas bien antes de guardarlas
-                para evitar humedad y olores.
-            </p>
-            <span class="blog-tag">Cuidado</span>
-        </article>
+      <!-- CARD 2: ejemplo nueva -->
+      <article class="card" data-category="nuevas accion">
+        <div class="card-poster">
+          <img src="https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg" alt="Oppenheimer" loading="lazy"
+               onerror="this.src='https://via.placeholder.com/500x280/1a1a1c/666?text=Oppenheimer'">
+          <span class="card-badge">2023</span>
+          <span class="card-rating">★ 4.5</span>
+        </div>
+        <div class="card-body">
+          <div class="card-year">2023 · Drama / Historia</div>
+          <h3 class="card-title"><a href="#">Oppenheimer</a></h3>
+          <p class="card-excerpt">Nolan en modo épico. Tres horas que se sienten intensas, brillantes y a veces agotadoras. Cillian Murphy hipnotiza.</p>
+          <div class="platforms">
+            <span class="platform prime">Prime Video</span>
+            <span class="platform cine">Cines (reposición)</span>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn-read">Leer reseña →</a>
+            <a href="https://letterboxd.com" target="_blank" rel="noopener" class="letterboxd-link">Letterboxd</a>
+          </div>
+        </div>
+      </article>
 
-        <!-- 3 -->
-        <article class="blog-card" id="boom-promocionales">
-            <div class="blog-date">Tendencia · Cine</div>
-            <h2>Por qué explotaron los vasos y palomeras de estreno</h2>
-            <p>
-                Varios factores se juntaron: las salas buscan ingresos más allá del boleto;
-                los estudios quieren merchandising visible; y los fans quieren un objeto físico
-                ligado a la experiencia de ver la película el día del estreno.
-            </p>
-            <p>
-                Muchos de estos productos se fabrican con meses de anticipación y en tirajes limitados
-                por país o por cadena. Por eso se agotan rápido y después circulan entre coleccionistas.
-                No siempre “suben de valor”, pero sí se vuelven difíciles de conseguir en buen estado.
-            </p>
-            <p>
-                Coleccionar por franquicia (Marvel, Star Wars, terror, anime) o solo por diseño
-                ayuda a no comprar por impulso todo lo que aparece en cartelera.
-            </p>
-            <span class="blog-tag">Tendencias</span>
-        </article>
+      <!-- CARD 3 -->
+      <article class="card" data-category="clasicos">
+        <div class="card-poster">
+          <img src="https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enBRQVDf5NTJ9DX.jpg" alt="El Padrino" loading="lazy"
+               onerror="this.src='https://via.placeholder.com/500x280/1a1a1c/666?text=El+Padrino'">
+          <span class="card-badge">Clásico</span>
+          <span class="card-rating">★ 5.0</span>
+        </div>
+        <div class="card-body">
+          <div class="card-year">1972 · Crimen / Drama</div>
+          <h3 class="card-title"><a href="#">El Padrino</a></h3>
+          <p class="card-excerpt">La definición de obra maestra. Cada escena, cada diálogo, cada silencio… todo está en su lugar. Imprescindible.</p>
+          <div class="platforms">
+            <span class="platform">Paramount+</span>
+            <span class="platform">Renta digital</span>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn-read">Leer reseña →</a>
+            <a href="https://letterboxd.com" target="_blank" rel="noopener" class="letterboxd-link">Letterboxd</a>
+          </div>
+        </div>
+      </article>
 
-        <!-- 4 -->
-        <article class="blog-card" id="funko-tips">
-            <div class="blog-date">Guía · Funko</div>
-            <h2>Funko Pop: tips básicos si empiezas a coleccionar</h2>
-            <p>
-                Los Funko Pop se volvieron uno de los coleccionables más masivos del entretenimiento.
-                Si apenas arrancas, estas ideas ayudan:
-            </p>
-            <ul>
-                <li><strong>Define un foco:</strong> una saga, un personaje o solo “los que te gusten”, no todo el catálogo.</li>
-                <li><strong>Caja:</strong> para muchos coleccionistas el valor y el gusto de exhibición dependen de la caja en buen estado (sin aplastones ni ventanas rotas).</li>
-                <li><strong>Exclusivos y ediciones limitadas:</strong> convenciones, tiendas o países específicos suelen ser los más buscados; no todos valen más con el tiempo.</li>
-                <li><strong>Luz y polvo:</strong> el PVC y la tinta de la caja también sufren con sol directo.</li>
-                <li><strong>Precios:</strong> contrasta varias fuentes antes de pagar “de colección”; el mercado baja y sube según reimpresiones y moda.</li>
-            </ul>
-            <p>
-                Coleccionar por gusto suele ser más sostenible que coleccionar solo por posible reventa.
-            </p>
-            <span class="blog-tag">Funko</span>
-        </article>
+      <!-- CARD 4 -->
+      <article class="card" data-category="nuevas animacion">
+        <div class="card-poster">
+          <img src="https://image.tmdb.org/t/p/w500/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg" alt="Spider-Man: Across the Spider-Verse" loading="lazy"
+               onerror="this.src='https://via.placeholder.com/500x280/1a1a1c/666?text=Spider-Verse'">
+          <span class="card-badge">2023</span>
+          <span class="card-rating">★ 4.5</span>
+        </div>
+        <div class="card-body">
+          <div class="card-year">2023 · Animación / Acción</div>
+          <h3 class="card-title"><a href="#">Spider-Man: Across the Spider-Verse</a></h3>
+          <p class="card-excerpt">Visualmente alucinante. Miles Morales y el multiverso en su máxima expresión. Una de las mejores del año.</p>
+          <div class="platforms">
+            <span class="platform netflix">Netflix</span>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn-read">Leer reseña →</a>
+            <a href="https://letterboxd.com" target="_blank" rel="noopener" class="letterboxd-link">Letterboxd</a>
+          </div>
+        </div>
+      </article>
 
-        <!-- 5 -->
-        <article class="blog-card" id="panini-albumes">
-            <div class="blog-date">Guía · Álbumes</div>
-            <h2>Álbumes de estampas Panini: el arte (y la paciencia) de completarlos</h2>
-            <p>
-                Completar un álbum Panini —Copa del Mundo, Copa América u otros— es un clásico del coleccionismo.
-                El reto no es solo pegar figuritas: es gestionar duplicados, intercambios y el famoso “me faltan las difíciles”.
-            </p>
-            <ul>
-                <li><strong>Empieza pronto:</strong> al inicio hay más gente intercambiando y los precios de faltantes suelen ser más bajos.</li>
-                <li><strong>Organiza duplicados:</strong> listas o apps ayudan a no comprar lo que ya tienes.</li>
-                <li><strong>Intercambia:</strong> amigos, grupos y puntos de trueque aceleran el álbum más que solo comprar sobres.</li>
-                <li><strong>Especiales y paralelas:</strong> algunas ediciones traen variantes más raras; define si las persigues o solo el set base.</li>
-                <li><strong>Pegado:</strong> alinea bien antes de presionar; una vez pegada, corregir suele dañar la página o la estampa.</li>
-            </ul>
-            <p>
-                Matemáticamente, completar solo a base de sobres se encarece al final; por eso casi todos combinan compra + intercambio.
-            </p>
-            <span class="blog-tag">Álbumes</span>
-        </article>
+      <!-- CARD 5 -->
+      <article class="card" data-category="clasicos accion">
+        <div class="card-poster">
+          <img src="https://image.tmdb.org/t/p/w500/fZPSd91yGE9fCcCe6OoQr6E3Bev.jpg" alt="Terminator 2" loading="lazy"
+               onerror="this.src='https://via.placeholder.com/500x280/1a1a1c/666?text=T2'">
+          <span class="card-badge">Clásico</span>
+          <span class="card-rating">★ 5.0</span>
+        </div>
+        <div class="card-body">
+          <div class="card-year">1991 · Acción / Sci-Fi</div>
+          <h3 class="card-title"><a href="#">Terminator 2: Judgment Day</a></h3>
+          <p class="card-excerpt">Acción perfecta, efectos que todavía aguantan y una historia con alma. Cameron en su mejor momento.</p>
+          <div class="platforms">
+            <span class="platform">Max</span>
+            <span class="platform">Renta</span>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn-read">Leer reseña →</a>
+            <a href="https://letterboxd.com" target="_blank" rel="noopener" class="letterboxd-link">Letterboxd</a>
+          </div>
+        </div>
+      </article>
 
-        <!-- 6 -->
-        <article class="blog-card" id="exhibir-coleccion">
-            <div class="blog-date">Tips · Exhibición</div>
-            <h2>Cómo exhibir coleccionables de cine en casa (sin que parezca bodega)</h2>
-            <p>
-                Una buena colección se disfruta más si se ve. Algunas ideas prácticas:
-            </p>
-            <ul>
-                <li><strong>Agrupa por tema:</strong> misma película, mismo universo o mismo tipo de objeto (solo vasos, solo palomeras).</li>
-                <li><strong>Altura y profundidad:</strong> repisas poco profundas evitan que se amontonen y se rayen entre sí.</li>
-                <li><strong>Polvo:</strong> vitrinas o estantes cerrados reducen limpieza; si están abiertos, un plumero suave de vez en cuando.</li>
-                <li><strong>Iluminación:</strong> luz LED fría o neutra; evita focos calientes pegados al plástico.</li>
-                <li><strong>Cajas:</strong> guardar la caja original detrás o debajo ayuda si algún día quieres mover o vender la pieza.</li>
-            </ul>
-            <p>
-                Menos piezas bien presentadas suelen verse mejor que muchas apiladas sin orden.
-            </p>
-            <span class="blog-tag">Exhibición</span>
-        </article>
-
-        <!-- 7 -->
-        <article class="blog-card" id="edicion-limitada">
-            <div class="blog-date">Coleccionismo · Criterios</div>
-            <h2>¿Qué hace “especial” a un promocional de cine?</h2>
-            <p>
-                No todo souvenir de dulcería se vuelve pieza buscada. Los coleccionistas suelen fijarse en:
-            </p>
-            <ul>
-                <li><strong>Tiraje y disponibilidad:</strong> solo en ciertas cadenas, países o fechas de estreno.</li>
-                <li><strong>Diseño:</strong> forma única, luces, detalles mecánicos o empaque elaborada.</li>
-                <li><strong>Estado:</strong> sin rayones fuertes, stickers completos, tapa y accesorios originales.</li>
-                <li><strong>Franquicia:</strong> sagas con comunidad grande suelen tener más demanda secundaria.</li>
-                <li><strong>Historia personal:</strong> a veces vale más el recuerdo del estreno que el precio de reventa.</li>
-            </ul>
-            <p>
-                Una regla sana: compra primero lo que te gusta exhibir. El mercado de segunda mano es impredecible
-                y muchas reimpresiones o variantes posteriores bajan el “hype” de la primera ola.
-            </p>
-            <span class="blog-tag">Coleccionismo</span>
-        </article>
-
-        <!-- 8 -->
-        <article class="blog-card" id="original-vs-generico">
-            <div class="blog-date">Tips · Calidad</div>
-            <h2>Promocional de cine vs genérico: detalles que delatan la diferencia</h2>
-            <p>
-                En el mundo de vasos, palomeras y figuras hay piezas oficiales de estreno y muchas imitaciones
-                o productos “inspirados en”. Algunos indicios útiles:
-            </p>
-            <ul>
-                <li><strong>Acabado:</strong> moldes limpios, ensamble firme, pintura o serigrafía nítida.</li>
-                <li><strong>Marcas y textos:</strong> logos de estudio, película o cadena suelen estar bien definidos en lo oficial.</li>
-                <li><strong>Material:</strong> plásticos muy flexibles, olor fuerte a químico o tintas que se borra al roce merecen sospecha.</li>
-                <li><strong>Accesorios:</strong> pajillas, tapas y stickers originales suelen calzar bien; en copias a menudo fallan.</li>
-                <li><strong>Contexto de venta:</strong> precios irreales para un estreno recién salido pueden indicar réplica o reventa engañosa.</li>
-            </ul>
-            <p>
-                Cuando coleccionas por cariño a la película, prioriza piezas con buena factura y en el estado
-                que te gustaría ver en tu repisa dentro de cinco años.
-            </p>
-            <span class="blog-tag">Calidad</span>
-        </article>
+      <!-- CARD 6 -->
+      <article class="card" data-category="nuevas">
+        <div class="card-poster">
+          <img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Dune: Part Two" loading="lazy"
+               onerror="this.src='https://via.placeholder.com/500x280/1a1a1c/666?text=Dune+2'">
+          <span class="card-badge">2024</span>
+          <span class="card-rating">★ 4.5</span>
+        </div>
+        <div class="card-body">
+          <div class="card-year">2024 · Sci-Fi / Épica</div>
+          <h3 class="card-title"><a href="#">Dune: Part Two</a></h3>
+          <p class="card-excerpt">Espectáculo visual de otro nivel. Villeneuve confirma que sabe hacer cine de ciencia ficción a gran escala.</p>
+          <div class="platforms">
+            <span class="platform">Max</span>
+            <span class="platform cine">Cines</span>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn-read">Leer reseña →</a>
+            <a href="https://letterboxd.com" target="_blank" rel="noopener" class="letterboxd-link">Letterboxd</a>
+          </div>
+        </div>
+      </article>
 
     </div>
 
-    <div class="faq-cta" style="margin-top:32px;">
-        <p>¿Te gustó el blog?</p>
-        <a href="index.html#catalogo" class="banner-btn banner-btn-ml">Ver coleccionables</a>
-    </div>
-</main>
-
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-links">
-        <a href="politica-privacidad.html">Política de Privacidad</a>
-        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>
-        <a href="https://facebook.com/ElSentidoDelCine" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://wa.me/524761002824" target="_blank" rel="noopener">WhatsApp</a>
+    <!-- PAGINATION -->
+    <div class="pagination">
+      <a href="#" class="page-btn disabled">‹</a>
+      <a href="#" class="page-btn active">1</a>
+      <a href="#" class="page-btn">2</a>
+      <a href="#" class="page-btn">3</a>
+      <a href="#" class="page-btn">›</a>
     </div>
 
-    <div class="footer-copy">
-        <p>© 2026 Mi Tesoro MX — Todos los derechos reservados</p>
-    </div>
-</footer>
+  </main>
 
-<script>
-    (() => {
-      const menuToggle = document.getElementById("menuToggle");
-      const headerMenu = document.querySelector(".header-center");
-      if (!menuToggle || !headerMenu) return;
-      menuToggle.addEventListener("click", () => {
-        const abierto = headerMenu.classList.toggle("open");
-        menuToggle.textContent = abierto ? "✕" : "☰";
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-title">Los Brujos del Cine</div>
+      <p class="footer-text">Reseñas honestas de películas viejas y nuevas. Parte de la familia <strong>Mi Tesoro MX</strong>.</p>
+      <div class="socials">
+        <a href="https://facebook.com" class="social" title="Facebook" target="_blank" rel="noopener">f</a>
+        <a href="https://instagram.com" class="social" title="Instagram" target="_blank" rel="noopener">ig</a>
+        <a href="https://tiktok.com" class="social" title="TikTok" target="_blank" rel="noopener">♪</a>
+        <a href="https://letterboxd.com" class="social" title="Letterboxd" target="_blank" rel="noopener">Lb</a>
+        <a href="https://x.com" class="social" title="X" target="_blank" rel="noopener">𝕏</a>
+      </div>
+      <p class="footer-copy">
+        © 2026 Los Brujos del Cine · 
+        <a href="https://mitesoro.mx">Mi Tesoro MX</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Filtros simples
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card, .featured');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        cards.forEach(card => {
+          if (filter === 'todas') {
+            card.classList.remove('hidden');
+          } else {
+            const cats = card.dataset.category || '';
+            if (cats.includes(filter)) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          }
+        });
       });
-      headerMenu.querySelectorAll("a").forEach((l) => l.addEventListener("click", () => {
-        headerMenu.classList.remove("open");
-        menuToggle.textContent = "☰";
-      }));
-    })();
-    const btnTheme = document.getElementById("toggleTheme");
-    if (localStorage.getItem("tema") === "dark") {
-      document.body.classList.add("dark");
-      if (btnTheme) btnTheme.textContent = "☀️";
-    }
-    btnTheme?.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      const o = document.body.classList.contains("dark");
-      btnTheme.textContent = o ? "☀️" : "🌙";
-      localStorage.setItem("tema", o ? "dark" : "light");
     });
-</script>
+  </script>
 </body>
 </html>
