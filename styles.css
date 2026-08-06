@@ -3220,6 +3220,22 @@ body.dark .btn-wishlist {
   color: #fff;
 }
 
+.carousel-slide--meli {
+  background: linear-gradient(135deg, #2d3277 0%, #1e214d 50%, #12142e 100%);
+  border-color: rgba(255, 230, 0, 0.2);
+}
+
+.carousel-slide--meli .banner-btn {
+  background: #ffe600;
+  color: #333;
+  font-weight: 700;
+}
+
+.carousel-slide--meli .banner-btn:hover {
+  background: #ffea33;
+  color: #000;
+}
+
 .carousel-slide--generic {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d1a1a 50%, #1a1a2d 100%);
 }
