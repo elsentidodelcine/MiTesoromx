@@ -676,6 +676,8 @@ function actualizarCarritoUI() {
    actualizarWhats(0);
    actualizarEnvioGratisBar(0);
    actualizarEstadoVaciar();
+   const btnSeguir = document.getElementById("btnSeguirComprando");
+   if (btnSeguir) btnSeguir.style.display = "block";
 
    // Ocultar "Seguir comprando"
    const btnSeguir = document.getElementById("btnSeguirComprando");
@@ -711,7 +713,12 @@ function actualizarCarritoUI() {
     contenedor.appendChild(div);
   });
 
-  totalEl.textContent = `Total: $${total.toLocaleString("es-MX")} MXN`;
+  totalEl.innerHTML = `
+    <div class="cart-total-wrap">
+      <span class="cart-total-label">Total</span>
+      <span class="cart-total-amount">$${total.toLocaleString("es-MX")} MXN</span>
+    </div>
+  `;
   actualizarWhats(total);
   actualizarEnvioGratisBar(total);
 
@@ -1201,7 +1208,7 @@ const PREVENTAS_ACTIVAS = [
     active: true,
     emoji: "🦴",
     titulo: "Preventa PAW Patrol: The Dino Movie",
-    texto: "** Próximamente **",
+    texto: "<br><br> ** Próximamente ** <br><br>" ,
     link: "preventas.html",
     linkTexto: "Ver términos de preventa",
     tema: "paw",

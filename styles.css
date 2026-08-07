@@ -3405,3 +3405,66 @@ body.dark .btn-wishlist {
      }
 
  }
+ .hero-cta {
+   display: inline-block;
+   background: var(--accent);
+   color: #fff;
+   padding: 14px 32px;
+   border-radius: 999px;
+   font-weight: 700;
+   font-size: 1rem;
+   transition: background 0.2s, transform 0.15s;
+   box-shadow: 0 8px 24px rgba(198, 40, 40, 0.35);
+ }
+
+ .hero-cta:hover {
+   background: var(--accent-hover);
+   transform: translateY(-2px);
+ }
+
+ .hero-trust {
+   margin: 18px 0 0;
+   font-size: 0.85rem;
+   opacity: 0.85;
+   letter-spacing: 0.02em;
+ }
+
+ .cart-total-wrap {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 4px 0 2px;
+ }
+
+ .cart-total-label {
+   font-size: 0.95rem;
+   font-weight: 600;
+   color: var(--text-muted);
+ }
+
+ .cart-total-amount {
+   font-size: 1.35rem;
+   font-weight: 800;
+   color: var(--accent);
+   letter-spacing: -0.02em;
+ }
+
+ /* Botón WhatsApp más potente */
+ .btn-whatsapp {
+   display: block;
+   background: linear-gradient(135deg, #25d366, #1ebe57);
+   color: #000;
+   padding: 15px;
+   border-radius: 14px;
+   font-weight: 800;
+   font-size: 1rem;
+   text-align: center;
+   transition: transform 0.2s, box-shadow 0.2s;
+   box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+   letter-spacing: 0.01em;
+ }
+
+ .btn-whatsapp:hover {
+   transform: scale(1.025);
+   box-shadow: 0 10px 28px rgba(37, 211, 102, 0.5);
+ }

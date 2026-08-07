@@ -28,6 +28,44 @@
     <meta name="twitter:description" content="Palomeras, vasos, Funkos y ediciones exclusivas. Envíos a todo México.">
     <meta name="twitter:image" content="https://mitesoromx.com/og-image.jpg">
 
+    <link rel="canonical" href="https://mitesoromx.com/">
+
+    <!-- Structured Data (Organization + WebSite) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Organization",
+                    "name": "Mi Tesoro MX",
+                    "url": "https://mitesoromx.com/",
+                    "logo": "https://mitesoromx.com/imgs/logo.png",
+                    "sameAs": [
+                        "https://facebook.com/ElSentidoDelCine",
+                        "https://wa.me/524761002824"
+                    ],
+                    "contactPoint": {
+                        "@type": "ContactPoint",
+                        "telephone": "+52-476-100-2824",
+                        "contactType": "customer service",
+                        "areaServed": "MX",
+                        "availableLanguage": "Spanish"
+                    }
+                },
+                {
+                    "@type": "WebSite",
+                    "name": "Mi Tesoro MX",
+                    "url": "https://mitesoromx.com/",
+                    "potentialAction": {
+                        "@type": "SearchAction",
+                        "target": "https://mitesoromx.com/?q={search_term_string}",
+                        "query-input": "required name=search_term_string"
+                    }
+                }
+            ]
+        }
+    </script>
+
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -78,9 +116,10 @@
 <section class="hero hero-with-image">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <h2>Coleccionables de Cine</h2>
-        <p>Palomeras · Vasos · Promocionales · Funkos · Álbumes · Figuras · Vintage</p>
-        <a href="#catalogo">Ver Catálogo</a>
+        <h2>La tienda de coleccionistas que sí cumple</h2>
+        <p>Palomeras · Vasos · Funkos · Edición exclusiva · Envíos a todo México</p>
+        <a href="#catalogo" class="hero-cta">Ver catálogo completo</a>
+        <p class="hero-trust">+500 coleccionables · Productos originales · Atención por WhatsApp</p>
     </div>
 </section>
 
@@ -398,7 +437,7 @@
 
 <!-- WHATSAPP FLOAT + estado de horario -->
 <div id="waFloatWrap" class="wa-float-wrap">
-    <span id="waStatus" class="wa-status" hidden></span>
+    <!-- <span id="waStatus" class="wa-status" hidden></span> -->
     <a id="whatsappFloat" href="https://wa.me/524761002824" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
         💬
     </a>
