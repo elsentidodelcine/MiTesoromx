@@ -716,7 +716,6 @@ function crearPaginacion() {
   };
   cont.appendChild(prev);
 
-  // Limitar botones visibles en móvil
   let start = Math.max(1, paginaActual - 2);
   let end = Math.min(total, start + 4);
   if (end - start < 4) start = Math.max(1, end - 4);
@@ -955,73 +954,71 @@ function actualizarCarritoUI() {
     }
   }
 
-  // Resumen
-  totalEl.innerHTML = `
-    <div class="cart-summary">
-      <div class="cart-summary-row">
-        <span>Subtotal</span>
-        <span>$${t.subtotal.toLocaleString("es-MX")} MXN</span>
-      </div>
-      ${t.descuento > 0 ? `
-        <div class="cart-summary-row cart-discount">
-          <span>Descuento</span>
-          ${cuponAplicado ? `
-            <div class="cart-coupon-activo">
-              <span>Cupón <strong>${cuponAplicado.codigo}</strong> aplicado</span>
-              <button type="button" id="btnBorrarCupon" class="btn-borrar-cupon">Borrar cupón</button>
-            </div>
-          ` : `
-            <div class="cart-coupon">
-              <input type="text" id="inputCupon" placeholder="Código de cupón" maxlength="20" autocomplete="off">
-              <button type="button" id="btnAplicarCupon">Aplicar</button>
-            </div>
-            <p id="cuponMsg" class="cupon-msg" hidden></p>
-          `}
-      <div class="cart-summary-row">
-        <span>Envío estimado (Correos de México)</span>
-        <span>${t.costoEnvio === 0 ? "<strong class='text-success'>GRATIS</strong>" : `$${t.costoEnvio.toLocaleString("es-MX")} MXN`}</span>
-      </div>
-      ${t.tienePreventa ? `
-        <p class="cart-summary-note">* Las preventas no aplican para envío gratis</p>
-      ` : ""}
-      <div class="cart-summary-row cart-summary-total">
-        <span>Total</span>
-        <span>$${t.total.toLocaleString("es-MX")} MXN</span>
-      </div>
-    </div>
+   // Resumen
+   totalEl.innerHTML = `
+     <div class="cart-summary">
+       <div class="cart-summary-row">
+         <span>Subtotal</span>
+         <span>$${t.subtotal.toLocaleString("es-MX")} MXN</span>
+       </div>
+       ${t.descuento > 0 ? `
+         <div class="cart-summary-row cart-discount">
+           <span>Descuento${cuponAplicado ? ` (${cuponAplicado.codigo})` : ""}</span>
+           <span>-$${t.descuento.toLocaleString("es-MX")} MXN</span>
+         </div>
+       ` : ""}
+       <div class="cart-summary-row">
+         <span>Envío estimado (Correos de México)</span>
+         <span>${t.costoEnvio === 0 ? "<strong class='text-success'>GRATIS</strong>" : `$${t.costoEnvio.toLocaleString("es-MX")} MXN`}</span>
+       </div>
+       ${t.tienePreventa ? `
+         <p class="cart-summary-note">* Las preventas no aplican para envío gratis</p>
+       ` : ""}
+       <div class="cart-summary-row cart-summary-total">
+         <span>Total</span>
+         <span>$${t.total.toLocaleString("es-MX")} MXN</span>
+       </div>
+     </div>
 
-    <div class="cart-coupon">
-      <input type="text" id="inputCupon" placeholder="Código de cupón" maxlength="20" autocomplete="off">
-      <button type="button" id="btnAplicarCupon">Aplicar</button>
-    </div>
-    <p id="cuponMsg" class="cupon-msg" hidden></p>
+     ${cuponAplicado ? `
+       <div class="cart-coupon-activo">
+         <span>Cupón <strong>${cuponAplicado.codigo}</strong> aplicado</span>
+         <button type="button" id="btnBorrarCupon" class="btn-borrar-cupon">Borrar cupón</button>
+       </div>
+     ` : `
+       <div class="cart-coupon">
+         <input type="text" id="inputCupon" placeholder="Código de cupón" maxlength="20" autocomplete="off">
+         <button type="button" id="btnAplicarCupon">Aplicar</button>
+       </div>
+       <p id="cuponMsg" class="cupon-msg" hidden></p>
+     `}
 
-    <div class="cart-notas">
-      <label for="notasCliente">Notas del pedido (opcional)</label>
-      <textarea id="notasCliente" rows="2" placeholder="Ej. Llamar antes de llegar, dejar con el vecino..."></textarea>
-    </div>
-  `;
+     <div class="cart-notas">
+       <label for="notasCliente">Notas del pedido (opcional)</label>
+       <textarea id="notasCliente" rows="2" placeholder="Ej. Llamar antes de llegar, dejar con el vecino..."></textarea>
+     </div>
+   `;
 
-  // Eventos cupón (se recrean cada vez porque el HTML es nuevo)
-  document.getElementById("btnAplicarCupon")?.addEventListener("click", aplicarCupon);
-  document.getElementById("inputCupon")?.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") aplicarCupon();
-  });
-  document.getElementById("btnBorrarCupon")?.addEventListener("click", () => {
-    cuponAplicado = null;
-    actualizarCarritoUI();
-  });
+   // Eventos cupón
+   document.getElementById("btnAplicarCupon")?.addEventListener("click", aplicarCupon);
+   document.getElementById("inputCupon")?.addEventListener("keydown", (e) => {
+     if (e.key === "Enter") aplicarCupon();
+   });
+   document.getElementById("btnBorrarCupon")?.addEventListener("click", () => {
+     cuponAplicado = null;
+     actualizarCarritoUI();
+   });
 
-  // Si el usuario escribe notas, actualizar el link de WhatsApp
-  document.getElementById("notasCliente")?.addEventListener("input", () => {
-    actualizarWhats(calcularTotalesCarrito());
-  });
+   // Notas → actualizar WhatsApp
+   document.getElementById("notasCliente")?.addEventListener("input", () => {
+     actualizarWhats(calcularTotalesCarrito());
+   });
 
-  actualizarWhats(t);
-  actualizarEnvioGratisBar(t);
-  actualizarStickyEnvio(t);
-  actualizarEstadoVaciar();
-}
+   actualizarWhats(t);
+   actualizarEnvioGratisBar(t);
+   actualizarStickyEnvio(t);
+   actualizarEstadoVaciar();
+ }
 
 function cambiarCantidad(index, action) {
   const item = carrito[index];
@@ -2078,38 +2075,6 @@ function actualizarEnvioGratisBar(t) {
   }
 }
 
-// También actualiza la barra interna del carrito
-function actualizarEnvioGratisBar(t) {
-  const bar = document.getElementById("envioGratisBar");
-  const text = document.getElementById("envioGratisText");
-  const fill = document.getElementById("envioGratisFill");
-  if (!bar || !text || !fill) return;
-
-  if (!t || carrito.length === 0) {
-    bar.hidden = true;
-    return;
-  }
-
-  bar.hidden = false;
-
-  if (t.tienePreventaOExclusivo) {
-    text.innerHTML = `⚠️ Preventas y exclusivos <strong>no aplican</strong> para envío gratis`;
-    fill.style.width = "0%";
-    fill.classList.remove("completo");
-    return;
-  }
-
-  const pct = Math.min(100, Math.round((t.elegibleEnvioGratis / ENVIO_GRATIS_MIN) * 100));
-  fill.style.width = pct + "%";
-
-  if (t.envioGratisPosible) {
-    text.innerHTML = `🎉 ¡Posible <strong>envío gratis</strong> por Correos!`;
-    fill.classList.add("completo");
-  } else {
-    text.innerHTML = `Te faltan <strong>$${t.faltaParaGratis.toLocaleString("es-MX")} MXN</strong> para envío gratis`;
-    fill.classList.remove("completo");
-  }
-}
 
 document.getElementById("btnCompartirWishlist")?.addEventListener("click", async () => {
   if (!wishlist || wishlist.length === 0) {
