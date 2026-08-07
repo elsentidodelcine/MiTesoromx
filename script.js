@@ -55,6 +55,7 @@ function calcularTotalesCarrito() {
   let subtotal = 0;
   let elegibleEnvioGratis = 0;
   let tienePreventa = false;
+  let cantidadPreventas = 0; // unidades de preventa
 
   carrito.forEach((item) => {
     const prod = productosGlobal.find((p) => p.nombre === item.nombre) || item;
@@ -63,13 +64,12 @@ function calcularTotalesCarrito() {
 
     if (esPreventa(prod)) {
       tienePreventa = true;
+      cantidadPreventas += item.cantidad;
     } else {
-      // Nuevos, exclusivos, última pieza y normales SÍ cuentan
       elegibleEnvioGratis += sub;
     }
   });
 
-  // Descuento cupón
   let descuento = 0;
   if (cuponAplicado) {
     if (cuponAplicado.tipo === "fijo") {
@@ -82,15 +82,14 @@ function calcularTotalesCarrito() {
   const subtotalConDescuento = Math.max(0, subtotal - descuento);
   const tipoPago = window._tipoPagoSeleccionado || "Pago total";
 
-  // Envío
-  let costoEnvio = ENVIO_COSTO_DEFAULT;
+  // Costo base: $100 si hay más de 4 preventas, si no $85
+  const costoBase = (tienePreventa && cantidadPreventas > 4)
+    ? 100
+    : ENVIO_COSTO_DEFAULT;
+
+  let costoEnvio = costoBase;
   let envioGratisPosible = false;
 
-  // Solo aplica envío gratis si:
-  // 1. Es Pago total (NO apartado)
-  // 2. No hay preventas
-  // 3. El monto elegible llega a $550
-  // 4. O cupón de envío gratis
   if (cuponAplicado?.tipo === "envio_gratis") {
     costoEnvio = 0;
     envioGratisPosible = true;
@@ -101,6 +100,10 @@ function calcularTotalesCarrito() {
   ) {
     costoEnvio = 0;
     envioGratisPosible = true;
+  } else if (tipoPago === "Apartado 30%") {
+    // En apartado NUNCA es gratis
+    costoEnvio = costoBase;
+    envioGratisPosible = false;
   }
 
   const total = subtotalConDescuento + costoEnvio;
@@ -111,6 +114,7 @@ function calcularTotalesCarrito() {
     subtotalConDescuento,
     elegibleEnvioGratis,
     tienePreventa,
+    cantidadPreventas,
     costoEnvio,
     envioGratisPosible,
     total,
@@ -842,6 +846,18 @@ function actualizarCarritoUI() {
 
   // ===== CARRITO VACÍO =====
   if (carrito.length === 0) {
+
+    // Ocultar botón WhatsApp y compartir lista
+    const whatsBtn = document.getElementById("whatsBtn");
+    if (whatsBtn) {
+      whatsBtn.style.display = "none";
+      whatsBtn.href = `https://wa.me/${WA_NUMERO}`;
+      whatsBtn.textContent = "Confirmar por WhatsApp";
+    }
+
+    const btnWishlist = document.getElementById("btnCompartirWishlist");
+    if (btnWishlist) btnWishlist.style.display = "none";
+
     totalEl.innerHTML = `
       <div class="cart-empty">
         <p class="cart-empty-title">Tu carrito está vacío</p>
@@ -886,6 +902,10 @@ function actualizarCarritoUI() {
 
   // ===== HAY PRODUCTOS =====
   if (btnSeguir) btnSeguir.style.display = "block";
+
+  if (document.getElementById("whatsBtn")) whatsBtn.style.display = "block";
+  const btnWishlistShow = document.getElementById("btnCompartirWishlist");
+  if (btnWishlistShow) btnWishlistShow.style.display = "block";
 
   carrito.forEach((p, index) => {
     const div = document.createElement("div");
@@ -945,10 +965,19 @@ function actualizarCarritoUI() {
       </div>
       ${t.descuento > 0 ? `
         <div class="cart-summary-row cart-discount">
-          <span>Descuento${cuponAplicado ? ` (${cuponAplicado.codigo})` : ""}</span>
-          <span>-$${t.descuento.toLocaleString("es-MX")} MXN</span>
-        </div>
-      ` : ""}
+          <span>Descuento</span>
+          ${cuponAplicado ? `
+            <div class="cart-coupon-activo">
+              <span>Cupón <strong>${cuponAplicado.codigo}</strong> aplicado</span>
+              <button type="button" id="btnBorrarCupon" class="btn-borrar-cupon">Borrar cupón</button>
+            </div>
+          ` : `
+            <div class="cart-coupon">
+              <input type="text" id="inputCupon" placeholder="Código de cupón" maxlength="20" autocomplete="off">
+              <button type="button" id="btnAplicarCupon">Aplicar</button>
+            </div>
+            <p id="cuponMsg" class="cupon-msg" hidden></p>
+          `}
       <div class="cart-summary-row">
         <span>Envío estimado (Correos de México)</span>
         <span>${t.costoEnvio === 0 ? "<strong class='text-success'>GRATIS</strong>" : `$${t.costoEnvio.toLocaleString("es-MX")} MXN`}</span>
@@ -978,6 +1007,10 @@ function actualizarCarritoUI() {
   document.getElementById("btnAplicarCupon")?.addEventListener("click", aplicarCupon);
   document.getElementById("inputCupon")?.addEventListener("keydown", (e) => {
     if (e.key === "Enter") aplicarCupon();
+  });
+  document.getElementById("btnBorrarCupon")?.addEventListener("click", () => {
+    cuponAplicado = null;
+    actualizarCarritoUI();
   });
 
   // Si el usuario escribe notas, actualizar el link de WhatsApp
@@ -1163,7 +1196,7 @@ function actualizarEnvioGratisBar(total) {
   fill.style.width = pct + "%";
 
   if (total >= ENVIO_GRATIS_MIN) {
-    text.innerHTML = `🎉 ¡Posible <strong>envío gratis</strong> por Correos! (productos participantes)`;
+    text.innerHTML = `🎉 ¡Tienes <strong>envío gratis</strong> por Correos de México! (productos participantes)`;
     fill.classList.add("completo");
   } else {
     const falta = ENVIO_GRATIS_MIN - total;
@@ -1974,7 +2007,13 @@ function actualizarStickyEnvio(t) {
   const fill = document.getElementById("stickyEnvioFill");
   if (!bar || !text || !fill) return;
 
+  // No mostrar si vacío o solo preventas
   if (!t || carrito.length === 0 || t.tienePreventa) {
+    bar.hidden = true;
+    return;
+  }
+
+  if (t.tipoPago === "Apartado 30%") {
     bar.hidden = true;
     return;
   }
@@ -2012,6 +2051,15 @@ function actualizarEnvioGratisBar(t) {
 
   bar.hidden = false;
 
+  // Apartado → mensaje fijo
+  if (t.tipoPago === "Apartado 30%") {
+    text.innerHTML = `📦 En apartados <strong>no aplica envío gratis</strong>`;
+    fill.style.width = "0%";
+    fill.classList.remove("completo");
+    return;
+  }
+
+  // Solo preventas → no mostrar progreso de envío gratis
   if (t.tienePreventa) {
     text.innerHTML = `⚠️ Las preventas <strong>no aplican</strong> para envío gratis`;
     fill.style.width = "0%";
@@ -2023,7 +2071,7 @@ function actualizarEnvioGratisBar(t) {
   fill.style.width = pct + "%";
 
   if (t.envioGratisPosible) {
-    text.innerHTML = `🎉 ¡Posible <strong>envío gratis</strong> por Correos!`;
+    text.innerHTML = `🎉 ¡Tienes <strong>envío gratis</strong> por Correos!`;
     fill.classList.add("completo");
   } else {
     text.innerHTML = `Te faltan <strong>$${t.faltaParaGratis.toLocaleString("es-MX")} MXN</strong> para envío gratis`;
@@ -2072,7 +2120,7 @@ document.getElementById("btnCompartirWishlist")?.addEventListener("click", async
 
   const lista = wishlist.map((n, i) => `${i + 1}. ${n}`).join("\n");
   const texto = `Mi lista de deseos de Mi Tesoro MX ❤️\n\n${lista}\n\nhttps://mitesoromx.com/`;
-  const url = "https://mitesoromx.com/";
+  const url = "https://elsentidodelcine.github.io/mitesoromx/";
 
   // Web Share API (móvil + algunos navegadores)
   if (navigator.share) {
