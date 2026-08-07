@@ -3,291 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Los Brujos del Cine | Reseñas – Mi Tesoro MX</title>
-    <meta name="description" content="Reseñas de películas con personalidad. Clásicos y estrenos por Los Brujos del Cine, dentro de Mi Tesoro MX.">
 
-    <!-- Fonts -->
+    <title>Los Brujos del Cine | Reseñas de películas</title>
+    <meta name="description" content="Los Brujos del Cine: reseñas honestas de estrenos, clásicos y películas que vale la pena descubrir.">
+    <meta name="theme-color" content="#08080a">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
-    <!-- CSS separado -->
     <link rel="stylesheet" href="stylesLBDC.css">
 </head>
+
 <body>
 
-<!-- HEADER -->
-<header class="header">
+<header class="site-header">
     <div class="header-inner">
-        <a href="index.html" class="logo" aria-label="Los Brujos del Cine - Inicio">
-            <div class="logo-icon" aria-hidden="true">🎬</div>
-            <div>
-                <div class="logo-text">Los Brujos del Cine</div>
-                <div class="logo-sub">en Mi Tesoro MX</div>
-            </div>
+        <a href="index.html" class="brand" aria-label="Los Brujos del Cine, inicio">
+            <span class="brand-mark" aria-hidden="true">🎬</span>
+            <span class="brand-copy">
+                <strong>Los Brujos del Cine</strong>
+                <small>El blog de cine de Mi Tesoro MX</small>
+            </span>
         </a>
-        <nav class="nav" aria-label="Navegación principal">
-            <a href="https://mitesoro.mx">Tienda</a>
+
+        <nav class="main-nav" aria-label="Navegación principal">
             <a href="#reseñas">Reseñas</a>
-            <a href="https://letterboxd.com" target="_blank" rel="noopener noreferrer">Letterboxd</a>
-            <a href="https://mitesoro.mx" class="btn-primary">Ir a la tienda →</a>
+            <a href="#sobre-el-blog">El blog</a>
+            <a href="https://elsentidodelcine.github.io/mitesoromx/index.html">Mi Tesoro MX</a>
         </nav>
+
+        <a class="header-shop" href="https://elsentidodelcine.github.io/mitesoromx/index.html">
+            Visitar tienda <span>↗</span>
+        </a>
     </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-content">
-        <div class="badge">Reseñas con personalidad</div>
-        <h1>Películas que <span>valen la pena</span><br>ver (y coleccionar)</h1>
-        <p>Clásicos, estrenos y joyas escondidas. Reseñas cortas, honestas y sin relleno. Si te gusta el cine, aquí tienes un buen lugar para descubrir qué ver esta noche.</p>
-        <div class="hero-actions">
-            <a href="#reseñas" class="btn-primary">Ver reseñas</a>
-            <a href="https://letterboxd.com" target="_blank" rel="noopener noreferrer" class="btn-outline">Mi Letterboxd →</a>
-        </div>
-    </div>
-</section>
+<main>
 
-<!-- FILTERS -->
-<div class="filters" id="filtros" role="group" aria-label="Filtrar reseñas">
-    <button class="filter-btn active" data-filter="todas">Todas</button>
-    <button class="filter-btn" data-filter="clasicos">Clásicos</button>
-    <button class="filter-btn" data-filter="nuevas">Nuevas</button>
-    <button class="filter-btn" data-filter="animacion">Animación</button>
-    <button class="filter-btn" data-filter="accion">Acción</button>
-</div>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-glow hero-glow-one"></div>
+        <div class="hero-glow hero-glow-two"></div>
+        <div class="hero-film-grain"></div>
 
-<!-- MAIN -->
-<main class="main" id="reseñas">
+        <div class="hero-inner">
+            <div class="eyebrow"><span></span> Cine sin filtros</div>
 
-    <!-- FEATURED -->
-    <h2 class="section-title">Destacada</h2>
-    <article class="featured" data-category="clasicos animacion">
-        <div class="featured-poster">
-            <img src="https://image.tmdb.org/t/p/w780/uXDfjJbdP4ijW5hWSBrArwIHb0K.jpg"
-                 alt="Póster de Toy Story (1995)"
-                 loading="lazy"
-                 onerror="this.src='https://via.placeholder.com/780x440/1a1a1c/666?text=Toy+Story'">
-        </div>
-        <div class="featured-body">
-            <div class="featured-label">Reseña de la semana</div>
-            <h3 class="featured-title">Toy Story (1995)</h3>
-            <div class="featured-meta">
-                <span class="stars" aria-label="5 de 5 estrellas">★★★★★</span>
-                <span>Animación · 81 min</span>
-            </div>
-            <p class="featured-text">
-                La película que nos enseñó que los juguetes también tienen corazón… y que Buzz Lightyear nunca va a volar (aunque él diga lo contrario). Toy Story no solo es la primera de Pixar: es pura magia. Amistad, humor y nostalgia que siguen funcionando igual de bien hoy que en 1995.
+            <h1>
+                Películas que<br>
+                <em>merecen ser vistas.</em>
+            </h1>
+
+            <p class="hero-description">
+                Estrenos, clásicos y grandes historias contadas desde la butaca.
+                Reseñas honestas, directas y con personalidad.
             </p>
-            <div class="platforms" style="margin-bottom: 1.25rem;">
-                <span class="platform disney">Disney+</span>
+
+            <div class="hero-actions">
+                <a href="#reseñas" class="button button-primary">
+                    Explorar reseñas <span>↓</span>
+                </a>
+                <a href="https://elsentidodelcine.github.io/mitesoromx/index.html" class="button button-ghost">
+                    Conoce Mi Tesoro MX <span>↗</span>
+                </a>
             </div>
-            <div class="featured-actions">
-                <a href="reseñas/toy-story.html" class="btn-primary">Leer reseña completa</a>
-                <a href="https://letterboxd.com" target="_blank" rel="noopener noreferrer" class="btn-outline">Ver en Letterboxd</a>
+
+            <div class="hero-stats" aria-label="Información del blog">
+                <div>
+                    <strong>03</strong>
+                    <span>Reseñas iniciales</span>
+                </div>
+                <i></i>
+                <div>
+                    <strong>100%</strong>
+                    <span>Opinión personal</span>
+                </div>
+                <i></i>
+                <div>
+                    <strong>MX</strong>
+                    <span>Desde México</span>
+                </div>
             </div>
         </div>
-    </article>
+    </section>
 
-    <!-- GRID -->
-    <h2 class="section-title">Todas las reseñas</h2>
-    <div class="reviews-grid" id="grid">
+    <!-- INTRO -->
+    <section class="intro-strip" id="sobre-el-blog">
+        <div class="intro-inner">
+            <div class="intro-kicker">LOS BRUJOS DEL CINE</div>
+            <p>
+                Porque ir al cine no termina cuando aparecen los créditos.
+                <strong>Aquí empieza la conversación.</strong>
+            </p>
+        </div>
+    </section>
 
-        <!-- Toy Story -->
-        <article class="card" data-category="clasicos animacion">
-            <div class="card-poster">
-                <img src="https://image.tmdb.org/t/p/w500/uXDfjJbdP4ijW5hWSBrArwIHb0K.jpg" alt="Toy Story" loading="lazy"
-                     onerror="this.src='https://via.placeholder.com/500x280/1a1a1c/666?text=Toy+Story'">
-                <span class="card-badge">Clásico</span>
-                <span class="card-rating">★ 5.0</span>
+    <!-- REVIEWS -->
+    <section class="reviews-section" id="reseñas">
+        <div class="section-heading">
+            <div>
+                <span class="section-kicker">EN CARTELERA DEL BLOG</span>
+                <h2>Últimas reseñas</h2>
             </div>
-            <div class="card-body">
-                <div class="card-year">1995 · Animación</div>
-                <h3 class="card-title"><a href="reseñas/toy-story.html">Toy Story</a></h3>
-                <p class="card-excerpt">La primera de Pixar y sigue siendo una de las mejores. Amistad, humor y corazón en estado puro. Ideal para ver con quien sea.</p>
-                <div class="platforms">
-                    <span class="platform disney">Disney+</span>
+            <p>
+                Tres películas. Tres mundos.<br>
+                Una opinión sin vueltas.
+            </p>
+        </div>
+
+        <!-- FEATURED: Toy Story 5 -->
+        <article class="featured-review">
+            <div class="featured-image">
+                <div class="image-overlay"></div>
+                <img
+                        src="https://image.tmdb.org/t/p/w1280/placeholder.jpg"
+                        alt="Póster de Toy Story 5"
+                        loading="eager"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('poster-placeholder');"
+                >
+                <div class="poster-fallback">
+                    <span>TOY STORY</span>
+                    <strong>5</strong>
+                    <small>IMAGEN DEL PÓSTER</small>
                 </div>
-                <div class="card-footer">
-                    <a href="reseñas/toy-story.html" class="btn-read">Leer reseña →</a>
-                    <a href="https://letterboxd.com" target="_blank" rel="noopener noreferrer" class="letterboxd-link">Letterboxd</a>
+
+                <span class="review-tag">RESEÑA DESTACADA</span>
+                <div class="featured-score">
+                    <span>★</span>
+                    <strong>4.5</strong>
+                    <small>/ 5</small>
+                </div>
+            </div>
+
+            <div class="featured-content">
+                <div class="movie-meta">
+                    <span>2026</span>
+                    <i></i>
+                    <span>Animación</span>
+                    <i></i>
+                    <span>Aventura</span>
+                </div>
+
+                <h2>Toy Story 5</h2>
+
+                <p class="featured-lead">
+                    La nueva aventura de Woody, Buzz y compañía llega para demostrar
+                    si Pixar todavía tiene algo nuevo que contar con estos personajes.
+                </p>
+
+                <p class="review-placeholder">
+                    <strong>Próximamente:</strong> aquí colocaremos tu reseña completa,
+                    con tu opinión, momentos destacados y veredicto final.
+                </p>
+
+                <div class="review-bottom">
+                    <div class="rating-display">
+                        <span class="stars">★★★★<b>★</b></span>
+                        <span>4.5 / 5</span>
+                    </div>
+                    <a href="reseñas/toy-story-5.html" class="read-button">
+                        Leer reseña <span>→</span>
+                    </a>
                 </div>
             </div>
         </article>
 
-        <!-- Oppenheimer -->
-        <article class="card" data-category="nuevas">
-            <div class="card-poster">
-                <img src="https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg" alt="Oppenheimer" loading="lazy"
-                     onerror="this.src='https://via.placeholder.com/500x280/1a1a1c/666?text=Oppenheimer'">
-                <span class="card-badge">2023</span>
-                <span class="card-rating">★ 4.5</span>
-            </div>
-            <div class="card-body">
-                <div class="card-year">2023 · Drama / Historia</div>
-                <h3 class="card-title"><a href="reseñas/oppenheimer.html">Oppenheimer</a></h3>
-                <p class="card-excerpt">Nolan en modo épico. Tres horas que se sienten intensas, brillantes y a veces agotadoras. Cillian Murphy hipnotiza.</p>
-                <div class="platforms">
-                    <span class="platform prime">Prime Video</span>
-                    <span class="platform cine">Cines (reposición)</span>
-                </div>
-                <div class="card-footer">
-                    <a href="reseñas/oppenheimer.html" class="btn-read">Leer reseña →</a>
-                    <a href="https://letterboxd.com" target="_blank" rel="noopener noreferrer" class="letterboxd-link">Letterboxd</a>
-                </div>
-            </div>
-        </article>
+        <!-- TWO SECONDARY REVIEWS -->
+        <div class="review-grid">
 
-        <!-- El Padrino -->
-        <article class="card" data-category="clasicos">
-            <div class="card-poster">
-                <img src="https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enBRQVDf5NTJ9DX.jpg" alt="El Padrino" loading="lazy"
-                     onerror="this.src='https://via.placeholder.com/500x280/1a1a1c/666?text=El+Padrino'">
-                <span class="card-badge">Clásico</span>
-                <span class="card-rating">★ 5.0</span>
-            </div>
-            <div class="card-body">
-                <div class="card-year">1972 · Crimen / Drama</div>
-                <h3 class="card-title"><a href="reseñas/el-padrino.html">El Padrino</a></h3>
-                <p class="card-excerpt">La definición de obra maestra. Cada escena, cada diálogo, cada silencio… todo está en su lugar. Imprescindible.</p>
-                <div class="platforms">
-                    <span class="platform">Paramount+</span>
-                    <span class="platform">Renta digital</span>
-                </div>
-                <div class="card-footer">
-                    <a href="reseñas/el-padrino.html" class="btn-read">Leer reseña →</a>
-                    <a href="https://letterboxd.com" target="_blank" rel="noopener noreferrer" class="letterboxd-link">Letterboxd</a>
-                </div>
-            </div>
-        </article>
+            <article class="review-card">
+                <a href="reseñas/la-odisea.html" class="card-image">
+                    <img
+                            src="https://image.tmdb.org/t/p/w780/placeholder.jpg"
+                            alt="Póster de La Odisea"
+                            loading="lazy"
+                            onerror="this.style.display='none'; this.parentElement.classList.add('poster-placeholder');"
+                    >
+                    <div class="poster-fallback">
+                        <span>LA ODISEA</span>
+                        <strong>⚔</strong>
+                        <small>IMAGEN DEL PÓSTER</small>
+                    </div>
+                    <span class="card-label">ESTRENO</span>
+                    <span class="card-score">★ 4.5</span>
+                </a>
 
-        <!-- Spider-Verse -->
-        <article class="card" data-category="nuevas animacion accion">
-            <div class="card-poster">
-                <img src="https://image.tmdb.org/t/p/w500/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg" alt="Spider-Man: Across the Spider-Verse" loading="lazy"
-                     onerror="this.src='https://via.placeholder.com/500x280/1a1a1c/666?text=Spider-Verse'">
-                <span class="card-badge">2023</span>
-                <span class="card-rating">★ 4.5</span>
-            </div>
-            <div class="card-body">
-                <div class="card-year">2023 · Animación / Acción</div>
-                <h3 class="card-title"><a href="reseñas/spider-verse.html">Spider-Man: Across the Spider-Verse</a></h3>
-                <p class="card-excerpt">Visualmente alucinante. Miles Morales y el multiverso en su máxima expresión. Una de las mejores del año.</p>
-                <div class="platforms">
-                    <span class="platform netflix">Netflix</span>
+                <div class="card-content">
+                    <div class="movie-meta">
+                        <span>2026</span><i></i><span>Épica</span><i></i><span>Aventura</span>
+                    </div>
+                    <h3><a href="reseñas/la-odisea.html">La Odisea</a></h3>
+                    <p>
+                        Christopher Nolan lleva uno de los relatos más grandes de la
+                        historia al terreno de su cine espectacular.
+                    </p>
+                    <div class="card-footer">
+                        <span class="score-mini">★ 4.5</span>
+                        <a href="reseñas/la-odisea.html">Leer reseña →</a>
+                    </div>
                 </div>
-                <div class="card-footer">
-                    <a href="reseñas/spider-verse.html" class="btn-read">Leer reseña →</a>
-                    <a href="https://letterboxd.com" target="_blank" rel="noopener noreferrer" class="letterboxd-link">Letterboxd</a>
-                </div>
-            </div>
-        </article>
+            </article>
 
-        <!-- Terminator 2 -->
-        <article class="card" data-category="clasicos accion">
-            <div class="card-poster">
-                <img src="https://image.tmdb.org/t/p/w500/fZPSd91yGE9fCcCe6OoQr6E3Bev.jpg" alt="Terminator 2" loading="lazy"
-                     onerror="this.src='https://via.placeholder.com/500x280/1a1a1c/666?text=T2'">
-                <span class="card-badge">Clásico</span>
-                <span class="card-rating">★ 5.0</span>
-            </div>
-            <div class="card-body">
-                <div class="card-year">1991 · Acción / Sci-Fi</div>
-                <h3 class="card-title"><a href="reseñas/terminator-2.html">Terminator 2: Judgment Day</a></h3>
-                <p class="card-excerpt">Acción perfecta, efectos que todavía aguantan y una historia con alma. Cameron en su mejor momento.</p>
-                <div class="platforms">
-                    <span class="platform">Max</span>
-                    <span class="platform">Renta</span>
-                </div>
-                <div class="card-footer">
-                    <a href="reseñas/terminator-2.html" class="btn-read">Leer reseña →</a>
-                    <a href="https://letterboxd.com" target="_blank" rel="noopener noreferrer" class="letterboxd-link">Letterboxd</a>
-                </div>
-            </div>
-        </article>
+            <article class="review-card">
+                <a href="reseñas/spiderman-un-nuevo-dia.html" class="card-image">
+                    <img
+                            src="https://image.tmdb.org/t/p/w780/placeholder.jpg"
+                            alt="Póster de Spider-Man: Un Nuevo Día"
+                            loading="lazy"
+                            onerror="this.style.display='none'; this.parentElement.classList.add('poster-placeholder');"
+                    >
+                    <div class="poster-fallback">
+                        <span>SPIDER-MAN</span>
+                        <strong>UN NUEVO DÍA</strong>
+                        <small>IMAGEN DEL PÓSTER</small>
+                    </div>
+                    <span class="card-label">ESTRENO</span>
+                    <span class="card-score">★ 4.0</span>
+                </a>
 
-        <!-- Dune 2 -->
-        <article class="card" data-category="nuevas">
-            <div class="card-poster">
-                <img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Dune: Part Two" loading="lazy"
-                     onerror="this.src='https://via.placeholder.com/500x280/1a1a1c/666?text=Dune+2'">
-                <span class="card-badge">2024</span>
-                <span class="card-rating">★ 4.5</span>
-            </div>
-            <div class="card-body">
-                <div class="card-year">2024 · Sci-Fi / Épica</div>
-                <h3 class="card-title"><a href="reseñas/dune-part-two.html">Dune: Part Two</a></h3>
-                <p class="card-excerpt">Espectáculo visual de otro nivel. Villeneuve confirma que sabe hacer cine de ciencia ficción a gran escala.</p>
-                <div class="platforms">
-                    <span class="platform">Max</span>
-                    <span class="platform cine">Cines</span>
+                <div class="card-content">
+                    <div class="movie-meta">
+                        <span>2026</span><i></i><span>Acción</span><i></i><span>Superhéroes</span>
+                    </div>
+                    <h3><a href="reseñas/spiderman-un-nuevo-dia.html">Spider-Man: Un Nuevo Día</a></h3>
+                    <p>
+                        El regreso de Peter Parker abre una nueva etapa. ¿Funciona
+                        como la siguiente gran aventura del héroe arácnido?
+                    </p>
+                    <div class="card-footer">
+                        <span class="score-mini">★ 4.0</span>
+                        <a href="reseñas/spiderman-un-nuevo-dia.html">Leer reseña →</a>
+                    </div>
                 </div>
-                <div class="card-footer">
-                    <a href="reseñas/dune-part-two.html" class="btn-read">Leer reseña →</a>
-                    <a href="https://letterboxd.com" target="_blank" rel="noopener noreferrer" class="letterboxd-link">Letterboxd</a>
-                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- QUOTE / BRAND -->
+    <section class="cinema-quote">
+        <div class="quote-line"></div>
+        <blockquote>
+            “No todas las películas tienen que gustarte.<br>
+            Pero <em>todas</em> tienen algo que decir.”
+        </blockquote>
+        <span>— LOS BRUJOS DEL CINE</span>
+        <div class="quote-line"></div>
+    </section>
+
+    <!-- CTA -->
+    <section class="store-cta">
+        <div class="store-cta-inner">
+            <div>
+                <span class="section-kicker">DEL CINE A TU COLECCIÓN</span>
+                <h2>¿También coleccionas<br><em>tus películas favoritas?</em></h2>
+                <p>
+                    Descubre vasos, palomeras, coleccionables y artículos inspirados
+                    en el mundo del cine en Mi Tesoro MX.
+                </p>
             </div>
-        </article>
-
-    </div>
-
-    <!-- PAGINATION (opcional por ahora) -->
-    <div class="pagination" aria-label="Paginación">
-        <a href="#" class="page-btn disabled" aria-disabled="true">‹</a>
-        <a href="#" class="page-btn active" aria-current="page">1</a>
-        <a href="#" class="page-btn">2</a>
-        <a href="#" class="page-btn">3</a>
-        <a href="#" class="page-btn">›</a>
-    </div>
+            <a href="https://elsentidodelcine.github.io/mitesoromx/index.html" class="button button-primary">
+                Visitar Mi Tesoro MX <span>↗</span>
+            </a>
+        </div>
+    </section>
 
 </main>
 
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-inner">
-        <div class="footer-title">Los Brujos del Cine</div>
-        <p class="footer-text">Reseñas honestas de películas viejas y nuevas. Parte de la familia <strong>Mi Tesoro MX</strong>.</p>
-        <div class="socials">
-            <a href="https://facebook.com" class="social" title="Facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
-            <a href="https://instagram.com" class="social" title="Instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">ig</a>
-            <a href="https://tiktok.com" class="social" title="TikTok" target="_blank" rel="noopener noreferrer" aria-label="TikTok">♪</a>
-            <a href="https://letterboxd.com" class="social" title="Letterboxd" target="_blank" rel="noopener noreferrer" aria-label="Letterboxd">Lb</a>
-            <a href="https://x.com" class="social" title="X" target="_blank" rel="noopener noreferrer" aria-label="X">𝕏</a>
+<footer class="site-footer">
+    <div class="footer-main">
+        <div class="footer-brand">
+            <a href="index.html" class="brand">
+                <span class="brand-mark">🎬</span>
+                <span class="brand-copy">
+                    <strong>Los Brujos del Cine</strong>
+                    <small>El blog de cine de Mi Tesoro MX</small>
+                </span>
+            </a>
+            <p>
+                Reseñas de cine con personalidad.<br>
+                Hechas desde México para quienes aman las películas.
+            </p>
         </div>
-        <p class="footer-copy">
-            © 2026 Los Brujos del Cine ·
-            <a href="https://mitesoro.mx">Mi Tesoro MX</a>
-        </p>
+
+        <div class="footer-links">
+            <strong>Explora</strong>
+            <a href="#reseñas">Reseñas</a>
+            <a href="#sobre-el-blog">El blog</a>
+            <a href="https://elsentidodelcine.github.io/mitesoromx/index.html">Mi Tesoro MX</a>
+        </div>
+
+        <div class="footer-links">
+            <strong>Conecta</strong>
+            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="#" aria-label="Instagram">Instagram</a>
+            <a href="#" aria-label="TikTok">TikTok</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <span>© 2026 Los Brujos del Cine</span>
+        <span>Parte de <a href="https://elsentidodelcine.github.io/mitesoromx/index.html">Mi Tesoro MX</a></span>
     </div>
 </footer>
 
-<script>
-    // Filtros
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.card, .featured');
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // Quitar active de todos
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const filter = btn.dataset.filter;
-
-        cards.forEach(card => {
-          if (filter === 'todas') {
-            card.classList.remove('hidden');
-          } else {
-            const cats = (card.dataset.category || '').toLowerCase();
-            if (cats.includes(filter)) {
-              card.classList.remove('hidden');
-            } else {
-              card.classList.add('hidden');
-            }
-          }
-        });
-      });
-    });
-</script>
 </body>
 </html>

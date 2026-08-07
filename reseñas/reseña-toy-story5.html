@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy Story (1995) – Reseña | Los Brujos del Cine</title>
+    <meta name="description" content="Reseña de Toy Story (1995). La primera de Pixar sigue siendo pura magia. Amistad, humor y corazón.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS (sube un nivel porque estamos en /reseñas/) -->
+    <link rel="stylesheet" href="../stylesLBDC.css">
+
+    <style>
+        /* Estilos exclusivos de la página de reseña */
+        .review-hero {
+          position: relative;
+          padding: 3.5rem 1.5rem 2.5rem;
+          overflow: hidden;
+        }
+
+        .review-hero::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(ellipse 70% 50% at 50% -10%, rgba(225, 29, 72, 0.15), transparent);
+          pointer-events: none;
+        }
+
+        .review-hero-inner {
+          position: relative;
+          max-width: 900px;
+          margin: 0 auto;
+        }
+
+        .back-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+          color: var(--text-muted);
+          text-decoration: none;
+          font-size: 0.9rem;
+          font-weight: 500;
+          margin-bottom: 1.75rem;
+          transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+          color: var(--text);
+        }
+
+        .review-header {
+          display: grid;
+          grid-template-columns: 220px 1fr;
+          gap: 2.5rem;
+          align-items: start;
+        }
+
+        .review-poster {
+          border-radius: 12px;
+          overflow: hidden;
+          border: 1px solid var(--border);
+          box-shadow: var(--shadow);
+          background: #111;
+        }
+
+        .review-poster img {
+          width: 100%;
+          aspect-ratio: 2 / 3;
+          object-fit: cover;
+        }
+
+        .review-info h1 {
+          font-family: 'Playfair Display', serif;
+          font-size: clamp(1.9rem, 4vw, 2.6rem);
+          font-weight: 700;
+          line-height: 1.15;
+          margin-bottom: 0.6rem;
+          letter-spacing: -0.02em;
+        }
+
+        .review-meta {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 0.75rem 1.25rem;
+          color: var(--text-muted);
+          font-size: 0.95rem;
+          margin-bottom: 1.25rem;
+        }
+
+        .review-rating {
+          color: var(--gold);
+          font-weight: 700;
+          font-size: 1.1rem;
+          letter-spacing: 1px;
+        }
+
+        .review-platforms {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.45rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .review-actions {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.75rem;
+        }
+
+        /* Contenido de la reseña */
+        .review-content {
+          max-width: 720px;
+          margin: 0 auto;
+          padding: 0 1.5rem 4rem;
+        }
+
+        .review-content .lead {
+          font-size: 1.2rem;
+          color: var(--text);
+          line-height: 1.7;
+          margin-bottom: 2rem;
+          font-weight: 500;
+        }
+
+        .review-content p {
+          color: var(--text-muted);
+          font-size: 1.05rem;
+          line-height: 1.75;
+          margin-bottom: 1.4rem;
+        }
+
+        .review-content h2 {
+          font-family: 'Playfair Display', serif;
+          font-size: 1.45rem;
+          margin: 2.5rem 0 1rem;
+          color: var(--text);
+        }
+
+        .review-content blockquote {
+          border-left: 3px solid var(--accent);
+          padding: 0.9rem 0 0.9rem 1.4rem;
+          margin: 2rem 0;
+          color: var(--text);
+          font-style: italic;
+          font-size: 1.1rem;
+          background: rgba(225, 29, 72, 0.06);
+          border-radius: 0 10px 10px 0;
+        }
+
+        /* Caja final de veredicto */
+        .verdict {
+          background: var(--bg-card);
+          border: 1px solid var(--border);
+          border-radius: var(--radius);
+          padding: 1.75rem;
+          margin: 3rem 0 2rem;
+        }
+
+        .verdict-title {
+          font-family: 'Playfair Display', serif;
+          font-size: 1.2rem;
+          margin-bottom: 0.75rem;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .verdict p {
+          color: var(--text-muted);
+          margin-bottom: 0;
+          font-size: 1rem;
+        }
+
+        /* Navegación entre reseñas */
+        .review-nav {
+          display: flex;
+          justify-content: space-between;
+          gap: 1rem;
+          max-width: 900px;
+          margin: 0 auto 3rem;
+          padding: 0 1.5rem;
+          flex-wrap: wrap;
+        }
+
+        .review-nav a {
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
+          padding: 1rem 1.25rem;
+          background: var(--bg-card);
+          border: 1px solid var(--border);
+          border-radius: 12px;
+          text-decoration: none;
+          color: var(--text-muted);
+          font-size: 0.85rem;
+          transition: border-color 0.2s ease, transform 0.15s ease;
+          min-width: 160px;
+        }
+
+        .review-nav a:hover {
+          border-color: var(--accent);
+          transform: translateY(-2px);
+          color: var(--text);
+        }
+
+        .review-nav .label {
+          font-size: 0.75rem;
+          text-transform: uppercase;
+          letter-spacing: 0.04em;
+          color: var(--text-muted);
+        }
+
+        .review-nav .title {
+          font-weight: 600;
+          color: var(--text);
+          font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+          .review-header {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            text-align: center;
+          }
+
+          .review-poster {
+            max-width: 220px;
+            margin: 0 auto;
+          }
+
+          .review-meta,
+          .review-platforms,
+          .review-actions {
+            justify-content: center;
+          }
+
+          .review-nav {
+            flex-direction: column;
+          }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER (igual que en la página principal) -->
+<header class="header">
+    <div class="header-inner">
+        <a href="../index.html" class="logo" aria-label="Los Brujos del Cine - Inicio">
+            <div class="logo-icon" aria-hidden="true">🎬</div>
+            <div>
+                <div class="logo-text">Los Brujos del Cine123</div>
+                <div class="logo-sub">en Mi Tesoro MX</div>
+            </div>
+        </a>
+        <nav class="nav" aria-label="Navegación principal">
+            <a href="https://mitesoro.mx">Tienda</a>
+            <a href="../index.html#reseñas">Reseñas</a>
+            <a href="https://letterboxd.com" target="_blank" rel="noopener noreferrer">Letterboxd</a>
+            <a href="https://mitesoro.mx" class="btn-primary">Ir a la tienda →</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO DE LA RESEÑA -->
+<section class="review-hero">
+    <div class="review-hero-inner">
+        <a href="../index.html#reseñas" class="back-link">← Volver a reseñas</a>
+
+        <div class="review-header">
+            <div class="review-poster">
+                <img src="https://image.tmdb.org/t/p/w500/uXDfjJbdP4ijW5hWSBrArwIHb0K.jpg"
+                     alt="Póster de Toy Story (1995)"
+                     onerror="this.src='https://via.placeholder.com/400x600/1a1a1c/666?text=Toy+Story'">
+            </div>
+
+            <div class="review-info">
+                <h1>Toy Story</h1>
+
+                <div class="review-meta">
+                    <span class="review-rating" aria-label="5 de 5 estrellas">★★★★★</span>
+                    <span>1995</span>
+                    <span>·</span>
+                    <span>Animación</span>
+                    <span>·</span>
+                    <span>81 min</span>
+                </div>
+
+                <div class="review-platforms">
+                    <span class="platform disney">Disney+</span>
+                </div>
+
+                <div class="review-actions">
+                    <a href="https://letterboxd.com" target="_blank" rel="noopener noreferrer" class="btn-outline">Ver en Letterboxd</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTENIDO DE LA RESEÑA -->
+<article class="review-content">
+    <p class="lead">
+        La película que nos enseñó que los juguetes también tienen corazón… y que Buzz Lightyear nunca va a volar (aunque él diga lo contrario).
+    </p>
+
+    <p>
+        Toy Story no solo es la primera película de Pixar: es pura magia. En 1995, cuando casi nadie creía que una película completamente generada por ordenador pudiera emocionar, John Lasseter y su equipo demostraron que la tecnología solo es una herramienta. Lo importante siempre es la historia.
+    </p>
+
+    <p>
+        Woody y Buzz Lightyear son uno de los mejores duos de la historia del cine. Su relación empieza con celos y rivalidad y termina en una amistad tan sólida que todavía emociona treinta años después. Y eso es lo más difícil de conseguir: que una historia de juguetes te haga sentir algo real.
+    </p>
+
+    <h2>Por qué sigue funcionando</h2>
+
+    <p>
+        El humor es inteligente sin ser pretencioso. Las referencias a la cultura pop de los 90 no envejecen mal. Y la banda sonora de Randy Newman (“You’ve Got a Friend in Me”) es simplemente perfecta.
+    </p>
+
+    <blockquote>
+        “No soy un juguete… ¡soy un astronauta espacial!”
+    </blockquote>
+
+    <p>
+        Cada rewatch revela algún detalle nuevo: un gag visual, una expresión de Woody, un momento de silencio que dice más que mil diálogos. Es de esas películas que se disfrutan igual de niño que de adulto.
+    </p>
+
+    <div class="verdict">
+        <div class="verdict-title">🎬 Veredicto</div>
+        <p>
+            Imprescindible. Si nunca la has visto, estás a tiempo. Si ya la viste, vale la pena volver. Toy Story no es solo una gran película de animación: es una de las mejores películas de los 90, punto.
+        </p>
+    </div>
+</article>
+
+<!-- NAVEGACIÓN ENTRE RESEÑAS (opcional pero muy útil) -->
+<nav class="review-nav" aria-label="Otras reseñas">
+    <a href="el-padrino.html">
+        <span class="label">← Anterior</span>
+        <span class="title">El Padrino</span>
+    </a>
+    <a href="oppenheimer.html" style="margin-left: auto; text-align: right;">
+        <span class="label">Siguiente →</span>
+        <span class="title">Oppenheimer</span>
+    </a>
+</nav>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-title">Los Brujos del Cine</div>
+        <p class="footer-text">Reseñas honestas de películas viejas y nuevas. Parte de la familia <strong>Mi Tesoro MX</strong>.</p>
+        <div class="socials">
+            <a href="https://facebook.com" class="social" title="Facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
+            <a href="https://instagram.com" class="social" title="Instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">ig</a>
+            <a href="https://tiktok.com" class="social" title="TikTok" target="_blank" rel="noopener noreferrer" aria-label="TikTok">♪</a>
+            <a href="https://letterboxd.com" class="social" title="Letterboxd" target="_blank" rel="noopener noreferrer" aria-label="Letterboxd">Lb</a>
+            <a href="https://x.com" class="social" title="X" target="_blank" rel="noopener noreferrer" aria-label="X">𝕏</a>
+        </div>
+        <p class="footer-copy">
+            © 2026 Los Brujos del Cine ·
+            <a href="https://mitesoro.mx">Mi Tesoro MX</a>
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -55,16 +55,16 @@ function calcularTotalesCarrito() {
   let subtotal = 0;
   let elegibleEnvioGratis = 0;
   let tienePreventa = false;
-  let cantidadPreventas = 0; // unidades de preventa
+  let cantidadTotal = 0; // todas las unidades del carrito
 
   carrito.forEach((item) => {
     const prod = productosGlobal.find((p) => p.nombre === item.nombre) || item;
     const sub = Number(item.precio) * item.cantidad;
     subtotal += sub;
+    cantidadTotal += item.cantidad;
 
     if (esPreventa(prod)) {
       tienePreventa = true;
-      cantidadPreventas += item.cantidad;
     } else {
       elegibleEnvioGratis += sub;
     }
@@ -82,10 +82,8 @@ function calcularTotalesCarrito() {
   const subtotalConDescuento = Math.max(0, subtotal - descuento);
   const tipoPago = window._tipoPagoSeleccionado || "Pago total";
 
-  // Costo base: $100 si hay más de 4 preventas, si no $85
-  const costoBase = (tienePreventa && cantidadPreventas > 4)
-    ? 100
-    : ENVIO_COSTO_DEFAULT;
+  // $100 si hay más de 4 piezas en total (cualquier tipo)
+  const costoBase = cantidadTotal >= 4 ? 100 : ENVIO_COSTO_DEFAULT;
 
   let costoEnvio = costoBase;
   let envioGratisPosible = false;
@@ -101,7 +99,6 @@ function calcularTotalesCarrito() {
     costoEnvio = 0;
     envioGratisPosible = true;
   } else if (tipoPago === "Apartado 30%") {
-    // En apartado NUNCA es gratis
     costoEnvio = costoBase;
     envioGratisPosible = false;
   }
@@ -114,7 +111,7 @@ function calcularTotalesCarrito() {
     subtotalConDescuento,
     elegibleEnvioGratis,
     tienePreventa,
-    cantidadPreventas,
+    cantidadTotal,
     costoEnvio,
     envioGratisPosible,
     total,
@@ -968,7 +965,7 @@ function actualizarCarritoUI() {
          </div>
        ` : ""}
        <div class="cart-summary-row">
-         <span>Envío estimado (Correos de México)</span>
+         <span>Envío estimado (Correos)</span>
          <span>${t.costoEnvio === 0 ? "<strong class='text-success'>GRATIS</strong>" : `$${t.costoEnvio.toLocaleString("es-MX")} MXN`}</span>
        </div>
        ${t.tienePreventa ? `
@@ -2083,7 +2080,7 @@ document.getElementById("btnCompartirWishlist")?.addEventListener("click", async
   }
 
   const lista = wishlist.map((n, i) => `${i + 1}. ${n}`).join("\n");
-  const texto = `Mi lista de deseos de Mi Tesoro MX ❤️\n\n${lista}\n\nhttps://mitesoromx.com/`;
+  const texto = `Mi lista de deseos de Mi Tesoro MX ❤️\n\n${lista}\n\n`;
   const url = "https://elsentidodelcine.github.io/mitesoromx/";
 
   // Web Share API (móvil + algunos navegadores)
