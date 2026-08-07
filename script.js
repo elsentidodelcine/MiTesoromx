@@ -14,6 +14,7 @@ let franquiciaActual = "todas";
 let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
 const ENVIO_GRATIS_MIN = 550; // MXN — Correos de México, productos participantes
+const ENVIO_COSTO_DEFAULT = 85; // Correos de México
 const WA_NUMERO = "524761002824";
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -34,9 +35,6 @@ const imageModal = document.getElementById("imageModal");
 const modalImage = document.getElementById("modalImage");
 const closeImageModal = document.getElementById("closeImageModal");
 
-const ENVIO_GRATIS_MIN = 550;
-const ENVIO_COSTO_DEFAULT = 85; // Correos de México
-const WA_NUMERO = "524761002824";
 
 // Cupones simples (puedes agregar más)
 const CUPONES = {
