@@ -45,30 +45,31 @@ const CUPONES = {
 
 let cuponAplicado = null; // { codigo, descuento, tipo }
 
-function esPreventaOExclusivo(producto) {
+function esPreventa(producto) {
   if (!producto) return false;
   const b = badgeTexto(producto);
-  return b.includes("preventa") || b.includes("exclusivo");
+  return b.includes("preventa");
 }
 
 function calcularTotalesCarrito() {
   let subtotal = 0;
-  let elegibleEnvioGratis = 0; // solo productos que SÍ cuentan
-  let tienePreventaOExclusivo = false;
+  let elegibleEnvioGratis = 0;
+  let tienePreventa = false;
 
   carrito.forEach((item) => {
-    const prod = productosGlobal.find((p) => p.nombre === item.nombre);
+    const prod = productosGlobal.find((p) => p.nombre === item.nombre) || item;
     const sub = Number(item.precio) * item.cantidad;
     subtotal += sub;
 
-    if (esPreventaOExclusivo(prod) || esPreventaOExclusivo(item)) {
-      tienePreventaOExclusivo = true;
+    if (esPreventa(prod)) {
+      tienePreventa = true;
     } else {
+      // Nuevos, exclusivos, última pieza y normales SÍ cuentan
       elegibleEnvioGratis += sub;
     }
   });
 
-  // Descuento por cupón
+  // Descuento cupón
   let descuento = 0;
   if (cuponAplicado) {
     if (cuponAplicado.tipo === "fijo") {
@@ -79,21 +80,27 @@ function calcularTotalesCarrito() {
   }
 
   const subtotalConDescuento = Math.max(0, subtotal - descuento);
+  const tipoPago = window._tipoPagoSeleccionado || "Pago total";
 
   // Envío
   let costoEnvio = ENVIO_COSTO_DEFAULT;
   let envioGratisPosible = false;
 
+  // Solo aplica envío gratis si:
+  // 1. Es Pago total (NO apartado)
+  // 2. No hay preventas
+  // 3. El monto elegible llega a $550
+  // 4. O cupón de envío gratis
   if (cuponAplicado?.tipo === "envio_gratis") {
     costoEnvio = 0;
     envioGratisPosible = true;
-  } else if (!tienePreventaOExclusivo && elegibleEnvioGratis >= ENVIO_GRATIS_MIN) {
+  } else if (
+    tipoPago === "Pago total" &&
+    !tienePreventa &&
+    elegibleEnvioGratis >= ENVIO_GRATIS_MIN
+  ) {
     costoEnvio = 0;
     envioGratisPosible = true;
-  } else if (tienePreventaOExclusivo) {
-    // Si hay preventa/exclusivo, NUNCA es gratis (aunque el resto llegue a $550)
-    costoEnvio = ENVIO_COSTO_DEFAULT;
-    envioGratisPosible = false;
   }
 
   const total = subtotalConDescuento + costoEnvio;
@@ -103,11 +110,12 @@ function calcularTotalesCarrito() {
     descuento,
     subtotalConDescuento,
     elegibleEnvioGratis,
-    tienePreventaOExclusivo,
+    tienePreventa,
     costoEnvio,
     envioGratisPosible,
     total,
-    faltaParaGratis: Math.max(0, ENVIO_GRATIS_MIN - elegibleEnvioGratis)
+    faltaParaGratis: Math.max(0, ENVIO_GRATIS_MIN - elegibleEnvioGratis),
+    tipoPago
   };
 }
 
@@ -733,6 +741,34 @@ function scrollToCatalogo() {
 function agregarAlCarrito(producto, card) {
   if (producto.stock <= 0) return;
 
+    const prodEsPreventa = esPreventa(producto);
+    const carritoTienePreventa = carrito.some((item) => {
+      const p = productosGlobal.find((x) => x.nombre === item.nombre);
+      return esPreventa(p);
+    });
+    const carritoTieneOtros = carrito.some((item) => {
+      const p = productosGlobal.find((x) => x.nombre === item.nombre);
+      return !esPreventa(p);
+    });
+
+    // No mezclar preventas con otros productos
+    if (carrito.length > 0) {
+      if (prodEsPreventa && carritoTieneOtros) {
+        mostrarToastEspecial(
+          "No se puede combinar",
+          "Las preventas deben ir solas. Vacía el carrito o termina ese pedido primero."
+        );
+        return;
+      }
+      if (!prodEsPreventa && carritoTienePreventa) {
+        mostrarToastEspecial(
+          "No se puede combinar",
+          "Tienes una preventa en el carrito. Las preventas no se pueden mezclar con otros productos."
+        );
+        return;
+      }
+    }
+
   const encontrado = carrito.find((p) => p.nombre === producto.nombre);
 
   if (encontrado) {
@@ -770,6 +806,19 @@ function agregarAlCarrito(producto, card) {
   mostrarToast(producto.nombre);
 }
 
+function mostrarToastEspecial(titulo, texto) {
+  if (!toast || !toastText) return;
+  if (toastTitle) toastTitle.textContent = titulo;
+  toastText.textContent = texto;
+  toast.style.display = "block";
+  toast.classList.add("show");
+  clearTimeout(toast._timer);
+  toast._timer = setTimeout(() => {
+    toast.classList.remove("show");
+    toast.style.display = "none";
+  }, 4000);
+}
+
 document.addEventListener("click", (e) => {
   const btn = e.target.closest(".btn-pago-opcion");
   if (!btn) return;
@@ -788,26 +837,51 @@ function actualizarCarritoUI() {
   contenedor.innerHTML = "";
   const btnSeguir = document.getElementById("btnSeguirComprando");
 
-  if (carrito.length === 0) {
-    totalEl.innerHTML = `
-      <div class="cart-empty">
-        <p class="cart-empty-title">Tu carrito está vacío</p>
-        <p class="cart-empty-sub">Explora el catálogo y agrega tus coleccionables favoritos.</p>
-        <button type="button" id="btnVerCatalogoDesdeCarrito" class="btn-ver-catalogo">Ver catálogo</button>
-      </div>
-    `;
-    document.getElementById("btnVerCatalogoDesdeCarrito")?.addEventListener("click", () => {
-      closeDrawerWithFocus?.() || (drawer?.classList.remove("open"), overlay?.classList.remove("show"));
-      scrollToCatalogo();
-    });
+if (carrito.length === 0) {
+  totalEl.innerHTML = `
+    <div class="cart-empty">
+      <p class="cart-empty-title">Tu carrito está vacío</p>
+      <p class="cart-empty-sub">Explora el catálogo y agrega tus coleccionables favoritos.</p>
+      <button type="button" id="btnVerCatalogoDesdeCarrito" class="btn-ver-catalogo">
+        Ver catálogo
+      </button>
+    </div>
+  `;
 
-    actualizarWhats(0);
-    actualizarEnvioGratisBar(null);
-    actualizarStickyEnvio(null);
-    actualizarEstadoVaciar();
-    if (btnSeguir) btnSeguir.style.display = "none";
-    return;
+  document.getElementById("btnVerCatalogoDesdeCarrito")?.addEventListener("click", () => {
+    closeDrawerWithFocus?.();
+    scrollToCatalogo();
+  });
+
+  // Ocultar opciones de pago
+  const pagoOps = document.querySelector(".cart-pago-opciones");
+  if (pagoOps) pagoOps.style.display = "none";
+
+  // Reset tipo de pago
+  window._tipoPagoSeleccionado = "Pago total";
+  document.querySelectorAll(".btn-pago-opcion").forEach((b) => {
+    b.classList.toggle("active", b.dataset.pago === "Pago total");
+  });
+
+  // Reset cupón
+  cuponAplicado = null;
+
+  // Reset botón WhatsApp
+  const whatsBtn = document.getElementById("whatsBtn");
+  if (whatsBtn) {
+    whatsBtn.href = `https://wa.me/${WA_NUMERO}`;
+    whatsBtn.textContent = "Confirmar por WhatsApp";
   }
+
+  actualizarEnvioGratisBar(null);
+  actualizarStickyEnvio(null);
+  actualizarEstadoVaciar();
+
+  const btnSeguir = document.getElementById("btnSeguirComprando");
+  if (btnSeguir) btnSeguir.style.display = "none";
+
+  return;
+}
 
   if (btnSeguir) btnSeguir.style.display = "block";
 
@@ -844,6 +918,26 @@ function actualizarCarritoUI() {
 
   const t = calcularTotalesCarrito();
 
+  // Mostrar u ocultar opciones de pago
+  const pagoOps = document.querySelector(".cart-pago-opciones");
+  const btnApartado = document.querySelector('.btn-pago-opcion[data-pago="Apartado 30%"]');
+
+  if (pagoOps) pagoOps.style.display = "grid";
+
+  // Ocultar "Apartar 30%" si hay preventa O si hay cupón
+  if (btnApartado) {
+    if (t.tienePreventa || cuponAplicado) {
+      btnApartado.style.display = "none";
+      // Forzar pago total
+      window._tipoPagoSeleccionado = "Pago total";
+      document.querySelectorAll(".btn-pago-opcion").forEach((b) => {
+        b.classList.toggle("active", b.dataset.pago === "Pago total");
+      });
+    } else {
+      btnApartado.style.display = "";
+    }
+  }
+
   // ===== RESUMEN POTENTE =====
   totalEl.innerHTML = `
     <div class="cart-summary">
@@ -858,7 +952,7 @@ function actualizarCarritoUI() {
         </div>
       ` : ""}
       <div class="cart-summary-row">
-        <span>Envío estimado (Correos)</span>
+        <span>Envío estimado (Correos de México)</span>
         <span>${t.costoEnvio === 0 ? "<strong class='text-success'>GRATIS</strong>" : `$${t.costoEnvio.toLocaleString("es-MX")} MXN`}</span>
       </div>
       ${t.tienePreventaOExclusivo ? `
@@ -1089,23 +1183,38 @@ cancelVaciar?.addEventListener("click", () => {
 
 confirmVaciar?.addEventListener("click", () => {
   // Restaurar stock
-  carrito.forEach((item) => {
-    const prod = productosGlobal.find((p) => p.nombre === item.nombre);
-    if (prod) {
-      prod.stock += item.cantidad;
-      if (prod.stock > prod.stockInicial) prod.stock = prod.stockInicial;
-    }
-  });
+ confirmVaciar?.addEventListener("click", () => {
+   // Restaurar stock...
+   carrito.forEach((item) => {
+     const prod = productosGlobal.find((p) => p.nombre === item.nombre);
+     if (prod) {
+       prod.stock += item.cantidad;
+       if (prod.stock > prod.stockInicial) prod.stock = prod.stockInicial;
+     }
+   });
 
-  carrito = [];
-  localStorage.removeItem("carrito");
+    carrito = [];
+    cuponAplicado = null;
+    window._tipoPagoSeleccionado = "Pago total";
+    localStorage.removeItem("carrito");
+
+    // Reset visual de botones de pago
+      document.querySelectorAll(".btn-pago-opcion").forEach((b) => {
+        b.classList.toggle("active", b.dataset.pago === "Pago total");
+      });
+      const pagoOps = document.querySelector(".cart-pago-opciones");
+      if (pagoOps) pagoOps.style.display = "none";
+
+      const whatsBtn = document.getElementById("whatsBtn");
+      if (whatsBtn) {
+        whatsBtn.href = `https://wa.me/${WA_NUMERO}`;
+        whatsBtn.textContent = "Confirmar por WhatsApp";
+      }
 
   actualizarCarritoUI();
   actualizarContadorCarrito();
   actualizarEstadoVaciar();
-
   actualizarBotonesCatalogo();
-
   confirmOverlay?.classList.remove("show");
 
   if (toastTitle) toastTitle.textContent = "Carrito vacío";
@@ -1406,7 +1515,7 @@ const PREVENTAS_ACTIVAS = [
   },
   {
     id: "avengers-doomsday",
-    active: true,
+    active: false,
     emoji: "🦸",
     titulo: "Preventa Avengers: Doomsday",
     texto: "<br><br> ** Próximamente ** <br><br>",
@@ -1416,7 +1525,7 @@ const PREVENTAS_ACTIVAS = [
   },
   {
     id: "ghost-banda",
-    active: true,
+    active: false,
     emoji: "💀",
     titulo: "Preventa Ghost – The Band",
     texto: "<br><br> ** Próximamente ** <br><br>",
@@ -1926,14 +2035,52 @@ function actualizarEnvioGratisBar(t) {
   }
 }
 
-document.getElementById("btnCompartirWishlist")?.addEventListener("click", () => {
-  if (wishlist.length === 0) {
-    alert("Tu lista de deseos está vacía");
+document.getElementById("btnCompartirWishlist")?.addEventListener("click", async () => {
+  if (!wishlist || wishlist.length === 0) {
+    mostrarToastEspecial("Lista vacía", "Agrega productos a tu lista de deseos primero.");
     return;
   }
+
   const lista = wishlist.map((n, i) => `${i + 1}. ${n}`).join("\n");
-  const msg = `¡Hola! Esta es mi lista de deseos de *Mi Tesoro MX* ❤️\n\n${lista}\n\nhttps://mitesoromx.com/`;
-  window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, "_blank");
+  const texto = `Mi lista de deseos de Mi Tesoro MX ❤️\n\n${lista}\n\nhttps://mitesoromx.com/`;
+  const url = "https://mitesoromx.com/";
+
+  // Web Share API (móvil + algunos navegadores)
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: "Mi lista de deseos – Mi Tesoro MX",
+        text: texto,
+        url: url
+      });
+      return;
+    } catch (err) {
+      // Usuario canceló → no hacer nada
+      if (err.name === "AbortError") return;
+    }
+  }
+
+  // Fallback: copiar al portapapeles
+  try {
+    await navigator.clipboard.writeText(texto);
+    mostrarToastEspecial("¡Copiado!", "Lista copiada. Ya puedes pegarla en Facebook, Instagram, etc.");
+  } catch {
+    // Último recurso
+    prompt("Copia tu lista de deseos:", texto);
+  }
+});
+
+/* ---------- TIPO DE PAGO (Pago total / Apartado 30%) ---------- */
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest(".btn-pago-opcion");
+  if (!btn) return;
+
+  document.querySelectorAll(".btn-pago-opcion").forEach((b) => b.classList.remove("active"));
+  btn.classList.add("active");
+  window._tipoPagoSeleccionado = btn.dataset.pago;
+
+  // Recalcular todo (el envío gratis depende del tipo de pago)
+  actualizarCarritoUI();
 });
 
 

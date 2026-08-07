@@ -1,10 +1,10 @@
 [
 
-  { "nombre": "Preventa Vaso Casa Gryffindor Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry3.jpg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "Preventa Vaso Casa Ravenclaw  Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry1.jpg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "Preventa Vaso Casa Slytherin  Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry2.jpg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "Preventa Vaso Casa Hufflepuff Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry4.jpg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "Preventa Palomera Sombrero Harry Potter", "categoria": "Harry Potter", "precio": 959, "imagen": "imgs/harry5.jpg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Preventa Vaso Casa Gryffindor Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry3.jpg" ,"badge": "preventa", "stock": 4},
+  { "nombre": "Preventa Vaso Casa Ravenclaw  Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry1.jpg" ,"badge": "preventa", "stock": 4},
+  { "nombre": "Preventa Vaso Casa Slytherin  Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry2.jpg" ,"badge": "preventa", "stock": 4},
+  { "nombre": "Preventa Vaso Casa Hufflepuff Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry4.jpg" ,"badge": "preventa", "stock": 4},
+  { "nombre": "Preventa Palomera Sombrero Harry Potter", "categoria": "Harry Potter", "precio": 959, "imagen": "imgs/harry5.jpg" ,"badge": "preventa", "stock": 4},
 
 
   { "nombre": "Album de Estampas Copa America Panini Model1", "categoria": "Album Estampas", "precio": 50, "imagen": "imgs/halbum1.png" ,"badge": "ultimo", "stock": 1},
