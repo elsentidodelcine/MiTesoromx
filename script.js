@@ -832,16 +832,6 @@ function mostrarToastEspecial(titulo, texto) {
   }, 4000);
 }
 
-document.addEventListener("click", (e) => {
-  const btn = e.target.closest(".btn-pago-opcion");
-  if (!btn) return;
-  document.querySelectorAll(".btn-pago-opcion").forEach((b) => b.classList.remove("active"));
-  btn.classList.add("active");
-  window._tipoPagoSeleccionado = btn.dataset.pago;
-  const t = calcularTotalesCarrito();
-  actualizarWhats(t);
-});
-
 function actualizarCarritoUI() {
   const contenedor = document.getElementById("cartItems");
   const totalEl = document.getElementById("cartTotal");
@@ -850,52 +840,51 @@ function actualizarCarritoUI() {
   contenedor.innerHTML = "";
   const btnSeguir = document.getElementById("btnSeguirComprando");
 
-if (carrito.length === 0) {
-  totalEl.innerHTML = `
-    <div class="cart-empty">
-      <p class="cart-empty-title">Tu carrito está vacío</p>
-      <p class="cart-empty-sub">Explora el catálogo y agrega tus coleccionables favoritos.</p>
-      <button type="button" id="btnVerCatalogoDesdeCarrito" class="btn-ver-catalogo">
-        Ver catálogo
-      </button>
-    </div>
-  `;
+  // ===== CARRITO VACÍO =====
+  if (carrito.length === 0) {
+    totalEl.innerHTML = `
+      <div class="cart-empty">
+        <p class="cart-empty-title">Tu carrito está vacío</p>
+        <p class="cart-empty-sub">Explora el catálogo y agrega tus coleccionables favoritos.</p>
+        <button type="button" id="btnVerCatalogoDesdeCarrito" class="btn-ver-catalogo">
+          Ver catálogo
+        </button>
+      </div>
+    `;
 
-  document.getElementById("btnVerCatalogoDesdeCarrito")?.addEventListener("click", () => {
-    closeDrawerWithFocus?.();
-    scrollToCatalogo();
-  });
+    document.getElementById("btnVerCatalogoDesdeCarrito")?.addEventListener("click", () => {
+      if (typeof closeDrawerWithFocus === "function") closeDrawerWithFocus();
+      else {
+        drawer?.classList.remove("open");
+        overlay?.classList.remove("show");
+      }
+      scrollToCatalogo();
+    });
 
-  // Ocultar opciones de pago
-  const pagoOps = document.querySelector(".cart-pago-opciones");
-  if (pagoOps) pagoOps.style.display = "none";
+    const pagoOps = document.querySelector(".cart-pago-opciones");
+    if (pagoOps) pagoOps.style.display = "none";
 
-  // Reset tipo de pago
-  window._tipoPagoSeleccionado = "Pago total";
-  document.querySelectorAll(".btn-pago-opcion").forEach((b) => {
-    b.classList.toggle("active", b.dataset.pago === "Pago total");
-  });
+    window._tipoPagoSeleccionado = "Pago total";
+    document.querySelectorAll(".btn-pago-opcion").forEach((b) => {
+      b.classList.toggle("active", b.dataset.pago === "Pago total");
+    });
 
-  // Reset cupón
-  cuponAplicado = null;
+    cuponAplicado = null;
 
-  // Reset botón WhatsApp
-  const whatsBtn = document.getElementById("whatsBtn");
-  if (whatsBtn) {
-    whatsBtn.href = `https://wa.me/${WA_NUMERO}`;
-    whatsBtn.textContent = "Confirmar por WhatsApp";
+    const whatsBtn = document.getElementById("whatsBtn");
+    if (whatsBtn) {
+      whatsBtn.href = `https://wa.me/${WA_NUMERO}`;
+      whatsBtn.textContent = "Confirmar por WhatsApp";
+    }
+
+    actualizarEnvioGratisBar(null);
+    actualizarStickyEnvio(null);
+    actualizarEstadoVaciar();
+    if (btnSeguir) btnSeguir.style.display = "none";
+    return;
   }
 
-  actualizarEnvioGratisBar(null);
-  actualizarStickyEnvio(null);
-  actualizarEstadoVaciar();
-
-  const btnSeguir = document.getElementById("btnSeguirComprando");
-  if (btnSeguir) btnSeguir.style.display = "none";
-
-  return;
-}
-
+  // ===== HAY PRODUCTOS =====
   if (btnSeguir) btnSeguir.style.display = "block";
 
   carrito.forEach((p, index) => {
@@ -917,7 +906,6 @@ if (carrito.length === 0) {
     contenedor.appendChild(div);
   });
 
-  // Eventos cantidad y eliminar (igual que antes)
   contenedor.querySelectorAll(".cart-qty-btn").forEach((btn) => {
     btn.onclick = () => cambiarCantidad(Number(btn.dataset.index), btn.dataset.action);
   });
@@ -931,17 +919,14 @@ if (carrito.length === 0) {
 
   const t = calcularTotalesCarrito();
 
-  // Mostrar u ocultar opciones de pago
+  // Opciones de pago
   const pagoOps = document.querySelector(".cart-pago-opciones");
   const btnApartado = document.querySelector('.btn-pago-opcion[data-pago="Apartado 30%"]');
-
   if (pagoOps) pagoOps.style.display = "grid";
 
-  // Ocultar "Apartar 30%" si hay preventa O si hay cupón
   if (btnApartado) {
     if (t.tienePreventa || cuponAplicado) {
       btnApartado.style.display = "none";
-      // Forzar pago total
       window._tipoPagoSeleccionado = "Pago total";
       document.querySelectorAll(".btn-pago-opcion").forEach((b) => {
         b.classList.toggle("active", b.dataset.pago === "Pago total");
@@ -951,7 +936,7 @@ if (carrito.length === 0) {
     }
   }
 
-  // ===== RESUMEN POTENTE =====
+  // Resumen
   totalEl.innerHTML = `
     <div class="cart-summary">
       <div class="cart-summary-row">
@@ -968,8 +953,8 @@ if (carrito.length === 0) {
         <span>Envío estimado (Correos de México)</span>
         <span>${t.costoEnvio === 0 ? "<strong class='text-success'>GRATIS</strong>" : `$${t.costoEnvio.toLocaleString("es-MX")} MXN`}</span>
       </div>
-      ${t.tienePreventaOExclusivo ? `
-        <p class="cart-summary-note">* Preventas y exclusivos no aplican para envío gratis</p>
+      ${t.tienePreventa ? `
+        <p class="cart-summary-note">* Las preventas no aplican para envío gratis</p>
       ` : ""}
       <div class="cart-summary-row cart-summary-total">
         <span>Total</span>
@@ -977,24 +962,27 @@ if (carrito.length === 0) {
       </div>
     </div>
 
-    <!-- Cupón -->
     <div class="cart-coupon">
       <input type="text" id="inputCupon" placeholder="Código de cupón" maxlength="20" autocomplete="off">
       <button type="button" id="btnAplicarCupon">Aplicar</button>
     </div>
     <p id="cuponMsg" class="cupon-msg" hidden></p>
 
-    <!-- Notas del cliente -->
     <div class="cart-notas">
       <label for="notasCliente">Notas del pedido (opcional)</label>
       <textarea id="notasCliente" rows="2" placeholder="Ej. Llamar antes de llegar, dejar con el vecino..."></textarea>
     </div>
   `;
 
-  // Eventos cupón
+  // Eventos cupón (se recrean cada vez porque el HTML es nuevo)
   document.getElementById("btnAplicarCupon")?.addEventListener("click", aplicarCupon);
   document.getElementById("inputCupon")?.addEventListener("keydown", (e) => {
     if (e.key === "Enter") aplicarCupon();
+  });
+
+  // Si el usuario escribe notas, actualizar el link de WhatsApp
+  document.getElementById("notasCliente")?.addEventListener("input", () => {
+    actualizarWhats(calcularTotalesCarrito());
   });
 
   actualizarWhats(t);
@@ -1196,33 +1184,31 @@ cancelVaciar?.addEventListener("click", () => {
 
 confirmVaciar?.addEventListener("click", () => {
   // Restaurar stock
- confirmVaciar?.addEventListener("click", () => {
-   // Restaurar stock...
-   carrito.forEach((item) => {
-     const prod = productosGlobal.find((p) => p.nombre === item.nombre);
-     if (prod) {
-       prod.stock += item.cantidad;
-       if (prod.stock > prod.stockInicial) prod.stock = prod.stockInicial;
-     }
-   });
+  carrito.forEach((item) => {
+    const prod = productosGlobal.find((p) => p.nombre === item.nombre);
+    if (prod) {
+      prod.stock += item.cantidad;
+      if (prod.stock > prod.stockInicial) prod.stock = prod.stockInicial;
+    }
+  });
 
-    carrito = [];
-    cuponAplicado = null;
-    window._tipoPagoSeleccionado = "Pago total";
-    localStorage.removeItem("carrito");
+  carrito = [];
+  cuponAplicado = null;
+  window._tipoPagoSeleccionado = "Pago total";
+  localStorage.removeItem("carrito");
 
-    // Reset visual de botones de pago
-      document.querySelectorAll(".btn-pago-opcion").forEach((b) => {
-        b.classList.toggle("active", b.dataset.pago === "Pago total");
-      });
-      const pagoOps = document.querySelector(".cart-pago-opciones");
-      if (pagoOps) pagoOps.style.display = "none";
+  // Reset visual de botones de pago
+  document.querySelectorAll(".btn-pago-opcion").forEach((b) => {
+    b.classList.toggle("active", b.dataset.pago === "Pago total");
+  });
+  const pagoOps = document.querySelector(".cart-pago-opciones");
+  if (pagoOps) pagoOps.style.display = "none";
 
-      const whatsBtn = document.getElementById("whatsBtn");
-      if (whatsBtn) {
-        whatsBtn.href = `https://wa.me/${WA_NUMERO}`;
-        whatsBtn.textContent = "Confirmar por WhatsApp";
-      }
+  const whatsBtn = document.getElementById("whatsBtn");
+  if (whatsBtn) {
+    whatsBtn.href = `https://wa.me/${WA_NUMERO}`;
+    whatsBtn.textContent = "Confirmar por WhatsApp";
+  }
 
   actualizarCarritoUI();
   actualizarContadorCarrito();
@@ -1988,8 +1974,7 @@ function actualizarStickyEnvio(t) {
   const fill = document.getElementById("stickyEnvioFill");
   if (!bar || !text || !fill) return;
 
-  // Ocultar si no hay carrito, o si tiene preventa/exclusivo, o si ya alcanzó gratis
-  if (!t || carrito.length === 0 || t.tienePreventaOExclusivo) {
+  if (!t || carrito.length === 0 || t.tienePreventa) {
     bar.hidden = true;
     return;
   }
@@ -2002,7 +1987,6 @@ function actualizarStickyEnvio(t) {
     return;
   }
 
-  // Solo mostrar si falta poco (ej. menos de $300) para no molestar
   if (t.faltaParaGratis > 300) {
     bar.hidden = true;
     return;
@@ -2013,6 +1997,38 @@ function actualizarStickyEnvio(t) {
   fill.classList.remove("completo");
   text.innerHTML = `Te faltan <strong>$${t.faltaParaGratis.toLocaleString("es-MX")}</strong> para envío gratis`;
   bar.hidden = false;
+}
+
+function actualizarEnvioGratisBar(t) {
+  const bar = document.getElementById("envioGratisBar");
+  const text = document.getElementById("envioGratisText");
+  const fill = document.getElementById("envioGratisFill");
+  if (!bar || !text || !fill) return;
+
+  if (!t || carrito.length === 0) {
+    bar.hidden = true;
+    return;
+  }
+
+  bar.hidden = false;
+
+  if (t.tienePreventa) {
+    text.innerHTML = `⚠️ Las preventas <strong>no aplican</strong> para envío gratis`;
+    fill.style.width = "0%";
+    fill.classList.remove("completo");
+    return;
+  }
+
+  const pct = Math.min(100, Math.round((t.elegibleEnvioGratis / ENVIO_GRATIS_MIN) * 100));
+  fill.style.width = pct + "%";
+
+  if (t.envioGratisPosible) {
+    text.innerHTML = `🎉 ¡Posible <strong>envío gratis</strong> por Correos!`;
+    fill.classList.add("completo");
+  } else {
+    text.innerHTML = `Te faltan <strong>$${t.faltaParaGratis.toLocaleString("es-MX")} MXN</strong> para envío gratis`;
+    fill.classList.remove("completo");
+  }
 }
 
 // También actualiza la barra interna del carrito
