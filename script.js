@@ -322,6 +322,19 @@ function ordenarLista(lista) {
   });
 })();
 
+/* ---------- TIPO DE PAGO (Pago total / Apartado 30%) ---------- */
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest(".btn-pago-opcion");
+  if (!btn) return;
+
+  document.querySelectorAll(".btn-pago-opcion").forEach((b) => b.classList.remove("active"));
+  btn.classList.add("active");
+  window._tipoPagoSeleccionado = btn.dataset.pago;
+
+  // Recalcular todo (el envío gratis depende del tipo de pago)
+  actualizarCarritoUI();
+});
+
 /* Filtros por franquicia */
 (() => {
   const cont = document.getElementById("filtrosFranquicia");
@@ -2070,18 +2083,7 @@ document.getElementById("btnCompartirWishlist")?.addEventListener("click", async
   }
 });
 
-/* ---------- TIPO DE PAGO (Pago total / Apartado 30%) ---------- */
-document.addEventListener("click", (e) => {
-  const btn = e.target.closest(".btn-pago-opcion");
-  if (!btn) return;
 
-  document.querySelectorAll(".btn-pago-opcion").forEach((b) => b.classList.remove("active"));
-  btn.classList.add("active");
-  window._tipoPagoSeleccionado = btn.dataset.pago;
-
-  // Recalcular todo (el envío gratis depende del tipo de pago)
-  actualizarCarritoUI();
-});
 
 
 
