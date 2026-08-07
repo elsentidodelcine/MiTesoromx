@@ -887,7 +887,6 @@ function actualizarCarritoUI() {
 
     cuponAplicado = null;
 
-    const whatsBtn = document.getElementById("whatsBtn");
     if (whatsBtn) {
       whatsBtn.href = `https://wa.me/${WA_NUMERO}`;
       whatsBtn.textContent = "Confirmar por WhatsApp";
