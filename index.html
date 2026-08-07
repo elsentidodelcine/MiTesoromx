@@ -119,6 +119,7 @@
         <h2>La tienda de coleccionistas que sí cumple</h2>
         <p>Palomeras · Vasos · Funkos · Edición exclusiva · Envíos a todo México</p>
         <a href="#catalogo" class="hero-cta">Ver catálogo completo</a>
+        <br>
         <p class="hero-trust">+500 coleccionables · Productos originales · Atención por WhatsApp</p>
     </div>
 </section>
@@ -221,6 +222,7 @@
                 autocomplete="off"
                 aria-label="Buscar productos"
         >
+        <div id="searchSuggestions" class="search-suggestions" hidden></div>
         <button type="button" id="limpiarBusqueda" class="search-clear" aria-label="Limpiar búsqueda" hidden>✕</button>
     </div>
     <div class="ordenar-wrap">
@@ -319,43 +321,73 @@
 <!-- TESTIMONIOS / PRUEBA SOCIAL -->
 <section class="testimonios">
     <h2>Lo que dicen nuestros clientes</h2>
-    <p class="testimonios-sub">Coleccionistas reales de todo México</p>
-    <div class="social-stats">
-        <div class="social-stat"><strong>+500</strong><span>coleccionables</span></div>
-        <div class="social-stat"><strong>Envíos</strong><span>a todo México</span></div>
-        <div class="social-stat"><strong>WhatsApp</strong><span>atención directa</span></div>
-        <div class="social-stat"><strong>Originales</strong><span>100% cine</span></div>
-    </div>
+    <p class="testimonios-sub">Coleccionistas reales de todo México · Reseñas verificadas</p>
+
     <div class="testimonios-grid">
         <article class="testimonio">
+            <div class="testimonio-header">
+                <img src="imgs/clientes/cliente1.jpg" alt="" class="testimonio-foto" loading="lazy">
+                <div>
+                    <strong>Sheeqo Tomas Vaca</strong>
+                    <span>León, GTO · Verificado ✓</span>
+                </div>
+            </div>
             <div class="stars">⭐⭐⭐⭐⭐</div>
             <p>"Todo muy bien, confié en él y no me ha decepcionado. El producto llegó en excelentes condiciones."</p>
-            <span>— Sheeqo Tomas Vaca, León GTO</span>
         </article>
-        <article class="testimonio">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Producto tal cual se muestra en las fotos. Entrega rápida y buena atención."</p>
-            <span>— Joel Cordero, Guadalajara</span>
-        </article>
-        <article class="testimonio">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Gracias Mi Tesoro MX por conseguirme la palomera de Taylor Swift. Llegó en buen estado y súper confiable."</p>
-            <span>— Barajas Melina, Querétaro</span>
-        </article>
-        <article class="testimonio">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Excelente trato y muy honestos con las preventas. Me avisaron de todo el proceso."</p>
-            <span>— Cliente verificado, CDMX</span>
-        </article>
-        <article class="testimonio">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"El empaque venía súper protegido. La palomera llegó impecable. Ya van varios pedidos con ellos."</p>
-            <span>— Coleccionista, Monterrey</span>
-        </article>
+        <!-- repite con más -->
     </div>
-    <button class="ver-mas-opiniones" id="toggleOpiniones" type="button">
-        Ver más opiniones ▾
-    </button>
+</section>
+
+<!-- CONTADOR DE PEDIDOS + CONFIANZA -->
+<section class="trust-extra">
+    <div class="trust-extra-grid">
+        <div class="trust-extra-item">
+            <strong id="contadorPedidos">+1,250</strong>
+            <span>Pedidos enviados</span>
+        </div>
+        <div class="trust-extra-item">
+            <strong>100%</strong>
+            <span>Productos originales</span>
+        </div>
+        <div class="trust-extra-item">
+            <strong>4.9★</strong>
+            <span>Calificación promedio</span>
+        </div>
+        <div class="trust-extra-item">
+            <strong>24-72h</strong>
+            <span>Preparación de pedido</span>
+        </div>
+    </div>
+</section>
+
+<!-- BADGES DE CONFIANZA -->
+<section class="badges-confianza">
+    <div class="badge-confianza">🔒 Pago seguro</div>
+    <div class="badge-confianza">📦 Empaque protegido</div>
+    <div class="badge-confianza">🚚 Envíos a todo México</div>
+    <div class="badge-confianza">💬 Atención real por WhatsApp</div>
+    <div class="badge-confianza">❌ No pedimos datos de tarjeta</div>
+</section>
+
+<!-- CÓMO LLEGA TU PEDIDO -->
+<section class="empaque-section">
+    <h2>Así llega tu pedido</h2>
+    <p class="empaque-sub">Empaque reforzado para que tus coleccionables lleguen perfectos</p>
+    <div class="empaque-grid">
+        <div class="empaque-card">
+            <img src="imgs/empaque-1.jpg" alt="Empaque protegido" loading="lazy">
+            <p>Doble protección</p>
+        </div>
+        <div class="empaque-card">
+            <img src="imgs/empaque-2.jpg" alt="Producto bien empacado" loading="lazy">
+            <p>Burbuja + cartón</p>
+        </div>
+        <div class="empaque-card">
+            <img src="imgs/empaque-3.jpg" alt="Entrega real" loading="lazy">
+            <p>Entrega real de clientes</p>
+        </div>
+    </div>
 </section>
 
 <!-- FOOTER -->
@@ -383,6 +415,10 @@
 
     <div class="cart-footer">
         <p id="cartTotal">Tu carrito está vacío</p>
+        <div class="cart-pago-opciones">
+            <button type="button" class="btn-pago-opcion active" data-pago="Pago total">Pago total</button>
+            <button type="button" class="btn-pago-opcion" data-pago="Apartado 30%">Apartar con 30%</button>
+        </div>
 
         <!-- Envío gratis dinámico -->
         <div id="envioGratisBar" class="envio-gratis-bar" hidden>
@@ -412,6 +448,7 @@
                 <li><span>5</span> Seguimiento hasta que te llegue</li>
             </ul>
         </div>
+        <button type="button" id="btnCompartirWishlist" class="btn-compartir-wishlist">❤️ Compartir mi lista</button>
 
         <p class="cart-legal-mini">
             Al confirmar aceptas nuestros
@@ -477,5 +514,14 @@
 </div>
 
 <script src="script.js"></script>
+<div id="stickyEnvioBar" class="sticky-envio-bar" hidden>
+    <div class="sticky-envio-inner">
+        <div class="sticky-envio-text" id="stickyEnvioText"></div>
+        <div class="sticky-envio-track">
+            <div class="sticky-envio-fill" id="stickyEnvioFill"></div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
