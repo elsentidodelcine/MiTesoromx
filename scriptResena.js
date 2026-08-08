@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', async () => {
               src="${escapeHTML(destacada.poster)}"
               alt="Póster de ${escapeHTML(destacada.titulo)}"
               loading="eager"
-              onerror="this.style.display='none'; this.parentElement.classList.add('poster-placeholder');"
+              onerror="this.onerror=null; this.style.display='none'; this.closest('.featured-image, .card-image')?.classList.add('poster-placeholder');"
             >
             <div class="poster-fallback">
               <span>${escapeHTML(destacada.posterFallback?.linea1 || destacada.titulo)}</span>
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                   src="${escapeHTML(r.poster)}"
                   alt="Póster de ${escapeHTML(r.titulo)}"
                   loading="lazy"
-                  onerror="this.style.display='none'; this.parentElement.classList.add('poster-placeholder');"
+                  onerror="this.onerror=null; this.style.display='none'; this.closest('.featured-image, .card-image')?.classList.add('poster-placeholder');"
                 >
                 <div class="poster-fallback">
                   <span>${escapeHTML(r.posterFallback?.linea1 || r.titulo)}</span>

@@ -512,6 +512,7 @@ button:focus-visible {
   height: 100%;
   object-fit: cover;
   transition: transform .7s ease;
+  z-index: 0;
 }
 
 .featured-review:hover .featured-image img {
@@ -531,7 +532,7 @@ button:focus-visible {
 .poster-fallback {
   position: absolute;
   inset: 0;
-  display: flex;
+  display: none; /* ← Oculto por defecto */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -542,6 +543,7 @@ button:focus-visible {
     radial-gradient(circle at 50% 38%, rgba(196,30,58,.18), transparent 48%),
     linear-gradient(165deg, #14141c, #050506);
   color: #fff;
+  z-index: 1;
 }
 
 .poster-fallback span {
@@ -554,7 +556,7 @@ button:focus-visible {
 .poster-fallback strong {
   color: var(--red);
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 5rem;
+  font-size: clamp(2.5rem, 8vw, 5rem);
   line-height: .85;
   font-weight: 800;
 }
@@ -567,12 +569,17 @@ button:focus-visible {
   font-weight: 600;
 }
 
+/* Solo se muestra cuando hay error */
 .poster-placeholder .poster-fallback {
   display: flex;
 }
 
-.featured-image:not(.poster-placeholder) .poster-fallback {
-  display: none;
+/* Featured */
+.featured-image {
+  position: relative;
+  min-height: 510px;
+  overflow: hidden;
+  background: linear-gradient(165deg, #12121a, #060608);
 }
 
 .review-tag {
@@ -742,6 +749,7 @@ button:focus-visible {
   box-shadow: var(--shadow-soft);
 }
 
+/* Cards */
 .card-image {
   position: relative;
   display: block;
@@ -755,6 +763,8 @@ button:focus-visible {
   height: 100%;
   object-fit: cover;
   transition: transform .6s ease;
+  z-index: 0;
+  position: relative;
 }
 
 .review-card:hover .card-image img {
