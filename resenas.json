@@ -1,13 +1,79 @@
 [
   {
+    "id": "spiderman-un-nuevo-dia",
+    "titulo": "Spider-Man: Un Nuevo Día",
+    "anio": 2026,
+    "fecha": "2026-07-15",
+    "duracion": "135 min",
+    "generos": ["Acción", "Superhéroes"],
+    "puntaje": 4.0,
+    "destacada": true,
+    "etiqueta": "ESTRENO",
+    "plataformas": ["Cines"],
+    "resumen": "El regreso de Peter Parker abre una nueva etapa. ¿Funciona como la siguiente gran aventura del héroe arácnido?",
+    "poster": "imgs/posters/spiderman.jpg",
+    "posterFallback": {
+      "linea1": "SPIDER-MAN",
+      "linea2": "UN NUEVO DÍA"
+    },
+    "letterboxd": "https://boxd.it/8uSCV",
+    "lead": "Peter Parker regresa con una nueva etapa que intenta equilibrar acción, humor y consecuencias emocionales.",
+    "contenido": [
+      "Ya vi Spider-Man: Un Nuevo Día (2026) y esta es mi opinión.",
+      "Después de aventarme todo el maratón de Spider-Man para llegar preparado a esta película y poder compararla con todas las anteriores, puedo decir que esto era exactamente lo que esperaba ver desde que Marvel y Sony unieron al personaje.",
+      "Lo primero que me encantó fue que, por fin, vemos a un Peter Parker mucho más maduro. Ya no es el típico chamaco impulsivo de las tres películas anteriores. Aquí ya piensa mejor las cosas, actúa como un verdadero héroe y se nota todo lo que aprendió después de los acontecimientos de No Way Home. Esa evolución era justo lo que necesitaba el personaje.",
+      "Visualmente también me fascinó. El nuevo traje está increíble, las escenas donde Spider-Man se columpia por Nueva York se sienten espectaculares y las secuencias de acción, especialmente las que usan cámara lenta, están muy bien logradas. Tom Holland vuelve a demostrar que nació para interpretar a Spider-Man. Para mí, esta es su mejor actuación con el personaje.",
+      "Algo que también agradecí muchísimo fue que prácticamente desapareciera el antiguo elenco de apoyo. Solo tenemos a Ned y a MJ, y la verdad yo nunca he sido fan de esos personajes, especialmente de Ned. Aun así, aquí su participación ya no pesa tanto como antes y la película logra enfocarse en lo realmente importante: Peter Parker y su crecimiento.",
+      "Muchos se están quejando de los personajes secundarios y de los cameos, pero a mí me parecieron un gran acierto. Al final todos viven en el mismo universo y en la misma ciudad, así que tiene sentido que Spider-Man pueda cruzarse con personajes como Punisher, Hulk o algunos de sus propios villanos. No importa si aparecen cinco segundos o varios minutos, para mí ayudan a que el UCM se sienta realmente conectado y vivo.",
+      "La química entre Spider-Man y Punisher fue de mis partes favoritas. Son personajes completamente distintos, pero funcionan muy bien juntos. También me gustó la dinámica con MJ. En cambio, Ned sigue sin convencerme. Después de tantos años, sigue demasiado aferrado a sus amigos y siento que el personaje ya dio todo lo que tenía que dar. Afortunadamente, Peter sí evoluciona muchísimo, tanto como superhéroe como al final también en su vida personal.",
+      "Otro punto que disfruté fue volver a ver a un Spider-Man de barrio, patrullando las calles de Nueva York, hablando con la policía y resolviendo problemas que realmente se sienten cercanos. Eso era algo que extrañaba mucho del personaje y que aquí recuperan de una gran manera.",
+      "También me gustó la introducción de Jean Grey. Creo que la actriz hizo un excelente trabajo y su historia funciona como un espejo de la de Peter: ambos comienzan cargando dolor, resentimiento y problemas personales, pero poco a poco aprenden a controlar sus poderes y a convertirse en mejores personas. Me dejó con muchas ganas de seguir viendo su evolución.",
+      "Y sí... hubo momentos en los que hasta se me salieron las lágrimas. No solo por la película, sino porque después de volver a ver prácticamente toda la historia de Spider-Man antes de llegar a esta entrega, sentí que este Peter Parker por fin encontró el camino que debía seguir desde el principio.",
+      "Para mí, Spider-Man: Un Nuevo Día entra directamente a mi Top 3 de películas de Spider-Man. No Way Home seguirá siendo inolvidable por todo el fan service que nos regaló, pero si hablamos del Spider-Man que siempre quise ver dentro del UCM, esta película es la que más se acerca a esa idea."
+    ],
+    "cita": "Un gran poder conlleva una gran responsabilidad.",
+    "veredicto": "Un regreso sólido y entretenido. No reinventará el género, pero cumple con lo que se espera de una buena película de Spider-Man."
+  },
+  {
+    "id": "la-odisea",
+    "titulo": "La Odisea",
+    "anio": 2026,
+    "fecha": "2026-06-20",
+    "duracion": "180 min",
+    "generos": ["Épica", "Aventura"],
+    "puntaje": 4.5,
+    "destacada": false,
+    "etiqueta": "ESTRENO",
+    "plataformas": ["Cines"],
+    "resumen": "Christopher Nolan lleva uno de los relatos más grandes de la historia al terreno de su cine espectacular.",
+    "poster": "imgs/posters/laodisea.jpg",
+    "posterFallback": {
+      "linea1": "LA ODISEA",
+      "linea2": "⚔"
+    },
+    "letterboxd": "https://boxd.it/8uSCV",
+    "lead": "Nolan se enfrenta a Homero y el resultado es ambicioso, denso y visualmente imponente.",
+    "contenido": [
+      "Ya la vi dos veces. La primera fue en inglés con subtítulos y la segunda en español porque siempre me gusta apoyar el doblaje mexicano. Y, siendo sincero, esta vez me quedo completamente con la versión original. El doblaje no terminó de convencerme, sobre todo con personajes como Odiseo, Penélope, Telémaco y Helena. En el caso de Matt Damon, no podía dejar de escuchar la voz con la que muchos lo identifican por Deadpool, y eso me sacaba de la película. Tal vez con actores de doblaje menos reconocibles habría conectado mucho más.",
+      "Ahora sí, hablando de la película, me encantó. Son tres horas de duración y, aunque ya sabía a lo que iba, en ningún momento se me hicieron pesadas. De hecho, cuando revisé el reloj ya casi habían pasado las tres horas y ni lo sentí. Christopher Nolan logra mantener el interés durante todo el viaje de Odiseo, desde las consecuencias de la Guerra de Troya hasta su interminable regreso a Ítaca.",
+      "Me gustó mucho cómo conectan todo con la caída de Troya y las consecuencias que tuvieron tanto los reyes como el propio Odiseo después de la guerra. El reparto también me pareció excelente. Son actores con muchísima experiencia y cada uno aporta algo al personaje que interpreta. Sobre la polémica de Helena y Sinón, sinceramente me pareció exagerada. Ambos aparecen muy poco en pantalla y nunca sentí que afectaran la historia. Sí te saca un poco de onda la primera vez que los ves, pero después deja de importar porque la película nunca gira alrededor de eso.",
+      "Visualmente es un espectáculo. La fotografía es impresionante y la banda sonora en el cine se escucha espectacular, al punto de hacer mucho más épicas varias escenas. Me encantó toda la parte del cíclope, Circe, Calipso y cada una de las pruebas que enfrenta Odiseo durante su viaje. También disfruté mucho las participaciones de Tom Holland como Telémaco y Anne Hathaway como Penélope, que ayudan a que la historia no se sienta centrada únicamente en el protagonista.",
+      "Mi único detalle está en el final. Sentí que el regreso de Odiseo a Ítaca fue un poco apresurado. Yo esperaba un momento más emotivo, con un rey regresando a reclamar su lugar después de tantos años. En cambio, todo termina resolviéndose muy rápido con la masacre de los pretendientes. No me molestó, pero sí creo que pudo haber tenido un cierre todavía más impactante.",
+      "Christopher Nolan volvió a demostrar por qué es uno de los mejores directores de la actualidad. La Odisea es una aventura épica que combina acción, drama, mitología y un apartado técnico impresionante. Son tres horas que se pasan volando y una experiencia que vale completamente la pena vivir en la pantalla grande. Sin duda, una de mis películas favoritas del año y una que volvería a ver sin pensarlo."
+    ],
+    "cita": "Ningún hombre debería estar tanto tiempo lejos de su hogar.",
+    "veredicto": "Una epopeya visual impresionante que no convencerá a todos, pero que reafirma a Nolan como uno de los directores más ambiciosos del cine actual."
+  },
+  {
     "id": "toy-story-5",
     "titulo": "Toy Story 5",
     "anio": 2026,
+    "fecha": "2026-05-10",
     "duracion": "101 min",
     "generos": ["Animación", "Aventura"],
     "puntaje": 4.5,
     "destacada": false,
-    "etiqueta": "RESEÑA DESTACADA",
+    "etiqueta": "RESEÑA",
     "plataformas": ["Disney+"],
     "resumen": "La nueva aventura de Woody, Buzz y compañía llega para demostrar si Pixar todavía tiene algo nuevo que contar con estos personajes.",
     "poster": "imgs/posters/toystory5.jpg",
@@ -15,7 +81,6 @@
       "linea1": "TOY STORY",
       "linea2": "5"
     },
-    "enlace": "review.html?id=toy-story-5",
     "letterboxd": "https://boxd.it/8uSCV",
     "lead": "La nueva entrega de la saga más querida de Pixar llega con la difícil misión de emocionarnos otra vez.",
     "contenido": [
@@ -39,93 +104,32 @@
     "veredicto": "Una entrega sólida y emotiva que no alcanza la perfección de las primeras, pero que sigue teniendo mucho corazón. Recomendada para fans de la saga."
   },
   {
-    "id": "la-odisea",
-    "titulo": "La Odisea",
-    "anio": 2026,
-    "duracion": "180 min",
-    "generos": ["Épica", "Aventura"],
-    "puntaje": 4.5,
-    "destacada": false,
-    "etiqueta": "ESTRENO",
-    "plataformas": ["Cines"],
-    "resumen": "Christopher Nolan lleva uno de los relatos más grandes de la historia al terreno de su cine espectacular.",
-    "poster": "imgs/posters/laodisea.jpg",
-    "posterFallback": {
-      "linea1": "LA ODISEA",
-      "linea2": "⚔"
-    },
-    "enlace": "review.html?id=la-odisea",
-    "letterboxd": "https://boxd.it/8uSCV",
-    "lead": "Nolan se enfrenta a Homero y el resultado es ambicioso, denso y visualmente imponente.",
-    "contenido": [
-      "Ya la vi dos veces. La primera fue en inglés con subtítulos y la segunda en español porque siempre me gusta apoyar el doblaje mexicano. Y, siendo sincero, esta vez me quedo completamente con la versión original. El doblaje no terminó de convencerme, sobre todo con personajes como Odiseo, Penélope, Telémaco y Helena. En el caso de Matt Damon, no podía dejar de escuchar la voz con la que muchos lo identifican por Deadpool, y eso me sacaba de la película. Tal vez con actores de doblaje menos reconocibles habría conectado mucho más.",
-      "Ahora sí, hablando de la película, me encantó. Son tres horas de duración y, aunque ya sabía a lo que iba, en ningún momento se me hicieron pesadas. De hecho, cuando revisé el reloj ya casi habían pasado las tres horas y ni lo sentí. Christopher Nolan logra mantener el interés durante todo el viaje de Odiseo, desde las consecuencias de la Guerra de Troya hasta su interminable regreso a Ítaca.",
-      "Me gustó mucho cómo conectan todo con la caída de Troya y las consecuencias que tuvieron tanto los reyes como el propio Odiseo después de la guerra. El reparto también me pareció excelente. Son actores con muchísima experiencia y cada uno aporta algo al personaje que interpreta. Sobre la polémica de Helena y Sinón, sinceramente me pareció exagerada. Ambos aparecen muy poco en pantalla y nunca sentí que afectaran la historia. Sí te saca un poco de onda la primera vez que los ves, pero después deja de importar porque la película nunca gira alrededor de eso.",
-      "Visualmente es un espectáculo. La fotografía es impresionante y la banda sonora en el cine se escucha espectacular, al punto de hacer mucho más épicas varias escenas. Me encantó toda la parte del cíclope, Circe, Calipso y cada una de las pruebas que enfrenta Odiseo durante su viaje. También disfruté mucho las participaciones de Tom Holland como Telémaco y Anne Hathaway como Penélope, que ayudan a que la historia no se sienta centrada únicamente en el protagonista.",
-      "Mi único detalle está en el final. Sentí que el regreso de Odiseo a Ítaca fue un poco apresurado. Yo esperaba un momento más emotivo, con un rey regresando a reclamar su lugar después de tantos años. En cambio, todo termina resolviéndose muy rápido con la masacre de los pretendientes. No me molestó, pero sí creo que pudo haber tenido un cierre todavía más impactante.",
-      "Christopher Nolan volvió a demostrar por qué es uno de los mejores directores de la actualidad. La Odisea es una aventura épica que combina acción, drama, mitología y un apartado técnico impresionante. Son tres horas que se pasan volando y una experiencia que vale completamente la pena vivir en la pantalla grande. Sin duda, una de mis películas favoritas del año y una que volvería a ver sin pensarlo"
-    ],
-    "cita": "Ningún hombre debería estar tanto tiempo lejos de su hogar.",
-    "veredicto": "Una epopeya visual impresionante que no convencerá a todos, pero que reafirma a Nolan como uno de los directores más ambiciosos del cine actual."
-  },
-  {
-    "id": "spiderman-un-nuevo-dia",
-    "titulo": "Spider-Man: Un Nuevo Día",
-    "anio": 2026,
-    "duracion": "135 min",
-    "generos": ["Acción", "Superhéroes"],
-    "puntaje": 4.0,
-    "destacada": true,
-    "etiqueta": "ESTRENO",
-    "plataformas": ["Cines"],
-    "resumen": "El regreso de Peter Parker abre una nueva etapa. ¿Funciona como la siguiente gran aventura del héroe arácnido?",
-    "poster": "imgs/posters/spiderman.jpg",
-    "posterFallback": {
-      "linea1": "SPIDER-MAN",
-      "linea2": "UN NUEVO DÍA"
-    },
-    "enlace": "review.html?id=spiderman-un-nuevo-dia",
-    "letterboxd": "https://boxd.it/8uSCV",
-    "lead": "Peter Parker regresa con una nueva etapa que intenta equilibrar acción, humor y consecuencias emocionales.",
-    "contenido": [
-      "Ya vi Spider-Man: Un Nuevo Día (2026) y esta es mi opinión. ",
-      "Después de aventarme todo el maratón de Spider-Man para llegar preparado a esta película y poder compararla con todas las anteriores, puedo decir que esto era exactamente lo que esperaba ver desde que Marvel y Sony unieron al personaje.",
-      "Lo primero que me encantó fue que, por fin, vemos a un Peter Parker mucho más maduro. Ya no es el típico chamaco impulsivo de las tres películas anteriores. Aquí ya piensa mejor las cosas, actúa como un verdadero héroe y se nota todo lo que aprendió después de los acontecimientos de No Way Home. Esa evolución era justo lo que necesitaba el personaje.",
-      "Visualmente también me fascinó. El nuevo traje está increíble, las escenas donde Spider-Man se columpia por Nueva York se sienten espectaculares y las secuencias de acción, especialmente las que usan cámara lenta, están muy bien logradas. Tom Holland vuelve a demostrar que nació para interpretar a Spider-Man. Para mí, esta es su mejor actuación con el personaje.",
-      "Algo que también agradecí muchísimo fue que prácticamente desapareciera el antiguo elenco de apoyo. Solo tenemos a Ned y a MJ, y la verdad yo nunca he sido fan de esos personajes, especialmente de Ned. Aun así, aquí su participación ya no pesa tanto como antes y la película logra enfocarse en lo realmente importante: Peter Parker y su crecimiento.",
-      "Muchos se están quejando de los personajes secundarios y de los cameos, pero a mí me parecieron un gran acierto. Al final todos viven en el mismo universo y en la misma ciudad, así que tiene sentido que Spider-Man pueda cruzarse con personajes como Punisher, Hulk o algunos de sus propios villanos. No importa si aparecen cinco segundos o varios minutos, para mí ayudan a que el UCM se sienta realmente conectado y vivo.",
-      "La química entre Spider-Man y Punisher fue de mis partes favoritas. Son personajes completamente distintos, pero funcionan muy bien juntos. También me gustó la dinámica con MJ. En cambio, Ned sigue sin convencerme. Después de tantos años, sigue demasiado aferrado a sus amigos y siento que el personaje ya dio todo lo que tenía que dar. Afortunadamente, Peter sí evoluciona muchísimo, tanto como superhéroe como al final también en su vida personal.",
-      "Otro punto que disfruté fue volver a ver a un Spider-Man de barrio, patrullando las calles de Nueva York, hablando con la policía y resolviendo problemas que realmente se sienten cercanos. Eso era algo que extrañaba mucho del personaje y que aquí recuperan de una gran manera.",
-      "También me gustó la introducción de Jean Grey. Creo que la actriz hizo un excelente trabajo y su historia funciona como un espejo de la de Peter: ambos comienzan cargando dolor, resentimiento y problemas personales, pero poco a poco aprenden a controlar sus poderes y a convertirse en mejores personas. Me dejó con muchas ganas de seguir viendo su evolución.",
-      "Y sí... hubo momentos en los que hasta se me salieron las lágrimas. No solo por la película, sino porque después de volver a ver prácticamente toda la historia de Spider-Man antes de llegar a esta entrega, sentí que este Peter Parker por fin encontró el camino que debía seguir desde el principio.",
-      "Para mí, Spider-Man: Un Nuevo Día entra directamente a mi Top 3 de películas de Spider-Man. No Way Home seguirá siendo inolvidable por todo el fan service que nos regaló, pero si hablamos del Spider-Man que siempre quise ver dentro del UCM, esta película es la que más se acerca a esa idea."
-    ],
-    "cita": "Un gran poder conlleva una gran responsabilidad.",
-    "veredicto": "Un regreso sólido y entretenido. No reinventará el género, pero cumple con lo que se espera de una buena película de Spider-Man."
-  },
-  {
     "id": "evil-dead-burn",
     "titulo": "Evil Dead Burn",
     "anio": 2026,
+    "fecha": "2026-04-01",
     "duracion": "109 min",
     "generos": ["Terror"],
     "puntaje": 5.0,
     "destacada": false,
     "etiqueta": "ESTRENO",
     "plataformas": ["Cines"],
-    "resumen": "E",
+    "resumen": "La franquicia regresa con más sangre, más caos y el mismo espíritu desenfrenado que la hizo icónica.",
     "poster": "imgs/posters/evildead.jpg",
     "posterFallback": {
       "linea1": "EVIL DEAD",
       "linea2": "BURN"
     },
-    "enlace": "review.html?id=evil-dead-burn",
     "letterboxd": "https://boxd.it/8uSCV",
-    "lead": "P.",
+    "lead": "Una nueva entrega que no pide permiso para ser brutal, divertida y completamente fiel al tono de la saga.",
     "contenido": [
-      "Ya vi ."
+      "Ya vi Evil Dead Burn y salí con la cara de “esto es exactamente lo que quería”.",
+      "La película entiende perfectamente lo que hace grande a esta franquicia: no se anda con medias tintas. Hay sangre, hay tensión, hay humor negro y hay un ritmo que no te suelta.",
+      "Sin entrar en spoilers, lo que más me funcionó fue cómo equilibra el terror práctico con momentos de puro caos. No intenta reinventar la rueda, pero sí la hace girar más rápido y más sucia.",
+      "El elenco cumple, la dirección es sólida y el apartado técnico (especialmente el sonido y el maquillaje) está a un nivel muy alto para este tipo de películas.",
+      "Si eres fan de la saga, esta entrega te va a satisfacer. Si eres nuevo, es una buena puerta de entrada al universo de los Deadites… aunque tal vez salgas un poco traumatizado."
     ],
-    "cita": "Un .",
-    "veredicto": "Un ."
+    "cita": "¡Árboles del demonio!",
+    "veredicto": "Brutal, divertida y fiel al espíritu original. Una de las mejores entregas modernas de terror de culto."
   }
 ]

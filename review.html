@@ -6,321 +6,347 @@
     <title>Reseña | Los Brujos del Cine</title>
     <meta name="description" content="Reseña de cine en Los Brujos del Cine">
     <meta name="theme-color" content="#030304">
+    <link rel="canonical" href="https://elsentidodelcine.github.io/review.html">
+
+    <!-- Open Graph (se actualizan con JS) -->
+    <meta property="og:title" content="Reseña | Los Brujos del Cine">
+    <meta property="og:description" content="Reseñas honestas de cine">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="stylesLBDC.css">
 
     <style>
         .review-page {
-            padding-bottom: 80px;
+          padding-bottom: 80px;
         }
 
         .review-hero {
-            position: relative;
-            padding: 60px 0 50px;
-            border-bottom: 1px solid var(--border);
-            overflow: hidden;
+          position: relative;
+          padding: 60px 0 50px;
+          border-bottom: 1px solid var(--border);
+          overflow: hidden;
         }
 
         .review-hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse 80% 60% at 50% -20%, rgba(196, 30, 58, 0.12), transparent 60%);
-            pointer-events: none;
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(ellipse 80% 60% at 50% -20%, rgba(196, 30, 58, 0.12), transparent 60%);
+          pointer-events: none;
         }
 
         .review-hero-inner {
-            position: relative;
-            width: min(var(--max), calc(100% - 48px));
-            margin: 0 auto;
+          position: relative;
+          width: min(var(--max), calc(100% - 48px));
+          margin: 0 auto;
         }
 
         .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 32px;
-            color: var(--muted);
-            font-size: 0.82rem;
-            font-weight: 500;
-            transition: color 0.2s ease, gap 0.2s ease;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          margin-bottom: 32px;
+          color: var(--muted);
+          font-size: 0.82rem;
+          font-weight: 500;
+          transition: color 0.2s ease, gap 0.2s ease;
         }
 
-        .back-link:hover {
-            color: #fff;
-            gap: 12px;
+        .back-link:hover,
+        .back-link:focus-visible {
+          color: #fff;
+          gap: 12px;
         }
 
         .review-header {
-            display: grid;
-            grid-template-columns: 240px 1fr;
-            gap: 48px;
-            align-items: start;
+          display: grid;
+          grid-template-columns: 240px 1fr;
+          gap: 48px;
+          align-items: start;
         }
 
         .review-poster {
-            border-radius: var(--radius);
-            overflow: hidden;
-            border: 1px solid var(--border);
-            background: var(--surface);
-            box-shadow: var(--shadow);
+          border-radius: var(--radius);
+          overflow: hidden;
+          border: 1px solid var(--border);
+          background: var(--surface);
+          box-shadow: var(--shadow);
         }
 
         .review-poster img {
-            width: 100%;
-            aspect-ratio: 2 / 3;
-            object-fit: cover;
-            display: block;
+          width: 100%;
+          aspect-ratio: 2 / 3;
+          object-fit: cover;
+          display: block;
         }
 
         .review-info h1 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: clamp(2.2rem, 5vw, 3.4rem);
-            font-weight: 800;
-            line-height: 1.05;
-            letter-spacing: -0.03em;
-            margin-bottom: 14px;
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: clamp(2.2rem, 5vw, 3.4rem);
+          font-weight: 800;
+          line-height: 1.05;
+          letter-spacing: -0.03em;
+          margin-bottom: 14px;
         }
 
         .review-meta {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 10px 14px;
-            margin-bottom: 20px;
-            color: var(--muted);
-            font-size: 0.82rem;
-            font-weight: 500;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 10px 14px;
+          margin-bottom: 20px;
+          color: var(--muted);
+          font-size: 0.82rem;
+          font-weight: 500;
         }
 
         .review-meta .dot {
-            width: 3px;
-            height: 3px;
-            border-radius: 50%;
-            background: var(--red);
+          width: 3px;
+          height: 3px;
+          border-radius: 50%;
+          background: var(--red);
+          display: inline-block;
         }
 
         .review-rating {
-            color: var(--gold);
-            font-size: 1.05rem;
-            letter-spacing: 1.5px;
-            font-weight: 600;
+          color: var(--gold);
+          font-size: 1.05rem;
+          letter-spacing: 1.5px;
+          font-weight: 600;
         }
 
         .review-platforms {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 28px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          margin-bottom: 28px;
         }
 
         .platform-tag {
-            padding: 5px 12px;
-            border-radius: 999px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid var(--border);
-            font-size: 0.68rem;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            color: var(--muted);
+          padding: 5px 12px;
+          border-radius: 999px;
+          background: rgba(255,255,255,0.04);
+          border: 1px solid var(--border);
+          font-size: 0.68rem;
+          font-weight: 600;
+          letter-spacing: 0.04em;
+          color: var(--muted);
         }
 
         .review-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
         }
 
         .btn-letterboxd {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 11px 18px;
-            border-radius: 999px;
-            background: #1a1a1a;
-            border: 1px solid rgba(255,255,255,0.12);
-            color: #fff;
-            font-size: 0.78rem;
-            font-weight: 600;
-            transition: all 0.25s ease;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 11px 18px;
+          border-radius: 999px;
+          background: #1a1a1a;
+          border: 1px solid rgba(255,255,255,0.12);
+          color: #fff;
+          font-size: 0.78rem;
+          font-weight: 600;
+          transition: all 0.25s ease;
         }
 
-        .btn-letterboxd:hover {
-            background: #00e054;
-            border-color: #00e054;
-            color: #000;
-            transform: translateY(-2px);
+        .btn-letterboxd:hover,
+        .btn-letterboxd:focus-visible {
+          background: #00e054;
+          border-color: #00e054;
+          color: #000;
+          transform: translateY(-2px);
         }
 
         .review-body {
-            width: min(720px, calc(100% - 48px));
-            margin: 60px auto 0;
+          width: min(720px, calc(100% - 48px));
+          margin: 60px auto 0;
         }
 
         .review-body .lead {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.35rem;
-            line-height: 1.55;
-            color: #e8e8ec;
-            margin-bottom: 32px;
-            font-weight: 600;
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: 1.35rem;
+          line-height: 1.55;
+          color: #e8e8ec;
+          margin-bottom: 32px;
+          font-weight: 600;
         }
 
         .review-body p {
-            color: var(--muted);
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
+          color: var(--muted);
+          font-size: 1.05rem;
+          line-height: 1.8;
+          margin-bottom: 1.5rem;
         }
 
         .review-body blockquote {
-            margin: 2.2rem 0;
-            padding: 1.1rem 1.4rem;
-            border-left: 3px solid var(--red);
-            background: rgba(196, 30, 58, 0.06);
-            border-radius: 0 12px 12px 0;
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.15rem;
-            font-style: italic;
-            color: #e8e8ec;
-            line-height: 1.5;
+          margin: 2.2rem 0;
+          padding: 1.1rem 1.4rem;
+          border-left: 3px solid var(--red);
+          background: rgba(196, 30, 58, 0.06);
+          border-radius: 0 12px 12px 0;
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: 1.15rem;
+          font-style: italic;
+          color: #e8e8ec;
+          line-height: 1.5;
         }
 
         .verdict {
-            margin-top: 3.5rem;
-            padding: 28px 30px;
-            border-radius: var(--radius);
-            background: var(--surface);
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-soft);
+          margin-top: 3.5rem;
+          padding: 28px 30px;
+          border-radius: var(--radius);
+          background: var(--surface);
+          border: 1px solid var(--border);
+          box-shadow: var(--shadow-soft);
         }
 
         .verdict-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 12px;
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.2rem;
-            color: #fff;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 12px;
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: 1.2rem;
+          color: #fff;
         }
 
         .verdict-header span {
-            color: var(--gold);
+          color: var(--gold);
         }
 
         .verdict p {
-            color: var(--muted);
-            font-size: 1rem;
-            line-height: 1.7;
-            margin: 0;
+          color: var(--muted);
+          font-size: 1rem;
+          line-height: 1.7;
+          margin: 0;
         }
 
         .review-nav {
-            width: min(var(--max), calc(100% - 48px));
-            margin: 70px auto 0;
-            display: flex;
-            justify-content: space-between;
-            gap: 16px;
-            flex-wrap: wrap;
+          width: min(var(--max), calc(100% - 48px));
+          margin: 70px auto 0;
+          display: flex;
+          justify-content: space-between;
+          gap: 16px;
+          flex-wrap: wrap;
         }
 
         .review-nav a {
-            flex: 1;
-            min-width: 180px;
-            max-width: 280px;
-            padding: 18px 20px;
-            border-radius: var(--radius-sm);
-            background: var(--surface);
-            border: 1px solid var(--border);
-            transition: all 0.25s ease;
+          flex: 1;
+          min-width: 180px;
+          max-width: 280px;
+          padding: 18px 20px;
+          border-radius: var(--radius-sm);
+          background: var(--surface);
+          border: 1px solid var(--border);
+          transition: all 0.25s ease;
         }
 
-        .review-nav a:hover {
-            border-color: rgba(196, 30, 58, 0.4);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-soft);
+        .review-nav a:hover,
+        .review-nav a:focus-visible {
+          border-color: rgba(196, 30, 58, 0.4);
+          transform: translateY(-3px);
+          box-shadow: var(--shadow-soft);
         }
 
         .review-nav .label {
-            display: block;
-            font-size: 0.65rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--muted-2);
-            margin-bottom: 6px;
+          display: block;
+          font-size: 0.65rem;
+          font-weight: 700;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: var(--muted-2);
+          margin-bottom: 6px;
         }
 
         .review-nav .title {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.05rem;
-            color: #fff;
-            font-weight: 600;
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: 1.05rem;
+          color: #fff;
+          font-weight: 600;
         }
 
         .review-nav a:last-child {
-            text-align: right;
-            margin-left: auto;
+          text-align: right;
+          margin-left: auto;
         }
 
         .loading-state,
         .error-state {
-            text-align: center;
-            padding: 120px 20px;
-            color: var(--muted);
-            font-size: 1.1rem;
+          text-align: center;
+          padding: 120px 20px;
+          color: var(--muted);
+          font-size: 1.1rem;
+        }
+
+        .error-state a {
+          color: var(--red);
+          text-decoration: underline;
         }
 
         @media (max-width: 768px) {
-            .review-header {
-                grid-template-columns: 1fr;
-                gap: 28px;
-                text-align: center;
-            }
+          .review-header {
+            grid-template-columns: 1fr;
+            gap: 28px;
+            text-align: center;
+          }
 
-            .review-poster {
-                max-width: 220px;
-                margin: 0 auto;
-            }
+          .review-poster {
+            max-width: 220px;
+            margin: 0 auto;
+          }
 
-            .review-meta,
-            .review-platforms,
-            .review-actions {
-                justify-content: center;
-            }
+          .review-meta,
+          .review-platforms,
+          .review-actions {
+            justify-content: center;
+          }
 
-            .review-nav {
-                flex-direction: column;
-            }
+          .review-nav {
+            flex-direction: column;
+          }
 
-            .review-nav a:last-child {
-                text-align: left;
-                margin-left: 0;
-            }
+          .review-nav a:last-child {
+            text-align: left;
+            margin-left: 0;
+          }
         }
     </style>
 </head>
-
 <body>
+<a href="#main-content" class="skip-link">Saltar al contenido</a>
 
 <header class="site-header">
     <div class="header-inner">
         <a href="index.html" class="brand" aria-label="Los Brujos del Cine, inicio">
             <span class="brand-mark" aria-hidden="true">☽</span>
             <span class="brand-copy">
-                <strong>Los Brujos del Cine</strong>
-                <small>El grimorio de cine de Mi Tesoro MX</small>
-            </span>
+          <strong>Los Brujos del Cine</strong>
+          <small>El grimorio de cine de Mi Tesoro MX</small>
+        </span>
         </a>
+
+        <nav class="main-nav" aria-label="Navegación principal">
+            <a href="index.html#resenas">Reseñas</a>
+            <a href="index.html#sobre-el-blog">Sobre el blog</a>
+            <a href="https://elsentidodelcine.github.io/mitesoromx/index.html" target="_blank" rel="noopener noreferrer">Mi Tesoro MX</a>
+        </nav>
     </div>
 </header>
 
-<main class="review-page">
+<main id="main-content" class="review-page">
     <div id="review-container">
         <div class="loading-state">Cargando reseña...</div>
     </div>
@@ -329,12 +355,12 @@
 <footer class="site-footer">
     <div class="footer-main">
         <div class="footer-brand">
-            <a href="index.html" class="brand">
-                <span class="brand-mark">☽</span>
+            <a href="index.html" class="brand" aria-label="Los Brujos del Cine, inicio">
+                <span class="brand-mark" aria-hidden="true">☽</span>
                 <span class="brand-copy">
-                    <strong>Los Brujos del Cine</strong>
-                    <small>El grimorio de cine de Mi Tesoro MX</small>
-                </span>
+            <strong>Los Brujos del Cine</strong>
+            <small>El grimorio de cine de Mi Tesoro MX</small>
+          </span>
             </a>
             <p>
                 Reseñas de cine con personalidad.<br>
@@ -344,24 +370,23 @@
 
         <div class="footer-links">
             <strong>Explora</strong>
-            <a href="index.html#reseñas">Reseñas</a>
-            <a href="https://elsentidodelcine.github.io/mitesoromx/index.html">Mi Tesoro MX</a>
+            <a href="index.html#resenas">Reseñas</a>
+            <a href="https://elsentidodelcine.github.io/mitesoromx/index.html" target="_blank" rel="noopener noreferrer">Mi Tesoro MX</a>
         </div>
 
         <div class="footer-links">
             <strong>Conecta</strong>
-            <a href="https://www.facebook.com/LosBrujosDelCine">Facebook</a>
-            <a href="https://boxd.it/8uSCV">Letterboxd</a>
+            <a href="https://www.facebook.com/LosBrujosDelCine" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://boxd.it/8uSCV" target="_blank" rel="noopener noreferrer">Letterboxd</a>
         </div>
     </div>
 
     <div class="footer-bottom">
         <span>© 2026 Los Brujos del Cine</span>
-        <span>Parte de <a href="https://elsentidodelcine.github.io/mitesoromx/index.html">Mi Tesoro MX</a></span>
+        <span>Parte de <a href="https://elsentidodelcine.github.io/mitesoromx/index.html" target="_blank" rel="noopener noreferrer">Mi Tesoro MX</a></span>
     </div>
 </footer>
 
 <script src="review.js"></script>
-
 </body>
 </html>
