@@ -7,23 +7,64 @@
     <title>Mi Tesoro MX | Coleccionables de Cine</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+    <link rel="icon" href="imgs/logo.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="imgs/logo.png">
 
-    <!-- Open Graph (WhatsApp / Facebook) -->
+    <!-- Open Graph (WhatsApp / Facebook / Telegram) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Mi Tesoro MX | Coleccionables de Cine">
     <meta property="og:description" content="Palomeras, vasos, Funkos y ediciones exclusivas. Envíos a todo México. Mejores precios que en Mercado Libre.">
     <meta property="og:url" content="https://mitesoromx.com/">
     <meta property="og:locale" content="es_MX">
     <meta property="og:site_name" content="Mi Tesoro MX">
-    <!-- Si tienes una imagen 1200x630, descomenta y pon la URL real:
+    <!-- Sube og-image.jpg (1200x630 px) a la raíz del sitio y ajusta la URL si tu dominio es otro -->
     <meta property="og:image" content="https://mitesoromx.com/og-image.jpg">
-    -->
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mi Tesoro MX | Coleccionables de Cine">
     <meta name="twitter:description" content="Palomeras, vasos, Funkos y ediciones exclusivas. Envíos a todo México.">
+    <meta name="twitter:image" content="https://mitesoromx.com/og-image.jpg">
+
+    <link rel="canonical" href="https://mitesoromx.com/">
+
+    <!-- Structured Data (Organization + WebSite) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Organization",
+                    "name": "Mi Tesoro MX",
+                    "url": "https://mitesoromx.com/",
+                    "logo": "https://mitesoromx.com/imgs/logo.png",
+                    "sameAs": [
+                        "https://facebook.com/ElSentidoDelCine",
+                        "https://wa.me/524761002824"
+                    ],
+                    "contactPoint": {
+                        "@type": "ContactPoint",
+                        "telephone": "+52-476-100-2824",
+                        "contactType": "customer service",
+                        "areaServed": "MX",
+                        "availableLanguage": "Spanish"
+                    }
+                },
+                {
+                    "@type": "WebSite",
+                    "name": "Mi Tesoro MX",
+                    "url": "https://mitesoromx.com/",
+                    "potentialAction": {
+                        "@type": "SearchAction",
+                        "target": "https://mitesoromx.com/?q={search_term_string}",
+                        "query-input": "required name=search_term_string"
+                    }
+                }
+            ]
+        }
+    </script>
 
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,10 +73,13 @@
 </head>
 <body>
 
+<!-- LOADER (mínimo; el catálogo muestra skeleton) -->
+<div id="loader" class="loader-mini" hidden></div>
+
 <!-- HEADER -->
 <header class="main-header">
     <div class="header-left">
-        <span class="logo-icon" aria-hidden="true">🎬</span>
+        <img src="imgs/logo.png" alt="Mi Tesoro MX" class="site-logo">
         <div class="logo-text">
             <h1>Mi Tesoro MX</h1>
             <span>Coleccionables de Cine</span>
@@ -50,13 +94,11 @@
         <a href="envios.html">Envíos</a>
         <a href="aviso-legal-apartado.html">Apartados</a>
         <a href="faq.html">FAQ</a>
-        <a href="blog.html">Blog</a>
         <a href="mitesoromx.html">Nosotros</a>
+        <a href="referencias.html">Referencias</a>
+        <a href="blog.html">Los Brujos del Cine</a>
     </nav>
 
-    <div class="header-right">
-        <button id="toggleTheme" class="theme-btn" aria-label="Cambiar tema">🌙</button>
-    </div>
 </header>
 
 <!-- CONTENIDO FAQ -->
