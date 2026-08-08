@@ -1,216 +1,309 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Aviso de Privacidad | Los Brujos del Cine</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso de Privacidad | Los Brujos del Cine</title>
+    <meta name="description" content="Aviso de Privacidad de Los Brujos del Cine. Transparencia sobre el uso de información de nuestros lectores y seguidores.">
+    <meta name="theme-color" content="#030304">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --fondo: #0b0b0f;
-      --card: #15151d;
-      --acento: #b38cff;
-      --texto: #eaeaea;
-      --muted: #a0a0b3;
-    }
+    <style>
+        :root {
+          --bg: #030304;
+          --surface: #0c0c10;
+          --border: rgba(255,255,255,.08);
+          --text: #f0f0f2;
+          --muted: #9a9aa6;
+          --muted-2: #5c5c68;
+          --red: #c41e3a;
+          --gold: #c9a227;
+          --radius: 16px;
+          --max: 820px;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: radial-gradient(circle at top, #141422, var(--fondo));
-      color: var(--texto);
-      line-height: 1.7;
-      padding: 2rem;
-    }
+        body {
+          min-height: 100vh;
+          background: var(--bg);
+          color: var(--text);
+          font-family: 'Inter', system-ui, sans-serif;
+          line-height: 1.7;
+          -webkit-font-smoothing: antialiased;
+        }
 
-    .contenedor {
-      max-width: 900px;
-      margin: auto;
-    }
+        .page {
+          width: min(var(--max), calc(100% - 40px));
+          margin: 0 auto;
+          padding: 60px 0 80px;
+        }
 
-    header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
+        .back {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          margin-bottom: 36px;
+          color: var(--muted);
+          font-size: .85rem;
+          font-weight: 500;
+          text-decoration: none;
+          transition: color .2s ease, gap .2s ease;
+        }
 
-    header h1 {
-      font-family: 'Cinzel', serif;
-      font-size: 2.6rem;
-      color: var(--acento);
-      margin-bottom: 0.5rem;
-      letter-spacing: 1px;
-    }
+        .back:hover {
+          color: #fff;
+          gap: 12px;
+        }
 
-    header p {
-      color: var(--muted);
-      font-size: 1rem;
-    }
+        header {
+          margin-bottom: 40px;
+          text-align: center;
+        }
 
-    .card {
-      background: linear-gradient(180deg, #1a1a2a, var(--card));
-      border-radius: 18px;
-      padding: 2.5rem;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-      backdrop-filter: blur(6px);
-    }
+        header .kicker {
+          color: var(--gold);
+          font-size: .62rem;
+          font-weight: 700;
+          letter-spacing: .2em;
+          text-transform: uppercase;
+          margin-bottom: 14px;
+        }
 
-    section {
-      margin-bottom: 2.2rem;
-    }
+        header h1 {
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: clamp(2rem, 5vw, 2.8rem);
+          font-weight: 800;
+          letter-spacing: -.02em;
+          line-height: 1.15;
+          margin-bottom: 12px;
+        }
 
-    section h2 {
-      font-family: 'Cinzel', serif;
-      font-size: 1.5rem;
-      color: var(--acento);
-      margin-bottom: 0.8rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+        header p {
+          color: var(--muted);
+          font-size: .95rem;
+          max-width: 520px;
+          margin: 0 auto;
+        }
 
-    section p {
-      color: var(--texto);
-      font-size: 1rem;
-    }
+        .card {
+          background: var(--surface);
+          border: 1px solid var(--border);
+          border-radius: var(--radius);
+          padding: 40px 42px;
+        }
 
-    ul {
-      margin-top: 0.8rem;
-      padding-left: 1.2rem;
-    }
+        section {
+          margin-bottom: 32px;
+        }
 
-    li {
-      margin-bottom: 0.4rem;
-      color: var(--texto);
-    }
+        section:last-child {
+          margin-bottom: 0;
+        }
 
-    footer {
-      margin-top: 3rem;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
+        section h2 {
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: #fff;
+          margin-bottom: 12px;
+          letter-spacing: -.01em;
+        }
 
-    footer span {
-      color: var(--acento);
-    }
+        section p,
+        section li {
+          color: var(--muted);
+          font-size: .95rem;
+        }
 
-    @media (max-width: 600px) {
-      body {
-        padding: 1.2rem;
-      }
+        section p + p {
+          margin-top: 12px;
+        }
 
-      header h1 {
-        font-size: 2rem;
-      }
+        ul {
+          margin-top: 12px;
+          padding-left: 1.2rem;
+        }
 
-      .card {
-        padding: 1.8rem;
-      }
-    }
-  </style>
+        li {
+          margin-bottom: 6px;
+        }
+
+        strong {
+          color: #e8e8ec;
+          font-weight: 600;
+        }
+
+        .highlight {
+          margin-top: 14px;
+          padding: 14px 16px;
+          border-left: 3px solid var(--red);
+          background: rgba(196, 30, 58, 0.06);
+          border-radius: 0 10px 10px 0;
+          color: #e0e0e6;
+          font-size: .9rem;
+        }
+
+        .updated {
+          margin-top: 36px;
+          padding-top: 20px;
+          border-top: 1px solid var(--border);
+          color: var(--muted-2);
+          font-size: .78rem;
+          text-align: center;
+        }
+
+        footer {
+          margin-top: 48px;
+          text-align: center;
+          color: var(--muted-2);
+          font-size: .75rem;
+        }
+
+        footer a {
+          color: var(--muted);
+          text-decoration: none;
+        }
+
+        footer a:hover {
+          color: #fff;
+        }
+
+        @media (max-width: 600px) {
+          .page { padding: 40px 0 60px; }
+          .card { padding: 28px 22px; }
+          header h1 { font-size: 1.85rem; }
+        }
+    </style>
 </head>
-
 <body>
-  <div class="contenedor">
+<div class="page">
+    <a href="index.html" class="back">← Volver al blog</a>
 
     <header>
-      <h1>🔮 Aviso de Privacidad</h1>
-      <p>Los Brujos del Cine · La magia está en las películas, no en tus datos</p>
+        <div class="kicker">Los Brujos del Cine</div>
+        <h1>Aviso de Privacidad</h1>
+        <p>La magia está en las películas, no en tus datos. Aquí te explicamos de forma clara cómo tratamos la información.</p>
     </header>
 
     <div class="card">
 
-      <section>
-        <h2>🎬 Identidad del proyecto</h2>
-        <p>
-          <strong>Los Brujos del Cine</strong> es un proyecto dedicado a compartir información
-          sobre cartelera, estrenos y funciones de cine, principalmente a través de Facebook.
-        </p>
-      </section>
+        <section>
+            <h2>1. Quiénes somos</h2>
+            <p>
+                <strong>Los Brujos del Cine</strong> es un proyecto editorial dedicado a reseñas de cine,
+                recomendaciones y conversación alrededor de películas. Opera como parte del ecosistema
+                de <strong>Mi Tesoro MX</strong> y se comunica principalmente a través de este sitio web
+                y de su página de Facebook.
+            </p>
+        </section>
 
-      <section>
-        <h2>🧙‍♂️ Información que se recopila</h2>
-        <p>
-          No solicitamos datos personales sensibles.  
-          De manera voluntaria, algunos usuarios pueden proporcionar:
-        </p>
-        <ul>
-          <li>Estado de la República Mexicana</li>
-          <li>Cine o complejo cinematográfico de interés</li>
-        </ul>
-      </section>
+        <section>
+            <h2>2. Información que podemos recibir</h2>
+            <p>
+                No solicitamos datos personales sensibles ni creamos perfiles de usuarios.
+                De forma voluntaria, algunas personas pueden compartirnos:
+            </p>
+            <ul>
+                <li>Estado de la República Mexicana</li>
+                <li>Cine o complejo cinematográfico de interés</li>
+                <li>Comentarios u opiniones sobre películas</li>
+            </ul>
+            <p>
+                Esta información se comparte únicamente cuando la persona decide hacerlo
+                (por ejemplo, en mensajes o comentarios).
+            </p>
+        </section>
 
-      <section>
-        <h2>🎥 Uso de la información</h2>
-        <p>
-          La información compartida se utiliza únicamente para:
-        </p>
-        <ul>
-          <li>Consultar cartelera o funciones disponibles</li>
-          <li>Brindar información más precisa según la ubicación</li>
-          <li>Mejorar la experiencia de los seguidores</li>
-        </ul>
-        <p>
-          <strong>No se vende, comparte ni utiliza con fines comerciales o publicitarios.</strong>
-        </p>
-      </section>
+        <section>
+            <h2>3. Para qué usamos esa información</h2>
+            <p>La utilizamos solo para:</p>
+            <ul>
+                <li>Responder consultas sobre cartelera o funciones</li>
+                <li>Orientar mejor las recomendaciones según la zona</li>
+                <li>Mejorar la experiencia de quien nos sigue o lee</li>
+            </ul>
+            <div class="highlight">
+                <strong>No vendemos, rentamos ni compartimos</strong> esta información con terceros
+                con fines comerciales o publicitarios.
+            </div>
+        </section>
 
-      <section>
-        <h2>🔐 Protección de los datos</h2>
-        <p>
-          La información proporcionada no se almacena en bases de datos,
-          no se asocia a perfiles personales y no se utiliza para identificar a los usuarios.
-        </p>
-      </section>
+        <section>
+            <h2>4. Almacenamiento y protección</h2>
+            <p>
+                No contamos con una base de datos propia de usuarios.
+                La información que se comparte de forma voluntaria no se asocia a perfiles
+                ni se utiliza para identificar a las personas.
+            </p>
+            <p>
+                Tomamos medidas razonables para que cualquier dato que llegue a nosotros
+                se trate con respeto y solo para los fines descritos.
+            </p>
+        </section>
 
-      <section>
-        <h2>📱 Redes sociales</h2>
-        <p>
-          La interacción se realiza principalmente a través de Facebook.
-          Cualquier dato compartido dentro de dicha plataforma también está sujeto
-          a sus propias políticas de privacidad.
-        </p>
-      </section>
+        <section>
+            <h2>5. Redes sociales</h2>
+            <p>
+                La mayor parte de la interacción ocurre en <strong>Facebook</strong>
+                (página de Los Brujos del Cine). Cualquier dato que compartas dentro de esa
+                plataforma también está sujeto a las políticas de privacidad de Meta.
+            </p>
+            <p>
+                Te recomendamos revisar las configuraciones de privacidad de tu cuenta
+                en redes sociales.
+            </p>
+        </section>
 
-      <section>
-        <h2>🍿 Cookies</h2>
-        <p>
-          Este sitio web no utiliza cookies publicitarias ni sistemas de rastreo avanzado.
-        </p>
-      </section>
+        <section>
+            <h2>6. Cookies y tecnologías de seguimiento</h2>
+            <p>
+                Este sitio no utiliza cookies publicitarias ni herramientas de rastreo
+                avanzado con fines de marketing.
+            </p>
+            <p>
+                Es posible que el navegador o el servidor registren datos técnicos básicos
+                de forma automática (como tipo de dispositivo o páginas visitadas),
+                propios del funcionamiento normal de cualquier sitio web.
+            </p>
+        </section>
 
-      <section>
-        <h2>✨ Cambios al aviso</h2>
-        <p>
-          Este Aviso de Privacidad puede actualizarse en cualquier momento.
-          Cualquier cambio será publicado en esta misma página.
-        </p>
-      </section>
+        <section>
+            <h2>7. Enlaces a otros sitios</h2>
+            <p>
+                Este blog puede incluir enlaces a sitios externos (por ejemplo, Letterboxd,
+                Facebook o Mi Tesoro MX). Cada uno de esos sitios tiene su propio aviso
+                de privacidad, del cual no somos responsables.
+            </p>
+        </section>
 
-      <section>
-        <h2>📩 Contacto</h2>
-        <p>
-          Para cualquier duda relacionada con este Aviso de Privacidad,
-          puedes contactarnos a través de nuestra página de Facebook:
-          <strong>Los Brujos del Cine</strong>.
-        </p>
-      </section>
+        <section>
+            <h2>8. Cambios a este aviso</h2>
+            <p>
+                Podemos actualizar este Aviso de Privacidad cuando sea necesario.
+                La versión vigente siempre estará publicada en esta página,
+                con la fecha de la última actualización.
+            </p>
+        </section>
 
+        <section>
+            <h2>9. Contacto</h2>
+            <p>
+                Si tienes dudas sobre este aviso o sobre el tratamiento de información,
+                puedes escribirnos a través de la página de Facebook de
+                <strong>Los Brujos del Cine</strong>.
+            </p>
+        </section>
+
+        <p class="updated">Última actualización: agosto 2026</p>
     </div>
 
     <footer>
-      © <span>Los Brujos del Cine</span> · Todos los derechos reservados
+        © 2026 <a href="index.html">Los Brujos del Cine</a> · Parte de Mi Tesoro MX
     </footer>
-
-  </div>
+</div>
 </body>
 </html>
