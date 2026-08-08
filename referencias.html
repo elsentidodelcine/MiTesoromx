@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Referencias reales de Mi Tesoro MX – Fotos de productos enviados a coleccionistas de todo México.">
+    <title>Referencias | Mi Tesoro MX</title>
+
+    <link rel="icon" href="imgs/logo.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="imgs/logo.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Referencias | Mi Tesoro MX">
+    <meta property="og:description" content="Mira las fotos reales de nuestros envíos a coleccionistas de todo México.">
+    <meta property="og:url" content="https://mitesoromx.com/referencias.html">
+    <meta property="og:image" content="https://mitesoromx.com/og-image.jpg">
+
+    <link rel="canonical" href="https://mitesoromx.com/referencias.html">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- HEADER (igual que el tuyo) -->
+<header class="main-header">
+    <div class="header-left">
+        <img src="imgs/logo.png" alt="Mi Tesoro MX" class="site-logo">
+        <div class="logo-text">
+            <h1>Mi Tesoro MX</h1>
+            <span>Coleccionables de Cine</span>
+        </div>
+    </div>
+
+    <button id="menuToggle" class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+    <nav class="header-center" id="mainNav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#catalogo">Catálogo</a>
+        <a href="referencias.html" class="nav-active">Referencias</a>
+        <a href="preventas.html">Preventas</a>
+        <a href="envios.html">Envíos</a>
+        <a href="aviso-legal-apartado.html">Apartados</a>
+        <a href="faq.html">FAQ</a>
+        <a href="blog.html">Blog</a>
+        <a href="mitesoromx.html">Nosotros</a>
+    </nav>
+
+    <div class="header-right">
+        <button id="verCarrito" class="cart-btn" aria-label="Ver carrito">
+            🛒 <span id="cartCount">0</span>
+        </button>
+        <button id="toggleTheme" class="theme-btn" aria-label="Cambiar tema">🌙</button>
+    </div>
+</header>
+
+<!-- HERO CORTO -->
+<section class="page-hero">
+    <h1>Referencias reales</h1>
+    <p>Fotos de productos enviados a coleccionistas de todo México</p>
+</section>
+
+<!-- CONTADOR -->
+<div class="referencias-info">
+    <p id="refContador">Cargando referencias…</p>
+</div>
+
+<!-- GRID DE FOTOS -->
+<main>
+    <section id="referenciasGrid" class="referencias-grid" aria-label="Galería de referencias">
+        <!-- Se llena con JS -->
+    </section>
+
+    <div id="refPaginacion" class="paginacion" aria-label="Paginación de referencias"></div>
+</main>
+
+<!-- FOOTER (igual que el tuyo) -->
+<footer class="footer">
+    <div class="footer-links">
+        <a href="politica-privacidad.html">Política de Privacidad</a>
+        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>
+        <a href="https://facebook.com/ElSentidoDelCine" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://wa.me/524761002824" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+    <div class="footer-copy">
+        <p>© 2026 Mi Tesoro MX — Todos los derechos reservados</p>
+    </div>
+</footer>
+
+<!-- CARRITO DRAWER (igual – para que el contador y el tema funcionen) -->
+<aside id="cartDrawer" class="cart-drawer" aria-label="Carrito de compras">
+    <div class="cart-header">
+        <h2>🛒 Tu carrito</h2>
+        <button id="cerrarDrawer" aria-label="Cerrar carrito">✕</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+        <p id="cartTotal">Tu carrito está vacío</p>
+        <a id="whatsBtn" class="btn-whatsapp" href="https://wa.me/524761002824" target="_blank" rel="noopener">
+            Confirmar por WhatsApp
+        </a>
+        <button id="vaciarCarrito" class="btn-vaciar" type="button" disabled>Vaciar carrito</button>
+    </div>
+</aside>
+<div id="cartOverlay"></div>
+
+<!-- WHATSAPP FLOAT -->
+<div id="waFloatWrap" class="wa-float-wrap">
+    <a id="whatsappFloat" href="https://wa.me/524761002824" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">💬</a>
+</div>
+
+<!-- VOLVER ARRIBA -->
+<button id="btnVolverArriba" class="btn-volver-arriba" type="button" aria-label="Volver arriba" hidden>↑</button>
+
+<!-- LIGHTBOX MEJORADO -->
+<div id="refLightbox" class="ref-lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+    <button class="ref-lb-close" id="refLbClose" aria-label="Cerrar">✕</button>
+    <button class="ref-lb-prev" id="refLbPrev" aria-label="Anterior">‹</button>
+    <button class="ref-lb-next" id="refLbNext" aria-label="Siguiente">›</button>
+    <img id="refLbImage" src="" alt="Referencia">
+    <div class="ref-lb-counter" id="refLbCounter"></div>
+</div>
+
+<script src="script.js"></script>
+<script src="referencias.js"></script>
+</body>
+</html>

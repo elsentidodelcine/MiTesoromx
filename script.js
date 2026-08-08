@@ -200,7 +200,7 @@ function aplicarFiltros() {
 
   // Filtros extra
   if (filtroExtra === "disponibles") {
-    lista = lista.filter((p) => p.stock > 0 && p.precio != 9 && p.precio != 3);
+    lista = lista.filter((p) => p.stock > 0 && p.precio != 999 && p.precio != 666);
   } else if (filtroExtra === "preventa") {
     lista = lista.filter((p) => badgeTexto(p).includes("preventa"));
   } else if (filtroExtra === "oferta") {
@@ -213,10 +213,10 @@ function aplicarFiltros() {
     lista = lista.filter((p) => badgeTexto(p).includes("nuevo"));
   } else if (filtroExtra === "agotados") {
     // Solo productos sin stock (no próximamente)
-    lista = lista.filter((p) => p.stock <= 0 && p.precio != 9 && p.precio != 3);
+    lista = lista.filter((p) => p.stock <= 0 && p.precio != 999 && p.precio != 666);
   } else {
     // "todos" y cualquier otro → ocultar agotados
-    lista = lista.filter((p) => p.stock > 0 || p.precio == 9 || p.precio == 3);
+    lista = lista.filter((p) => p.stock > 0 || p.precio == 999 || p.precio == 666);
   }
 
     // Filtro por franquicia
@@ -565,10 +565,10 @@ function mostrarProductos() {
     const viendo = Math.floor(Math.random() * 5) + 2; // entre 2 y 6
     const esFavorito = wishlist.includes(p.nombre);
 
-    if (p.precio == 9) {
+    if (p.precio == 999) {
       precioHTML = `<p class="precio proximamente-precio">💰 Precio por confirmar</p>`;
       accionHTML = `<button class="boton proximamente" disabled>Próximamente</button>`;
-    } else if (p.precio == 3) {
+    } else if (p.precio == 666) {
       precioHTML = `<p class="precio proximamente-precio">⏳ En espera de restock</p>`;
       accionHTML = `<button class="boton proximamente" disabled>Próximamente</button>`;
     } else {
@@ -615,14 +615,14 @@ function mostrarProductos() {
             : ""
         }
             ${precioHTML}
-               ${p.stock === 1 && p.precio != 9 && p.precio != 3
+               ${p.stock === 1 && p.precio != 999 && p.precio != 666
                  ? `<p class="urgencia-real">🔥 ¡Última pieza disponible!</p>`
-                 : p.stock > 1 && p.stock <= 3 && p.precio != 9 && p.precio != 3
+                 : p.stock > 1 && p.stock <= 3 && p.precio != 999 && p.precio != 666
                    ? `<p class="urgencia-real">⚡ Solo quedan ${p.stock} piezas</p>`
                    : ""
                }
 
-               ${p.stock > 0 && p.precio != 9 && p.precio != 3
+               ${p.stock > 0 && p.precio != 999 && p.precio != 333
                  ? `<p class="viendo-ahora">👀 ${viendo} persona${viendo === 1 ? "" : "s"} viendo esto</p>`
                  : ""
                }
@@ -1523,7 +1523,7 @@ const PREVENTAS_ACTIVAS = [
     active: true,
     emoji: "🦴",
     titulo: "Preventa PAW Patrol: The Dino Movie",
-    texto: "<br><br> ** Próximamente ** <br><br>" ,
+    texto: "<br><br> Coleccionables caninos en preventa. ¡No te quedes sin el tuyo!  <br><br>" ,
     link: "preventas.html",
     linkTexto: "Ver términos de preventa",
     tema: "paw",
