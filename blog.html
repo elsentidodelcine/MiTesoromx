@@ -26,15 +26,6 @@
                 <small>El grimorio de cine de Mi Tesoro MX</small>
             </span>
         </a>
-    <!--
-        <nav class="main-nav" aria-label="Navegación principal">
-            <a href="#reseñas">Reseñas</a>
-        </nav>
-
-        <a class="header-shop" href="https://elsentidodelcine.github.io/mitesoromx/index.html">
-            Visitar tienda <span>↗</span>
-        </a>
-        -->
     </div>
 </header>
 
@@ -71,8 +62,8 @@
 
             <div class="hero-stats" aria-label="Información del blog">
                 <div>
-                    <strong>03</strong>
-                    <span>Reseñas iniciales</span>
+                    <strong id="hero-count">03</strong>
+                    <span id="hero-label">Reseñas publicadas</span>
                 </div>
                 <i></i>
                 <div>
@@ -100,16 +91,13 @@
     </section>
 
     <!-- REVIEWS -->
-    <!-- REVIEWS -->
     <section class="reviews-section" id="reseñas">
         <div class="section-heading">
             <div>
                 <span class="section-kicker">EN CARTELERA DEL BLOG</span>
                 <h2>Últimas reseñas</h2>
             </div>
-            <p id="reviews-subtitle">
-                Cargando reseñas...
-            </p>
+            <p id="reviews-subtitle">Cargando reseñas...</p>
         </div>
 
         <!-- Contenedor de la reseña destacada -->
@@ -119,7 +107,7 @@
         <div class="review-grid" id="reviews-grid"></div>
     </section>
 
-    <!-- QUOTE / BRAND -->
+    <!-- QUOTE -->
     <section class="cinema-quote">
         <div class="quote-line"></div>
         <blockquote>
@@ -173,8 +161,8 @@
 
         <div class="footer-links">
             <strong>Conecta</strong>
-            <a href="https://www.facebook.com/LosBrujosDelCine" aria-label="Facebook">Facebook</a>
-            <a href="https://boxd.it/8uSCV" aria-label="Instagram">Letterbox</a>
+            <a href="https://www.facebook.com/LosBrujosDelCine">Facebook</a>
+            <a href="https://boxd.it/8uSCV">Letterboxd</a>
         </div>
     </div>
 
@@ -183,158 +171,9 @@
         <span>Parte de <a href="https://elsentidodelcine.github.io/mitesoromx/index.html">Mi Tesoro MX</a></span>
     </div>
 </footer>
-<script>
-    document.addEventListener('DOMContentLoaded', async () => {
-        try {
-            const response = await fetch('resenas.json');
-            if (!response.ok) throw new Error('No se pudo cargar resenas.json');
-            const resenas = await response.json();
 
-            const destacada = resenas.find(r => r.destacada);
-            const secundarias = resenas.filter(r => !r.destacada);
-            const total = resenas.length;
-
-            // === Actualizar subtítulo dinámico ===
-            const subtitle = document.getElementById('reviews-subtitle');
-            if (subtitle) {
-                if (total === 1) {
-                    subtitle.innerHTML = `Una película.<br>Una opinión sin vueltas.`;
-                } else if (total === 2) {
-                    subtitle.innerHTML = `Dos películas. Dos mundos.<br>Una opinión sin vueltas.`;
-                } else {
-                    subtitle.innerHTML = `${numeroATexto(total)} películas. ${numeroATexto(total)} mundos.<br>Una opinión sin vueltas.`;
-                }
-            }
-
-            // === Actualizar contador del hero ===
-            const heroStat = document.querySelector('.hero-stats strong');
-            if (heroStat) {
-                heroStat.textContent = total.toString().padStart(2, '0');
-            }
-
-            // === RESEÑA DESTACADA ===
-            if (destacada) {
-                const container = document.getElementById('featured-review-container');
-                container.innerHTML = `
-                    <article class="featured-review">
-                        <div class="featured-image">
-                            <div class="image-overlay"></div>
-                            <img
-                                src="${destacada.poster}"
-                                alt="Póster de ${destacada.titulo}"
-                                loading="eager"
-                                onerror="this.style.display='none'; this.parentElement.classList.add('poster-placeholder');"
-                            >
-                            <div class="poster-fallback">
-                                <span>${destacada.posterFallback.linea1}</span>
-                                <strong>${destacada.posterFallback.linea2}</strong>
-                                <small>IMAGEN DEL PÓSTER</small>
-                            </div>
-                            <span class="review-tag">${destacada.etiqueta}</span>
-                            <div class="featured-score">
-                                <span>★</span>
-                                <strong>${destacada.puntaje}</strong>
-                                <small>/ 5</small>
-                            </div>
-                        </div>
-
-                        <div class="featured-content">
-                            <div class="movie-meta">
-                                <span>${destacada.anio}</span>
-                                ${destacada.generos.map(g => `<i></i><span>${g}</span>`).join('')}
-                            </div>
-
-                            <h2>${destacada.titulo}</h2>
-
-                            <p class="featured-lead">${destacada.resumen}</p>
-
-                            <p class="review-placeholder">
-                                <strong>Próximamente:</strong> aquí colocaremos tu reseña completa,
-                                con tu opinión, momentos destacados y veredicto final.
-                            </p>
-
-                            <div class="review-bottom">
-                                <div class="rating-display">
-                                    <span class="stars">${generarEstrellas(destacada.puntaje)}</span>
-                                    <span>${destacada.puntaje} / 5</span>
-                                </div>
-                                <a href="${destacada.enlace}" class="read-button">
-                                    Leer reseña <span>→</span>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                `;
-            }
-
-            // === TARJETAS SECUNDARIAS ===
-            const grid = document.getElementById('reviews-grid');
-            grid.innerHTML = secundarias.map(r => `
-                <article class="review-card">
-                    <a href="${r.enlace}" class="card-image">
-                        <img
-                            src="${r.poster}"
-                            alt="Póster de ${r.titulo}"
-                            loading="lazy"
-                            onerror="this.style.display='none'; this.parentElement.classList.add('poster-placeholder');"
-                        >
-                        <div class="poster-fallback">
-                            <span>${r.posterFallback.linea1}</span>
-                            <strong>${r.posterFallback.linea2}</strong>
-                            <small>IMAGEN DEL PÓSTER</small>
-                        </div>
-                        <span class="card-label">${r.etiqueta}</span>
-                        <span class="card-score">★ ${r.puntaje}</span>
-                    </a>
-
-                    <div class="card-content">
-                        <div class="movie-meta">
-                            <span>${r.anio}</span>
-                            ${r.generos.map(g => `<i></i><span>${g}</span>`).join('')}
-                        </div>
-                        <h3><a href="${r.enlace}">${r.titulo}</a></h3>
-                        <p>${r.resumen}</p>
-                        <div class="card-footer">
-                            <span class="score-mini">★ ${r.puntaje}</span>
-                            <a href="${r.enlace}">Leer reseña →</a>
-                        </div>
-                    </div>
-                </article>
-            `).join('');
-
-        } catch (error) {
-            console.error('Error cargando reseñas:', error);
-            document.getElementById('reviews-subtitle').textContent = 'No se pudieron cargar las reseñas.';
-        }
-    });
-
-    // Genera estrellas visuales (llenas + media estrella)
-    function generarEstrellas(puntaje) {
-        const llenas = Math.floor(puntaje);
-        const tieneMedia = puntaje % 1 >= 0.3; // 4.3 hacia arriba ya cuenta media
-        let html = '';
-
-        for (let i = 1; i <= 5; i++) {
-            if (i <= llenas) {
-                html += '★';
-            } else if (i === llenas + 1 && tieneMedia) {
-                html += '<b>★</b>'; // media (gris)
-            } else {
-                html += '<b>★</b>';
-            }
-        }
-        return html;
-    }
-
-    // Convierte número a texto en español
-    function numeroATexto(n) {
-        const numeros = {
-            1: 'Una', 2: 'Dos', 3: 'Tres', 4: 'Cuatro', 5: 'Cinco',
-            6: 'Seis', 7: 'Siete', 8: 'Ocho', 9: 'Nueve', 10: 'Diez'
-        };
-        return numeros[n] || n;
-    }
-</script>
+<!-- Script separado -->
+<script src="scriptResena.js"></script>
 
 </body>
 </html>
