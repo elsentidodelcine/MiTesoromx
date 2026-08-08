@@ -7,28 +7,28 @@
   // Cambia esta lista por tus 150 fotos reales
   // Formato: "imgs/referencias/foto1.jpg"
   const FOTOS = [
-    "imgs/referencias/refe1.jpg",
-    "imgs/referencias/refe2.jpg",
-    "imgs/referencias/refe3.jpg",
-    "imgs/referencias/refe4.jpg",
-    "imgs/referencias/refe5.jpg",
-    "imgs/referencias/refe6.jpg",
-    "imgs/referencias/refe7.jpg",
-    "imgs/referencias/refe8.jpg",
-    "imgs/referencias/refe9.jpg",
-    "imgs/referencias/refe10.jpg",
+    "imgs/referencias/ref1.jpg",
+    "imgs/referencias/ref2.jpg",
+    "imgs/referencias/ref3.jpg",
+    "imgs/referencias/ref4.jpg",
+    "imgs/referencias/ref5.jpg",
+    "imgs/referencias/ref6.jpg",
+    "imgs/referencias/ref7.jpg",
+    "imgs/referencias/ref8.jpg",
+    "imgs/referencias/ref9.jpg",
+    "imgs/referencias/ref10.jpg",
     // ... agrega las 150 aquí
     // Ejemplo hasta 20 por ahora:
-    "imgs/referencias/refe11.jpg",
-    "imgs/referencias/refe12.jpg",
-    "imgs/referencias/refe13.jpg",
-    "imgs/referencias/refe14.jpg",
-    "imgs/referencias/refe15.jpg",
-    "imgs/referencias/refe16.jpg",
-    "imgs/referencias/refe17.jpg",
-    "imgs/referencias/refe18.jpg",
-    "imgs/referencias/refe19.jpg",
-    "imgs/referencias/refe20.jpg",
+    "imgs/referencias/ref11.jpg",
+    "imgs/referencias/ref12.jpg",
+    "imgs/referencias/ref13.jpg",
+    "imgs/referencias/ref14.jpg",
+    "imgs/referencias/ref15.jpg",
+    "imgs/referencias/ref16.jpg",
+    "imgs/referencias/ref17.jpg",
+    "imgs/referencias/ref18.jpg",
+    "imgs/referencias/ref19.jpg",
+    "imgs/referencias/ref20.jpg",
   ];
 
   const POR_PAGINA = 24; // 24 fotos por página (ideal para 150)
