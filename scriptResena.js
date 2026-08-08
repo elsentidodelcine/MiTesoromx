@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         const response = await fetch('resenas.json');
         if (!response.ok) throw new Error('No se pudo cargar resenas.json');
-        
+
         let resenas = await response.json();
 
-        // Ordenar por fecha (más reciente primero) - si tienes el campo "fecha"
+        // Ordenar por fecha (más reciente primero) si tienes el campo "fecha"
         // resenas = resenas.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
 
         const destacada = resenas.find(r => r.destacada);
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         // === Actualizar Hero ===
         const heroCount = document.getElementById('hero-count');
         const heroLabel = document.getElementById('hero-label');
-        
+
         if (heroCount) {
             heroCount.textContent = total.toString().padStart(2, '0');
         }
@@ -37,8 +37,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // === RESEÑA DESTACADA ===
         const featuredContainer = document.getElementById('featured-review-container');
-        
+
         if (destacada && featuredContainer) {
+            const enlace = `review.html?id=${destacada.id}`;
+
             featuredContainer.innerHTML = `
                 <article class="featured-review">
                     <div class="featured-image">
@@ -50,11 +52,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                             onerror="this.style.display='none'; this.parentElement.classList.add('poster-placeholder');"
                         >
                         <div class="poster-fallback">
-                            <span>${destacada.posterFallback.linea1}</span>
-                            <strong>${destacada.posterFallback.linea2}</strong>
+                            <span>${destacada.posterFallback?.linea1 || destacada.titulo}</span>
+                            <strong>${destacada.posterFallback?.linea2 || ''}</strong>
                             <small>IMAGEN DEL PÓSTER</small>
                         </div>
-                        <span class="review-tag">${destacada.etiqueta}</span>
+                        <span class="review-tag">${destacada.etiqueta || 'RESEÑA'}</span>
                         <div class="featured-score">
                             <span>★</span>
                             <strong>${destacada.puntaje}</strong>
@@ -71,17 +73,12 @@ document.addEventListener('DOMContentLoaded', async () => {
                         <h2>${destacada.titulo}</h2>
                         <p class="featured-lead">${destacada.resumen}</p>
 
-                        <p class="review-placeholder">
-                            <strong>Próximamente:</strong> aquí colocaremos tu reseña completa,
-                            con tu opinión, momentos destacados y veredicto final.
-                        </p>
-
                         <div class="review-bottom">
                             <div class="rating-display">
                                 <span class="stars">${generarEstrellas(destacada.puntaje)}</span>
                                 <span>${destacada.puntaje} / 5</span>
                             </div>
-                            <a href="${destacada.enlace}" class="read-button">
+                            <a href="${enlace}" class="read-button">
                                 Leer reseña <span>→</span>
                             </a>
                         </div>
@@ -93,38 +90,42 @@ document.addEventListener('DOMContentLoaded', async () => {
         // === TARJETAS SECUNDARIAS ===
         const grid = document.getElementById('reviews-grid');
         if (grid) {
-            grid.innerHTML = secundarias.map(r => `
-                <article class="review-card">
-                    <a href="${r.enlace}" class="card-image">
-                        <img
-                            src="${r.poster}"
-                            alt="Póster de ${r.titulo}"
-                            loading="lazy"
-                            onerror="this.style.display='none'; this.parentElement.classList.add('poster-placeholder');"
-                        >
-                        <div class="poster-fallback">
-                            <span>${r.posterFallback.linea1}</span>
-                            <strong>${r.posterFallback.linea2}</strong>
-                            <small>IMAGEN DEL PÓSTER</small>
-                        </div>
-                        <span class="card-label">${r.etiqueta}</span>
-                        <span class="card-score">★ ${r.puntaje}</span>
-                    </a>
+            grid.innerHTML = secundarias.map(r => {
+                const enlace = `review.html?id=${r.id}`;
 
-                    <div class="card-content">
-                        <div class="movie-meta">
-                            <span>${r.anio}</span>
-                            ${r.generos.map(g => `<i></i><span>${g}</span>`).join('')}
+                return `
+                    <article class="review-card">
+                        <a href="${enlace}" class="card-image">
+                            <img
+                                src="${r.poster}"
+                                alt="Póster de ${r.titulo}"
+                                loading="lazy"
+                                onerror="this.style.display='none'; this.parentElement.classList.add('poster-placeholder');"
+                            >
+                            <div class="poster-fallback">
+                                <span>${r.posterFallback?.linea1 || r.titulo}</span>
+                                <strong>${r.posterFallback?.linea2 || ''}</strong>
+                                <small>IMAGEN DEL PÓSTER</small>
+                            </div>
+                            <span class="card-label">${r.etiqueta || 'RESEÑA'}</span>
+                            <span class="card-score">★ ${r.puntaje}</span>
+                        </a>
+
+                        <div class="card-content">
+                            <div class="movie-meta">
+                                <span>${r.anio}</span>
+                                ${r.generos.map(g => `<i></i><span>${g}</span>`).join('')}
+                            </div>
+                            <h3><a href="${enlace}">${r.titulo}</a></h3>
+                            <p>${r.resumen}</p>
+                            <div class="card-footer">
+                                <span class="score-mini">★ ${r.puntaje}</span>
+                                <a href="${enlace}">Leer reseña →</a>
+                            </div>
                         </div>
-                        <h3><a href="${r.enlace}">${r.titulo}</a></h3>
-                        <p>${r.resumen}</p>
-                        <div class="card-footer">
-                            <span class="score-mini">★ ${r.puntaje}</span>
-                            <a href="${r.enlace}">Leer reseña →</a>
-                        </div>
-                    </div>
-                </article>
-            `).join('');
+                    </article>
+                `;
+            }).join('');
         }
 
     } catch (error) {

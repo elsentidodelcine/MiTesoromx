@@ -3,24 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Spider-Man Un Nuevo Dia – Reseña | Los Brujos del Cine</title>
-    <meta name="description" content="Reseña de Spider-Man Un Nuevo Dia. El regreso de Peter Parker abre una nueva etapa. ¿Funciona como la siguiente gran aventura del héroe arácnido?.">
+    <title>Reseña | Los Brujos del Cine</title>
+    <meta name="description" content="Reseña de cine en Los Brujos del Cine">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../stylesLBDC.css">
+    <link rel="stylesheet" href="stylesLBDC.css">
 
     <style>
-        /* ========== ESTILOS EXCLUSIVOS DE RESEÑA ========== */
+        .review-page { padding-bottom: 80px; }
 
-        .review-page {
-            padding-bottom: 80px;
-        }
-
-        /* Hero de la reseña */
         .review-hero {
             position: relative;
             padding: 60px 0 50px;
@@ -52,11 +46,7 @@
             font-weight: 500;
             transition: color 0.2s ease, gap 0.2s ease;
         }
-
-        .back-link:hover {
-            color: #fff;
-            gap: 12px;
-        }
+        .back-link:hover { color: #fff; gap: 12px; }
 
         .review-header {
             display: grid;
@@ -65,16 +55,13 @@
             align-items: start;
         }
 
-        /* Póster */
         .review-poster {
-            position: relative;
             border-radius: var(--radius);
             overflow: hidden;
             border: 1px solid var(--border);
             background: var(--surface);
             box-shadow: var(--shadow);
         }
-
         .review-poster img {
             width: 100%;
             aspect-ratio: 2 / 3;
@@ -82,7 +69,6 @@
             display: block;
         }
 
-        /* Info */
         .review-info h1 {
             font-family: 'Playfair Display', Georgia, serif;
             font-size: clamp(2.2rem, 5vw, 3.4rem);
@@ -102,14 +88,12 @@
             font-size: 0.82rem;
             font-weight: 500;
         }
-
         .review-meta .dot {
             width: 3px;
             height: 3px;
             border-radius: 50%;
             background: var(--red);
         }
-
         .review-rating {
             color: var(--gold);
             font-size: 1.05rem;
@@ -123,7 +107,6 @@
             gap: 8px;
             margin-bottom: 28px;
         }
-
         .platform-tag {
             padding: 5px 12px;
             border-radius: 999px;
@@ -135,11 +118,7 @@
             color: var(--muted);
         }
 
-        .review-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
+        .review-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
         .btn-letterboxd {
             display: inline-flex;
@@ -154,20 +133,17 @@
             font-weight: 600;
             transition: all 0.25s ease;
         }
-
         .btn-letterboxd:hover {
-            background: #00e054; /* verde Letterboxd */
+            background: #00e054;
             border-color: #00e054;
             color: #000;
             transform: translateY(-2px);
         }
 
-        /* Contenido */
         .review-body {
             width: min(720px, calc(100% - 48px));
             margin: 60px auto 0;
         }
-
         .review-body .lead {
             font-family: 'Playfair Display', Georgia, serif;
             font-size: 1.35rem;
@@ -176,22 +152,12 @@
             margin-bottom: 32px;
             font-weight: 600;
         }
-
         .review-body p {
             color: var(--muted);
             font-size: 1.05rem;
             line-height: 1.8;
             margin-bottom: 1.5rem;
         }
-
-        .review-body h2 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.55rem;
-            margin: 2.8rem 0 1.1rem;
-            color: #fff;
-            letter-spacing: -0.02em;
-        }
-
         .review-body blockquote {
             margin: 2.2rem 0;
             padding: 1.1rem 1.4rem;
@@ -205,7 +171,6 @@
             line-height: 1.5;
         }
 
-        /* Veredicto */
         .verdict {
             margin-top: 3.5rem;
             padding: 28px 30px;
@@ -214,7 +179,6 @@
             border: 1px solid var(--border);
             box-shadow: var(--shadow-soft);
         }
-
         .verdict-header {
             display: flex;
             align-items: center;
@@ -224,11 +188,7 @@
             font-size: 1.2rem;
             color: #fff;
         }
-
-        .verdict-header span {
-            color: var(--gold);
-        }
-
+        .verdict-header span { color: var(--gold); }
         .verdict p {
             color: var(--muted);
             font-size: 1rem;
@@ -236,7 +196,6 @@
             margin: 0;
         }
 
-        /* Navegación entre reseñas */
         .review-nav {
             width: min(var(--max), calc(100% - 48px));
             margin: 70px auto 0;
@@ -245,7 +204,6 @@
             gap: 16px;
             flex-wrap: wrap;
         }
-
         .review-nav a {
             flex: 1;
             min-width: 180px;
@@ -256,13 +214,11 @@
             border: 1px solid var(--border);
             transition: all 0.25s ease;
         }
-
         .review-nav a:hover {
             border-color: rgba(196, 30, 58, 0.4);
             transform: translateY(-3px);
             box-shadow: var(--shadow-soft);
         }
-
         .review-nav .label {
             display: block;
             font-size: 0.65rem;
@@ -272,42 +228,37 @@
             color: var(--muted-2);
             margin-bottom: 6px;
         }
-
         .review-nav .title {
             font-family: 'Playfair Display', Georgia, serif;
             font-size: 1.05rem;
             color: #fff;
             font-weight: 600;
         }
-
         .review-nav a:last-child {
             text-align: right;
             margin-left: auto;
         }
 
-        /* Responsive */
+        .loading-state, .error-state {
+            text-align: center;
+            padding: 100px 20px;
+            color: var(--muted);
+        }
+
         @media (max-width: 768px) {
             .review-header {
                 grid-template-columns: 1fr;
                 gap: 28px;
                 text-align: center;
             }
-
             .review-poster {
                 max-width: 220px;
                 margin: 0 auto;
             }
-
-            .review-meta,
-            .review-platforms,
-            .review-actions {
+            .review-meta, .review-platforms, .review-actions {
                 justify-content: center;
             }
-
-            .review-nav {
-                flex-direction: column;
-            }
-
+            .review-nav { flex-direction: column; }
             .review-nav a:last-child {
                 text-align: left;
                 margin-left: 0;
@@ -315,13 +266,11 @@
         }
     </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
 <header class="site-header">
     <div class="header-inner">
-        <a href="../index.html" class="brand" aria-label="Los Brujos del Cine, inicio">
+        <a href="index.html" class="brand" aria-label="Los Brujos del Cine, inicio">
             <span class="brand-mark" aria-hidden="true">☽</span>
             <span class="brand-copy">
                 <strong>Los Brujos del Cine</strong>
@@ -332,106 +281,15 @@
 </header>
 
 <main class="review-page">
-
-    <!-- HERO DE LA RESEÑA -->
-    <section class="review-hero">
-        <div class="review-hero-inner">
-            <a href="../index.html#reseñas" class="back-link">← Volver a reseñas</a>
-
-            <div class="review-header">
-                <div class="review-poster">
-                    <img
-                            src="../imgs/posters/spiderman-brand-new-day.jpg"
-                            alt="Póster de Spider-Man Un Nuevo Dia"
-                            onerror="this.src='https://via.placeholder.com/400x600/111/666?text=Spider+Man'"
-                    >
-                </div>
-
-                <div class="review-info">
-                    <h1>Spider-Man Un Nuevo Diay</h1>
-
-                    <div class="review-meta">
-                        <span class="review-rating">★★★★★</span>
-                        <span class="dot"></span>
-                        <span>2026</span>
-                        <span class="dot"></span>
-                        <span>Animación</span>
-                        <span class="dot"></span>
-                        <span>140 min</span>
-                    </div>
-
-                    <div class="review-platforms">
-                        <span class="platform-tag">Disney+</span>
-                    </div>
-
-                    <div class="review-actions">
-                        <a href="https://boxd.it/8uSCV" target="_blank" rel="noopener noreferrer" class="btn-letterboxd">
-                            Ver en Letterboxd
-                            <span>↗</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTENIDO -->
-    <article class="review-body">
-        <p class="lead">
-            La película que nos enseñó que los juguetes también tienen corazón… y que Buzz Lightyear nunca va a volar (aunque él diga lo contrario).
-        </p>
-
-        <p>
-            Toy Story no solo es la primera película de Pixar: es pura magia. En 1995, cuando casi nadie creía que una película completamente generada por ordenador pudiera emocionar, John Lasseter y su equipo demostraron que la tecnología solo es una herramienta. Lo importante siempre es la historia.
-        </p>
-
-        <p>
-            Woody y Buzz Lightyear son uno de los mejores dúos de la historia del cine. Su relación empieza con celos y rivalidad y termina en una amistad tan sólida que todavía emociona treinta años después. Y eso es lo más difícil de conseguir: que una historia de juguetes te haga sentir algo real.
-        </p>
-
-        <h2>Por qué sigue funcionando</h2>
-
-        <p>
-            El humor es inteligente sin ser pretencioso. Las referencias a la cultura pop de los 90 no envejecen mal. Y la banda sonora de Randy Newman (“You’ve Got a Friend in Me”) es simplemente perfecta.
-        </p>
-
-        <blockquote>
-            “No soy un juguete… ¡soy un astronauta espacial!”
-        </blockquote>
-
-        <p>
-            Cada rewatch revela algún detalle nuevo: un gag visual, una expresión de Woody, un momento de silencio que dice más que mil diálogos. Es de esas películas que se disfrutan igual de niño que de adulto.
-        </p>
-
-        <div class="verdict">
-            <div class="verdict-header">
-                <span>★</span> Veredicto
-            </div>
-            <p>
-                Imprescindible. Si nunca la has visto, estás a tiempo. Si ya la viste, vale la pena volver. Toy Story no es solo una gran película de animación: es una de las mejores películas de los 90, punto.
-            </p>
-        </div>
-    </article>
-
-    <!-- NAVEGACIÓN ENTRE RESEÑAS -->
-    <nav class="review-nav" aria-label="Otras reseñas">
-        <a href="la-odisea.html">
-            <span class="label">← Anterior</span>
-            <span class="title">La Odisea</span>
-        </a>
-        <a href="spiderman-un-nuevo-dia.html">
-            <span class="label">Siguiente →</span>
-            <span class="title">Spider-Man: Un Nuevo Día</span>
-        </a>
-    </nav>
-
+    <div id="review-container">
+        <div class="loading-state">Cargando reseña...</div>
+    </div>
 </main>
 
-<!-- FOOTER -->
 <footer class="site-footer">
     <div class="footer-main">
         <div class="footer-brand">
-            <a href="../index.html" class="brand">
+            <a href="index.html" class="brand">
                 <span class="brand-mark">☽</span>
                 <span class="brand-copy">
                     <strong>Los Brujos del Cine</strong>
@@ -446,7 +304,7 @@
 
         <div class="footer-links">
             <strong>Explora</strong>
-            <a href="../index.html#reseñas">Reseñas</a>
+            <a href="index.html#reseñas">Reseñas</a>
             <a href="https://elsentidodelcine.github.io/mitesoromx/index.html">Mi Tesoro MX</a>
         </div>
 
@@ -463,5 +321,6 @@
     </div>
 </footer>
 
+<script src="review.js"></script>
 </body>
 </html>

@@ -3,51 +3,79 @@
     "id": "toy-story-5",
     "titulo": "Toy Story 5",
     "anio": 2026,
-    "fecha": "2026-08-07",
+    "duracion": "101 min",
     "generos": ["Animación", "Aventura"],
-    "puntaje": 4.0,
-    "destacada": false,
-    "etiqueta": "RESEÑA",
+    "puntaje": 4.5,
+    "destacada": true,
+    "etiqueta": "RESEÑA DESTACADA",
+    "plataformas": ["Disney+"],
     "resumen": "La nueva aventura de Woody, Buzz y compañía llega para demostrar si Pixar todavía tiene algo nuevo que contar con estos personajes.",
-    "poster": "imgs/posters/toystory5.jpg",
+    "poster": "imgs/posters/toy-story-5.jpg",
     "posterFallback": {
       "linea1": "TOY STORY",
       "linea2": "5"
     },
-    "enlace": "reseñas/reseña-toy-story-5.html"
+    "enlace": "review.html?id=toy-story-5",
+    "letterboxd": "https://boxd.it/8uSCV",
+    "lead": "La nueva entrega de la saga más querida de Pixar llega con la difícil misión de emocionarnos otra vez.",
+    "contenido": [
+      "Después de tantos años, volver al mundo de los juguetes siempre genera expectativas altas. Toy Story 5 intenta recuperar la magia original mientras introduce nuevos conflictos y personajes.",
+      "La relación entre Woody y Buzz sigue siendo el corazón emocional de la historia, aunque esta vez el foco se amplía hacia nuevas generaciones de juguetes y la pregunta de qué significa realmente ser ‘el favorito’.",
+      "Visualmente es impecable, como se espera de Pixar. Hay momentos de verdadero asombro y algunos gags muy bien conseguidos."
+    ],
+    "cita": "¡Al infinito… y más allá!",
+    "veredicto": "Una entrega sólida y emotiva que no alcanza la perfección de las primeras, pero que sigue teniendo mucho corazón. Recomendada para fans de la saga."
   },
   {
     "id": "la-odisea",
     "titulo": "La Odisea",
     "anio": 2026,
-    "fecha": "2026-08-07",
+    "duracion": "180 min",
     "generos": ["Épica", "Aventura"],
-    "puntaje": 5.0,
+    "puntaje": 4.5,
     "destacada": false,
     "etiqueta": "ESTRENO",
+    "plataformas": ["Cines"],
     "resumen": "Christopher Nolan lleva uno de los relatos más grandes de la historia al terreno de su cine espectacular.",
-    "poster": "imgs/posters/laodisea.jpg",
+    "poster": "imgs/posters/la-odisea.jpg",
     "posterFallback": {
       "linea1": "LA ODISEA",
       "linea2": "⚔"
     },
-    "enlace": "reseñas/reseña-la-odisea.html"
+    "enlace": "review.html?id=la-odisea",
+    "letterboxd": "https://boxd.it/8uSCV",
+    "lead": "Nolan se enfrenta a Homero y el resultado es ambicioso, denso y visualmente imponente.",
+    "contenido": [
+      "Convertir La Odisea en cine siempre fue un desafío enorme. Nolan apuesta por un enfoque más físico y sensorial que mitológico, priorizando la escala y la experiencia inmersiva.",
+      "El resultado es una película que se siente monumental, aunque en ocasiones peca de exceso de duración y de cierta frialdad emocional."
+    ],
+    "cita": "Ningún hombre debería estar tanto tiempo lejos de su hogar.",
+    "veredicto": "Una epopeya visual impresionante que no convencerá a todos, pero que reafirma a Nolan como uno de los directores más ambiciosos del cine actual."
   },
   {
     "id": "spiderman-un-nuevo-dia",
     "titulo": "Spider-Man: Un Nuevo Día",
     "anio": 2026,
-    "fecha": "2026-08-07",
+    "duracion": "135 min",
     "generos": ["Acción", "Superhéroes"],
-    "puntaje": 4.5,
-    "destacada": true,
+    "puntaje": 4.0,
+    "destacada": false,
     "etiqueta": "ESTRENO",
+    "plataformas": ["Cines"],
     "resumen": "El regreso de Peter Parker abre una nueva etapa. ¿Funciona como la siguiente gran aventura del héroe arácnido?",
-    "poster": "imgs/posters/spiderman.jpg",
+    "poster": "imgs/posters/spiderman-un-nuevo-dia.jpg",
     "posterFallback": {
       "linea1": "SPIDER-MAN",
       "linea2": "UN NUEVO DÍA"
     },
-    "enlace": "reseñas/reseña-spiderman-brand-new-day.html"
+    "enlace": "review.html?id=spiderman-un-nuevo-dia",
+    "letterboxd": "https://boxd.it/8uSCV",
+    "lead": "Peter Parker regresa con una nueva etapa que intenta equilibrar acción, humor y consecuencias emocionales.",
+    "contenido": [
+      "Después del cierre de la trilogía anterior, esta nueva entrega busca reiniciar sin borrar lo anterior. El tono es más ligero en algunos momentos, pero no renuncia a la carga emocional que caracteriza al personaje.",
+      "Los villanos funcionan bien y hay secuencias de acción muy logradas, especialmente en el segundo acto."
+    ],
+    "cita": "Un gran poder conlleva una gran responsabilidad.",
+    "veredicto": "Un regreso sólido y entretenido. No reinventará el género, pero cumple con lo que se espera de una buena película de Spider-Man."
   }
 ]
