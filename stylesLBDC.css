@@ -940,74 +940,76 @@ button:focus-visible {
 /* =========================
    FOOTER
 ========================= */
+/* =========================
+   FOOTER (estilo Brujos + estructura simple)
+========================= */
 
 .site-footer {
   border-top: 1px solid var(--border);
   background: #020203;
+  padding: 40px 0 32px;
 }
 
-.footer-main {
+.footer-inner {
   width: min(var(--max), calc(100% - 48px));
-  margin: auto;
-  padding: 58px 0 48px;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 48px;
-}
-
-.footer-brand p {
-  margin-top: 20px;
-  color: var(--muted-2);
-  font-size: .76rem;
-  line-height: 1.75;
-  max-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  text-align: center;
 }
 
 .footer-links {
   display: flex;
-  flex-direction: column;
-  gap: 11px;
-}
-
-.footer-links strong {
-  margin-bottom: 6px;
-  color: #fff;
-  font-size: .62rem;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  font-weight: 700;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 28px;
 }
 
 .footer-links a {
-  width: max-content;
   color: var(--muted-2);
   font-size: .76rem;
+  font-weight: 500;
   transition: color .2s ease;
 }
 
-.footer-links a:hover {
+.footer-links a:hover,
+.footer-links a:focus-visible {
   color: #fff;
 }
 
-.footer-bottom {
-  width: min(var(--max), calc(100% - 48px));
-  margin: auto;
-  padding: 18px 0 26px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  border-top: 1px solid var(--border);
+.footer-copy {
   color: #3e3e48;
   font-size: .66rem;
+  line-height: 1.5;
 }
 
-.footer-bottom a {
+.footer-copy a {
   color: var(--muted);
   transition: color .2s ease;
 }
 
-.footer-bottom a:hover {
+.footer-copy a:hover,
+.footer-copy a:focus-visible {
   color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .site-footer {
+    padding: 32px 0 28px;
+  }
+
+  .footer-inner {
+    width: min(var(--max), calc(100% - 28px));
+    gap: 18px;
+  }
+
+  .footer-links {
+    gap: 10px 20px;
+  }
 }
 
 /* =========================
