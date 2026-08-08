@@ -6,7 +6,7 @@
     "duracion": "101 min",
     "generos": ["Animación", "Aventura"],
     "puntaje": 4.5,
-    "destacada": true,
+    "destacada": false,
     "etiqueta": "RESEÑA DESTACADA",
     "plataformas": ["Disney+"],
     "resumen": "La nueva aventura de Woody, Buzz y compañía llega para demostrar si Pixar todavía tiene algo nuevo que contar con estos personajes.",
@@ -59,7 +59,7 @@
     "duracion": "135 min",
     "generos": ["Acción", "Superhéroes"],
     "puntaje": 4.0,
-    "destacada": false,
+    "destacada": true,
     "etiqueta": "ESTRENO",
     "plataformas": ["Cines"],
     "resumen": "El regreso de Peter Parker abre una nueva etapa. ¿Funciona como la siguiente gran aventura del héroe arácnido?",
@@ -72,8 +72,17 @@
     "letterboxd": "https://boxd.it/8uSCV",
     "lead": "Peter Parker regresa con una nueva etapa que intenta equilibrar acción, humor y consecuencias emocionales.",
     "contenido": [
-      "Después del cierre de la trilogía anterior, esta nueva entrega busca reiniciar sin borrar lo anterior. El tono es más ligero en algunos momentos, pero no renuncia a la carga emocional que caracteriza al personaje.",
-      "Los villanos funcionan bien y hay secuencias de acción muy logradas, especialmente en el segundo acto."
+      "Ya vi Spider-Man: Un Nuevo Día (2026) y esta es mi opinión. ",
+      "Después de aventarme todo el maratón de Spider-Man para llegar preparado a esta película y poder compararla con todas las anteriores, puedo decir que esto era exactamente lo que esperaba ver desde que Marvel y Sony unieron al personaje.",
+      "Lo primero que me encantó fue que, por fin, vemos a un Peter Parker mucho más maduro. Ya no es el típico chamaco impulsivo de las tres películas anteriores. Aquí ya piensa mejor las cosas, actúa como un verdadero héroe y se nota todo lo que aprendió después de los acontecimientos de No Way Home. Esa evolución era justo lo que necesitaba el personaje.",
+      "Visualmente también me fascinó. El nuevo traje está increíble, las escenas donde Spider-Man se columpia por Nueva York se sienten espectaculares y las secuencias de acción, especialmente las que usan cámara lenta, están muy bien logradas. Tom Holland vuelve a demostrar que nació para interpretar a Spider-Man. Para mí, esta es su mejor actuación con el personaje.",
+      "Algo que también agradecí muchísimo fue que prácticamente desapareciera el antiguo elenco de apoyo. Solo tenemos a Ned y a MJ, y la verdad yo nunca he sido fan de esos personajes, especialmente de Ned. Aun así, aquí su participación ya no pesa tanto como antes y la película logra enfocarse en lo realmente importante: Peter Parker y su crecimiento.",
+      "Muchos se están quejando de los personajes secundarios y de los cameos, pero a mí me parecieron un gran acierto. Al final todos viven en el mismo universo y en la misma ciudad, así que tiene sentido que Spider-Man pueda cruzarse con personajes como Punisher, Hulk o algunos de sus propios villanos. No importa si aparecen cinco segundos o varios minutos, para mí ayudan a que el UCM se sienta realmente conectado y vivo.",
+      "La química entre Spider-Man y Punisher fue de mis partes favoritas. Son personajes completamente distintos, pero funcionan muy bien juntos. También me gustó la dinámica con MJ. En cambio, Ned sigue sin convencerme. Después de tantos años, sigue demasiado aferrado a sus amigos y siento que el personaje ya dio todo lo que tenía que dar. Afortunadamente, Peter sí evoluciona muchísimo, tanto como superhéroe como al final también en su vida personal.",
+      "Otro punto que disfruté fue volver a ver a un Spider-Man de barrio, patrullando las calles de Nueva York, hablando con la policía y resolviendo problemas que realmente se sienten cercanos. Eso era algo que extrañaba mucho del personaje y que aquí recuperan de una gran manera.",
+      "También me gustó la introducción de Jean Grey. Creo que la actriz hizo un excelente trabajo y su historia funciona como un espejo de la de Peter: ambos comienzan cargando dolor, resentimiento y problemas personales, pero poco a poco aprenden a controlar sus poderes y a convertirse en mejores personas. Me dejó con muchas ganas de seguir viendo su evolución.",
+      "Y sí... hubo momentos en los que hasta se me salieron las lágrimas. No solo por la película, sino porque después de volver a ver prácticamente toda la historia de Spider-Man antes de llegar a esta entrega, sentí que este Peter Parker por fin encontró el camino que debía seguir desde el principio.",
+      "Para mí, Spider-Man: Un Nuevo Día entra directamente a mi Top 3 de películas de Spider-Man. No Way Home seguirá siendo inolvidable por todo el fan service que nos regaló, pero si hablamos del Spider-Man que siempre quise ver dentro del UCM, esta película es la que más se acerca a esa idea."
     ],
     "cita": "Un gran poder conlleva una gran responsabilidad.",
     "veredicto": "Un regreso sólido y entretenido. No reinventará el género, pero cumple con lo que se espera de una buena película de Spider-Man."
