@@ -4152,3 +4152,29 @@ body.dark .btn-wishlist {
      gap: 10px;
    }
  }
+
+ .testimonios-cta {
+   text-align: center;
+   margin-top: 36px;
+ }
+
+ .btn-ver-referencias {
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+   padding: 12px 24px;
+   border-radius: 999px;
+   background: rgba(255, 255, 255, 0.06);
+   border: 1px solid rgba(255, 255, 255, 0.12);
+   color: #fff;
+   font-size: 0.9rem;
+   font-weight: 600;
+   transition: all 0.25s ease;
+ }
+
+ .btn-ver-referencias:hover,
+ .btn-ver-referencias:focus-visible {
+   background: rgba(255, 255, 255, 0.1);
+   border-color: rgba(255, 255, 255, 0.25);
+   transform: translateY(-2px);
+ }
