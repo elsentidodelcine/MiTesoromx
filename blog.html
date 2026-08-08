@@ -3,34 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Los Brujos del Cine | Reseñas de películas</title>
     <meta name="description" content="Los Brujos del Cine: reseñas honestas de estrenos, clásicos y películas que vale la pena descubrir.">
     <meta name="theme-color" content="#030304">
+    <link rel="canonical" href="https://elsentidodelcine.github.io/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Los Brujos del Cine | Reseñas de películas">
+    <meta property="og:description" content="Reseñas honestas de estrenos, clásicos y películas que vale la pena descubrir.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://elsentidodelcine.github.io/">
+    <meta property="og:image" content="https://elsentidodelcine.github.io/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="stylesLBDC.css">
 </head>
-
 <body>
+<a href="#main-content" class="skip-link">Saltar al contenido</a>
 
 <header class="site-header">
     <div class="header-inner">
         <a href="index.html" class="brand" aria-label="Los Brujos del Cine, inicio">
             <span class="brand-mark" aria-hidden="true">☽</span>
             <span class="brand-copy">
-                <strong>Los Brujos del Cine</strong>
-                <small>El grimorio de cine de Mi Tesoro MX</small>
-            </span>
+          <strong>Los Brujos del Cine</strong>
+          <small>El grimorio de cine de Mi Tesoro MX</small>
+        </span>
         </a>
+
+        <nav class="main-nav" aria-label="Navegación principal">
+            <a href="#resenas">Reseñas</a>
+            <a href="#sobre-el-blog">Sobre el blog</a>
+            <a href="https://elsentidodelcine.github.io/mitesoromx/index.html" target="_blank" rel="noopener noreferrer">Mi Tesoro MX</a>
+        </nav>
     </div>
 </header>
 
-<main>
-
+<main id="main-content">
     <!-- HERO -->
     <section class="hero">
         <div class="hero-glow hero-glow-one"></div>
@@ -39,7 +54,10 @@
         <div class="hero-vignette"></div>
 
         <div class="hero-inner">
-            <div class="eyebrow"><span></span> Cine desde las sombras</div>
+            <div class="eyebrow">
+                <span aria-hidden="true"></span>
+                Cine desde las sombras
+            </div>
 
             <h1>
                 Películas que<br>
@@ -52,22 +70,23 @@
             </p>
 
             <div class="hero-actions">
-                <a href="#reseñas" class="button button-primary">
-                    Explorar reseñas <span>↓</span>
+                <a href="#resenas" class="button button-primary">
+                    Explorar reseñas
+                    <span aria-hidden="true">↓</span>
                 </a>
             </div>
 
-            <div class="hero-stats" aria-label="Información del blog">
+            <div class="hero-stats" aria-label="Información del blog" aria-live="polite">
                 <div>
-                    <strong id="hero-count">03</strong>
+                    <strong id="hero-count">00</strong>
                     <span id="hero-label">Reseñas publicadas</span>
                 </div>
-                <i></i>
+                <span class="stat-divider" aria-hidden="true"></span>
                 <div>
                     <strong>100%</strong>
                     <span>Opinión personal</span>
                 </div>
-                <i></i>
+                <span class="stat-divider" aria-hidden="true"></span>
                 <div>
                     <strong>MX</strong>
                     <span>Desde México</span>
@@ -88,7 +107,7 @@
     </section>
 
     <!-- REVIEWS -->
-    <section class="reviews-section" id="reseñas">
+    <section class="reviews-section" id="resenas">
         <div class="section-heading">
             <div>
                 <span class="section-kicker">EN CARTELERA DEL BLOG</span>
@@ -97,22 +116,19 @@
             <p id="reviews-subtitle">Cargando reseñas...</p>
         </div>
 
-        <!-- Contenedor de la reseña destacada -->
         <div id="featured-review-container"></div>
-
-        <!-- Contenedor de las tarjetas secundarias -->
         <div class="review-grid" id="reviews-grid"></div>
     </section>
 
     <!-- QUOTE -->
     <section class="cinema-quote">
-        <div class="quote-line"></div>
+        <div class="quote-line" aria-hidden="true"></div>
         <blockquote>
             “No todas las películas tienen que gustarte.<br>
             Pero <em>todas</em> tienen algo que decir.”
         </blockquote>
         <span>— LOS BRUJOS DEL CINE</span>
-        <div class="quote-line"></div>
+        <div class="quote-line" aria-hidden="true"></div>
     </section>
 
     <!-- CTA -->
@@ -126,23 +142,26 @@
                     en el mundo del cine en Mi Tesoro MX.
                 </p>
             </div>
-            <a href="https://elsentidodelcine.github.io/mitesoromx/index.html" class="button button-primary">
-                Visitar Mi Tesoro MX <span>↗</span>
+            <a href="https://elsentidodelcine.github.io/mitesoromx/index.html"
+               class="button button-primary"
+               target="_blank"
+               rel="noopener noreferrer">
+                Visitar Mi Tesoro MX
+                <span aria-hidden="true">↗</span>
             </a>
         </div>
     </section>
-
 </main>
 
 <footer class="site-footer">
     <div class="footer-main">
         <div class="footer-brand">
-            <a href="index.html" class="brand">
-                <span class="brand-mark">☽</span>
+            <a href="index.html" class="brand" aria-label="Los Brujos del Cine, inicio">
+                <span class="brand-mark" aria-hidden="true">☽</span>
                 <span class="brand-copy">
-                    <strong>Los Brujos del Cine</strong>
-                    <small>El grimorio de cine de Mi Tesoro MX</small>
-                </span>
+            <strong>Los Brujos del Cine</strong>
+            <small>El grimorio de cine de Mi Tesoro MX</small>
+          </span>
             </a>
             <p>
                 Reseñas de cine con personalidad.<br>
@@ -152,24 +171,23 @@
 
         <div class="footer-links">
             <strong>Explora</strong>
-            <a href="#reseñas">Reseñas</a>
-            <a href="https://elsentidodelcine.github.io/mitesoromx/index.html">Mi Tesoro MX</a>
+            <a href="#resenas">Reseñas</a>
+            <a href="https://elsentidodelcine.github.io/mitesoromx/index.html" target="_blank" rel="noopener noreferrer">Mi Tesoro MX</a>
         </div>
 
         <div class="footer-links">
             <strong>Conecta</strong>
-            <a href="https://www.facebook.com/LosBrujosDelCine">Facebook</a>
-            <a href="https://boxd.it/8uSCV">Letterboxd</a>
+            <a href="https://www.facebook.com/LosBrujosDelCine" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://boxd.it/8uSCV" target="_blank" rel="noopener noreferrer">Letterboxd</a>
         </div>
     </div>
 
     <div class="footer-bottom">
         <span>© 2026 Los Brujos del Cine</span>
-        <span>Parte de <a href="https://elsentidodelcine.github.io/mitesoromx/index.html">Mi Tesoro MX</a></span>
+        <span>Parte de <a href="https://elsentidodelcine.github.io/mitesoromx/index.html" target="_blank" rel="noopener noreferrer">Mi Tesoro MX</a></span>
     </div>
 </footer>
 
 <script src="scriptResena.js"></script>
-
 </body>
 </html>
