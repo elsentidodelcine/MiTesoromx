@@ -4,9 +4,9 @@
     "titulo": "Spider-Man: Un Nuevo Día",
     "anio": 2026,
     "fecha": "2026-07-15",
-    "duracion": "135 min",
+    "duracion": "145 min",
     "generos": ["Acción", "Superhéroes"],
-    "puntaje": 4.0,
+    "puntaje": 4.5,
     "destacada": true,
     "etiqueta": "ESTRENO",
     "plataformas": ["Cines"],
@@ -19,7 +19,6 @@
     "letterboxd": "https://boxd.it/8uSCV",
     "lead": "Peter Parker regresa con una nueva etapa que intenta equilibrar acción, humor y consecuencias emocionales.",
     "contenido": [
-      "Ya vi Spider-Man: Un Nuevo Día (2026) y esta es mi opinión.",
       "Después de aventarme todo el maratón de Spider-Man para llegar preparado a esta película y poder compararla con todas las anteriores, puedo decir que esto era exactamente lo que esperaba ver desde que Marvel y Sony unieron al personaje.",
       "Lo primero que me encantó fue que, por fin, vemos a un Peter Parker mucho más maduro. Ya no es el típico chamaco impulsivo de las tres películas anteriores. Aquí ya piensa mejor las cosas, actúa como un verdadero héroe y se nota todo lo que aprendió después de los acontecimientos de No Way Home. Esa evolución era justo lo que necesitaba el personaje.",
       "Visualmente también me fascinó. El nuevo traje está increíble, las escenas donde Spider-Man se columpia por Nueva York se sienten espectaculares y las secuencias de acción, especialmente las que usan cámara lenta, están muy bien logradas. Tom Holland vuelve a demostrar que nació para interpretar a Spider-Man. Para mí, esta es su mejor actuación con el personaje.",
@@ -41,7 +40,7 @@
     "fecha": "2026-06-20",
     "duracion": "180 min",
     "generos": ["Épica", "Aventura"],
-    "puntaje": 4.5,
+    "puntaje": 5.0,
     "destacada": false,
     "etiqueta": "ESTRENO",
     "plataformas": ["Cines"],
@@ -123,11 +122,10 @@
     "letterboxd": "https://boxd.it/8uSCV",
     "lead": "Una nueva entrega que no pide permiso para ser brutal, divertida y completamente fiel al tono de la saga.",
     "contenido": [
-      "Ya vi Evil Dead Burn y salí con la cara de “esto es exactamente lo que quería”.",
-      "La película entiende perfectamente lo que hace grande a esta franquicia: no se anda con medias tintas. Hay sangre, hay tensión, hay humor negro y hay un ritmo que no te suelta.",
-      "Sin entrar en spoilers, lo que más me funcionó fue cómo equilibra el terror práctico con momentos de puro caos. No intenta reinventar la rueda, pero sí la hace girar más rápido y más sucia.",
-      "El elenco cumple, la dirección es sólida y el apartado técnico (especialmente el sonido y el maquillaje) está a un nivel muy alto para este tipo de películas.",
-      "Si eres fan de la saga, esta entrega te va a satisfacer. Si eres nuevo, es una buena puerta de entrada al universo de los Deadites… aunque tal vez salgas un poco traumatizado."
+      "La verdad salí encantado del cine. Si ya me había gustado Evil Dead Rise, esta nueva entrega la supera prácticamente en todo. Desde los primeros minutos mantiene una tensión constante y no le baja nunca al ritmo. Hay sangre, gore, posesiones y momentos que de verdad te hacen retorcerte en el asiento, pero sin sentirse exagerados solo por impactar.",
+      "Además del terror demoníaco, la película toca temas bastante fuertes como la violencia doméstica, el rechazo familiar y el abuso, haciendo que todo lo que viven los personajes se sienta todavía más desesperante. Gran parte de la historia ocurre dentro de la casa y ahí es donde la película se luce por completo, con secuencias brutales, mucha creatividad y un ambiente que no te deja respirar.",
+      "El único detalle que sí me sacó un poco fue el CGI del exesposo. En varias escenas se ve demasiado artificial y, la verdad, por momentos me recordó a Imhotep de La Momia, lo que me sacó una que otra risa cuando no era la intención. Fuera de eso, el resto de los efectos prácticos y el maquillaje están increíbles y hacen que la violencia se sienta mucho más impactante.",
+      "Y si eres de los que se levantan en cuanto empiezan los créditos, no lo hagas. La película tiene dos escenas postcréditos que valen completamente la pena y dejan un muy buen sabor de boca para lo que podría venir después."
     ],
     "cita": "¡Árboles del demonio!",
     "veredicto": "Brutal, divertida y fiel al espíritu original. Una de las mejores entregas modernas de terror de culto."
