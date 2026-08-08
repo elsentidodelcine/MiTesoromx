@@ -4,23 +4,23 @@
     "titulo": "Toy Story 5",
     "anio": 2026,
     "generos": ["Animación", "Aventura"],
-    "puntaje": 4.5,
+    "puntaje": 4.0,
     "destacada": false,
-    "etiqueta": "RESEÑA DESTACADA",
+    "etiqueta": "RESEÑA",
     "resumen": "La nueva aventura de Woody, Buzz y compañía llega para demostrar si Pixar todavía tiene algo nuevo que contar con estos personajes.",
     "poster": "imgs/posters/toystory5.jpg",
     "posterFallback": {
       "linea1": "TOY STORY",
       "linea2": "5"
     },
-    "enlace": "reseñas/toy-story-5.html"
+    "enlace": "reseñas/reseña-toy-story-5.html"
   },
   {
     "id": "la-odisea",
     "titulo": "La Odisea",
     "anio": 2026,
     "generos": ["Épica", "Aventura"],
-    "puntaje": 4.5,
+    "puntaje": 5.0,
     "destacada": false,
     "etiqueta": "ESTRENO",
     "resumen": "Christopher Nolan lleva uno de los relatos más grandes de la historia al terreno de su cine espectacular.",
@@ -29,14 +29,14 @@
       "linea1": "LA ODISEA",
       "linea2": "⚔"
     },
-    "enlace": "reseñas/la-odisea.html"
+    "enlace": "reseñas/reseña-la-odisea.html"
   },
   {
     "id": "spiderman-un-nuevo-dia",
     "titulo": "Spider-Man: Un Nuevo Día",
     "anio": 2026,
     "generos": ["Acción", "Superhéroes"],
-    "puntaje": 4.0,
+    "puntaje": 4.5,
     "destacada": true,
     "etiqueta": "ESTRENO",
     "resumen": "El regreso de Peter Parker abre una nueva etapa. ¿Funciona como la siguiente gran aventura del héroe arácnido?",
@@ -45,6 +45,6 @@
       "linea1": "SPIDER-MAN",
       "linea2": "UN NUEVO DÍA"
     },
-    "enlace": "reseñas/spiderman-un-nuevo-dia.html"
+    "enlace": "reseñas/reseña-spiderman-brand-new-day.html"
   }
 ]
