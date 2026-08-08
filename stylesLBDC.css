@@ -532,7 +532,7 @@ button:focus-visible {
 .poster-fallback {
   position: absolute;
   inset: 0;
-  display: none; /* ← Oculto por defecto */
+  display: none;          /* oculto por defecto */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -545,6 +545,7 @@ button:focus-visible {
   color: #fff;
   z-index: 1;
 }
+
 
 .poster-fallback span {
   color: #a8a8b2;
