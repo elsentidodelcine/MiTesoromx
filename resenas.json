@@ -10,7 +10,7 @@
     "etiqueta": "RESEÑA DESTACADA",
     "plataformas": ["Disney+"],
     "resumen": "La nueva aventura de Woody, Buzz y compañía llega para demostrar si Pixar todavía tiene algo nuevo que contar con estos personajes.",
-    "poster": "imgs/posters/toy-story-5.jpg",
+    "poster": "imgs/posters/toystory5.jpg",
     "posterFallback": {
       "linea1": "TOY STORY",
       "linea2": "5"
@@ -37,7 +37,7 @@
     "etiqueta": "ESTRENO",
     "plataformas": ["Cines"],
     "resumen": "Christopher Nolan lleva uno de los relatos más grandes de la historia al terreno de su cine espectacular.",
-    "poster": "imgs/posters/la-odisea.jpg",
+    "poster": "imgs/posters/laodisea.jpg",
     "posterFallback": {
       "linea1": "LA ODISEA",
       "linea2": "⚔"
@@ -63,7 +63,7 @@
     "etiqueta": "ESTRENO",
     "plataformas": ["Cines"],
     "resumen": "El regreso de Peter Parker abre una nueva etapa. ¿Funciona como la siguiente gran aventura del héroe arácnido?",
-    "poster": "imgs/posters/spiderman-un-nuevo-dia.jpg",
+    "poster": "imgs/posters/spiderman.jpg",
     "posterFallback": {
       "linea1": "SPIDER-MAN",
       "linea2": "UN NUEVO DÍA"

@@ -23,6 +23,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Actualizar título de la página
         document.title = `${reseña.titulo} (${reseña.anio}) – Reseña | Los Brujos del Cine`;
 
+        // Actualizar meta description
+        const metaDescription = document.querySelector('meta[name="description"]');
+        if (metaDescription) {
+            metaDescription.setAttribute('content', reseña.resumen || `Reseña de ${reseña.titulo}`);
+        }
+
         // Encontrar anterior y siguiente
         const index = resenas.findIndex(r => r.id === id);
         const anterior = resenas[index - 1];
@@ -48,8 +54,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                     <div class="review-header">
                         <div class="review-poster">
-                            <img src="${reseña.poster}" alt="Póster de ${reseña.titulo}"
-                                 onerror="this.src='https://via.placeholder.com/400x600/111/666?text=${encodeURIComponent(reseña.titulo)}'">
+                            <img
+                                src="${reseña.poster}"
+                                alt="Póster de ${reseña.titulo}"
+                                onerror="this.src='https://via.placeholder.com/400x600/111/666?text=${encodeURIComponent(reseña.titulo)}'"
+                            >
                         </div>
 
                         <div class="review-info">
@@ -60,7 +69,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                                 <span class="dot"></span>
                                 <span>${reseña.anio}</span>
                                 <span class="dot"></span>
-                                <span>${reseña.generos.join(' · ')}</span>
+                                <span>${(reseña.generos || []).join(' · ')}</span>
                                 ${reseña.duracion ? `<span class="dot"></span><span>${reseña.duracion}</span>` : ''}
                             </div>
 
@@ -70,7 +79,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                             <div class="review-actions">
                                 <a href="${reseña.letterboxd || 'https://boxd.it/8uSCV'}"
-                                   target="_blank" rel="noopener noreferrer"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
                                    class="btn-letterboxd">
                                     Ver en Letterboxd <span>↗</span>
                                 </a>
@@ -81,7 +91,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             </section>
 
             <article class="review-body">
-                <p class="lead">${reseña.lead || reseña.resumen}</p>
+                <p class="lead">${reseña.lead || reseña.resumen || ''}</p>
 
                 ${paragrafos}
 
@@ -129,7 +139,7 @@ function generarEstrellas(puntaje) {
         if (i <= llenas) {
             html += '★';
         } else if (i === llenas + 1 && tieneMedia) {
-            html += '★'; // puedes cambiar esto por media estrella si quieres
+            html += '★';
         } else {
             html += '☆';
         }
