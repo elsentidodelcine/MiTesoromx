@@ -129,5 +129,75 @@
     ],
     "cita": "¡Árboles del demonio!",
     "veredicto": "Brutal, divertida y fiel al espíritu original. Una de las mejores entregas modernas de terror de culto."
+  },
+  {
+    "id": "toy-story-5",
+    "titulo": "Toy Story 5",
+    "anio": 2026,
+    "fecha": "2026-05-10",
+    "duracion": "101 min",
+    "generos": ["Animación", "Aventura"],
+    "puntaje": 4.5,
+    "destacada": false,
+    "etiqueta": "RESEÑA",
+    "plataformas": ["Disney+", "Cines"],
+    "resumen": "La nueva aventura de Woody, Buzz y compañía llega para demostrar si Pixar todavía tiene algo nuevo que contar con estos personajes.",
+    "poster": "imgs/posters/toystory5.jpg",
+    "posterFallback": {
+      "linea1": "TOY STORY",
+      "linea2": "5"
+    },
+    "letterboxd": "https://boxd.it/8uSCV",
+    "lead": "La nueva entrega de la saga más querida de Pixar llega con la difícil misión de emocionarnos otra vez.",
+    "contenido": [
+      "Ahora sí, terminé por completo mi maratón de Toy Story justo con el estreno de esta quinta entrega. Y la verdad salí bastante satisfecho. No llega al nivel de las mejores películas de la saga, pero sí me pareció una buena continuación y una que conecta muy bien con los tiempos actuales.",
+      "Lo que más me gustó fue el tema principal. Yo soy de 1993 y crecí jugando con juguetes, saliendo a la calle y pasando tiempo con amigos. Ahora veo a mis sobrinos y muchas veces prefieren una tableta o un celular antes que cualquier juguete. La película toma justamente esa idea y la convierte en el conflicto principal de la historia. En ese sentido, sentí que Pixar entendió perfectamente lo que está pasando con las nuevas generaciones.",
+      "Jessie es la verdadera protagonista de esta película y eso me gustó bastante. Por fin le dan más espacio para desarrollarse y conocer un poco más de ella. Woody y Buzz también tienen momentos importantes, especialmente con el regreso de Woody y esa dinámica que tanto nos recuerda a las primeras películas de la saga.",
+      "También me gustó Lily Pad. Al principio parece que será la villana de la historia, pero conforme avanza la película entiendes mejor sus motivaciones y termina siendo un personaje mucho más interesante de lo que aparenta. Además, me agradó que la historia optara por darle un cierre positivo.",
+      "Lo que menos me gustó fue la subtrama de los Buzz Lightyear actualizados. Honestamente, siento que podrían eliminarla por completo y la película seguiría funcionando igual. Más allá de ayudar en algunos momentos de la trama, nunca sentí que aportaran algo realmente importante.",
+      "También extrañé más participación de varios personajes clásicos. Hamm, el Señor Cara de Papa, Slinky, los Aliens e incluso Bo Peep aparecen muy poco. Se agradece verlos de regreso, pero claramente ya no tienen el peso que tuvieron en entregas anteriores.",
+      "La vi doblada al español porque así he visto toda la saga desde niño. En general el doblaje funciona bien, aunque sí noté algunos problemas con las voces de Lily Pad y del Señor Cara de Papa. Hubo momentos donde sonaban naturales y otros donde me sacaban completamente de la película.",
+      "Al final me encontré con una secuela que no supera a las grandes de la franquicia, pero que sí logra emocionar, conectar con la nostalgia y decir algo interesante sobre la relación actual entre los niños y la tecnología.",
+      "Mi ranking final queda así:",
+      "🥇 Toy Story 2",
+      "🥈 Toy Story",
+      "🥉 Toy Story 3",
+      "4️⃣ Toy Story 5",
+      "5️⃣ Toy Story 4",
+      "6️⃣ Lightyear"
+    ],
+    "cita": "¡Al infinito… y más allá!",
+    "veredicto": "Una entrega sólida y emotiva que no alcanza la perfección de las primeras, pero que sigue teniendo mucho corazón. Recomendada para fans de la saga."
+  },
+  {
+    "id": "la-muerte-de-robin-hood",
+    "titulo": "La Muerte de Robin Hood",
+    "anio": 2026,
+    "fecha": "2026-08-09",
+    "duracion": "122 min",
+    "generos": ["Drama", "Acción", "Aventuras"],
+    "puntaje": 2.5,
+    "destacada": false,
+    "etiqueta": "ESTRENO",
+    "plataformas": ["Cines"],
+    "resumen": "Una versión oscura y adulta de Robin Hood que se concentra en sus últimos días, pero resulta demasiado lenta y alejada del personaje que conocemos.",
+    "poster": "imgs/posters/robinhood.jpg",
+    "posterFallback": {
+      "linea1": "La Muerte de",
+      "linea2": "Robin Hood"
+    },
+    "letterboxd": "https://letterboxd.com/film/the-death-of-robin-hood",
+    "lead": "Esperaba mucho más de esta reinterpretación oscura. Técnicamente bien hecha, pero demasiado lenta y con muy poco del Robin Hood que conocemos.",
+    "contenido": [
+      "La verdad, esperaba mucho más de esta película. Dura prácticamente dos horas y se siente súper lenta. Hay momentos en los que parece que no está pasando absolutamente nada y, aunque entiendo que quisieron hacer una versión mucho más deprimente, oscura y adulta del personaje, conmigo simplemente no funcionó.",
+      "De hecho, pudieron quitarle completamente el nombre de La muerte de Robin Hood y ponerle cualquier otra cosa, porque de Robin Hood realmente tiene muy poco más allá del nombre. No tenemos al personaje que conocemos de las historias, sino a un hombre en sus últimos días, cansado, derrotado y cargando con todo lo que hizo durante su vida.",
+      "Y eso pudo haber sido interesante. A mí me hubiera gustado muchísimo más que hubieran utilizado flashbacks para mostrarnos sus inicios: cómo comenzó Robin Hood, cuándo empezó a matar, cómo se convirtió en el personaje que conocemos y qué fue lo que finalmente lo llevó a terminar de esta manera. Así habríamos tenido un contraste entre el héroe que alguna vez fue y el hombre que vemos al final de su vida.",
+      "Pero no. La película prácticamente se concentra en sus últimos días y, para mí, eso terminó siendo demasiado aburrido. Por más que tengas a Hugh Jackman, Bill Skarsgård, una buena fotografía y una producción bastante cuidada, no puedes sostener una película solamente con eso.",
+      "La banda sonora también me gustó bastante. Tiene momentos donde realmente ayuda a crear esa atmósfera oscura y deprimente que quieren transmitir, pero ni siquiera eso logró salvarme del aburrimiento. Y creo que ese es precisamente el problema: técnicamente puede estar bien hecha, pero como experiencia cinematográfica a mí me resultó demasiado pesada.",
+      "Entiendo perfectamente lo que quisieron hacer con esta versión de Robin Hood y no me molesta que hayan decidido mostrar su lado más oscuro y miserable. El problema es que no me entretuvo. Sentí que estaba esperando constantemente a que ocurriera algo que realmente me atrapara y nunca llegó.",
+      "Al final, me quedo con una película visualmente bonita, con buenas actuaciones y una excelente banda sonora, pero demasiado lenta y con muy poco de lo que yo esperaba encontrar en una historia sobre Robin Hood."
+    ],
+    "cita": "De Robin Hood realmente tiene muy poco más allá del nombre.",
+    "veredicto": "Una reinterpretación interesante en concepto, pero demasiado lenta y alejada del Robin Hood que conocemos. Si quieres ver una película de Robin Hood, esta probablemente no sea la que estás buscando."
   }
 ]
