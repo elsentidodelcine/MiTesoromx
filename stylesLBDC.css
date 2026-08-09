@@ -5,18 +5,14 @@
   --surface-2: #121218;
   --border: rgba(255,255,255,.06);
   --border-strong: rgba(255,255,255,.1);
-
   --text: #f0f0f2;
   --muted: #9a9aa6;
   --muted-2: #5c5c68;
-
   --red: #c41e3a;
   --red-dark: #9a1830;
   --red-glow: rgba(196,30,58,.16);
-
   --gold: #c9a227;
   --gold-soft: #a6851f;
-
   --radius: 16px;
   --radius-sm: 10px;
   --max: 1120px;
@@ -64,10 +60,7 @@ button, a {
   color: #fff;
 }
 
-/* =========================
-   SKIP LINK + FOCUS
-========================= */
-
+/* ========================= SKIP LINK + FOCUS ========================= */
 .skip-link {
   position: absolute;
   top: -100px;
@@ -92,10 +85,7 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-/* =========================
-   HEADER
-========================= */
-
+/* ========================= HEADER ========================= */
 .site-header {
   position: sticky;
   top: 0;
@@ -130,9 +120,7 @@ button:focus-visible {
   border-radius: 10px;
   background: linear-gradient(145deg, #1a0a0e, #0a0507);
   border: 1px solid rgba(196,30,58,.35);
-  box-shadow:
-    0 0 0 1px rgba(0,0,0,.5),
-    0 0 24px rgba(196,30,58,.15);
+  box-shadow: 0 0 0 1px rgba(0,0,0,.5), 0 0 24px rgba(196,30,58,.15);
   font-size: 17px;
   color: var(--gold);
 }
@@ -196,10 +184,7 @@ button:focus-visible {
   width: 100%;
 }
 
-/* =========================
-   HERO
-========================= */
-
+/* ========================= HERO ========================= */
 .hero {
   position: relative;
   isolation: isolate;
@@ -410,10 +395,7 @@ button:focus-visible {
   background: var(--border-strong);
 }
 
-/* =========================
-   INTRO STRIP
-========================= */
-
+/* ========================= INTRO STRIP ========================= */
 .intro-strip {
   border-bottom: 1px solid var(--border);
   background: var(--bg-soft);
@@ -449,10 +431,7 @@ button:focus-visible {
   color: #fff;
 }
 
-/* =========================
-   REVIEWS SECTION
-========================= */
-
+/* ========================= REVIEWS SECTION ========================= */
 .reviews-section {
   width: min(var(--max), calc(100% - 48px));
   margin: auto;
@@ -483,10 +462,7 @@ button:focus-visible {
   max-width: 250px;
 }
 
-/* =========================
-   FEATURED REVIEW
-========================= */
-
+/* ========================= FEATURED REVIEW ========================= */
 .featured-review {
   display: grid;
   grid-template-columns: minmax(280px, 0.88fr) 1.12fr;
@@ -496,6 +472,12 @@ button:focus-visible {
   border-radius: var(--radius);
   background: var(--surface);
   box-shadow: var(--shadow);
+  transition: box-shadow .35s ease, border-color .35s ease;
+}
+
+.featured-review:hover {
+  border-color: rgba(196,30,58,.22);
+  box-shadow: 0 40px 100px rgba(0,0,0,.7);
 }
 
 .featured-image {
@@ -516,7 +498,7 @@ button:focus-visible {
 }
 
 .featured-review:hover .featured-image img {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 .image-overlay {
@@ -532,7 +514,7 @@ button:focus-visible {
 .poster-fallback {
   position: absolute;
   inset: 0;
-  display: none;          /* oculto por defecto */
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -545,7 +527,6 @@ button:focus-visible {
   color: #fff;
   z-index: 1;
 }
-
 
 .poster-fallback span {
   color: #a8a8b2;
@@ -570,17 +551,8 @@ button:focus-visible {
   font-weight: 600;
 }
 
-/* Solo se muestra cuando hay error */
 .poster-placeholder .poster-fallback {
   display: flex;
-}
-
-/* Featured */
-.featured-image {
-  position: relative;
-  min-height: 510px;
-  overflow: hidden;
-  background: linear-gradient(165deg, #12121a, #060608);
 }
 
 .review-tag {
@@ -599,42 +571,52 @@ button:focus-visible {
   letter-spacing: .15em;
 }
 
+/* Score flotante mejorado */
 .featured-score {
   position: absolute;
   z-index: 4;
   right: 22px;
   bottom: 22px;
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
+  align-items: flex-end;
   gap: 5px;
-  padding: 10px 14px;
-  border: 1px solid rgba(201,162,39,.18);
-  border-radius: 10px;
-  background: rgba(0,0,0,.72);
+  padding: 12px 16px;
+  border: 1px solid rgba(201,162,39,.22);
+  border-radius: 12px;
+  background: rgba(0,0,0,.78);
   backdrop-filter: blur(14px);
+  box-shadow: 0 8px 28px rgba(0,0,0,.4);
 }
 
-.featured-score span {
-  color: var(--gold);
-  font-size: .95rem;
-}
-
-.featured-score strong {
+.featured-score .score-number {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.35rem;
-  font-weight: 700;
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: -.02em;
 }
 
-.featured-score small {
-  color: var(--muted);
-  font-size: .65rem;
+.featured-score .score-number small {
+  font-size: .85rem;
+  font-weight: 600;
+  color: rgba(255,255,255,.45);
+  margin-left: 2px;
+}
+
+.featured-score .score-stars {
+  font-size: .95rem;
+  letter-spacing: 1.5px;
+  color: var(--gold);
+  line-height: 1;
 }
 
 .featured-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 52px 54px;
+  padding: 48px 52px;
 }
 
 .movie-meta {
@@ -659,11 +641,58 @@ button:focus-visible {
 }
 
 .featured-content h2 {
-  margin: 16px 0 18px;
+  margin: 14px 0 16px;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(2.5rem, 4.8vw, 4rem);
+  font-size: clamp(2.4rem, 4.6vw, 3.7rem);
   line-height: .95;
   letter-spacing: -.03em;
+}
+
+.featured-content h2 a {
+  transition: color .2s ease;
+}
+
+.featured-content h2 a:hover {
+  color: var(--red);
+}
+
+/* Grimorio badge (destacada) */
+.grimorio-badge {
+  margin: 0 0 18px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(196,30,58,.11), rgba(201,162,39,.05));
+  border: 1px solid rgba(255,255,255,.07);
+  border-left: 3px solid var(--gold);
+  position: relative;
+  overflow: hidden;
+}
+
+.grimorio-badge::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 0% 50%, rgba(201,162,39,.06), transparent 70%);
+  pointer-events: none;
+}
+
+.grimorio-badge-title {
+  display: block;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: .02em;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.grimorio-badge-desc {
+  display: block;
+  font-size: .88rem;
+  line-height: 1.55;
+  color: var(--muted);
+  position: relative;
 }
 
 .featured-lead {
@@ -678,7 +707,7 @@ button:focus-visible {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  margin-top: 36px;
+  margin-top: 32px;
   padding-top: 22px;
   border-top: 1px solid var(--border);
 }
@@ -686,28 +715,20 @@ button:focus-visible {
 .rating-display {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 4px;
 }
 
-.stars {
-  color: var(--gold);
-  font-size: .92rem;
+.rating-display .stars {
+  font-size: 1rem;
   letter-spacing: 1.5px;
-}
-
-.stars b {
-  color: #35353e;
-}
-
-.stars .star-half {
-  opacity: 0.55;
   color: var(--gold);
 }
 
-.rating-display > span:last-child {
+.rating-display .rating-number {
   color: var(--muted-2);
-  font-size: .6rem;
+  font-size: .65rem;
   font-weight: 600;
+  letter-spacing: .04em;
 }
 
 .read-button {
@@ -715,9 +736,9 @@ button:focus-visible {
   align-items: center;
   gap: 8px;
   color: #e8e8ec;
-  font-size: .78rem;
+  font-size: .8rem;
   font-weight: 600;
-  transition: all .2s ease;
+  transition: all .22s ease;
 }
 
 .read-button:hover {
@@ -725,10 +746,7 @@ button:focus-visible {
   color: var(--red);
 }
 
-/* =========================
-   REVIEW CARDS
-========================= */
-
+/* ========================= REVIEW CARDS ========================= */
 .review-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -745,12 +763,11 @@ button:focus-visible {
 }
 
 .review-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(196,30,58,.25);
+  transform: translateY(-6px);
+  border-color: rgba(196,30,58,.28);
   box-shadow: var(--shadow-soft);
 }
 
-/* Cards */
 .card-image {
   position: relative;
   display: block;
@@ -769,14 +786,14 @@ button:focus-visible {
 }
 
 .review-card:hover .card-image img {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
 .card-image::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgba(0,0,0,.75), transparent 55%);
+  background: linear-gradient(0deg, rgba(0,0,0,.78), transparent 55%);
   pointer-events: none;
 }
 
@@ -785,10 +802,10 @@ button:focus-visible {
   position: absolute;
   z-index: 3;
   top: 15px;
-  padding: 6px 10px;
+  padding: 6px 11px;
   border-radius: 6px;
-  background: rgba(0,0,0,.7);
-  border: 1px solid rgba(255,255,255,.07);
+  background: rgba(0,0,0,.72);
+  border: 1px solid rgba(255,255,255,.08);
   backdrop-filter: blur(10px);
   font-size: .56rem;
   font-weight: 700;
@@ -803,7 +820,8 @@ button:focus-visible {
 .card-score {
   right: 15px;
   color: var(--gold);
-  font-size: .68rem;
+  font-size: .7rem;
+  letter-spacing: .02em;
 }
 
 .card-content {
@@ -811,10 +829,10 @@ button:focus-visible {
 }
 
 .card-content h3 {
-  margin: 10px 0 10px;
+  margin: 8px 0 8px;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.5rem;
-  line-height: 1.1;
+  font-size: 1.48rem;
+  line-height: 1.12;
   letter-spacing: -.02em;
 }
 
@@ -826,10 +844,26 @@ button:focus-visible {
   color: var(--red);
 }
 
+/* Mini grimorio en tarjetas */
+.card-grimorio {
+  margin: 0 0 12px;
+}
+
+.card-grimorio-title {
+  display: inline-block;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: .95;
+  padding: 3px 0;
+}
+
 .card-content p {
-  min-height: 52px;
+  min-height: 48px;
   color: var(--muted);
-  font-size: .82rem;
+  font-size: .84rem;
   line-height: 1.65;
 }
 
@@ -837,20 +871,28 @@ button:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 18px;
   padding-top: 16px;
   border-top: 1px solid var(--border);
 }
 
-.score-mini {
+.card-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .82rem;
   color: var(--gold);
-  font-size: .7rem;
-  font-weight: 700;
+  font-weight: 600;
+}
+
+.card-rating .stars {
+  font-size: .9rem;
+  letter-spacing: 1px;
 }
 
 .card-footer a {
   color: #e0e0e6;
-  font-size: .72rem;
+  font-size: .74rem;
   font-weight: 600;
   transition: color .2s ease;
 }
@@ -859,10 +901,31 @@ button:focus-visible {
   color: var(--red);
 }
 
-/* =========================
-   QUOTE
-========================= */
+/* ========================= ESTRELLAS (compartidas) ========================= */
+.star-full {
+  color: var(--gold);
+}
 
+.star-half {
+  position: relative;
+  color: rgba(255,255,255,.18);
+}
+
+.star-half::after {
+  content: "★";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  overflow: hidden;
+  color: var(--gold);
+}
+
+.star-empty {
+  color: rgba(255,255,255,.18);
+}
+
+/* ========================= QUOTE ========================= */
 .cinema-quote {
   width: min(840px, calc(100% - 48px));
   margin: 72px auto 100px;
@@ -902,10 +965,7 @@ button:focus-visible {
   letter-spacing: .22em;
 }
 
-/* =========================
-   STORE CTA
-========================= */
-
+/* ========================= STORE CTA ========================= */
 .store-cta {
   width: min(var(--max), calc(100% - 48px));
   margin: 0 auto 100px;
@@ -948,13 +1008,7 @@ button:focus-visible {
   line-height: 1.7;
 }
 
-/* =========================
-   FOOTER
-========================= */
-/* =========================
-   FOOTER (estilo Brujos + estructura simple)
-========================= */
-
+/* ========================= FOOTER ========================= */
 .site-footer {
   border-top: 1px solid var(--border);
   background: #020203;
@@ -1007,26 +1061,7 @@ button:focus-visible {
   color: #fff;
 }
 
-/* Responsive */
-@media (max-width: 700px) {
-  .site-footer {
-    padding: 32px 0 28px;
-  }
-
-  .footer-inner {
-    width: min(var(--max), calc(100% - 28px));
-    gap: 18px;
-  }
-
-  .footer-links {
-    gap: 10px 20px;
-  }
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
+/* ========================= RESPONSIVE ========================= */
 @media (max-width: 920px) {
   .main-nav {
     gap: 18px;
@@ -1041,7 +1076,7 @@ button:focus-visible {
   }
 
   .featured-content {
-    padding: 38px;
+    padding: 36px 32px;
   }
 
   .intro-inner {
@@ -1059,10 +1094,6 @@ button:focus-visible {
     flex-direction: column;
     align-items: flex-start;
     gap: 30px;
-  }
-
-  .footer-main {
-    grid-template-columns: 1.5fr 1fr 1fr;
   }
 }
 
@@ -1150,7 +1181,7 @@ button:focus-visible {
   }
 
   .featured-content h2 {
-    font-size: 2.4rem;
+    font-size: 2.3rem;
   }
 
   .review-bottom {
@@ -1177,20 +1208,17 @@ button:focus-visible {
     padding: 34px 26px;
   }
 
-  .footer-main {
-    width: min(var(--max), calc(100% - 28px));
-    grid-template-columns: 1fr 1fr;
-    gap: 34px;
+  .site-footer {
+    padding: 32px 0 28px;
   }
 
-  .footer-brand {
-    grid-column: 1 / -1;
+  .footer-inner {
+    width: min(var(--max), calc(100% - 28px));
+    gap: 18px;
   }
 
-  .footer-bottom {
-    width: min(var(--max), calc(100% - 28px));
-    flex-direction: column;
-    gap: 6px;
+  .footer-links {
+    gap: 10px 20px;
   }
 }
 
@@ -1217,9 +1245,7 @@ button:focus-visible {
     scroll-behavior: auto;
   }
 
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     transition-duration: .01ms !important;
     animation-duration: .01ms !important;
   }

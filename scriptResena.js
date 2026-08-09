@@ -66,11 +66,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             </div>
             <span class="review-tag">${escapeHTML(destacada.etiqueta || 'RESEÑA')}</span>
 
-            <!-- Score flotante mejorado -->
             <div class="featured-score">
               <div class="score-number">
-                <strong>${escapeHTML(String(destacada.puntaje))}</strong>
-                <small>/5</small>
+                ${escapeHTML(String(destacada.puntaje))}<small>/5</small>
               </div>
               <div class="score-stars" aria-hidden="true">${estrellas}</div>
             </div>
@@ -86,7 +84,6 @@ document.addEventListener('DOMContentLoaded', async () => {
               <a href="${enlace}">${escapeHTML(destacada.titulo)}</a>
             </h2>
 
-            <!-- Grimorio en la destacada -->
             <div class="grimorio-badge">
               <span class="grimorio-badge-title">${escapeHTML(grimorio.titulo)}</span>
               <span class="grimorio-badge-desc">${escapeHTML(grimorio.descripcion)}</span>
@@ -139,11 +136,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                   <small>IMAGEN DEL PÓSTER</small>
                 </div>
                 <span class="card-label">${escapeHTML(r.etiqueta || 'RESEÑA')}</span>
-
-                <!-- Score en tarjeta -->
-                <span class="card-score">
-                  <span class="card-score-num">★ ${escapeHTML(String(r.puntaje))}</span>
-                </span>
+                <span class="card-score">★ ${escapeHTML(String(r.puntaje))}</span>
               </a>
 
               <div class="card-content">
@@ -156,7 +149,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                   <a href="${enlace}">${escapeHTML(r.titulo)}</a>
                 </h3>
 
-                <!-- Mini grimorio -->
                 <div class="card-grimorio">
                   <span class="card-grimorio-title">${escapeHTML(grimorio.titulo)}</span>
                 </div>
@@ -210,7 +202,7 @@ function numeroATexto(n) {
 /* ========== GRIMORIO DE CALIFICACIONES ========== */
 function obtenerGrimorio(puntaje) {
   const valor = Number(puntaje) || 0;
-  const key = Math.round(valor * 2) / 2; // normaliza a 0.5
+  const key = Math.round(valor * 2) / 2; // normaliza a pasos de 0.5
 
   const grimorio = {
     0.5: {
