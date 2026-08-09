@@ -131,45 +131,6 @@
     "veredicto": "Brutal, divertida y fiel al espíritu original. Una de las mejores entregas modernas de terror de culto."
   },
   {
-    "id": "toy-story-5",
-    "titulo": "Toy Story 5",
-    "anio": 2026,
-    "fecha": "2026-05-10",
-    "duracion": "101 min",
-    "generos": ["Animación", "Aventura"],
-    "puntaje": 4.5,
-    "destacada": false,
-    "etiqueta": "RESEÑA",
-    "plataformas": ["Disney+", "Cines"],
-    "resumen": "La nueva aventura de Woody, Buzz y compañía llega para demostrar si Pixar todavía tiene algo nuevo que contar con estos personajes.",
-    "poster": "imgs/posters/toystory5.jpg",
-    "posterFallback": {
-      "linea1": "TOY STORY",
-      "linea2": "5"
-    },
-    "letterboxd": "https://boxd.it/8uSCV",
-    "lead": "La nueva entrega de la saga más querida de Pixar llega con la difícil misión de emocionarnos otra vez.",
-    "contenido": [
-      "Ahora sí, terminé por completo mi maratón de Toy Story justo con el estreno de esta quinta entrega. Y la verdad salí bastante satisfecho. No llega al nivel de las mejores películas de la saga, pero sí me pareció una buena continuación y una que conecta muy bien con los tiempos actuales.",
-      "Lo que más me gustó fue el tema principal. Yo soy de 1993 y crecí jugando con juguetes, saliendo a la calle y pasando tiempo con amigos. Ahora veo a mis sobrinos y muchas veces prefieren una tableta o un celular antes que cualquier juguete. La película toma justamente esa idea y la convierte en el conflicto principal de la historia. En ese sentido, sentí que Pixar entendió perfectamente lo que está pasando con las nuevas generaciones.",
-      "Jessie es la verdadera protagonista de esta película y eso me gustó bastante. Por fin le dan más espacio para desarrollarse y conocer un poco más de ella. Woody y Buzz también tienen momentos importantes, especialmente con el regreso de Woody y esa dinámica que tanto nos recuerda a las primeras películas de la saga.",
-      "También me gustó Lily Pad. Al principio parece que será la villana de la historia, pero conforme avanza la película entiendes mejor sus motivaciones y termina siendo un personaje mucho más interesante de lo que aparenta. Además, me agradó que la historia optara por darle un cierre positivo.",
-      "Lo que menos me gustó fue la subtrama de los Buzz Lightyear actualizados. Honestamente, siento que podrían eliminarla por completo y la película seguiría funcionando igual. Más allá de ayudar en algunos momentos de la trama, nunca sentí que aportaran algo realmente importante.",
-      "También extrañé más participación de varios personajes clásicos. Hamm, el Señor Cara de Papa, Slinky, los Aliens e incluso Bo Peep aparecen muy poco. Se agradece verlos de regreso, pero claramente ya no tienen el peso que tuvieron en entregas anteriores.",
-      "La vi doblada al español porque así he visto toda la saga desde niño. En general el doblaje funciona bien, aunque sí noté algunos problemas con las voces de Lily Pad y del Señor Cara de Papa. Hubo momentos donde sonaban naturales y otros donde me sacaban completamente de la película.",
-      "Al final me encontré con una secuela que no supera a las grandes de la franquicia, pero que sí logra emocionar, conectar con la nostalgia y decir algo interesante sobre la relación actual entre los niños y la tecnología.",
-      "Mi ranking final queda así:",
-      "🥇 Toy Story 2",
-      "🥈 Toy Story",
-      "🥉 Toy Story 3",
-      "4️⃣ Toy Story 5",
-      "5️⃣ Toy Story 4",
-      "6️⃣ Lightyear"
-    ],
-    "cita": "¡Al infinito… y más allá!",
-    "veredicto": "Una entrega sólida y emotiva que no alcanza la perfección de las primeras, pero que sigue teniendo mucho corazón. Recomendada para fans de la saga."
-  },
-  {
     "id": "la-muerte-de-robin-hood",
     "titulo": "La Muerte de Robin Hood",
     "anio": 2026,
