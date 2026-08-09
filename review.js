@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', async () => {
               <div class="grimorio-rating" aria-label="Calificación: ${reseña.puntaje} de 5 – ${grimorio.titulo}">
                 <div class="grimorio-top">
                   <div class="grimorio-score">
-                    ${escapeHTML(String(reseña.puntaje))}<small>/5</small>
+                    ${escapeHTML(String(reseña.puntaje))}<small> / 5</small>
                   </div>
                   <div class="grimorio-stars" aria-hidden="true">
                     ${estrellasHTML}

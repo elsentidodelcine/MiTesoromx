@@ -73,7 +73,7 @@
     "puntaje": 4.5,
     "destacada": false,
     "etiqueta": "RESEÑA",
-    "plataformas": ["Disney+"],
+    "plataformas": ["Disney+", "Cines"],
     "resumen": "La nueva aventura de Woody, Buzz y compañía llega para demostrar si Pixar todavía tiene algo nuevo que contar con estos personajes.",
     "poster": "imgs/posters/toystory5.jpg",
     "posterFallback": {
