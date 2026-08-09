@@ -1,6 +1,6 @@
 [
 
-  { "nombre": "Preventa Vaso Casa Gryffindor Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry3.jpg" ,"badge": "preventa", "stock": 3},
+  { "nombre": "Preventa Vaso Casa Gryffindor Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry3.jpg" ,"badge": "preventa", "stock": 2},
   { "nombre": "Preventa Vaso Casa Ravenclaw  Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry1.jpg" ,"badge": "preventa", "stock": 3},
   { "nombre": "Preventa Vaso Casa Slytherin  Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry2.jpg" ,"badge": "preventa", "stock": 3},
   { "nombre": "Preventa Vaso Casa Hufflepuff Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry4.jpg" ,"badge": "preventa", "stock": 3},
