@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     let resenas = await response.json();
 
-    // Ordenar por fecha (más reciente primero) para que anterior/siguiente tenga sentido
+    // Ordenar por fecha (más reciente primero)
     resenas = resenas.sort((a, b) => {
       const fechaA = a.fecha ? new Date(a.fecha) : new Date(0);
       const fechaB = b.fecha ? new Date(b.fecha) : new Date(0);
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
-    // === Actualizar metadatos ===
+    // === Metadatos ===
     document.title = `${reseña.titulo} (${reseña.anio}) – Reseña | Los Brujos del Cine`;
 
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       metaDescription.setAttribute('content', reseña.resumen || `Reseña de ${reseña.titulo}`);
     }
 
-    // Open Graph
     setMeta('og:title', `${reseña.titulo} (${reseña.anio}) – Los Brujos del Cine`);
     setMeta('og:description', reseña.resumen || '');
     setMeta('og:url', window.location.href);
@@ -55,7 +54,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const anterior = index > 0 ? resenas[index - 1] : null;
     const siguiente = index < resenas.length - 1 ? resenas[index + 1] : null;
 
-    const estrellas = generarEstrellas(reseña.puntaje);
+    // === Grimorio ===
+    const grimorio = obtenerGrimorio(reseña.puntaje);
+    const estrellasHTML = generarEstrellasHTML(reseña.puntaje);
 
     const paragrafos = (reseña.contenido || [])
       .map(p => `<p>${escapeHTML(p)}</p>`)
@@ -70,7 +71,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     container.innerHTML = `
       <section class="review-hero">
         <div class="review-hero-inner">
-          <a href="index.html#resenas" class="back-link">← Volver a reseñas</a>
+          <a href="https://elsentidodelcine.github.io/mitesoromx/blog.html#Resenas" class="back-link">
+            ← Volver a reseñas
+          </a>
 
           <div class="review-header">
             <div class="review-poster">
@@ -78,7 +81,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 src="${escapeHTML(reseña.poster)}"
                 alt="Póster de ${escapeHTML(reseña.titulo)}"
                 loading="eager"
-                onerror="this.style.display='none'; this.parentElement.classList.add('poster-placeholder');"
+                onerror="this.style.display='none'; this.parentElement.classList.add('poster-placeholder'); this.parentElement.innerHTML='<span>Sin póster</span>';"
               >
             </div>
 
@@ -86,21 +89,36 @@ document.addEventListener('DOMContentLoaded', async () => {
               <h1>${escapeHTML(reseña.titulo)}</h1>
 
               <div class="review-meta">
-                <span class="review-rating" aria-label="${reseña.puntaje} de 5 estrellas">${estrellas}</span>
-                <span class="dot" aria-hidden="true"></span>
                 <span>${escapeHTML(String(reseña.anio))}</span>
                 ${generos ? `<span class="dot" aria-hidden="true"></span><span>${escapeHTML(generos)}</span>` : ''}
                 ${reseña.duracion ? `<span class="dot" aria-hidden="true"></span><span>${escapeHTML(reseña.duracion)}</span>` : ''}
               </div>
 
+              <!-- GRIMORIO DE CALIFICACIONES -->
+              <div class="grimorio-rating" aria-label="Calificación: ${reseña.puntaje} de 5 – ${grimorio.titulo}">
+                <div class="grimorio-top">
+                  <div class="grimorio-score">
+                    ${escapeHTML(String(reseña.puntaje))}<small>/5</small>
+                  </div>
+                  <div class="grimorio-stars" aria-hidden="true">
+                    ${estrellasHTML}
+                  </div>
+                </div>
+                <div class="grimorio-title">${escapeHTML(grimorio.titulo)}</div>
+                <p class="grimorio-desc">${escapeHTML(grimorio.descripcion)}</p>
+              </div>
+
               ${plataformas ? `<div class="review-platforms">${plataformas}</div>` : ''}
 
               <div class="review-actions">
-                <a href="${escapeHTML(reseña.letterboxd || 'https://boxd.it/8uSCV')}"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="btn-letterboxd">
-                  Ver en Letterboxd <span aria-hidden="true">↗</span>
+                <a
+                  href="${escapeHTML(reseña.letterboxd || 'https://boxd.it/8uSCV')}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-letterboxd"
+                >
+                  Ver en Letterboxd
+                  <span aria-hidden="true">↗</span>
                 </a>
               </div>
             </div>
@@ -114,12 +132,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         ${paragrafos}
 
         ${reseña.cita ? `
-          <blockquote>“${escapeHTML(reseña.cita)}”</blockquote>
+          <blockquote>${escapeHTML(reseña.cita)}</blockquote>
         ` : ''}
 
         <div class="verdict">
           <div class="verdict-header">
-            <span aria-hidden="true">★</span> Veredicto
+            <span aria-hidden="true">★</span>
+            Veredicto
           </div>
           <p>${escapeHTML(reseña.veredicto || 'Sin veredicto todavía.')}</p>
         </div>
@@ -141,7 +160,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         ` : ''}
       </nav>
     `;
-
   } catch (error) {
     console.error(error);
     container.innerHTML = `
@@ -151,6 +169,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       </div>`;
   }
 });
+
+/* ========== HELPERS ========== */
 
 function setMeta(property, content) {
   let el = document.querySelector(`meta[property="${property}"]`);
@@ -172,20 +192,80 @@ function escapeHTML(str) {
     .replace(/'/g, '&#39;');
 }
 
-function generarEstrellas(puntaje) {
+/* ========== GRIMORIO DE CALIFICACIONES ========== */
+function obtenerGrimorio(puntaje) {
+  const valor = Number(puntaje) || 0;
+
+  // Normalizamos a pasos de 0.5
+  const key = Math.round(valor * 2) / 2;
+
+  const grimorio = {
+    0.5: {
+      titulo: "HECHIZO FALLIDO",
+      descripcion: "Se ve por morbo, no por gusto. Al final queda la culpa… y el coraje."
+    },
+    1.0: {
+      titulo: "MAL AUGURIO",
+      descripcion: "Nada funciona. Cada minuto duele y terminarla es más mérito del espectador que de la película."
+    },
+    1.5: {
+      titulo: "BRUJERÍA OSCURA",
+      descripcion: "Un desastre anunciado. No entretiene, no sorprende y solo deja arrepentimiento."
+    },
+    2.0: {
+      titulo: "CONJURO MAL EJECUTADO",
+      descripcion: "Tiene ideas, pero todo sale mal. Aburre, se siente torpe o se desinfla rápido."
+    },
+    2.5: {
+      titulo: "NEUTRAL, PERO OLVIDABLE",
+      descripcion: "Cumple lo básico y ya. No molesta, pero tampoco se queda contigo."
+    },
+    3.0: {
+      titulo: "PALOMERA RITUAL",
+      descripcion: "Funciona mientras dura. Ideal para apagar el cerebro y dejarla pasar."
+    },
+    3.5: {
+      titulo: "BUEN EMBRUJO",
+      descripcion: "Entretenida y con momentos sólidos. Le falta fuerza para trascender, pero se disfruta."
+    },
+    4.0: {
+      titulo: "HECHIZO BIEN LOGRADO",
+      descripcion: "Bien hecha, efectiva y cumplidora. Sales satisfecho y el boleto lo vale."
+    },
+    4.5: {
+      titulo: "MAGIA MAYOR",
+      descripcion: "Destaca, conecta y se queda en la memoria. Muy fácil de recomendar."
+    },
+    5.0: {
+      titulo: "CINE LEGENDARIO",
+      descripcion: "Pura magia. De esas que justifican amar el cine y querer volver a verla."
+    }
+  };
+
+  return grimorio[key] || {
+    titulo: "SIN CLASIFICAR",
+    descripcion: "Esta película aún no tiene un hechizo asignado en el grimorio."
+  };
+}
+
+/* Estrellas con media estrella real */
+function generarEstrellasHTML(puntaje) {
   const valor = Number(puntaje) || 0;
   const llenas = Math.floor(valor);
-  const decimal = valor - llenas;
+  const tieneMedia = (valor - llenas) >= 0.25 && (valor - llenas) < 0.75;
+  const redondeaArriba = (valor - llenas) >= 0.75;
+
   let html = '';
 
   for (let i = 1; i <= 5; i++) {
-    if (i <= llenas) {
-      html += '★';
-    } else if (i === llenas + 1 && decimal >= 0.25) {
-      html += '★'; // media (puedes usar ☆ o clase si quieres distinguir)
+    if (i <= llenas || (i === llenas + 1 && redondeaArriba)) {
+      html += '<span>★</span>';
+    } else if (i === llenas + 1 && tieneMedia) {
+      html += '<span class="half">★</span>';
     } else {
-      html += '☆';
+      html += '<span class="empty">★</span>';
     }
   }
+
   return html;
 }

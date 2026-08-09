@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       return fechaB - fechaA;
     });
 
-    // Fallback: si no hay destacada, usamos la primera
     const destacada = resenas.find(r => r.destacada) || resenas[0];
     const secundarias = resenas.filter(r => r !== destacada);
     const total = resenas.length;
@@ -31,22 +30,21 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     }
 
-    // === Hero ===
+    // === Hero stats ===
     const heroCount = document.getElementById('hero-count');
     const heroLabel = document.getElementById('hero-label');
-
-    if (heroCount) {
-      heroCount.textContent = total.toString().padStart(2, '0');
-    }
+    if (heroCount) heroCount.textContent = total.toString().padStart(2, '0');
     if (heroLabel) {
       heroLabel.textContent = total === 1 ? 'Reseña publicada' : 'Reseñas publicadas';
     }
 
     // === RESEÑA DESTACADA ===
     const featuredContainer = document.getElementById('featured-review-container');
-
     if (destacada && featuredContainer) {
       const enlace = `review.html?id=${encodeURIComponent(destacada.id)}`;
+      const grimorio = obtenerGrimorio(destacada.puntaje);
+      const estrellas = generarEstrellasHTML(destacada.puntaje);
+
       const generosHTML = (destacada.generos || [])
         .map(g => `<span class="meta-dot" aria-hidden="true"></span><span>${escapeHTML(g)}</span>`)
         .join('');
@@ -59,7 +57,7 @@ document.addEventListener('DOMContentLoaded', async () => {
               src="${escapeHTML(destacada.poster)}"
               alt="Póster de ${escapeHTML(destacada.titulo)}"
               loading="eager"
-              onerror="this.onerror=null; this.style.display='none'; this.closest('.featured-image, .card-image')?.classList.add('poster-placeholder');"
+              onerror="this.onerror=null; this.style.display='none'; this.closest('.featured-image')?.classList.add('poster-placeholder');"
             >
             <div class="poster-fallback">
               <span>${escapeHTML(destacada.posterFallback?.linea1 || destacada.titulo)}</span>
@@ -67,10 +65,14 @@ document.addEventListener('DOMContentLoaded', async () => {
               <small>IMAGEN DEL PÓSTER</small>
             </div>
             <span class="review-tag">${escapeHTML(destacada.etiqueta || 'RESEÑA')}</span>
+
+            <!-- Score flotante mejorado -->
             <div class="featured-score">
-              <span aria-hidden="true">★</span>
-              <strong>${escapeHTML(String(destacada.puntaje))}</strong>
-              <small>/ 5</small>
+              <div class="score-number">
+                <strong>${escapeHTML(String(destacada.puntaje))}</strong>
+                <small>/5</small>
+              </div>
+              <div class="score-stars" aria-hidden="true">${estrellas}</div>
             </div>
           </div>
 
@@ -80,16 +82,26 @@ document.addEventListener('DOMContentLoaded', async () => {
               ${generosHTML}
             </div>
 
-            <h2>${escapeHTML(destacada.titulo)}</h2>
+            <h2>
+              <a href="${enlace}">${escapeHTML(destacada.titulo)}</a>
+            </h2>
+
+            <!-- Grimorio en la destacada -->
+            <div class="grimorio-badge">
+              <span class="grimorio-badge-title">${escapeHTML(grimorio.titulo)}</span>
+              <span class="grimorio-badge-desc">${escapeHTML(grimorio.descripcion)}</span>
+            </div>
+
             <p class="featured-lead">${escapeHTML(destacada.resumen)}</p>
 
             <div class="review-bottom">
               <div class="rating-display">
-                <span class="stars" aria-label="${destacada.puntaje} de 5 estrellas">${generarEstrellas(destacada.puntaje)}</span>
-                <span>${escapeHTML(String(destacada.puntaje))} / 5</span>
+                <span class="stars" aria-label="${destacada.puntaje} de 5 estrellas">${estrellas}</span>
+                <span class="rating-number">${escapeHTML(String(destacada.puntaje))} / 5</span>
               </div>
               <a href="${enlace}" class="read-button">
-                Leer reseña <span aria-hidden="true">→</span>
+                Leer reseña
+                <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
@@ -105,6 +117,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       } else {
         grid.innerHTML = secundarias.map(r => {
           const enlace = `review.html?id=${encodeURIComponent(r.id)}`;
+          const grimorio = obtenerGrimorio(r.puntaje);
+          const estrellas = generarEstrellasHTML(r.puntaje);
+
           const generosHTML = (r.generos || [])
             .map(g => `<span class="meta-dot" aria-hidden="true"></span><span>${escapeHTML(g)}</span>`)
             .join('');
@@ -116,7 +131,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                   src="${escapeHTML(r.poster)}"
                   alt="Póster de ${escapeHTML(r.titulo)}"
                   loading="lazy"
-                  onerror="this.onerror=null; this.style.display='none'; this.closest('.featured-image, .card-image')?.classList.add('poster-placeholder');"
+                  onerror="this.onerror=null; this.style.display='none'; this.closest('.card-image')?.classList.add('poster-placeholder');"
                 >
                 <div class="poster-fallback">
                   <span>${escapeHTML(r.posterFallback?.linea1 || r.titulo)}</span>
@@ -124,7 +139,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                   <small>IMAGEN DEL PÓSTER</small>
                 </div>
                 <span class="card-label">${escapeHTML(r.etiqueta || 'RESEÑA')}</span>
-                <span class="card-score">★ ${escapeHTML(String(r.puntaje))}</span>
+
+                <!-- Score en tarjeta -->
+                <span class="card-score">
+                  <span class="card-score-num">★ ${escapeHTML(String(r.puntaje))}</span>
+                </span>
               </a>
 
               <div class="card-content">
@@ -132,10 +151,23 @@ document.addEventListener('DOMContentLoaded', async () => {
                   <span>${escapeHTML(String(r.anio))}</span>
                   ${generosHTML}
                 </div>
-                <h3><a href="${enlace}">${escapeHTML(r.titulo)}</a></h3>
+
+                <h3>
+                  <a href="${enlace}">${escapeHTML(r.titulo)}</a>
+                </h3>
+
+                <!-- Mini grimorio -->
+                <div class="card-grimorio">
+                  <span class="card-grimorio-title">${escapeHTML(grimorio.titulo)}</span>
+                </div>
+
                 <p>${escapeHTML(r.resumen)}</p>
+
                 <div class="card-footer">
-                  <span class="score-mini">★ ${escapeHTML(String(r.puntaje))}</span>
+                  <div class="card-rating">
+                    <span class="stars" aria-hidden="true">${estrellas}</span>
+                    <span>${escapeHTML(String(r.puntaje))}</span>
+                  </div>
                   <a href="${enlace}">Leer reseña →</a>
                 </div>
               </div>
@@ -154,7 +186,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
-// Escapar HTML para evitar XSS
+/* ========== HELPERS ========== */
+
 function escapeHTML(str) {
   if (str == null) return '';
   return String(str)
@@ -165,27 +198,6 @@ function escapeHTML(str) {
     .replace(/'/g, '&#39;');
 }
 
-// Estrellas visuales corregidas
-function generarEstrellas(puntaje) {
-  const valor = Number(puntaje) || 0;
-  const llenas = Math.floor(valor);
-  const decimal = valor - llenas;
-  let html = '';
-
-  for (let i = 1; i <= 5; i++) {
-    if (i <= llenas) {
-      html += '★';
-    } else if (i === llenas + 1 && decimal >= 0.25) {
-      // Media estrella (puedes cambiar por ★ a medias si quieres)
-      html += '<span class="star-half">★</span>';
-    } else {
-      html += '<b>★</b>';
-    }
-  }
-  return html;
-}
-
-// Número a texto
 function numeroATexto(n) {
   const numeros = {
     1: 'Una', 2: 'Dos', 3: 'Tres', 4: 'Cuatro', 5: 'Cinco',
@@ -193,4 +205,81 @@ function numeroATexto(n) {
     11: 'Once', 12: 'Doce', 13: 'Trece', 14: 'Catorce', 15: 'Quince'
   };
   return numeros[n] || n.toString();
+}
+
+/* ========== GRIMORIO DE CALIFICACIONES ========== */
+function obtenerGrimorio(puntaje) {
+  const valor = Number(puntaje) || 0;
+  const key = Math.round(valor * 2) / 2; // normaliza a 0.5
+
+  const grimorio = {
+    0.5: {
+      titulo: "HECHIZO FALLIDO",
+      descripcion: "Se ve por morbo, no por gusto. Al final queda la culpa… y el coraje."
+    },
+    1.0: {
+      titulo: "MAL AUGURIO",
+      descripcion: "Nada funciona. Cada minuto duele y terminarla es más mérito del espectador que de la película."
+    },
+    1.5: {
+      titulo: "BRUJERÍA OSCURA",
+      descripcion: "Un desastre anunciado. No entretiene, no sorprende y solo deja arrepentimiento."
+    },
+    2.0: {
+      titulo: "CONJURO MAL EJECUTADO",
+      descripcion: "Tiene ideas, pero todo sale mal. Aburre, se siente torpe o se desinfla rápido."
+    },
+    2.5: {
+      titulo: "NEUTRAL, PERO OLVIDABLE",
+      descripcion: "Cumple lo básico y ya. No molesta, pero tampoco se queda contigo."
+    },
+    3.0: {
+      titulo: "PALOMERA RITUAL",
+      descripcion: "Funciona mientras dura. Ideal para apagar el cerebro y dejarla pasar."
+    },
+    3.5: {
+      titulo: "BUEN EMBRUJO",
+      descripcion: "Entretenida y con momentos sólidos. Le falta fuerza para trascender, pero se disfruta."
+    },
+    4.0: {
+      titulo: "HECHIZO BIEN LOGRADO",
+      descripcion: "Bien hecha, efectiva y cumplidora. Sales satisfecho y el boleto lo vale."
+    },
+    4.5: {
+      titulo: "MAGIA MAYOR",
+      descripcion: "Destaca, conecta y se queda en la memoria. Muy fácil de recomendar."
+    },
+    5.0: {
+      titulo: "CINE LEGENDARIO",
+      descripcion: "Pura magia. De esas que justifican amar el cine y querer volver a verla."
+    }
+  };
+
+  return grimorio[key] || {
+    titulo: "SIN CLASIFICAR",
+    descripcion: "Esta película aún no tiene un hechizo asignado en el grimorio."
+  };
+}
+
+/* Estrellas con media estrella real */
+function generarEstrellasHTML(puntaje) {
+  const valor = Number(puntaje) || 0;
+  const llenas = Math.floor(valor);
+  const decimal = valor - llenas;
+
+  let html = '';
+
+  for (let i = 1; i <= 5; i++) {
+    if (i <= llenas) {
+      html += '<span class="star-full">★</span>';
+    } else if (i === llenas + 1 && decimal >= 0.25 && decimal < 0.75) {
+      html += '<span class="star-half">★</span>';
+    } else if (i === llenas + 1 && decimal >= 0.75) {
+      html += '<span class="star-full">★</span>';
+    } else {
+      html += '<span class="star-empty">★</span>';
+    }
+  }
+
+  return html;
 }
