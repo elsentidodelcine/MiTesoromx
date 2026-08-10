@@ -85,7 +85,7 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-/* ========================= HEADER ========================= */
+/* ========== HEADER con logo imagen ========== */
 .site-header {
   position: sticky;
   top: 0;
@@ -99,11 +99,49 @@ button:focus-visible {
 .header-inner {
   width: min(var(--max), calc(100% - 48px));
   min-height: 70px;
-  margin: auto;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 16px;
 }
+
+/* Logo imagen – tamaño controlado */
+.site-logo {
+  width: 42px;          /* ← ajusta este valor si quieres más grande/pequeño */
+  height: 42px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;       /* evita que se encoja */
+  border: 1px solid rgba(196,30,58,.3);
+  box-shadow: 0 0 20px rgba(196,30,58,.12);
+}
+
+/* Texto del logo */
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  min-width: 0;         /* permite que el texto se ajuste */
+}
+
+.logo-text h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin: 0;
+  color: #fff;
+}
+
+.logo-text span {
+  margin-top: 2px;
+  color: var(--muted-2);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 
 .brand {
   display: inline-flex;
@@ -147,20 +185,20 @@ button:focus-visible {
   text-transform: uppercase;
 }
 
+/* Navegación a la derecha */
 .main-nav {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 30px;
-  margin-left: auto;
+  gap: 28px;
+  margin-left: auto;    /* empuja el menú a la derecha */
 }
 
 .main-nav a {
   position: relative;
   color: var(--muted);
-  font-size: .82rem;
+  font-size: 0.82rem;
   font-weight: 500;
-  transition: color .22s ease;
+  transition: color 0.22s ease;
 }
 
 .main-nav a::after {
@@ -171,7 +209,7 @@ button:focus-visible {
   width: 0;
   height: 1px;
   background: var(--red);
-  transition: width .25s ease;
+  transition: width 0.25s ease;
 }
 
 .main-nav a:hover,
@@ -1097,6 +1135,7 @@ button:focus-visible {
   }
 }
 
+/* Responsive */
 @media (max-width: 700px) {
   .header-inner {
     width: min(var(--max), calc(100% - 28px));
@@ -1220,6 +1259,23 @@ button:focus-visible {
   .footer-links {
     gap: 10px 20px;
   }
+
+  .site-logo {
+      width: 36px;
+      height: 36px;
+    }
+
+    .logo-text h1 {
+      font-size: 1rem;
+    }
+
+    .logo-text span {
+      display: none;      /* oculta el subtítulo en móvil */
+    }
+
+    .main-nav {
+      gap: 16px;
+    }
 }
 
 @media (max-width: 420px) {
@@ -1249,4 +1305,13 @@ button:focus-visible {
     transition-duration: .01ms !important;
     animation-duration: .01ms !important;
   }
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+  min-width: 0;
 }
