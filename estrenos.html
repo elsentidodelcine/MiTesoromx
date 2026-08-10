@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrenos y Preventas | Los Brujos del Cine</title>
+    <meta name="description" content="Estrenos y preventas actuales en Cinépolis, Cinemex, Cinedot y Movie Center. Fechas, pósters y enlaces para comprar boletos.">
+    <meta name="theme-color" content="#030304">
+    <link rel="canonical" href="https://elsentidodelcine.github.io/estrenos.html">
+
+    <meta property="og:title" content="Estrenos y Preventas | Los Brujos del Cine">
+    <meta property="og:description" content="Preventas y reestrenos en carteleras mexicanas.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://elsentidodelcine.github.io/estrenos.html">
+    <meta property="og:image" content="https://elsentidodelcine.github.io/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="stylesLBDC.css">
+
+    <style>
+        /* ========== ESTRENOS PAGE ========== */
+        .estrenos-page {
+          padding-bottom: 100px;
+        }
+
+        /* Hero pequeño */
+        .estrenos-hero {
+          position: relative;
+          padding: 70px 0 50px;
+          border-bottom: 1px solid var(--border);
+          overflow: hidden;
+          text-align: center;
+        }
+
+        .estrenos-hero::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background:
+            radial-gradient(ellipse 80% 60% at 50% -20%, rgba(196, 30, 58, 0.14), transparent 55%),
+            radial-gradient(ellipse 50% 40% at 85% 30%, rgba(201, 162, 39, 0.05), transparent 50%);
+          pointer-events: none;
+        }
+
+        .estrenos-hero-inner {
+          position: relative;
+          width: min(700px, calc(100% - 48px));
+          margin: 0 auto;
+        }
+
+        .estrenos-hero .eyebrow {
+          margin-bottom: 18px;
+        }
+
+        .estrenos-hero h1 {
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: clamp(2.6rem, 6vw, 4rem);
+          font-weight: 800;
+          line-height: 1.05;
+          letter-spacing: -0.03em;
+          margin-bottom: 16px;
+        }
+
+        .estrenos-hero h1 em {
+          font-style: italic;
+          color: var(--gold);
+        }
+
+        .estrenos-hero p {
+          color: var(--muted);
+          font-size: 1.05rem;
+          line-height: 1.7;
+          max-width: 520px;
+          margin: 0 auto;
+        }
+
+        /* Filtros */
+        .estrenos-filters {
+          width: min(var(--max), calc(100% - 48px));
+          margin: 40px auto 28px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          justify-content: center;
+        }
+
+        .filter-btn {
+          padding: 8px 18px;
+          border-radius: 999px;
+          border: 1px solid var(--border);
+          background: rgba(255,255,255,0.03);
+          color: var(--muted);
+          font-size: 0.78rem;
+          font-weight: 600;
+          letter-spacing: 0.03em;
+          cursor: pointer;
+          transition: all 0.22s ease;
+        }
+
+        .filter-btn:hover {
+          border-color: rgba(255,255,255,0.15);
+          color: #fff;
+        }
+
+        .filter-btn.active {
+          background: linear-gradient(135deg, var(--red), var(--red-dark));
+          border-color: transparent;
+          color: #fff;
+          box-shadow: 0 6px 20px rgba(196, 30, 58, 0.25);
+        }
+
+        /* Grid de estrenos */
+        .estrenos-grid {
+          width: min(var(--max), calc(100% - 48px));
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 24px;
+        }
+
+        /* Card de estreno */
+        .estreno-card {
+          display: flex;
+          flex-direction: column;
+          border: 1px solid var(--border);
+          border-radius: var(--radius);
+          background: var(--surface);
+          overflow: hidden;
+          transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .estreno-card:hover {
+          transform: translateY(-6px);
+          border-color: rgba(196, 30, 58, 0.28);
+          box-shadow: var(--shadow-soft);
+        }
+
+        .estreno-poster {
+          position: relative;
+          aspect-ratio: 2 / 3;
+          overflow: hidden;
+          background: #0e0e14;
+        }
+
+        .estreno-poster img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.6s ease;
+        }
+
+        .estreno-card:hover .estreno-poster img {
+          transform: scale(1.05);
+        }
+
+        .estreno-badge {
+          position: absolute;
+          top: 14px;
+          left: 14px;
+          padding: 5px 11px;
+          border-radius: 6px;
+          background: rgba(0,0,0,0.75);
+          border: 1px solid rgba(255,255,255,0.1);
+          backdrop-filter: blur(10px);
+          font-size: 0.58rem;
+          font-weight: 700;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: #e8e8ec;
+          z-index: 2;
+        }
+
+        .estreno-badge.reestreno {
+          color: var(--gold);
+          border-color: rgba(201, 162, 39, 0.3);
+        }
+
+        .estreno-badge.preventa {
+          color: #7dd3fc;
+          border-color: rgba(125, 211, 252, 0.25);
+        }
+
+        .estreno-body {
+          padding: 22px 22px 20px;
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+        }
+
+        .estreno-fecha {
+          font-size: 0.72rem;
+          font-weight: 600;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: var(--gold);
+          margin-bottom: 10px;
+        }
+
+        .estreno-titulo {
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: 1.35rem;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -0.02em;
+          margin-bottom: 14px;
+          color: #fff;
+        }
+
+        .estreno-cines {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 7px;
+          margin-bottom: 18px;
+        }
+
+        .cine-tag {
+          padding: 4px 11px;
+          border-radius: 999px;
+          background: rgba(255,255,255,0.04);
+          border: 1px solid var(--border);
+          font-size: 0.68rem;
+          font-weight: 600;
+          color: var(--muted);
+          letter-spacing: 0.02em;
+        }
+
+        .estreno-links {
+          margin-top: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .btn-boletos {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          padding: 11px 16px;
+          border-radius: 999px;
+          background: linear-gradient(135deg, var(--red), var(--red-dark));
+          color: #fff;
+          font-size: 0.78rem;
+          font-weight: 600;
+          transition: all 0.25s ease;
+          text-align: center;
+        }
+
+        .btn-boletos:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 28px rgba(196, 30, 58, 0.35);
+        }
+
+        .btn-boletos.secondary {
+          background: transparent;
+          border: 1px solid var(--border-strong);
+          color: #e0e0e6;
+        }
+
+        .btn-boletos.secondary:hover {
+          background: rgba(255,255,255,0.05);
+          border-color: rgba(255,255,255,0.18);
+          box-shadow: none;
+          transform: none;
+        }
+
+        /* Estado vacío / loading */
+        .estrenos-empty,
+        .estrenos-loading {
+          width: min(var(--max), calc(100% - 48px));
+          margin: 60px auto;
+          text-align: center;
+          color: var(--muted);
+          font-size: 1.05rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+          .estrenos-hero {
+            padding: 50px 0 40px;
+          }
+
+          .estrenos-grid {
+            grid-template-columns: 1fr;
+            gap: 18px;
+          }
+
+          .estrenos-filters {
+            gap: 8px;
+          }
+
+          .filter-btn {
+            padding: 7px 14px;
+            font-size: 0.72rem;
+          }
+        }
+    </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Saltar al contenido</a>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="brand" aria-label="Los Brujos del Cine, inicio">
+            <span class="brand-mark" aria-hidden="true">☽</span>
+            <span class="brand-copy">
+          <strong>Los Brujos del Cine</strong>
+          <small>El grimorio de cine de Mi Tesoro MX</small>
+        </span>
+        </a>
+        <nav class="main-nav" aria-label="Navegación principal">
+            <a href="blog.html#resenas">Reseñas</a>
+            <a href="estrenos.html" aria-current="page">Estrenos</a>
+        </nav>
+    </div>
+</header>
+
+<main id="main-content" class="estrenos-page">
+
+    <!-- HERO -->
+    <section class="estrenos-hero">
+        <div class="estrenos-hero-inner">
+            <div class="eyebrow">
+                <span aria-hidden="true"></span>
+                Cartelera viva
+            </div>
+            <h1>Estrenos & <em>Preventas</em></h1>
+            <p>
+                Reestrenos, aniversarios y próximas películas en Cinépolis, Cinemex, Cinedot y Movie Center.
+                Encuentra fechas y compra tus boletos.
+            </p>
+        </div>
+    </section>
+
+    <!-- FILTROS -->
+    <div class="estrenos-filters" id="estrenos-filters">
+        <button class="filter-btn active" data-filter="todos">Todos</button>
+        <button class="filter-btn" data-filter="estreno">Estrenos</button>
+        <button class="filter-btn" data-filter="reestreno">Reestrenos</button>
+        <button class="filter-btn" data-filter="preventa">Preventas</button>
+    </div>
+
+    <!-- GRID -->
+    <div id="estrenos-container">
+        <div class="estrenos-loading">Cargando estrenos...</div>
+    </div>
+
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-links">
+            <a href="aviso-de-privacidad-LBDC.html">Política de Privacidad</a>
+            <a href="https://elsentidodelcine.github.io/mitesoromx/index.html" target="_blank" rel="noopener noreferrer">Mi Tesoro MX</a>
+            <a href="https://www.facebook.com/LosBrujosDelCine" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://boxd.it/8uSCV" target="_blank" rel="noopener noreferrer">Letterboxd</a>
+        </div>
+        <div class="footer-copy">
+            <p>© 2026 Los Brujos del Cine — Parte de <a href="https://elsentidodelcine.github.io/mitesoromx/index.html" target="_blank" rel="noopener noreferrer">Mi Tesoro MX</a></p>
+        </div>
+    </div>
+</footer>
+
+<script src="estrenos.js"></script>
+</body>
+</html>

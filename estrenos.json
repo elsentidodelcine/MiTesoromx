@@ -1,0 +1,74 @@
+[
+  {
+    "id": "harry-potter-piedra-filosofal-25",
+    "titulo": "Harry Potter y la Piedra Filosofal",
+    "tipo": "reestreno",
+    "fecha": "2026-08-29",
+    "fechaTexto": "Sábado 29 de agosto 2026",
+    "poster": "imgs/posters/harry-potter-piedra.jpg",
+    "cines": ["Cinépolis", "Cinemex", "Cinedot"],
+    "links": [
+      {
+        "cine": "Cinépolis",
+        "url": "https://www.cinepolis.com"
+      },
+      {
+        "cine": "Cinemex",
+        "url": "https://www.cinemex.com"
+      }
+    ],
+    "nota": "Reestreno por el 25 aniversario"
+  },
+  {
+    "id": "spiderman-nuevo-dia",
+    "titulo": "Spider-Man: Un Nuevo Día",
+    "tipo": "estreno",
+    "fecha": "2026-07-17",
+    "fechaTexto": "Viernes 17 de julio 2026",
+    "poster": "imgs/posters/spiderman.jpg",
+    "cines": ["Cinépolis", "Cinemex", "Movie Center"],
+    "links": [
+      {
+        "cine": "Cinépolis",
+        "url": "https://www.cinepolis.com"
+      },
+      {
+        "cine": "Cinemex",
+        "url": "https://www.cinemex.com"
+      }
+    ],
+    "nota": "Estreno oficial"
+  },
+  {
+    "id": "la-odisea-nolan",
+    "titulo": "La Odisea",
+    "tipo": "preventa",
+    "fecha": "2026-09-12",
+    "fechaTexto": "Viernes 12 de septiembre 2026",
+    "poster": "imgs/posters/laodisea.jpg",
+    "cines": ["Cinépolis", "Cinemex"],
+    "links": [
+      {
+        "cine": "Cinépolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Preventa ya disponible"
+  },
+  {
+    "id": "evil-dead-burn",
+    "titulo": "Evil Dead Burn",
+    "tipo": "estreno",
+    "fecha": "2026-04-01",
+    "fechaTexto": "Miércoles 1 de abril 2026",
+    "poster": "imgs/posters/evildead.jpg",
+    "cines": ["Cinépolis", "Cinedot"],
+    "links": [
+      {
+        "cine": "Cinépolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": ""
+  }
+]
