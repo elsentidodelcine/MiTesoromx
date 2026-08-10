@@ -162,5 +162,21 @@
       }
     ],
     "nota": "Ciclo de David Lynch's"
+  },
+  {
+    "id": "one",
+    "titulo": "One Piece: La Película (2000)",
+    "tipo": "preventa",
+    "fecha": "2026-12-12",
+    "fechaTexto": "Proximamente",
+    "poster": "imgs/estrenos/one.jpg",
+    "cines": ["Cinépolis"],
+    "links": [
+      {
+        "cine": "Cinépolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Proximamente"
   }
 ]
