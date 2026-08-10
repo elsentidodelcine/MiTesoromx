@@ -18,7 +18,7 @@
   {
     "id": "uranus",
     "titulo": "Uranus 2324: Siempre nos encontraremos",
-    "tipo": "estreno",
+    "tipo": "preventa",
     "fecha": "2026-08-13",
     "fechaTexto": "Jueves 13 de Agosto 2026",
     "poster": "imgs/estrenos/uranus.jpg",
@@ -29,38 +29,38 @@
         "url": "https://cinemex.com/pelicula/72339/uranus-2324-siempre-nos-encontraremos"
       }
     ],
-    "nota": "Estreno Oficial"
+    "nota": "Preventa ya disponible"
   },
   {
-    "id": "la-odisea-nolan",
-    "titulo": "La Odisea",
+    "id": "juan-gabriel",
+    "titulo": "Juan Gabriel: Mi Primer Bellas Artes",
     "tipo": "preventa",
-    "fecha": "2026-09-12",
-    "fechaTexto": "Viernes 12 de septiembre 2026",
-    "poster": "imgs/posters/laodisea.jpg",
-    "cines": ["Cinépolis", "Cinemex"],
+    "fecha": "2026-08-28",
+    "fechaTexto": "Viernes 28 de Agosto 2026",
+    "poster": "imgs/posters/gabriel.jpg",
+    "cines": ["Cinemex"],
     "links": [
       {
-        "cine": "Cinépolis",
-        "url": "https://www.cinepolis.com"
+        "cine": "Cinemex",
+        "url": "https://cinemex.com/pelicula/72264/juan-gabriel-mi-primer-bellas-artes"
       }
     ],
     "nota": "Preventa ya disponible"
   },
   {
-    "id": "evil-dead-burn",
-    "titulo": "Evil Dead Burn",
-    "tipo": "estreno",
-    "fecha": "2026-04-01",
-    "fechaTexto": "Miércoles 1 de abril 2026",
-    "poster": "imgs/posters/evildead.jpg",
-    "cines": ["Cinépolis", "Cinedot"],
+    "id": "transformers",
+    "titulo": "Transformers: La película",
+    "tipo": "preventa",
+    "fecha": "2026-09-17",
+    "fechaTexto": "Jueves 17 de Septiembre 2026",
+    "poster": "imgs/posters/transformers.jpg",
+    "cines": ["Cinemex"],
     "links": [
       {
-        "cine": "Cinépolis",
-        "url": "https://www.cinepolis.com"
+        "cine": "Cinemex",
+        "url": "https://cinemex.com/pelicula/72428/transformers-la-pelicula"
       }
     ],
-    "nota": ""
+    "nota": "Preventa ya disponible"
   }
 ]
