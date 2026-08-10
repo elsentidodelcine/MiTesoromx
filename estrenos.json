@@ -1,43 +1,35 @@
 [
   {
-    "id": "harry-potter-piedra-filosofal-25",
-    "titulo": "Harry Potter y la Piedra Filosofal",
+    "id": "harry",
+    "titulo": "Harry Potter y la Piedra Filosofal 25 Aniversario",
     "tipo": "reestreno",
     "fecha": "2026-08-29",
     "fechaTexto": "Sábado 29 de agosto 2026",
-    "poster": "imgs/posters/harry-potter-piedra.jpg",
-    "cines": ["Cinépolis", "Cinemex", "Cinedot"],
+    "poster": "imgs/estrenos/harry.jpg",
+    "cines": ["Cinépolis"],
     "links": [
       {
         "cine": "Cinépolis",
         "url": "https://www.cinepolis.com"
-      },
-      {
-        "cine": "Cinemex",
-        "url": "https://www.cinemex.com"
       }
     ],
     "nota": "Reestreno por el 25 aniversario"
   },
   {
-    "id": "spiderman-nuevo-dia",
-    "titulo": "Spider-Man: Un Nuevo Día",
+    "id": "uranus",
+    "titulo": "Uranus 2324: Siempre nos encontraremos",
     "tipo": "estreno",
-    "fecha": "2026-07-17",
-    "fechaTexto": "Viernes 17 de julio 2026",
-    "poster": "imgs/posters/spiderman.jpg",
-    "cines": ["Cinépolis", "Cinemex", "Movie Center"],
+    "fecha": "2026-08-13",
+    "fechaTexto": "Jueves 13 de Agosto 2026",
+    "poster": "imgs/estrenos/uranus.jpg",
+    "cines": ["Cinemex"],
     "links": [
       {
-        "cine": "Cinépolis",
-        "url": "https://www.cinepolis.com"
-      },
-      {
         "cine": "Cinemex",
-        "url": "https://www.cinemex.com"
+        "url": "https://cinemex.com/pelicula/72339/uranus-2324-siempre-nos-encontraremos"
       }
     ],
-    "nota": "Estreno oficial"
+    "nota": "Estreno Oficial"
   },
   {
     "id": "la-odisea-nolan",
