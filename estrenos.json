@@ -178,21 +178,5 @@
       }
     ],
     "nota": "Proximamente"
-  },
-  {
-    "id": "prueba",
-    "titulo": "Prueba",
-    "tipo": "preventa",
-    "fecha": "2026-08-10",
-    "fechaTexto": "Prueba",
-    "poster": "imgs/estrenos/one.jpg",
-    "cines": ["Cinépolis"],
-    "links": [
-      {
-        "cine": "Cinépolis",
-        "url": "https://www.cinepolis.com"
-      }
-    ],
-    "nota": "Prueba"
   }
 ]
