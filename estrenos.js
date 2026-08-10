@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             src="${escapeHTML(item.poster)}"
             alt="Póster de ${escapeHTML(item.titulo)}"
             loading="lazy"
-            onerror="this.src='imgs/posters/placeholder.jpg'; this.onerror=null;"
+            onerror="this.src='imgs/estrenos/placeholder.jpg'; this.onerror=null;"
           >
           <span class="estreno-badge ${badgeClass}">${badgeTexto}</span>
         </div>
