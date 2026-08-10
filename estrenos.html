@@ -301,6 +301,68 @@
             font-size: 0.72rem;
           }
         }
+
+        .estrenos-filters-wrapper {
+  width: min(var(--max), calc(100% - 48px));
+  margin: 40px auto 28px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px 28px;
+}
+
+.estrenos-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.mes-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mes-filter label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.mes-filter select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 9px 36px 9px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.04) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%9a9aa6' d='M1 1l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 14px center;
+  color: #e8e8ec;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.mes-filter select:hover,
+.mes-filter select:focus {
+  border-color: rgba(255,255,255,0.18);
+}
+
+.mes-filter select option {
+  background: #121218;
+  color: #e8e8ec;
+}
+
+@media (max-width: 700px) {
+  .estrenos-filters-wrapper {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
     </style>
 </head>
 <body>
@@ -341,11 +403,21 @@
     </section>
 
     <!-- FILTROS -->
-    <div class="estrenos-filters" id="estrenos-filters">
-        <button class="filter-btn active" data-filter="todos">Todos</button>
-        <button class="filter-btn" data-filter="estreno">Estrenos</button>
-        <button class="filter-btn" data-filter="reestreno">Reestrenos</button>
-        <button class="filter-btn" data-filter="preventa">Preventas</button>
+    <div class="estrenos-filters-wrapper">
+        <div class="estrenos-filters" id="estrenos-filters">
+            <button class="filter-btn active" data-filter="todos">Todos</button>
+            <button class="filter-btn" data-filter="estreno">Estrenos</button>
+            <button class="filter-btn" data-filter="reestreno">Reestrenos</button>
+            <button class="filter-btn" data-filter="preventa">Preventas</button>
+        </div>
+
+        <div class="mes-filter">
+            <label for="filtro-mes">Mes:</label>
+            <select id="filtro-mes">
+                <option value="todos">Todos los meses</option>
+                <!-- se llenan con JS -->
+            </select>
+        </div>
     </div>
 
     <!-- GRID -->

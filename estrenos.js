@@ -1,17 +1,33 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const container = document.getElementById('estrenos-container');
   const filters = document.getElementById('estrenos-filters');
+  const selectMes = document.getElementById('filtro-mes');
 
   let estrenos = [];
-  let filtroActual = 'todos';
+  let filtroTipo = 'todos';
+  let filtroMes = 'todos';
+
+  // Fecha de hoy (sin horas)
+  const hoy = new Date();
+  hoy.setHours(0, 0, 0, 0);
 
   try {
     const response = await fetch('estrenos.json');
     if (!response.ok) throw new Error('No se pudo cargar estrenos.json');
     estrenos = await response.json();
 
-    // Ordenar por fecha (más próximos primero)
+    // 1. Filtrar solo los que aún no han pasado (hoy y futuros)
+    estrenos = estrenos.filter(item => {
+      const fechaItem = new Date(item.fecha);
+      fechaItem.setHours(0, 0, 0, 0);
+      return fechaItem >= hoy;
+    });
+
+    // 2. Ordenar por fecha (más próximos primero)
     estrenos.sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+
+    // 3. Llenar el select de meses
+    llenarSelectMeses();
 
     renderEstrenos();
   } catch (error) {
@@ -23,7 +39,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       </div>`;
   }
 
-  // Filtros
+  // ===== Filtros de tipo =====
   if (filters) {
     filters.addEventListener('click', (e) => {
       const btn = e.target.closest('.filter-btn');
@@ -32,22 +48,81 @@ document.addEventListener('DOMContentLoaded', async () => {
       filters.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      filtroActual = btn.dataset.filter;
+      filtroTipo = btn.dataset.filter;
       renderEstrenos();
     });
   }
 
-  function renderEstrenos() {
-    let lista = estrenos;
+  // ===== Filtro de mes =====
+  if (selectMes) {
+    selectMes.addEventListener('change', () => {
+      filtroMes = selectMes.value;
+      renderEstrenos();
+    });
+  }
 
-    if (filtroActual !== 'todos') {
-      lista = estrenos.filter(e => e.tipo === filtroActual);
+  // ===== Tipo dinámico =====
+  // Si era "preventa" y ya llegó el día → se convierte en "estreno"
+  function getTipoEfectivo(item) {
+    const fechaItem = new Date(item.fecha);
+    fechaItem.setHours(0, 0, 0, 0);
+
+    if (item.tipo === 'preventa' && fechaItem <= hoy) {
+      return 'estreno';
+    }
+    return item.tipo;
+  }
+
+  // ===== Llenar opciones de mes =====
+  function llenarSelectMeses() {
+    if (!selectMes) return;
+
+    const mesesUnicos = new Set();
+
+    estrenos.forEach(item => {
+      const d = new Date(item.fecha);
+      const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+      mesesUnicos.add(key);
+    });
+
+    const mesesOrdenados = Array.from(mesesUnicos).sort();
+
+    const nombresMes = [
+      'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+      'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+    ];
+
+    selectMes.innerHTML = `<option value="todos">Todos los meses</option>`;
+
+    mesesOrdenados.forEach(key => {
+      const [year, month] = key.split('-');
+      const nombre = `${nombresMes[parseInt(month) - 1]} ${year}`;
+      selectMes.innerHTML += `<option value="${key}">${nombre}</option>`;
+    });
+  }
+
+  // ===== Render principal =====
+  function renderEstrenos() {
+    let lista = [...estrenos];
+
+    // Filtro por tipo (usando tipo efectivo)
+    if (filtroTipo !== 'todos') {
+      lista = lista.filter(e => getTipoEfectivo(e) === filtroTipo);
+    }
+
+    // Filtro por mes
+    if (filtroMes !== 'todos') {
+      lista = lista.filter(item => {
+        const d = new Date(item.fecha);
+        const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+        return key === filtroMes;
+      });
     }
 
     if (lista.length === 0) {
       container.innerHTML = `
         <div class="estrenos-empty">
-          No hay ${filtroActual === 'todos' ? 'estrenos' : filtroActual + 's'} disponibles por el momento.
+          No hay estrenos disponibles con estos filtros.
         </div>`;
       return;
     }
@@ -59,12 +134,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     `;
   }
 
+  // ===== Crear tarjeta =====
   function crearCard(item) {
-    const badgeClass = item.tipo === 'reestreno' ? 'reestreno' :
-                       item.tipo === 'preventa' ? 'preventa' : '';
+    const tipo = getTipoEfectivo(item);
 
-    const badgeTexto = item.tipo === 'reestreno' ? 'Reestreno' :
-                       item.tipo === 'preventa' ? 'Preventa' : 'Estreno';
+    const badgeClass = tipo === 'reestreno' ? 'reestreno' :
+                       tipo === 'preventa' ? 'preventa' : '';
+
+    const badgeTexto = tipo === 'reestreno' ? 'Reestreno' :
+                       tipo === 'preventa' ? 'Preventa' : 'Estreno';
 
     const cinesHTML = (item.cines || [])
       .map(c => `<span class="cine-tag">${escapeHTML(c)}</span>`)
@@ -92,7 +170,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             src="${escapeHTML(item.poster)}"
             alt="Póster de ${escapeHTML(item.titulo)}"
             loading="lazy"
-            onerror="this.src='imgs/estrenos/placeholder.jpg'; this.onerror=null;"
+            onerror="this.src='imgs/posters/placeholder.jpg'; this.onerror=null;"
           >
           <span class="estreno-badge ${badgeClass}">${badgeTexto}</span>
         </div>

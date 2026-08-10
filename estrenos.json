@@ -2,7 +2,7 @@
   {
     "id": "harry",
     "titulo": "Harry Potter y la Piedra Filosofal 25 Aniversario",
-    "tipo": "reestreno",
+    "tipo": "preventa",
     "fecha": "2026-08-27",
     "fechaTexto": "Jueves 27 de Agosto 2026",
     "poster": "imgs/estrenos/harry.jpg",
@@ -178,5 +178,21 @@
       }
     ],
     "nota": "Proximamente"
+  },
+  {
+    "id": "prueba",
+    "titulo": "Prueba",
+    "tipo": "preventa",
+    "fecha": "2026-12-11",
+    "fechaTexto": "Prueba",
+    "poster": "imgs/estrenos/one.jpg",
+    "cines": ["Cinépolis"],
+    "links": [
+      {
+        "cine": "Cinépolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Prueba"
   }
 ]
