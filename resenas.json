@@ -7,7 +7,7 @@
     "duracion": "145 min",
     "generos": ["Acción", "Superhéroes"],
     "puntaje": 4.5,
-    "destacada": true,
+    "destacada": false,
     "etiqueta": "ESTRENO",
     "plataformas": ["Cines"],
     "resumen": "El regreso de Peter Parker abre una nueva etapa. ¿Funciona como la siguiente gran aventura del héroe arácnido?",
@@ -146,6 +146,36 @@
     "posterFallback": {
       "linea1": "La Muerte de",
       "linea2": "Robin Hood"
+    },
+    "letterboxd": "https://letterboxd.com/film/the-death-of-robin-hood",
+    "lead": "Esperaba mucho más de esta reinterpretación oscura. Técnicamente bien hecha, pero demasiado lenta y con muy poco del Robin Hood que conocemos.",
+    "contenido": [
+      "La verdad, esperaba mucho más de esta película. Dura prácticamente dos horas y se siente súper lenta. Hay momentos en los que parece que no está pasando absolutamente nada y, aunque entiendo que quisieron hacer una versión mucho más deprimente, oscura y adulta del personaje, conmigo simplemente no funcionó.",
+      "De hecho, pudieron quitarle completamente el nombre de La muerte de Robin Hood y ponerle cualquier otra cosa, porque de Robin Hood realmente tiene muy poco más allá del nombre. No tenemos al personaje que conocemos de las historias, sino a un hombre en sus últimos días, cansado, derrotado y cargando con todo lo que hizo durante su vida.",
+      "Y eso pudo haber sido interesante. A mí me hubiera gustado muchísimo más que hubieran utilizado flashbacks para mostrarnos sus inicios: cómo comenzó Robin Hood, cuándo empezó a matar, cómo se convirtió en el personaje que conocemos y qué fue lo que finalmente lo llevó a terminar de esta manera. Así habríamos tenido un contraste entre el héroe que alguna vez fue y el hombre que vemos al final de su vida.",
+      "Pero no. La película prácticamente se concentra en sus últimos días y, para mí, eso terminó siendo demasiado aburrido. Por más que tengas a Hugh Jackman, Bill Skarsgård, una buena fotografía y una producción bastante cuidada, no puedes sostener una película solamente con eso.",
+      "La banda sonora también me gustó bastante. Tiene momentos donde realmente ayuda a crear esa atmósfera oscura y deprimente que quieren transmitir, pero ni siquiera eso logró salvarme del aburrimiento. Y creo que ese es precisamente el problema: técnicamente puede estar bien hecha, pero como experiencia cinematográfica a mí me resultó demasiado pesada.",
+      "Entiendo perfectamente lo que quisieron hacer con esta versión de Robin Hood y no me molesta que hayan decidido mostrar su lado más oscuro y miserable. El problema es que no me entretuvo. Sentí que estaba esperando constantemente a que ocurriera algo que realmente me atrapara y nunca llegó.",
+      "Al final, me quedo con una película visualmente bonita, con buenas actuaciones y una excelente banda sonora, pero demasiado lenta y con muy poco de lo que yo esperaba encontrar en una historia sobre Robin Hood."
+    ],
+    "cita": "De Robin Hood realmente tiene muy poco más allá del nombre.",
+    "veredicto": "Una reinterpretación interesante en concepto, pero demasiado lenta y alejada del Robin Hood que conocemos. Si quieres ver una película de Robin Hood, esta probablemente no sea la que estás buscando."
+  },
+  {
+    "id": "insaciable",
+    "titulo": "Insaciable",
+    "anio": 2026,
+    "fecha": "2026-08-10",
+    "duracion": "112 min",
+    "generos": ["Terror", "Body Horror"],
+    "puntaje": 3.0,
+    "destacada": true,
+    "etiqueta": "ESTRENO",
+    "plataformas": ["Cines"],
+    "resumen": "Una versión oscura y adulta de Robin Hood que se concentra en sus últimos días, pero resulta demasiado lenta y alejada del personaje que conocemos.",
+    "poster": "imgs/posters/insaciable.jpg",
+    "posterFallback": {
+      "linea1": "Insaciable"
     },
     "letterboxd": "https://letterboxd.com/film/the-death-of-robin-hood",
     "lead": "Esperaba mucho más de esta reinterpretación oscura. Técnicamente bien hecha, pero demasiado lenta y con muy poco del Robin Hood que conocemos.",

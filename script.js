@@ -1520,7 +1520,7 @@ document.addEventListener("touchend", (e) => {
 const PREVENTAS_ACTIVAS = [
   {
     id: "paw-dino",
-    active: true,
+    active: false,
     emoji: "🦴",
     titulo: "Preventa PAW Patrol: The Dino Movie",
     texto: "<br><br> Coleccionables caninos en preventa. ¡No te quedes sin el tuyo!  <br><br>" ,
@@ -1530,7 +1530,7 @@ const PREVENTAS_ACTIVAS = [
   },
   {
     id: "harry-potter",
-    active: true,
+    active: false,
     emoji: "⚡",
     titulo: "Preventa Harry Potter",
     texto: "<br><br> Coleccionables mágicos en preventa. ¡No te quedes sin el tuyo! <br><br>",
@@ -1540,7 +1540,7 @@ const PREVENTAS_ACTIVAS = [
   },
   {
     id: "avengers-doomsday",
-    active: false,
+    active: true,
     emoji: "🦸",
     titulo: "Preventa Avengers: Doomsday",
     texto: "<br><br> ** Próximamente ** <br><br>",

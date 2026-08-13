@@ -1,16 +1,16 @@
 [
 
-  { "nombre": "Preventa Vaso Casa Gryffindor Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry3.jpg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "Preventa Vaso Casa Ravenclaw  Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry1.jpg" ,"badge": "preventa", "stock": 2},
-  { "nombre": "Preventa Vaso Casa Slytherin  Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry2.jpg" ,"badge": "preventa", "stock": 2},
-  { "nombre": "Preventa Vaso Casa Hufflepuff Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry4.jpg" ,"badge": "preventa", "stock": 2},
-  { "nombre": "Preventa Palomera Sombrero Harry Potter", "categoria": "Harry Potter", "precio": 959, "imagen": "imgs/harry5.jpg" ,"badge": "preventa", "stock": 3},
+  { "nombre": "Vaso Casa Gryffindor Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry3.jpg" ,"badge": "exclusivo", "stock": 0},
+  { "nombre": "Vaso Casa Ravenclaw  Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry1.jpg" ,"badge": "exclusivo", "stock": 0},
+  { "nombre": "Vaso Casa Slytherin  Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry2.jpg" ,"badge": "exclusivo", "stock": 0},
+  { "nombre": "Vaso Casa Hufflepuff Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry4.jpg" ,"badge": "exclusivo", "stock": 0},
+  { "nombre": "Palomera Sombrero Harry Potter", "categoria": "Harry Potter", "precio": 959, "imagen": "imgs/harry5.jpg" ,"badge": "exclusivo", "stock": 0},
 
-  { "nombre": "Preventa Vaso Rublee Cinepolis", "categoria": "Paw Patrol", "precio": 100, "imagen": "imgs/paw1.jpg" ,"badge": "preventa", "stock": 3},
-  { "nombre": "Preventa Vaso Skye Cinepolis", "categoria": "Paw Patrol", "precio": 100, "imagen": "imgs/paw1.jpg" ,"badge": "preventa", "stock": 3},
-  { "nombre": "Preventa Vaso Chase Cinepolis", "categoria": "Paw Patrol", "precio": 100, "imagen": "imgs/paw1.jpg" ,"badge": "preventa", "stock": 3},
-  { "nombre": "Preventa Vaso Marshall Cinepolis", "categoria": "Paw Patrol", "precio": 100, "imagen": "imgs/paw1.jpg" ,"badge": "preventa", "stock": 3},
-  { "nombre": "Preventa Vaso Rocky Cinepolis", "categoria": "Paw Patrol", "precio": 100, "imagen": "imgs/paw1.jpg" ,"badge": "preventa", "stock": 3},
+  { "nombre": "Vaso Rublee Cinepolis", "categoria": "Paw Patrol", "precio": 100, "imagen": "imgs/paw1.jpg" ,"badge": "exclusivo", "stock": 0},
+  { "nombre": "Vaso Skye Cinepolis", "categoria": "Paw Patrol", "precio": 100, "imagen": "imgs/paw1.jpg" ,"badge": "exclusivo", "stock": 0},
+  { "nombre": "Vaso Chase Cinepolis", "categoria": "Paw Patrol", "precio": 100, "imagen": "imgs/paw1.jpg" ,"badge": "exclusivo", "stock": 0},
+  { "nombre": "Vaso Marshall Cinepolis", "categoria": "Paw Patrol", "precio": 100, "imagen": "imgs/paw1.jpg" ,"badge": "exclusivo", "stock": 0},
+  { "nombre": "Vaso Rocky Cinepolis", "categoria": "Paw Patrol", "precio": 100, "imagen": "imgs/paw1.jpg" ,"badge": "exclusivo", "stock": 0},
 
 
   { "nombre": "Album de Estampas Copa America Panini Model1", "categoria": "Album Estampas", "precio": 50, "imagen": "imgs/halbum1.png" ,"badge": "ultimo", "stock": 1},
