@@ -198,26 +198,28 @@ function aplicarFiltros() {
     lista = lista.filter((p) => p.categoria === categoriaActual);
   }
 
-  // Filtros extra
-  if (filtroExtra === "disponibles") {
-    lista = lista.filter((p) => p.stock > 0 && p.precio != 999 && p.precio != 666);
-  } else if (filtroExtra === "preventa") {
-    lista = lista.filter((p) => badgeTexto(p).includes("preventa"));
-  } else if (filtroExtra === "oferta") {
-    lista = lista.filter((p) => badgeTexto(p).includes("oferta"));
-  } else if (filtroExtra === "ultima") {
-    lista = lista.filter((p) => badgeTexto(p).includes("ultimo"));
-  } else if (filtroExtra === "exclusivo") {
-    lista = lista.filter((p) => badgeTexto(p).includes("exclusivo"));
-  } else if (filtroExtra === "nuevo") {
-    lista = lista.filter((p) => badgeTexto(p).includes("nuevo"));
-  } else if (filtroExtra === "agotados") {
-    // Solo productos sin stock (no próximamente)
-    lista = lista.filter((p) => p.stock <= 0 && p.precio != 999 && p.precio != 666);
-  } else {
-    // "todos" y cualquier otro → ocultar agotados
-    lista = lista.filter((p) => p.stock > 0 || p.precio == 999 || p.precio == 666);
-  }
+// Filtros extra
+// En todos los filtros excepto "agotados" se ocultan productos sin stock
+// (y los de precio 999/666 = próximamente / en espera)
+if (filtroExtra === "disponibles") {
+  lista = lista.filter((p) => p.stock > 0 && p.precio != 999 && p.precio != 666);
+} else if (filtroExtra === "preventa") {
+  lista = lista.filter((p) => badgeTexto(p).includes("preventa") && p.stock > 0 && p.precio != 999 && p.precio != 666);
+} else if (filtroExtra === "oferta") {
+  lista = lista.filter((p) => badgeTexto(p).includes("oferta") && p.stock > 0 && p.precio != 999 && p.precio != 666);
+} else if (filtroExtra === "ultima") {
+  lista = lista.filter((p) => badgeTexto(p).includes("ultimo") && p.stock > 0 && p.precio != 999 && p.precio != 666);
+} else if (filtroExtra === "exclusivo") {
+  lista = lista.filter((p) => badgeTexto(p).includes("exclusivo") && p.stock > 0 && p.precio != 999 && p.precio != 666);
+} else if (filtroExtra === "nuevo") {
+  lista = lista.filter((p) => badgeTexto(p).includes("nuevo") && p.stock > 0 && p.precio != 999 && p.precio != 666);
+} else if (filtroExtra === "agotados") {
+  // Solo productos sin stock (no próximamente)
+  lista = lista.filter((p) => p.stock <= 0 && p.precio != 999 && p.precio != 666);
+} else {
+  // "todos" y cualquier otro → ocultar agotados
+  lista = lista.filter((p) => p.stock > 0 || p.precio == 999 || p.precio == 666);
+}
 
     // Filtro por franquicia
     if (franquiciaActual && franquiciaActual !== "todas") {
