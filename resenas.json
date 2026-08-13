@@ -162,33 +162,31 @@
     "veredicto": "Una reinterpretación interesante en concepto, pero demasiado lenta y alejada del Robin Hood que conocemos. Si quieres ver una película de Robin Hood, esta probablemente no sea la que estás buscando."
   },
   {
-    "id": "insaciable",
+    "id": "saccharine",
     "titulo": "Insaciable",
     "anio": 2026,
-    "fecha": "2026-08-10",
-    "duracion": "112 min",
+    "fecha": "2026-08-12",
+    "duracion": "113 min",
     "generos": ["Terror", "Body Horror"],
     "puntaje": 3.0,
     "destacada": true,
     "etiqueta": "ESTRENO",
-    "plataformas": ["Cines"],
-    "resumen": "Una versión oscura y adulta de Robin Hood que se concentra en sus últimos días, pero resulta demasiado lenta y alejada del personaje que conocemos.",
+    "plataformas": ["Cine"],
+    "resumen": "Una joven obsesionada con adelgazar encuentra una solución extrema consumiendo cenizas humanas. El body horror y el terror se mezclan con una crítica a los trastornos alimenticios, aunque la película no logra sostener toda su potencia.",
     "poster": "imgs/posters/insaciable.jpg",
     "posterFallback": {
-      "linea1": "Insaciable"
+      "linea1": "Saccharine",
+      "linea2": ""
     },
-    "letterboxd": "https://letterboxd.com/film/the-death-of-robin-hood",
-    "lead": "Esperaba mucho más de esta reinterpretación oscura. Técnicamente bien hecha, pero demasiado lenta y con muy poco del Robin Hood que conocemos.",
+    "letterboxd": "https://letterboxd.com/film/saccharine-2026",
+    "lead": "Una idea potente sobre la obsesión por adelgazar convertida en body horror, con momentos grotescos efectivos pero una ejecución irregular que no termina de cuajar del todo.",
     "contenido": [
-      "La verdad, esperaba mucho más de esta película. Dura prácticamente dos horas y se siente súper lenta. Hay momentos en los que parece que no está pasando absolutamente nada y, aunque entiendo que quisieron hacer una versión mucho más deprimente, oscura y adulta del personaje, conmigo simplemente no funcionó.",
-      "De hecho, pudieron quitarle completamente el nombre de La muerte de Robin Hood y ponerle cualquier otra cosa, porque de Robin Hood realmente tiene muy poco más allá del nombre. No tenemos al personaje que conocemos de las historias, sino a un hombre en sus últimos días, cansado, derrotado y cargando con todo lo que hizo durante su vida.",
-      "Y eso pudo haber sido interesante. A mí me hubiera gustado muchísimo más que hubieran utilizado flashbacks para mostrarnos sus inicios: cómo comenzó Robin Hood, cuándo empezó a matar, cómo se convirtió en el personaje que conocemos y qué fue lo que finalmente lo llevó a terminar de esta manera. Así habríamos tenido un contraste entre el héroe que alguna vez fue y el hombre que vemos al final de su vida.",
-      "Pero no. La película prácticamente se concentra en sus últimos días y, para mí, eso terminó siendo demasiado aburrido. Por más que tengas a Hugh Jackman, Bill Skarsgård, una buena fotografía y una producción bastante cuidada, no puedes sostener una película solamente con eso.",
-      "La banda sonora también me gustó bastante. Tiene momentos donde realmente ayuda a crear esa atmósfera oscura y deprimente que quieren transmitir, pero ni siquiera eso logró salvarme del aburrimiento. Y creo que ese es precisamente el problema: técnicamente puede estar bien hecha, pero como experiencia cinematográfica a mí me resultó demasiado pesada.",
-      "Entiendo perfectamente lo que quisieron hacer con esta versión de Robin Hood y no me molesta que hayan decidido mostrar su lado más oscuro y miserable. El problema es que no me entretuvo. Sentí que estaba esperando constantemente a que ocurriera algo que realmente me atrapara y nunca llegó.",
-      "Al final, me quedo con una película visualmente bonita, con buenas actuaciones y una excelente banda sonora, pero demasiado lenta y con muy poco de lo que yo esperaba encontrar en una historia sobre Robin Hood."
+      "La película parte de una idea que me llamó bastante la atención: una joven obsesionada con adelgazar encuentra una solución bastante extrema al consumir cenizas humanas, y lo que al principio parece funcionar termina convirtiéndose en una obsesión que la lleva cada vez más lejos. A partir de ahí, la película utiliza el terror y el body horror para hablar sobre los trastornos alimenticios, la presión por tener cierto cuerpo y esa necesidad de nunca sentirse lo suficientemente delgada. Y la verdad, hay momentos bastante grotescos que sí me provocaron desesperación, sobre todo por cómo va deteriorándose Hannah.",
+      "Mildori Francis me gustó bastante en el papel principal. Se nota la transformación de su personaje conforme la obsesión aumenta y logra transmitir esa desesperación de alguien que ya perdió completamente el control sobre su propio cuerpo. Además, la película tiene algunas imágenes bastante incómodas y desagradables que funcionan bien dentro del concepto de body horror. El problema es que siento que quiso meter demasiadas cosas al mismo tiempo: terror sobrenatural, psicológico, body horror, desórdenes alimenticios y también elementos queer, y al final ninguna de estas partes termina teniendo toda la fuerza que podría haber tenido por separado.",
+      "De hecho, para mí lo más interesante era justamente la obsesión de Hannah y el espíritu que comienza a atormentarla. Ahí esperaba que la película se volviera mucho más terrorífica, que hubiera una especie de enfrentamiento constante entre ambos, pero el fantasma aparece más como una presencia que la amenaza y la asusta que como algo que realmente lleve la historia hacia otro nivel. La película consigue engancharme por momentos, después pierde fuerza y vuelve a recuperarla, pero esa irregularidad termina pesando bastante.",
+      "Y el final definitivamente no fue para mí. Sé que a mucha gente le gustó precisamente por la manera en que termina y por lo que intenta decir, pero yo sentí que después de todo lo que había construido no supieron cerrar la historia de una manera que me dejara satisfecho. Me quedé esperando algo más fuerte."
     ],
-    "cita": "De Robin Hood realmente tiene muy poco más allá del nombre.",
-    "veredicto": "Una reinterpretación interesante en concepto, pero demasiado lenta y alejada del Robin Hood que conocemos. Si quieres ver una película de Robin Hood, esta probablemente no sea la que estás buscando."
+    "cita": "Hay momentos bastante grotescos que sí me provocaron desesperación.",
+    "veredicto": "Una idea interesante y algunos momentos de body horror efectivos, pero demasiado irregular y con demasiados elementos que no terminan de cuajar. Midori Francis sostiene la película, aunque el final decepciona."
   }
 ]
