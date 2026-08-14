@@ -169,7 +169,7 @@
     "duracion": "113 min",
     "generos": ["Terror", "Body Horror"],
     "puntaje": 3.0,
-    "destacada": true,
+    "destacada": false,
     "etiqueta": "ESTRENO",
     "plataformas": ["Cine"],
     "resumen": "Una joven obsesionada con adelgazar encuentra una solución extrema consumiendo cenizas humanas. El body horror y el terror se mezclan con una crítica a los trastornos alimenticios, aunque la película no logra sostener toda su potencia.",
@@ -188,5 +188,33 @@
     ],
     "cita": "Hay momentos bastante grotescos que sí me provocaron desesperación.",
     "veredicto": "Una idea interesante y algunos momentos de body horror efectivos, pero demasiado irregular y con demasiados elementos que no terminan de cuajar. Midori Francis sostiene la película, aunque el final decepciona."
+  },
+  {
+    "id": "el-final-de-la-calle-oak",
+    "titulo": "El Final de la Calle Oak",
+    "anio": 2026,
+    "fecha": "2026-08-13",
+    "duracion": "99 min",
+    "generos": ["Aventuras", "Ciencia ficción", "Thriller"],
+    "puntaje": 2.5,
+    "destacada": true,
+    "etiqueta": "ESTRENO",
+    "plataformas": ["Cines"],
+    "resumen": "Una familia atrapada en un mundo prehistórico con dinosaurios. Buena idea y momentos entretenidos, pero efectos artificiales y un tono irregular la dejan como una película palomera y nada más.",
+    "poster": "imgs/posters/oak.jpg",
+    "posterFallback": {
+      "linea1": "El final de la",
+      "linea2": "calle Oak"
+    },
+    "letterboxd": "https://letterboxd.com/film/the-end-of-oak-street",
+    "lead": "Buena idea de familia atrapada en un mundo prehistórico, pero la ejecución artificial y algunos momentos de humor fallidos la dejan en una película palomera que solo cumple para pasar el rato.",
+    "contenido": [
+      "La idea me gustó bastante: una familia que termina atrapada en un mundo prehistórico, con el pasado y el presente mezclándose de una manera bastante interesante. El problema es que la ejecución no me convenció. La película se siente demasiado artificial, como si casi todo fuera pantalla verde; los dinosaurios y varios escenarios se ven muy falsos y eso me sacó constantemente de la historia. Incluso cuando le cortan el pie a uno de los personajes, el efecto se ve tan falso que en lugar de impactarme me dio risa.",
+      "También sentí que no supieron manejar bien el tono. Los brontosaurios teniendo sexo en medio de una situación que intentaba generar suspenso simplemente no me funcionó y terminó rompiendo completamente la tensión. Aun así, agradecí que se atrevieran a matar a uno de los personajes principales, porque de no haberlo hecho habría sido la típica película donde sabes que prácticamente todos van a sobrevivir.",
+      "Las actuaciones están bien, sobre todo Ewan McGregor, que tiene una participación bastante decente y consigue una química curiosa con Anne Hathaway, quien además siento que funciona muy bien para este tipo de papeles. También se nota muchísimo la influencia de Spielberg, tanto en el estilo como en la intención de recuperar esa magia de las aventuras con dinosaurios, aunque para mí no alcanza ese nivel.",
+      "Al final, El final de la calle Oak tiene una buena idea y momentos entretenidos, pero entre sus efectos demasiado artificiales, algunos momentos de humor que no funcionan y una historia que tampoco termina de sorprenderme, se queda en una película palomera y nada más. No es la joya de películas de dinosaurios, pero cumple para pasar el rato."
+    ],
+    "cita": "Los brontosaurios teniendo sexo en medio de una situación que intentaba generar suspenso simplemente no me funcionó.",
+    "veredicto": "Buena idea y momentos entretenidos, pero efectos demasiado artificiales y un tono irregular la dejan como una película palomera que solo cumple para pasar el rato."
   }
 ]
