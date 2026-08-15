@@ -39,8 +39,8 @@
           }
         ],
         "snacks": [
-          { "nombre": "Palomitas", "chica": 65, "mediana": 73, "grande": 79 , "jumbo":  86, "para llevar":  99},
-          { "nombre": "Cambio de Sabor", "chica": 17, "mediana": 22, "grande": 15 , "jumbo":  29, "para llevar":  29},
+          { "nombre": "Palomitas", "chica": 65, "mediana": 73, "grande": 79 , "jumbo":  86, "parallevar":  99},
+          { "nombre": "Cambio de Sabor", "chica": 17, "mediana": 22, "grande": 15 , "jumbo":  29, "parallevar":  29},
           { "nombre": "Refresco", "chica": 55, "mediana": 65, "grande": 76 , "jumbo":  82},
           { "nombre": "ICEE", "chica": null, "mediana": null, "grande": 99 , "jumbo":  114},
           { "nombre": "Agua", "chica": 34, "mediana": null, "grande": 41 , "jumbo":  null},
