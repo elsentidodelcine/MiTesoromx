@@ -197,7 +197,7 @@
     "duracion": "99 min",
     "generos": ["Aventuras", "Ciencia ficción", "Thriller"],
     "puntaje": 2.5,
-    "destacada": true,
+    "destacada": false,
     "etiqueta": "ESTRENO",
     "plataformas": ["Cines"],
     "resumen": "Una familia atrapada en un mundo prehistórico con dinosaurios. Buena idea y momentos entretenidos, pero efectos artificiales y un tono irregular la dejan como una película palomera y nada más.",
@@ -216,5 +216,34 @@
     ],
     "cita": "Los brontosaurios teniendo sexo en medio de una situación que intentaba generar suspenso simplemente no me funcionó.",
     "veredicto": "Buena idea y momentos entretenidos, pero efectos demasiado artificiales y un tono irregular la dejan como una película palomera que solo cumple para pasar el rato."
+  },
+  {
+    "id": "loco-mexico-magico",
+    "titulo": "Loco México Mágico",
+    "anio": 2026,
+    "fecha": "2026-08-15",
+    "duracion": "105 min",
+    "generos": ["Comedia"],
+    "puntaje": 1.0,
+    "destacada": true,
+    "etiqueta": "ESTRENO",
+    "plataformas": ["Cines"],
+    "resumen": "Una comedia que intenta hacer humor negro y sátira política, pero termina siendo una colección de chistes que no dan risa y una burla al pueblo veracruzano.",
+    "poster": "imgs/posters/locomexico.jpg",
+    "posterFallback": {
+      "linea1": "Loco México",
+      "linea2": "Mágico"
+    },
+    "letterboxd": "https://letterboxd.com/film/loco-mexico-magico/",
+    "lead": "Una estupidez de principio a fin. Intenta ser irreverente y políticamente incorrecta, pero solo resulta ruidosa, exagerada y muy pendeja.",
+    "contenido": [
+      "Pido perdón por el pueblo veracruzano, porque esto es una burla para ellos. Ya había visto las películas anteriores de Carlos Santos —Chingolandia, Qué huevos, Sofía y Señora Influencer— y aunque solamente esta última me pareció rescatable, ninguna me había parecido tan mala como esta.",
+      "Loco México Mágico es una estupidez de principio a fin: una comedia que intenta apoyarse en humor negro, sátira política y burlarse de la industria cinematográfica, pero termina convirtiendo todo en una colección de chistes que simplemente no dan risa.",
+      "Y eso lo comprobé directamente en la sala: éramos alrededor de 15 personas y como seis se salieron antes de llegar siquiera a los 30 minutos. Yo me quedé hasta el final porque, como siempre, quería saber en qué terminaba semejante desastre. En mi función, si acaso escuché unas dos, tres o máximo cuatro risas, y eso que claramente la película está intentando provocar carcajadas todo el tiempo. El problema es que se basa demasiado en estereotipos sociales y personajes “nacos” sin realmente construir un humor que conecte con el público.",
+      "Daniel Sosa tiene un papel bastante X como un director frustrado y amargado, y siento que ni siquiera le dan material para lucirse. El resto del reparto tampoco destaca demasiado; Silverio Palacios es probablemente quien más podría aprovechar su personaje, pero incluso él termina perdido entre tantos personajes que aparecen y desaparecen sin aportar demasiado. Sofía Carrera tampoco logra destacar demasiado dentro de la historia y su personaje termina sintiéndose igual de desaprovechado.",
+      "Al final, Loco México Mágico intenta ser irreverente, crítica y políticamente incorrecta, pero para mí simplemente termina siendo ruidosa, exagerada y muy pendeja. Una cosa es hacer sátira y humor negro, y otra es pensar que decir cualquier barbaridad automáticamente la convierte en comedia. En mi función no funcionó, no conectó y definitivamente no me parece una película que pueda recomendar."
+    ],
+    "cita": "Una cosa es hacer sátira y humor negro, y otra es pensar que decir cualquier barbaridad automáticamente la convierte en comedia.",
+    "veredicto": "Una estupidez de principio a fin. Ruidosa, exagerada y muy pendeja. No la recomiendo."
   }
 ]

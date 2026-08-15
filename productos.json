@@ -3,7 +3,7 @@
   { "nombre": "Vaso Casa Gryffindor Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry3.jpg" ,"badge": "exclusivo", "stock": 0},
   { "nombre": "Vaso Casa Ravenclaw  Harry Potter", "categoria": "Harry Potter", "precio": 650, "imagen": "imgs/hp100.jpeg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso Casa Slytherin  Harry Potter", "categoria": "Harry Potter", "precio": 650, "imagen": "imgs/hp101.jpeg" ,"badge": "exclusivo", "stock": 1},
-  { "nombre": "2 Postales Conmemorativas Harry Potter", "categoria": "Harry Potter", "precio": 300, "imagen": "imgs/harry102.jpeg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "2 Postales Conmemorativas Harry Potter", "categoria": "Harry Potter", "precio": 300, "imagen": "imgs/hp102.jpeg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso Casa Hufflepuff Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry4.jpg" ,"badge": "exclusivo", "stock": 0},
   { "nombre": "Palomera Sombrero Harry Potter", "categoria": "Harry Potter", "precio": 959, "imagen": "imgs/harry5.jpg" ,"badge": "exclusivo", "stock": 0},
 
