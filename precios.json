@@ -1,0 +1,68 @@
+[
+  {
+    "id": "cinepolis",
+    "nombre": "Cinépolis",
+    "ubicacion": "Precios de referencia (sucursal estándar)",
+    "boletos": {
+      "label": "Boleto 2D general",
+      "lunes": 69,
+      "martes": 59,
+      "miercoles": 69,
+      "jueves": 79,
+      "viernes": 95,
+      "sabado": 95,
+      "domingo": 95
+    },
+    "snacks": [
+      { "nombre": "Palomitas", "chica": 65, "mediana": 85, "grande": 105 },
+      { "nombre": "Refresco", "chica": 45, "mediana": 55, "grande": 65 },
+      { "nombre": "ICEE", "chica": 55, "mediana": 65, "grande": 75 },
+      { "nombre": "Agua", "chica": 35, "mediana": null, "grande": null },
+      { "nombre": "Nachos", "chica": 75, "mediana": 95, "grande": null }
+    ]
+  },
+  {
+    "id": "cinemex",
+    "nombre": "Cinemex",
+    "ubicacion": "Precios de referencia (sucursal estándar)",
+    "boletos": {
+      "label": "Boleto 2D general",
+      "lunes": 65,
+      "martes": 55,
+      "miercoles": 65,
+      "jueves": 75,
+      "viernes": 92,
+      "sabado": 92,
+      "domingo": 92
+    },
+    "snacks": [
+      { "nombre": "Palomitas", "chica": 60, "mediana": 80, "grande": 99 },
+      { "nombre": "Refresco", "chica": 42, "mediana": 52, "grande": 62 },
+      { "nombre": "ICEE", "chica": 50, "mediana": 60, "grande": 70 },
+      { "nombre": "Agua", "chica": 32, "mediana": null, "grande": null },
+      { "nombre": "Nachos", "chica": 70, "mediana": 90, "grande": null }
+    ]
+  },
+  {
+    "id": "moviecenter",
+    "nombre": "Movie Center",
+    "ubicacion": "Precios de referencia (sucursal estándar)",
+    "boletos": {
+      "label": "Boleto 2D general",
+      "lunes": 60,
+      "martes": 50,
+      "miercoles": 60,
+      "jueves": 70,
+      "viernes": 85,
+      "sabado": 85,
+      "domingo": 85
+    },
+    "snacks": [
+      { "nombre": "Palomitas", "chica": 55, "mediana": 75, "grande": 90 },
+      { "nombre": "Refresco", "chica": 40, "mediana": 50, "grande": 58 },
+      { "nombre": "ICEE", "chica": 48, "mediana": 58, "grande": 68 },
+      { "nombre": "Agua", "chica": 30, "mediana": null, "grande": null },
+      { "nombre": "Nachos", "chica": 65, "mediana": 85, "grande": null }
+    ]
+  }
+]
