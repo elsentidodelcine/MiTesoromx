@@ -100,33 +100,38 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   function tablaBoletos(complejo) {
-    const b = complejo.boletos || {};
-    const dias = [
-      ['Lun', b.lunes],
-      ['Mar', b.martes],
-      ['Mié', b.miercoles],
-      ['Jue', b.jueves],
-      ['Vie', b.viernes],
-      ['Sáb', b.sabado],
-      ['Dom', b.domingo]
-    ];
+    // Compatibilidad: si viene como objeto viejo, lo convertimos a arreglo
+    let boletos = complejo.boletos || [];
+    if (!Array.isArray(boletos)) {
+      boletos = [boletos];
+    }
+
+    const diasKeys = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
+    const diasLabel = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
+
+    const filas = boletos.map(b => `
+      <tr>
+        <td>${escapeHTML(b.label || 'Boleto')}</td>
+        ${diasKeys.map(dia => {
+          const p = b[dia];
+          return `<td class="${p == null ? 'na' : 'precio'}">${fmt(p)}</td>`;
+        }).join('')}
+      </tr>
+    `).join('');
 
     return `
       <div class="table-block">
-        <h3><span>★</span> ${escapeHTML(b.label || 'Boletos')}</h3>
+        <h3><span>★</span> Boletos</h3>
         <div class="table-scroll">
           <table class="precios-table">
             <thead>
               <tr>
-                <th>Concepto</th>
-                ${dias.map(([d]) => `<th>${d}</th>`).join('')}
+                <th>Tipo</th>
+                ${diasLabel.map(d => `<th>${d}</th>`).join('')}
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>${escapeHTML(b.label || 'Boleto')}</td>
-                ${dias.map(([, p]) => `<td class="precio">${fmt(p)}</td>`).join('')}
-              </tr>
+              ${filas}
             </tbody>
           </table>
         </div>
@@ -143,6 +148,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         <td class="${s.chica == null ? 'na' : 'precio'}">${fmt(s.chica)}</td>
         <td class="${s.mediana == null ? 'na' : 'precio'}">${fmt(s.mediana)}</td>
         <td class="${s.grande == null ? 'na' : 'precio'}">${fmt(s.grande)}</td>
+        <td class="${s.jumbo == null ? 'na' : 'precio'}">${fmt(s.jumbo)}</td>
       </tr>
     `).join('');
 
@@ -157,9 +163,12 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <th>Chica</th>
                 <th>Mediana</th>
                 <th>Grande</th>
+                <th>Jumbo</th>
               </tr>
             </thead>
-            <tbody>${filas}</tbody>
+            <tbody>
+              ${filas}
+            </tbody>
           </table>
         </div>
       </div>

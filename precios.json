@@ -226,17 +226,46 @@
       {
         "id": "movie-center",
         "nombre": "Movie Center",
-        "boletos": {
-          "label": "Boleto 2D general",
-          "lunes": 60, "martes": 50, "miercoles": 60, "jueves": 70,
-          "viernes": 85, "sabado": 85, "domingo": 85
-        },
+        "boletos": [
+          {
+            "label": "Boleto 2D general",
+            "lunes": 59,
+            "martes": 59,
+            "miercoles": 49,
+            "jueves": 59,
+            "viernes": 59,
+            "sabado": 59,
+            "domingo": 59
+          },
+          {
+            "label": "Boleto 3D",
+            "lunes": 0,
+            "martes": 0,
+            "miercoles": 0,
+            "jueves": 0,
+            "viernes": 0,
+            "sabado": 0,
+            "domingo": 0
+          },
+          {
+            "label": "Boleto niño",
+            "lunes": 0,
+            "martes": 0,
+            "miercoles": 0,
+            "jueves": 0,
+            "viernes": 0,
+            "sabado": 0,
+            "domingo": 0
+          }
+        ],
         "snacks": [
-          { "nombre": "Palomitas", "chica": 55, "mediana": 75, "grande": 90 },
-          { "nombre": "Refresco", "chica": 40, "mediana": 50, "grande": 58 },
-          { "nombre": "ICEE", "chica": 48, "mediana": 58, "grande": 68 },
-          { "nombre": "Agua", "chica": 30, "mediana": null, "grande": null },
-          { "nombre": "Nachos", "chica": 65, "mediana": 85, "grande": null }
+          { "nombre": "Palomitas", "chica": 50, "mediana": 75, "grande": 82 , "jumbo":  90},
+          { "nombre": "Cambio de Sabor", "chica": 15, "mediana": 15, "grande": 15 , "jumbo":  15},
+          { "nombre": "Refresco", "chica": 55, "mediana": 66, "grande": 76 , "jumbo":  82},
+          { "nombre": "ICEE", "chica": null, "mediana": null, "grande": 102 , "jumbo":  null},
+          { "nombre": "Agua", "chica": null, "mediana": null, "grande": 38 , "jumbo":  null},
+          { "nombre": "Nachos", "chica": null, "mediana": null, "grande": 62 , "jumbo":  null},
+          { "nombre": "HotDog", "chica": null, "mediana": null, "grande": 62 , "jumbo":  null}
         ]
       }
     ]
