@@ -8,7 +8,7 @@
         "nombre": "San Francisco",
         "boletos": [
           {
-            "label": "Boleto 2D general",
+            "label": "Boleto 2D General",
             "lunes": 54,
             "martes": 54,
             "miercoles": 42,
@@ -18,7 +18,7 @@
             "domingo": 54
           },
           {
-            "label": "Boleto 3D",
+            "label": "Boleto 3D General",
             "lunes": 67,
             "martes": 67,
             "miercoles": 55,
@@ -28,7 +28,17 @@
             "domingo": 67
           },
           {
-            "label": "Boleto niño",
+            "label": "Club Cinepolis",
+            "lunes": 30,
+            "martes": 30,
+            "miercoles": 30,
+            "jueves": 30,
+            "viernes": 30,
+            "sabado": 30,
+            "domingo": 30
+          },
+          {
+            "label": "Boleto Niño",
             "lunes": 43,
             "martes": 43,
             "miercoles": 42,
@@ -40,12 +50,13 @@
         ],
         "snacks": [
           { "nombre": "Palomitas", "chica": 65, "mediana": 73, "grande": 79 , "jumbo":  86, "parallevar":  99},
-          { "nombre": "Cambio de Sabor", "chica": 17, "mediana": 22, "grande": 15 , "jumbo":  29, "parallevar":  29},
-          { "nombre": "Refresco", "chica": 55, "mediana": 65, "grande": 76 , "jumbo":  82},
-          { "nombre": "ICEE", "chica": null, "mediana": null, "grande": 99 , "jumbo":  114},
-          { "nombre": "Agua", "chica": 34, "mediana": null, "grande": 41 , "jumbo":  null},
-          { "nombre": "Nachos", "chica": 63, "mediana": null, "grande": 78 , "jumbo":  null},
-          { "nombre": "HotDog", "chica": 62, "mediana": null, "grande": null , "jumbo":  74}
+          { "nombre": "Cambio de Sabor", "chica": 17, "mediana": 22, "grande": 22 , "jumbo":  29,  "parallevar":  29},
+          { "nombre": "Refresco", "chica": 55, "mediana": 65, "grande": 76 , "jumbo":  82,  "parallevar":  null},
+          { "nombre": "ICEE", "chica": null, "mediana": null, "grande": 99 , "jumbo":  114,  "parallevar":  null},
+          { "nombre": "Agua", "chica": 34, "mediana": null, "grande": 41 , "jumbo":  null, "parallevar":  null},
+          { "nombre": "Nachos", "chica": 63, "mediana": null, "grande": 78 , "jumbo":  98, "parallevar":  null},
+          { "nombre": "HotDog", "chica": 62, "mediana": null, "grande": null , "jumbo":  74, "parallevar":  null},
+          { "nombre": "Corneto", "chica": null, "mediana": null, "grande": 47 , "jumbo":  null, "parallevar":  null}
         ]
       },
       {
@@ -257,7 +268,7 @@
         "nombre": "Movie Center",
         "boletos": [
           {
-            "label": "Boleto 2D general",
+            "label": "Boleto 2D General",
             "lunes": 59,
             "martes": 59,
             "miercoles": 49,
@@ -267,7 +278,7 @@
             "domingo": 59
           },
           {
-            "label": "Boleto 3D",
+            "label": "Boleto 3D General",
             "lunes": 0,
             "martes": 0,
             "miercoles": 0,
@@ -277,7 +288,7 @@
             "domingo": 0
           },
           {
-            "label": "Boleto niño",
+            "label": "Boleto Niño",
             "lunes": 0,
             "martes": 0,
             "miercoles": 0,
@@ -285,6 +296,16 @@
             "viernes": 0,
             "sabado": 0,
             "domingo": 0
+          },
+          {
+            "label": "Tarjeta Club",
+            "lunes": 45,
+            "martes": 45,
+            "miercoles": 45,
+            "jueves": 45,
+            "viernes": 45,
+            "sabado": 45,
+            "domingo": 45
           }
         ],
         "snacks": [
@@ -293,7 +314,7 @@
           { "nombre": "Refresco", "chica": 57, "mediana": 68, "grande": 78 , "jumbo":  85,  "parallevar":  null},
           { "nombre": "ICEE", "chica": null, "mediana": null, "grande": 103 , "jumbo":  null,  "parallevar":  null},
           { "nombre": "Agua", "chica": 33, "mediana": null, "grande": 39 , "jumbo":  null, "parallevar":  null},
-          { "nombre": "Nachos", "chica": null, "mediana": null, "grande": 63 , "jumbo":  "Doritos 80", "parallevar":  null},
+          { "nombre": "Nachos", "chica": null, "mediana": null, "grande": 63 , "jumbo":  80, "parallevar":  null},
           { "nombre": "HotDog", "chica": null, "mediana": null, "grande": 63 , "jumbo":  null, "parallevar":  null},
           { "nombre": "Corneto", "chica": null, "mediana": null, "grande": 62 , "jumbo":  null, "parallevar":  null}
         ]
