@@ -313,6 +313,86 @@
   border-bottom: 1px solid var(--border);
   margin: 0;
 }
+
+        .comparativa-section {
+  width: min(var(--max), calc(100% - 48px));
+  margin: 40px auto 20px;
+}
+
+.comparativa-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.comparativa-header h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  letter-spacing: -.02em;
+  margin-bottom: 8px;
+}
+
+.comparativa-header p {
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.ciudad-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.ciudad-tab {
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .22s ease;
+}
+
+.ciudad-tab:hover { color: #fff; border-color: rgba(255,255,255,.15); }
+
+.ciudad-tab.active {
+  background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+  border-color: transparent;
+  color: #111;
+}
+
+.precios-divider {
+  width: min(var(--max), calc(100% - 48px));
+  margin: 40px auto;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+.comp-winner {
+  margin: 0 0 18px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(201,162,39,.25);
+  background: rgba(201,162,39,.08);
+  color: #e8e8ec;
+  font-size: .9rem;
+  text-align: center;
+}
+
+.comp-winner strong {
+  color: var(--gold);
+}
+
+.comp-table .mejor {
+  background: rgba(201,162,39,.12);
+}
+
+.comp-table .mejor .precio {
+  color: #e8c85a;
+}
     </style>
 </head>
 <body>
@@ -345,15 +425,35 @@
             <h1>Boletos & <em>snacks</em></h1>
             <p>
                 Compara precios de Cinépolis, Cinemex y Movie Center.
-                Boletos de lunes a domingo y lo más común del dulcero.
+                Boletos de lunes a domingo y lo más común de la dulcería.
             </p>
         </div>
     </section>
 
     <p class="precios-note">
-        Precios aproximados y sujetos a cambio según sucursal, promoción o función especial (3D, VIP, IMAX, etc.).
-        Verifica siempre en taquilla o app oficial.
+        Precios confirmados y sujetos a cambio según sucursal, promoción o función especial (3D, VIP, IMAX, etc.).
     </p>
+
+    <div class="comparativa-section">
+        <div class="comparativa-header">
+            <h2>Comparativa por ciudad</h2>
+            <p>¿En qué cine gastas menos? Boleto 2D adulto + palomitas grande + refresco grande.</p>
+        </div>
+
+        <div class="ciudad-tabs" id="ciudad-tabs">
+            <button class="ciudad-tab active" data-ciudad="sfr">San Francisco del Rincón</button>
+            <button class="ciudad-tab" data-ciudad="leon">León</button>
+            <button class="ciudad-tab" data-ciudad="leon-cadenas">León · Cinépolis vs Cinemex</button>
+        </div>
+
+        <div id="comparativa-container">
+            <div class="loading-state">Cargando comparativa...</div>
+        </div>
+    </div>
+
+    <hr class="precios-divider">
+
+    <!-- aquí siguen tus tabs de cadena / complejo individuales -->
 
     <div class="cine-tabs" id="cine-tabs">
         <button class="cine-tab active" data-cadena="cinepolis">Cinépolis</button>
