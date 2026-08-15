@@ -252,6 +252,53 @@
             font-size: .82rem;
           }
         }
+
+        .complejo-filter {
+  width: min(var(--max), calc(100% - 48px));
+  margin: 0 auto 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.complejo-filter label {
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: .04em;
+}
+
+.complejo-filter select {
+  appearance: none;
+  -webkit-appearance: none;
+  min-width: 260px;
+  max-width: 100%;
+  padding: 10px 40px 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.04) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%239a9aa6' d='M1 1l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 14px center;
+  color: #e8e8ec;
+  font-size: .82rem;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+}
+
+.complejo-filter select:hover,
+.complejo-filter select:focus {
+  border-color: rgba(255,255,255,.18);
+}
+
+.complejo-filter select option {
+  background: #121218;
+  color: #e8e8ec;
+}
+
+.complejo-filter.hidden {
+  display: none;
+}
     </style>
 </head>
 <body>
@@ -295,9 +342,14 @@
     </p>
 
     <div class="cine-tabs" id="cine-tabs">
-        <button class="cine-tab active" data-cine="cinepolis">Cinépolis</button>
-        <button class="cine-tab" data-cine="cinemex">Cinemex</button>
-        <button class="cine-tab" data-cine="moviecenter">Movie Center</button>
+        <button class="cine-tab active" data-cadena="cinepolis">Cinépolis</button>
+        <button class="cine-tab" data-cadena="cinemex">Cinemex</button>
+        <button class="cine-tab" data-cadena="moviecenter">Movie Center</button>
+    </div>
+
+    <div class="complejo-filter" id="complejo-filter-wrap">
+        <label for="filtro-complejo">Complejo:</label>
+        <select id="filtro-complejo"></select>
     </div>
 
     <div id="precios-container">

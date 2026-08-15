@@ -1,16 +1,20 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const container = document.getElementById('precios-container');
   const tabs = document.getElementById('cine-tabs');
+  const selectComplejo = document.getElementById('filtro-complejo');
+  const complejoWrap = document.getElementById('complejo-filter-wrap');
 
-  let cines = [];
-  let cineActivo = 'cinepolis';
+  let data = [];
+  let cadenaActiva = 'cinepolis';
+  let complejoActivo = null;
 
   try {
     const response = await fetch('precios.json');
     if (!response.ok) throw new Error('No se pudo cargar precios.json');
-    cines = await response.json();
+    data = await response.json();
 
-    renderTodo();
+    cargarComplejos();
+    render();
   } catch (error) {
     console.error(error);
     container.innerHTML = `
@@ -20,6 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       </div>`;
   }
 
+  // Tabs de cadena
   if (tabs) {
     tabs.addEventListener('click', (e) => {
       const btn = e.target.closest('.cine-tab');
@@ -28,36 +33,74 @@ document.addEventListener('DOMContentLoaded', async () => {
       tabs.querySelectorAll('.cine-tab').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      cineActivo = btn.dataset.cine;
-      mostrarSeccion(cineActivo);
+      cadenaActiva = btn.dataset.cadena;
+      cargarComplejos();
+      render();
     });
   }
 
-  function renderTodo() {
-    container.innerHTML = cines.map((cine, i) => {
-      const active = cine.id === cineActivo ? 'active' : '';
-      return `
-        <section class="cine-section ${active}" id="section-${escapeHTML(cine.id)}" data-cine="${escapeHTML(cine.id)}">
-          <div class="cine-header">
-            <h2>${escapeHTML(cine.nombre)}</h2>
-            <span class="ubicacion">${escapeHTML(cine.ubicacion || '')}</span>
-          </div>
-
-          ${tablaBoletos(cine)}
-          ${tablaSnacks(cine)}
-        </section>
-      `;
-    }).join('');
-  }
-
-  function mostrarSeccion(id) {
-    document.querySelectorAll('.cine-section').forEach(sec => {
-      sec.classList.toggle('active', sec.dataset.cine === id);
+  // Select de complejo
+  if (selectComplejo) {
+    selectComplejo.addEventListener('change', () => {
+      complejoActivo = selectComplejo.value;
+      render();
     });
   }
 
-  function tablaBoletos(cine) {
-    const b = cine.boletos || {};
+  function getCadena() {
+    return data.find(c => c.cadena === cadenaActiva);
+  }
+
+  function getComplejo() {
+    const cadena = getCadena();
+    if (!cadena) return null;
+    return (cadena.complejos || []).find(c => c.id === complejoActivo) || cadena.complejos[0];
+  }
+
+  function cargarComplejos() {
+    const cadena = getCadena();
+    if (!cadena || !selectComplejo) return;
+
+    const complejos = cadena.complejos || [];
+
+    // Si solo hay 1 complejo (Movie Center), puedes ocultar el select
+    if (complejos.length <= 1) {
+      complejoWrap?.classList.add('hidden');
+    } else {
+      complejoWrap?.classList.remove('hidden');
+    }
+
+    selectComplejo.innerHTML = complejos
+      .map(c => `<option value="${escapeHTML(c.id)}">${escapeHTML(c.nombre)}</option>`)
+      .join('');
+
+    complejoActivo = complejos[0]?.id || null;
+    selectComplejo.value = complejoActivo;
+  }
+
+  function render() {
+    const cadena = getCadena();
+    const complejo = getComplejo();
+
+    if (!cadena || !complejo) {
+      container.innerHTML = `<div class="error-state">No hay datos para este complejo.</div>`;
+      return;
+    }
+
+    container.innerHTML = `
+      <section class="cine-section active">
+        <div class="cine-header">
+          <h2>${escapeHTML(cadena.nombreCadena)} — ${escapeHTML(complejo.nombre)}</h2>
+          <span class="ubicacion">Precios de referencia</span>
+        </div>
+        ${tablaBoletos(complejo)}
+        ${tablaSnacks(complejo)}
+      </section>
+    `;
+  }
+
+  function tablaBoletos(complejo) {
+    const b = complejo.boletos || {};
     const dias = [
       ['Lun', b.lunes],
       ['Mar', b.martes],
@@ -81,7 +124,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             </thead>
             <tbody>
               <tr>
-                <td>Boleto 2D</td>
+                <td>${escapeHTML(b.label || 'Boleto')}</td>
                 ${dias.map(([, p]) => `<td class="precio">${fmt(p)}</td>`).join('')}
               </tr>
             </tbody>
@@ -91,8 +134,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     `;
   }
 
-  function tablaSnacks(cine) {
-    const snacks = cine.snacks || [];
+  function tablaSnacks(complejo) {
+    const snacks = complejo.snacks || [];
 
     const filas = snacks.map(s => `
       <tr>
@@ -116,9 +159,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <th>Grande</th>
               </tr>
             </thead>
-            <tbody>
-              ${filas}
-            </tbody>
+            <tbody>${filas}</tbody>
           </table>
         </div>
       </div>
