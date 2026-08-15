@@ -288,13 +288,14 @@
           }
         ],
         "snacks": [
-          { "nombre": "Palomitas", "chica": 50, "mediana": 75, "grande": 82 , "jumbo":  90},
-          { "nombre": "Cambio de Sabor", "chica": 15, "mediana": 15, "grande": 15 , "jumbo":  15},
-          { "nombre": "Refresco", "chica": 55, "mediana": 66, "grande": 76 , "jumbo":  82},
-          { "nombre": "ICEE", "chica": null, "mediana": null, "grande": 102 , "jumbo":  null},
-          { "nombre": "Agua", "chica": null, "mediana": null, "grande": 38 , "jumbo":  null},
-          { "nombre": "Nachos", "chica": null, "mediana": null, "grande": 62 , "jumbo":  null},
-          { "nombre": "HotDog", "chica": null, "mediana": null, "grande": 62 , "jumbo":  null}
+          { "nombre": "Palomitas", "chica": 50, "mediana": 76, "grande": 83 , "jumbo":  92, "parallevar":  103},
+          { "nombre": "Cambio de Sabor", "chica": 15, "mediana": 15, "grande": 15 , "jumbo":  15,  "parallevar":  15},
+          { "nombre": "Refresco", "chica": 57, "mediana": 68, "grande": 78 , "jumbo":  85,  "parallevar":  null},
+          { "nombre": "ICEE", "chica": null, "mediana": null, "grande": 103 , "jumbo":  null,  "parallevar":  null},
+          { "nombre": "Agua", "chica": 33, "mediana": null, "grande": 39 , "jumbo":  null, "parallevar":  null},
+          { "nombre": "Nachos", "chica": null, "mediana": null, "grande": 63 , "jumbo":  "Doritos 80", "parallevar":  null},
+          { "nombre": "HotDog", "chica": null, "mediana": null, "grande": 63 , "jumbo":  null, "parallevar":  null},
+          { "nombre": "Corneto", "chica": null, "mediana": null, "grande": 62 , "jumbo":  null, "parallevar":  null}
         ]
       }
     ]
