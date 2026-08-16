@@ -54,11 +54,15 @@
     "fecha": "2026-09-17",
     "fechaTexto": "Jueves 17 de Septiembre 2026",
     "poster": "imgs/estrenos/transformers.jpg",
-    "cines": ["Cinemex"],
+    "cines": ["Cinemex", "Cinepolis"],
     "links": [
       {
         "cine": "Cinemex",
         "url": "https://cinemex.com/pelicula/72428/transformers-la-pelicula"
+      },
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
       }
     ],
     "nota": "Preventa ya disponible"
@@ -174,6 +178,74 @@
     "links": [
       {
         "cine": "Cinépolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Proximamente"
+  },
+  {
+    "id": "linkin",
+    "titulo": "Linkin Park: Unshatter En Cines",
+    "tipo": "preventa",
+    "fecha": "2026-09-30",
+    "fechaTexto": "Proximamente",
+    "poster": "imgs/estrenos/linkin.jpg",
+    "cines": ["Cinemex", "Cinepolis"],
+    "links": [
+      {
+        "cine": "Cinemex",
+        "url": "https://cinemex.com/pelicula/72456/linkin-park-unshatter-en-cines"
+      },
+      {
+        "cine": "Cinépolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Proximamente"
+  },
+  {
+    "id": "puella1",
+    "titulo": "Puella Magi Madoka Mágica: La Película Parte 1",
+    "tipo": "preventa",
+    "fecha": "2026-08-20",
+    "fechaTexto": "Proximamente",
+    "poster": "imgs/estrenos/puella1.jpg",
+    "cines": ["Cinepolis"],
+    "links": [
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Proximamente"
+  },
+  {
+    "id": "puella2",
+    "titulo": "Puella Magi Madoka Mágica: La Película Parte 2",
+    "tipo": "preventa",
+    "fecha": "2026-08-20",
+    "fechaTexto": "Proximamente",
+    "poster": "imgs/estrenos/puella2.jpg",
+    "cines": ["Cinepolis"],
+    "links": [
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Proximamente"
+  },
+  {
+    "id": "hombres",
+    "titulo": "LOS MEJORES AÑOS DE NUESTRA VIDA",
+    "tipo": "preventa",
+    "fecha": "2026-09-03",
+    "fechaTexto": "Proximamente",
+    "poster": "imgs/estrenos/hombres.jpg",
+    "cines": ["Cinepolis"],
+    "links": [
+      {
+        "cine": "Cinepolis",
         "url": "https://www.cinepolis.com"
       }
     ],
