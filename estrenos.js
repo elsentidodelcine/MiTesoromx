@@ -183,6 +183,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
           <div class="estreno-cines">
             ${cinesHTML}
+            <br>
+            <a class="btn-precios" href="precios.html">Ver precios en cines</a>
           </div>
 
           <div class="estreno-links">

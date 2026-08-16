@@ -367,6 +367,142 @@
           border: none;
           border-top: 1px solid var(--border);
         }
+
+        /* FAB */
+        .fab-sim {
+          position: fixed;
+          right: 18px;
+          bottom: 18px;
+          z-index: 90;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 14px 18px;
+          border-radius: 999px;
+          border: none;
+          background: linear-gradient(135deg, var(--red), var(--red-dark));
+          color: #fff;
+          font-size: .85rem;
+          font-weight: 700;
+          box-shadow: 0 12px 30px rgba(196,30,58,.35);
+          cursor: pointer;
+        }
+        .fab-sim:hover { filter: brightness(1.08); }
+
+        .sim-panel {
+          position: fixed;
+          right: 18px;
+          bottom: 78px;
+          z-index: 91;
+          width: min(360px, calc(100% - 36px));
+          border-radius: 16px;
+          border: 1px solid rgba(255,255,255,.12);
+          background: #0c0c10;
+          box-shadow: 0 20px 50px rgba(0,0,0,.55);
+          padding: 16px;
+          display: none;
+        }
+        .sim-panel.open { display: block; }
+        .sim-panel-head {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 8px;
+        }
+        .sim-panel-head h3 {
+          font-family: 'Playfair Display', Georgia, serif;
+          color: #fff;
+          font-size: 1.15rem;
+          margin: 0;
+        }
+        .sim-close {
+          background: transparent;
+          border: none;
+          color: #c8c8d0;
+          font-size: 1.4rem;
+          cursor: pointer;
+          line-height: 1;
+        }
+        .sim-panel-hint {
+          color: var(--muted);
+          font-size: .8rem;
+          margin-bottom: 12px;
+        }
+        .btn-copy {
+          width: 100%;
+          padding: 12px 16px;
+          border-radius: 999px;
+          border: 1px solid rgba(201,162,39,.35);
+          background: rgba(201,162,39,.12);
+          color: var(--gold);
+          font-weight: 700;
+          font-size: .82rem;
+          cursor: pointer;
+        }
+        .btn-copy:hover { background: rgba(201,162,39,.2); }
+        .copy-feedback {
+          text-align: center;
+          margin-top: 8px;
+          color: #7ddea0;
+          font-size: .8rem;
+        }
+
+        /* Badges */
+        .badge {
+          display: inline-block;
+          margin-left: 8px;
+          padding: 3px 9px;
+          border-radius: 999px;
+          font-size: .65rem;
+          font-weight: 700;
+          letter-spacing: .04em;
+          text-transform: uppercase;
+          vertical-align: middle;
+        }
+        .badge-economico {
+          background: rgba(125, 222, 160, .12);
+          color: #7ddea0;
+          border: 1px solid rgba(125, 222, 160, .25);
+        }
+        .badge-premium {
+          background: rgba(201, 162, 39, .12);
+          color: var(--gold);
+          border: 1px solid rgba(201, 162, 39, .3);
+        }
+        .badge-sin-dulcero {
+          background: rgba(196, 30, 58, .12);
+          color: #ff8a9a;
+          border: 1px solid rgba(196, 30, 58, .3);
+        }
+
+        /* Promos */
+        .promos-section {
+          width: min(var(--max), calc(100% - 48px));
+          margin: 24px auto 0;
+        }
+        .section-title-mini {
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: 1.2rem;
+          color: #fff;
+          margin-bottom: 12px;
+          text-align: center;
+        }
+        .promo-card {
+          margin-bottom: 10px;
+          padding: 14px 16px;
+          border-radius: 12px;
+          border: 1px dashed rgba(196,30,58,.4);
+          background: rgba(196,30,58,.08);
+          color: #e8e8ec;
+          font-size: .88rem;
+        }
+        .promo-card strong { color: #ff6b81; }
+        .promo-card small {
+          display: block;
+          margin-top: 4px;
+          color: var(--muted);
+          font-size: .75rem;
+        }
     </style>
 </head>
 <body>
@@ -411,6 +547,11 @@
     <p class="precios-note" id="precios-actualizado">
         Precios sujetos a cambio según sucursal y promociones.
     </p>
+
+    <section class="promos-section" id="promos-section">
+        <h2 class="section-title-mini">Promos del momento</h2>
+        <div id="promos-list"></div>
+    </section>
 
     <!-- HERRAMIENTAS -->
     <section class="herramientas-precios">
@@ -535,6 +676,21 @@
         <div class="loading-state">Cargando precios...</div>
     </div>
 </main>
+
+<!-- FAB Arma tu salida -->
+<button type="button" class="fab-sim" id="fab-sim" aria-label="Abrir Arma tu salida">
+    ✦ Arma tu salida
+</button>
+
+<div class="sim-panel" id="sim-panel" role="dialog" aria-label="Arma tu salida">
+    <div class="sim-panel-head">
+        <h3>Arma tu salida</h3>
+        <button type="button" class="sim-close" id="sim-close" aria-label="Cerrar">×</button>
+    </div>
+    <p class="sim-panel-hint">Usa los controles de arriba o ajusta aquí y copia el resultado.</p>
+    <button type="button" class="btn-copy" id="btn-copy-resumen">Copiar resumen</button>
+    <div id="sim-copy-feedback" class="copy-feedback" hidden>Copiado ✓</div>
+</div>
 
 <footer class="site-footer">
     <div class="footer-inner">

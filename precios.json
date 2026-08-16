@@ -1,5 +1,19 @@
 {
   "actualizado": "2026-08-15",
+  "promos": [
+    {
+      "titulo": "Miércoles de ahorro",
+      "detalle": "En varios Cinépolis el boleto 2D baja (ej. San Francisco $42).",
+      "vigencia": "Todos los miércoles",
+      "cadenas": ["cinepolis"]
+    },
+    {
+      "titulo": "Club Cinépolis / Tarjeta Club",
+      "detalle": "Activa el check de membresía en los filtros para ver precios con club.",
+      "vigencia": "Con membresía activa",
+      "cadenas": ["cinepolis", "moviecenter"]
+    }
+  ],
   "cadenas": [
     {
       "cadena": "cinepolis",
@@ -99,14 +113,20 @@
           "zona": "León",
           "categoria": "economico",
           "boletos": [
-            { "label": "Boleto 2D general", "lunes": 69, "martes": 59, "miercoles": 69, "jueves": 79, "viernes": 95, "sabado": 95, "domingo": 95 }
+            { "label": "Boleto 2D General", "lunes": 89, "martes": 89, "miercoles": 70, "jueves": 89, "viernes": 89, "sabado": 89, "domingo": 89 },
+            { "label": "Boleto 3D General", "lunes": 100, "martes": 100, "miercoles": 80, "jueves": 100, "viernes": 100, "sabado": 100, "domingo": 100 },
+            { "label": "Boleto Niño", "lunes": 71, "martes": 71, "miercoles": 70, "jueves": 71, "viernes": 71, "sabado": 71, "domingo": 71 },
+            { "label": "Tarjeta Club", "lunes": 30, "martes": 30, "miercoles": 30, "jueves": 30, "viernes": 30, "sabado": 30, "domingo": 30 }
           ],
           "snacks": [
-            { "nombre": "Palomitas", "chica": 65, "mediana": 85, "grande": 105 },
-            { "nombre": "Refresco", "chica": 45, "mediana": 55, "grande": 65 },
-            { "nombre": "ICEE", "chica": 55, "mediana": 65, "grande": 75 },
-            { "nombre": "Agua", "chica": 35, "mediana": null, "grande": null },
-            { "nombre": "Nachos", "chica": 75, "mediana": 95, "grande": null }
+            { "nombre": "Palomitas", "chica": 85, "mediana": 90, "grande": 99, "jumbo": 109, "parallevar": 122 },
+            { "nombre": "Cambio de Sabor", "chica": 17, "mediana": 22, "grande": 22, "jumbo": 29, "parallevar": 29 },
+            { "nombre": "Refresco", "chica": 74, "mediana": 84, "grande": 96, "jumbo": 102, "parallevar": null },
+            { "nombre": "ICEE", "chica": null, "mediana": null, "grande": 115, "jumbo": 125, "parallevar": null },
+            { "nombre": "Agua", "chica": 41, "mediana": null, "grande": 44, "jumbo": null, "parallevar": null },
+            { "nombre": "Nachos", "chica": 87, "mediana": null, "grande": 102, "jumbo": 122, "parallevar": null },
+            { "nombre": "HotDog", "chica": 82, "mediana": null, "grande": 94, "jumbo": null, "parallevar": null },
+            { "nombre": "Corneto", "chica": null, "mediana": null, "grande": 55, "jumbo": null, "parallevar": null }
           ]
         },
         {
@@ -115,14 +135,21 @@
           "zona": "Altacia",
           "categoria": "economico",
           "boletos": [
-            { "label": "Boleto 2D general", "lunes": 75, "martes": 65, "miercoles": 75, "jueves": 85, "viernes": 105, "sabado": 105, "domingo": 105 }
+            { "label": "Boleto 2D General", "lunes": 94, "martes": 94, "miercoles": 73, "jueves": 94, "viernes": 94, "sabado": 94, "domingo": 94 },
+            { "label": "Boleto 3D General", "lunes": 122, "martes": 122, "miercoles": 112, "jueves": 122, "viernes": 122, "sabado": 122, "domingo": 122 },
+            { "label": "Boleto Niño", "lunes": 75, "martes": 75, "miercoles": 73, "jueves": 75, "viernes": 75, "sabado": 75, "domingo": 75 },
+            { "label": "Macro XE", "lunes": 112, "martes": 112, "miercoles": 102, "jueves": 112, "viernes": 112, "sabado": 112, "domingo": 112 },
+            { "label": "4DX", "lunes": 177, "martes": 177, "miercoles": 142, "jueves": 177, "viernes": 177, "sabado": 177, "domingo": 177 }
           ],
           "snacks": [
-            { "nombre": "Palomitas", "chica": 70, "mediana": 90, "grande": 110 },
-            { "nombre": "Refresco", "chica": 48, "mediana": 58, "grande": 68 },
-            { "nombre": "ICEE", "chica": 58, "mediana": 68, "grande": 78 },
-            { "nombre": "Agua", "chica": 38, "mediana": null, "grande": null },
-            { "nombre": "Nachos", "chica": 80, "mediana": 100, "grande": null }
+            { "nombre": "Palomitas", "chica": 85, "mediana": 90, "grande": 99, "jumbo": 109, "parallevar": 122 },
+            { "nombre": "Cambio de Sabor", "chica": 17, "mediana": 22, "grande": 22, "jumbo": 29, "parallevar": 29 },
+            { "nombre": "Refresco", "chica": 79, "mediana": 84, "grande": 96, "jumbo": 102, "parallevar": null },
+            { "nombre": "ICEE", "chica": null, "mediana": null, "grande": 115, "jumbo": 130, "parallevar": null },
+            { "nombre": "Agua", "chica": 41, "mediana": null, "grande": 44, "jumbo": null, "parallevar": null },
+            { "nombre": "Nachos", "chica": 87, "mediana": null, "grande": 102, "jumbo": 122, "parallevar": null },
+            { "nombre": "HotDog", "chica": 82, "mediana": null, "grande": 94, "jumbo": null, "parallevar": null },
+            { "nombre": "Corneto", "chica": null, "mediana": null, "grande": 55, "jumbo": null, "parallevar": null }
           ]
         },
         {

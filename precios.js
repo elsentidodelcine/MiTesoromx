@@ -62,6 +62,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     actualizarNotaFecha();
     llenarVersusSelects();
     refreshTools();
+    renderPromos();
+    bindFabYCopia();
   } catch (error) {
     console.error(error);
     if (container) {
@@ -73,12 +75,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
+  let promos = [];
+
   function normalizarData(raw) {
     if (Array.isArray(raw)) {
       metaActualizado = null;
+      promos = [];
       return raw;
     }
     metaActualizado = raw.actualizado || null;
+    promos = Array.isArray(raw.promos) ? raw.promos : [];
     return raw.cadenas || [];
   }
 
@@ -144,19 +150,34 @@ document.addEventListener('DOMContentLoaded', async () => {
   function render() {
     const cadena = getCadena();
     const complejo = getComplejo();
-
     if (!cadena || !complejo) {
       container.innerHTML = `<div class="error-state">No hay datos para este complejo.</div>`;
       return;
     }
 
-    // Sin "compra típica"
+    const cat = complejo.categoria || (/vip|platino/i.test(complejo.nombre) ? 'premium' : 'economico');
+    const badgeCat = cat === 'premium'
+      ? '<span class="badge badge-premium">VIP / Platino</span>'
+      : '<span class="badge badge-economico">Económico</span>';
+    const badgeDulcero = tieneDulcero(complejo)
+      ? ''
+      : '<span class="badge badge-sin-dulcero">Sin dulcero cargado</span>';
+
     container.innerHTML = `
       <section class="cine-section active">
         <div class="cine-header">
-          <h2>${escapeHTML(cadena.nombreCadena)} — ${escapeHTML(complejo.nombre)}</h2>
+          <h2>
+            ${escapeHTML(cadena.nombreCadena)} — ${escapeHTML(complejo.nombre)}
+            ${badgeCat}
+            ${badgeDulcero}
+          </h2>
           <span class="ubicacion">${escapeHTML(complejo.zona || 'Precios de referencia')}</span>
         </div>
+        ${!tieneDulcero(complejo) ? `
+          <div class="tip-box" style="margin-bottom:18px">
+            Este complejo no tiene precios de dulcero en la base.
+            El ranking en modo “Boleto + dulcero” lo omite o marca “—”.
+          </div>` : ''}
         ${tablaBoletos(complejo)}
         ${tablaSnacks(complejo)}
       </section>
@@ -694,3 +715,105 @@ document.addEventListener('DOMContentLoaded', async () => {
       .replace(/'/g, '&#39;');
   }
 });
+
+function tieneDulcero(complejo) {
+  const snacks = complejo.snacks || [];
+  const pal = snacks.find(s => /palomitas/i.test(s.nombre || ''));
+  const ref = snacks.find(s => /refresco/i.test(s.nombre || ''));
+  return (pal?.grande != null) && (ref?.grande != null);
+}
+
+function renderPromos() {
+  const box = document.getElementById('promos-list');
+  if (!box) return;
+  if (!promos.length) {
+    box.innerHTML = `<p style="text-align:center;color:var(--muted);font-size:.85rem">No hay promos cargadas.</p>`;
+    return;
+  }
+  box.innerHTML = promos.map(p => `
+    <div class="promo-card">
+      <strong>${escapeHTML(p.titulo || 'Promo')}</strong>
+      <div>${escapeHTML(p.detalle || '')}</div>
+      ${p.vigencia ? `<small>${escapeHTML(p.vigencia)}</small>` : ''}
+    </div>
+  `).join('');
+}
+
+function bindFabYCopia() {
+  const fab = document.getElementById('fab-sim');
+  const panel = document.getElementById('sim-panel');
+  const close = document.getElementById('sim-close');
+  const btnCopy = document.getElementById('btn-copy-resumen');
+
+  fab?.addEventListener('click', () => {
+    // Abre panel y hace scroll al simulador
+    panel?.classList.toggle('open');
+    document.querySelector('.simulador')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  close?.addEventListener('click', () => panel?.classList.remove('open'));
+
+  btnCopy?.addEventListener('click', async () => {
+    const texto = construirResumen();
+    try {
+      await navigator.clipboard.writeText(texto);
+      const fb = document.getElementById('sim-copy-feedback');
+      if (fb) {
+        fb.hidden = false;
+        setTimeout(() => { fb.hidden = true; }, 1800);
+      }
+    } catch {
+      prompt('Copia este resumen:', texto);
+    }
+  });
+}
+
+function construirResumen() {
+  const ciudadKey = document.getElementById('sim-ciudad')?.value || 'sfr';
+  const adultos = Number(document.getElementById('sim-adultos')?.value || 0);
+  const ninos = Number(document.getElementById('sim-ninos')?.value || 0);
+  const dia = filtroDia === 'promedio' ? 'viernes' : filtroDia;
+  const ciudadNombre = CIUDADES[ciudadKey]?.nombre || ciudadKey;
+
+  // Toma el más barato del simulador actual
+  const lista = filtrarLista(CIUDADES[ciudadKey]?.complejos || []);
+  let mejor = null;
+
+  lista.forEach(c => {
+    let total = 0;
+    let ok = true;
+    for (let i = 0; i < adultos; i++) {
+      const b = precioBoleto(c, dia, { club: usarClub });
+      if (b == null) { ok = false; break; }
+      total += b;
+    }
+    for (let i = 0; i < ninos; i++) {
+      const b = precioBoleto(c, dia, { nino: true }) ?? precioBoleto(c, dia, {});
+      if (b == null) { ok = false; break; }
+      total += b;
+    }
+    const palOpt = document.getElementById('sim-pal')?.value || '0';
+    if (palOpt !== '0') {
+      const p = snackSize(c, /palomitas/i, palOpt) ?? snackSize(c, /palomitas/i, 'grande');
+      if (p == null) ok = false; else total += p;
+    }
+    const nRef = Number(document.getElementById('sim-ref')?.value || 0);
+    for (let i = 0; i < nRef; i++) {
+      const r = snackSize(c, /refresco/i, 'grande');
+      if (r == null) ok = false; else total += r;
+    }
+    if (ok && (mejor == null || total < mejor.total)) {
+      mejor = { c, total };
+    }
+  });
+
+  if (!mejor) {
+    return `Los Brujos del Cine — No pude calcular un total para ${ciudadNombre}.`;
+  }
+
+  return `Los Brujos del Cine 🎬
+${ciudadNombre} · ${DIAS_LABEL[dia] || dia}
+${mejor.c.nombreCadena} · ${mejor.c.nombre}
+${adultos} adulto(s)${ninos ? `, ${ninos} niño(s)` : ''}
+Total estimado: $${mejor.total}
+(Precios de referencia, sujetos a cambio)`;
+}
