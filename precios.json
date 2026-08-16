@@ -275,33 +275,51 @@
         "boletos": [
           {
             "label": "Boleto 2D General",
-            "lunes": 125,
-            "martes": 125,
-            "miercoles": 88,
+            "lunes": 138,
+            "martes": 138,
+            "miercoles": 138,
             "jueves": 138,
-            "viernes": 125,
-            "sabado": 125,
-            "domingo": 125
+            "viernes": 138,
+            "sabado": 138,
+            "domingo": 138
           },
           {
             "label": "Boleto 3D General",
-            "lunes": 135,
-            "martes": 135,
-            "miercoles": 95,
-            "jueves": 135,
-            "viernes": 135,
-            "sabado": 135,
-            "domingo": 135
+            "lunes": 154,
+            "martes": 154,
+            "miercoles": 154,
+            "jueves": 154,
+            "viernes": 154,
+            "sabado": 154,
+            "domingo": 154
           },
           {
             "label": "Boleto Niño",
-            "lunes": 106,
-            "martes": 106,
-            "miercoles": 88,
-            "jueves": 106,
-            "viernes": 106,
-            "sabado": 106,
-            "domingo": 106
+            "lunes": 124,
+            "martes": 124,
+            "miercoles": 124,
+            "jueves": 124,
+            "viernes": 124,
+            "sabado": 124,
+            "domingo": 124
+          },{
+            "label": "Boleto Dolby Atmos",
+            "lunes": 160,
+            "martes": 160,
+            "miercoles": 160,
+            "jueves": 160,
+            "viernes": 160,
+            "sabado": 160,
+            "domingo": 160
+          },{
+            "label": "Boleto X4D",
+            "lunes": 150,
+            "martes": 150,
+            "miercoles": 150,
+            "jueves": 150,
+            "viernes": 150,
+            "sabado": 150,
+            "domingo": 150
           }
         ],
         "snacks": [
@@ -318,17 +336,27 @@
       {
         "id": "plaza-mayor-platino",
         "nombre": "Plaza Mayor Platino",
-        "boletos": {
-          "label": "Boleto Platino",
-          "lunes": 120, "martes": 110, "miercoles": 120, "jueves": 130,
-          "viernes": 155, "sabado": 155, "domingo": 155
-        },
+        "boletos": [
+          {
+            "label": "Boleto Platino",
+            "lunes": 204,
+            "martes": 204,
+            "miercoles": 204,
+            "jueves": 204,
+            "viernes": 204,
+            "sabado": 204,
+            "domingo": 204
+          }
+        ],
         "snacks": [
-          { "nombre": "Palomitas", "chica": 75, "mediana": 95, "grande": 115 },
-          { "nombre": "Refresco", "chica": 50, "mediana": 60, "grande": 70 },
-          { "nombre": "ICEE", "chica": 60, "mediana": 70, "grande": 80 },
-          { "nombre": "Agua", "chica": 38, "mediana": null, "grande": null },
-          { "nombre": "Nachos", "chica": 85, "mediana": 105, "grande": null }
+          { "nombre": "Palomitas", "chica": null, "mediana": null, "grande": null , "jumbo":  null, "parallevar":  null},
+          { "nombre": "Cambio de Sabor", "chica": null, "mediana": null, "grande": null , "jumbo":  null,  "parallevar":  null},
+          { "nombre": "Refresco", "chica": null, "mediana": null, "grande": null , "jumbo":  null,  "parallevar":  null},
+          { "nombre": "ICEE", "chica": null, "mediana": null, "grande": null , "jumbo":  null,  "parallevar":  null},
+          { "nombre": "Agua", "chica": null, "mediana": null, "grande": null , "jumbo":  null, "parallevar":  null},
+          { "nombre": "Nachos", "chica": null, "mediana": null, "grande": null , "jumbo":  null, "parallevar":  null},
+          { "nombre": "HotDog", "chica": null, "mediana": null, "grande": null , "jumbo":  null, "parallevar":  null},
+          { "nombre": "Corneto", "chica": null, "mediana": null, "grande": null , "jumbo":  null, "parallevar":  null}
         ]
       },
       {
