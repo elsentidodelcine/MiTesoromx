@@ -393,6 +393,44 @@
 .comp-table .mejor .precio {
   color: #e8c85a;
 }
+
+        .herramientas-precios { width: min(var(--max), calc(100% - 48px)); margin: 28px auto 40px; }
+
+.tool-bar {
+  display: flex; flex-wrap: wrap; gap: 14px 18px; align-items: end;
+  justify-content: center; margin-bottom: 20px;
+}
+
+.tool-group { display: flex; flex-direction: column; gap: 6px; }
+.tool-group label, .check-club { font-size: .72rem; color: var(--muted); font-weight: 600; }
+
+.tool-group select, .sim-grid select, .sim-grid input, .versus-row select {
+  appearance: none; padding: 9px 14px; border-radius: 999px;
+  border: 1px solid var(--border); background: rgba(255,255,255,.04);
+  color: #e8e8ec; font-size: .8rem; min-width: 140px;
+}
+
+.check-club { display: flex; align-items: center; gap: 8px; padding-bottom: 8px; cursor: pointer; }
+
+.tip-box {
+  margin-bottom: 16px; padding: 12px 16px; border-radius: 12px;
+  border: 1px solid rgba(201,162,39,.2); background: rgba(201,162,39,.07);
+  color: #e8e8ec; font-size: .88rem; text-align: center;
+}
+
+.sim-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px; padding: 16px 18px;
+}
+.sim-grid label { display: flex; flex-direction: column; gap: 6px; font-size: .72rem; color: var(--muted); font-weight: 600; }
+
+.versus-row {
+  display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+  justify-content: center; padding: 16px;
+}
+.versus-row span { color: var(--gold); font-weight: 700; }
+
+.rank-1 { background: rgba(201,162,39,.14); }
     </style>
 </head>
 <body>
@@ -433,6 +471,106 @@
     <p class="precios-note">
         Precios confirmados y sujetos a cambio según sucursal, promoción o función especial (3D, VIP, IMAX, etc.).
     </p>
+
+    <p class="precios-note" id="precios-actualizado">Precios sujetos a cambio según sucursal y promociones.</p>
+
+    <section class="herramientas-precios">
+        <!-- Controles globales -->
+        <div class="tool-bar">
+            <div class="tool-group">
+                <label>Día</label>
+                <select id="filtro-dia">
+                    <option value="promedio">Promedio semanal</option>
+                    <option value="lunes">Lunes</option>
+                    <option value="martes">Martes</option>
+                    <option value="miercoles">Miércoles</option>
+                    <option value="jueves">Jueves</option>
+                    <option value="viernes">Viernes</option>
+                    <option value="sabado">Sábado</option>
+                    <option value="domingo">Domingo</option>
+                </select>
+            </div>
+
+            <div class="tool-group">
+                <label>Modo</label>
+                <select id="filtro-modo">
+                    <option value="combo">Boleto + dulcero</option>
+                    <option value="boleto">Solo boleto</option>
+                    <option value="premium">Snack premium</option>
+                </select>
+            </div>
+
+            <div class="tool-group">
+                <label>Categoría</label>
+                <select id="filtro-cat">
+                    <option value="todos">Todos</option>
+                    <option value="economico">Económico</option>
+                    <option value="premium">VIP / Platino</option>
+                </select>
+            </div>
+
+            <label class="check-club">
+                <input type="checkbox" id="usar-club">
+                Usar membresía (Club / Tarjeta)
+            </label>
+        </div>
+
+        <!-- Tips -->
+        <div id="tip-mejor-dia" class="tip-box"></div>
+        <div id="top3-box" class="table-block"></div>
+
+        <!-- Simulador -->
+        <div class="table-block simulador">
+            <h3><span>★</span> Arma tu salida</h3>
+            <div class="sim-grid">
+                <label>Ciudad
+                    <select id="sim-ciudad">
+                        <option value="sfr">San Francisco del Rincón</option>
+                        <option value="leon">León</option>
+                    </select>
+                </label>
+                <label>Adultos <input type="number" id="sim-adultos" min="0" value="1"></label>
+                <label>Niños <input type="number" id="sim-ninos" min="0" value="0"></label>
+                <label>Palomitas
+                    <select id="sim-pal">
+                        <option value="0">Ninguna</option>
+                        <option value="grande" selected>Grande</option>
+                        <option value="jumbo">Jumbo</option>
+                    </select>
+                </label>
+                <label>Refrescos G <input type="number" id="sim-ref" min="0" value="1"></label>
+                <label>Aguas <input type="number" id="sim-agua" min="0" value="0"></label>
+                <label>Preset
+                    <select id="sim-preset">
+                        <option value="custom">Personalizado</option>
+                        <option value="solo">Solo yo</option>
+                        <option value="pareja">Pareja</option>
+                        <option value="familia">Familia (2+2)</option>
+                    </select>
+                </label>
+            </div>
+            <div id="sim-resultados"></div>
+        </div>
+
+        <!-- Versus -->
+        <div class="table-block">
+            <h3><span>★</span> Comparar 2 complejos</h3>
+            <div class="versus-row">
+                <select id="vs-a"></select>
+                <span>vs</span>
+                <select id="vs-b"></select>
+            </div>
+            <div id="vs-result"></div>
+        </div>
+
+        <!-- Comparativa ciudad (la que ya tenías) -->
+        <div class="ciudad-tabs" id="ciudad-tabs">
+            <button class="ciudad-tab active" data-ciudad="sfr">San Francisco del Rincón</button>
+            <button class="ciudad-tab" data-ciudad="leon">León</button>
+            <button class="ciudad-tab" data-ciudad="leon-cadenas">León · por cadena</button>
+        </div>
+        <div id="comparativa-container"></div>
+    </section>
 
     <!-- aquí siguen tus tabs de cadena / complejo individuales -->
 

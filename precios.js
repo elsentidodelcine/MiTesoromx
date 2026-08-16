@@ -6,9 +6,22 @@ document.addEventListener('DOMContentLoaded', async () => {
   const ciudadTabs = document.getElementById('ciudad-tabs');
 
   let data = [];
+  let metaActualizado = null;
   let cadenaActiva = 'cinepolis';
   let complejoActivo = null;
   let ciudadActiva = 'sfr';
+
+  // Filtros globales de herramientas
+  let filtroDia = 'promedio';
+  let filtroModo = 'combo'; // boleto | combo | premium
+  let filtroCat = 'todos';  // todos | economico | premium
+  let usarClub = false;
+
+  const DIAS = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
+  const DIAS_LABEL = {
+    lunes: 'lunes', martes: 'martes', miercoles: 'miércoles', jueves: 'jueves',
+    viernes: 'viernes', sabado: 'sábado', domingo: 'domingo'
+  };
 
   const CIUDADES = {
     sfr: {
@@ -37,13 +50,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   try {
     const response = await fetch('precios.json');
     if (!response.ok) throw new Error('No se pudo cargar precios.json');
-    data = await response.json();
+    const raw = await response.json();
+    data = normalizarData(raw);
 
-    // Individual
     cargarComplejos();
     render();
-
-    // Comparativa (esto es el "punto 5")
+    actualizarNotaFecha();
+    llenarVersusSelects();
+    bindHerramientas();
+    refreshTools();
     renderComparativa(ciudadActiva);
   } catch (error) {
     console.error(error);
@@ -56,15 +71,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
+  // ===== Normalizar JSON (arreglo viejo o { actualizado, cadenas }) =====
+  function normalizarData(raw) {
+    if (Array.isArray(raw)) {
+      metaActualizado = null;
+      return raw;
+    }
+    metaActualizado = raw.actualizado || null;
+    return raw.cadenas || [];
+  }
+
   // ===== Tabs de cadena =====
   if (tabs) {
     tabs.addEventListener('click', (e) => {
       const btn = e.target.closest('.cine-tab');
       if (!btn) return;
-
       tabs.querySelectorAll('.cine-tab').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-
       cadenaActiva = btn.dataset.cadena;
       cargarComplejos();
       render();
@@ -79,21 +102,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
-  // ===== Tabs de ciudad (comparativa) =====
+  // ===== Tabs de ciudad =====
   if (ciudadTabs) {
     ciudadTabs.addEventListener('click', (e) => {
       const btn = e.target.closest('.ciudad-tab');
       if (!btn) return;
-
       ciudadTabs.querySelectorAll('.ciudad-tab').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-
       ciudadActiva = btn.dataset.ciudad;
       renderComparativa(ciudadActiva);
+      renderTipYTop3();
     });
   }
 
-  // ===== Helpers cadena/complejo =====
+  // ===== Helpers cadena / complejo =====
   function getCadena() {
     return data.find(c => c.cadena === cadenaActiva);
   }
@@ -109,12 +131,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!cadena || !selectComplejo) return;
 
     const complejos = cadena.complejos || [];
-
-    if (complejos.length <= 1) {
-      complejoWrap?.classList.add('hidden');
-    } else {
-      complejoWrap?.classList.remove('hidden');
-    }
+    if (complejos.length <= 1) complejoWrap?.classList.add('hidden');
+    else complejoWrap?.classList.remove('hidden');
 
     selectComplejo.innerHTML = complejos
       .map(c => `<option value="${escapeHTML(c.id)}">${escapeHTML(c.nombre)}</option>`)
@@ -127,7 +145,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   function render() {
     const cadena = getCadena();
     const complejo = getComplejo();
-
     if (!cadena || !complejo) {
       container.innerHTML = `<div class="error-state">No hay datos para este complejo.</div>`;
       return;
@@ -137,7 +154,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       <section class="cine-section active">
         <div class="cine-header">
           <h2>${escapeHTML(cadena.nombreCadena)} — ${escapeHTML(complejo.nombre)}</h2>
-          <span class="ubicacion">Precios de referencia</span>
+          <span class="ubicacion">${escapeHTML(complejo.zona || 'Precios de referencia')}</span>
         </div>
         ${tablaBoletos(complejo)}
         ${tablaSnacks(complejo)}
@@ -151,15 +168,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     let boletos = complejo.boletos || [];
     if (!Array.isArray(boletos)) boletos = [boletos];
 
-    const diasKeys = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
     const diasLabel = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
-
     const filas = boletos.map(b => `
       <tr>
         <td>${escapeHTML(b.label || 'Boleto')}</td>
-        ${diasKeys.map(dia => {
+        ${DIAS.map(dia => {
           const p = b[dia];
-          return `<td class="${p == null ? 'na' : 'precio'}">${fmt(p)}</td>`;
+          const vacio = p == null || p === 0;
+          return `<td class="${vacio ? 'na' : 'precio'}">${vacio ? '—' : fmt(p)}</td>`;
         }).join('')}
       </tr>
     `).join('');
@@ -184,10 +200,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   function tablaSnacks(complejo) {
     const snacks = complejo.snacks || [];
-
     const filas = snacks.map(s => {
       const paraLlevar = s.parallevar ?? s.paraLlevar ?? s['para llevar'] ?? null;
-
       return `
         <tr>
           <td>${escapeHTML(s.nombre)}</td>
@@ -230,16 +244,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     const snacks = complejo.snacks || [];
     const palomitas = snacks.find(s => /palomitas/i.test(s.nombre || ''));
     const refresco = snacks.find(s => /refresco/i.test(s.nombre || ''));
-
     const precioPalomitas = palomitas?.grande ?? null;
     const precioRefresco = refresco?.grande ?? null;
 
-    const diasKeys = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
     const diasLabel = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
-
-    const totales = diasKeys.map(dia => {
+    const totales = DIAS.map(dia => {
       const b = boletoBase[dia];
-      if (b == null || precioPalomitas == null || precioRefresco == null) return null;
+      if (b == null || b === 0 || precioPalomitas == null || precioRefresco == null) return null;
       return Number(b) + Number(precioPalomitas) + Number(precioRefresco);
     });
 
@@ -277,25 +288,52 @@ document.addEventListener('DOMContentLoaded', async () => {
     `;
   }
 
-  // ===== Comparativa =====
+  // ===== Motor de precios (herramientas) =====
   function flatComplejos() {
     const list = [];
     data.forEach(cadena => {
       (cadena.complejos || []).forEach(c => {
+        let boletos = c.boletos || [];
+        if (!Array.isArray(boletos)) boletos = [boletos];
         list.push({
           ...c,
+          boletos,
           cadena: cadena.cadena,
-          nombreCadena: cadena.nombreCadena
+          nombreCadena: cadena.nombreCadena,
+          categoria: c.categoria || (/vip|platino/i.test(c.nombre || '') ? 'premium' : 'economico')
         });
       });
     });
     return list;
   }
 
+  function precioBoleto(complejo, dia, { nino = false, club = false } = {}) {
+    const boletos = complejo.boletos || [];
+    if (club) {
+      const memb = boletos.find(b => /club|tarjeta/i.test(b.label || ''));
+      if (memb && memb[dia] > 0) return Number(memb[dia]);
+    }
+    if (nino) {
+      const n = boletos.find(b => /niñ|nino/i.test(b.label || ''));
+      if (n && n[dia] > 0) return Number(n[dia]);
+    }
+    const b2d = boletos.find(b => /2d/i.test(b.label || '') && !/niñ|nino/i.test(b.label || ''))
+      || boletos.find(b => !/vip|platino|club|tarjeta|macro|pluus|junior|dolby|x4d/i.test(b.label || ''))
+      || boletos[0];
+    const v = b2d?.[dia];
+    return (v == null || v === 0) ? null : Number(v);
+  }
+
+  function snackSize(complejo, nombreRx, size) {
+    const s = (complejo.snacks || []).find(x => nombreRx.test(x.nombre || ''));
+    if (!s) return null;
+    const v = s[size];
+    return v == null ? null : Number(v);
+  }
+
   function getBoleto2D(complejo) {
     let boletos = complejo.boletos || [];
     if (!Array.isArray(boletos)) boletos = [boletos];
-
     return boletos.find(b => /2d/i.test(b.label || '') && /general/i.test(b.label || ''))
       || boletos.find(b => /2d/i.test(b.label || ''))
       || boletos[0]
@@ -309,21 +347,56 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   function totalDia(complejo, dia) {
-    const boleto = getBoleto2D(complejo);
-    const b = boleto?.[dia];
-    const pal = getSnackGrande(complejo, /palomitas/i);
-    const ref = getSnackGrande(complejo, /refresco/i);
-    if (b == null || pal == null || ref == null) return null;
-    return Number(b) + Number(pal) + Number(ref);
+    return costoPersona(complejo, dia, 'combo', false);
+  }
+
+  function costoPersona(complejo, dia, modo = filtroModo, club = usarClub) {
+    const boleto = precioBoleto(complejo, dia, { club });
+    if (boleto == null) return null;
+    if (modo === 'boleto') return boleto;
+
+    const palSize = modo === 'premium' ? 'jumbo' : 'grande';
+    let pal = snackSize(complejo, /palomitas/i, palSize);
+    if (pal == null && modo === 'premium') pal = snackSize(complejo, /palomitas/i, 'grande');
+    const ref = snackSize(complejo, /refresco/i, modo === 'premium' ? 'jumbo' : 'grande')
+      ?? snackSize(complejo, /refresco/i, 'grande');
+
+    if (pal == null || ref == null) return null;
+    return boleto + pal + ref;
   }
 
   function promedioSemana(complejo) {
-    const dias = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
-    const vals = dias.map(d => totalDia(complejo, d)).filter(v => v != null);
+    const vals = DIAS.map(d => totalDia(complejo, d)).filter(v => v != null);
     if (!vals.length) return null;
     return Math.round(vals.reduce((a, b) => a + b, 0) / vals.length);
   }
 
+  function scoreComplejo(complejo) {
+    if (filtroDia === 'promedio') {
+      const vals = DIAS.map(d => costoPersona(complejo, d)).filter(v => v != null);
+      if (!vals.length) return null;
+      return Math.round(vals.reduce((a, b) => a + b, 0) / vals.length);
+    }
+    return costoPersona(complejo, filtroDia);
+  }
+
+  function mejorDiaDe(complejo) {
+    let best = null;
+    DIAS.forEach(d => {
+      const v = costoPersona(complejo, d);
+      if (v == null) return;
+      if (!best || v < best.v) best = { d, v };
+    });
+    return best;
+  }
+
+  function filtrarLista(ids) {
+    return flatComplejos()
+      .filter(c => ids.includes(c.id))
+      .filter(c => filtroCat === 'todos' || c.categoria === filtroCat);
+  }
+
+  // ===== Comparativa ciudad =====
   function renderComparativa(ciudadKey) {
     const box = document.getElementById('comparativa-container');
     if (!box) return;
@@ -334,19 +407,18 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
-    const todos = flatComplejos();
-    const lista = todos.filter(c => ciudad.complejos.includes(c.id));
+    let lista = flatComplejos().filter(c => ciudad.complejos.includes(c.id));
+    if (filtroCat !== 'todos') lista = lista.filter(c => c.categoria === filtroCat);
 
     if (!lista.length) {
       box.innerHTML = `<div class="error-state">No hay complejos para esta ciudad.</div>`;
       return;
     }
 
-    // Modo: mejor por cadena
     if (ciudad.modo === 'cadenas') {
       const porCadena = {};
       lista.forEach(c => {
-        const prom = promedioSemana(c);
+        const prom = scoreComplejo(c);
         if (prom == null) return;
         if (!porCadena[c.cadena] || prom < porCadena[c.cadena].prom) {
           porCadena[c.cadena] = { complejo: c, prom };
@@ -358,12 +430,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         box.innerHTML = `<div class="error-state">No hay datos suficientes para comparar cadenas.</div>`;
         return;
       }
-
       const mejor = filas[0];
 
       box.innerHTML = `
         <div class="comp-winner">
-          En León, la cadena más barata (promedio semanal) es
+          En León, la cadena más barata es
           <strong>${escapeHTML(mejor.complejo.nombreCadena)}</strong>
           con <strong>$${mejor.prom}</strong>
           en ${escapeHTML(mejor.complejo.nombre)}.
@@ -373,11 +444,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           <div class="table-scroll">
             <table class="precios-table comp-table">
               <thead>
-                <tr>
-                  <th>Cadena</th>
-                  <th>Mejor complejo</th>
-                  <th>Promedio / día</th>
-                </tr>
+                <tr><th>Cadena</th><th>Mejor complejo</th><th>Total</th></tr>
               </thead>
               <tbody>
                 ${filas.map((f, i) => `
@@ -395,35 +462,33 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
-    // Comparativa normal
-    const diasKeys = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
     const diasLabel = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
-
     const ranked = lista
-      .map(c => ({ c, prom: promedioSemana(c) }))
+      .map(c => ({ c, prom: scoreComplejo(c) }))
       .filter(x => x.prom != null)
       .sort((a, b) => a.prom - b.prom);
-
     const ganador = ranked[0];
 
     const filas = lista.map(c => {
       const boleto = getBoleto2D(c);
       const pal = getSnackGrande(c, /palomitas/i);
       const ref = getSnackGrande(c, /refresco/i);
-      const prom = promedioSemana(c);
+      const prom = scoreComplejo(c);
       const esMejor = ganador && c.id === ganador.c.id;
 
       return `
         <tr class="${esMejor ? 'mejor' : ''}">
           <td>
             <strong>${escapeHTML(c.nombre)}</strong><br>
-            <span style="color:var(--muted-2);font-size:.72rem;">${escapeHTML(c.nombreCadena)}</span>
+            <span style="color:var(--muted-2);font-size:.72rem;">
+              ${escapeHTML(c.nombreCadena)}${c.categoria === 'premium' ? ' · VIP/Platino' : ''}
+            </span>
           </td>
-          <td class="precio">${fmt(boleto?.viernes)}</td>
+          <td class="precio">${fmt(precioBoleto(c, 'viernes', { club: usarClub }))}</td>
           <td class="precio">${fmt(pal)}</td>
           <td class="precio">${fmt(ref)}</td>
-          ${diasKeys.map(d => {
-            const t = totalDia(c, d);
+          ${DIAS.map(d => {
+            const t = costoPersona(c, d);
             return `<td class="${t == null ? 'na' : 'precio'}">${t == null ? '—' : '$' + t}</td>`;
           }).join('')}
           <td class="precio"><strong>${prom == null ? '—' : '$' + prom}</strong></td>
@@ -436,11 +501,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         <div class="comp-winner">
           En <strong>${escapeHTML(ciudad.nombre)}</strong> conviene más
           <strong>${escapeHTML(ganador.c.nombreCadena)} · ${escapeHTML(ganador.c.nombre)}</strong>
-          con un promedio de <strong>$${ganador.prom}</strong>
-          (boleto 2D + palomitas G + refresco G).
+          con <strong>$${ganador.prom}</strong>
+          (${filtroModo === 'boleto' ? 'solo boleto' : filtroModo === 'premium' ? 'boleto + snack premium' : 'boleto + palomitas G + refresco G'}).
         </div>
       ` : ''}
-
       <div class="table-block">
         <h3><span>★</span> Comparativa de gasto adulto</h3>
         <div class="table-scroll">
@@ -448,23 +512,266 @@ document.addEventListener('DOMContentLoaded', async () => {
             <thead>
               <tr>
                 <th>Complejo</th>
-                <th>Boleto 2D*</th>
+                <th>Boleto*</th>
                 <th>Palomitas G</th>
                 <th>Refresco G</th>
                 ${diasLabel.map(d => `<th>${d}</th>`).join('')}
-                <th>Prom.</th>
+                <th>Score</th>
               </tr>
             </thead>
             <tbody>${filas}</tbody>
           </table>
         </div>
         <p style="padding:12px 18px;color:var(--muted);font-size:.78rem;margin:0;">
-          * Precio de referencia del viernes para el boleto 2D. El total diario usa el boleto de cada día.
+          * Boleto de viernes (o membresía si está activa). El score respeta el filtro de día/modo.
         </p>
       </div>
     `;
   }
 
+  // ===== Herramientas UI =====
+  function actualizarNotaFecha() {
+    const el = document.getElementById('precios-actualizado');
+    if (!el) return;
+    el.textContent = metaActualizado
+      ? `Precios actualizados: ${metaActualizado}. Sujetos a cambio por sucursal y promociones.`
+      : 'Precios sujetos a cambio según sucursal y promociones.';
+  }
+
+  function renderTipYTop3() {
+    const tip = document.getElementById('tip-mejor-dia');
+    const top3 = document.getElementById('top3-box');
+    if (!tip || !top3) return;
+
+    const ciudadKey = document.getElementById('sim-ciudad')?.value || ciudadActiva || 'sfr';
+    const baseKey = ciudadKey === 'leon-cadenas' ? 'leon' : ciudadKey;
+    const ids = CIUDADES[baseKey]?.complejos || CIUDADES.sfr.complejos;
+
+    const lista = filtrarLista(ids)
+      .map(c => ({ c, score: scoreComplejo(c), best: mejorDiaDe(c) }))
+      .filter(x => x.score != null)
+      .sort((a, b) => a.score - b.score);
+
+    if (!lista.length) {
+      tip.innerHTML = 'Faltan precios de dulcero o boleto para calcular en esta selección.';
+      top3.innerHTML = '';
+      return;
+    }
+
+    const g = lista[0];
+    tip.innerHTML = g.best
+      ? `Conviene <strong>${escapeHTML(g.c.nombreCadena)} · ${escapeHTML(g.c.nombre)}</strong>
+         (${fmt(g.score)}). Mejor día en ese complejo:
+         <strong>${DIAS_LABEL[g.best.d]}</strong> (${fmt(g.best.v)}).`
+      : '';
+
+    top3.innerHTML = `
+      <h3><span>★</span> Top 3 más baratos</h3>
+      <div class="table-scroll">
+        <table class="precios-table">
+          <thead>
+            <tr><th>#</th><th>Complejo</th><th>Total</th><th>Mejor día</th></tr>
+          </thead>
+          <tbody>
+            ${lista.slice(0, 3).map((x, i) => `
+              <tr class="${i === 0 ? 'rank-1' : ''}">
+                <td>${i + 1}</td>
+                <td>
+                  <strong>${escapeHTML(x.c.nombre)}</strong><br>
+                  <span style="color:var(--muted-2);font-size:.72rem">
+                    ${escapeHTML(x.c.nombreCadena)}${x.c.zona ? ' · ' + escapeHTML(x.c.zona) : ''}
+                  </span>
+                </td>
+                <td class="precio">${fmt(x.score)}</td>
+                <td>${x.best ? DIAS_LABEL[x.best.d] + ' · ' + fmt(x.best.v) : '—'}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  function renderSimulador() {
+    const box = document.getElementById('sim-resultados');
+    if (!box) return;
+
+    const ciudadKey = document.getElementById('sim-ciudad')?.value || 'sfr';
+    const adultos = Number(document.getElementById('sim-adultos')?.value || 0);
+    const ninos = Number(document.getElementById('sim-ninos')?.value || 0);
+    const palOpt = document.getElementById('sim-pal')?.value || '0';
+    const nRef = Number(document.getElementById('sim-ref')?.value || 0);
+    const nAgua = Number(document.getElementById('sim-agua')?.value || 0);
+    const dia = filtroDia === 'promedio' ? 'viernes' : filtroDia;
+
+    const lista = filtrarLista(CIUDADES[ciudadKey]?.complejos || []);
+
+    const filas = lista.map(c => {
+      let total = 0;
+      let ok = true;
+
+      for (let i = 0; i < adultos; i++) {
+        const b = precioBoleto(c, dia, { club: usarClub });
+        if (b == null) { ok = false; break; }
+        total += b;
+      }
+      for (let i = 0; i < ninos; i++) {
+        const b = precioBoleto(c, dia, { nino: true }) ?? precioBoleto(c, dia, {});
+        if (b == null) { ok = false; break; }
+        total += b;
+      }
+      if (palOpt !== '0') {
+        const p = snackSize(c, /palomitas/i, palOpt) ?? snackSize(c, /palomitas/i, 'grande');
+        if (p == null) ok = false; else total += p;
+      }
+      for (let i = 0; i < nRef; i++) {
+        const r = snackSize(c, /refresco/i, 'grande');
+        if (r == null) ok = false; else total += r;
+      }
+      for (let i = 0; i < nAgua; i++) {
+        const a = snackSize(c, /agua/i, 'grande') ?? snackSize(c, /agua/i, 'chica');
+        if (a == null) ok = false; else total += a;
+      }
+
+      return { c, total: ok ? total : null };
+    }).filter(x => x.total != null).sort((a, b) => a.total - b.total);
+
+    if (!filas.length) {
+      box.innerHTML = `<p style="padding:16px;color:var(--muted)">No se pudo calcular (faltan precios en algunos complejos).</p>`;
+      return;
+    }
+
+    box.innerHTML = `
+      <div class="table-scroll">
+        <table class="precios-table">
+          <thead>
+            <tr><th>Complejo</th><th>Total estimado (${DIAS_LABEL[dia] || dia})</th></tr>
+          </thead>
+          <tbody>
+            ${filas.map((x, i) => `
+              <tr class="${i === 0 ? 'mejor' : ''}">
+                <td>${escapeHTML(x.c.nombreCadena)} · ${escapeHTML(x.c.nombre)}</td>
+                <td class="precio"><strong>${fmt(x.total)}</strong></td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  function llenarVersusSelects() {
+    const a = document.getElementById('vs-a');
+    const b = document.getElementById('vs-b');
+    if (!a || !b) return;
+
+    const opts = flatComplejos().map(c =>
+      `<option value="${escapeHTML(c.id)}">${escapeHTML(c.nombreCadena)} · ${escapeHTML(c.nombre)}</option>`
+    ).join('');
+
+    a.innerHTML = opts;
+    b.innerHTML = opts;
+    a.value = 'san-francisco';
+    b.value = 'movie-center';
+  }
+
+  function renderVersus() {
+    const box = document.getElementById('vs-result');
+    const idA = document.getElementById('vs-a')?.value;
+    const idB = document.getElementById('vs-b')?.value;
+    if (!box || !idA || !idB) return;
+
+    const all = flatComplejos();
+    const A = all.find(c => c.id === idA);
+    const B = all.find(c => c.id === idB);
+    if (!A || !B) return;
+
+    const sA = scoreComplejo(A);
+    const sB = scoreComplejo(B);
+    const diaRef = filtroDia === 'promedio' ? 'viernes' : filtroDia;
+    const bA = precioBoleto(A, diaRef, { club: usarClub });
+    const bB = precioBoleto(B, diaRef, { club: usarClub });
+    const pA = snackSize(A, /palomitas/i, 'grande');
+    const pB = snackSize(B, /palomitas/i, 'grande');
+    const rA = snackSize(A, /refresco/i, 'grande');
+    const rB = snackSize(B, /refresco/i, 'grande');
+    const diff = (sA != null && sB != null) ? Math.abs(sA - sB) : null;
+    const gana = (sA != null && sB != null) ? (sA <= sB ? A : B) : null;
+
+    box.innerHTML = `
+      <div class="table-scroll">
+        <table class="precios-table">
+          <thead>
+            <tr>
+              <th>Concepto</th>
+              <th>${escapeHTML(A.nombre)}</th>
+              <th>${escapeHTML(B.nombre)}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Boleto</td><td class="precio">${fmt(bA)}</td><td class="precio">${fmt(bB)}</td></tr>
+            <tr><td>Palomitas G</td><td class="precio">${fmt(pA)}</td><td class="precio">${fmt(pB)}</td></tr>
+            <tr><td>Refresco G</td><td class="precio">${fmt(rA)}</td><td class="precio">${fmt(rB)}</td></tr>
+            <tr class="mejor">
+              <td><strong>Total</strong></td>
+              <td class="precio"><strong>${fmt(sA)}</strong></td>
+              <td class="precio"><strong>${fmt(sB)}</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      ${gana ? `<p class="tip-box" style="margin:12px 16px">Gana <strong>${escapeHTML(gana.nombreCadena)} · ${escapeHTML(gana.nombre)}</strong>${diff != null ? ` (ahorro ${fmt(diff)})` : ''}.</p>` : ''}
+    `;
+  }
+
+  function simSet(a, n, pal, ref, agua) {
+    const el = (id, val) => { const n = document.getElementById(id); if (n) n.value = val; };
+    el('sim-adultos', a);
+    el('sim-ninos', n);
+    el('sim-pal', pal);
+    el('sim-ref', ref);
+    el('sim-agua', agua);
+  }
+
+  function bindHerramientas() {
+    const on = (id, fn) => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('change', fn);
+    };
+
+    on('filtro-dia', e => { filtroDia = e.target.value; refreshTools(); });
+    on('filtro-modo', e => { filtroModo = e.target.value; refreshTools(); });
+    on('filtro-cat', e => { filtroCat = e.target.value; refreshTools(); });
+    on('usar-club', e => { usarClub = e.target.checked; refreshTools(); });
+    on('sim-ciudad', () => refreshTools());
+    on('sim-adultos', () => renderSimulador());
+    on('sim-ninos', () => renderSimulador());
+    on('sim-pal', () => renderSimulador());
+    on('sim-ref', () => renderSimulador());
+    on('sim-agua', () => renderSimulador());
+    on('vs-a', () => renderVersus());
+    on('vs-b', () => renderVersus());
+
+    const preset = document.getElementById('sim-preset');
+    if (preset) {
+      preset.addEventListener('change', () => {
+        const v = preset.value;
+        if (v === 'solo') simSet(1, 0, 'grande', 1, 0);
+        else if (v === 'pareja') simSet(2, 0, 'jumbo', 2, 0);
+        else if (v === 'familia') simSet(2, 2, 'jumbo', 3, 1);
+        renderSimulador();
+      });
+    }
+  }
+
+  function refreshTools() {
+    renderTipYTop3();
+    renderSimulador();
+    renderVersus();
+    renderComparativa(ciudadActiva);
+  }
+
+  // ===== Utils =====
   function fmt(valor) {
     if (valor == null || valor === '') return '—';
     return `$${Number(valor)}`;
