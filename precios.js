@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   let data = [];
   let metaActualizado = null;
+  let promos = [];
   let cadenaActiva = 'cinepolis';
   let complejoActivo = null;
   let ciudadActiva = 'sfr';

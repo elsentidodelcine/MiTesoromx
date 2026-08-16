@@ -144,19 +144,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         </div>
       </article>
 
-     function bloqueDondeVerlaBarato() {
-       return `
-         <aside class="donde-barato">
-           <h3>¿Dónde verla más barato?</h3>
-           <p>
-             Revisa boletos y dulcero actualizados en
-             <a href="precios.html">Precios de cine</a>
-             (San Francisco del Rincón y León).
-           </p>
-         </aside>
-       `;
-     }
-
      // Al armar el HTML de la reseña, antes del cierre del contenedor:
      // ${bloqueDondeVerlaBarato()}
 
