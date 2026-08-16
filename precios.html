@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Precios de Cine | Los Brujos del Cine</title>
-    <meta name="description" content="Precios de boletos y snacks en Cinépolis, Cinemex y Movie Center. Compara y arma tu salida.">
+    <meta name="description" content="Los Brujos del Cine: reseñas honestas de estrenos, clásicos y películas que vale la pena descubrir.">
     <meta name="theme-color" content="#030304">
-    <link rel="canonical" href="https://elsentidodelcine.github.io/precios.html">
+    <link rel="canonical" href="https://elsentidodelcine.github.io/">
 
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta property="og:title" content="Precios de Cine | Los Brujos del Cine">
+    <meta property="og:description" content="Reseñas honestas de estrenos, clásicos y películas que vale la pena descubrir.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://elsentidodelcine.github.io/">
+    <meta property="og:image" content="https://elsentidodelcine.github.io/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="imgs/logoL.jpeg" type="image/jpeg" sizes="32x32">
+    <link rel="apple-touch-icon" href="imgs/logoL.jpeg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -294,6 +301,72 @@
           color: #fff;
         }
         .sim-panel .sim-grid { padding: 0; margin-bottom: 12px; }
+
+        .herramientas-precios {
+          width: min(var(--max), calc(100% - 48px));
+          margin: 28px auto 40px;
+        }
+        .tool-bar {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 14px 18px;
+          align-items: end;
+          justify-content: center;
+          margin-bottom: 20px;
+        }
+        .tool-group {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+        }
+        .tool-group label,
+        .check-club {
+          font-size: .72rem;
+          color: #c8c8d0;
+          font-weight: 600;
+        }
+        .check-club {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding-bottom: 8px;
+          cursor: pointer;
+          color: #e8e8ec;
+        }
+        .tip-box, .comp-winner {
+          margin: 0 0 16px;
+          padding: 12px 16px;
+          border-radius: 12px;
+          border: 1px solid rgba(201,162,39,.25);
+          background: rgba(201,162,39,.08);
+          color: #e8e8ec;
+          font-size: .88rem;
+          text-align: center;
+        }
+        .comp-winner strong, .tip-box strong { color: var(--gold); }
+        .rank-1, tr.mejor {
+          background: rgba(201,162,39,.12);
+        }
+        .cine-header {
+          text-align: center;
+          margin-bottom: 22px;
+        }
+        .cine-header h2 {
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: clamp(1.4rem, 3vw, 2rem);
+          color: #fff;
+          margin-bottom: 6px;
+        }
+        .cine-header .ubicacion {
+          color: var(--muted);
+          font-size: .85rem;
+        }
+        .precios-divider {
+          width: min(var(--max), calc(100% - 48px));
+          margin: 40px auto;
+          border: none;
+          border-top: 1px solid var(--border);
+        }
     </style>
 </head>
 <body>
@@ -301,17 +374,18 @@
 
 <header class="site-header">
     <div class="header-inner">
-        <a href="index.html" class="brand" aria-label="Los Brujos del Cine, inicio">
-            <span class="brand-mark" aria-hidden="true">☽</span>
-            <span class="brand-copy">
-          <strong>Los Brujos del Cine</strong>
-          <small>El grimorio de cine de Mi Tesoro MX</small>
-        </span>
+        <a href="index.html" class="brand-link" aria-label="Los Brujos del Cine, inicio">
+            <img src="imgs/logoL.jpeg" alt="Los Brujos del Cine" class="site-logo">
+            <div class="logo-text">
+                <h1>Los Brujos del Cine</h1>
+                <span>El Grimorio del Cine de Mi Tesoro MX</span>
+            </div>
         </a>
+
         <nav class="main-nav" aria-label="Navegación principal">
             <a href="blog.html#resenas">Reseñas</a>
             <a href="estrenos.html">Estrenos</a>
-            <a href="precios.html" aria-current="page">Precios</a>
+            <a href="precios.html">Precios</a>
         </nav>
     </div>
 </header>

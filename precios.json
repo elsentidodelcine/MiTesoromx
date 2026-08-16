@@ -113,14 +113,16 @@
           "zona": "Altacia",
           "categoria": "premium",
           "boletos": [
-            { "label": "Boleto VIP", "lunes": 149, "martes": 139, "miercoles": 149, "jueves": 159, "viernes": 189, "sabado": 189, "domingo": 189 }
+            { "label": "Boleto VIP", "lunes": 177, "martes": 177, "miercoles": 149, "jueves": 177, "viernes": 177, "sabado": 177, "domingo": 177 }
           ],
           "snacks": [
-            { "nombre": "Palomitas", "chica": 85, "mediana": 105, "grande": 125 },
-            { "nombre": "Refresco", "chica": 55, "mediana": 65, "grande": 75 },
-            { "nombre": "ICEE", "chica": 65, "mediana": 75, "grande": 85 },
-            { "nombre": "Agua", "chica": 40, "mediana": null, "grande": null },
-            { "nombre": "Nachos", "chica": 95, "mediana": 115, "grande": null }
+            { "nombre": "Palomitas", "chica": 90, "mediana": 95, "grande": 103, "jumbo": 112, "parallevar": 125 },
+            { "nombre": "Cambio de Sabor", "chica": 17, "mediana": 22, "grande": 22, "jumbo": 29, "parallevar": 29 },
+            { "nombre": "Refresco", "chica": 95, "mediana": 99, "grande": 109, "jumbo": 115, "parallevar": null },
+            { "nombre": "ICEE", "chica": null, "mediana": null, "grande": 119, "jumbo": 134, "parallevar": null },
+            { "nombre": "Agua", "chica": 42, "mediana": null, "grande": 45, "jumbo": null, "parallevar": null },
+            { "nombre": "Nachos", "chica": 90, "mediana": null, "grande": 105, "jumbo": 125, "parallevar": null },
+            { "nombre": "HotDog", "chica": 120, "mediana": null, "grande": null, "jumbo": 132, "parallevar": null }
           ]
         },
         {
@@ -129,14 +131,16 @@
           "zona": "Centro",
           "categoria": "premium",
           "boletos": [
-            { "label": "Boleto VIP", "lunes": 149, "martes": 139, "miercoles": 149, "jueves": 159, "viernes": 189, "sabado": 189, "domingo": 189 }
+            { "label": "Boleto VIP", "lunes": 177, "martes": 177, "miercoles": 149, "jueves": 177, "viernes": 177, "sabado": 177, "domingo": 177 }
           ],
           "snacks": [
-            { "nombre": "Palomitas", "chica": 85, "mediana": 105, "grande": 125 },
-            { "nombre": "Refresco", "chica": 55, "mediana": 65, "grande": 75 },
-            { "nombre": "ICEE", "chica": 65, "mediana": 75, "grande": 85 },
-            { "nombre": "Agua", "chica": 40, "mediana": null, "grande": null },
-            { "nombre": "Nachos", "chica": 95, "mediana": 115, "grande": null }
+            { "nombre": "Palomitas", "chica": 90, "mediana": 95, "grande": 103, "jumbo": 112, "parallevar": 125 },
+            { "nombre": "Cambio de Sabor", "chica": 17, "mediana": 22, "grande": 22, "jumbo": 29, "parallevar": 29 },
+            { "nombre": "Refresco", "chica": 95, "mediana": 99, "grande": 109, "jumbo": 115, "parallevar": null },
+            { "nombre": "ICEE", "chica": null, "mediana": null, "grande": 119, "jumbo": 134, "parallevar": null },
+            { "nombre": "Agua", "chica": 42, "mediana": null, "grande": 45, "jumbo": null, "parallevar": null },
+            { "nombre": "Nachos", "chica": 90, "mediana": null, "grande": 105, "jumbo": 125, "parallevar": null },
+            { "nombre": "HotDog", "chica": 120, "mediana": null, "grande": null, "jumbo": 132, "parallevar": null }
           ]
         },
         {
