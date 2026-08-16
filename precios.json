@@ -174,17 +174,77 @@
       {
         "id": "centro-max",
         "nombre": "Centro Max",
-        "boletos": {
-          "label": "Boleto 2D general",
-          "lunes": 69, "martes": 59, "miercoles": 69, "jueves": 79,
-          "viernes": 95, "sabado": 95, "domingo": 95
-        },
+        "boletos": [
+          {
+            "label": "Boleto 2D General",
+            "lunes": 93,
+            "martes": 93,
+            "miercoles": 73,
+            "jueves": 93,
+            "viernes": 93,
+            "sabado": 93,
+            "domingo": 93
+          },
+          {
+            "label": "Boleto 3D General",
+            "lunes": 0,
+            "martes": 0,
+            "miercoles": 0,
+            "jueves": 0,
+            "viernes": 0,
+            "sabado": 0,
+            "domingo": 0
+          },
+          {
+            "label": "Boleto Niño",
+            "lunes": 74,
+            "martes": 74,
+            "miercoles": 73,
+            "jueves": 74,
+            "viernes": 74,
+            "sabado": 74,
+            "domingo": 74
+          },
+          {
+            "label": "PLUUS",
+            "lunes": 103,
+            "martes": 103,
+            "miercoles": 83,
+            "jueves": 103,
+            "viernes": 103,
+            "sabado": 103,
+            "domingo": 103
+          },
+          {
+            "label": "Macro XE",
+            "lunes": 113,
+            "martes": 113,
+            "miercoles": 103,
+            "jueves": 113,
+            "viernes": 113,
+            "sabado": 113,
+            "domingo": 113
+          },
+          {
+            "label": "Junior",
+            "lunes": 108,
+            "martes": 108,
+            "miercoles": 98,
+            "jueves": 108,
+            "viernes": 108,
+            "sabado": 108,
+            "domingo": 108
+          }
+        ],
         "snacks": [
-          { "nombre": "Palomitas", "chica": 65, "mediana": 85, "grande": 105 },
-          { "nombre": "Refresco", "chica": 45, "mediana": 55, "grande": 65 },
-          { "nombre": "ICEE", "chica": 55, "mediana": 65, "grande": 75 },
-          { "nombre": "Agua", "chica": 35, "mediana": null, "grande": null },
-          { "nombre": "Nachos", "chica": 75, "mediana": 95, "grande": null }
+          { "nombre": "Palomitas", "chica": 85, "mediana": 90, "grande": 99 , "jumbo":  109, "parallevar":  122},
+          { "nombre": "Cambio de Sabor", "chica": 17, "mediana": 22, "grande": 22 , "jumbo":  29,  "parallevar":  29},
+          { "nombre": "Refresco", "chica": 79, "mediana": 84, "grande": 96 , "jumbo":  102,  "parallevar":  null},
+          { "nombre": "ICEE", "chica": null, "mediana": null, "grande": 115 , "jumbo":  130,  "parallevar":  null},
+          { "nombre": "Agua", "chica": 41, "mediana": null, "grande": 44 , "jumbo":  null, "parallevar":  null},
+          { "nombre": "Nachos", "chica": 87, "mediana": null, "grande": 102 , "jumbo":  122, "parallevar":  null},
+          { "nombre": "HotDog", "chica": 82, "mediana": null, "grande": 94 , "jumbo":  null, "parallevar":  null},
+          { "nombre": "Corneto", "chica": null, "mediana": null, "grande": null , "jumbo":  null, "parallevar":  null}
         ]
       },
       {
@@ -212,17 +272,47 @@
       {
         "id": "plaza-mayor-market",
         "nombre": "Plaza Mayor Market",
-        "boletos": {
-          "label": "Boleto 2D general",
-          "lunes": 65, "martes": 55, "miercoles": 65, "jueves": 75,
-          "viernes": 92, "sabado": 92, "domingo": 92
-        },
+        "boletos": [
+          {
+            "label": "Boleto 2D General",
+            "lunes": 125,
+            "martes": 125,
+            "miercoles": 88,
+            "jueves": 138,
+            "viernes": 125,
+            "sabado": 125,
+            "domingo": 125
+          },
+          {
+            "label": "Boleto 3D General",
+            "lunes": 135,
+            "martes": 135,
+            "miercoles": 95,
+            "jueves": 135,
+            "viernes": 135,
+            "sabado": 135,
+            "domingo": 135
+          },
+          {
+            "label": "Boleto Niño",
+            "lunes": 106,
+            "martes": 106,
+            "miercoles": 88,
+            "jueves": 106,
+            "viernes": 106,
+            "sabado": 106,
+            "domingo": 106
+          }
+        ],
         "snacks": [
-          { "nombre": "Palomitas", "chica": 60, "mediana": 80, "grande": 99 },
-          { "nombre": "Refresco", "chica": 42, "mediana": 52, "grande": 62 },
-          { "nombre": "ICEE", "chica": 50, "mediana": 60, "grande": 70 },
-          { "nombre": "Agua", "chica": 32, "mediana": null, "grande": null },
-          { "nombre": "Nachos", "chica": 70, "mediana": 90, "grande": null }
+          { "nombre": "Palomitas", "chica": null, "mediana": null, "grande": null , "jumbo":  null, "parallevar":  null},
+          { "nombre": "Cambio de Sabor", "chica": null, "mediana": null, "grande": null , "jumbo":  null,  "parallevar":  null},
+          { "nombre": "Refresco", "chica": null, "mediana": null, "grande": null , "jumbo":  null,  "parallevar":  null},
+          { "nombre": "ICEE", "chica": null, "mediana": null, "grande": null , "jumbo":  null,  "parallevar":  null},
+          { "nombre": "Agua", "chica": null, "mediana": null, "grande": null , "jumbo":  null, "parallevar":  null},
+          { "nombre": "Nachos", "chica": null, "mediana": null, "grande": null , "jumbo":  null, "parallevar":  null},
+          { "nombre": "HotDog", "chica": null, "mediana": null, "grande": null , "jumbo":  null, "parallevar":  null},
+          { "nombre": "Corneto", "chica": null, "mediana": null, "grande": null , "jumbo":  null, "parallevar":  null}
         ]
       },
       {
@@ -244,17 +334,47 @@
       {
         "id": "plaza-stadium",
         "nombre": "Plaza Stadium",
-        "boletos": {
-          "label": "Boleto 2D general",
-          "lunes": 65, "martes": 55, "miercoles": 65, "jueves": 75,
-          "viernes": 92, "sabado": 92, "domingo": 92
-        },
+        "boletos": [
+          {
+            "label": "Boleto 2D General",
+            "lunes": 65,
+            "martes": 65,
+            "miercoles": 65,
+            "jueves": 65,
+            "viernes": 65,
+            "sabado": 65,
+            "domingo": 65
+          },
+          {
+            "label": "Boleto 3D General",
+            "lunes": 0,
+            "martes": 0,
+            "miercoles": 0,
+            "jueves": 0,
+            "viernes": 0,
+            "sabado": 0,
+            "domingo": 0
+          },
+          {
+            "label": "Boleto Niño",
+            "lunes": 59,
+            "martes": 59,
+            "miercoles": 59,
+            "jueves": 59,
+            "viernes": 59,
+            "sabado": 59,
+            "domingo": 59
+          }
+        ],
         "snacks": [
-          { "nombre": "Palomitas", "chica": 60, "mediana": 80, "grande": 99 },
-          { "nombre": "Refresco", "chica": 42, "mediana": 52, "grande": 62 },
-          { "nombre": "ICEE", "chica": 50, "mediana": 60, "grande": 70 },
-          { "nombre": "Agua", "chica": 32, "mediana": null, "grande": null },
-          { "nombre": "Nachos", "chica": 70, "mediana": 90, "grande": null }
+          { "nombre": "Palomitas", "chica": null, "mediana": 84, "grande": 95 , "jumbo":  125, "parallevar":  null},
+          { "nombre": "Cambio de Sabor", "chica": null, "mediana": 99, "grande": 115 , "jumbo":  150,  "parallevar":  null},
+          { "nombre": "Refresco", "chica": null, "mediana": 87, "grande": 99 , "jumbo":  114,  "parallevar":  null},
+          { "nombre": "ICEE", "chica": null, "mediana": null, "grande": 112 , "jumbo":  null,  "parallevar":  null},
+          { "nombre": "Agua", "chica": 35, "mediana": null, "grande": 40 , "jumbo":  null, "parallevar":  null},
+          { "nombre": "Nachos", "chica": null, "mediana": null, "grande": 88 , "jumbo":  null, "parallevar":  null},
+          { "nombre": "HotDog", "chica": null, "mediana": null, "grande": 87 , "jumbo":  null, "parallevar":  null},
+          { "nombre": "Corneto", "chica": null, "mediana": null, "grande": 63 , "jumbo":  null, "parallevar":  null}
         ]
       }
     ]
@@ -269,33 +389,33 @@
         "boletos": [
           {
             "label": "Boleto 2D General",
-            "lunes": 59,
-            "martes": 59,
-            "miercoles": 49,
-            "jueves": 59,
-            "viernes": 59,
-            "sabado": 59,
-            "domingo": 59
+            "lunes": 62,
+            "martes": 62,
+            "miercoles": 48,
+            "jueves": 62,
+            "viernes": 62,
+            "sabado": 62,
+            "domingo": 62
           },
           {
             "label": "Boleto 3D General",
-            "lunes": 0,
-            "martes": 0,
-            "miercoles": 0,
-            "jueves": 0,
-            "viernes": 0,
-            "sabado": 0,
-            "domingo": 0
+            "lunes": 74,
+            "martes": 74,
+            "miercoles": 62,
+            "jueves": 74,
+            "viernes": 74,
+            "sabado": 74,
+            "domingo": 74
           },
           {
             "label": "Boleto Niño",
-            "lunes": 0,
-            "martes": 0,
-            "miercoles": 0,
-            "jueves": 0,
-            "viernes": 0,
-            "sabado": 0,
-            "domingo": 0
+            "lunes": 55,
+            "martes": 55,
+            "miercoles": 48,
+            "jueves": 55,
+            "viernes": 55,
+            "sabado": 55,
+            "domingo": 55
           },
           {
             "label": "Tarjeta Club",

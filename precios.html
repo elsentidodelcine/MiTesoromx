@@ -434,6 +434,23 @@
         Precios confirmados y sujetos a cambio según sucursal, promoción o función especial (3D, VIP, IMAX, etc.).
     </p>
 
+    <!-- aquí siguen tus tabs de cadena / complejo individuales -->
+
+    <div class="cine-tabs" id="cine-tabs">
+        <button class="cine-tab active" data-cadena="cinepolis">Cinépolis</button>
+        <button class="cine-tab" data-cadena="cinemex">Cinemex</button>
+        <button class="cine-tab" data-cadena="moviecenter">Movie Center</button>
+    </div>
+
+    <div class="complejo-filter" id="complejo-filter-wrap">
+        <label for="filtro-complejo">Complejo:</label>
+        <select id="filtro-complejo"></select>
+    </div>
+
+    <div id="precios-container">
+        <div class="loading-state">Cargando precios...</div>
+    </div>
+
     <div class="comparativa-section">
         <div class="comparativa-header">
             <h2>Comparativa por ciudad</h2>
@@ -452,23 +469,6 @@
     </div>
 
     <hr class="precios-divider">
-
-    <!-- aquí siguen tus tabs de cadena / complejo individuales -->
-
-    <div class="cine-tabs" id="cine-tabs">
-        <button class="cine-tab active" data-cadena="cinepolis">Cinépolis</button>
-        <button class="cine-tab" data-cadena="cinemex">Cinemex</button>
-        <button class="cine-tab" data-cadena="moviecenter">Movie Center</button>
-    </div>
-
-    <div class="complejo-filter" id="complejo-filter-wrap">
-        <label for="filtro-complejo">Complejo:</label>
-        <select id="filtro-complejo"></select>
-    </div>
-
-    <div id="precios-container">
-        <div class="loading-state">Cargando precios...</div>
-    </div>
 </main>
 
 <footer class="site-footer">
