@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   let complejoActivo = null;
   let ciudadActiva = 'sfr';
 
-  // Filtros globales de herramientas
+  // Herramientas
   let filtroDia = 'promedio';
   let filtroModo = 'combo'; // boleto | combo | premium
   let filtroCat = 'todos';  // todos | economico | premium
@@ -19,8 +19,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const DIAS = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
   const DIAS_LABEL = {
-    lunes: 'lunes', martes: 'martes', miercoles: 'miércoles', jueves: 'jueves',
-    viernes: 'viernes', sabado: 'sábado', domingo: 'domingo'
+    lunes: 'lunes',
+    martes: 'martes',
+    miercoles: 'miércoles',
+    jueves: 'jueves',
+    viernes: 'viernes',
+    sabado: 'sábado',
+    domingo: 'domingo'
   };
 
   const CIUDADES = {
@@ -50,6 +55,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   try {
     const response = await fetch('precios.json');
     if (!response.ok) throw new Error('No se pudo cargar precios.json');
+
     const raw = await response.json();
     data = normalizarData(raw);
 
@@ -71,7 +77,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  // ===== Normalizar JSON (arreglo viejo o { actualizado, cadenas }) =====
+  /* =========================
+     NORMALIZAR JSON
+  ========================= */
   function normalizarData(raw) {
     if (Array.isArray(raw)) {
       metaActualizado = null;
@@ -81,41 +89,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     return raw.cadenas || [];
   }
 
-  // ===== Tabs de cadena =====
-  if (tabs) {
-    tabs.addEventListener('click', (e) => {
-      const btn = e.target.closest('.cine-tab');
-      if (!btn) return;
-      tabs.querySelectorAll('.cine-tab').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      cadenaActiva = btn.dataset.cadena;
-      cargarComplejos();
-      render();
-    });
-  }
-
-  // ===== Select de complejo =====
-  if (selectComplejo) {
-    selectComplejo.addEventListener('change', () => {
-      complejoActivo = selectComplejo.value;
-      render();
-    });
-  }
-
-  // ===== Tabs de ciudad =====
-  if (ciudadTabs) {
-    ciudadTabs.addEventListener('click', (e) => {
-      const btn = e.target.closest('.ciudad-tab');
-      if (!btn) return;
-      ciudadTabs.querySelectorAll('.ciudad-tab').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      ciudadActiva = btn.dataset.ciudad;
-      renderComparativa(ciudadActiva);
-      renderTipYTop3();
-    });
-  }
-
-  // ===== Helpers cadena / complejo =====
+  /* =========================
+     INDIVIDUAL
+  ========================= */
   function getCadena() {
     return data.find(c => c.cadena === cadenaActiva);
   }
@@ -131,8 +107,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!cadena || !selectComplejo) return;
 
     const complejos = cadena.complejos || [];
-    if (complejos.length <= 1) complejoWrap?.classList.add('hidden');
-    else complejoWrap?.classList.remove('hidden');
+
+    if (complejos.length <= 1) {
+      complejoWrap?.classList.add('hidden');
+    } else {
+      complejoWrap?.classList.remove('hidden');
+    }
 
     selectComplejo.innerHTML = complejos
       .map(c => `<option value="${escapeHTML(c.id)}">${escapeHTML(c.nombre)}</option>`)
@@ -145,6 +125,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   function render() {
     const cadena = getCadena();
     const complejo = getComplejo();
+
     if (!cadena || !complejo) {
       container.innerHTML = `<div class="error-state">No hay datos para este complejo.</div>`;
       return;
@@ -163,12 +144,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     `;
   }
 
-  // ===== Tablas individuales =====
   function tablaBoletos(complejo) {
     let boletos = complejo.boletos || [];
     if (!Array.isArray(boletos)) boletos = [boletos];
 
     const diasLabel = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
+
     const filas = boletos.map(b => `
       <tr>
         <td>${escapeHTML(b.label || 'Boleto')}</td>
@@ -200,6 +181,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   function tablaSnacks(complejo) {
     const snacks = complejo.snacks || [];
+
     const filas = snacks.map(s => {
       const paraLlevar = s.parallevar ?? s.paraLlevar ?? s['para llevar'] ?? null;
       return `
@@ -239,30 +221,38 @@ document.addEventListener('DOMContentLoaded', async () => {
   function bloqueCompraTipica(complejo) {
     let boletos = complejo.boletos || [];
     if (!Array.isArray(boletos)) boletos = [boletos];
-    const boletoBase = boletos.find(b => /2d/i.test(b.label || '')) || boletos[0] || {};
+
+    const boletoBase =
+      boletos.find(b => /2d/i.test(b.label || '')) ||
+      boletos[0] ||
+      {};
 
     const snacks = complejo.snacks || [];
     const palomitas = snacks.find(s => /palomitas/i.test(s.nombre || ''));
     const refresco = snacks.find(s => /refresco/i.test(s.nombre || ''));
+
     const precioPalomitas = palomitas?.grande ?? null;
     const precioRefresco = refresco?.grande ?? null;
 
     const diasLabel = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
+
     const totales = DIAS.map(dia => {
       const b = boletoBase[dia];
       if (b == null || b === 0 || precioPalomitas == null || precioRefresco == null) return null;
       return Number(b) + Number(precioPalomitas) + Number(precioRefresco);
     });
 
-    const celdas = totales.map(t =>
-      `<td class="${t == null ? 'na' : 'precio'}">${t == null ? '—' : '$' + t}</td>`
-    ).join('');
+    const celdas = totales
+      .map(t => `<td class="${t == null ? 'na' : 'precio'}">${t == null ? '—' : '$' + t}</td>`)
+      .join('');
 
     const detalle = [
       boletoBase.label || 'Boleto',
       precioPalomitas != null ? `Palomitas grande ($${precioPalomitas})` : null,
       precioRefresco != null ? `Refresco grande ($${precioRefresco})` : null
-    ].filter(Boolean).join(' + ');
+    ]
+      .filter(Boolean)
+      .join(' + ');
 
     return `
       <div class="table-block compra-tipica">
@@ -288,7 +278,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     `;
   }
 
-  // ===== Motor de precios (herramientas) =====
+  // ===== Helpers de cálculo =====
   function flatComplejos() {
     const list = [];
     data.forEach(cadena => {
@@ -300,7 +290,9 @@ document.addEventListener('DOMContentLoaded', async () => {
           boletos,
           cadena: cadena.cadena,
           nombreCadena: cadena.nombreCadena,
-          categoria: c.categoria || (/vip|platino/i.test(c.nombre || '') ? 'premium' : 'economico')
+          categoria:
+            c.categoria ||
+            (/vip|platino/i.test(c.nombre || '') ? 'premium' : 'economico')
         });
       });
     });
@@ -309,19 +301,29 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   function precioBoleto(complejo, dia, { nino = false, club = false } = {}) {
     const boletos = complejo.boletos || [];
+
     if (club) {
       const memb = boletos.find(b => /club|tarjeta/i.test(b.label || ''));
       if (memb && memb[dia] > 0) return Number(memb[dia]);
     }
+
     if (nino) {
       const n = boletos.find(b => /niñ|nino/i.test(b.label || ''));
       if (n && n[dia] > 0) return Number(n[dia]);
     }
-    const b2d = boletos.find(b => /2d/i.test(b.label || '') && !/niñ|nino/i.test(b.label || ''))
-      || boletos.find(b => !/vip|platino|club|tarjeta|macro|pluus|junior|dolby|x4d/i.test(b.label || ''))
-      || boletos[0];
+
+    const b2d =
+      boletos.find(b => /2d/i.test(b.label || '') && !/niñ|nino/i.test(b.label || '')) ||
+      boletos.find(
+        b =>
+          !/vip|platino|club|tarjeta|macro|pluus|junior|dolby|x4d/i.test(
+            b.label || ''
+          )
+      ) ||
+      boletos[0];
+
     const v = b2d?.[dia];
-    return (v == null || v === 0) ? null : Number(v);
+    return v == null || v === 0 ? null : Number(v);
   }
 
   function snackSize(complejo, nombreRx, size) {
@@ -334,10 +336,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   function getBoleto2D(complejo) {
     let boletos = complejo.boletos || [];
     if (!Array.isArray(boletos)) boletos = [boletos];
-    return boletos.find(b => /2d/i.test(b.label || '') && /general/i.test(b.label || ''))
-      || boletos.find(b => /2d/i.test(b.label || ''))
-      || boletos[0]
-      || null;
+    return (
+      boletos.find(b => /2d/i.test(b.label || '') && /general/i.test(b.label || '')) ||
+      boletos.find(b => /2d/i.test(b.label || '')) ||
+      boletos[0] ||
+      null
+    );
   }
 
   function getSnackGrande(complejo, nombreRegex) {
@@ -357,9 +361,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const palSize = modo === 'premium' ? 'jumbo' : 'grande';
     let pal = snackSize(complejo, /palomitas/i, palSize);
-    if (pal == null && modo === 'premium') pal = snackSize(complejo, /palomitas/i, 'grande');
-    const ref = snackSize(complejo, /refresco/i, modo === 'premium' ? 'jumbo' : 'grande')
-      ?? snackSize(complejo, /refresco/i, 'grande');
+    if (pal == null && modo === 'premium') {
+      pal = snackSize(complejo, /palomitas/i, 'grande');
+    }
+
+    const ref =
+      snackSize(complejo, /refresco/i, modo === 'premium' ? 'jumbo' : 'grande') ??
+      snackSize(complejo, /refresco/i, 'grande');
 
     if (pal == null || ref == null) return null;
     return boleto + pal + ref;
@@ -396,7 +404,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       .filter(c => filtroCat === 'todos' || c.categoria === filtroCat);
   }
 
-  // ===== Comparativa ciudad =====
+  // ===== Comparativa =====
   function renderComparativa(ciudadKey) {
     const box = document.getElementById('comparativa-container');
     if (!box) return;
@@ -408,13 +416,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     let lista = flatComplejos().filter(c => ciudad.complejos.includes(c.id));
-    if (filtroCat !== 'todos') lista = lista.filter(c => c.categoria === filtroCat);
+    if (filtroCat !== 'todos') {
+      lista = lista.filter(c => c.categoria === filtroCat);
+    }
 
     if (!lista.length) {
       box.innerHTML = `<div class="error-state">No hay complejos para esta ciudad.</div>`;
       return;
     }
 
+    // Mejor por cadena
     if (ciudad.modo === 'cadenas') {
       const porCadena = {};
       lista.forEach(c => {
@@ -430,6 +441,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         box.innerHTML = `<div class="error-state">No hay datos suficientes para comparar cadenas.</div>`;
         return;
       }
+
       const mejor = filas[0];
 
       box.innerHTML = `
@@ -444,16 +456,23 @@ document.addEventListener('DOMContentLoaded', async () => {
           <div class="table-scroll">
             <table class="precios-table comp-table">
               <thead>
-                <tr><th>Cadena</th><th>Mejor complejo</th><th>Total</th></tr>
+                <tr>
+                  <th>Cadena</th>
+                  <th>Mejor complejo</th>
+                  <th>Total</th>
+                </tr>
               </thead>
               <tbody>
-                ${filas.map((f, i) => `
+                ${filas
+                  .map(
+                    (f, i) => `
                   <tr class="${i === 0 ? 'mejor' : ''}">
                     <td>${escapeHTML(f.complejo.nombreCadena)}</td>
                     <td>${escapeHTML(f.complejo.nombre)}</td>
                     <td class="precio">$${f.prom}</td>
-                  </tr>
-                `).join('')}
+                  </tr>`
+                  )
+                  .join('')}
               </tbody>
             </table>
           </div>
@@ -462,49 +481,67 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
+    // Comparativa normal
     const diasLabel = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
+
     const ranked = lista
       .map(c => ({ c, prom: scoreComplejo(c) }))
       .filter(x => x.prom != null)
       .sort((a, b) => a.prom - b.prom);
+
     const ganador = ranked[0];
 
-    const filas = lista.map(c => {
-      const boleto = getBoleto2D(c);
-      const pal = getSnackGrande(c, /palomitas/i);
-      const ref = getSnackGrande(c, /refresco/i);
-      const prom = scoreComplejo(c);
-      const esMejor = ganador && c.id === ganador.c.id;
+    const filas = lista
+      .map(c => {
+        const pal = getSnackGrande(c, /palomitas/i);
+        const ref = getSnackGrande(c, /refresco/i);
+        const prom = scoreComplejo(c);
+        const esMejor = ganador && c.id === ganador.c.id;
 
-      return `
-        <tr class="${esMejor ? 'mejor' : ''}">
-          <td>
-            <strong>${escapeHTML(c.nombre)}</strong><br>
-            <span style="color:var(--muted-2);font-size:.72rem;">
-              ${escapeHTML(c.nombreCadena)}${c.categoria === 'premium' ? ' · VIP/Platino' : ''}
-            </span>
-          </td>
-          <td class="precio">${fmt(precioBoleto(c, 'viernes', { club: usarClub }))}</td>
-          <td class="precio">${fmt(pal)}</td>
-          <td class="precio">${fmt(ref)}</td>
-          ${DIAS.map(d => {
-            const t = costoPersona(c, d);
-            return `<td class="${t == null ? 'na' : 'precio'}">${t == null ? '—' : '$' + t}</td>`;
-          }).join('')}
-          <td class="precio"><strong>${prom == null ? '—' : '$' + prom}</strong></td>
-        </tr>
-      `;
-    }).join('');
+        return `
+          <tr class="${esMejor ? 'mejor' : ''}">
+            <td>
+              <strong>${escapeHTML(c.nombre)}</strong><br>
+              <span style="color:var(--muted-2);font-size:.72rem;">
+                ${escapeHTML(c.nombreCadena)}${c.categoria === 'premium' ? ' · VIP/Platino' : ''}
+              </span>
+            </td>
+            <td class="precio">${fmt(precioBoleto(c, 'viernes', { club: usarClub }))}</td>
+            <td class="precio">${fmt(pal)}</td>
+            <td class="precio">${fmt(ref)}</td>
+            ${DIAS.map(d => {
+              const t = costoPersona(c, d);
+              return `<td class="${t == null ? 'na' : 'precio'}">${
+                t == null ? '—' : '$' + t
+              }</td>`;
+            }).join('')}
+            <td class="precio"><strong>${prom == null ? '—' : '$' + prom}</strong></td>
+          </tr>
+        `;
+      })
+      .join('');
 
     box.innerHTML = `
-      ${ganador ? `
+      ${
+        ganador
+          ? `
         <div class="comp-winner">
           En <strong>${escapeHTML(ciudad.nombre)}</strong> conviene más
-          <strong>${escapeHTML(ganador.c.nombreCadena)} · ${escapeHTML(ganador.c.nombre)}</strong>
+          <strong>${escapeHTML(ganador.c.nombreCadena)} · ${escapeHTML(
+              ganador.c.nombre
+            )}</strong>
           con <strong>$${ganador.prom}</strong>
-          (${filtroModo === 'boleto' ? 'solo boleto' : filtroModo === 'premium' ? 'boleto + snack premium' : 'boleto + palomitas G + refresco G'}).
-        </div>
-      ` : ''}
+          (${
+            filtroModo === 'boleto'
+              ? 'solo boleto'
+              : filtroModo === 'premium'
+              ? 'boleto + snack premium'
+              : 'boleto + palomitas G + refresco G'
+          }).
+        </div>`
+          : ''
+      }
+
       <div class="table-block">
         <h3><span>★</span> Comparativa de gasto adulto</h3>
         <div class="table-scroll">
@@ -529,15 +566,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     `;
   }
 
-  // ===== Herramientas UI =====
-  function actualizarNotaFecha() {
-    const el = document.getElementById('precios-actualizado');
-    if (!el) return;
-    el.textContent = metaActualizado
-      ? `Precios actualizados: ${metaActualizado}. Sujetos a cambio por sucursal y promociones.`
-      : 'Precios sujetos a cambio según sucursal y promociones.';
-  }
-
+  // ===== Tip + Top 3 =====
   function renderTipYTop3() {
     const tip = document.getElementById('tip-mejor-dia');
     const top3 = document.getElementById('top3-box');
@@ -553,16 +582,19 @@ document.addEventListener('DOMContentLoaded', async () => {
       .sort((a, b) => a.score - b.score);
 
     if (!lista.length) {
-      tip.innerHTML = 'Faltan precios de dulcero o boleto para calcular en esta selección.';
+      tip.innerHTML =
+        'Faltan precios de dulcero o boleto para calcular en esta selección.';
       top3.innerHTML = '';
       return;
     }
 
     const g = lista[0];
     tip.innerHTML = g.best
-      ? `Conviene <strong>${escapeHTML(g.c.nombreCadena)} · ${escapeHTML(g.c.nombre)}</strong>
-         (${fmt(g.score)}). Mejor día en ese complejo:
-         <strong>${DIAS_LABEL[g.best.d]}</strong> (${fmt(g.best.v)}).`
+      ? `Conviene <strong>${escapeHTML(g.c.nombreCadena)} · ${escapeHTML(
+          g.c.nombre
+        )}</strong> (${fmt(g.score)}). Mejor día en ese complejo: <strong>${
+          DIAS_LABEL[g.best.d]
+        }</strong> (${fmt(g.best.v)}).`
       : '';
 
     top3.innerHTML = `
@@ -570,22 +602,37 @@ document.addEventListener('DOMContentLoaded', async () => {
       <div class="table-scroll">
         <table class="precios-table">
           <thead>
-            <tr><th>#</th><th>Complejo</th><th>Total</th><th>Mejor día</th></tr>
+            <tr>
+              <th>#</th>
+              <th>Complejo</th>
+              <th>Total</th>
+              <th>Mejor día</th>
+            </tr>
           </thead>
           <tbody>
-            ${lista.slice(0, 3).map((x, i) => `
+            ${lista
+              .slice(0, 3)
+              .map(
+                (x, i) => `
               <tr class="${i === 0 ? 'rank-1' : ''}">
                 <td>${i + 1}</td>
                 <td>
                   <strong>${escapeHTML(x.c.nombre)}</strong><br>
                   <span style="color:var(--muted-2);font-size:.72rem">
-                    ${escapeHTML(x.c.nombreCadena)}${x.c.zona ? ' · ' + escapeHTML(x.c.zona) : ''}
+                    ${escapeHTML(x.c.nombreCadena)}${
+                  x.c.zona ? ' · ' + escapeHTML(x.c.zona) : ''
+                }
                   </span>
                 </td>
                 <td class="precio">${fmt(x.score)}</td>
-                <td>${x.best ? DIAS_LABEL[x.best.d] + ' · ' + fmt(x.best.v) : '—'}</td>
-              </tr>
-            `).join('')}
+                <td>${
+                  x.best
+                    ? DIAS_LABEL[x.best.d] + ' · ' + fmt(x.best.v)
+                    : '—'
+                }</td>
+              </tr>`
+              )
+              .join('')}
           </tbody>
         </table>
       </div>
@@ -606,35 +653,55 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const lista = filtrarLista(CIUDADES[ciudadKey]?.complejos || []);
 
-    const filas = lista.map(c => {
-      let total = 0;
-      let ok = true;
+    const filas = lista
+      .map(c => {
+        let total = 0;
+        let ok = true;
 
-      for (let i = 0; i < adultos; i++) {
-        const b = precioBoleto(c, dia, { club: usarClub });
-        if (b == null) { ok = false; break; }
-        total += b;
-      }
-      for (let i = 0; i < ninos; i++) {
-        const b = precioBoleto(c, dia, { nino: true }) ?? precioBoleto(c, dia, {});
-        if (b == null) { ok = false; break; }
-        total += b;
-      }
-      if (palOpt !== '0') {
-        const p = snackSize(c, /palomitas/i, palOpt) ?? snackSize(c, /palomitas/i, 'grande');
-        if (p == null) ok = false; else total += p;
-      }
-      for (let i = 0; i < nRef; i++) {
-        const r = snackSize(c, /refresco/i, 'grande');
-        if (r == null) ok = false; else total += r;
-      }
-      for (let i = 0; i < nAgua; i++) {
-        const a = snackSize(c, /agua/i, 'grande') ?? snackSize(c, /agua/i, 'chica');
-        if (a == null) ok = false; else total += a;
-      }
+        for (let i = 0; i < adultos; i++) {
+          const b = precioBoleto(c, dia, { club: usarClub });
+          if (b == null) {
+            ok = false;
+            break;
+          }
+          total += b;
+        }
 
-      return { c, total: ok ? total : null };
-    }).filter(x => x.total != null).sort((a, b) => a.total - b.total);
+        for (let i = 0; i < ninos; i++) {
+          const b =
+            precioBoleto(c, dia, { nino: true }) ?? precioBoleto(c, dia, {});
+          if (b == null) {
+            ok = false;
+            break;
+          }
+          total += b;
+        }
+
+        if (palOpt !== '0') {
+          const p =
+            snackSize(c, /palomitas/i, palOpt) ??
+            snackSize(c, /palomitas/i, 'grande');
+          if (p == null) ok = false;
+          else total += p;
+        }
+
+        for (let i = 0; i < nRef; i++) {
+          const r = snackSize(c, /refresco/i, 'grande');
+          if (r == null) ok = false;
+          else total += r;
+        }
+
+        for (let i = 0; i < nAgua; i++) {
+          const a =
+            snackSize(c, /agua/i, 'grande') ?? snackSize(c, /agua/i, 'chica');
+          if (a == null) ok = false;
+          else total += a;
+        }
+
+        return { c, total: ok ? total : null };
+      })
+      .filter(x => x.total != null)
+      .sort((a, b) => a.total - b.total);
 
     if (!filas.length) {
       box.innerHTML = `<p style="padding:16px;color:var(--muted)">No se pudo calcular (faltan precios en algunos complejos).</p>`;
@@ -645,15 +712,21 @@ document.addEventListener('DOMContentLoaded', async () => {
       <div class="table-scroll">
         <table class="precios-table">
           <thead>
-            <tr><th>Complejo</th><th>Total estimado (${DIAS_LABEL[dia] || dia})</th></tr>
+            <tr>
+              <th>Complejo</th>
+              <th>Total estimado (${DIAS_LABEL[dia] || dia})</th>
+            </tr>
           </thead>
           <tbody>
-            ${filas.map((x, i) => `
+            ${filas
+              .map(
+                (x, i) => `
               <tr class="${i === 0 ? 'mejor' : ''}">
                 <td>${escapeHTML(x.c.nombreCadena)} · ${escapeHTML(x.c.nombre)}</td>
                 <td class="precio"><strong>${fmt(x.total)}</strong></td>
-              </tr>
-            `).join('')}
+              </tr>`
+              )
+              .join('')}
           </tbody>
         </table>
       </div>
@@ -665,9 +738,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     const b = document.getElementById('vs-b');
     if (!a || !b) return;
 
-    const opts = flatComplejos().map(c =>
-      `<option value="${escapeHTML(c.id)}">${escapeHTML(c.nombreCadena)} · ${escapeHTML(c.nombre)}</option>`
-    ).join('');
+    const opts = flatComplejos()
+      .map(
+        c =>
+          `<option value="${escapeHTML(c.id)}">${escapeHTML(
+            c.nombreCadena
+          )} · ${escapeHTML(c.nombre)}</option>`
+      )
+      .join('');
 
     a.innerHTML = opts;
     b.innerHTML = opts;
@@ -689,14 +767,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     const sA = scoreComplejo(A);
     const sB = scoreComplejo(B);
     const diaRef = filtroDia === 'promedio' ? 'viernes' : filtroDia;
+
     const bA = precioBoleto(A, diaRef, { club: usarClub });
     const bB = precioBoleto(B, diaRef, { club: usarClub });
     const pA = snackSize(A, /palomitas/i, 'grande');
     const pB = snackSize(B, /palomitas/i, 'grande');
     const rA = snackSize(A, /refresco/i, 'grande');
     const rB = snackSize(B, /refresco/i, 'grande');
-    const diff = (sA != null && sB != null) ? Math.abs(sA - sB) : null;
-    const gana = (sA != null && sB != null) ? (sA <= sB ? A : B) : null;
+
+    const diff = sA != null && sB != null ? Math.abs(sA - sB) : null;
+    const gana = sA != null && sB != null ? (sA <= sB ? A : B) : null;
 
     box.innerHTML = `
       <div class="table-scroll">
@@ -709,9 +789,21 @@ document.addEventListener('DOMContentLoaded', async () => {
             </tr>
           </thead>
           <tbody>
-            <tr><td>Boleto</td><td class="precio">${fmt(bA)}</td><td class="precio">${fmt(bB)}</td></tr>
-            <tr><td>Palomitas G</td><td class="precio">${fmt(pA)}</td><td class="precio">${fmt(pB)}</td></tr>
-            <tr><td>Refresco G</td><td class="precio">${fmt(rA)}</td><td class="precio">${fmt(rB)}</td></tr>
+            <tr>
+              <td>Boleto</td>
+              <td class="precio">${fmt(bA)}</td>
+              <td class="precio">${fmt(bB)}</td>
+            </tr>
+            <tr>
+              <td>Palomitas G</td>
+              <td class="precio">${fmt(pA)}</td>
+              <td class="precio">${fmt(pB)}</td>
+            </tr>
+            <tr>
+              <td>Refresco G</td>
+              <td class="precio">${fmt(rA)}</td>
+              <td class="precio">${fmt(rB)}</td>
+            </tr>
             <tr class="mejor">
               <td><strong>Total</strong></td>
               <td class="precio"><strong>${fmt(sA)}</strong></td>
@@ -720,12 +812,23 @@ document.addEventListener('DOMContentLoaded', async () => {
           </tbody>
         </table>
       </div>
-      ${gana ? `<p class="tip-box" style="margin:12px 16px">Gana <strong>${escapeHTML(gana.nombreCadena)} · ${escapeHTML(gana.nombre)}</strong>${diff != null ? ` (ahorro ${fmt(diff)})` : ''}.</p>` : ''}
+      ${
+        gana
+          ? `<p class="tip-box" style="margin:12px 16px">
+              Gana <strong>${escapeHTML(gana.nombreCadena)} · ${escapeHTML(
+              gana.nombre
+            )}</strong>${diff != null ? ` (ahorro ${fmt(diff)})` : ''}.
+            </p>`
+          : ''
+      }
     `;
   }
 
   function simSet(a, n, pal, ref, agua) {
-    const el = (id, val) => { const n = document.getElementById(id); if (n) n.value = val; };
+    const el = (id, val) => {
+      const node = document.getElementById(id);
+      if (node) node.value = val;
+    };
     el('sim-adultos', a);
     el('sim-ninos', n);
     el('sim-pal', pal);
@@ -739,10 +842,23 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (el) el.addEventListener('change', fn);
     };
 
-    on('filtro-dia', e => { filtroDia = e.target.value; refreshTools(); });
-    on('filtro-modo', e => { filtroModo = e.target.value; refreshTools(); });
-    on('filtro-cat', e => { filtroCat = e.target.value; refreshTools(); });
-    on('usar-club', e => { usarClub = e.target.checked; refreshTools(); });
+    on('filtro-dia', e => {
+      filtroDia = e.target.value;
+      refreshTools();
+    });
+    on('filtro-modo', e => {
+      filtroModo = e.target.value;
+      refreshTools();
+    });
+    on('filtro-cat', e => {
+      filtroCat = e.target.value;
+      refreshTools();
+    });
+    on('usar-club', e => {
+      usarClub = e.target.checked;
+      refreshTools();
+    });
+
     on('sim-ciudad', () => refreshTools());
     on('sim-adultos', () => renderSimulador());
     on('sim-ninos', () => renderSimulador());

@@ -317,6 +317,8 @@
 </header>
 
 <main id="main-content" class="precios-page">
+
+    <!-- HERO -->
     <section class="precios-hero">
         <div class="precios-hero-inner">
             <div class="eyebrow">
@@ -331,17 +333,16 @@
         </div>
     </section>
 
-    <p class="precios-note">
-        Precios confirmados y sujetos a cambio según sucursal, promoción o función especial (3D, VIP, IMAX, etc.).
+    <!-- NOTA (una sola) -->
+    <p class="precios-note" id="precios-actualizado">
+        Precios sujetos a cambio según sucursal y promociones.
     </p>
 
-    <p class="precios-note" id="precios-actualizado">Precios sujetos a cambio según sucursal y promociones.</p>
-
+    <!-- HERRAMIENTAS -->
     <section class="herramientas-precios">
-        <!-- Controles globales -->
         <div class="tool-bar">
             <div class="tool-group">
-                <label>Día</label>
+                <label for="filtro-dia">Día</label>
                 <select id="filtro-dia">
                     <option value="promedio">Promedio semanal</option>
                     <option value="lunes">Lunes</option>
@@ -355,7 +356,7 @@
             </div>
 
             <div class="tool-group">
-                <label>Modo</label>
+                <label for="filtro-modo">Modo</label>
                 <select id="filtro-modo">
                     <option value="combo">Boleto + dulcero</option>
                     <option value="boleto">Solo boleto</option>
@@ -364,7 +365,7 @@
             </div>
 
             <div class="tool-group">
-                <label>Categoría</label>
+                <label for="filtro-cat">Categoría</label>
                 <select id="filtro-cat">
                     <option value="todos">Todos</option>
                     <option value="economico">Económico</option>
@@ -378,7 +379,6 @@
             </label>
         </div>
 
-        <!-- Tips -->
         <div id="tip-mejor-dia" class="tip-box"></div>
         <div id="top3-box" class="table-block"></div>
 
@@ -392,8 +392,12 @@
                         <option value="leon">León</option>
                     </select>
                 </label>
-                <label>Adultos <input type="number" id="sim-adultos" min="0" value="1"></label>
-                <label>Niños <input type="number" id="sim-ninos" min="0" value="0"></label>
+                <label>Adultos
+                    <input type="number" id="sim-adultos" min="0" value="1">
+                </label>
+                <label>Niños
+                    <input type="number" id="sim-ninos" min="0" value="0">
+                </label>
                 <label>Palomitas
                     <select id="sim-pal">
                         <option value="0">Ninguna</option>
@@ -401,8 +405,12 @@
                         <option value="jumbo">Jumbo</option>
                     </select>
                 </label>
-                <label>Refrescos G <input type="number" id="sim-ref" min="0" value="1"></label>
-                <label>Aguas <input type="number" id="sim-agua" min="0" value="0"></label>
+                <label>Refrescos G
+                    <input type="number" id="sim-ref" min="0" value="1">
+                </label>
+                <label>Aguas
+                    <input type="number" id="sim-agua" min="0" value="0">
+                </label>
                 <label>Preset
                     <select id="sim-preset">
                         <option value="custom">Personalizado</option>
@@ -426,17 +434,18 @@
             <div id="vs-result"></div>
         </div>
 
-        <!-- Comparativa ciudad (la que ya tenías) -->
+        <!-- Comparativa por ciudad -->
         <div class="ciudad-tabs" id="ciudad-tabs">
             <button class="ciudad-tab active" data-ciudad="sfr">San Francisco del Rincón</button>
             <button class="ciudad-tab" data-ciudad="leon">León</button>
-            <button class="ciudad-tab" data-ciudad="leon-cadenas">León · por cadena</button>
+            <button class="ciudad-tab" data-ciudad="leon-cadenas">León · Cinépolis vs Cinemex</button>
         </div>
         <div id="comparativa-container"></div>
     </section>
 
-    <!-- aquí siguen tus tabs de cadena / complejo individuales -->
+    <hr class="precios-divider">
 
+    <!-- Tablas por cadena / complejo -->
     <div class="cine-tabs" id="cine-tabs">
         <button class="cine-tab active" data-cadena="cinepolis">Cinépolis</button>
         <button class="cine-tab" data-cadena="cinemex">Cinemex</button>
@@ -451,25 +460,6 @@
     <div id="precios-container">
         <div class="loading-state">Cargando precios...</div>
     </div>
-
-    <div class="comparativa-section">
-        <div class="comparativa-header">
-            <h2>Comparativa por ciudad</h2>
-            <p>¿En qué cine gastas menos? Boleto 2D adulto + palomitas grande + refresco grande.</p>
-        </div>
-
-        <div class="ciudad-tabs" id="ciudad-tabs">
-            <button class="ciudad-tab active" data-ciudad="sfr">San Francisco del Rincón</button>
-            <button class="ciudad-tab" data-ciudad="leon">León</button>
-            <button class="ciudad-tab" data-ciudad="leon-cadenas">León · Cinépolis vs Cinemex</button>
-        </div>
-
-        <div id="comparativa-container">
-            <div class="loading-state">Cargando comparativa...</div>
-        </div>
-    </div>
-
-    <hr class="precios-divider">
 </main>
 
 <footer class="site-footer">
