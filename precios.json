@@ -91,7 +91,7 @@
           "zona": "Centro",
           "categoria": "economico",
           "boletos": [
-            { "label": "Boleto 2D General", "lunes": 55, "martes": 43, "miercoles": 44, "jueves": 55, "viernes": 55, "sabado": 55, "domingo": 5 },
+            { "label": "Boleto 2D General", "lunes": 55, "martes": 43, "miercoles": 44, "jueves": 55, "viernes": 55, "sabado": 55, "domingo": 55 },
             { "label": "Boleto 3D General", "lunes": 65, "martes": 53, "miercoles": 65, "jueves": 65, "viernes": 65, "sabado": 65, "domingo": 65 },
             { "label": "Boleto Niño", "lunes": 44, "martes": 44, "miercoles": 43, "jueves": 44, "viernes": 44, "sabado": 44, "domingo": 44 },
             { "label": "Tarjeta Club", "lunes": 30, "martes": 30, "miercoles": 30, "jueves": 30, "viernes": 30, "sabado": 30, "domingo": 30 }

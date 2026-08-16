@@ -57,7 +57,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Listeners (ANTES estaban faltando)
     bindTabs();
     bindHerramientas();
-
+    // --- Día de hoy en el filtro ---
+    marcarDiaHoyEnSelect();
+    filtroDia = diaDeHoy();
+    const selDia = document.getElementById('filtro-dia');
+    if (selDia) selDia.value = filtroDia;
+    // --------------------------------
     cargarComplejos();
     render();
     actualizarNotaFecha();
@@ -823,6 +828,34 @@ ${adultos} adulto(s)${ninos ? `, ${ninos} niño(s)` : ''}
 Total estimado: $${mejor.total}
 (Precios de referencia, sujetos a cambio)`;
   }
+
+  function diaDeHoy() {
+    // getDay(): 0=domingo ... 6=sábado
+    const map = ['domingo', 'lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado'];
+    return map[new Date().getDay()];
+  }
+
+  function marcarDiaHoyEnSelect() {
+      const sel = document.getElementById('filtro-dia');
+      if (!sel) return;
+      const hoy = diaDeHoy();
+      [...sel.options].forEach(opt => {
+        if (opt.value === 'promedio') {
+          opt.textContent = 'Promedio semanal';
+          return;
+        }
+        const labels = {
+          lunes: 'Lunes',
+          martes: 'Martes',
+          miercoles: 'Miércoles',
+          jueves: 'Jueves',
+          viernes: 'Viernes',
+          sabado: 'Sábado',
+          domingo: 'Domingo'
+        };
+        opt.textContent = (labels[opt.value] || opt.value) + (opt.value === hoy ? ' · hoy' : '');
+      });
+    }
 
 }); // ← ÚNICO cierre del DOMContentLoaded
 
