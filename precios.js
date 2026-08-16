@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  let promos = [];
+  
 
   function normalizarData(raw) {
     if (Array.isArray(raw)) {
