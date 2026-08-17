@@ -144,9 +144,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         </div>
       </article>
 
-     // Al armar el HTML de la reseña, antes del cierre del contenedor:
-     // ${bloqueDondeVerlaBarato()}
-
       <nav class="review-nav" aria-label="Otras reseñas">
         ${anterior ? `
           <a href="review.html?id=${encodeURIComponent(anterior.id)}">
