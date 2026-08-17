@@ -71,7 +71,7 @@
     "id": "katy",
     "titulo": "Katy Perry: The Lifetimes Tour - Live From Paris",
     "tipo": "preventa",
-    "fecha": "2026-09-2",
+    "fecha": "2026-09-02",
     "fechaTexto": "Miércoles 2 de Septiembre 2026",
     "poster": "imgs/estrenos/katy.jpg",
     "cines": ["Cinemex", "Cinepolis"],
@@ -172,7 +172,7 @@
     "titulo": "One Piece: La Película (2000)",
     "tipo": "preventa",
     "fecha": "2026-09-17",
-    "fechaTexto": "Proximamente",
+    "fechaTexto": "Jueves 17 de Septiembre 2026",
     "poster": "imgs/estrenos/one.jpg",
     "cines": ["Cinemex"],
     "links": [
@@ -188,7 +188,7 @@
     "titulo": "Linkin Park: Unshatter En Cines",
     "tipo": "preventa",
     "fecha": "2026-09-30",
-    "fechaTexto": "Proximamente",
+    "fechaTexto": "Miércoles 30 de Septiembre del 2026",
     "poster": "imgs/estrenos/linkin.jpg",
     "cines": ["Cinemex", "Cinepolis"],
     "links": [
@@ -208,7 +208,7 @@
     "titulo": "Puella Magi Madoka Mágica: La Película Parte 1",
     "tipo": "preventa",
     "fecha": "2026-08-20",
-    "fechaTexto": "Proximamente",
+    "fechaTexto": "Jueves 20 de Agosto del 2026",
     "poster": "imgs/estrenos/puella1.jpg",
     "cines": ["Cinepolis"],
     "links": [
@@ -224,7 +224,7 @@
     "titulo": "Puella Magi Madoka Mágica: La Película Parte 2",
     "tipo": "preventa",
     "fecha": "2026-08-20",
-    "fechaTexto": "Proximamente",
+    "fechaTexto": "Jueves 20 de Agosto del 2026",
     "poster": "imgs/estrenos/puella2.jpg",
     "cines": ["Cinepolis"],
     "links": [
@@ -240,7 +240,7 @@
     "titulo": "LOS MEJORES AÑOS DE NUESTRA VIDA",
     "tipo": "preventa",
     "fecha": "2026-09-03",
-    "fechaTexto": "Proximamente",
+    "fechaTexto": "Jueves 3 de Septiembre del 2026",
     "poster": "imgs/estrenos/hombres.jpg",
     "cines": ["Cinepolis"],
     "links": [
