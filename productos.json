@@ -234,7 +234,7 @@
   { "nombre": "Vaso Los 4 Fantasticos Mujer Insivible Cinepolis Marvel", "categoria": "Marvel", "precio": 250, "imagen": "imgs/coleccionable3.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso Los 4 Fantasticos La Mole Cinepolis Marvel", "categoria": "Marvel", "precio": 250, "imagen": "imgs/coleccionable2.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso Los 4 Fantasticos La Antorcha Cinepolis Marvel", "categoria": "Marvel", "precio": 350, "imagen": "imgs/coleccionable4.jpg" ,"badge": "exclusivo", "stock": 1},
-  { "nombre": "Vaso Thor y Jane Cinepolis Marvel", "categoria": "Marvel", "precio": 250, "imagen": "imgs/coleccionable7.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Vaso Thor y Jane Cinepolis Marvel", "categoria": "Marvel", "precio": 250, "imagen": "imgs/coleccionable7.jpg" ,"badge": "exclusivo", "stock": 0},
   { "nombre": "Vaso Thor Guinness Cinepolis Marvel", "categoria": "Marvel", "precio": 100, "imagen": "imgs/coleccionable8.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Hulk Guinness Cinepolis Marvel", "categoria": "Marvel", "precio": 100, "imagen": "imgs/coleccionable9.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Hulk Avengers Cinepolis Marvel", "categoria": "Marvel", "precio": 130, "imagen": "imgs/coleccionable10.jpg" ,"badge": "ultimo", "stock": 1},
