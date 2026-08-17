@@ -189,6 +189,8 @@ document.addEventListener('DOMContentLoaded', async () => {
           <div class="estreno-links">
             ${linksHTML || '<span style="color:var(--muted);font-size:0.8rem;">Próximamente enlaces de boletos</span>'}
           </div>
+
+          <span class="estreno-countdown">${textoContador(item.fecha)}</span>
         </div>
       </article>
     `;
@@ -233,4 +235,44 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', 'Abrir menú');
   });
+});
+
+function diasRestantes(fechaStr) {
+  // fechaStr: "2026-08-29"
+  const hoy = new Date();
+  hoy.setHours(0, 0, 0, 0);
+  const f = new Date(fechaStr + 'T00:00:00');
+  const diff = Math.round((f - hoy) / 86400000);
+  return diff;
+}
+
+function textoContador(fechaStr) {
+  const d = diasRestantes(fechaStr);
+  if (d > 1) return `Faltan ${d} días`;
+  if (d === 1) return 'Falta 1 día';
+  if (d === 0) return 'Hoy';
+  return 'Ya pasó';
+}
+
+function badgeEstreno(item) {
+  const d = diasRestantes(item.fecha);
+  if (d === 0) return '<span class="badge badge-hoy">Hoy se estrena</span>';
+  if (d > 0) return '<span class="badge badge-preventa">Preventa</span>';
+  return '<span class="badge badge-estreno">Estreno</span>';
+}
+
+function filtrarPorCadena(lista, cadena) {
+  if (cadena === 'todas') return lista;
+  return lista.filter(item => {
+    const cines = item.cines || item.cadenas || [];
+    // si es array de strings:
+    if (cines.some(c => String(c).toLowerCase().includes(cadena))) return true;
+    // si es array de objetos { nombre: "Cinépolis" }:
+    if (cines.some(c => (c.nombre || c.cadena || '').toLowerCase().includes(cadena))) return true;
+    return false;
+  });
+}
+
+document.getElementById('filter-cadena')?.addEventListener('change', () => {
+  renderEstrenos(); // tu función de pintado
 });

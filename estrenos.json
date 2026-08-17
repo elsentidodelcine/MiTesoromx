@@ -171,14 +171,14 @@
     "id": "one",
     "titulo": "One Piece: La Película (2000)",
     "tipo": "preventa",
-    "fecha": "2026-12-12",
+    "fecha": "2026-09-17",
     "fechaTexto": "Proximamente",
     "poster": "imgs/estrenos/one.jpg",
-    "cines": ["Cinépolis"],
+    "cines": ["Cinemex"],
     "links": [
       {
-        "cine": "Cinépolis",
-        "url": "https://www.cinepolis.com"
+        "cine": "Cinemex",
+        "url": "https://cinemex.com/proximamente/4502/one-piece-la-pelicula-2000"
       }
     ],
     "nota": "Proximamente"

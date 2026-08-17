@@ -127,6 +127,37 @@
             </div>
             <p id="reviews-subtitle">Cargando reseñas...</p>
         </div>
+        <div class="reviews-toolbar">
+            <div class="search-wrap">
+                <input
+                        type="search"
+                        id="review-search"
+                        placeholder="Buscar por título..."
+                        autocomplete="off"
+                >
+            </div>
+
+            <div class="filter-row">
+                <select id="filter-genero">
+                    <option value="todos">Todos los géneros</option>
+                    <!-- se llenan con JS -->
+                </select>
+
+                <select id="filter-puntaje">
+                    <option value="todos">Cualquier nota</option>
+                    <option value="4.5">4.5+</option>
+                    <option value="4">4.0+</option>
+                    <option value="3.5">3.5+</option>
+                    <option value="3">3.0+</option>
+                </select>
+
+                <select id="filter-orden">
+                    <option value="fecha">Más recientes</option>
+                    <option value="puntaje">Mejor calificadas</option>
+                    <option value="titulo">A–Z</option>
+                </select>
+            </div>
+        </div>
 
         <div id="featured-review-container"></div>
         <div class="review-grid" id="reviews-grid"></div>

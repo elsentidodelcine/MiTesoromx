@@ -5,6 +5,23 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     let resenas = await response.json();
 
+    let todasResenas = resenas; // guarda la lista completa
+    llenarGeneros(todasResenas);
+
+    function pintar() {
+      const filtradas = aplicarFiltros(todasResenas);
+      // aquí usas filtradas para destacada + grid
+      // en cada card agrega:
+      // <div class="reading-time">${tiempoLectura(r.contenido)}</div>
+    }
+
+    ['review-search', 'filter-genero', 'filter-puntaje', 'filter-orden'].forEach(id => {
+      document.getElementById(id)?.addEventListener('input', pintar);
+      document.getElementById(id)?.addEventListener('change', pintar);
+    });
+
+    pintar();
+
     // Ordenar por fecha (más reciente primero)
     resenas = resenas.sort((a, b) => {
       const fechaA = a.fecha ? new Date(a.fecha) : new Date(0);
@@ -305,3 +322,48 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle.setAttribute('aria-label', 'Abrir menú');
   });
 });
+
+// Helpers
+function tiempoLectura(contenido) {
+  const texto = Array.isArray(contenido) ? contenido.join(' ') : String(contenido || '');
+  const palabras = texto.trim().split(/\s+/).filter(Boolean).length;
+  const min = Math.max(1, Math.round(palabras / 200));
+  return `${min} min de lectura`;
+}
+
+function llenarGeneros(resenas) {
+  const sel = document.getElementById('filter-genero');
+  if (!sel) return;
+  const set = new Set();
+  resenas.forEach(r => (r.generos || []).forEach(g => set.add(g)));
+  [...set].sort().forEach(g => {
+    const opt = document.createElement('option');
+    opt.value = g;
+    opt.textContent = g;
+    sel.appendChild(opt);
+  });
+}
+
+function aplicarFiltros(resenas) {
+  const q = (document.getElementById('review-search')?.value || '').trim().toLowerCase();
+  const gen = document.getElementById('filter-genero')?.value || 'todos';
+  const minP = document.getElementById('filter-puntaje')?.value || 'todos';
+  const orden = document.getElementById('filter-orden')?.value || 'fecha';
+
+  let list = resenas.filter(r => {
+    const okQ = !q || (r.titulo || '').toLowerCase().includes(q);
+    const okG = gen === 'todos' || (r.generos || []).includes(gen);
+    const okP = minP === 'todos' || Number(r.puntaje) >= Number(minP);
+    return okQ && okG && okP;
+  });
+
+  list = list.slice().sort((a, b) => {
+    if (orden === 'puntaje') return Number(b.puntaje) - Number(a.puntaje);
+    if (orden === 'titulo') return (a.titulo || '').localeCompare(b.titulo || '', 'es');
+    const fa = a.fecha ? new Date(a.fecha) : new Date(0);
+    const fb = b.fecha ? new Date(b.fecha) : new Date(0);
+    return fb - fa;
+  });
+
+  return list;
+}
