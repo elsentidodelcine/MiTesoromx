@@ -250,5 +250,37 @@
       }
     ],
     "nota": "Proximamente"
+  },
+  {
+    "id": "zoe",
+    "titulo": "ZOÉ: Memorex + Rexsexex Y Más",
+    "tipo": "preventa",
+    "fecha": "2026-09-17",
+    "fechaTexto": "Jueves 17 de Septiembre del 2026",
+    "poster": "imgs/estrenos/zoe.jpg",
+    "cines": ["Cinemex"],
+    "links": [
+      {
+        "cine": "Cinemex",
+        "url": "https://cinemex.com/pelicula/72507/zoE-memorex-rexsexex-y-mas"
+      }
+    ],
+    "nota": "Proximamente"
+  },
+  {
+    "id": "pulp",
+    "titulo": "PULP: ¿Qué harías por una canción más?",
+    "tipo": "preventa",
+    "fecha": "2026-09-24",
+    "fechaTexto": "Jueves 24 de Septiembre del 2026",
+    "poster": "imgs/estrenos/pulp.jpg",
+    "cines": ["Cinemex"],
+    "links": [
+      {
+        "cine": "Cinemex",
+        "url": "https://cinemex.com/pelicula/72534/pulp-que-harias-por-una-cancion-mas"
+      }
+    ],
+    "nota": "Proximamente"
   }
 ]

@@ -1654,6 +1654,121 @@ html[data-theme="light"] .site-footer a {
   color: var(--text);
 }
 
+/* ===== MODO CLARO: zona superior (header → primera reseña) ===== */
+
+html[data-theme="light"] .site-header,
+html[data-theme="light"] .header-inner {
+  color: #121214;
+}
+
+html[data-theme="light"] .logo-text h1 {
+  color: #121214 !important;
+}
+
+html[data-theme="light"] .logo-text span {
+  color: #3d3d46 !important;
+}
+
+html[data-theme="light"] .main-nav a {
+  color: #3d3d46 !important;
+}
+
+html[data-theme="light"] .main-nav a:hover {
+  color: #121214 !important;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+/* HERO */
+html[data-theme="light"] .hero,
+html[data-theme="light"] .hero-inner {
+  color: #121214;
+}
+
+html[data-theme="light"] .hero h1,
+html[data-theme="light"] .hero h1 em {
+  color: #121214 !important;
+}
+
+html[data-theme="light"] .hero .eyebrow,
+html[data-theme="light"] .eyebrow {
+  color: #3d3d46 !important;
+}
+
+html[data-theme="light"] .hero-description {
+  color: #3d3d46 !important;
+}
+
+html[data-theme="light"] .hero-stats strong {
+  color: #121214 !important;
+}
+
+html[data-theme="light"] .hero-stats span,
+html[data-theme="light"] .hero-stats {
+  color: #3d3d46 !important;
+}
+
+html[data-theme="light"] .stat-divider {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+/* INTRO — “LOS BRUJOS DEL CINE…” */
+html[data-theme="light"] .intro-strip,
+html[data-theme="light"] .intro-inner {
+  color: #121214;
+  background: var(--bg-soft, #e8e4d9);
+}
+
+html[data-theme="light"] .intro-kicker {
+  color: #7a6210 !important; /* dorado oscuro legible */
+}
+
+html[data-theme="light"] .intro-strip p,
+html[data-theme="light"] .intro-inner p {
+  color: #121214 !important;
+}
+
+html[data-theme="light"] .intro-strip strong,
+html[data-theme="light"] .intro-inner strong {
+  color: #0e0e10 !important;
+}
+
+/* Títulos de sección “Últimas reseñas” */
+html[data-theme="light"] .section-heading h2,
+html[data-theme="light"] .section-kicker,
+html[data-theme="light"] #reviews-subtitle,
+html[data-theme="light"] .reviews-section .section-heading p {
+  color: #121214 !important;
+}
+
+html[data-theme="light"] .section-kicker {
+  color: #7a6210 !important;
+}
+
+html[data-theme="light"] #reviews-subtitle {
+  color: #3d3d46 !important;
+}
+
+/* Quote intermedio, por si también queda blanco */
+html[data-theme="light"] .cinema-quote,
+html[data-theme="light"] .cinema-quote blockquote,
+html[data-theme="light"] .cinema-quote span {
+  color: #121214 !important;
+}
+
+html[data-theme="light"] .cinema-quote em {
+  color: #7a6210 !important;
+}
+
+html[data-theme="light"] .hero {
+  background: #e8e4d9;
+}
+
+html[data-theme="light"] .hero-glow,
+html[data-theme="light"] .hero-film-grain,
+html[data-theme="light"] .hero-vignette {
+  opacity: 0.25; /* o display: none; */
+}
+
 body {
   background: var(--bg);
   color: var(--text);
