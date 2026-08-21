@@ -225,7 +225,7 @@
     "duracion": "105 min",
     "generos": ["Comedia"],
     "puntaje": 1.0,
-    "destacada": false,
+    "destacada": true,
     "etiqueta": "ESTRENO",
     "plataformas": ["Cines"],
     "resumen": "Una comedia que intenta hacer humor negro y sátira política, pero termina siendo una colección de chistes que no dan risa y una burla al pueblo veracruzano.",

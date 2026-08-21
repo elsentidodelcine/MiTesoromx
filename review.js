@@ -67,6 +67,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       .join('');
 
     const generos = (reseña.generos || []).join(' · ');
+    const shareUrl = window.location.href;
+    const shareText = `Reseña: ${reseña.titulo} (${reseña.anio}) — ${reseña.puntaje}/5\n${shareUrl}`;
+    const waLink = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
 
     container.innerHTML = `
       <section class="review-hero">
@@ -111,22 +114,15 @@ document.addEventListener('DOMContentLoaded', async () => {
               ${plataformas ? `<div class="review-platforms">${plataformas}</div>` : ''}
 
               <div class="review-actions">
-                <a
-                  href="${escapeHTML(reseña.letterboxd || 'https://boxd.it/8uSCV')}"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn-letterboxd"
-                >
-                  Ver en Letterboxd
-                  <span aria-hidden="true">↗</span>
+                <a href="${escapeHTML(reseña.letterboxd || 'https://boxd.it/8uSCV')}"
+                   target="_blank" rel="noopener noreferrer" class="btn-letterboxd">
+                  Ver en Letterboxd <span aria-hidden="true">↗</span>
+                </a>
+                <a href="${escapeHTML(waLink)}"
+                   target="_blank" rel="noopener noreferrer" class="btn-share-wa">
+                  Compartir en WhatsApp
                 </a>
               </div>
-              const shareUrl = window.location.href;
-              const shareText = `Reseña: ${reseña.titulo} (${reseña.anio}) — ${reseña.puntaje}/5\n${shareUrl}`;
-              const waLink = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
-              <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="btn-share-wa">
-                Compartir en WhatsApp
-              </a>
             </div>
           </div>
         </div>
