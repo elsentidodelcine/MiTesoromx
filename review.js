@@ -70,9 +70,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const shareUrl = window.location.href;
     const shareText = `Reseña: ${reseña.titulo} (${reseña.anio}) — ${reseña.puntaje}/5\n${shareUrl}`;
     const waLink = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
-    const shareUrl = window.location.href;
-    const shareText = `Reseña: ${reseña.titulo} (${reseña.anio}) — ${reseña.puntaje}/5\n${shareUrl}`;
-    const waLink = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
 
     // --- NUEVO ---
     function tiempoLectura(contenido) {
