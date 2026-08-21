@@ -70,11 +70,43 @@ document.addEventListener('DOMContentLoaded', async () => {
     const shareUrl = window.location.href;
     const shareText = `Reseña: ${reseña.titulo} (${reseña.anio}) — ${reseña.puntaje}/5\n${shareUrl}`;
     const waLink = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+    const shareUrl = window.location.href;
+    const shareText = `Reseña: ${reseña.titulo} (${reseña.anio}) — ${reseña.puntaje}/5\n${shareUrl}`;
+    const waLink = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+
+    // --- NUEVO ---
+    function tiempoLectura(contenido) {
+      const texto = Array.isArray(contenido) ? contenido.join(' ') : String(contenido || '');
+      const palabras = texto.trim().split(/\s+/).filter(Boolean).length;
+      const min = Math.max(1, Math.round(palabras / 200));
+      return `${min} min de lectura`;
+    }
+
+    const lectura = tiempoLectura(reseña.contenido);
+
+    const fechaTxt = reseña.fecha
+      ? new Date(reseña.fecha + 'T12:00:00').toLocaleDateString('es-MX', {
+          year: 'numeric', month: 'long', day: 'numeric'
+        })
+      : '';
+
+    const relacionadas = resenas
+      .filter(r => r.id !== reseña.id)
+      .filter(r => {
+        const g1 = new Set(reseña.generos || []);
+        const mismoGenero = (r.generos || []).some(g => g1.has(g));
+        const notaParecida = Math.abs(Number(r.puntaje) - Number(reseña.puntaje)) <= 0.5;
+        return mismoGenero || notaParecida;
+      })
+      .slice(0, 3);
+    // --- fin nuevo ---
+
+    container.innerHTML = `
 
     container.innerHTML = `
       <section class="review-hero">
         <div class="review-hero-inner">
-          <a href="https://elsentidodelcine.github.io/mitesoromx/blog.html#Resenas" class="back-link">
+          <a href="blog.html#resenas" class="back-link">
             ← Volver a reseñas
           </a>
 
@@ -91,11 +123,14 @@ document.addEventListener('DOMContentLoaded', async () => {
             <div class="review-info">
               <h1>${escapeHTML(reseña.titulo)}</h1>
 
-              <div class="review-meta">
-                <span>${escapeHTML(String(reseña.anio))}</span>
-                ${generos ? `<span class="dot" aria-hidden="true"></span><span>${escapeHTML(generos)}</span>` : ''}
-                ${reseña.duracion ? `<span class="dot" aria-hidden="true"></span><span>${escapeHTML(reseña.duracion)}</span>` : ''}
-              </div>
+             <div class="review-meta">
+               <span>${escapeHTML(String(reseña.anio))}</span>
+               ${generos ? `<span class="dot" aria-hidden="true"></span><span>${escapeHTML(generos)}</span>` : ''}
+               ${reseña.duracion ? `<span class="dot" aria-hidden="true"></span><span>${escapeHTML(reseña.duracion)}</span>` : ''}
+               ${fechaTxt ? `<span class="dot" aria-hidden="true"></span><span>${escapeHTML(fechaTxt)}</span>` : ''}
+               <span class="dot" aria-hidden="true"></span>
+               <span>${escapeHTML(lectura)}</span>
+             </div>
 
               <!-- GRIMORIO DE CALIFICACIONES -->
               <div class="grimorio-rating" aria-label="Calificación: ${reseña.puntaje} de 5 – ${grimorio.titulo}">
@@ -145,6 +180,31 @@ document.addEventListener('DOMContentLoaded', async () => {
           <p>${escapeHTML(reseña.veredicto || 'Sin veredicto todavía.')}</p>
         </div>
       </article>
+
+      <aside class="donde-barato">
+        <h3>¿Dónde verla más barato?</h3>
+        <p>
+          Compara boletos y dulcero en
+          <a href="precios.html">Precios de cine</a>
+          (San Francisco del Rincón y León).
+        </p>
+      </aside>
+
+      ${relacionadas.length ? `
+      <section class="related-reviews">
+        <h3>También en el grimorio</h3>
+        <div class="related-grid">
+          ${relacionadas.map(r => `
+            <a class="related-card" href="review.html?id=${encodeURIComponent(r.id)}">
+              <img src="${escapeHTML(r.poster || '')}" alt="" loading="lazy"
+                   onerror="this.style.visibility='hidden'">
+              <span class="related-title">${escapeHTML(r.titulo)}</span>
+              <small>${escapeHTML(String(r.puntaje))}/5</small>
+            </a>
+          `).join('')}
+        </div>
+      </section>
+      ` : ''}
 
       <nav class="review-nav" aria-label="Otras reseñas">
         ${anterior ? `

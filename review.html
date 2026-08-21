@@ -484,6 +484,184 @@
             margin-left: 0;
           }
         }
+
+        .review-actions {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          margin-top: 18px;
+          align-items: center;
+        }
+
+        .btn-letterboxd,
+        .btn-share-wa {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          min-height: 44px;
+          padding: 10px 18px;
+          border-radius: 999px;
+          font-size: 0.82rem;
+          font-weight: 700;
+          letter-spacing: 0.01em;
+          text-decoration: none;
+          border: 1px solid transparent;
+          transition: background .2s ease, border-color .2s ease, transform .15s ease;
+          line-height: 1.2;
+          white-space: nowrap;
+        }
+
+        .btn-letterboxd:hover,
+        .btn-share-wa:hover {
+          transform: translateY(-1px);
+        }
+
+        /* Letterboxd — al estilo del sitio */
+        .btn-letterboxd {
+          background: rgba(255, 255, 255, 0.06);
+          border-color: rgba(255, 255, 255, 0.14);
+          color: #f0f0f2;
+        }
+
+        .btn-letterboxd:hover {
+          background: rgba(255, 255, 255, 0.1);
+          border-color: rgba(255, 255, 255, 0.22);
+          color: #fff;
+        }
+
+        /* WhatsApp — mismo tamaño, color propio */
+        .btn-share-wa {
+          background: rgba(37, 211, 102, 0.12);
+          border-color: rgba(37, 211, 102, 0.35);
+          color: #3ddc81;
+        }
+
+        .btn-share-wa:hover {
+          background: rgba(37, 211, 102, 0.2);
+          border-color: rgba(37, 211, 102, 0.5);
+          color: #5ce89a;
+        }
+
+        /* Modo claro */
+        html[data-theme="light"] .btn-letterboxd {
+          background: rgba(0, 0, 0, 0.04);
+          border-color: rgba(0, 0, 0, 0.12);
+          color: #121214;
+        }
+
+        html[data-theme="light"] .btn-letterboxd:hover {
+          background: rgba(0, 0, 0, 0.07);
+          color: #000;
+        }
+
+        html[data-theme="light"] .btn-share-wa {
+          background: rgba(18, 140, 70, 0.1);
+          border-color: rgba(18, 140, 70, 0.35);
+          color: #128c46;
+        }
+
+        html[data-theme="light"] .btn-share-wa:hover {
+          background: rgba(18, 140, 70, 0.16);
+          color: #0b6b34;
+        }
+
+        @media (max-width: 480px) {
+          .review-actions {
+            flex-direction: column;
+            align-items: stretch;
+          }
+          .btn-letterboxd,
+          .btn-share-wa {
+            width: 100%;
+          }
+        }
+
+        .donde-barato {
+          width: min(720px, calc(100% - 48px));
+          margin: 36px auto 0;
+          padding: 18px 20px;
+          border-radius: 14px;
+          border: 1px solid rgba(201, 162, 39, 0.22);
+          background: rgba(201, 162, 39, 0.06);
+        }
+        .donde-barato h3 {
+          font-family: 'Playfair Display', Georgia, serif;
+          color: #fff;
+          font-size: 1.15rem;
+          margin: 0 0 8px;
+        }
+        .donde-barato p {
+          margin: 0;
+          color: var(--muted);
+          font-size: 0.92rem;
+          line-height: 1.6;
+        }
+        .donde-barato a {
+          color: var(--gold);
+          text-decoration: underline;
+          text-underline-offset: 3px;
+        }
+
+        .related-reviews {
+          width: min(var(--max), calc(100% - 48px));
+          margin: 48px auto 0;
+        }
+        .related-reviews h3 {
+          font-family: 'Playfair Display', Georgia, serif;
+          color: #fff;
+          font-size: 1.35rem;
+          margin-bottom: 16px;
+          text-align: center;
+        }
+        .related-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        @media (min-width: 600px) {
+          .related-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+        .related-card {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          padding: 12px;
+          border-radius: 12px;
+          border: 1px solid var(--border);
+          background: var(--surface);
+          text-decoration: none;
+          color: var(--text);
+          transition: border-color .2s ease, transform .15s ease;
+        }
+        .related-card:hover {
+          border-color: rgba(201, 162, 39, 0.35);
+          transform: translateY(-2px);
+        }
+        .related-card img {
+          width: 100%;
+          aspect-ratio: 2 / 3;
+          object-fit: cover;
+          border-radius: 8px;
+          background: var(--surface-2);
+        }
+        .related-title {
+          font-weight: 700;
+          font-size: 0.9rem;
+          line-height: 1.3;
+        }
+        .related-card small {
+          color: var(--gold);
+          font-weight: 700;
+        }
+
+        html[data-theme="light"] .donde-barato h3,
+        html[data-theme="light"] .related-reviews h3,
+        html[data-theme="light"] .related-title {
+          color: #121214;
+        }
     </style>
 </head>
 <body>
@@ -495,7 +673,7 @@
             <img src="imgs/logoL.jpeg" alt="Los Brujos del Cine" class="site-logo">
             <div class="logo-text">
                 <h1>Los Brujos del Cine</h1>
-                <span>El Grimorio del Cine de Mi Tesoro MX</span>
+                <span>Grimorio del Cine</span>
             </div>
         </a>
 
@@ -525,8 +703,6 @@
         <div class="loading-state">Cargando reseña...</div>
     </div>
 </main>
-
-<!-- <div class="reading-time">${tiempoLectura(r.contenido)} </div>-->
 
 <footer class="site-footer">
     <div class="footer-inner">
