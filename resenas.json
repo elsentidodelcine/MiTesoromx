@@ -245,5 +245,33 @@
     ],
     "cita": "Una cosa es hacer sátira y humor negro, y otra es pensar que decir cualquier barbaridad automáticamente la convierte en comedia.",
     "veredicto": "Una estupidez de principio a fin. Ruidosa, exagerada y muy pendeja. No la recomiendo."
+  },
+  {
+    "id": "codigo-venganza",
+    "titulo": "Código: Venganza",
+    "anio": 2026,
+    "fecha": "2026-08-20",
+    "duracion": "95 min",
+    "generos": ["Acción", "Thriller"],
+    "puntaje": 2.0,
+    "destacada": false,
+    "etiqueta": "ESTRENO",
+    "plataformas": ["Cines"],
+    "resumen": "Otro capítulo más de Las Aventuras de Jason Statham. Misma fórmula de siempre: traición, tragedia y el monstruo interior que despierta para hacer justicia. Nada nuevo bajo el sol.",
+    "poster": "imgs/posters/codigo.jpg",
+    "posterFallback": {
+      "linea1": "Código:",
+      "linea2": "Venganza"
+    },
+    "letterboxd": "https://letterboxd.com/film/mutiny-2026",
+    "lead": "Ya tenemos un capítulo más de la serie llamada Las Aventuras de Jason Statham. Misma fórmula, mismo resultado: aburrida y predecible.",
+    "contenido": [
+      "Ya tenemos un capítulo más de la serie llamada Las Aventuras de Jason Statham. Y es que últimamente parece que todas sus películas cuentan exactamente la misma historia. Ya van varias seguidas donde tenemos al mismo Jason Statham: trabaja para alguien, ocurre una tragedia, lo traicionan o matan a alguien cercano y entonces despierta al monstruo que lleva dentro para acabar con todos y hacer justicia. Cambian el nombre, los personajes y el escenario, pero la fórmula es prácticamente la misma.",
+      "Y aquí vuelve a pasar. Tenemos conspiraciones, traiciones, golpes, balazos y persecuciones, pero la verdad es que ya me sé la película antes de que empiece. El problema no es que sea una película de acción sencilla, sino que no encuentro nada que la haga diferente de las anteriores. Jason Statham hace exactamente lo que esperamos de él y, aunque cuando empieza a repartir golpes funciona, ya no me sorprende.",
+      "Lo peor es que nuevamente terminé sintiendo que estaba viendo otra película más de la misma colección. Beekeeper, Working Man, Shelter y ahora Código: Venganza; hasta el momento ninguna de estas últimas me ha conseguido interesar realmente. Todas me han parecido bastante aburridas y esta no fue la excepción.",
+      "Al final, Jason Statham ya necesita urgentemente una película que rompa esta fórmula, porque Las Aventuras de Jason Statham ya se sienten como una serie con demasiados capítulos iguales. Para mí, esta fue otra oportunidad desperdiciada y definitivamente no me dejó con ganas de volver a verla."
+    ],
+    "cita": "Las Aventuras de Jason Statham ya se sienten como una serie con demasiados capítulos iguales.",
+    "veredicto": "Otra película más de la misma fórmula. Predecible, aburrida y una oportunidad desperdiciada. Jason Statham necesita urgentemente algo diferente."
   }
 ]
