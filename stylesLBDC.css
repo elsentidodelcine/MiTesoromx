@@ -787,9 +787,24 @@ button:focus-visible {
 /* ========================= REVIEW CARDS ========================= */
 .review-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
-  margin-top: 22px;
+  grid-template-columns: 1fr; /* móvil: una sola */
+  gap: 20px;
+  width: min(var(--max), calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* Tablet: 2 columnas */
+@media (min-width: 700px) {
+  .review-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop ancho: 3 si quieres */
+@media (min-width: 1024px) {
+  .review-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .review-card {
@@ -1502,4 +1517,66 @@ button:focus-visible {
   font-size: .75rem;
   color: var(--muted);
   margin-top: 6px;
+}
+
+:root {
+  --bg: #030304;
+  --bg-soft: #07070a;
+  --surface: #0c0c10;
+  --surface-2: #121218;
+  --border: rgba(255,255,255,.06);
+  --text: #f0f0f2;
+  --muted: #9a9aa6;
+  --muted-2: #5c5c68;
+  --red: #c41e3a;
+  --gold: #c9a227;
+}
+
+html[data-theme="light"] {
+  --bg: #f4f2ec;
+  --bg-soft: #ebe7de;
+  --surface: #ffffff;
+  --surface-2: #f7f5f0;
+  --border: rgba(0,0,0,.08);
+  --text: #1a1a1e;
+  --muted: #5c5c68;
+  --muted-2: #8a8a96;
+  --red: #b01830;
+  --gold: #8a7019;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Botón tema */
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: #1a1a22;
+  color: #e8e8ec;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+html[data-theme="light"] .theme-toggle {
+  background: #fff;
+  border-color: rgba(0,0,0,.12);
+  color: #1a1a1e;
+}
+
+.theme-icon-sun { display: none; }
+html[data-theme="light"] .theme-icon-moon { display: none; }
+html[data-theme="light"] .theme-icon-sun { display: inline; }
+
+/* Header en claro */
+html[data-theme="light"] .site-header {
+  background: rgba(244, 242, 236, 0.92);
 }

@@ -367,3 +367,40 @@ function aplicarFiltros(resenas) {
 
   return list;
 }
+
+
+(function () {
+  const KEY = 'lbdc-theme';
+  const root = document.documentElement;
+  const btn = () => document.getElementById('theme-toggle');
+
+  function apply(theme) {
+    root.setAttribute('data-theme', theme);
+    try { localStorage.setItem(KEY, theme); } catch (_) {}
+    const b = btn();
+    if (b) {
+      b.setAttribute(
+        'aria-label',
+        theme === 'light' ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro'
+      );
+    }
+  }
+
+  // Preferencia guardada o sistema
+  let saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (_) {}
+  if (saved === 'light' || saved === 'dark') {
+    apply(saved);
+  } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+    apply('light');
+  } else {
+    apply('dark');
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    btn()?.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      apply(next);
+    });
+  });
+})();
