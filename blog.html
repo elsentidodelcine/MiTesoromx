@@ -176,8 +176,26 @@
             </div>
         </div> -->
 
-        <div id="featured-review-container"></div>
-        <div class="review-grid" id="reviews-grid"></div>
+        <div id="featured-review-container">
+            <div class="skeleton-featured" aria-hidden="true">
+                <div class="skeleton-card tall"></div>
+            </div>
+        </div>
+        <div class="review-grid" id="reviews-grid">
+            <div class="skeleton-card" aria-hidden="true"></div>
+            <div class="skeleton-card" aria-hidden="true"></div>
+        </div>
+    </section>
+
+    <section class="ranking-section" id="ranking">
+        <div class="section-heading">
+            <div>
+                <span class="section-kicker">EL GRIMORIO ORDENADO</span>
+                <h2>Ranking de reseñas</h2>
+            </div>
+            <p>Top 10 según el grimorio.</p>
+        </div>
+        <div id="ranking-list" class="ranking-list"></div>
     </section>
 
     <!-- QUOTE -->

@@ -121,6 +121,12 @@ document.addEventListener('DOMContentLoaded', async () => {
                   <span aria-hidden="true">↗</span>
                 </a>
               </div>
+              const shareUrl = window.location.href;
+              const shareText = `Reseña: ${reseña.titulo} (${reseña.anio}) — ${reseña.puntaje}/5\n${shareUrl}`;
+              const waLink = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+              <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="btn-share-wa">
+                Compartir en WhatsApp
+              </a>
             </div>
           </div>
         </div>
