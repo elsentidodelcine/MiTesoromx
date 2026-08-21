@@ -7,7 +7,7 @@
     "duracion": "145 min",
     "generos": ["Acción", "Superhéroes"],
     "puntaje": 4.5,
-    "destacada": true,
+    "destacada": false,
     "etiqueta": "ESTRENO",
     "plataformas": ["Cines"],
     "resumen": "El regreso de Peter Parker abre una nueva etapa. ¿Funciona como la siguiente gran aventura del héroe arácnido?",

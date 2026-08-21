@@ -282,5 +282,109 @@
       }
     ],
     "nota": "Proximamente"
+  },
+  {
+    "id": "lost",
+    "titulo": "Lost Highway",
+    "tipo": "preventa",
+    "fecha": "2026-09-03",
+    "fechaTexto": "Jueves 3 de Septiembre 2026",
+    "poster": "imgs/estrenos/lost.jpg",
+    "cines": ["Cinépolis"],
+    "links": [
+      {
+        "cine": "Cinépolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Ciclo de David Lynch's"
+  },
+  {
+    "id": "blue",
+    "titulo": "Blue Velvet",
+    "tipo": "preventa",
+    "fecha": "2026-09-03",
+    "fechaTexto": "Jueves 3 de Septiembre 2026",
+    "poster": "imgs/estrenos/blue.jpg",
+    "cines": ["Cinépolis"],
+    "links": [
+      {
+        "cine": "Cinépolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Ciclo de David Lynch's"
+  },
+  {
+    "id": "madre",
+    "titulo": "A Toda Madre",
+    "tipo": "preventa",
+    "fecha": "2026-09-17",
+    "fechaTexto": "Jueves 17 de Septiembre del 2026",
+    "poster": "imgs/estrenos/madre.jpg",
+    "cines": ["Cinepolis"],
+    "links": [
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Proximamente"
+  },
+  {
+    "id": "sagrado",
+    "titulo": "Sagrado Corazón",
+    "tipo": "preventa",
+    "fecha": "2026-08-27",
+    "fechaTexto": "Jueves 27 de Agosto 2026",
+    "poster": "imgs/estrenos/sagrado.jpg",
+    "cines": ["Cinemex", "Cinepolis"],
+    "links": [
+      {
+        "cine": "Cinemex",
+        "url": "https://cinemex.com"
+      },
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Preventa ya disponible"
+  },
+  {
+    "id": "hija",
+    "titulo": "Él Me Llama Su Hija",
+    "tipo": "preventa",
+    "fecha": "2026-09-24",
+    "fechaTexto": "Jueves 24 de Septiembre 2026",
+    "poster": "imgs/estrenos/hija.jpg",
+    "cines": ["Cinemex", "Cinepolis"],
+    "links": [
+      {
+        "cine": "Cinemex",
+        "url": "https://cinemex.com"
+      },
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Preventa ya disponible"
+  },
+  {
+    "id": "puella",
+    "titulo": "Puella Magi Madoka Magica: La Rebelión",
+    "tipo": "preventa",
+    "fecha": "2026-09-03",
+    "fechaTexto": "Jueves 3 de Septiembre del 2026",
+    "poster": "imgs/estrenos/puella3.jpg",
+    "cines": ["Cinepolis"],
+    "links": [
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Proximamente"
   }
 ]
