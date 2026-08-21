@@ -142,7 +142,7 @@ fetch("productos.json")
       catalogoEl.classList.remove("catalogo-skeleton");
       catalogoEl.removeAttribute("aria-busy");
     }
-    render();
+    aplicarFiltros();
     actualizarCarritoUI();
     actualizarContadorCarrito();
 
