@@ -1,0 +1,42 @@
+{
+  "actualizado": "2026-08-23",
+  "nota": "Cifras de referencia en dólares (taquilla mundial). Pueden variar según la fuente.",
+  "historia": [
+    {
+      "puesto": 1,
+      "titulo": "Avatar",
+      "anio": 2009,
+      "taquilla": 2923706026,
+      "taquillaTexto": "$2,923 M",
+      "poster": "imgs/taquilla/avatar.jpg",
+      "director": "James Cameron"
+    },
+    {
+      "puesto": 2,
+      "titulo": "Avengers: Endgame",
+      "anio": 2019,
+      "taquilla": 2797501328,
+      "taquillaTexto": "$2,798 M",
+      "poster": "imgs/taquilla/endgame.jpg",
+      "director": "Anthony y Joe Russo"
+    }
+  ],
+  "porAnio": [
+    {
+      "anio": 2025,
+      "peliculas": [
+        {
+          "puesto": 1,
+          "titulo": "Ejemplo",
+          "taquilla": 1500000000,
+          "taquillaTexto": "$1,500 M",
+          "poster": "imgs/taquilla/ejemplo.jpg"
+        }
+      ]
+    },
+    {
+      "anio": 2024,
+      "peliculas": []
+    }
+  ]
+}

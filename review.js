@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       .slice(0, 3);
     // --- fin nuevo ---
 
-    
+
     container.innerHTML = `
       <section class="review-hero">
         <div class="review-hero-inner">

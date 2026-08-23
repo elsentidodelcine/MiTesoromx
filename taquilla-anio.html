@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 taquilla por año | Los Brujos del Cine</title>
+    <meta name="description" content="Las 10 películas más taquilleras de cada año.">
+    <meta name="theme-color" content="#030304">
+    <link rel="icon" href="imgs/logoL.jpeg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesLBDC.css">
+    <style>
+        .taquilla-page { padding-bottom: 100px; }
+        .taquilla-hero {
+          position: relative;
+          padding: 64px 0 40px;
+          text-align: center;
+          border-bottom: 1px solid var(--border);
+          overflow: hidden;
+        }
+        .taquilla-hero::before {
+          content: "";
+          position: absolute; inset: 0;
+          background:
+            radial-gradient(ellipse 80% 60% at 50% -20%, rgba(196,30,58,.14), transparent 55%),
+            radial-gradient(ellipse 50% 40% at 80% 40%, rgba(201,162,39,.06), transparent 50%);
+          pointer-events: none;
+        }
+        .taquilla-hero-inner {
+          position: relative;
+          width: min(700px, calc(100% - 48px));
+          margin: 0 auto;
+        }
+        .taquilla-hero h1 {
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: clamp(2.2rem, 5vw, 3.4rem);
+          font-weight: 800;
+          letter-spacing: -.03em;
+          margin: 12px 0 14px;
+          color: var(--text, #fff);
+        }
+        .taquilla-hero h1 em { color: var(--gold); font-style: italic; }
+        .taquilla-hero p { color: var(--muted); font-size: 1rem; line-height: 1.65; }
+
+        .taquilla-note {
+          width: min(var(--max, 1120px), calc(100% - 48px));
+          margin: 24px auto 0;
+          text-align: center;
+          font-size: .82rem;
+          color: var(--muted);
+        }
+
+        .taquilla-tabs {
+          width: min(var(--max, 1120px), calc(100% - 48px));
+          margin: 28px auto 20px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          justify-content: center;
+        }
+        .taquilla-tabs a {
+          padding: 10px 18px;
+          border-radius: 999px;
+          border: 1px solid rgba(255,255,255,.16);
+          background: #1a1a22;
+          color: #e8e8ec;
+          font-size: .78rem;
+          font-weight: 600;
+          text-decoration: none;
+        }
+        .taquilla-tabs a.active {
+          background: linear-gradient(135deg, var(--red), var(--red-dark, #9a1830));
+          border-color: transparent;
+          color: #fff;
+        }
+        html[data-theme="light"] .taquilla-tabs a {
+          background: #fff;
+          border-color: rgba(0,0,0,.12);
+          color: #121214;
+        }
+
+        .year-select-wrap {
+          width: min(var(--max, 1120px), calc(100% - 48px));
+          margin: 0 auto 24px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 12px;
+          flex-wrap: wrap;
+        }
+        .year-select-wrap label {
+          font-size: .78rem;
+          color: var(--muted);
+          font-weight: 600;
+        }
+        .year-select-wrap select {
+          min-height: 42px;
+          min-width: 140px;
+          padding: 8px 16px;
+          border-radius: 999px;
+          border: 1px solid rgba(255,255,255,.16);
+          background: #1a1a22;
+          color: #fff;
+          font-size: .85rem;
+        }
+        html[data-theme="light"] .year-select-wrap select {
+          background: #fff;
+          color: #121214;
+          border-color: rgba(0,0,0,.12);
+        }
+
+        .taquilla-list {
+          width: min(var(--max, 1120px), calc(100% - 48px));
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+        .taquilla-row {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          padding: 12px 14px;
+          border-radius: 14px;
+          border: 1px solid var(--border);
+          background: var(--surface);
+          min-width: 0;
+          color: var(--text);
+        }
+        .taquilla-pos {
+          flex: 0 0 40px;
+          font-family: 'Playfair Display', Georgia, serif;
+          font-weight: 800;
+          font-size: 1.35rem;
+          color: var(--gold);
+          text-align: center;
+        }
+        .taquilla-pos.top3 { color: var(--red); }
+        .taquilla-poster {
+          flex: 0 0 52px;
+          width: 52px;
+          height: 78px;
+          object-fit: cover;
+          border-radius: 8px;
+          background: #121218;
+        }
+        .taquilla-info { flex: 1; min-width: 0; }
+        .taquilla-info strong {
+          display: block;
+          font-size: .95rem;
+          margin-bottom: 4px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .taquilla-info span {
+          font-size: .75rem;
+          color: var(--muted);
+        }
+        .taquilla-money {
+          flex: 0 0 auto;
+          font-weight: 800;
+          color: var(--gold);
+          font-size: .95rem;
+          white-space: nowrap;
+        }
+        .year-block { margin-bottom: 36px; }
+        .year-block h2 {
+          width: min(var(--max, 1120px), calc(100% - 48px));
+          margin: 0 auto 14px;
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: 1.5rem;
+          color: var(--text, #fff);
+          padding-bottom: 8px;
+          border-bottom: 1px solid var(--border);
+        }
+        .empty-state, .loading-state {
+          text-align: center;
+          padding: 60px 20px;
+          color: var(--muted);
+        }
+    </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Saltar al contenido</a>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="brand-link" aria-label="Inicio">
+            <img src="imgs/logoL.jpeg" alt="" class="site-logo">
+            <div class="logo-text">
+                <h1>Los Brujos del Cine</h1>
+                <span>El Grimorio del Cine</span>
+            </div>
+        </a>
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+            <a href="blog.html#resenas">Reseñas</a>
+            <a href="estrenos.html">Estrenos</a>
+            <a href="precios.html">Precios</a>
+            <a href="taquilla-historia.html">Taquilla</a>
+        </nav>
+    </div>
+</header>
+
+<main id="main-content" class="taquilla-page">
+    <section class="taquilla-hero">
+        <div class="taquilla-hero-inner">
+            <div class="eyebrow"><span aria-hidden="true"></span> Récords de taquilla</div>
+            <h1>Top 10 <em>por año</em></h1>
+            <p>Las películas más taquilleras de cada año (taquilla mundial de referencia).</p>
+        </div>
+    </section>
+
+    <!-- Pestañas: esta página = Por año -->
+    <div class="taquilla-tabs">
+        <a href="taquilla-historia.html">Histórico (Top 20)</a>
+        <a href="taquilla-anio.html" class="active">Por año (Top 10)</a>
+    </div>
+
+    <!-- Selector de año (el JS lo llena) -->
+    <div class="year-select-wrap">
+        <label for="filtro-anio">Año</label>
+        <select id="filtro-anio"></select>
+    </div>
+
+    <p class="taquilla-note" id="taquilla-note"></p>
+
+    <!-- Aquí se pinta el ranking del año elegido -->
+    <div id="taquilla-anio-container">
+        <div class="loading-state">Cargando...</div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-links">
+            <a href="aviso-de-privacidad-LBDC.html">Política de Privacidad</a>
+            <a href="blog.html#resenas">Reseñas</a>
+        </div>
+        <div class="footer-copy">
+            <p>© 2026 Los Brujos del Cine</p>
+        </div>
+    </div>
+</footer>
+
+<script src="taquilla.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initTaquillaAnio();
+    });
+</script>
+</body>
+</html>
