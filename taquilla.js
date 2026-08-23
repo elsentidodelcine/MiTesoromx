@@ -194,38 +194,35 @@ function calcResultado(taquilla, presupuesto) {
 function barraPresupuesto(p) {
   const budget = Number(p.presupuesto);
   const gross = Number(p.taquilla);
-  if (!budget || budget <= 0 || !gross && gross !== 0) {
+  if (!budget || budget <= 0) {
     return `<div class="bar-wrap bar-wrap--empty"><span class="bar-empty">Sin presupuesto publicado</span></div>`;
   }
 
-  const rentable = budget * 2; // 2×
-  const exito = budget * 3;    // 3×
-  // Escala visual: un poco más allá del máximo entre taquilla y 3×
+  const rentable = budget * 2;
+  const exito = budget * 3;
   const scale = Math.max(gross, exito) * 1.08;
-
   const pct = (v) => Math.min(100, Math.max(0, (v / scale) * 100));
 
   const pctGross = pct(gross);
   const pctBudget = pct(budget);
   const pctRent = pct(rentable);
   const pctExito = pct(exito);
-
   const resultado = p.resultado || calcResultado(gross, budget);
   const mult = (gross / budget).toFixed(1);
 
   return `
-    <div class="bar-wrap" title="Presupuesto ${escapeHTML(p.presupuestoTexto || fmtMoney(budget))} · Taquilla ${escapeHTML(p.taquillaTexto || fmtMoney(gross))} · ${mult}×">
+    <div class="bar-wrap">
+      <div class="bar-labels">
+        <span class="bar-label bar-label--budget" style="left:${pctBudget}%">1× ${fmtMoney(budget, p.presupuestoTexto)}</span>
+        <span class="bar-label bar-label--rentable" style="left:${pctRent}%">2× ${fmtMoney(rentable)}</span>
+        <span class="bar-label bar-label--exito" style="left:${pctExito}%">3× ${fmtMoney(exito)}</span>
+        <span class="bar-label bar-label--now" style="left:${pctGross}%">${mult}×</span>
+      </div>
       <div class="bar-track">
         <div class="bar-fill bar-fill--${escapeHTML(resultado)}" style="width:${pctGross}%"></div>
-        <span class="bar-mark bar-mark--budget" style="left:${pctBudget}%" title="Presupuesto (1×)"></span>
-        <span class="bar-mark bar-mark--rentable" style="left:${pctRent}%" title="Rentable (2×)"></span>
-        <span class="bar-mark bar-mark--exito" style="left:${pctExito}%" title="Éxito (3×)"></span>
-      </div>
-      <div class="bar-legend">
-        <span>Presup. ${escapeHTML(p.presupuestoTexto || fmtMoney(budget))}</span>
-        <span>2× ${fmtMoney(rentable)}</span>
-        <span>3× ${fmtMoney(exito)}</span>
-        <span class="bar-legend-now">${mult}× actual</span>
+        <span class="bar-mark bar-mark--budget" style="left:${pctBudget}%"></span>
+        <span class="bar-mark bar-mark--rentable" style="left:${pctRent}%"></span>
+        <span class="bar-mark bar-mark--exito" style="left:${pctExito}%"></span>
       </div>
     </div>
   `;

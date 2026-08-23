@@ -235,7 +235,7 @@
         }
 
         .bar-wrap {
-          margin-top: 10px;
+          margin-top: 14px;
           width: 100%;
         }
 
@@ -244,13 +244,40 @@
           color: var(--muted-2);
         }
 
+        .bar-labels {
+          position: relative;
+          height: 18px;
+          margin-bottom: 4px;
+        }
+
+        .bar-label {
+          position: absolute;
+          transform: translateX(-50%);
+          font-size: 0.62rem;
+          font-weight: 700;
+          white-space: nowrap;
+          line-height: 1;
+          pointer-events: none;
+        }
+
+        .bar-label--budget { color: #c8c8d0; }
+        .bar-label--rentable { color: var(--gold); }
+        .bar-label--exito { color: #7ddea0; }
+        .bar-label--now {
+          color: #fff;
+          background: rgba(0, 0, 0, 0.55);
+          padding: 2px 6px;
+          border-radius: 999px;
+          top: -2px;
+        }
+
         .bar-track {
           position: relative;
-          height: 12px;
+          height: 14px;
           border-radius: 999px;
-          background: rgba(255, 255, 255, 0.06);
-          border: 1px solid var(--border);
-          overflow: hidden;
+          background: rgba(255, 255, 255, 0.08);
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          overflow: visible; /* para que se vean las marcas */
         }
 
         html[data-theme="light"] .bar-track {
@@ -263,35 +290,42 @@
           top: 0;
           bottom: 0;
           border-radius: 999px;
-          transition: width 0.4s ease;
+          z-index: 1;
         }
 
         .bar-fill--exito {
-          background: linear-gradient(90deg, #2d8a55, #7ddea0);
+          background: linear-gradient(90deg, #1e6b42, #3ecf7a);
         }
         .bar-fill--rentable {
-          background: linear-gradient(90deg, #8a7019, var(--gold));
+          background: linear-gradient(90deg, #8a7019, #c9a227);
         }
         .bar-fill--perdida {
-          background: linear-gradient(90deg, #9a1830, #ff8a9a);
-        }
-        .bar-fill--sin-dato {
-          background: rgba(255, 255, 255, 0.25);
+          background: linear-gradient(90deg, #9a1830, #e85a6b);
         }
 
-        /* Marcas verticales: 1×, 2×, 3× */
+      /* Marcas: línea blanca/dorada encima del verde */
         .bar-mark {
           position: absolute;
-          top: -2px;
-          bottom: -2px;
-          width: 2px;
+          top: -4px;
+          bottom: -4px;
+          width: 3px;
           transform: translateX(-50%);
-          border-radius: 1px;
-          z-index: 2;
+          border-radius: 2px;
+          z-index: 3;
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.45);
         }
-        .bar-mark--budget { background: rgba(255, 255, 255, 0.55); }
-        .bar-mark--rentable { background: var(--gold); }
-        .bar-mark--exito { background: #7ddea0; }
+
+        .bar-mark--budget {
+          background: #f0f0f2;
+        }
+        .bar-mark--rentable {
+          background: var(--gold);
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5), 0 0 6px rgba(201, 162, 39, 0.6);
+        }
+        .bar-mark--exito {
+          background: #b8f5d0;
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5), 0 0 6px rgba(125, 222, 160, 0.5);
+        }
 
         .bar-legend {
           display: flex;
@@ -314,6 +348,24 @@
           .taquilla-info {
             flex: 1 1 100%;
           }
+        }
+
+        html[data-theme="light"] .bar-track {
+          background: rgba(0, 0, 0, 0.08);
+          border-color: rgba(0, 0, 0, 0.1);
+        }
+        html[data-theme="light"] .bar-label--now {
+          background: rgba(0, 0, 0, 0.75);
+          color: #fff;
+        }
+        html[data-theme="light"] .bar-mark--budget {
+          background: #121214;
+        }
+
+        /* Móvil: etiquetas más chicas */
+        @media (max-width: 520px) {
+          .bar-label { font-size: 0.55rem; }
+          .bar-label--now { display: none; } /* opcional: el 9.2× se lee en el badge */
         }
     </style>
 </head>

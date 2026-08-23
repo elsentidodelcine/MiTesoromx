@@ -273,5 +273,34 @@
     ],
     "cita": "Las Aventuras de Jason Statham ya se sienten como una serie con demasiados capítulos iguales.",
     "veredicto": "Otra película más de la misma fórmula. Predecible, aburrida y una oportunidad desperdiciada. Jason Statham necesita urgentemente algo diferente."
+  },
+  {
+    "id": "hokum",
+    "titulo": "Hokum",
+    "anio": 2026,
+    "fecha": "2026-08-23",
+    "duracion": "107 min",
+    "generos": ["Terror"],
+    "puntaje": 2.5,
+    "destacada": false,
+    "etiqueta": "",
+    "plataformas": ["Streaming"],
+    "resumen": "Una película de terror con buena atmósfera y tensión en la habitación, pero el elemento sobrenatural de la bruja se siente de más. Palomera, nada más.",
+    "poster": "imgs/posters/hokum.jpg",
+    "posterFallback": {
+      "linea1": "Hokum",
+      "linea2": ""
+    },
+    "letterboxd": "https://letterboxd.com/film/hokum",
+    "lead": "No es mala, pero tampoco esa joya de terror que las reseñas prometían. Tiene tensión y atmósfera, pero se queda en una película para pasar el rato.",
+    "contenido": [
+      "Ya vi Hokum (2026), dirigida por Damián McKiernan, y otra vez me pasó lo mismo que muchas veces con las películas de terror que vienen de otros países: las veo llenas de reseñas positivas, la gente las venera y las pone por las nubes, y cuando finalmente las veo termino bastante decepcionado.",
+      "Y no, Hokum no me pareció una mala película, pero tampoco entiendo todo el entusiasmo que hay alrededor de ella. Para mí es una película palomera a secas, con algunos momentos interesantes, pero nada que me haya parecido realmente impresionante.",
+      "Lo que más me llamó la atención fue la parte del misterio y la tensión dentro de esa habitación. La oscuridad, el ambiente y la incertidumbre funcionan bastante bien para generar incomodidad. De hecho, creo que la película pudo haber funcionado mucho mejor si simplemente se hubiera mantenido como una historia sobre una persona que asesina gente y esconde los cuerpos.",
+      "El problema para mí llega cuando entra todo lo relacionado con la bruja y la maldición. Con ese subtítulo de La maldición de la bruja, esperaba que fuera una parte importante, pero terminé sintiendo que esa explicación sobrenatural estaba de más. La película ya tenía una historia suficientemente interesante sin necesidad de meterle ese elemento.",
+      "No me pareció mala, pero tampoco fue esa joya de terror que tantas reseñas me hicieron esperar. Tiene tensión, algunos momentos que funcionan y una atmósfera bastante buena, pero para mí se queda simplemente en una película para pasar el rato."
+    ],
+    "cita": "La película ya tenía una historia suficientemente interesante sin necesidad de meterle ese elemento.",
+    "veredicto": "Buena atmósfera y tensión, pero el elemento de la bruja sobra. Una película palomera de terror, nada más. No está a la altura del entusiasmo que genera."
   }
 ]
