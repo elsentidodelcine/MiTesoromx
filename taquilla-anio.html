@@ -181,6 +181,38 @@
           padding: 60px 20px;
           color: var(--muted);
         }
+
+        .badge-resultado {
+          display: inline-block;
+          margin-left: 8px;
+          padding: 3px 10px;
+          border-radius: 999px;
+          font-size: .65rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: .04em;
+          white-space: nowrap;
+        }
+        .badge-perdida {
+          background: rgba(196,30,58,.15);
+          color: #ff8a9a;
+          border: 1px solid rgba(196,30,58,.35);
+        }
+        .badge-rentable {
+          background: rgba(201,162,39,.12);
+          color: var(--gold);
+          border: 1px solid rgba(201,162,39,.35);
+        }
+        .badge-exito {
+          background: rgba(125,222,160,.12);
+          color: #7ddea0;
+          border: 1px solid rgba(125,222,160,.3);
+        }
+        .badge-sin-dato {
+          background: rgba(255,255,255,.06);
+          color: var(--muted);
+          border: 1px solid var(--border);
+        }
     </style>
 </head>
 <body>
@@ -226,6 +258,12 @@
     <div class="year-select-wrap">
         <label for="filtro-anio">Año</label>
         <select id="filtro-anio"></select>
+
+        <label for="filtro-tipo">Lista</label>
+        <select id="filtro-tipo">
+            <option value="general">General</option>
+            <option value="terror">Terror</option>
+        </select>
     </div>
 
     <p class="taquilla-note" id="taquilla-note"></p>

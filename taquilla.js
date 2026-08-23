@@ -20,22 +20,33 @@ function fmtMoney(n, texto) {
 function rowHTML(p, { showYear = false } = {}) {
   const pos = Number(p.puesto) || 0;
   const top = pos >= 1 && pos <= 3 ? ' top3' : '';
+  const enCartel = p.enCartel === true || Number(p.anio) === new Date().getFullYear();
+  const rowClass = enCartel ? ' taquilla-row--cartel' : '';
+
   const meta = [
     showYear && p.anio ? String(p.anio) : null,
     p.distribuidora || null,
     p.director || null
   ].filter(Boolean).join(' · ');
 
+  const resultado = p.resultado || calcResultado(p.taquilla, p.presupuesto);
+
   return `
-    <article class="taquilla-row">
+    <article class="taquilla-row${rowClass}">
       <span class="taquilla-pos${top}">${pos || '—'}</span>
       <img class="taquilla-poster" src="${escapeHTML(p.poster || '')}" alt=""
            loading="lazy" onerror="this.style.visibility='hidden'">
       <div class="taquilla-info">
-        <strong>${escapeHTML(p.titulo || 'Sin título')}</strong>
+        <strong>
+          ${escapeHTML(p.titulo || 'Sin título')}
+          ${enCartel ? '<span class="badge-cartel">En cines</span>' : ''}
+        </strong>
         ${meta ? `<span>${escapeHTML(meta)}</span>` : ''}
       </div>
-      <div class="taquilla-money">${fmtMoney(p.taquilla, p.taquillaTexto)}</div>
+      <div class="taquilla-money">
+        ${fmtMoney(p.taquilla, p.taquillaTexto)}
+        ${p.presupuesto != null || p.resultado ? badgeResultado(resultado) : ''}
+      </div>
     </article>
   `;
 }
@@ -70,7 +81,9 @@ async function initTaquillaHistoria() {
 async function initTaquillaAnio() {
   const box = document.getElementById('taquilla-anio-container');
   const sel = document.getElementById('filtro-anio');
+  const tipo = document.getElementById('filtro-tipo');
   const note = document.getElementById('taquilla-note');
+
   try {
     const data = await loadTaquilla();
     const years = (data.porAnio || []).slice().sort((a, b) => b.anio - a.anio);
@@ -89,26 +102,59 @@ async function initTaquillaAnio() {
       sel.innerHTML = years.map(y =>
         `<option value="${y.anio}">${y.anio}</option>`
       ).join('');
-      sel.addEventListener('change', () => pintarAnio(years, sel.value));
-      pintarAnio(years, sel.value);
-    } else {
-      box.innerHTML = years.map(y => bloqueAnio(y)).join('');
     }
+
+    const repintar = () => {
+      const anio = sel?.value || years[0].anio;
+      const modo = tipo?.value || 'general';
+      pintarAnio(years, anio, modo);
+    };
+
+    sel?.addEventListener('change', repintar);
+    tipo?.addEventListener('change', repintar);
+    repintar();
   } catch (e) {
     console.error(e);
     if (box) box.innerHTML = `<p class="empty-state">Error al cargar los datos.</p>`;
   }
 }
 
-function pintarAnio(years, anio) {
+function pintarAnio(years, anio, modo = 'general') {
   const box = document.getElementById('taquilla-anio-container');
   const y = years.find(x => String(x.anio) === String(anio));
   if (!box) return;
+
   if (!y) {
-    box.innerHTML = `<p class="empty-state">Sin datos para ${escapeHTML(anio)}.</p>`;
+    box.innerHTML = `<p class="empty-state">Sin datos para ${escapeHTML(String(anio))}.</p>`;
     return;
   }
-  box.innerHTML = bloqueAnio(y);
+
+  let pelis = [];
+  if (modo === 'terror') {
+    pelis = (y.terror || y.peliculas || []).filter(p =>
+      (p.genero || '').toLowerCase() === 'terror' ||
+      (p.generos || []).some(g => /terror|horror/i.test(g))
+    );
+    // Si tienes array dedicado:
+    if (Array.isArray(y.terror) && y.terror.length) pelis = y.terror;
+  } else {
+    pelis = (y.peliculas || []).slice();
+  }
+
+  pelis = pelis.slice().sort((a, b) => (a.puesto || 99) - (b.puesto || 99));
+
+  const tituloLista = modo === 'terror' ? 'Terror' : 'General';
+
+  box.innerHTML = `
+    <div class="year-block">
+      <h2>${escapeHTML(String(y.anio))} · ${tituloLista}</h2>
+      <div class="taquilla-list">
+        ${pelis.length
+          ? pelis.map(p => rowHTML(p)).join('')
+          : `<p class="empty-state">No hay películas de ${tituloLista.toLowerCase()} para este año.</p>`}
+      </div>
+    </div>
+  `;
 }
 
 function bloqueAnio(y) {
@@ -123,4 +169,24 @@ function bloqueAnio(y) {
       </div>
     </div>
   `;
+}
+
+function badgeResultado(r) {
+  const map = {
+    perdida: { label: 'Pérdida', className: 'badge-perdida' },
+    rentable: { label: 'Rentable', className: 'badge-rentable' },
+    exito: { label: 'Éxito', className: 'badge-exito' },
+    'sin-dato': { label: 'Sin dato', className: 'badge-sin-dato' }
+  };
+  const x = map[r] || map['sin-dato'];
+  return `<span class="badge-resultado ${x.className}">${x.label}</span>`;
+}
+
+// O calcular en vivo si tienes presupuesto + taquilla:
+function calcResultado(taquilla, presupuesto) {
+  if (presupuesto == null || presupuesto <= 0 || taquilla == null) return 'sin-dato';
+  const m = Number(taquilla) / Number(presupuesto);
+  if (m < 2) return 'perdida';
+  if (m < 3) return 'rentable';
+  return 'exito';
 }
