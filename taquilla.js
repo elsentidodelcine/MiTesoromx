@@ -149,9 +149,9 @@ function pintarAnio(years, anio, modo = 'general') {
     <div class="year-block">
       <h2>${escapeHTML(String(y.anio))} · ${tituloLista}</h2>
       <div class="taquilla-list">
-        ${pelis.length
-          ? pelis.map(p => rowHTML(p)).join('')
-          : `<p class="empty-state">No hay películas de ${tituloLista.toLowerCase()} para este año.</p>`}
+      ${pelis.length
+        ? pelis.map(p => rowHTMLAnio(p)).join('')
+        : `<p class="empty-state">No hay películas de ${tituloLista.toLowerCase()} para este año.</p>`}
       </div>
     </div>
   `;
@@ -164,8 +164,8 @@ function bloqueAnio(y) {
       <h2 style="width:min(var(--max,1120px),calc(100% - 48px));margin:0 auto 14px;">${escapeHTML(String(y.anio))}</h2>
       <div class="taquilla-list">
         ${pelis.length
-          ? pelis.map(p => rowHTML(p)).join('')
-          : `<p class="empty-state">Sin películas cargadas para este año.</p>`}
+          ? pelis.map(p => rowHTMLAnio(p)).join('')
+          : `<p class="empty-state">No hay películas de ${tituloLista.toLowerCase()} para este año.</p>`}
       </div>
     </div>
   `;
@@ -189,4 +189,79 @@ function calcResultado(taquilla, presupuesto) {
   if (m < 2) return 'perdida';
   if (m < 3) return 'rentable';
   return 'exito';
+}
+
+function barraPresupuesto(p) {
+  const budget = Number(p.presupuesto);
+  const gross = Number(p.taquilla);
+  if (!budget || budget <= 0 || !gross && gross !== 0) {
+    return `<div class="bar-wrap bar-wrap--empty"><span class="bar-empty">Sin presupuesto publicado</span></div>`;
+  }
+
+  const rentable = budget * 2; // 2×
+  const exito = budget * 3;    // 3×
+  // Escala visual: un poco más allá del máximo entre taquilla y 3×
+  const scale = Math.max(gross, exito) * 1.08;
+
+  const pct = (v) => Math.min(100, Math.max(0, (v / scale) * 100));
+
+  const pctGross = pct(gross);
+  const pctBudget = pct(budget);
+  const pctRent = pct(rentable);
+  const pctExito = pct(exito);
+
+  const resultado = p.resultado || calcResultado(gross, budget);
+  const mult = (gross / budget).toFixed(1);
+
+  return `
+    <div class="bar-wrap" title="Presupuesto ${escapeHTML(p.presupuestoTexto || fmtMoney(budget))} · Taquilla ${escapeHTML(p.taquillaTexto || fmtMoney(gross))} · ${mult}×">
+      <div class="bar-track">
+        <div class="bar-fill bar-fill--${escapeHTML(resultado)}" style="width:${pctGross}%"></div>
+        <span class="bar-mark bar-mark--budget" style="left:${pctBudget}%" title="Presupuesto (1×)"></span>
+        <span class="bar-mark bar-mark--rentable" style="left:${pctRent}%" title="Rentable (2×)"></span>
+        <span class="bar-mark bar-mark--exito" style="left:${pctExito}%" title="Éxito (3×)"></span>
+      </div>
+      <div class="bar-legend">
+        <span>Presup. ${escapeHTML(p.presupuestoTexto || fmtMoney(budget))}</span>
+        <span>2× ${fmtMoney(rentable)}</span>
+        <span>3× ${fmtMoney(exito)}</span>
+        <span class="bar-legend-now">${mult}× actual</span>
+      </div>
+    </div>
+  `;
+}
+
+
+function fmtMoney(n, texto) {
+  if (texto) return escapeHTML(texto);
+  if (n == null || n === '') return '—';
+  const num = Number(n);
+  if (num >= 1e9) return '$' + (num / 1e9).toFixed(2).replace(/\.00$/, '') + ' B';
+  if (num >= 1e6) return '$' + Math.round(num / 1e6) + ' M';
+  return '$' + num.toLocaleString('en-US');
+}
+
+function rowHTMLAnio(p) {
+  const pos = Number(p.puesto) || 0;
+  const top = pos >= 1 && pos <= 3 ? ' top3' : '';
+  const resultado = p.resultado || calcResultado(p.taquilla, p.presupuesto);
+  const meta = [p.distribuidora || null].filter(Boolean).join(' · ');
+
+  return `
+    <article class="taquilla-row taquilla-row--anio">
+      <span class="taquilla-pos${top}">${pos || '—'}</span>
+      <img class="taquilla-poster" src="${escapeHTML(p.poster || '')}" alt=""
+           loading="lazy" onerror="this.style.visibility='hidden'">
+      <div class="taquilla-info">
+        <strong>${escapeHTML(p.titulo || 'Sin título')}</strong>
+        ${meta ? `<span>${escapeHTML(meta)}</span>` : ''}
+        <div class="taquilla-figures">
+          <span>Taquilla: <b>${fmtMoney(p.taquilla, p.taquillaTexto)}</b></span>
+          <span>Presupuesto: <b>${p.presupuesto != null ? fmtMoney(p.presupuesto, p.presupuestoTexto) : '—'}</b></span>
+          ${badgeResultado(resultado)}
+        </div>
+        ${barraPresupuesto(p)}
+      </div>
+    </article>
+  `;
 }

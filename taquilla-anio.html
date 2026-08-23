@@ -213,6 +213,108 @@
           color: var(--muted);
           border: 1px solid var(--border);
         }
+
+        .taquilla-row--anio {
+          align-items: flex-start;
+          padding: 14px 16px;
+        }
+
+        .taquilla-figures {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px 14px;
+          align-items: center;
+          margin-top: 6px;
+          font-size: 0.78rem;
+          color: var(--muted);
+        }
+
+        .taquilla-figures b {
+          color: var(--text);
+          font-weight: 700;
+        }
+
+        .bar-wrap {
+          margin-top: 10px;
+          width: 100%;
+        }
+
+        .bar-wrap--empty {
+          font-size: 0.75rem;
+          color: var(--muted-2);
+        }
+
+        .bar-track {
+          position: relative;
+          height: 12px;
+          border-radius: 999px;
+          background: rgba(255, 255, 255, 0.06);
+          border: 1px solid var(--border);
+          overflow: hidden;
+        }
+
+        html[data-theme="light"] .bar-track {
+          background: rgba(0, 0, 0, 0.06);
+        }
+
+        .bar-fill {
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          border-radius: 999px;
+          transition: width 0.4s ease;
+        }
+
+        .bar-fill--exito {
+          background: linear-gradient(90deg, #2d8a55, #7ddea0);
+        }
+        .bar-fill--rentable {
+          background: linear-gradient(90deg, #8a7019, var(--gold));
+        }
+        .bar-fill--perdida {
+          background: linear-gradient(90deg, #9a1830, #ff8a9a);
+        }
+        .bar-fill--sin-dato {
+          background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Marcas verticales: 1×, 2×, 3× */
+        .bar-mark {
+          position: absolute;
+          top: -2px;
+          bottom: -2px;
+          width: 2px;
+          transform: translateX(-50%);
+          border-radius: 1px;
+          z-index: 2;
+        }
+        .bar-mark--budget { background: rgba(255, 255, 255, 0.55); }
+        .bar-mark--rentable { background: var(--gold); }
+        .bar-mark--exito { background: #7ddea0; }
+
+        .bar-legend {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 6px 12px;
+          margin-top: 6px;
+          font-size: 0.68rem;
+          color: var(--muted);
+        }
+
+        .bar-legend-now {
+          color: var(--gold);
+          font-weight: 700;
+        }
+
+        @media (max-width: 600px) {
+          .taquilla-row--anio {
+            flex-wrap: wrap;
+          }
+          .taquilla-info {
+            flex: 1 1 100%;
+          }
+        }
     </style>
 </head>
 <body>
