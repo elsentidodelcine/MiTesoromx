@@ -351,9 +351,9 @@
           "taquilla": 470435687,
           "taquillaTexto": "$470 M",
           "presupuesto": 1000000,
-          "presupuestoTexto": "No confirmado",
+          "presupuestoTexto": "$1 M",
           "multiplicador": 470.43,
-          "resultado": "sin-dato",
+          "resultado": "exito",
           "genero": "terror",
           "distribuidora": "Focus Features / Universal",
           "poster": "imgs/taquilla/obsession.jpg"
