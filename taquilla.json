@@ -1,42 +1,209 @@
 {
   "actualizado": "2026-08-23",
-  "nota": "Cifras de referencia en dólares (taquilla mundial). Pueden variar según la fuente.",
+  "fuente": "Wikipedia ES – Anexo: Películas con las mayores recaudaciones",
+  "nota": "Taquilla mundial en USD, sin ajustar por inflación. Cifras de referencia; pueden variar según la fuente y reestrenos. Películas en cartel siguen sumando.",
   "historia": [
     {
       "puesto": 1,
       "titulo": "Avatar",
       "anio": 2009,
-      "taquilla": 2923706026,
+      "taquilla": 2923710708,
       "taquillaTexto": "$2,923 M",
-      "poster": "imgs/taquilla/avatar.jpg",
-      "director": "James Cameron"
+      "distribuidora": "Walt Disney Studios Motion Pictures (20th Century Fox)",
+      "director": "James Cameron",
+      "poster": "imgs/taquilla/avatar.jpg"
     },
     {
       "puesto": 2,
       "titulo": "Avengers: Endgame",
       "anio": 2019,
-      "taquilla": 2797501328,
-      "taquillaTexto": "$2,798 M",
-      "poster": "imgs/taquilla/endgame.jpg",
-      "director": "Anthony y Joe Russo"
-    }
-  ],
-  "porAnio": [
-    {
-      "anio": 2025,
-      "peliculas": [
-        {
-          "puesto": 1,
-          "titulo": "Ejemplo",
-          "taquilla": 1500000000,
-          "taquillaTexto": "$1,500 M",
-          "poster": "imgs/taquilla/ejemplo.jpg"
-        }
-      ]
+      "taquilla": 2799439100,
+      "taquillaTexto": "$2,799 M",
+      "distribuidora": "Walt Disney Studios Motion Pictures",
+      "director": "Anthony y Joe Russo",
+      "poster": "imgs/taquilla/endgame.jpg"
     },
     {
+      "puesto": 3,
+      "titulo": "Avatar: The Way of Water",
+      "anio": 2022,
+      "taquilla": 2334484620,
+      "taquillaTexto": "$2,334 M",
+      "distribuidora": "Walt Disney Studios Motion Pictures",
+      "director": "James Cameron",
+      "poster": "imgs/taquilla/avatar2.jpg"
+    },
+    {
+      "puesto": 4,
+      "titulo": "Ne Zha 2",
+      "anio": 2025,
+      "taquilla": 2270700370,
+      "taquillaTexto": "$2,270 M",
+      "distribuidora": "Beijing Enlight Pictures",
+      "director": "Jiaozi",
+      "poster": "imgs/taquilla/nezha.jpg"
+    },
+    {
+      "puesto": 5,
+      "titulo": "Titanic",
+      "anio": 1997,
+      "taquilla": 2264812968,
+      "taquillaTexto": "$2,264 M",
+      "distribuidora": "Walt Disney Studios Motion Pictures (20th Century Fox)",
+      "director": "James Cameron",
+      "poster": "imgs/taquilla/titanic.jpg"
+    },
+    {
+      "puesto": 6,
+      "titulo": "Spider-Man: Brand New Day",
+      "anio": 2026,
+      "taquilla": 2219901000,
+      "taquillaTexto": "$2,219 M",
+      "distribuidora": "Sony Pictures / Columbia Pictures",
+      "director": "Destin Daniel Cretton",
+      "poster": "imgs/taquilla/spidermanday.jpg"
+    },
+
+    {
+      "puesto": 7,
+      "titulo": "Star Wars: Episodio VII – El despertar de la Fuerza",
+      "anio": 2015,
+      "taquilla": 2071310218,
+      "taquillaTexto": "$2,071 M",
+      "distribuidora": "Walt Disney Studios Motion Pictures",
+      "director": "J. J. Abrams",
+      "poster": "imgs/taquilla/episodio7.jpg"
+    },
+    {
+      "puesto": 8,
+      "titulo": "Avengers: Infinity War",
+      "anio": 2018,
+      "taquilla": 2052415039,
+      "taquillaTexto": "$2,052 M",
+      "distribuidora": "Walt Disney Studios Motion Pictures",
+      "director": "Anthony y Joe Russo",
+      "poster": "imgs/taquilla/infinity.jpg"
+    },
+    {
+      "puesto": 9,
+      "titulo": "Spider-Man: No Way Home",
+      "anio": 2021,
+      "taquilla": 1952426073,
+      "taquillaTexto": "$1,952 M",
+      "distribuidora": "Sony Pictures / Columbia Pictures",
+      "director": "Jon Watts",
+      "poster": "imgs/taquilla/noway.jpg"
+    },
+    {
+      "puesto": 10,
+      "titulo": "Zootopia 2",
+      "anio": 2025,
+      "taquilla": 1870309290,
+      "taquillaTexto": "$1,870 M",
+      "distribuidora": "Walt Disney Studios Motion Pictures",
+      "director": "Byron Howard",
+      "poster": "imgs/taquilla/zoo2.jpg"
+    },
+    {
+      "puesto": 11,
+      "titulo": "Inside Out 2",
       "anio": 2024,
-      "peliculas": []
+      "taquilla": 1698863816,
+      "taquillaTexto": "$1,698 M",
+      "distribuidora": "Walt Disney Studios Motion Pictures",
+      "director": "Kelsey Mann",
+      "poster": "imgs/taquilla/inside2.jpg"
+    },
+    {
+      "puesto": 12,
+      "titulo": "Jurassic World",
+      "anio": 2015,
+      "taquilla": 1671537444,
+      "taquillaTexto": "$1,671 M",
+      "distribuidora": "Universal Pictures",
+      "director": "Colin Trevorrow",
+      "poster": "imgs/taquilla/world.jpg"
+    },
+    {
+      "puesto": 13,
+      "titulo": "El rey león",
+      "anio": 2019,
+      "taquilla": 1662020819,
+      "taquillaTexto": "$1,662 M",
+      "distribuidora": "Walt Disney Studios Motion Pictures",
+      "director": "Jon Favreau",
+      "poster": "imgs/taquilla/rey.jpg"
+    },
+    {
+      "puesto": 14,
+      "titulo": "The Avengers",
+      "anio": 2012,
+      "taquilla": 1520538536,
+      "taquillaTexto": "$1,520 M",
+      "distribuidora": "Walt Disney Studios Motion Pictures",
+      "director": "Joss Whedon",
+      "poster": "imgs/taquilla/avengers.jpg"
+    },
+    {
+      "puesto": 15,
+      "titulo": "Furious 7",
+      "anio": 2015,
+      "taquilla": 1516045911,
+      "taquillaTexto": "$1,516 M",
+      "distribuidora": "Universal Pictures",
+      "director": "James Wan",
+      "poster": "imgs/taquilla/furi7.jpg"
+    },
+    {
+      "puesto": 16,
+      "titulo": "Top Gun: Maverick",
+      "anio": 2022,
+      "taquilla": 1495696292,
+      "taquillaTexto": "$1,495 M",
+      "distribuidora": "Paramount Pictures",
+      "director": "Joseph Kosinski",
+      "poster": "imgs/taquilla/topgun.jpg"
+    },
+    {
+      "puesto": 17,
+      "titulo": "Avatar: Fire and Ash",
+      "anio": 2025,
+      "taquilla": 1490386712,
+      "taquillaTexto": "$1,490 M",
+      "distribuidora": "Walt Disney Studios Motion Pictures",
+      "director": "James Cameron",
+      "poster": "imgs/taquilla/avatar3.jpg"
+    },
+    {
+      "puesto": 18,
+      "titulo": "Frozen II",
+      "anio": 2019,
+      "taquilla": 1453683476,
+      "taquillaTexto": "$1,453 M",
+      "distribuidora": "Walt Disney Studios Motion Pictures",
+      "director": "Chris Buck y Jennifer Lee",
+      "poster": "imgs/taquilla/frozen2.jpg"
+    },
+    {
+      "puesto": 19,
+      "titulo": "Barbie",
+      "anio": 2023,
+      "taquilla": 1447038421,
+      "taquillaTexto": "$1,447 M",
+      "distribuidora": "Warner Bros.",
+      "director": "Greta Gerwig",
+      "poster": "imgs/taquilla/barbie.jpg"
+    },
+    {
+      "puesto": 20,
+      "titulo": "La Odisea",
+      "anio": 2026,
+      "taquilla": 1446195000,
+      "taquillaTexto": "$1,446 M",
+      "distribuidora": "Universal Pictures",
+      "director": "Christopher Nolan",
+      "poster": "imgs/taquilla/laodisea.jpg"
     }
-  ]
+  ],
+  "porAnio": []
 }

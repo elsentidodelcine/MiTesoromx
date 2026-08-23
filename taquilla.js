@@ -22,6 +22,7 @@ function rowHTML(p, { showYear = false } = {}) {
   const top = pos >= 1 && pos <= 3 ? ' top3' : '';
   const meta = [
     showYear && p.anio ? String(p.anio) : null,
+    p.distribuidora || null,
     p.director || null
   ].filter(Boolean).join(' · ');
 
