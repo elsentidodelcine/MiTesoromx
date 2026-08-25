@@ -1166,7 +1166,7 @@ function actualizarWhats(totales) {
   msg += `*Código Postal:* ${cp || "(pendiente)"}\n`;
   msg += `*Ciudad / Estado:* ${ciudad || "(pendiente)"}\n`;
   if (notas) msg += `*Notas:* ${notas}\n`;
-  msg += `\n*Política de daños:* Si llega dañado por el envío, se regala un vaso en la próxima compra (sin reembolso ni reposición).\n`;
+  
   msg += `\nQuedo atento(a) para confirmar disponibilidad y forma de envío.\n¡Gracias! 🎬`;
 
   const whatsBtn = document.getElementById("whatsBtn");
