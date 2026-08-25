@@ -7,6 +7,15 @@
   // Cambia esta lista por tus 150 fotos reales
   // Formato: "imgs/referencias/foto1.jpg"
   const FOTOS = [
+    "imgs/referencias/refer36.jpg",
+    "imgs/referencias/refer37.jpg",
+    "imgs/referencias/refer38.jpg",
+    "imgs/referencias/refer39.jpg",
+    "imgs/referencias/refer40.jpg",
+    "imgs/referencias/refer41.jpg",
+    "imgs/referencias/refer42.jpg",
+    "imgs/referencias/refer43.jpg",
+    "imgs/referencias/refer44.jpg",
     "imgs/referencias/ref1.jpg",
     "imgs/referencias/ref2.jpg",
     "imgs/referencias/ref3.jpg",
