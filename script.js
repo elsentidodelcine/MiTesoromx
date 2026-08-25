@@ -857,14 +857,83 @@ function actualizarCarritoUI() {
     if (btnWishlist) btnWishlist.style.display = "none";
 
     totalEl.innerHTML = `
-      <div class="cart-empty">
-        <p class="cart-empty-title">Tu carrito está vacío</p>
-        <p class="cart-empty-sub">Explora el catálogo y agrega tus coleccionables favoritos.</p>
-        <button type="button" id="btnVerCatalogoDesdeCarrito" class="btn-ver-catalogo">
-          Ver catálogo
-        </button>
+      <div class="cart-summary">
+        <div class="cart-summary-row">
+          <span>Subtotal</span>
+          <span>$${t.subtotal.toLocaleString("es-MX")} MXN</span>
+        </div>
+        ${t.descuento > 0 ? `
+          <div class="cart-summary-row cart-discount">
+            <span>Descuento${cuponAplicado ? ` (${cuponAplicado.codigo})` : ""}</span>
+            <span>-$${t.descuento.toLocaleString("es-MX")} MXN</span>
+          </div>
+        ` : ""}
+        <div class="cart-summary-row">
+          <span>Envío estimado (Correos)</span>
+          <span>${t.costoEnvio === 0 ? "<strong class='text-success'>GRATIS</strong>" : `$${t.costoEnvio.toLocaleString("es-MX")} MXN`}</span>
+        </div>
+        ${t.tienePreventa ? `
+          <p class="cart-summary-note">* Las preventas no aplican para envío gratis</p>
+        ` : ""}
+        <div class="cart-summary-row cart-summary-total">
+          <span>Total</span>
+          <span>$${t.total.toLocaleString("es-MX")} MXN</span>
+        </div>
+      </div>
+
+      ${cuponAplicado ? `
+        <div class="cart-coupon-activo">
+          <span>Cupón <strong>${cuponAplicado.codigo}</strong> aplicado</span>
+          <button type="button" id="btnBorrarCupon" class="btn-borrar-cupon">Borrar cupón</button>
+        </div>
+      ` : `
+        <div class="cart-coupon">
+          <label class="cupon-label">¿Tienes un cupón?</label>
+          <div class="cupon-row">
+            <input type="text" id="inputCupon" placeholder="Código de cupón" maxlength="20" autocomplete="off">
+            <button type="button" id="btnAplicarCupon">Aplicar</button>
+          </div>
+        </div>
+        <p id="cuponMsg" class="cupon-msg" hidden></p>
+      `}
+
+      <div class="cart-envio-datos">
+        <label for="inputCP">Código Postal *</label>
+        <input type="text" id="inputCP" inputmode="numeric" maxlength="5" placeholder="Ej. 37000" autocomplete="postal-code">
+
+        <label for="inputCiudad">Ciudad / Estado *</label>
+        <input type="text" id="inputCiudad" placeholder="Ej. León, Gto." autocomplete="address-level2">
+
+        <p id="envioDatosError" class="envio-datos-error" hidden>Completa Código Postal y Ciudad para continuar</p>
+      </div>
+
+      <div class="cart-notas">
+        <label for="notasCliente">Notas del pedido (opcional)</label>
+        <textarea id="notasCliente" rows="2" placeholder="Ej. Llamar antes de llegar, dejar con el vecino..."></textarea>
       </div>
     `;
+
+    // ===== EVENTOS (se re-asignan cada vez que se redibuja) =====
+    document.getElementById("btnAplicarCupon")?.addEventListener("click", aplicarCupon);
+    document.getElementById("inputCupon")?.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") aplicarCupon();
+    });
+    document.getElementById("btnBorrarCupon")?.addEventListener("click", () => {
+      cuponAplicado = null;
+      actualizarCarritoUI();
+    });
+
+    // Actualizar mensaje de WhatsApp al escribir
+    ["inputCP", "inputCiudad", "notasCliente"].forEach((id) => {
+      document.getElementById(id)?.addEventListener("input", () => {
+        actualizarWhats(calcularTotalesCarrito());
+      });
+    });
+
+    actualizarWhats(t);
+    actualizarEnvioGratisBar(t);
+    actualizarStickyEnvio(t);
+    actualizarEstadoVaciar();
 
     document.getElementById("btnVerCatalogoDesdeCarrito")?.addEventListener("click", () => {
       if (typeof closeDrawerWithFocus === "function") closeDrawerWithFocus();

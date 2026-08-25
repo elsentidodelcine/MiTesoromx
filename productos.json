@@ -400,7 +400,7 @@
   { "nombre": "Vaso FastX Cinemex Model1 RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "imgs/coleccionable90.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso FastX Cinemex Model2 RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "imgs/coleccionable91.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso FastX Cinemex Model3 RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "imgs/coleccionable92.jpg" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Palomera Carro FastX Cinemex RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 600, "imagen": "imgs/coleccionable89.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Palomera Carro FastX Cinemex RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 600, "imagen": "imgs/coleccionable89.jpg" ,"badge": "exclusivo", "stock": 0},
   { "nombre": "Vaso Fast 7 Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "imgs/rapidos4.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Fast 8 Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 80, "imagen": "imgs/rapidos5.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Palomera FastX Movie Center RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 30, "imagen": "imgs/rapidos6.png" ,"badge": "ultimo", "stock": 0},

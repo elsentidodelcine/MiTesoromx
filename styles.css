@@ -4214,3 +4214,74 @@ body.dark .btn-ver-referencias:focus-visible {
 .cupon-row input {
   flex: 1;
 }
+
+/* ===== Datos de envío (CP + Ciudad) ===== */
+.cart-envio-datos {
+  margin: 14px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cart-envio-datos label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.cart-envio-datos input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border, #ddd);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: var(--bg-input, #fff);
+  color: inherit;
+}
+
+.cart-envio-datos input:focus {
+  outline: none;
+  border-color: #25d366;
+  box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.15);
+}
+
+.envio-datos-error {
+  color: #e53935;
+  font-size: 0.8rem;
+  margin: 4px 0 0;
+}
+
+/* Cupón más visible */
+.cupon-label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  opacity: 0.85;
+}
+
+.cupon-row {
+  display: flex;
+  gap: 8px;
+}
+
+.cupon-row input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border, #ddd);
+}
+
+.cart-coupon-activo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #e8f5e9;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin: 10px 0;
+  font-size: 0.9rem;
+}
+
+body.dark .cart-coupon-activo {
+  background: #1b3a1e;
+}
