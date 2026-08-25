@@ -624,8 +624,8 @@ function mostrarProductos() {
                    : ""
                }
 
-               ${p.stock > 0 && p.precio != 999 && p.precio != 333
-                 ? `<p class="viendo-ahora">👀 ${viendo} persona${viendo === 1 ? "" : "s"} viendo esto</p>`
+               ${p.stock > 0 && p.stock <= 5 && p.precio != 999 && p.precio != 666
+                 ? `<p class="viendo-ahora">👀 ${Math.min(p.stock + 1, 4)} persona${p.stock === 1 ? "" : "s"} viendo esto</p>`
                  : ""
                }
             <button type="button" class="btn-wishlist ${esFavorito ? "activo" : ""}"
@@ -979,18 +979,21 @@ function actualizarCarritoUI() {
        </div>
      </div>
 
-     ${cuponAplicado ? `
-       <div class="cart-coupon-activo">
-         <span>Cupón <strong>${cuponAplicado.codigo}</strong> aplicado</span>
-         <button type="button" id="btnBorrarCupon" class="btn-borrar-cupon">Borrar cupón</button>
-       </div>
-     ` : `
-       <div class="cart-coupon">
-         <input type="text" id="inputCupon" placeholder="Código de cupón" maxlength="20" autocomplete="off">
-         <button type="button" id="btnAplicarCupon">Aplicar</button>
-       </div>
-       <p id="cuponMsg" class="cupon-msg" hidden></p>
-     `}
+    ${cuponAplicado ? `
+      <div class="cart-coupon-activo">
+        <span>Cupón <strong>${cuponAplicado.codigo}</strong> aplicado</span>
+        <button type="button" id="btnBorrarCupon" class="btn-borrar-cupon">Borrar cupón</button>
+      </div>
+    ` : `
+      <div class="cart-coupon">
+        <label class="cupon-label">¿Tienes un cupón?</label>
+        <div class="cupon-row">
+          <input type="text" id="inputCupon" placeholder="Código de cupón" maxlength="20" autocomplete="off">
+          <button type="button" id="btnAplicarCupon">Aplicar</button>
+        </div>
+      </div>
+      <p id="cuponMsg" class="cupon-msg" hidden></p>
+    `}
 
      <div class="cart-notas">
        <label for="notasCliente">Notas del pedido (opcional)</label>
@@ -1115,6 +1118,8 @@ function actualizarWhats(totales) {
   }
 
   const notas = document.getElementById("notasCliente")?.value?.trim() || "";
+  const cp = document.getElementById("inputCP")?.value?.trim() || "";
+  const ciudad = document.getElementById("inputCiudad")?.value?.trim() || "";
   const tipoPago = window._tipoPagoSeleccionado || "Pago total";
 
   let msg = `Hola 👋\nSoy cliente de *Mi Tesoro MX* y quiero confirmar este pedido:\n\n`;
@@ -1136,23 +1141,49 @@ function actualizarWhats(totales) {
   msg += `*TOTAL: $${totales.total.toLocaleString("es-MX")} MXN*\n`;
   msg += `━━━━━━━━━━━━━━━━\n`;
   msg += `*Tipo de pago:* ${tipoPago}\n`;
-  msg += `*Código Postal:* \n`;
-  msg += `*Ciudad / Estado:* \n`;
+
+  if (tipoPago === "Apartado 30%") {
+    const apartado = Math.ceil(totales.total * 0.3);
+    msg += `*Apartado 30%:* $${apartado.toLocaleString("es-MX")} MXN\n`;
+  }
+
+  msg += `*Código Postal:* ${cp || "(pendiente)"}\n`;
+  msg += `*Ciudad / Estado:* ${ciudad || "(pendiente)"}\n`;
   if (notas) msg += `*Notas:* ${notas}\n`;
+  msg += `\n*Política de daños:* Si llega dañado por el envío, se regala un vaso en la próxima compra (sin reembolso ni reposición).\n`;
   msg += `\nQuedo atento(a) para confirmar disponibilidad y forma de envío.\n¡Gracias! 🎬`;
 
   const whatsBtn = document.getElementById("whatsBtn");
   if (whatsBtn) {
     whatsBtn.href = `https://wa.me/${WA_NUMERO}?text=${encodeURIComponent(msg)}`;
-  }
-
-  // Actualizar texto del botón según tipo de pago
-  if (whatsBtn) {
     whatsBtn.textContent = tipoPago === "Apartado 30%"
       ? `Apartar con 30% · $${Math.ceil(totales.total * 0.3).toLocaleString("es-MX")}`
       : `Confirmar pedido · $${totales.total.toLocaleString("es-MX")} MXN`;
   }
 }
+
+document.getElementById("whatsBtn")?.addEventListener("click", (e) => {
+  const cp = document.getElementById("inputCP")?.value?.trim() || "";
+  const ciudad = document.getElementById("inputCiudad")?.value?.trim() || "";
+  const errorEl = document.getElementById("envioDatosError");
+
+  if (!cp || !ciudad) {
+    e.preventDefault();
+    if (errorEl) {
+      errorEl.hidden = false;
+      errorEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+    document.getElementById("inputCP")?.focus();
+    return;
+  }
+  if (errorEl) errorEl.hidden = true;
+});
+
+["inputCP", "inputCiudad", "notasCliente"].forEach((id) => {
+  document.getElementById(id)?.addEventListener("input", () => {
+    actualizarWhats(calcularTotalesCarrito());
+  });
+});
 
 function actualizarContadorCarrito(conPulso = false) {
   const totalItems = carrito.reduce((acc, p) => acc + p.cantidad, 0);
@@ -1174,31 +1205,6 @@ function actualizarEstadoVaciar() {
   }
 }
 
-/* Barra envío gratis ($550 Correos, productos participantes) */
-function actualizarEnvioGratisBar(total) {
-  const bar = document.getElementById("envioGratisBar");
-  const text = document.getElementById("envioGratisText");
-  const fill = document.getElementById("envioGratisFill");
-  if (!bar || !text || !fill) return;
-
-  if (!total || total <= 0) {
-    bar.hidden = true;
-    return;
-  }
-
-  bar.hidden = false;
-  const pct = Math.min(100, Math.round((total / ENVIO_GRATIS_MIN) * 100));
-  fill.style.width = pct + "%";
-
-  if (total >= ENVIO_GRATIS_MIN) {
-    text.innerHTML = `🎉 ¡Tienes <strong>envío gratis</strong> por Correos de México! (productos participantes)`;
-    fill.classList.add("completo");
-  } else {
-    const falta = ENVIO_GRATIS_MIN - total;
-    text.innerHTML = `Te faltan <strong>$${falta.toLocaleString("es-MX")} MXN</strong> para envío gratis por Correos*`;
-    fill.classList.remove("completo");
-  }
-}
 
 /* ---------- VACIAR CARRITO (con confirmación) ---------- */
 btnVaciarCarrito?.addEventListener("click", () => {

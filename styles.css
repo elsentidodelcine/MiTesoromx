@@ -4200,3 +4200,17 @@ body.dark .btn-ver-referencias:focus-visible {
   border-color: rgba(255, 255, 255, 0.35);
   color: #fff;
 }
+
+.cupon-label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  opacity: 0.85;
+}
+.cupon-row {
+  display: flex;
+  gap: 8px;
+}
+.cupon-row input {
+  flex: 1;
+}

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mi Tesoro MX – Coleccionables de cine: palomeras, vasos, Funkos y ediciones exclusivas. Envíos a todo México.">
-    <title>Mi Tesoro MX | Coleccionables de Cine</title>
+    <meta name="description" content="Mi Tesoro MX – Coleccionables, Geek y Cultura Pop.">
+    <title>Mi Tesoro MX | Coleccionables, Geek y Cultura Pop</title>
 
     <!-- Favicon -->
     <link rel="icon" href="imgs/logo.png" type="image/png" sizes="32x32">
@@ -13,7 +13,7 @@
     <!-- Open Graph (WhatsApp / Facebook / Telegram) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Mi Tesoro MX | Coleccionables de Cine">
-    <meta property="og:description" content="Palomeras, vasos, Funkos y ediciones exclusivas. Envíos a todo México. Mejores precios que en Mercado Libre.">
+    <meta property="og:description" content="Coleccionables, Geek y Cultura Pop.">
     <meta property="og:url" content="https://mitesoromx.com/">
     <meta property="og:locale" content="es_MX">
     <meta property="og:site_name" content="Mi Tesoro MX">
@@ -25,7 +25,7 @@
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mi Tesoro MX | Coleccionables de Cine">
-    <meta name="twitter:description" content="Palomeras, vasos, Funkos y ediciones exclusivas. Envíos a todo México.">
+    <meta name="twitter:description" content="Coleccionables, Geek y Cultura Pop.">
     <meta name="twitter:image" content="https://mitesoromx.com/og-image.jpg">
 
     <link rel="canonical" href="https://mitesoromx.com/">
@@ -82,7 +82,7 @@
         <img src="imgs/logo.png" alt="Mi Tesoro MX" class="site-logo">
         <div class="logo-text">
             <h1>Mi Tesoro MX</h1>
-            <span>Coleccionables de Cine</span>
+            <span>Coleccionables, Geek y Cultura Pop</span>
         </div>
     </div>
 
@@ -116,7 +116,7 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
         <h2>La tienda de coleccionistas que sí cumple</h2>
-        <p>Palomeras · Vasos · Funkos · Postales</p>
+        <p>Coleccionables de Cine, Geek y Cultura Pop</p>
         <a href="#catalogo" class="hero-cta">Ver catálogo completo</a>
     </div>
 </section>
@@ -251,14 +251,14 @@
     </div>
 </div>
 
-<!-- FILTROS POR FRANQUICIA
 <div class="filtros-extra-wrap" style="margin-top: 6px;">
     <div class="filtros-extra" id="filtrosFranquicia" role="group" aria-label="Filtros por franquicia">
+        <button type="button" class="filtro-extra active" data-franquicia="todas" aria-pressed="true">Todas</button>
         <button type="button" class="filtro-extra" data-franquicia="marvel" aria-pressed="false">Marvel</button>
         <button type="button" class="filtro-extra" data-franquicia="starwars" aria-pressed="false">Star Wars</button>
         <button type="button" class="filtro-extra" data-franquicia="dc" aria-pressed="false">DC</button>
     </div>
-</div> -->
+</div>
 
 
 <!-- FILTROS CATEGORÍA
@@ -387,6 +387,16 @@
             <div class="envio-gratis-track">
                 <div class="envio-gratis-fill" id="envioGratisFill"></div>
             </div>
+        </div>
+
+        <div class="cart-envio-datos">
+            <label for="inputCP">Código Postal *</label>
+            <input type="text" id="inputCP" inputmode="numeric" maxlength="5" placeholder="Ej. 37000" autocomplete="postal-code">
+
+            <label for="inputCiudad">Ciudad / Estado *</label>
+            <input type="text" id="inputCiudad" placeholder="Ej. León, Gto." autocomplete="address-level2">
+
+            <p id="envioDatosError" class="envio-datos-error" hidden>Completa Código Postal y Ciudad para continuar</p>
         </div>
 
         <div class="pasos-carrito">
