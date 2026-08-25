@@ -844,51 +844,61 @@ function actualizarCarritoUI() {
   const whatsBtn = document.getElementById("whatsBtn");
 
   // ===== CARRITO VACÍO =====
-  if (carrito.length === 0) {
-    if (whatsBtn) {
-      whatsBtn.style.display = "none";
-      whatsBtn.href = `https://wa.me/${WA_NUMERO}`;
-      whatsBtn.textContent = "Confirmar por WhatsApp";
-    }
+ // ===== CARRITO VACÍO =====
+ if (carrito.length === 0) {
+   const whatsBtn = document.getElementById("whatsBtn");
+   if (whatsBtn) {
+     whatsBtn.style.display = "none";
+     whatsBtn.href = `https://wa.me/${WA_NUMERO}`;
+     whatsBtn.textContent = "Confirmar por WhatsApp";
+   }
 
-    const btnWishlist = document.getElementById("btnCompartirWishlist");
-    if (btnWishlist) btnWishlist.style.display = "none";
+   const btnWishlist = document.getElementById("btnCompartirWishlist");
+   if (btnWishlist) btnWishlist.style.display = "none";
 
-    totalEl.innerHTML = `
-      <div class="cart-empty">
-        <p class="cart-empty-title">Tu carrito está vacío</p>
-        <p class="cart-empty-sub">Explora el catálogo y agrega tus coleccionables favoritos.</p>
-        <button type="button" id="btnVerCatalogoDesdeCarrito" class="btn-ver-catalogo">
-          Ver catálogo
-        </button>
-      </div>
-    `;
+   // Limpiar completamente el resumen
+   totalEl.innerHTML = `
+     <div class="cart-empty">
+       <p class="cart-empty-title">Tu carrito está vacío</p>
+       <p class="cart-empty-sub">Explora el catálogo y agrega tus coleccionables favoritos.</p>
+       <button type="button" id="btnVerCatalogoDesdeCarrito" class="btn-ver-catalogo">
+         Ver catálogo
+       </button>
+     </div>
+   `;
 
-    document.getElementById("btnVerCatalogoDesdeCarrito")?.addEventListener("click", () => {
-      if (typeof closeDrawerWithFocus === "function") closeDrawerWithFocus();
-      else {
-        drawer?.classList.remove("open");
-        overlay?.classList.remove("show");
-      }
-      scrollToCatalogo();
-    });
+   // Por si quedaron elementos viejos flotando
+   document.querySelector(".cart-envio-datos")?.remove();
+   document.querySelector(".cart-coupon")?.remove();
+   document.querySelector(".cart-coupon-activo")?.remove();
+   document.querySelector(".cart-notas")?.remove();
+   document.getElementById("envioDatosError")?.remove();
 
-    const pagoOps = document.querySelector(".cart-pago-opciones");
-    if (pagoOps) pagoOps.style.display = "none";
+   document.getElementById("btnVerCatalogoDesdeCarrito")?.addEventListener("click", () => {
+     if (typeof closeDrawerWithFocus === "function") closeDrawerWithFocus();
+     else {
+       drawer?.classList.remove("open");
+       overlay?.classList.remove("show");
+     }
+     scrollToCatalogo();
+   });
 
-    window._tipoPagoSeleccionado = "Pago total";
-    document.querySelectorAll(".btn-pago-opcion").forEach((b) => {
-      b.classList.toggle("active", b.dataset.pago === "Pago total");
-    });
+   const pagoOps = document.querySelector(".cart-pago-opciones");
+   if (pagoOps) pagoOps.style.display = "none";
 
-    cuponAplicado = null;
+   window._tipoPagoSeleccionado = "Pago total";
+   document.querySelectorAll(".btn-pago-opcion").forEach((b) => {
+     b.classList.toggle("active", b.dataset.pago === "Pago total");
+   });
 
-    actualizarEnvioGratisBar(null);
-    actualizarStickyEnvio(null);
-    actualizarEstadoVaciar();
-    if (btnSeguir) btnSeguir.style.display = "none";
-    return;
-  }
+   cuponAplicado = null;
+
+   actualizarEnvioGratisBar(null);
+   actualizarStickyEnvio(null);
+   actualizarEstadoVaciar();
+   if (btnSeguir) btnSeguir.style.display = "none";
+   return;
+ }
 
   // ===== HAY PRODUCTOS =====
   if (btnSeguir) btnSeguir.style.display = "block";
