@@ -302,5 +302,33 @@
     ],
     "cita": "La película ya tenía una historia suficientemente interesante sin necesidad de meterle ese elemento.",
     "veredicto": "Buena atmósfera y tensión, pero el elemento de la bruja sobra. Una película palomera de terror, nada más. No está a la altura del entusiasmo que genera."
+  },
+  {
+    "id": "quince-dias",
+    "titulo": "Quince Días",
+    "anio": 2025,
+    "fecha": "2026-08-25",
+    "duracion": "100 min",
+    "generos": ["Romance", "Drama"],
+    "puntaje": 2.0,
+    "destacada": false,
+    "etiqueta": "",
+    "plataformas": ["Netflix"],
+    "resumen": "Una historia de romance, aceptación y descubrimiento personal que se siente demasiado fantasiosa y superficial. No conecté con los personajes ni con la historia.",
+    "poster": "imgs/posters/15.jpg",
+    "posterFallback": {
+      "linea1": "Quince",
+      "linea2": "Días"
+    },
+    "letterboxd": "https://letterboxd.com/film/quinze-dias",
+    "lead": "Entiendo lo que intenta hacer, pero no conecté. Demasiado fantasioso, poco creíble y superficial.",
+    "contenido": [
+      "Ya vi Quince Días (2025) y, aunque entiendo lo que intenta hacer con su historia de romance, aceptación y descubrimiento personal, la verdad es que no conecté con la película.",
+      "Todo se me hizo demasiado fantasioso y poco creíble, como si las situaciones simplemente fueran ocurriendo porque la historia necesitaba que pasaran. Incluso los momentos que intentan ser más emotivos o románticos no consiguieron que me involucrara con los personajes.",
+      "El protagonista tampoco me gustó. No logré conectar con él ni con su forma de llevar la historia, y lo mismo me pasó con el resto del elenco. Hay algunos momentos que sí me hicieron reír y tiene escenas agradables, pero fuera de eso sentí que no había mucho que me mantuviera interesado.",
+      "Entiendo que la película busca hablar sobre la inseguridad, la aceptación personal y el amor, y seguramente habrá personas que conecten mucho más con ese mensaje. En mi caso, simplemente no funcionó. La sentí demasiado superficial y poco natural, y terminé esperando a que llegara el final."
+    ],
+    "cita": "Todo se me hizo demasiado fantasioso y poco creíble.",
+    "veredicto": "Demasiado fantasiosa, superficial y poco natural. Entiendo el mensaje, pero no conecté. Una película que no me mantuvo interesado."
   }
 ]

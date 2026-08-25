@@ -386,5 +386,41 @@
       }
     ],
     "nota": "Proximamente"
+  },
+  {
+    "id": "encore",
+    "titulo": "Avengers: Endgame Bonus Infinity Vision",
+    "tipo": "preventa",
+    "fecha": "2026-09-24",
+    "fechaTexto": "Jueves 24 de Septiembre del 2026",
+    "poster": "imgs/estrenos/encore.jpg",
+    "cines": ["Cinepolis"],
+    "links": [
+      {
+        "cine": "Cinemex",
+        "url": "https://cinemex.com/pelicula/72603/avengers-endgame-bonus"
+      },
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Preventa ya disponible"
+  },
+  {
+    "id": "terminator",
+    "titulo": "Terminator 2: El Juicio Final",
+    "tipo": "preventa",
+    "fecha": "2026-09-16",
+    "fechaTexto": "Miércoles 16 de Septiembre del 2026",
+    "poster": "imgs/estrenos/terminator.jpg",
+    "cines": ["Cinepolis"],
+    "links": [
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Preventa ya disponible"
   }
 ]
