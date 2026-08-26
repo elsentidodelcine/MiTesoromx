@@ -422,5 +422,25 @@
       }
     ],
     "nota": "Preventa ya disponible"
+  },
+  {
+    "id": "queen",
+    "titulo": "Queen: Budapest",
+    "tipo": "preventa",
+    "fecha": "2026-10-07",
+    "fechaTexto": "Miércoles 7 de Octubre del 2026",
+    "poster": "imgs/estrenos/queen.jpg",
+    "cines": ["Cinepolis"],
+    "links": [
+      {
+        "cine": "Cinemex",
+        "url": "https://cinemex.com/pelicula/72643/queen-budapest"
+      },
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Preventa ya disponible"
   }
 ]

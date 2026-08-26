@@ -330,5 +330,34 @@
     ],
     "cita": "Todo se me hizo demasiado fantasioso y poco creíble.",
     "veredicto": "Demasiado fantasiosa, superficial y poco natural. Entiendo el mensaje, pero no conecté. Una película que no me mantuvo interesado."
+  },
+  {
+    "id": "la-noche-del-demonio-estan-entre-nosotros",
+    "titulo": "La noche del demonio: Están entre nosotros",
+    "anio": 2026,
+    "fecha": "2026-08-26",
+    "duracion": "106 min",
+    "generos": ["Terror"],
+    "puntaje": 2.0,
+    "destacada": false,
+    "etiqueta": "ESTRENO",
+    "plataformas": ["Cines"],
+    "resumen": "La sexta entrega de la saga introduce una idea interesante, pero la ejecución es lenta, no da miedo y desperdicia su potencial. Ya es momento de dejar descansar la franquicia.",
+    "poster": "imgs/posters/demonio.jpg",
+    "posterFallback": {
+      "linea1": "La noche del",
+      "linea2": "demonio 6"
+    },
+    "letterboxd": "https://letterboxd.com/film/insidious-out-of-the-further",
+    "lead": "Después de ver las seis de corrido, solo las primeras dos se salvan. Esta nueva entrega desperdicia una buena idea y confirma que la saga ya no sabe qué más hacer.",
+    "contenido": [
+      "Ya vi las seis películas de La noche del demonio de corrido y, conforme fui avanzando, cada vez sentía que la saga iba empeorando. Para mí, las primeras dos son las únicas realmente rescatables; de la tercera en adelante, la cosa se fue completamente al carajo.",
+      "En esta nueva entrega me gustó la idea de introducir a una persona con la capacidad de entrar al Más Allá y traer cosas de ese lugar al mundo real, o incluso llevar cosas de aquí hacia allá. Me pareció una propuesta interesante que podía darle un aire diferente a la saga, pero el problema es que la ejecución no funciona y termina desperdiciando una buena idea.",
+      "Como ya es costumbre en estas películas, tenemos demasiado tiempo de preparación y aburrimiento antes de que realmente empiece lo interesante. Y cuando finalmente llega, tampoco consigue generar miedo ni tensión. Además, el poder que termina adquiriendo el personaje me pareció exageradísimo, llegando al punto de poder transportar una casa completa de un lugar a otro.",
+      "Yo me hubiera arriesgado mucho más. Hubiera sido interesante que los demonios realmente lograran llegar al mundo de los vivos y que los personajes tuvieran que buscar ayuda para devolverlos al Más Allá. Algo así como unos Vengadores, pero del Más Allá. Eso sí habría sido algo diferente para la franquicia.",
+      "Pero no. Otra vez tenemos una película que tarda demasiado en arrancar, que no da miedo y que termina desaprovechando una idea que pudo haber funcionado mucho mejor. Después de ver las seis, creo que ya es momento de dejar descansar esta saga. Ya no saben qué más hacer con ella."
+    ],
+    "cita": "Ya es momento de dejar descansar esta saga. Ya no saben qué más hacer con ella.",
+    "veredicto": "Idea interesante desperdiciada. Lenta, sin miedo y otra entrega más de una saga que ya debería descansar. Solo las primeras dos se salvan."
   }
 ]
