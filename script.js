@@ -1003,9 +1003,6 @@ function actualizarCarritoUI() {
       <label for="inputCP">Código Postal *</label>
       <input type="text" id="inputCP" inputmode="numeric" maxlength="5" placeholder="Ej. 37000" autocomplete="postal-code">
 
-      <label for="inputCiudad">Ciudad / Estado *</label>
-      <input type="text" id="inputCiudad" placeholder="Ej. León, Gto." autocomplete="address-level2">
-
       <p id="envioDatosError" class="envio-datos-error" hidden>Completa Código Postal y Ciudad para continuar</p>
     </div>
 
@@ -1026,7 +1023,7 @@ function actualizarCarritoUI() {
   });
 
   // Actualizar WhatsApp al escribir
-  ["inputCP", "inputCiudad", "notasCliente"].forEach((id) => {
+  ["inputCP", "notasCliente"].forEach((id) => {
     document.getElementById(id)?.addEventListener("input", () => {
       actualizarWhats(calcularTotalesCarrito());
     });
@@ -1135,7 +1132,7 @@ function actualizarWhats(totales) {
 
   const notas = document.getElementById("notasCliente")?.value?.trim() || "";
   const cp = document.getElementById("inputCP")?.value?.trim() || "";
-  const ciudad = document.getElementById("inputCiudad")?.value?.trim() || "";
+
   const tipoPago = window._tipoPagoSeleccionado || "Pago total";
 
   let msg = `Hola 👋\nSoy cliente de *Mi Tesoro MX* y quiero confirmar este pedido:\n\n`;
@@ -1166,7 +1163,7 @@ function actualizarWhats(totales) {
   msg += `*Código Postal:* ${cp || "(pendiente)"}\n`;
   msg += `*Ciudad / Estado:* ${ciudad || "(pendiente)"}\n`;
   if (notas) msg += `*Notas:* ${notas}\n`;
-  
+
   msg += `\nQuedo atento(a) para confirmar disponibilidad y forma de envío.\n¡Gracias! 🎬`;
 
   const whatsBtn = document.getElementById("whatsBtn");
@@ -1180,7 +1177,7 @@ function actualizarWhats(totales) {
 
 document.getElementById("whatsBtn")?.addEventListener("click", (e) => {
   const cp = document.getElementById("inputCP")?.value?.trim() || "";
-  const ciudad = document.getElementById("inputCiudad")?.value?.trim() || "";
+
   const errorEl = document.getElementById("envioDatosError");
 
   if (!cp || !ciudad) {
@@ -1195,7 +1192,7 @@ document.getElementById("whatsBtn")?.addEventListener("click", (e) => {
   if (errorEl) errorEl.hidden = true;
 });
 
-["inputCP", "inputCiudad", "notasCliente"].forEach((id) => {
+["inputCP", "notasCliente"].forEach((id) => {
   document.getElementById(id)?.addEventListener("input", () => {
     actualizarWhats(calcularTotalesCarrito());
   });
