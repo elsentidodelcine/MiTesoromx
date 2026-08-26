@@ -957,7 +957,7 @@ function actualizarCarritoUI() {
     }
   }
 
-  // Resumen + cupón + CP + Ciudad + notas
+  // Resumen + cupón + CP  + notas
   totalEl.innerHTML = `
     <div class="cart-summary">
       <div class="cart-summary-row">
@@ -1135,7 +1135,7 @@ function actualizarWhats(totales) {
 
   const tipoPago = window._tipoPagoSeleccionado || "Pago total";
 
-  let msg = `Hola 👋\nSoy cliente de *Mi Tesoro MX* y quiero confirmar este pedido:\n\n`;
+  let msg = `Hola \nSoy cliente de *Mi Tesoro MX* y quiero confirmar este pedido:\n\n`;
   msg += `━━━━━━━━━━━━━━━━\n`;
   msg += `*PRODUCTOS*\n`;
 
@@ -1161,10 +1161,10 @@ function actualizarWhats(totales) {
   }
 
   msg += `*Código Postal:* ${cp || "(pendiente)"}\n`;
-  msg += `*Ciudad / Estado:* ${ciudad || "(pendiente)"}\n`;
+
   if (notas) msg += `*Notas:* ${notas}\n`;
 
-  msg += `\nQuedo atento(a) para confirmar disponibilidad y forma de envío.\n¡Gracias! 🎬`;
+  msg += `\nQuedo atento(a) para confirmar disponibilidad y forma de envío.\n¡Gracias! `;
 
   const whatsBtn = document.getElementById("whatsBtn");
   if (whatsBtn) {
@@ -1180,7 +1180,7 @@ document.getElementById("whatsBtn")?.addEventListener("click", (e) => {
 
   const errorEl = document.getElementById("envioDatosError");
 
-  if (!cp || !ciudad) {
+  if (!cp) {
     e.preventDefault();
     if (errorEl) {
       errorEl.hidden = false;
