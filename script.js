@@ -1006,10 +1006,6 @@ function actualizarCarritoUI() {
       <p id="envioDatosError" class="envio-datos-error" hidden>Completa Código Postal y Ciudad para continuar</p>
     </div>
 
-    <div class="cart-notas">
-      <label for="notasCliente">Notas del pedido (opcional)</label>
-      <textarea id="notasCliente" rows="2" placeholder="Ej. Llamar antes de llegar, dejar con el vecino..."></textarea>
-    </div>
   `;
 
   // Eventos del cupón
@@ -1023,7 +1019,7 @@ function actualizarCarritoUI() {
   });
 
   // Actualizar WhatsApp al escribir
-  ["inputCP", "notasCliente"].forEach((id) => {
+  ["inputCP"].forEach((id) => {
     document.getElementById(id)?.addEventListener("input", () => {
       actualizarWhats(calcularTotalesCarrito());
     });
@@ -1130,7 +1126,7 @@ function actualizarWhats(totales) {
     return;
   }
 
-  const notas = document.getElementById("notasCliente")?.value?.trim() || "";
+  const notas = "";
   const cp = document.getElementById("inputCP")?.value?.trim() || "";
 
   const tipoPago = window._tipoPagoSeleccionado || "Pago total";
@@ -1192,7 +1188,7 @@ document.getElementById("whatsBtn")?.addEventListener("click", (e) => {
   if (errorEl) errorEl.hidden = true;
 });
 
-["inputCP", "notasCliente"].forEach((id) => {
+["inputCP"].forEach((id) => {
   document.getElementById(id)?.addEventListener("input", () => {
     actualizarWhats(calcularTotalesCarrito());
   });

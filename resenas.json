@@ -359,5 +359,89 @@
     ],
     "cita": "Ya es momento de dejar descansar esta saga. Ya no saben qué más hacer con ella.",
     "veredicto": "Idea interesante desperdiciada. Lenta, sin miedo y otra entrega más de una saga que ya debería descansar. Solo las primeras dos se salvan."
+  },
+  {
+    "id": "trainspotting",
+    "titulo": "Trainspotting",
+    "anio": 1996,
+    "fecha": "2026-08-29",
+    "duracion": "94 min",
+    "generos": ["Drama", "Comedia"],
+    "puntaje": 3.5,
+    "destacada": false,
+    "etiqueta": "",
+    "plataformas": ["Streaming"],
+    "resumen": "Película icónica que marca una generación con su estilo irreverente y crudo sobre la adicción. Energía brutal y música inolvidable, aunque el tema no es de mis favoritos.",
+    "poster": "imgs/posters/trains.jpg",
+    "posterFallback": {
+      "linea1": "Trainspotting",
+      "linea2": ""
+    },
+    "letterboxd": "https://letterboxd.com/film/trainspotting",
+    "lead": "Hoy se cumplen 30 años de su estreno. Una película importante, irreverente y con escenas imposibles de olvidar, aunque el tema de la adicción no es de mis favoritos.",
+    "contenido": [
+      "Hoy se cumplen 30 años de su estreno y por fin me tocó verla. Es de esas películas que sabes que son importantes, que marcaron una generación y que tienen escenas imposibles de borrar de la cabeza.",
+      "No soy muy fan de películas sobre drogadictos, y eso inevitablemente influye en cómo la recibo. Sé perfectamente lo que es esta película, entiendo su impacto cultural, su estilo irreverente y su forma tan cruda —y a la vez irónica— de retratar la adicción. Pero al final también es cuestión de gustos.",
+      "La energía es brutal, el montaje es dinámico y la música es un personaje más. Hay momentos incómodos, otros muy oscuros y algunos que rozan lo surrealista, pero todo tiene una intención clara. No glorifica, tampoco moraliza de forma tradicional… simplemente te mete en ese mundo y te deja ahí.",
+      "La frase inicial es icónica y resume perfectamente su espíritu rebelde. Y aunque reconozco su fuerza y su lugar en la historia del cine, no es una película con la que conecte del todo por el tema que aborda."
+    ],
+    "cita": "Choose life.",
+    "veredicto": "Icónica, energética y con un estilo irreverente que marcó una generación. Reconozco su importancia, aunque el tema no me permite conectar del todo."
+  },
+  {
+    "id": "harry-potter-y-la-piedra-filosofal",
+    "titulo": "Harry Potter y la piedra filosofal",
+    "anio": 2001,
+    "fecha": "2026-08-29",
+    "duracion": "152 min",
+    "generos": ["Fantasía", "Aventuras"],
+    "puntaje": 4.0,
+    "destacada": false,
+    "etiqueta": "",
+    "plataformas": ["Cines"],
+    "resumen": "La primera entrega de Harry Potter sigue siendo un clásico lleno de magia, encanto e inocencia. Verla en cine por el 25 aniversario fue una experiencia inolvidable.",
+    "poster": "imgs/posters/harry.jpg",
+    "posterFallback": {
+      "linea1": "Harry Potter y la",
+      "linea2": "piedra filosofal"
+    },
+    "letterboxd": "https://letterboxd.com/film/harry-potter-and-the-philosophers-stone",
+    "lead": "25 años después, la magia sigue intacta. Verla en cine fue como volver a la infancia y recordar por qué se convirtió en un fenómeno cultural.",
+    "contenido": [
+      "En esta ocasión tocó verla por los 25 años de aniversario de la película. La primera película de Harry Potter, La Piedra Filosofal, siempre será un clásico para quienes crecimos con la saga. Es increíble cómo logra transmitir la magia desde el inicio: el castillo de Hogwarts, los personajes entrañables y esa sensación de descubrimiento que te atrapa desde la primera escena. Todo se siente fresco, lleno de encanto y con una inocencia que hace que uno se sumerja sin esfuerzo en este mundo fantástico.",
+      "Tuve la oportunidad de verla en el cine, y la experiencia fue única. Escuchar la música de John Williams retumbar en la sala y ver por primera vez el famoso “¡Eres un mago, Harry!” en pantalla grande es algo que me marcó. La atmósfera era pura emoción, y cada detalle, desde los efectos hasta la ambientación, se disfrutaba muchísimo más en esa gran pantalla.",
+      "Es de esas películas que no importa cuántas veces pasen los años, sigue generando la misma magia. Revisitarla siempre se siente como volver a la infancia, y verla en el cine fue una forma de reforzar por qué Harry Potter se convirtió en un fenómeno cultural tan querido. Sin duda, una experiencia inolvidable."
+    ],
+    "cita": "¡Eres un mago, Harry!",
+    "veredicto": "Un clásico atemporal lleno de magia e inocencia. Verla en cine por el 25 aniversario fue una experiencia inolvidable que te devuelve a la infancia."
+  },
+  {
+    "id": "juan-gabriel-mi-primer-bellas-artes",
+    "titulo": "Juan Gabriel: Mi Primer Bellas Artes",
+    "anio": 2026,
+    "fecha": "2026-08-29",
+    "duracion": "110 min",
+    "generos": ["Concierto", "Documental"],
+    "puntaje": 3.5,
+    "destacada": false,
+    "etiqueta": "",
+    "plataformas": ["Cines"],
+    "resumen": "Proyección restaurada del icónico concierto de Juan Gabriel en Bellas Artes. Una experiencia curiosa de cine donde la gente canta como en un concierto en vivo, aunque la calidad de imagen es irregular.",
+    "poster": "imgs/posters/gabriel.jpg",
+    "posterFallback": {
+      "linea1": "Juan Gabriel:",
+      "linea2": "Mi Primer Bellas Artes"
+    },
+    "letterboxd": "https://letterboxd.com/film/juan-gabriel-mi-primer-bellas-artes",
+    "lead": "A diez años de su muerte, el concierto histórico de Juan Gabriel en Bellas Artes llega a los cines. Una experiencia curiosa y comunitaria, aunque no soy fan.",
+    "contenido": [
+      "Ya vi Juan Gabriel: Mi Primer Bellas Artes y, aunque no soy fan de Juan Gabriel, tenía curiosidad por conocer ese famoso concierto del que siempre escucho que reúne a muchísima gente. A diez años de su muerte, sigue siendo impresionante ver cómo su música continúa llenando salas y haciendo que la gente cante cada una de sus canciones.",
+      "A mí me regalaron unos boletos de Cinemex para esta proyección y dije: pues vamos a ver qué tal. La verdad, solo conocía tres canciones de todo el concierto, así que hubo muchas que no reconocí. Algunas me gustaron bastante y otras no tanto, pero algo que sí disfruté muchísimo fue la combinación de la orquesta con el mariachi; musicalmente hay momentos muy buenos.",
+      "También me gustó que todo estuviera subtitulado, porque aunque no te sepas las canciones, puedes seguir la letra y hasta terminar cantando con toda la sala. Y eso justamente fue lo más curioso de la experiencia: ver a tanta gente disfrutando y cantando como si estuvieran en un concierto en vivo.",
+      "Eso sí, la calidad de imagen es bastante irregular. Hay escenas donde la imagen se ve muy deteriorada y cuesta apreciar lo que está pasando, mientras que en otras partes luce mucho mejor. Se nota que hubo un trabajo de edición y restauración en el audio para esta versión, aunque visualmente no siempre funciona igual de bien.",
+      "No soy fan de Juan Gabriel y probablemente por eso tampoco pude disfrutarlo al mismo nivel que toda la gente que estaba cantando a mi alrededor, pero sí terminé disfrutándolo aproximadamente a la mitad. Como experiencia de cine fue bastante curiosa y entiendo perfectamente por qué este concierto sigue reuniendo a tanta gente después de tantos años."
+    ],
+    "cita": "Ver a tanta gente disfrutando y cantando como si estuvieran en un concierto en vivo.",
+    "veredicto": "Una experiencia de cine curiosa y comunitaria. Musicalmente hay momentos muy buenos, aunque la calidad de imagen es irregular y no soy fan. Entiendo por qué sigue llenando salas."
   }
 ]

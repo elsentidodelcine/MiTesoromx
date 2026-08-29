@@ -59,7 +59,7 @@
 
 
   { "nombre": "Vaso Supergirl Cinepolis DC", "categoria": "DC", "precio": 450, "imagen": "imgs/coleccionable110.jpg" ,"badge": "exclusivo", "stock": 1},
-  { "nombre": "Vaso Supergirl Cinemex DC", "categoria": "DC", "precio": 380, "imagen": "imgs/coleccionable111.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Vaso Supergirl Cinemex DC", "categoria": "DC", "precio": 380, "imagen": "imgs/coleccionable111.jpg" ,"badge": "exclusivo", "stock": 0},
   { "nombre": "Funko Peacemaker Eagly 1236", "categoria": "DC", "precio": 400, "imagen": "imgs/fdc10.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko Peacemaker With Eagly 1232", "categoria": "DC", "precio": 400, "imagen": "imgs/fdc11.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko Peacemaker 1237", "categoria": "DC", "precio": 600, "imagen": "imgs/fdc12.png" ,"badge": "ultimo", "stock": 1},
@@ -231,7 +231,7 @@
   { "nombre": "Vaso Mario Bros Cinepolis Con Llavero", "categoria": "Mario Bros", "precio": 300, "imagen": "imgs/mario20.jpeg" ,"badge": "exclusivo", "stock": 0},
   { "nombre": "Vaso Mario Bros Cinepolis", "categoria": "Mario Bros", "precio": 30, "imagen": "imgs/coleccionable81.jpg" ,"badge": "oferta", "stock": 0, "descripcion":  "Despintado de atrás"},
 
-  { "nombre": "Vaso Los 4 Fantasticos Mujer Insivible Cinepolis Marvel", "categoria": "Marvel", "precio": 250, "imagen": "imgs/coleccionable3.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Vaso Los 4 Fantasticos Mujer Invisible Cinepolis Marvel", "categoria": "Marvel", "precio": 250, "imagen": "imgs/coleccionable3.jpg" ,"badge": "exclusivo", "stock": 0},
   { "nombre": "Vaso Los 4 Fantasticos La Mole Cinepolis Marvel", "categoria": "Marvel", "precio": 250, "imagen": "imgs/coleccionable2.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso Los 4 Fantasticos La Antorcha Cinepolis Marvel", "categoria": "Marvel", "precio": 350, "imagen": "imgs/coleccionable4.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso Thor y Jane Cinepolis Marvel", "categoria": "Marvel", "precio": 250, "imagen": "imgs/coleccionable7.jpg" ,"badge": "exclusivo", "stock": 0},

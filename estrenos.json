@@ -430,7 +430,7 @@
     "fecha": "2026-10-07",
     "fechaTexto": "Miércoles 7 de Octubre del 2026",
     "poster": "imgs/estrenos/queen.jpg",
-    "cines": ["Cinepolis"],
+    "cines": ["Cinepolis", "Cinemex"],
     "links": [
       {
         "cine": "Cinemex",
@@ -439,6 +439,22 @@
       {
         "cine": "Cinepolis",
         "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Preventa ya disponible"
+  },
+  {
+    "id": "ocho",
+    "titulo": "Día Ocho",
+    "tipo": "preventa",
+    "fecha": "2026-09-10",
+    "fechaTexto": "Jueves 10 de Septiembre del 2026",
+    "poster": "imgs/estrenos/ocho.jpg",
+    "cines": ["Cinemex"],
+    "links": [
+      {
+        "cine": "Cinemex",
+        "url": "https://cinemex.com/pelicula/72715/dia-ocho"
       }
     ],
     "nota": "Preventa ya disponible"
