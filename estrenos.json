@@ -458,5 +458,125 @@
       }
     ],
     "nota": "Preventa ya disponible"
+  },
+  {
+    "id": "rapidos",
+    "titulo": "Rápido y Furioso 1 (25 Años)",
+    "tipo": "preventa",
+    "fecha": "2026-09-03",
+    "fechaTexto": "Jueves 3 de Septiembre del 2026",
+    "poster": "imgs/estrenos/rapidos.jpg",
+    "cines": ["Cinepolis", "Cinemex"],
+    "links": [
+      {
+        "cine": "Cinemex",
+        "url": "https://cinemex.com/proximamente/4529/rapido-y-furioso"
+      },
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Próximamente"
+  },
+  {
+    "id": "cars",
+    "titulo": "Cars (20° Aniversario)",
+    "tipo": "preventa",
+    "fecha": "2026-09-10",
+    "fechaTexto": "Jueves 10 de Septiembre del 2026",
+    "poster": "imgs/estrenos/cars.jpg",
+    "cines": ["Cinepolis", "Cinemex"],
+    "links": [
+      {
+        "cine": "Cinemex",
+        "url": "https://cinemex.com/proximamente/4520/cars-20-aniversario"
+      },
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Próximamente"
+  },
+  {
+    "id": "vecino",
+    "titulo": "Mi Vecino Totoro",
+    "tipo": "preventa",
+    "fecha": "2026-09-10",
+    "fechaTexto": "Jueves 10 de Septiembre del 2026",
+    "poster": "imgs/estrenos/vecino.jpg",
+    "cines": ["Cinemex"],
+    "links": [
+      {
+        "cine": "Cinemex",
+        "url": "https://cinemex.com/proximamente/4526/mi-vecino-totoro"
+      }
+    ],
+    "nota": "Próximamente"
+  },
+  {
+    "id": "akira",
+    "titulo": "AKIRA 4K",
+    "tipo": "preventa",
+    "fecha": "2026-09-10",
+    "fechaTexto": "Jueves 10 de Septiembre del 2026",
+    "poster": "imgs/estrenos/akira.jpg",
+    "cines": ["Cinepolis"],
+    "links": [
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Preventa ya disponible"
+  },
+  {
+    "id": "nct",
+    "titulo": "NCT 127 5TH TOUR 'NEO CITY: SEOUL THE REDLINE’ in CINEMAS",
+    "tipo": "preventa",
+    "fecha": "2026-09-20",
+    "fechaTexto": "Domingo 20 de Septiembre del 2026",
+    "poster": "imgs/estrenos/nct.jpg",
+    "cines": ["Cinepolis"],
+    "links": [
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Preventa ya disponible"
+  },
+  {
+    "id": "aaa",
+    "titulo": "Triplemanía 34 Las Vegas",
+    "tipo": "preventa",
+    "fecha": "2026-09-11",
+    "fechaTexto": "Viernes 11 de Septiembre del 2026",
+    "poster": "imgs/estrenos/vegas.jpg",
+    "cines": ["Cinepolis"],
+    "links": [
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Preventa ya disponible"
+  },
+  {
+    "id": "aaa1",
+    "titulo": "Triplemanía 34 México",
+    "tipo": "preventa",
+    "fecha": "2026-09-13",
+    "fechaTexto": "Domingo 13 de Septiembre del 2026",
+    "poster": "imgs/estrenos/mexico.jpg",
+    "cines": ["Cinepolis"],
+    "links": [
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Preventa ya disponible"
   }
 ]
