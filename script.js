@@ -853,8 +853,8 @@ function actualizarCarritoUI() {
      whatsBtn.textContent = "Confirmar por WhatsApp";
    }
 
-   const btnWishlist = document.getElementById("btnCompartirWishlist");
-   if (btnWishlist) btnWishlist.style.display = "none";
+   //const btnWishlist = document.getElementById("btnCompartirWishlist");
+   //if (btnWishlist) btnWishlist.style.display = "none";
 
    // Limpiar completamente el resumen
    totalEl.innerHTML = `
@@ -904,8 +904,8 @@ function actualizarCarritoUI() {
   if (btnSeguir) btnSeguir.style.display = "block";
   if (whatsBtn) whatsBtn.style.display = "block";
 
-  const btnWishlistShow = document.getElementById("btnCompartirWishlist");
-  if (btnWishlistShow) btnWishlistShow.style.display = "block";
+  //const btnWishlistShow = document.getElementById("btnCompartirWishlist");
+  //if (btnWishlistShow) btnWishlistShow.style.display = "block";
 
   // Dibujar items
   carrito.forEach((p, index) => {
@@ -2090,7 +2090,7 @@ function actualizarEnvioGratisBar(t) {
 }
 
 
-document.getElementById("btnCompartirWishlist")?.addEventListener("click", async () => {
+/*document.getElementById("btnCompartirWishlist")?.addEventListener("click", async () => {
   if (!wishlist || wishlist.length === 0) {
     mostrarToastEspecial("Lista vacía", "Agrega productos a tu lista de deseos primero.");
     return;
@@ -2123,7 +2123,7 @@ document.getElementById("btnCompartirWishlist")?.addEventListener("click", async
     // Último recurso
     prompt("Copia tu lista de deseos:", texto);
   }
-});
+});*/
 
 
 

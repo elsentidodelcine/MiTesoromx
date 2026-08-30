@@ -443,5 +443,63 @@
     ],
     "cita": "Ver a tanta gente disfrutando y cantando como si estuvieran en un concierto en vivo.",
     "veredicto": "Una experiencia de cine curiosa y comunitaria. Musicalmente hay momentos muy buenos, aunque la calidad de imagen es irregular y no soy fan. Entiendo por qué sigue llenando salas."
+  },
+  {
+    "id": "la-captura-facing-the-chapo",
+    "titulo": "La captura: Facing the Chapo",
+    "anio": 2026,
+    "fecha": "2026-08-30",
+    "duracion": "91 min",
+    "generos": ["Drama", "Thriller", "Crimen"],
+    "puntaje": 3.0,
+    "destacada": false,
+    "etiqueta": "",
+    "plataformas": ["Netflix"],
+    "resumen": "Película sobre las últimas horas de la tercera captura de El Chapo. Tarda demasiado en arrancar, se siente repetitiva y los enfrentamientos no convencen. Más drama personal que suspenso real.",
+    "poster": "imgs/posters/captura.jpg",
+    "posterFallback": {
+      "linea1": "La captura:",
+      "linea2": "Facing the Chapo"
+    },
+    "letterboxd": "https://letterboxd.com/film/facing-el-chapo",
+    "lead": "Después de leer reseñas que hablan de suspenso y tensión, yo solo me aburrí. Demasiado drama personal y poco de lo que realmente importa.",
+    "contenido": [
+      "Ya vi La captura: Facing the Chapo y, después de leer algunas reseñas que hablan de una película llena de suspenso y tensión, la verdad es que yo jamás encontré eso. Al contrario, me estaba aburriendo bastante.",
+      "La película comienza prácticamente como una telenovela, enfocándose demasiado en la vida personal de estos dos policías. Todo ese drama me pareció innecesario y hace que la película tarde demasiado en llegar a lo que realmente queremos ver: la captura de El Chapo.",
+      "La historia está basada en las últimas horas de la tercera captura de Joaquín Guzmán Loera en 2016, y aunque la película explica bastante lo que ocurrió, una vez que investigas un poco sobre el caso te das cuenta de que tampoco hay demasiadas sorpresas. Para mí, todo se vuelve muy repetitivo: que no saben dónde está, que lo están buscando, que no saben qué hacer y nuevamente lo mismo.",
+      "Los enfrentamientos tampoco me convencieron. Se sienten muy equis y poco emocionantes. Entiendo que son personas normales y no superhéroes, pero después de tanto drama esperaba que la acción tuviera mucho más impacto. Incluso hay momentos donde les lanzan una granada y, como si nada, siguen vivos y caminando.",
+      "Y el final tampoco me terminó de convencer, especialmente con todo lo relacionado con la esposa y las hijas. Esperaba algo mucho más crudo y acorde con lo que uno imagina de una historia relacionada con el crimen organizado en México."
+    ],
+    "cita": "Todo se vuelve muy repetitivo: que no saben dónde está, que lo están buscando, que no saben qué hacer y nuevamente lo mismo.",
+    "veredicto": "Demasiado drama personal y poco suspenso real. Tarda en arrancar, se siente repetitiva y los enfrentamientos no impactan. Esperaba algo más crudo."
+  },
+  {
+    "id": "coyote-vs-acme",
+    "titulo": "Coyote vs. ACME",
+    "anio": 2026,
+    "fecha": "2026-08-30",
+    "duracion": "101 min",
+    "generos": ["Animación", "Comedia", "Aventuras"],
+    "puntaje": 4.0,
+    "destacada": false,
+    "etiqueta": "ESTRENO",
+    "plataformas": ["Cines"],
+    "resumen": "Después de todo el desastre de Warner Bros., por fin llegó a salas. Divertida, nostálgica y con el humor clásico de los Looney Tunes. El Coyote como protagonista funciona muy bien.",
+    "poster": "imgs/posters/coyote.jpg",
+    "posterFallback": {
+      "linea1": "Coyote vs.",
+      "linea2": "ACME"
+    },
+    "letterboxd": "https://letterboxd.com/film/coyote-vs-acme",
+    "lead": "CTM Warner Bros. Qué bueno que esta película no terminó guardada para siempre. Divertida, nostálgica y con varios momentos que sí funcionan.",
+    "contenido": [
+      "CTM Warner Bros. (Chinga Tu Madre, Warner Bros.). Después de todo el desastre que hubo detrás de esta película y de que Warner Bros. intentara desaparecerla, por fin Coyote vs. ACME llegó a las salas de cine, y qué bueno que no terminó guardada para siempre.",
+      "Aquí tenemos al Coyote como protagonista, un personaje que normalmente pasa desapercibido y que, siendo honestos, siempre ha sido de los más desafortunados de los Looney Tunes. Su única misión en la vida es atrapar al Correcaminos, aunque nunca lo consigue. Aquí lo vemos intentando salir adelante después de tantos fracasos y enfrentándose a una corporación que, como buena corporación, solamente piensa en sus propios intereses.",
+      "Me gustó mucho la combinación de personajes reales con la animación. Los Looney Tunes conservan ese humor clásico que sigue funcionando y la película consigue sacarme varias risas. Incluso hubo un momento que sí me sacó una lágrima, durante el juicio cuando aparece el Correcaminos para ayudar al Coyote. No esperaba que una película del Coyote me fuera a provocar eso.",
+      "El único pero que le pondría es el abogado, porque por momentos sí me desesperó la forma en que él y el Coyote complicaban las cosas para intentar salir adelante. Me hubiera gustado que tomara las riendas desde el principio y se dejara de tantos problemas, pero finalmente es parte de la historia.",
+      "Al final, Coyote vs. ACME es una película sencilla, divertida y muy nostálgica, que entiende perfectamente lo que hace especiales a los Looney Tunes. Los chistes siguen funcionando, la animación se disfruta muchísimo y después de todo lo que Warner Bros. intentó hacer con ella, espero que al público le vaya muy bien y que demuestre que estas películas sí merecen llegar a las salas."
+    ],
+    "cita": "No esperaba que una película del Coyote me fuera a provocar eso.",
+    "veredicto": "Divertida, nostálgica y con el humor clásico de los Looney Tunes intacto. Qué bueno que finalmente llegó a las salas. Recomendada."
   }
 ]
