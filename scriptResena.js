@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   const grid = document.getElementById('reviews-grid');
   const subtitle = document.getElementById('reviews-subtitle');
   const rankingBox = document.getElementById('ranking-list');
+  const paginationBox = document.getElementById('reviews-pagination');
+  let paginaActual = 1;
+  const RESEÑAS_POR_PAGINA = 6; // cambia a 4, 8, 9... como prefieras
 
   let todasResenas = [];
 
@@ -25,12 +28,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     // Listeners filtros
-    ['review-search', 'filter-genero', 'filter-puntaje', 'filter-orden'].forEach(id => {
-      const el = document.getElementById(id);
-      if (!el) return;
-      el.addEventListener('input', pintar);
-      el.addEventListener('change', pintar);
-    });
+   ['review-search', 'filter-genero', 'filter-puntaje', 'filter-orden'].forEach(id => {
+     const el = document.getElementById(id);
+     if (!el) return;
+     el.addEventListener('input', () => {
+       paginaActual = 1;
+       pintar();
+     });
+     el.addEventListener('change', () => {
+       paginaActual = 1;
+       pintar();
+     });
+   });
 
     pintar();
     renderRanking(todasResenas);
@@ -48,7 +57,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const filtradas = aplicarFiltros(todasResenas);
     actualizarSubtitulo(filtradas.length, todasResenas.length);
 
-    // Ya no usamos reseña destacada
+    // Sin reseña destacada
     if (featuredContainer) {
       featuredContainer.innerHTML = '';
       featuredContainer.hidden = true;
@@ -58,14 +67,87 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (grid) {
         grid.innerHTML = `<p class="empty-state">No hay reseñas con esos criterios.</p>`;
       }
+      if (paginationBox) paginationBox.innerHTML = '';
       return;
     }
 
-    // Todas las reseñas del mismo tamaño
+    // Reset de página si los filtros cambian y la página actual ya no existe
+    const totalPaginas = Math.ceil(filtradas.length / RESEÑAS_POR_PAGINA) || 1;
+    if (paginaActual > totalPaginas) paginaActual = 1;
+
+    const inicio = (paginaActual - 1) * RESEÑAS_POR_PAGINA;
+    const fin = inicio + RESEÑAS_POR_PAGINA;
+    const pagina = filtradas.slice(inicio, fin);
+
     if (grid) {
-      grid.innerHTML = filtradas.map(cardSecundaria).join('');
+      grid.innerHTML = pagina.map(cardSecundaria).join('');
     }
+
+    crearPaginacionResenas(filtradas.length);
   }
+  function crearPaginacionResenas(totalItems) {
+    if (!paginationBox) return;
+    paginationBox.innerHTML = '';
+
+    const totalPaginas = Math.ceil(totalItems / RESEÑAS_POR_PAGINA) || 1;
+    if (totalPaginas <= 1) return;
+
+    // Botón anterior
+    const prev = document.createElement('button');
+    prev.type = 'button';
+    prev.textContent = '←';
+    prev.disabled = paginaActual === 1;
+    prev.setAttribute('aria-label', 'Página anterior');
+    prev.onclick = () => {
+      paginaActual--;
+      pintar();
+      scrollToResenas();
+    };
+    paginationBox.appendChild(prev);
+
+    // Números (máx 5 visibles)
+    let start = Math.max(1, paginaActual - 2);
+    let end = Math.min(totalPaginas, start + 4);
+    if (end - start < 4) start = Math.max(1, end - 4);
+
+    for (let i = start; i <= end; i++) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.textContent = i;
+      if (i === paginaActual) {
+        btn.classList.add('active');
+        btn.setAttribute('aria-current', 'page');
+      }
+      btn.onclick = () => {
+        paginaActual = i;
+        pintar();
+        scrollToResenas();
+      };
+      paginationBox.appendChild(btn);
+    }
+
+    // Botón siguiente
+    const next = document.createElement('button');
+    next.type = 'button';
+    next.textContent = '→';
+    next.disabled = paginaActual === totalPaginas;
+    next.setAttribute('aria-label', 'Página siguiente');
+    next.onclick = () => {
+      paginaActual++;
+      pintar();
+      scrollToResenas();
+    };
+    paginationBox.appendChild(next);
+  }
+
+  function scrollToResenas() {
+    const section = document.getElementById('resenas');
+    if (!section) return;
+    const offset = 80;
+    const top = section.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
+
 
   function actualizarSubtitulo(nFiltro, nTotal) {
     if (!subtitle) return;

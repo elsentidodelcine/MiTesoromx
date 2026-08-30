@@ -1962,3 +1962,55 @@ html[data-theme="light"] .ranking-meta {
   width: min(var(--max, 1120px), calc(100% - 48px));
   margin: 0 auto 24px;
 }
+
+/* Paginación de reseñas */
+.reviews-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 32px 0 8px;
+  flex-wrap: wrap;
+}
+
+.reviews-pagination button {
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--border, rgba(255,255,255,.12));
+  background: var(--surface, #0c0c10);
+  color: var(--text, #f0f0f2);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.reviews-pagination button:hover:not(:disabled) {
+  border-color: var(--gold, #c9a227);
+  color: #fff;
+}
+
+.reviews-pagination button.active {
+  background: var(--gold, #c9a227);
+  border-color: var(--gold, #c9a227);
+  color: #111;
+  font-weight: 700;
+}
+
+.reviews-pagination button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+[data-theme="light"] .reviews-pagination button {
+  background: #fff;
+  color: #222;
+  border-color: rgba(0,0,0,.12);
+}
+
+[data-theme="light"] .reviews-pagination button.active {
+  background: var(--gold, #c9a227);
+  color: #111;
+}
