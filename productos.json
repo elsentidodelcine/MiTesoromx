@@ -1,5 +1,6 @@
 [
 
+  { "nombre": "5 Figuras Looney Toons", "categoria": "Infantil", "precio": 200, "imagen": "imgs/looney.jpeg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso Casa Gryffindor Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry3.jpg" ,"badge": "exclusivo", "stock": 0},
   { "nombre": "Vaso Casa Ravenclaw  Harry Potter", "categoria": "Harry Potter", "precio": 550, "imagen": "imgs/hp100.jpeg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso Casa Slytherin  Harry Potter", "categoria": "Harry Potter", "precio": 550, "imagen": "imgs/hp101.jpeg" ,"badge": "exclusivo", "stock": 1},
