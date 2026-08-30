@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reseña | Los Brujos del Cine</title>
+    <title>Los Brujos del Cine | Reseñas de películas</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0RVV6RWHTS"></script>
     <script>
@@ -672,17 +672,23 @@
           color: #121214;
         }
     </style>
+    <script>
+        try {
+          var t = localStorage.getItem('lbdc-theme');
+          if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+    </script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Saltar al contenido</a>
 
 <header class="site-header">
     <div class="header-inner">
-        <a href="index.html" class="brand-link" aria-label="Los Brujos del Cine, inicio">
+        <a href="blog.html" class="brand-link" aria-label="Los Brujos del Cine, inicio">
             <img src="imgs/logoL.jpeg" alt="Los Brujos del Cine" class="site-logo">
             <div class="logo-text">
                 <h1>Los Brujos del Cine</h1>
-                <span>Grimorio del Cine</span>
+                <span>Mi Tesoro MX</span>
             </div>
         </a>
 
@@ -703,7 +709,18 @@
             <a href="blog.html#resenas">Reseñas</a>
             <a href="estrenos.html">Estrenos</a>
             <a href="precios.html">Precios</a>
+            <a href="taquilla-historia.html">Taquilla</a>
         </nav>
+        <button
+                type="button"
+                class="theme-toggle"
+                id="theme-toggle"
+                aria-label="Cambiar tema"
+                title="Modo claro / oscuro"
+        >
+            <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+            <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+        </button>
     </div>
 </header>
 
@@ -721,8 +738,9 @@
             <a href="https://www.facebook.com/LosBrujosDelCine" target="_blank" rel="noopener noreferrer">Facebook</a>
             <a href="https://boxd.it/8uSCV" target="_blank" rel="noopener noreferrer">Letterboxd</a>
         </div>
+
         <div class="footer-copy">
-            <p>© 2026 Los Brujos del Cine — Parte de Mi Tesoro MX</p>
+            <p>© 2026 Los Brujos del Cine</p>
         </div>
     </div>
 </footer>

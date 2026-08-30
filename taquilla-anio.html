@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top 10 taquilla por año | Los Brujos del Cine</title>
+    <title>Los Brujos del Cine | Reseñas de películas</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0RVV6RWHTS"></script>
     <script>
@@ -377,28 +377,55 @@
           .bar-label--now { display: none; } /* opcional: el 9.2× se lee en el badge */
         }
     </style>
+    <script>
+        try {
+          var t = localStorage.getItem('lbdc-theme');
+          if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+    </script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Saltar al contenido</a>
 
 <header class="site-header">
     <div class="header-inner">
-        <a href="index.html" class="brand-link" aria-label="Inicio">
-            <img src="imgs/logoL.jpeg" alt="" class="site-logo">
+        <a href="blog.html" class="brand-link" aria-label="Los Brujos del Cine, inicio">
+            <img src="imgs/logoL.jpeg" alt="Los Brujos del Cine" class="site-logo">
             <div class="logo-text">
                 <h1>Los Brujos del Cine</h1>
-                <span>El Grimorio del Cine</span>
+                <span>Mi Tesoro MX</span>
             </div>
         </a>
-        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
-            <span></span><span></span><span></span>
+
+        <button
+                type="button"
+                class="nav-toggle"
+                id="nav-toggle"
+                aria-expanded="false"
+                aria-controls="main-nav"
+                aria-label="Abrir menú"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
+
         <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
             <a href="blog.html#resenas">Reseñas</a>
             <a href="estrenos.html">Estrenos</a>
             <a href="precios.html">Precios</a>
             <a href="taquilla-historia.html">Taquilla</a>
         </nav>
+        <button
+                type="button"
+                class="theme-toggle"
+                id="theme-toggle"
+                aria-label="Cambiar tema"
+                title="Modo claro / oscuro"
+        >
+            <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+            <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+        </button>
     </div>
 </header>
 
@@ -441,8 +468,11 @@
     <div class="footer-inner">
         <div class="footer-links">
             <a href="aviso-de-privacidad-LBDC.html">Política de Privacidad</a>
-            <a href="blog.html#resenas">Reseñas</a>
+            <a href="https://elsentidodelcine.github.io/mitesoromx/index.html" target="_blank" rel="noopener noreferrer">Mi Tesoro MX</a>
+            <a href="https://www.facebook.com/LosBrujosDelCine" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://boxd.it/8uSCV" target="_blank" rel="noopener noreferrer">Letterboxd</a>
         </div>
+
         <div class="footer-copy">
             <p>© 2026 Los Brujos del Cine</p>
         </div>
