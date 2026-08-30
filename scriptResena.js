@@ -48,27 +48,22 @@ document.addEventListener('DOMContentLoaded', async () => {
     const filtradas = aplicarFiltros(todasResenas);
     actualizarSubtitulo(filtradas.length, todasResenas.length);
 
+    // Ya no usamos reseña destacada
+    if (featuredContainer) {
+      featuredContainer.innerHTML = '';
+      featuredContainer.hidden = true;
+    }
+
     if (!filtradas.length) {
-      if (featuredContainer) featuredContainer.innerHTML = '';
       if (grid) {
         grid.innerHTML = `<p class="empty-state">No hay reseñas con esos criterios.</p>`;
       }
       return;
     }
 
-    // Destacada solo si no hay filtros “activos” (opcional).
-    // Aquí: la primera de la lista filtrada / o la marcada destacada si está en el filtro.
-    const destacada =
-      filtradas.find(r => r.destacada) || filtradas[0];
-    const secundarias = filtradas.filter(r => r !== destacada);
-
-    if (featuredContainer) {
-      featuredContainer.innerHTML = cardDestacada(destacada);
-    }
+    // Todas las reseñas del mismo tamaño
     if (grid) {
-      grid.innerHTML = secundarias.length
-        ? secundarias.map(cardSecundaria).join('')
-        : '';
+      grid.innerHTML = filtradas.map(cardSecundaria).join('');
     }
   }
 
