@@ -39,7 +39,7 @@
           padding-bottom: 100px;
         }
 
-        /* Hero pequeño */
+        /* Hero */
         .estrenos-hero {
           position: relative;
           padding: 70px 0 50px;
@@ -47,7 +47,6 @@
           overflow: hidden;
           text-align: center;
         }
-
         .estrenos-hero::before {
           content: "";
           position: absolute;
@@ -57,17 +56,12 @@
             radial-gradient(ellipse 50% 40% at 85% 30%, rgba(201, 162, 39, 0.05), transparent 50%);
           pointer-events: none;
         }
-
         .estrenos-hero-inner {
           position: relative;
           width: min(700px, calc(100% - 48px));
           margin: 0 auto;
         }
-
-        .estrenos-hero .eyebrow {
-          margin-bottom: 18px;
-        }
-
+        .estrenos-hero .eyebrow { margin-bottom: 18px; }
         .estrenos-hero h1 {
           font-family: 'Playfair Display', Georgia, serif;
           font-size: clamp(2.6rem, 6vw, 4rem);
@@ -76,12 +70,10 @@
           letter-spacing: -0.03em;
           margin-bottom: 16px;
         }
-
         .estrenos-hero h1 em {
           font-style: italic;
           color: var(--gold);
         }
-
         .estrenos-hero p {
           color: var(--muted);
           font-size: 1.05rem;
@@ -91,15 +83,21 @@
         }
 
         /* Filtros */
-        .estrenos-filters {
+        .estrenos-filters-wrapper {
           width: min(var(--max), calc(100% - 48px));
           margin: 40px auto 28px;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          gap: 20px 28px;
+        }
+        .estrenos-filters {
           display: flex;
           flex-wrap: wrap;
           gap: 10px;
           justify-content: center;
         }
-
         .filter-btn {
           padding: 8px 18px;
           border-radius: 999px;
@@ -112,12 +110,10 @@
           cursor: pointer;
           transition: all 0.22s ease;
         }
-
         .filter-btn:hover {
           border-color: rgba(255,255,255,0.15);
           color: #fff;
         }
-
         .filter-btn.active {
           background: linear-gradient(135deg, var(--red), var(--red-dark));
           border-color: transparent;
@@ -125,29 +121,67 @@
           box-shadow: 0 6px 20px rgba(196, 30, 58, 0.25);
         }
 
-        /* Grid de estrenos */
+        .mes-filter {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+        .mes-filter label {
+          font-size: 0.78rem;
+          font-weight: 600;
+          color: var(--muted);
+          letter-spacing: 0.04em;
+        }
+        .mes-filter select {
+          appearance: none;
+          -webkit-appearance: none;
+          padding: 9px 36px 9px 16px;
+          border-radius: 999px;
+          border: 1px solid var(--border);
+          background: rgba(255,255,255,0.04) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%239a9aa6' d='M1 1l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 14px center;
+          color: #e8e8ec;
+          font-size: 0.8rem;
+          font-weight: 500;
+          cursor: pointer;
+          outline: none;
+        }
+        .mes-filter select:hover,
+        .mes-filter select:focus {
+          border-color: rgba(255,255,255,0.18);
+        }
+        .mes-filter select option {
+          background: #121218;
+          color: #e8e8ec;
+        }
+
+        /* Grid compacto */
         .estrenos-grid {
           width: min(var(--max), calc(100% - 48px));
           margin: 0 auto;
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-          gap: 24px;
+          grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+          gap: 16px;
+        }
+        @media (min-width: 900px) {
+          .estrenos-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
         }
 
-        /* Card de estreno */
+        /* Cards */
         .estreno-card {
           display: flex;
           flex-direction: column;
           border: 1px solid var(--border);
-          border-radius: var(--radius);
+          border-radius: var(--radius, 16px);
           background: var(--surface);
           overflow: hidden;
           transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
-
-       /* Hover menos agresivo */
         .estreno-card:hover {
           transform: translateY(-3px);
+          border-color: rgba(196, 30, 58, 0.28);
+          box-shadow: var(--shadow-soft);
         }
 
         .estreno-poster {
@@ -156,108 +190,127 @@
           overflow: hidden;
           background: #0e0e14;
         }
-
-        /* Desktop fijo a 3 columnas si quieres */
-        @media (min-width: 900px) {
-          .estrenos-grid {
-            grid-template-columns: repeat(3, 1fr);
-          }
-        }
-
-        @media (max-width: 700px) {
-          .estrenos-grid {
-            grid-template-columns: 1fr;
-            gap: 14px;
-          }
-        }
-
         .estreno-poster img {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          display: block;
           transition: transform 0.6s ease;
         }
-
         .estreno-card:hover .estreno-poster img {
-          transform: scale(1.05);
+          transform: scale(1.04);
         }
 
-       .estreno-badge {
+        .estreno-badge {
+          position: absolute;
           top: 10px;
           left: 10px;
-          padding: 4px 8px;
+          z-index: 2;
+          padding: 4px 9px;
+          border-radius: 6px;
+          background: rgba(0, 0, 0, 0.75);
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          backdrop-filter: blur(10px);
           font-size: 0.55rem;
+          font-weight: 700;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: #e8e8ec;
         }
-
         .estreno-badge.reestreno {
           color: var(--gold);
-          border-color: rgba(201, 162, 39, 0.3);
+          border-color: rgba(201, 162, 39, 0.35);
         }
-
         .estreno-badge.preventa {
           color: #7dd3fc;
-          border-color: rgba(125, 211, 252, 0.25);
+          border-color: rgba(125, 211, 252, 0.3);
         }
 
-      .estreno-body {
-          padding: 14px 14px 14px; /* antes 22px */
+        .estreno-body {
+          padding: 14px;
           display: flex;
           flex-direction: column;
           flex: 1;
         }
-
         .estreno-fecha {
           font-size: 0.65rem;
+          font-weight: 600;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          color: var(--gold);
           margin-bottom: 6px;
         }
-
         .estreno-titulo {
-          font-size: 1.05rem; /* antes 1.35rem */
-          margin-bottom: 10px;
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: 1.05rem;
+          font-weight: 700;
           line-height: 1.2;
+          letter-spacing: -0.02em;
+          margin: 0 0 10px;
+          color: var(--text, #fff);
         }
-
         .estreno-cines {
-              gap: 5px;
-              margin-bottom: 12px;
-            }
-
-            .cine-tag {
-              padding: 3px 8px;
-              font-size: 0.62rem;
-            }
+          display: flex;
+          flex-wrap: wrap;
+          gap: 5px;
+          margin-bottom: 12px;
+        }
+        .cine-tag {
+          padding: 3px 9px;
+          border-radius: 999px;
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid var(--border);
+          font-size: 0.62rem;
+          font-weight: 600;
+          color: var(--muted);
+        }
 
         .estreno-links {
           margin-top: auto;
           display: flex;
           flex-direction: column;
-          gap: 8px;
+          gap: 6px;
         }
-
         .btn-boletos {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
           padding: 8px 12px;
+          border-radius: 999px;
+          border: none;
+          background: linear-gradient(135deg, var(--red), var(--red-dark));
+          color: #fff !important;
           font-size: 0.72rem;
+          font-weight: 600;
+          text-decoration: none;
+          transition: all 0.22s ease;
         }
-
         .btn-boletos:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 10px 28px rgba(196, 30, 58, 0.35);
+          transform: translateY(-1px);
+          box-shadow: 0 8px 22px rgba(196, 30, 58, 0.35);
         }
-
         .btn-boletos.secondary {
           background: transparent;
-          border: 1px solid var(--border-strong);
-          color: #e0e0e6;
-        }
-
-        .btn-boletos.secondary:hover {
-          background: rgba(255,255,255,0.05);
-          border-color: rgba(255,255,255,0.18);
+          border: 1px solid var(--border-strong, rgba(255,255,255,0.14));
+          color: #e0e0e6 !important;
           box-shadow: none;
+        }
+        .btn-boletos.secondary:hover {
+          background: rgba(255, 255, 255, 0.05);
+          border-color: rgba(255, 255, 255, 0.22);
           transform: none;
+          box-shadow: none;
         }
 
-        /* Estado vacío / loading */
+        .estreno-countdown {
+          display: block;
+          margin-top: 10px;
+          font-size: 0.7rem;
+          font-weight: 700;
+          color: var(--gold);
+        }
+
         .estrenos-empty,
         .estrenos-loading {
           width: min(var(--max), calc(100% - 48px));
@@ -265,128 +318,6 @@
           text-align: center;
           color: var(--muted);
           font-size: 1.05rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 700px) {
-          .estrenos-hero {
-            padding: 50px 0 40px;
-          }
-
-          .estrenos-grid {
-              width: min(var(--max), calc(100% - 48px));
-              margin: 0 auto;
-              display: grid;
-              grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* antes 300px */
-              gap: 16px; /* antes 24px */
-            }
-
-          .estrenos-filters {
-            gap: 8px;
-          }
-
-          .filter-btn {
-            padding: 7px 14px;
-            font-size: 0.72rem;
-          }
-        }
-
-        .estrenos-filters-wrapper {
-          width: min(var(--max), calc(100% - 48px));
-          margin: 40px auto 28px;
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          justify-content: center;
-          gap: 20px 28px;
-        }
-
-        .estrenos-filters {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
-          justify-content: center;
-        }
-
-        .mes-filter {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-        }
-
-        .mes-filter label {
-          font-size: 0.78rem;
-          font-weight: 600;
-          color: var(--muted);
-          letter-spacing: 0.04em;
-        }
-
-        .mes-filter select {
-          appearance: none;
-          -webkit-appearance: none;
-          padding: 9px 36px 9px 16px;
-          border-radius: 999px;
-          border: 1px solid var(--border);
-          background: rgba(255,255,255,0.04) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%9a9aa6' d='M1 1l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 14px center;
-          color: #e8e8ec;
-          font-size: 0.8rem;
-          font-weight: 500;
-          cursor: pointer;
-          outline: none;
-          transition: border-color 0.2s ease;
-        }
-
-        .mes-filter select:hover,
-        .mes-filter select:focus {
-          border-color: rgba(255,255,255,0.18);
-        }
-
-        .mes-filter select option {
-          background: #121218;
-          color: #e8e8ec;
-        }
-
-        @media (max-width: 700px) {
-          .estrenos-filters-wrapper {
-            flex-direction: column;
-            gap: 16px;
-          }
-        }
-
-        .estreno-countdown {
-          margin-top: 6px;
-          font-size: 0.7rem;
-        }
-
-        .badge-hoy {
-          background: rgba(196,30,58,.18);
-          color: #ff8a9a;
-          border: 1px solid rgba(196,30,58,.35);
-          padding: 3px 10px;
-          border-radius: 999px;
-          font-size: .65rem;
-          font-weight: 700;
-          text-transform: uppercase;
-        }
-        .badge-preventa {
-          background: rgba(201,162,39,.12);
-          color: var(--gold);
-          border: 1px solid rgba(201,162,39,.3);
-          padding: 3px 10px;
-          border-radius: 999px;
-          font-size: .65rem;
-          font-weight: 700;
-          text-transform: uppercase;
-        }
-        .badge-estreno {
-          background: rgba(125,222,160,.12);
-          color: #7ddea0;
-          border: 1px solid rgba(125,222,160,.28);
-          padding: 3px 10px;
-          border-radius: 999px;
-          font-size: .65rem;
-          font-weight: 700;
-          text-transform: uppercase;
         }
 
         /* Paginación */
@@ -399,7 +330,6 @@
           justify-content: center;
           gap: 8px;
         }
-
         .page-btn {
           min-width: 40px;
           height: 40px;
@@ -413,29 +343,54 @@
           cursor: pointer;
           transition: all 0.2s ease;
         }
-
         .page-btn:hover:not(:disabled) {
           border-color: rgba(255,255,255,0.2);
           color: #fff;
         }
-
         .page-btn.active {
           background: linear-gradient(135deg, var(--red), var(--red-dark));
           border-color: transparent;
           color: #fff;
         }
-
         .page-btn:disabled {
           opacity: 0.35;
           cursor: not-allowed;
         }
-
         .page-info {
           width: 100%;
           text-align: center;
           margin-top: 4px;
           font-size: 0.75rem;
           color: var(--muted);
+        }
+
+        /* Modo claro */
+        html[data-theme="light"] .estreno-titulo { color: #121214; }
+        html[data-theme="light"] .btn-boletos.secondary {
+          color: #121214 !important;
+          border-color: rgba(0,0,0,0.15);
+        }
+        html[data-theme="light"] .cine-tag {
+          background: rgba(0,0,0,0.04);
+          color: #3d3d46;
+        }
+        html[data-theme="light"] .filter-btn:hover { color: #121214; }
+
+        /* Móvil */
+        @media (max-width: 700px) {
+          .estrenos-hero { padding: 50px 0 40px; }
+          .estrenos-grid {
+            grid-template-columns: 1fr;
+            gap: 14px;
+          }
+          .estrenos-filters-wrapper {
+            flex-direction: column;
+            gap: 16px;
+          }
+          .filter-btn {
+            padding: 7px 14px;
+            font-size: 0.72rem;
+          }
         }
     </style>
 
