@@ -501,5 +501,62 @@
     ],
     "cita": "No esperaba que una película del Coyote me fuera a provocar eso.",
     "veredicto": "Divertida, nostálgica y con el humor clásico de los Looney Tunes intacto. Qué bueno que finalmente llegó a las salas. Recomendada."
+  },
+  {
+    "id": "la-guerra-de-los-ultimos",
+    "titulo": "La guerra de los últimos",
+    "anio": 2026,
+    "fecha": "2026-09-01",
+    "duracion": "118 min",
+    "generos": ["Ciencia ficción", "Drama", "Thriller"],
+    "puntaje": 1.0,
+    "destacada": false,
+    "etiqueta": "ESTRENO",
+    "plataformas": ["Cines"],
+    "resumen": "Ridley Scott entrega una película postapocalíptica aburrida y sin avance. Buena fotografía, pero la historia no atrapa y se siente una enorme decepción.",
+    "poster": "imgs/posters/ultimos.jpg",
+    "posterFallback": {
+      "linea1": "La guerra de",
+      "linea2": "los últimos"
+    },
+    "letterboxd": "https://letterboxd.com/film/the-dog-stars",
+    "lead": "Estamos hablando de Ridley Scott… y después de ver esto solo puedo preguntar: ¿cómo hizo esta película? Casi dos horas de desesperación total.",
+    "contenido": [
+      "Estoy en shock con La guerra de los últimos. Estamos hablando de Ridley Scott, un director con una filmografía llena de películas increíbles, y después de ver esto solamente puedo preguntar: ¿cómo es que hizo esta película?",
+      "Fui con mi sobrino y para cuando llevábamos una hora, los dos estábamos completamente aburridos. Le dije que aguantáramos hasta el final para ver si la historia mejoraba, pero no. Casi dos horas de una desesperación total. Jacob Elordi y Josh Brolin son buenos actores, pero aquí ninguno destaca ni logra hacer interesante una historia que prácticamente no avanza.",
+      "El protagonista se la pasa volando de un lado a otro en su avioneta, se encuentra con otros personajes y nuevamente volvemos a lo mismo. Teniendo un mundo postapocalíptico y una premisa que podía dar muchísimo juego, esperaba algo más intenso, algo que realmente aprovechara ese escenario, pero no ocurre nada que consiga atraparte.",
+      "Eso sí, hay que reconocer que la fotografía está muy bien y visualmente tiene momentos bastante bonitos, pero de poco sirve cuando la historia no consigue mantener tu interés. Para mí, ni siquiera los buenos actores o la calidad visual logran salvarla.",
+      "He visto películas que no me gustan y por lo menos me entretienen por lo absurdas o por las cosas que suceden, pero aquí simplemente estaba esperando que terminara. Y eso me parece todavía más decepcionante viniendo de Ridley Scott. Una enorme decepción."
+    ],
+    "cita": "Casi dos horas de una desesperación total.",
+    "veredicto": "Una enorme decepción de Ridley Scott. Buena fotografía, pero aburrida, sin avance y sin nada que te atrape. Ni los actores la salvan."
+  },
+  {
+    "id": "relajadas-y-muy-peligrosas",
+    "titulo": "Relajadas y muy peligrosas",
+    "anio": 2026,
+    "fecha": "2026-09-01",
+    "duracion": "97 min",
+    "generos": ["Comedia"],
+    "puntaje": 2.0,
+    "destacada": false,
+    "etiqueta": "ESTRENO",
+    "plataformas": ["Cines"],
+    "resumen": "Comedia al estilo de las mexicanas pero hecha en EE.UU. Algunos momentos divertidos, pero chistes repetitivos, actuaciones flojas y un guion equis la terminan aburriendo.",
+    "poster": "imgs/posters/relajadas.jpg",
+    "posterFallback": {
+      "linea1": "Relajadas y",
+      "linea2": "muy peligrosas"
+    },
+    "letterboxd": "https://letterboxd.com/film/spa-weekend",
+    "lead": "Prácticamente una comedia mexicana hecha en Estados Unidos. Algunas risas, pero al final comienza a aburrir y no destaca.",
+    "contenido": [
+      "Relajadas y muy peligrosas es prácticamente como una comedia mexicana de esas que vemos constantemente, pero hecha en Estados Unidos. Y aunque de vez en cuando sí consigue sacarte alguna risa, tampoco es una película que simplemente puedas poner para pasar el rato, porque entre chistes repetitivos, actuaciones que no terminan de convencer y un guion bastante equis, llega un momento en que comienza a aburrir.",
+      "La química entre las protagonistas intenta sostener la película, pero para mí ninguna termina de destacar demasiado y por momentos llegan a ser bastante desesperantes. Además, muchas situaciones se sienten exageradas y falsas, como si todo estuviera armado únicamente para provocar el siguiente chiste.",
+      "Y hablando de Anna Faris, después de verla recientemente en Scary Movie 6, aquí sentí que prácticamente estaba haciendo el mismo personaje. Hasta parece que ya no tiene expresiones: cambia el cabello, pero la actitud y las caras son prácticamente las mismas. Esperaba un poco más de ella y terminó siendo de lo que menos disfruté.",
+      "Tiene algunos momentos divertidos y definitivamente entiendo por qué a algunas personas les funciona como comedia ligera, pero en mi caso no fue suficiente. Es de esas películas que comienzan entretenidas, después empiezan a cansar y al final simplemente quieres que terminen. No es terrible, pero tampoco tiene nada que la haga destacar."
+    ],
+    "cita": "Es de esas películas que comienzan entretenidas, después empiezan a cansar y al final simplemente quieres que terminen.",
+    "veredicto": "Algunas risas aisladas, pero chistes repetitivos y un guion flojo la terminan aburriendo. No es terrible, pero no destaca."
   }
 ]

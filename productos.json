@@ -1,6 +1,15 @@
 [
 
-  { "nombre": "5 Figuras Looney Toons", "categoria": "Infantil", "precio": 200, "imagen": "imgs/looney.jpeg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "4 Figuras Looney Toons", "categoria": "Infantil", "precio": 160, "imagen": "imgs/nuevo1.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Postal SpiderMan 3D", "categoria": "SpiderMan", "precio": 100, "imagen": "imgs/nuevo2.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Postal SpiderMan MacroXE", "categoria": "SpiderMan", "precio": 150, "imagen": "imgs/nuevo3.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Postal El Señor de los Anillos", "categoria": "Peliculas", "precio": 100, "imagen": "imgs/nuevo4.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Postal Godzilla Minus One", "categoria": "Godzilla", "precio": 200, "imagen": "imgs/nuevo5.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Postal Uranus", "categoria": "Pelicula", "precio": 50, "imagen": "imgs/nuevo6.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Postal Mario Bros", "categoria": "Mario Bros", "precio": 100, "imagen": "imgs/nuevo7.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Postal Harry Potter 25 Años", "categoria": "Harry Potter", "precio": 150, "imagen": "imgs/nuevo8.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Postal Juan Gabriel", "categoria": "Musica", "precio": 150, "imagen": "imgs/nuevo9.jpg" ,"badge": "nuevo", "stock": 1},
+
   { "nombre": "Vaso Casa Gryffindor Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry3.jpg" ,"badge": "exclusivo", "stock": 0},
   { "nombre": "Vaso Casa Ravenclaw  Harry Potter", "categoria": "Harry Potter", "precio": 550, "imagen": "imgs/hp100.jpeg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso Casa Slytherin  Harry Potter", "categoria": "Harry Potter", "precio": 550, "imagen": "imgs/hp101.jpeg" ,"badge": "exclusivo", "stock": 1},
@@ -408,8 +417,8 @@
   { "nombre": "Vaso Hobbs y Shaw Cinepolis RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 50, "imagen": "imgs/rapi.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso FastX Movie Center RapidosyFuriosos", "categoria": "RapidosyFuriosos", "precio": 30, "imagen": "imgs/coleccionable93.jpg" ,"badge": "ultimo", "stock": 0},
 
-  { "nombre": "Postal MacroXE SpiderMan Cinepolis", "categoria": "SpiderMan", "precio": 150, "imagen": "imgs/spidern25.jpg" ,"badge": "exclusivo", "stock": 1},
-  { "nombre": "Postal 3D SpiderMan Cinepolis", "categoria": "SpiderMan", "precio": 100, "imagen": "imgs/spidern24.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Postal MacroXE SpiderMan Cinepolis", "categoria": "SpiderMan", "precio": 150, "imagen": "imgs/spidern25.jpg" ,"badge": "exclusivo", "stock": 0},
+  { "nombre": "Postal 3D SpiderMan Cinepolis", "categoria": "SpiderMan", "precio": 100, "imagen": "imgs/spidern24.jpg" ,"badge": "exclusivo", "stock": 0},
   { "nombre": "Palomera SpiderMan Cinepolis", "categoria": "SpiderMan", "precio": 500, "imagen": "imgs/spidern2.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso SpiderMan Movie Center", "categoria": "SpiderMan", "precio": 200, "imagen": "imgs/spidern17.jpg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso Modelo 1 SpiderMan Cinepolis", "categoria": "SpiderMan", "precio": 500, "imagen": "imgs/spidern15.jpg" ,"badge": "exclusivo", "stock": 1},

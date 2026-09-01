@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   let estrenos = [];
   let filtroTipo = 'todos';
   let filtroMes = 'todos';
+  const POR_PAGINA = 9;
+  let paginaActual = 1;
+  let listaFiltrada = [];
 
   // Fecha de hoy (sin horas)
   const hoy = new Date();
@@ -49,6 +52,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       btn.classList.add('active');
 
       filtroTipo = btn.dataset.filter;
+      paginaActual = 1;   // ← agregar
       renderEstrenos();
     });
   }
@@ -57,6 +61,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (selectMes) {
     selectMes.addEventListener('change', () => {
       filtroMes = selectMes.value;
+      paginaActual = 1;   // ← agregar
       renderEstrenos();
     });
   }
@@ -101,16 +106,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
-  // ===== Render principal =====
   function renderEstrenos() {
     let lista = [...estrenos];
 
-    // Filtro por tipo (usando tipo efectivo)
     if (filtroTipo !== 'todos') {
       lista = lista.filter(e => getTipoEfectivo(e) === filtroTipo);
     }
 
-    // Filtro por mes
     if (filtroMes !== 'todos') {
       lista = lista.filter(item => {
         const d = new Date(item.fecha);
@@ -119,19 +121,81 @@ document.addEventListener('DOMContentLoaded', async () => {
       });
     }
 
-    if (lista.length === 0) {
+    listaFiltrada = lista;
+    renderPagina();
+  }
+
+  function renderPagina() {
+    const pagNav = document.getElementById('estrenos-pagination');
+    const total = listaFiltrada.length;
+    const totalPaginas = Math.max(1, Math.ceil(total / POR_PAGINA));
+
+    if (paginaActual > totalPaginas) paginaActual = totalPaginas;
+    if (paginaActual < 1) paginaActual = 1;
+
+    if (total === 0) {
       container.innerHTML = `
         <div class="estrenos-empty">
           No hay estrenos disponibles con estos filtros.
         </div>`;
+      if (pagNav) {
+        pagNav.hidden = true;
+        pagNav.innerHTML = '';
+      }
       return;
     }
 
+    const inicio = (paginaActual - 1) * POR_PAGINA;
+    const slice = listaFiltrada.slice(inicio, inicio + POR_PAGINA);
+
     container.innerHTML = `
       <div class="estrenos-grid">
-        ${lista.map(crearCard).join('')}
+        ${slice.map(crearCard).join('')}
       </div>
     `;
+
+    renderControlesPaginacion(total, totalPaginas);
+  }
+
+  function renderControlesPaginacion(total, totalPaginas) {
+    const pagNav = document.getElementById('estrenos-pagination');
+    if (!pagNav) return;
+
+    if (totalPaginas <= 1) {
+      pagNav.hidden = true;
+      pagNav.innerHTML = '';
+      return;
+    }
+
+    pagNav.hidden = false;
+
+    let html = '';
+    html += `<button type="button" class="page-btn" data-page="prev" ${paginaActual === 1 ? 'disabled' : ''}>←</button>`;
+
+    const windowSize = 5;
+    let from = Math.max(1, paginaActual - Math.floor(windowSize / 2));
+    let to = Math.min(totalPaginas, from + windowSize - 1);
+    from = Math.max(1, to - windowSize + 1);
+
+    for (let i = from; i <= to; i++) {
+      html += `<button type="button" class="page-btn ${i === paginaActual ? 'active' : ''}" data-page="${i}">${i}</button>`;
+    }
+
+    html += `<button type="button" class="page-btn" data-page="next" ${paginaActual === totalPaginas ? 'disabled' : ''}>→</button>`;
+    html += `<div class="page-info">Página ${paginaActual} de ${totalPaginas} · ${total} estrenos</div>`;
+
+    pagNav.innerHTML = html;
+
+    pagNav.querySelectorAll('.page-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const v = btn.dataset.page;
+        if (v === 'prev') paginaActual--;
+        else if (v === 'next') paginaActual++;
+        else paginaActual = Number(v);
+        renderPagina();
+        container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
   }
 
   // ===== Crear tarjeta =====
@@ -276,3 +340,4 @@ function filtrarPorCadena(lista, cadena) {
 document.getElementById('filter-cadena')?.addEventListener('change', () => {
   renderEstrenos(); // tu función de pintado
 });
+

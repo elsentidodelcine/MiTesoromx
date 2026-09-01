@@ -145,10 +145,9 @@
           transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
+       /* Hover menos agresivo */
         .estreno-card:hover {
-          transform: translateY(-6px);
-          border-color: rgba(196, 30, 58, 0.28);
-          box-shadow: var(--shadow-soft);
+          transform: translateY(-3px);
         }
 
         .estreno-poster {
@@ -156,6 +155,20 @@
           aspect-ratio: 2 / 3;
           overflow: hidden;
           background: #0e0e14;
+        }
+
+        /* Desktop fijo a 3 columnas si quieres */
+        @media (min-width: 900px) {
+          .estrenos-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+
+        @media (max-width: 700px) {
+          .estrenos-grid {
+            grid-template-columns: 1fr;
+            gap: 14px;
+          }
         }
 
         .estreno-poster img {
@@ -169,21 +182,11 @@
           transform: scale(1.05);
         }
 
-        .estreno-badge {
-          position: absolute;
-          top: 14px;
-          left: 14px;
-          padding: 5px 11px;
-          border-radius: 6px;
-          background: rgba(0,0,0,0.75);
-          border: 1px solid rgba(255,255,255,0.1);
-          backdrop-filter: blur(10px);
-          font-size: 0.58rem;
-          font-weight: 700;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          color: #e8e8ec;
-          z-index: 2;
+       .estreno-badge {
+          top: 10px;
+          left: 10px;
+          padding: 4px 8px;
+          font-size: 0.55rem;
         }
 
         .estreno-badge.reestreno {
@@ -196,49 +199,33 @@
           border-color: rgba(125, 211, 252, 0.25);
         }
 
-        .estreno-body {
-          padding: 22px 22px 20px;
+      .estreno-body {
+          padding: 14px 14px 14px; /* antes 22px */
           display: flex;
           flex-direction: column;
           flex: 1;
         }
 
         .estreno-fecha {
-          font-size: 0.72rem;
-          font-weight: 600;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-          color: var(--gold);
-          margin-bottom: 10px;
+          font-size: 0.65rem;
+          margin-bottom: 6px;
         }
 
         .estreno-titulo {
-          font-family: 'Playfair Display', Georgia, serif;
-          font-size: 1.35rem;
-          font-weight: 700;
-          line-height: 1.15;
-          letter-spacing: -0.02em;
-          margin-bottom: 14px;
-          color: #fff;
+          font-size: 1.05rem; /* antes 1.35rem */
+          margin-bottom: 10px;
+          line-height: 1.2;
         }
 
         .estreno-cines {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 7px;
-          margin-bottom: 18px;
-        }
+              gap: 5px;
+              margin-bottom: 12px;
+            }
 
-        .cine-tag {
-          padding: 4px 11px;
-          border-radius: 999px;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid var(--border);
-          font-size: 0.68rem;
-          font-weight: 600;
-          color: var(--muted);
-          letter-spacing: 0.02em;
-        }
+            .cine-tag {
+              padding: 3px 8px;
+              font-size: 0.62rem;
+            }
 
         .estreno-links {
           margin-top: auto;
@@ -248,18 +235,8 @@
         }
 
         .btn-boletos {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: 8px;
-          padding: 11px 16px;
-          border-radius: 999px;
-          background: linear-gradient(135deg, var(--red), var(--red-dark));
-          color: #fff;
-          font-size: 0.78rem;
-          font-weight: 600;
-          transition: all 0.25s ease;
-          text-align: center;
+          padding: 8px 12px;
+          font-size: 0.72rem;
         }
 
         .btn-boletos:hover {
@@ -297,9 +274,12 @@
           }
 
           .estrenos-grid {
-            grid-template-columns: 1fr;
-            gap: 18px;
-          }
+              width: min(var(--max), calc(100% - 48px));
+              margin: 0 auto;
+              display: grid;
+              grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* antes 300px */
+              gap: 16px; /* antes 24px */
+            }
 
           .estrenos-filters {
             gap: 8px;
@@ -373,13 +353,11 @@
           }
         }
 
-                .estreno-countdown {
-          display: inline-block;
-          margin-top: 8px;
-          font-size: .78rem;
-          font-weight: 700;
-          color: var(--gold);
+        .estreno-countdown {
+          margin-top: 6px;
+          font-size: 0.7rem;
         }
+
         .badge-hoy {
           background: rgba(196,30,58,.18);
           color: #ff8a9a;
@@ -409,6 +387,55 @@
           font-size: .65rem;
           font-weight: 700;
           text-transform: uppercase;
+        }
+
+        /* Paginación */
+        .estrenos-pagination {
+          width: min(var(--max), calc(100% - 48px));
+          margin: 32px auto 0;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+        }
+
+        .page-btn {
+          min-width: 40px;
+          height: 40px;
+          padding: 0 12px;
+          border-radius: 999px;
+          border: 1px solid var(--border);
+          background: rgba(255,255,255,0.04);
+          color: var(--muted);
+          font-size: 0.8rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+
+        .page-btn:hover:not(:disabled) {
+          border-color: rgba(255,255,255,0.2);
+          color: #fff;
+        }
+
+        .page-btn.active {
+          background: linear-gradient(135deg, var(--red), var(--red-dark));
+          border-color: transparent;
+          color: #fff;
+        }
+
+        .page-btn:disabled {
+          opacity: 0.35;
+          cursor: not-allowed;
+        }
+
+        .page-info {
+          width: 100%;
+          text-align: center;
+          margin-top: 4px;
+          font-size: 0.75rem;
+          color: var(--muted);
         }
     </style>
 
@@ -513,6 +540,9 @@
     <div id="estrenos-container">
         <div class="estrenos-loading">Cargando estrenos...</div>
     </div>
+
+    <!-- PAGINACIÓN -->
+    <nav class="estrenos-pagination" id="estrenos-pagination" aria-label="Paginación de estrenos" hidden></nav>
 
 </main>
 

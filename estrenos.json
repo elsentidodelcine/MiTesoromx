@@ -578,5 +578,37 @@
       }
     ],
     "nota": "Preventa ya disponible"
+  },
+  {
+    "id": "historia",
+    "titulo": "La Historia Sin Fin",
+    "tipo": "preventa",
+    "fecha": "2026-09-03",
+    "fechaTexto": "Jueves 03 de Septiembre del 2026",
+    "poster": "imgs/estrenos/historia.jpg",
+    "cines": ["Cinemex"],
+    "links": [
+      {
+        "cine": "Cinemex",
+        "url": "https://cinemex.com/proximamente/4531/la-historia-sin-fin"
+      }
+    ],
+    "nota": "Próximamente"
+  },
+  {
+    "id": "garcia",
+    "titulo": "Ryan García Vs Conor Benn",
+    "tipo": "preventa",
+    "fecha": "2026-09-12",
+    "fechaTexto": "Sábado 12 de Septiembre del 2026",
+    "poster": "imgs/estrenos/garcia.jpg",
+    "cines": ["Cinepolis"],
+    "links": [
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Preventa ya disponible"
   }
 ]
