@@ -338,21 +338,15 @@ document.getElementById('filter-cadena')?.addEventListener('change', () => {
 
 
 function etiquetaCartelera(item) {
-  const tipo = getTipoEfectivo(item); // o item.tipo
+  const tipo = item.tipo; // directo del JSON
 
-  // Preventa: aún no llega
-  if (tipo === 'preventa') {
-    return { key: 'proximamente', label: 'Preventa' };
-  }
+  if (tipo === 'preventa') return null;
 
-  // Estreno / reestreno: true / false
   if (item.enCartelera === true) {
     return { key: 'encartelera', label: 'En cartelera' };
   }
   if (item.enCartelera === false) {
     return { key: 'salio', label: 'Fuera de cartelera' };
   }
-
-  // Sin dato
   return null;
 }
