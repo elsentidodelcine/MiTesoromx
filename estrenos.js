@@ -19,12 +19,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!response.ok) throw new Error('No se pudo cargar estrenos.json');
     estrenos = await response.json();
 
-    // 1. Filtrar solo los que aún no han pasado (hoy y futuros)
-    estrenos = estrenos.filter(item => {
-      const fechaItem = new Date(item.fecha);
-      fechaItem.setHours(0, 0, 0, 0);
-      return fechaItem >= hoy;
-    });
 
     // 2. Ordenar por fecha (más próximos primero)
     estrenos.sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
@@ -69,12 +63,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // ===== Tipo dinámico =====
   // Si era "preventa" y ya llegó el día → se convierte en "estreno"
   function getTipoEfectivo(item) {
-    const fechaItem = new Date(item.fecha);
-    fechaItem.setHours(0, 0, 0, 0);
 
-    if (item.tipo === 'preventa' && fechaItem <= hoy) {
-      return 'estreno';
-    }
     return item.tipo;
   }
 

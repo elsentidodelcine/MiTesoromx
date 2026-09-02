@@ -260,7 +260,7 @@
   { "nombre": "Funko Scarlet Witch Marvel 823", "categoria": "Marvel", "precio": 700, "imagen": "imgs/wanda.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko Jean Grey 645 Marvel", "categoria": "Marvel", "precio": 200, "imagen": "imgs/xmen.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Eternal con Figura Marvel", "categoria": "Marvel", "precio": 50, "imagen": "imgs/coleccionable95.jpg" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "4 Vasos Elektra Deadpool Wolverine Daredevil Coca Cola Marvel", "categoria": "Marvel", "precio": 500, "imagen": "imgs/coleccionable118.jpg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "4 Vasos Elektra Deadpool Wolverine Daredevil Coca Cola Marvel", "categoria": "Marvel", "precio": 500, "imagen": "imgs/coleccionable118.jpg" ,"badge": "exclusivo", "stock": 0},
   { "nombre": "3 Vasos Ms Marvel Kamala Khan y Monica Cinepolis Marvel", "categoria": "Marvel", "precio": 500, "imagen": "imgs/coleccionable88.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Doctor Strange Marvel Cinepolis", "categoria": "Marvel", "precio": 60, "imagen": "imgs/coleccionable6.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Doctor Strange Ojo de Agamoto Marvel", "categoria": "Marvel", "precio": 1300, "imagen": "imgs/davengers2.png" ,"badge": "ultimo", "stock": 1},

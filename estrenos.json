@@ -68,26 +68,6 @@
     "nota": "Preventa ya disponible"
   },
   {
-    "id": "katy",
-    "titulo": "Katy Perry: The Lifetimes Tour - Live From Paris",
-    "tipo": "preventa",
-    "fecha": "2026-09-02",
-    "fechaTexto": "Miércoles 2 de Septiembre 2026",
-    "poster": "imgs/estrenos/katy.jpg",
-    "cines": ["Cinemex", "Cinepolis"],
-    "links": [
-      {
-        "cine": "Cinemex",
-        "url": "https://cinemex.com/pelicula/72351/katy-perry-the-lifetimes-tour-live-from-paris"
-      },
-      {
-        "cine": "Cinepolis",
-        "url": "https://www.cinepolis.com"
-      }
-    ],
-    "nota": "Preventa ya disponible"
-  },
-  {
     "id": "ghost",
     "titulo": "GHOST: 2 Big To Rig En Cines",
     "tipo": "preventa",
@@ -610,5 +590,109 @@
       }
     ],
     "nota": "Preventa ya disponible"
+  },
+  {
+    "id": "zona-cero",
+    "titulo": "Zona Cero",
+    "tipo": "estreno",
+    "fecha": "2026-09-03",
+    "fechaTexto": "Jueves 3 de Septiembre del 2026",
+    "poster": "imgs/estrenos/zonacero.jpg",
+    "cines": ["Cinepolis", "Cinemex"],
+    "links": [
+      {
+      }
+    ],
+    "nota": "Corea del Sur"
+  },
+  {
+    "id": "gungo",
+    "titulo": "Gungo y Los Juegos Cavernícolas",
+    "tipo": "estreno",
+    "fecha": "2026-09-03",
+    "fechaTexto": "Jueves 3 de Septiembre del 2026",
+    "poster": "imgs/estrenos/gungo.jpg",
+    "cines": ["Cinepolis", "Cinemex"],
+    "links": [
+      {
+      }
+    ],
+    "nota": "México"
+  },
+  {
+    "id": "icecream",
+    "titulo": "El Heladero Dulce Sabor a Muerte",
+    "tipo": "estreno",
+    "fecha": "2026-09-03",
+    "fechaTexto": "Jueves 3 de Septiembre del 2026",
+    "poster": "imgs/estrenos/ice.jpg",
+    "cines": ["Cinepolis", "Cinemex"],
+    "links": [
+      {
+      }
+    ],
+    "nota": "Estados Unidos"
+  },
+  {
+    "id": "rapidos",
+    "titulo": "Rapido y Furioso (25 Aniversario)",
+    "tipo": "estreno",
+    "fecha": "2026-09-03",
+    "fechaTexto": "Jueves 3 de Septiembre del 2026",
+    "poster": "imgs/estrenos/rapidos.jpg",
+    "cines": ["Cinepolis", "Cinemex"],
+    "links": [
+      {
+      }
+    ],
+    "nota": "Estados Unidos"
+  },
+  {
+    "id": "idiotas",
+    "titulo": "Idiotas",
+    "tipo": "estreno",
+    "fecha": "2026-09-03",
+    "fechaTexto": "Jueves 3 de Septiembre del 2026",
+    "poster": "imgs/estrenos/ifiotas.jpg",
+    "cines": ["Cinepolis", "Cinemex"],
+    "links": [
+      {
+      }
+    ],
+    "nota": "Estados Unidos"
+  },
+  {
+    "id": "desaire",
+    "titulo": "El Desaire",
+    "tipo": "estreno",
+    "fecha": "2026-09-03",
+    "fechaTexto": "Jueves 3 de Septiembre del 2026",
+    "poster": "imgs/estrenos/desaire.jpg",
+    "cines": ["Cinepolis", "Cinemex"],
+    "links": [
+      {
+      }
+    ],
+    "nota": "México"
+  },
+  {
+    "id": "katy",
+    "titulo": "Katy Perry: The Lifetimes Tour - Live From Paris",
+    "tipo": "estreno",
+    "fecha": "2026-09-02",
+    "fechaTexto": "Miércoles 2 de Septiembre 2026",
+    "poster": "imgs/estrenos/katy.jpg",
+    "cines": ["Cinemex", "Cinepolis"],
+    "links": [
+      {
+        "cine": "Cinemex",
+        "url": "https://cinemex.com/pelicula/72351/katy-perry-the-lifetimes-tour-live-from-paris"
+      },
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Estados Unidos"
   }
 ]

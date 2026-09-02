@@ -11,7 +11,7 @@
     "etiqueta": "ESTRENO",
     "plataformas": ["Cines"],
     "resumen": "El regreso de Peter Parker abre una nueva etapa. ¿Funciona como la siguiente gran aventura del héroe arácnido?",
-    "poster": "imgs/posters/spiderman.jpg",
+    "poster": "imgs/resenias/spiderman.jpg",
     "posterFallback": {
       "linea1": "SPIDER-MAN",
       "linea2": "UN NUEVO DÍA"
@@ -45,7 +45,7 @@
     "etiqueta": "ESTRENO",
     "plataformas": ["Cines"],
     "resumen": "Christopher Nolan lleva uno de los relatos más grandes de la historia al terreno de su cine espectacular.",
-    "poster": "imgs/posters/laodisea.jpg",
+    "poster": "imgs/resenias/laodisea.jpg",
     "posterFallback": {
       "linea1": "LA ODISEA",
       "linea2": "⚔"
@@ -75,7 +75,7 @@
     "etiqueta": "RESEÑA",
     "plataformas": ["Disney+", "Cines"],
     "resumen": "La nueva aventura de Woody, Buzz y compañía llega para demostrar si Pixar todavía tiene algo nuevo que contar con estos personajes.",
-    "poster": "imgs/posters/toystory5.jpg",
+    "poster": "imgs/resenias/toystory5.jpg",
     "posterFallback": {
       "linea1": "TOY STORY",
       "linea2": "5"
@@ -114,7 +114,7 @@
     "etiqueta": "ESTRENO",
     "plataformas": ["Cines"],
     "resumen": "La franquicia regresa con más sangre, más caos y el mismo espíritu desenfrenado que la hizo icónica.",
-    "poster": "imgs/posters/evildead.jpg",
+    "poster": "imgs/resenias/evildead.jpg",
     "posterFallback": {
       "linea1": "EVIL DEAD",
       "linea2": "BURN"
@@ -142,7 +142,7 @@
     "etiqueta": "ESTRENO",
     "plataformas": ["Cines"],
     "resumen": "Una versión oscura y adulta de Robin Hood que se concentra en sus últimos días, pero resulta demasiado lenta y alejada del personaje que conocemos.",
-    "poster": "imgs/posters/robinhood.jpg",
+    "poster": "imgs/resenias/robinhood.jpg",
     "posterFallback": {
       "linea1": "La Muerte de",
       "linea2": "Robin Hood"
@@ -173,7 +173,7 @@
     "etiqueta": "ESTRENO",
     "plataformas": ["Cine"],
     "resumen": "Una joven obsesionada con adelgazar encuentra una solución extrema consumiendo cenizas humanas. El body horror y el terror se mezclan con una crítica a los trastornos alimenticios, aunque la película no logra sostener toda su potencia.",
-    "poster": "imgs/posters/insaciable.jpg",
+    "poster": "imgs/resenias/insaciable.jpg",
     "posterFallback": {
       "linea1": "Saccharine",
       "linea2": ""
@@ -201,7 +201,7 @@
     "etiqueta": "ESTRENO",
     "plataformas": ["Cines"],
     "resumen": "Una familia atrapada en un mundo prehistórico con dinosaurios. Buena idea y momentos entretenidos, pero efectos artificiales y un tono irregular la dejan como una película palomera y nada más.",
-    "poster": "imgs/posters/oak.jpg",
+    "poster": "imgs/resenias/oak.jpg",
     "posterFallback": {
       "linea1": "El final de la",
       "linea2": "calle Oak"
@@ -229,7 +229,7 @@
     "etiqueta": "ESTRENO",
     "plataformas": ["Cines"],
     "resumen": "Una comedia que intenta hacer humor negro y sátira política, pero termina siendo una colección de chistes que no dan risa y una burla al pueblo veracruzano.",
-    "poster": "imgs/posters/locomexico.jpg",
+    "poster": "imgs/resenias/locomexico.jpg",
     "posterFallback": {
       "linea1": "Loco México",
       "linea2": "Mágico"
@@ -258,7 +258,7 @@
     "etiqueta": "ESTRENO",
     "plataformas": ["Cines"],
     "resumen": "Otro capítulo más de Las Aventuras de Jason Statham. Misma fórmula de siempre: traición, tragedia y el monstruo interior que despierta para hacer justicia. Nada nuevo bajo el sol.",
-    "poster": "imgs/posters/codigo.jpg",
+    "poster": "imgs/resenias/codigo.jpg",
     "posterFallback": {
       "linea1": "Código:",
       "linea2": "Venganza"
@@ -286,7 +286,7 @@
     "etiqueta": "",
     "plataformas": ["Streaming"],
     "resumen": "Una película de terror con buena atmósfera y tensión en la habitación, pero el elemento sobrenatural de la bruja se siente de más. Palomera, nada más.",
-    "poster": "imgs/posters/hokum.jpg",
+    "poster": "imgs/resenias/hokum.jpg",
     "posterFallback": {
       "linea1": "Hokum",
       "linea2": ""
@@ -315,7 +315,7 @@
     "etiqueta": "",
     "plataformas": ["Netflix"],
     "resumen": "Una historia de romance, aceptación y descubrimiento personal que se siente demasiado fantasiosa y superficial. No conecté con los personajes ni con la historia.",
-    "poster": "imgs/posters/15.jpg",
+    "poster": "imgs/resenias/15.jpg",
     "posterFallback": {
       "linea1": "Quince",
       "linea2": "Días"
@@ -343,7 +343,7 @@
     "etiqueta": "ESTRENO",
     "plataformas": ["Cines"],
     "resumen": "La sexta entrega de la saga introduce una idea interesante, pero la ejecución es lenta, no da miedo y desperdicia su potencial. Ya es momento de dejar descansar la franquicia.",
-    "poster": "imgs/posters/demonio.jpg",
+    "poster": "imgs/resenias/demonio.jpg",
     "posterFallback": {
       "linea1": "La noche del",
       "linea2": "demonio 6"
@@ -372,7 +372,7 @@
     "etiqueta": "",
     "plataformas": ["Streaming"],
     "resumen": "Película icónica que marca una generación con su estilo irreverente y crudo sobre la adicción. Energía brutal y música inolvidable, aunque el tema no es de mis favoritos.",
-    "poster": "imgs/posters/trains.jpg",
+    "poster": "imgs/resenias/trains.jpg",
     "posterFallback": {
       "linea1": "Trainspotting",
       "linea2": ""
@@ -400,7 +400,7 @@
     "etiqueta": "",
     "plataformas": ["Cines"],
     "resumen": "La primera entrega de Harry Potter sigue siendo un clásico lleno de magia, encanto e inocencia. Verla en cine por el 25 aniversario fue una experiencia inolvidable.",
-    "poster": "imgs/posters/harry.jpg",
+    "poster": "imgs/resenias/harry.jpg",
     "posterFallback": {
       "linea1": "Harry Potter y la",
       "linea2": "piedra filosofal"
@@ -427,7 +427,7 @@
     "etiqueta": "",
     "plataformas": ["Cines"],
     "resumen": "Proyección restaurada del icónico concierto de Juan Gabriel en Bellas Artes. Una experiencia curiosa de cine donde la gente canta como en un concierto en vivo, aunque la calidad de imagen es irregular.",
-    "poster": "imgs/posters/gabriel.jpg",
+    "poster": "imgs/resenias/gabriel.jpg",
     "posterFallback": {
       "linea1": "Juan Gabriel:",
       "linea2": "Mi Primer Bellas Artes"
@@ -451,12 +451,12 @@
     "fecha": "2026-08-30",
     "duracion": "91 min",
     "generos": ["Drama", "Thriller", "Crimen"],
-    "puntaje": 3.0,
+    "puntaje": 2.0,
     "destacada": false,
     "etiqueta": "",
     "plataformas": ["Netflix"],
     "resumen": "Película sobre las últimas horas de la tercera captura de El Chapo. Tarda demasiado en arrancar, se siente repetitiva y los enfrentamientos no convencen. Más drama personal que suspenso real.",
-    "poster": "imgs/posters/captura.jpg",
+    "poster": "imgs/resenias/captura.jpg",
     "posterFallback": {
       "linea1": "La captura:",
       "linea2": "Facing the Chapo"
@@ -485,7 +485,7 @@
     "etiqueta": "ESTRENO",
     "plataformas": ["Cines"],
     "resumen": "Después de todo el desastre de Warner Bros., por fin llegó a salas. Divertida, nostálgica y con el humor clásico de los Looney Tunes. El Coyote como protagonista funciona muy bien.",
-    "poster": "imgs/posters/coyote.jpg",
+    "poster": "imgs/resenias/coyote.jpg",
     "posterFallback": {
       "linea1": "Coyote vs.",
       "linea2": "ACME"
@@ -514,7 +514,7 @@
     "etiqueta": "ESTRENO",
     "plataformas": ["Cines"],
     "resumen": "Ridley Scott entrega una película postapocalíptica aburrida y sin avance. Buena fotografía, pero la historia no atrapa y se siente una enorme decepción.",
-    "poster": "imgs/posters/ultimos.jpg",
+    "poster": "imgs/resenias/ultimos.jpg",
     "posterFallback": {
       "linea1": "La guerra de",
       "linea2": "los últimos"
@@ -543,7 +543,7 @@
     "etiqueta": "ESTRENO",
     "plataformas": ["Cines"],
     "resumen": "Comedia al estilo de las mexicanas pero hecha en EE.UU. Algunos momentos divertidos, pero chistes repetitivos, actuaciones flojas y un guion equis la terminan aburriendo.",
-    "poster": "imgs/posters/relajadas.jpg",
+    "poster": "imgs/resenias/relajadas.jpg",
     "posterFallback": {
       "linea1": "Relajadas y",
       "linea2": "muy peligrosas"
