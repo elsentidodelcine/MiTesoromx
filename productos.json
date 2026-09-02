@@ -130,7 +130,7 @@
   { "nombre": "Funko Muzan Demon Slayer 871", "categoria": "Funko", "precio": 500, "imagen": "imgs/muzan.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko YuGiOh 1061 Yami Bakura", "categoria": "Funko", "precio": 300, "imagen": "imgs/yugi3.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko YuGiOh 716 Maximillion Pegasus", "categoria": "Funko", "precio": 300, "imagen": "imgs/yugi1.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Funko YuGiOh 389 Blue Eyes White Dragon Pirata", "categoria": "Funko", "precio": 100, "imagen": "imgs/yugi2.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Funko YuGiOh 389 Blue Eyes White Dragon", "categoria": "Funko", "precio": 300, "imagen": "imgs/yugi2.png" ,"badge": "ultimo", "stock": 1},
 
 
   { "nombre": "3 Vasos Godzilla Figuras Cinemex", "categoria": "Godzilla", "precio": 1200, "imagen": "imgs/godzilla30.jpeg" ,"badge": "exclusivo", "stock": 1},

@@ -571,7 +571,7 @@
     "etiqueta": "ESTRENO",
     "plataformas": ["Cines"],
     "resumen": "Premisa curiosa que recuerda a La Purga, pero se vuelve repetitiva y pierde la gracia. Los primeros 30 minutos enganchan, el resto termina siendo muy equis.",
-    "poster": "imgs/posters/solo.jpg",
+    "poster": "imgs/resenias/solo.jpg",
     "posterFallback": {
       "linea1": "Sólo por",
       "linea2": "una noche"
@@ -599,7 +599,7 @@
     "etiqueta": "",
     "plataformas": ["Streaming"],
     "resumen": "Thriller de supervivencia en globo aerostático que se siente falso de principio a fin. Efectos baratos, trama sencilla y muy poco creíble. Un desastre.",
-    "poster": "imgs/posters/turbulencia.jpg",
+    "poster": "imgs/resenias/turbulencia.jpg",
     "posterFallback": {
       "linea1": "Turbulence",
       "linea2": ""
@@ -627,7 +627,7 @@
     "etiqueta": "",
     "plataformas": ["Cines"],
     "resumen": "Coming-of-age mexicano sobre el despertar sexual de un joven. Muy corta y superficial; se queda en el ambiente de fiestas y sexo sin desarrollar realmente a los personajes.",
-    "poster": "imgs/posters/elfin.jpg",
+    "poster": "imgs/resenias/elfin.jpg",
     "posterFallback": {
       "linea1": "El fin de las",
       "linea2": "primeras veces"
