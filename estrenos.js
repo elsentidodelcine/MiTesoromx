@@ -95,42 +95,47 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
- function renderEstrenos() {
-   let lista = [...estrenos];
+function renderEstrenos() {
+  let lista = [...estrenos];
 
-   if (filtroTipo === 'fuera') {
-     lista = lista.filter(e =>
-       e.estadoCartelera === 'fuera' || e.enCartelera === false
-     );
-   } else {
-     lista = lista.filter(e =>
-       e.estadoCartelera !== 'fuera' && e.enCartelera !== false
-     );
+  if (filtroTipo === 'fuera') {
+    // Solo las que YA NO están en cartelera
+    lista = lista.filter(e =>
+      e.estadoCartelera === 'fuera' || e.enCartelera === false
+    );
+  } else {
+    // En todos los demás filtros: ocultar las que ya salieron
+    lista = lista.filter(e =>
+      e.estadoCartelera !== 'fuera' && e.enCartelera !== false
+    );
 
-     if (filtroTipo === 'cartelera') {
-       lista = lista.filter(e => e.estadoCartelera === 'cartelera');
-     } else if (filtroTipo === 'estreno') {
-       lista = lista.filter(e => getTipoEfectivo(e) === 'estreno');
-     } else if (filtroTipo === 'reestreno') {
-       lista = lista.filter(e => getTipoEfectivo(e) === 'reestreno');
-     } else if (filtroTipo === 'preventa') {
-       lista = lista.filter(e => getTipoEfectivo(e) === 'preventa');
-     }
-   }
+    if (filtroTipo === 'preventa') {
+      lista = lista.filter(e => getTipoEfectivo(e) === 'preventa');
+    } else if (filtroTipo === 'reestreno') {
+      lista = lista.filter(e => getTipoEfectivo(e) === 'reestreno');
+    } else if (filtroTipo === 'estreno') {
+      // Solo estrenos NUEVOS (no los que ya pasaron a "en cartelera")
+      lista = lista.filter(e => {
+        const tipo = getTipoEfectivo(e);
+        return tipo === 'estreno' && e.estadoCartelera !== 'cartelera';
+      });
+    } else if (filtroTipo === 'cartelera') {
+      lista = lista.filter(e => e.estadoCartelera === 'cartelera');
+    }
+    // filtroTipo === 'todos' → ya filtramos los "fuera", mostramos el resto
+  }
 
-   // Filtro por mes (igual que ahora)
-   if (filtroMes !== 'todos') {
-     lista = lista.filter(item => {
-       const d = new Date(item.fecha);
-       const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
-       return key === filtroMes;
-     });
-   }
+  if (filtroMes !== 'todos') {
+    lista = lista.filter(item => {
+      const d = new Date(item.fecha);
+      const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+      return key === filtroMes;
+    });
+  }
 
-   listaFiltrada = lista;
-   paginaActual = Math.min(paginaActual, Math.max(1, Math.ceil(lista.length / POR_PAGINA) || 1));
-   renderPagina();
- }
+  listaFiltrada = lista;
+  renderPagina();
+}
 
   function renderPagina() {
     const pagNav = document.getElementById('estrenos-pagination');

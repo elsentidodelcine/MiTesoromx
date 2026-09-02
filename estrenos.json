@@ -19,7 +19,8 @@
   {
     "id": "juan-gabriel",
     "titulo": "Juan Gabriel: Mi Primer Bellas Artes",
-    "tipo": "preventa",
+    "tipo": "estreno",
+    "estadoCartelera": "cartelera",
     "fecha": "2026-08-28",
     "fechaTexto": "Viernes 28 de Agosto 2026",
     "poster": "imgs/estrenos/gabriel.jpg",
@@ -241,7 +242,8 @@
   {
     "id": "sagrado",
     "titulo": "Sagrado Corazón",
-    "tipo": "preventa",
+    "tipo": "estreno",
+    "estadoCartelera": "cartelera",
     "fecha": "2026-08-27",
     "fechaTexto": "Jueves 27 de Agosto 2026",
     "poster": "imgs/estrenos/sagrado.jpg",
@@ -366,26 +368,6 @@
       }
     ],
     "nota": "Preventa ya disponible"
-  },
-  {
-    "id": "rapidos",
-    "titulo": "Rápido y Furioso 1 (25 Años)",
-    "tipo": "preventa",
-    "fecha": "2026-09-03",
-    "fechaTexto": "Jueves 3 de Septiembre del 2026",
-    "poster": "imgs/estrenos/rapidos.jpg",
-    "cines": ["Cinepolis", "Cinemex"],
-    "links": [
-      {
-        "cine": "Cinemex",
-        "url": "https://cinemex.com/proximamente/4529/rapido-y-furioso"
-      },
-      {
-        "cine": "Cinepolis",
-        "url": "https://www.cinepolis.com"
-      }
-    ],
-    "nota": "Próximamente"
   },
   {
     "id": "cars",
