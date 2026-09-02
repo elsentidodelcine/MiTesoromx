@@ -2,7 +2,8 @@
   {
     "id": "harry",
     "titulo": "Harry Potter y la Piedra Filosofal 25 Aniversario",
-    "tipo": "preventa",
+    "tipo": "estreno",
+    "enCartelera": true,
     "fecha": "2026-08-27",
     "fechaTexto": "Jueves 27 de Agosto 2026",
     "poster": "imgs/estrenos/harry.jpg",
@@ -18,7 +19,8 @@
   {
     "id": "uranus",
     "titulo": "Uranus 2324: Siempre nos encontraremos",
-    "tipo": "preventa",
+    "tipo": "estreno",
+    "enCartelera": false,
     "fecha": "2026-08-13",
     "fechaTexto": "Jueves 13 de Agosto 2026",
     "poster": "imgs/estrenos/uranus.jpg",
@@ -70,7 +72,8 @@
   {
     "id": "ghost",
     "titulo": "GHOST: 2 Big To Rig En Cines",
-    "tipo": "preventa",
+    "tipo": "estreno",
+    "enCartelera": false,
     "fecha": "2026-08-26",
     "fechaTexto": "Miércoles 26 de Agosto 2026",
     "poster": "imgs/estrenos/ghost.jpg",
@@ -86,7 +89,8 @@
   {
     "id": "inland",
     "titulo": "Inland Empire",
-    "tipo": "preventa",
+    "tipo": "estreno",
+    "enCartelera": false,
     "fecha": "2026-08-13",
     "fechaTexto": "Jueves 13 de Agosto 2026",
     "poster": "imgs/estrenos/imperio.jpg",
@@ -102,7 +106,8 @@
   {
     "id": "drive",
     "titulo": "Mulholland Drive",
-    "tipo": "preventa",
+    "tipo": "estreno",
+    "enCartelera": false,
     "fecha": "2026-08-13",
     "fechaTexto": "Jueves 13 de Agosto 2026",
     "poster": "imgs/estrenos/drive.jpg",
@@ -118,7 +123,8 @@
   {
     "id": "man",
     "titulo": "ELEPHANT MAN",
-    "tipo": "preventa",
+    "tipo": "estreno",
+    "enCartelera": false,
     "fecha": "2026-08-20",
     "fechaTexto": "Jueves 20 de Agosto 2026",
     "poster": "imgs/estrenos/man.jpg",
@@ -134,7 +140,8 @@
   {
     "id": "story",
     "titulo": "THE STRAIGHT STORY",
-    "tipo": "preventa",
+    "tipo": "estreno",
+    "enCartelera": false,
     "fecha": "2026-08-20",
     "fechaTexto": "Jueves 20 de Agosto 2026",
     "poster": "imgs/estrenos/story.jpg",
@@ -186,7 +193,8 @@
   {
     "id": "puella1",
     "titulo": "Puella Magi Madoka Mágica: La Película Parte 1",
-    "tipo": "preventa",
+    "tipo": "estreno",
+    "enCartelera": true,
     "fecha": "2026-08-20",
     "fechaTexto": "Jueves 20 de Agosto del 2026",
     "poster": "imgs/estrenos/puella1.jpg",
@@ -202,7 +210,8 @@
   {
     "id": "puella2",
     "titulo": "Puella Magi Madoka Mágica: La Película Parte 2",
-    "tipo": "preventa",
+    "tipo": "estreno",
+    "enCartelera": true,
     "fecha": "2026-08-20",
     "fechaTexto": "Jueves 20 de Agosto del 2026",
     "poster": "imgs/estrenos/puella2.jpg",

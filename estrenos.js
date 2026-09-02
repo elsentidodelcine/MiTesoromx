@@ -338,15 +338,29 @@ document.getElementById('filter-cadena')?.addEventListener('change', () => {
 
 
 function etiquetaCartelera(item) {
-  const tipo = item.tipo; // directo del JSON
+  // Preventa: solo el badge de tipo
+  if (item.tipo === 'preventa') return null;
 
-  if (tipo === 'preventa') return null;
+  // Nuevo campo (prioridad)
+  const estado = item.estadoCartelera;
 
+  if (estado === 'estreno') {
+    return { key: 'hoy', label: 'Nueva' }; // o 'En estreno'
+  }
+  if (estado === 'cartelera') {
+    return { key: 'encartelera', label: 'En cartelera' };
+  }
+  if (estado === 'fuera') {
+    return { key: 'salio', label: 'Fuera de cartelera' };
+  }
+
+  // Compatibilidad con el boolean viejo
   if (item.enCartelera === true) {
     return { key: 'encartelera', label: 'En cartelera' };
   }
   if (item.enCartelera === false) {
     return { key: 'salio', label: 'Fuera de cartelera' };
   }
+
   return null;
 }
