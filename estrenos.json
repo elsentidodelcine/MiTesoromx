@@ -512,6 +512,12 @@
     "cines": ["Cinepolis", "Cinemex"],
     "links": [
       {
+        "cine": "Cinemex",
+        "url": "https://cinemex.com/proximamente/4450/zona-cero"
+      },
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
       }
     ],
     "nota": "Corea del Sur"
@@ -527,6 +533,12 @@
     "cines": ["Cinepolis", "Cinemex"],
     "links": [
       {
+        "cine": "Cinemex",
+        "url": "https://cinemex.com/proximamente/4460/gungo-y-los-juegos-cavernicolas"
+      },
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
       }
     ],
     "nota": "México"
@@ -542,6 +554,12 @@
     "cines": ["Cinepolis", "Cinemex"],
     "links": [
       {
+        "cine": "Cinemex",
+        "url": "https://cinemex.com/proximamente/4495/el-heladero-dulce-sabor-a-muerte"
+      },
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
       }
     ],
     "nota": "Estados Unidos"
@@ -557,6 +575,12 @@
     "cines": ["Cinepolis", "Cinemex"],
     "links": [
       {
+        "cine": "Cinemex",
+        "url": "https://cinemex.com/proximamente/4529/rapido-y-furioso-25-aniversario"
+      },
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
       }
     ],
     "nota": "Estados Unidos"
@@ -572,6 +596,12 @@
     "cines": ["Cinepolis", "Cinemex"],
     "links": [
       {
+        "cine": "Cinemex",
+        "url": "https://cinemex.com/proximamente/4511/idiotas"
+      },
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
       }
     ],
     "nota": "Estados Unidos"
@@ -584,9 +614,11 @@
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre del 2026",
     "poster": "imgs/estrenos/desaire.jpg",
-    "cines": ["Cinepolis", "Cinemex"],
+    "cines": ["Cinemex"],
     "links": [
       {
+        "cine": "Cinemex",
+        "url": "https://cinemex.com/proximamente/4490/el-desaire"
       }
     ],
     "nota": "México"
@@ -604,6 +636,27 @@
       {
         "cine": "Cinemex",
         "url": "https://cinemex.com/pelicula/72351/katy-perry-the-lifetimes-tour-live-from-paris"
+      },
+      {
+        "cine": "Cinepolis",
+        "url": "https://www.cinepolis.com"
+      }
+    ],
+    "nota": "Estados Unidos"
+  },
+  {
+    "id": "rebelion",
+    "titulo": "Rebelion en la Granja",
+    "tipo": "estreno",
+    "estadoCartelera": "estreno",
+    "fecha": "2026-09-03",
+    "fechaTexto": "Jueves 3 de Septiembre 2026",
+    "poster": "imgs/estrenos/granja.jpg",
+    "cines": ["Cinemex", "Cinepolis"],
+    "links": [
+      {
+        "cine": "Cinemex",
+        "url": "https://cinemex.com/proximamente/4530/rebelion-en-la-granja"
       },
       {
         "cine": "Cinepolis",
