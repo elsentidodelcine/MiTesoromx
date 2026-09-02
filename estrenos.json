@@ -3,7 +3,7 @@
     "id": "harry",
     "titulo": "Harry Potter y la Piedra Filosofal 25 Aniversario",
     "tipo": "estreno",
-    "enCartelera": true,
+    "estadoCartelera": "cartelera",
     "fecha": "2026-08-27",
     "fechaTexto": "Jueves 27 de Agosto 2026",
     "poster": "imgs/estrenos/harry.jpg",
@@ -15,23 +15,6 @@
       }
     ],
     "nota": "Reestreno por el 25 aniversario"
-  },
-  {
-    "id": "uranus",
-    "titulo": "Uranus 2324: Siempre nos encontraremos",
-    "tipo": "estreno",
-    "enCartelera": false,
-    "fecha": "2026-08-13",
-    "fechaTexto": "Jueves 13 de Agosto 2026",
-    "poster": "imgs/estrenos/uranus.jpg",
-    "cines": ["Cinemex"],
-    "links": [
-      {
-        "cine": "Cinemex",
-        "url": "https://cinemex.com/pelicula/72339/uranus-2324-siempre-nos-encontraremos"
-      }
-    ],
-    "nota": "Preventa ya disponible"
   },
   {
     "id": "juan-gabriel",
@@ -73,7 +56,7 @@
     "id": "ghost",
     "titulo": "GHOST: 2 Big To Rig En Cines",
     "tipo": "estreno",
-    "enCartelera": false,
+    "estadoCartelera": "fuera",
     "fecha": "2026-08-26",
     "fechaTexto": "Miércoles 26 de Agosto 2026",
     "poster": "imgs/estrenos/ghost.jpg",
@@ -85,75 +68,7 @@
       }
     ],
     "nota": "Preventa ya disponible"
-  },
-  {
-    "id": "inland",
-    "titulo": "Inland Empire",
-    "tipo": "estreno",
-    "enCartelera": false,
-    "fecha": "2026-08-13",
-    "fechaTexto": "Jueves 13 de Agosto 2026",
-    "poster": "imgs/estrenos/imperio.jpg",
-    "cines": ["Cinépolis"],
-    "links": [
-      {
-        "cine": "Cinépolis",
-        "url": "https://www.cinepolis.com"
-      }
-    ],
-    "nota": "Ciclo de David Lynch's"
-  },
-  {
-    "id": "drive",
-    "titulo": "Mulholland Drive",
-    "tipo": "estreno",
-    "enCartelera": false,
-    "fecha": "2026-08-13",
-    "fechaTexto": "Jueves 13 de Agosto 2026",
-    "poster": "imgs/estrenos/drive.jpg",
-    "cines": ["Cinépolis"],
-    "links": [
-      {
-        "cine": "Cinépolis",
-        "url": "https://www.cinepolis.com"
-      }
-    ],
-    "nota": "Ciclo de David Lynch's"
-  },
-  {
-    "id": "man",
-    "titulo": "ELEPHANT MAN",
-    "tipo": "estreno",
-    "enCartelera": false,
-    "fecha": "2026-08-20",
-    "fechaTexto": "Jueves 20 de Agosto 2026",
-    "poster": "imgs/estrenos/man.jpg",
-    "cines": ["Cinépolis"],
-    "links": [
-      {
-        "cine": "Cinépolis",
-        "url": "https://www.cinepolis.com"
-      }
-    ],
-    "nota": "Ciclo de David Lynch's"
-  },
-  {
-    "id": "story",
-    "titulo": "THE STRAIGHT STORY",
-    "tipo": "estreno",
-    "enCartelera": false,
-    "fecha": "2026-08-20",
-    "fechaTexto": "Jueves 20 de Agosto 2026",
-    "poster": "imgs/estrenos/story.jpg",
-    "cines": ["Cinépolis"],
-    "links": [
-      {
-        "cine": "Cinépolis",
-        "url": "https://www.cinepolis.com"
-      }
-    ],
-    "nota": "Ciclo de David Lynch's"
-  },
+  }
   {
     "id": "one",
     "titulo": "One Piece: La Película (2000)",
@@ -194,7 +109,7 @@
     "id": "puella1",
     "titulo": "Puella Magi Madoka Mágica: La Película Parte 1",
     "tipo": "estreno",
-    "enCartelera": true,
+    "estadoCartelera": "cartelera",
     "fecha": "2026-08-20",
     "fechaTexto": "Jueves 20 de Agosto del 2026",
     "poster": "imgs/estrenos/puella1.jpg",
@@ -211,7 +126,7 @@
     "id": "puella2",
     "titulo": "Puella Magi Madoka Mágica: La Película Parte 2",
     "tipo": "estreno",
-    "enCartelera": true,
+    "estadoCartelera": "cartelera",
     "fecha": "2026-08-20",
     "fechaTexto": "Jueves 20 de Agosto del 2026",
     "poster": "imgs/estrenos/puella2.jpg",
@@ -228,7 +143,7 @@
     "id": "hombres",
     "titulo": "LOS MEJORES AÑOS DE NUESTRA VIDA",
     "tipo": "estreno",
-    "enCartelera": true,
+    "estadoCartelera": "estreno",
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre del 2026",
     "poster": "imgs/estrenos/hombres.jpg",
@@ -277,7 +192,7 @@
     "id": "lost",
     "titulo": "Lost Highway",
     "tipo": "estreno",
-    "enCartelera": true,
+    "estadoCartelera": "estreno",
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre 2026",
     "poster": "imgs/estrenos/lost.jpg",
@@ -294,7 +209,7 @@
     "id": "blue",
     "titulo": "Blue Velvet",
     "tipo": "estreno",
-    "enCartelera": true,
+    "estadoCartelera": "estreno",
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre 2026",
     "poster": "imgs/estrenos/blue.jpg",
@@ -367,7 +282,7 @@
     "id": "puella",
     "titulo": "Puella Magi Madoka Magica: La Rebelión",
     "tipo": "estreno",
-    "enCartelera": true,
+    "estadoCartelera": "estreno",
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre del 2026",
     "poster": "imgs/estrenos/puella3.jpg",
@@ -608,7 +523,7 @@
     "id": "zona-cero",
     "titulo": "Zona Cero",
     "tipo": "estreno",
-    "enCartelera": true,
+    "estadoCartelera": "estreno",
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre del 2026",
     "poster": "imgs/estrenos/zonacero.jpg",
@@ -623,7 +538,7 @@
     "id": "gungo",
     "titulo": "Gungo y Los Juegos Cavernícolas",
     "tipo": "estreno",
-    "enCartelera": true,
+    "estadoCartelera": "estreno",
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre del 2026",
     "poster": "imgs/estrenos/gungo.jpg",
@@ -638,7 +553,7 @@
     "id": "icecream",
     "titulo": "El Heladero Dulce Sabor a Muerte",
     "tipo": "estreno",
-    "enCartelera": true,
+    "estadoCartelera": "estreno",
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre del 2026",
     "poster": "imgs/estrenos/ice.jpg",
@@ -653,7 +568,7 @@
     "id": "rapidos",
     "titulo": "Rapido y Furioso (25 Aniversario)",
     "tipo": "estreno",
-    "enCartelera": true,
+    "estadoCartelera": "estreno",
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre del 2026",
     "poster": "imgs/estrenos/rapidos.jpg",
@@ -668,7 +583,7 @@
     "id": "idiotas",
     "titulo": "Idiotas",
     "tipo": "estreno",
-    "enCartelera": true,
+    "estadoCartelera": "estreno",
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre del 2026",
     "poster": "imgs/estrenos/ifiotas.jpg",
@@ -683,7 +598,7 @@
     "id": "desaire",
     "titulo": "El Desaire",
     "tipo": "estreno",
-    "enCartelera": true,
+    "estadoCartelera": "estreno",
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre del 2026",
     "poster": "imgs/estrenos/desaire.jpg",
@@ -698,7 +613,7 @@
     "id": "katy",
     "titulo": "Katy Perry: The Lifetimes Tour - Live From Paris",
     "tipo": "estreno",
-    "enCartelera": true,
+    "estadoCartelera": "estreno",
     "fecha": "2026-09-02",
     "fechaTexto": "Miércoles 2 de Septiembre 2026",
     "poster": "imgs/estrenos/katy.jpg",

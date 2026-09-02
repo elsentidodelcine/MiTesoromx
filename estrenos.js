@@ -95,24 +95,42 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
-  function renderEstrenos() {
-    let lista = [...estrenos];
+ function renderEstrenos() {
+   let lista = [...estrenos];
 
-    if (filtroTipo !== 'todos') {
-      lista = lista.filter(e => getTipoEfectivo(e) === filtroTipo);
-    }
+   if (filtroTipo === 'fuera') {
+     lista = lista.filter(e =>
+       e.estadoCartelera === 'fuera' || e.enCartelera === false
+     );
+   } else {
+     lista = lista.filter(e =>
+       e.estadoCartelera !== 'fuera' && e.enCartelera !== false
+     );
 
-    if (filtroMes !== 'todos') {
-      lista = lista.filter(item => {
-        const d = new Date(item.fecha);
-        const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
-        return key === filtroMes;
-      });
-    }
+     if (filtroTipo === 'cartelera') {
+       lista = lista.filter(e => e.estadoCartelera === 'cartelera');
+     } else if (filtroTipo === 'estreno') {
+       lista = lista.filter(e => getTipoEfectivo(e) === 'estreno');
+     } else if (filtroTipo === 'reestreno') {
+       lista = lista.filter(e => getTipoEfectivo(e) === 'reestreno');
+     } else if (filtroTipo === 'preventa') {
+       lista = lista.filter(e => getTipoEfectivo(e) === 'preventa');
+     }
+   }
 
-    listaFiltrada = lista;
-    renderPagina();
-  }
+   // Filtro por mes (igual que ahora)
+   if (filtroMes !== 'todos') {
+     lista = lista.filter(item => {
+       const d = new Date(item.fecha);
+       const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+       return key === filtroMes;
+     });
+   }
+
+   listaFiltrada = lista;
+   paginaActual = Math.min(paginaActual, Math.max(1, Math.ceil(lista.length / POR_PAGINA) || 1));
+   renderPagina();
+ }
 
   function renderPagina() {
     const pagNav = document.getElementById('estrenos-pagination');
@@ -338,29 +356,24 @@ document.getElementById('filter-cadena')?.addEventListener('change', () => {
 
 
 function etiquetaCartelera(item) {
-  // Preventa: solo el badge de tipo
   if (item.tipo === 'preventa') return null;
 
-  // Nuevo campo (prioridad)
-  const estado = item.estadoCartelera;
-
-  if (estado === 'estreno') {
-    return { key: 'hoy', label: 'Nueva' }; // o 'En estreno'
+  if (item.estadoCartelera === 'estreno') {
+    return { key: 'hoy', label: 'En estreno' };
   }
-  if (estado === 'cartelera') {
+  if (item.estadoCartelera === 'cartelera') {
     return { key: 'encartelera', label: 'En cartelera' };
   }
-  if (estado === 'fuera') {
+  if (item.estadoCartelera === 'fuera') {
     return { key: 'salio', label: 'Fuera de cartelera' };
   }
 
-  // Compatibilidad con el boolean viejo
+  // por si aún tienes enCartelera true/false en algunas
   if (item.enCartelera === true) {
     return { key: 'encartelera', label: 'En cartelera' };
   }
   if (item.enCartelera === false) {
     return { key: 'salio', label: 'Fuera de cartelera' };
   }
-
   return null;
 }
