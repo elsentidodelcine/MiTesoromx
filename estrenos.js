@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   let estrenos = [];
   let filtroTipo = 'todos';
   let filtroMes = 'todos';
-  const POR_PAGINA = 9;
+  const POR_PAGINA = 12;
   let paginaActual = 1;
   let listaFiltrada = [];
 
@@ -333,7 +333,7 @@ function textoContador(fechaStr) {
   if (d > 1) return `Faltan ${d} días`;
   if (d === 1) return 'Falta 1 día';
   if (d === 0) return 'Hoy';
-  return 'Ya pasó';
+  return '---';
 }
 
 function badgeEstreno(item) {
