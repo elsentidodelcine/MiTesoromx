@@ -197,6 +197,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     const badgeTexto = tipo === 'reestreno' ? 'Reestreno' :
                        tipo === 'preventa' ? 'Preventa' : 'Estreno';
 
+    const estado = etiquetaCartelera(item);
+    const estadoHTML = estado
+        ? `<span class="estreno-estado estreno-estado--${estado.key}">${estado.label}</span>`
+        : '';
+
     const cinesHTML = (item.cines || [])
       .map(c => `<span class="cine-tag">${escapeHTML(c)}</span>`)
       .join('');
@@ -225,7 +230,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             loading="lazy"
             onerror="this.src='imgs/posters/placeholder.jpg'; this.onerror=null;"
           >
-          <span class="estreno-badge ${badgeClass}">${badgeTexto}</span>
+         <span class="estreno-badge ${badgeClass}">${badgeTexto}</span>
+         ${estadoHTML}
         </div>
 
         <div class="estreno-body">
@@ -330,3 +336,23 @@ document.getElementById('filter-cadena')?.addEventListener('change', () => {
   renderEstrenos(); // tu función de pintado
 });
 
+
+function etiquetaCartelera(item) {
+  const tipo = getTipoEfectivo(item); // o item.tipo
+
+  // Preventa: aún no llega
+  if (tipo === 'preventa') {
+    return { key: 'proximamente', label: 'Preventa' };
+  }
+
+  // Estreno / reestreno: true / false
+  if (item.enCartelera === true) {
+    return { key: 'encartelera', label: 'En cartelera' };
+  }
+  if (item.enCartelera === false) {
+    return { key: 'salio', label: 'Fuera de cartelera' };
+  }
+
+  // Sin dato
+  return null;
+}

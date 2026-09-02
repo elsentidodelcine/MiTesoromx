@@ -218,7 +218,8 @@
   {
     "id": "hombres",
     "titulo": "LOS MEJORES AÑOS DE NUESTRA VIDA",
-    "tipo": "preventa",
+    "tipo": "estreno",
+    "enCartelera": true,
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre del 2026",
     "poster": "imgs/estrenos/hombres.jpg",
@@ -229,7 +230,7 @@
         "url": "https://www.cinepolis.com"
       }
     ],
-    "nota": "Proximamente"
+    "nota": "España"
   },
   {
     "id": "zoe",
@@ -266,7 +267,8 @@
   {
     "id": "lost",
     "titulo": "Lost Highway",
-    "tipo": "preventa",
+    "tipo": "estreno",
+    "enCartelera": true,
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre 2026",
     "poster": "imgs/estrenos/lost.jpg",
@@ -282,7 +284,8 @@
   {
     "id": "blue",
     "titulo": "Blue Velvet",
-    "tipo": "preventa",
+    "tipo": "estreno",
+    "enCartelera": true,
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre 2026",
     "poster": "imgs/estrenos/blue.jpg",
@@ -354,7 +357,8 @@
   {
     "id": "puella",
     "titulo": "Puella Magi Madoka Magica: La Rebelión",
-    "tipo": "preventa",
+    "tipo": "estreno",
+    "enCartelera": true,
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre del 2026",
     "poster": "imgs/estrenos/puella3.jpg",
@@ -365,7 +369,7 @@
         "url": "https://www.cinepolis.com"
       }
     ],
-    "nota": "Proximamente"
+    "nota": "Japón"
   },
   {
     "id": "encore",
@@ -595,6 +599,7 @@
     "id": "zona-cero",
     "titulo": "Zona Cero",
     "tipo": "estreno",
+    "enCartelera": true,
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre del 2026",
     "poster": "imgs/estrenos/zonacero.jpg",
@@ -609,6 +614,7 @@
     "id": "gungo",
     "titulo": "Gungo y Los Juegos Cavernícolas",
     "tipo": "estreno",
+    "enCartelera": true,
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre del 2026",
     "poster": "imgs/estrenos/gungo.jpg",
@@ -623,6 +629,7 @@
     "id": "icecream",
     "titulo": "El Heladero Dulce Sabor a Muerte",
     "tipo": "estreno",
+    "enCartelera": true,
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre del 2026",
     "poster": "imgs/estrenos/ice.jpg",
@@ -637,6 +644,7 @@
     "id": "rapidos",
     "titulo": "Rapido y Furioso (25 Aniversario)",
     "tipo": "estreno",
+    "enCartelera": true,
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre del 2026",
     "poster": "imgs/estrenos/rapidos.jpg",
@@ -651,6 +659,7 @@
     "id": "idiotas",
     "titulo": "Idiotas",
     "tipo": "estreno",
+    "enCartelera": true,
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre del 2026",
     "poster": "imgs/estrenos/ifiotas.jpg",
@@ -665,6 +674,7 @@
     "id": "desaire",
     "titulo": "El Desaire",
     "tipo": "estreno",
+    "enCartelera": true,
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre del 2026",
     "poster": "imgs/estrenos/desaire.jpg",
@@ -679,6 +689,7 @@
     "id": "katy",
     "titulo": "Katy Perry: The Lifetimes Tour - Live From Paris",
     "tipo": "estreno",
+    "enCartelera": true,
     "fecha": "2026-09-02",
     "fechaTexto": "Miércoles 2 de Septiembre 2026",
     "poster": "imgs/estrenos/katy.jpg",
