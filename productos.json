@@ -295,7 +295,7 @@
   { "nombre": "Vaso Avengers Figura Iron Man Cinemex Marvel", "categoria": "Marvel", "precio": 50, "imagen": "imgs/ironman2.png" ,"badge": "ultimo", "stock": 0},
 
   { "nombre": "Palomera MVF4 Cinemex Minions", "categoria": "Minions", "precio": 200, "imagen": "imgs/coleccionable38.jpg" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Vaso Minion Cinemex Model1 Minions", "categoria": "Minions", "precio": 50, "imagen": "imgs/coleccionable43.jpg" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Vaso Minion Cinemex Model1 Minions", "categoria": "Minions", "precio": 50, "imagen": "imgs/coleccionable43.jpg" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Vaso Minion Cinemex Model2 Minions", "categoria": "Minions", "precio": 50, "imagen": "imgs/coleccionable45.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Minion Cinemex Model3 Minions", "categoria": "Minions", "precio": 50, "imagen": "imgs/coleccionable46.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Minion Cinepolis Model1 Minions", "categoria": "Minions", "precio": 80, "imagen": "imgs/coleccionable39.jpg" ,"badge": "ultimo", "stock": 1},

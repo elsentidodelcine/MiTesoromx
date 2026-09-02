@@ -558,5 +558,88 @@
     ],
     "cita": "Es de esas películas que comienzan entretenidas, después empiezan a cansar y al final simplemente quieres que terminen.",
     "veredicto": "Algunas risas aisladas, pero chistes repetitivos y un guion flojo la terminan aburriendo. No es terrible, pero no destaca."
+  },
+  {
+    "id": "solo-por-una-noche",
+    "titulo": "Sólo por una noche",
+    "anio": 2026,
+    "fecha": "2026-09-02",
+    "duracion": "102 min",
+    "generos": ["Comedia", "Romance"],
+    "puntaje": 2.0,
+    "destacada": false,
+    "etiqueta": "ESTRENO",
+    "plataformas": ["Cines"],
+    "resumen": "Premisa curiosa que recuerda a La Purga, pero se vuelve repetitiva y pierde la gracia. Los primeros 30 minutos enganchan, el resto termina siendo muy equis.",
+    "poster": "imgs/posters/solo.jpg",
+    "posterFallback": {
+      "linea1": "Sólo por",
+      "linea2": "una noche"
+    },
+    "letterboxd": "https://letterboxd.com/film/one-night-only-2026",
+    "lead": "Los primeros 30 minutos prometían, pero después se vuelve repetitiva, pierde la gracia y termina dejando indiferente. Una oportunidad desaprovechada.",
+    "contenido": [
+      "Ya vi Sólo por una noche (2026) y los primeros 30 minutos sí me tuvieron bastante atento. Me estaba divirtiendo y hasta pensé que iba a terminar siendo una buena película, porque la idea de que solamente una vez al año las personas puedan tener sexo de manera legal tiene algo bastante curioso y hasta me recordó un poco a La Purga, pero después todo se viene abajo.",
+      "El principal problema para mí es que se vuelve demasiado repetitiva. Los protagonistas se encuentran, se separan, pasa algo, se vuelven a encontrar, se vuelven a separar y otra vez pasa algo... y así prácticamente durante toda la película. Llegó un punto en el que ya me estaba aburriendo completamente porque sentía que estábamos viendo lo mismo una y otra vez.",
+      "Y aunque las reseñas hablan mucho de la química entre Monica Barbaro y Callum Turner, yo sinceramente nunca la sentí. No logré conectar con ellos como pareja y por eso, cuando finalmente llega la reunión entre los dos, me dio completamente igual. La idea de la película me parece mucho más interesante que lo que termina haciendo con ella.",
+      "Al final, Sólo por una noche me dejó bastante indiferente. Tenía una premisa divertida y esos primeros minutos me hicieron pensar que iba a estar buena, pero después se vuelve repetitiva, pierde la gracia y todo termina siendo muy equis. Para mí, una oportunidad desaprovechada."
+    ],
+    "cita": "La idea de la película me parece mucho más interesante que lo que termina haciendo con ella.",
+    "veredicto": "Premisa curiosa que se desperdicia. Empieza bien, pero se vuelve repetitiva y pierde la gracia. Oportunidad desaprovechada."
+  },
+  {
+    "id": "turbulence",
+    "titulo": "Turbulence",
+    "anio": 2025,
+    "fecha": "2026-09-02",
+    "duracion": "95 min",
+    "generos": ["Thriller", "Acción"],
+    "puntaje": 1.0,
+    "destacada": false,
+    "etiqueta": "",
+    "plataformas": ["Streaming"],
+    "resumen": "Thriller de supervivencia en globo aerostático que se siente falso de principio a fin. Efectos baratos, trama sencilla y muy poco creíble. Un desastre.",
+    "poster": "imgs/posters/turbulencia.jpg",
+    "posterFallback": {
+      "linea1": "Turbulence",
+      "linea2": ""
+    },
+    "letterboxd": "https://letterboxd.com/film/turbulence-2025-1",
+    "lead": "No la recomiendo. Una historia sencilla que pudo funcionar, pero entre los efectos falsísimos y lo poco creíble de todo, termina siendo un desastre.",
+    "contenido": [
+      "Ya vi Turbulence (2025) y voy a hablar con spoilers porque, sinceramente, no es una película que les recomiende. Aquí tenemos a una pareja que se va de luna de miel, pero resulta que el esposo le fue infiel a su esposa un día antes con otra mujer. Esta amante le exige dinero y, como él se niega a pagarle, termina subiéndose al viaje en globo aerostático junto con la pareja y el hombre que lo controla.",
+      "Prácticamente toda la película se desarrolla dentro del globo, mientras los tres comienzan a enfrentarse, salen a la luz las mentiras y poco a poco todo termina convirtiéndose en una pelea donde se avientan, se atacan y hasta se queman. Al final, de los tres solamente sobrevive la esposa. Y ya, esa es prácticamente toda la historia.",
+      "Pero lo peor para mí fue lo falso que se ve todo. Desde que suben al globo, el escenario, los paisajes, el cielo y prácticamente todo lo que rodea a los personajes se siente como si estuvieran frente a una pantalla verde. Nunca sentí que realmente estuvieran volando; parecía más una producción barata intentando hacernos creer que estaban a miles de metros de altura.",
+      "Turbulence termina siendo un desastre. Una historia sencilla que pudo haber funcionado como thriller de supervivencia, pero entre los efectos que se ven falsísimos, la fotografía y una trama que tampoco ofrece demasiado, terminó siendo una película que me costó muchísimo trabajo tomar en serio."
+    ],
+    "cita": "Nunca sentí que realmente estuvieran volando; parecía más una producción barata.",
+    "veredicto": "Desastre total. Efectos falsos, trama sencilla y nada creíble. No la recomiendo."
+  },
+  {
+    "id": "el-fin-de-las-primeras-veces",
+    "titulo": "El fin de las primeras veces",
+    "anio": 2025,
+    "fecha": "2026-09-02",
+    "duracion": "75 min",
+    "generos": ["Drama", "Romance"],
+    "puntaje": 2.0,
+    "destacada": false,
+    "etiqueta": "",
+    "plataformas": ["Cines"],
+    "resumen": "Coming-of-age mexicano sobre el despertar sexual de un joven. Muy corta y superficial; se queda en el ambiente de fiestas y sexo sin desarrollar realmente a los personajes.",
+    "poster": "imgs/posters/elfin.jpg",
+    "posterFallback": {
+      "linea1": "El fin de las",
+      "linea2": "primeras veces"
+    },
+    "letterboxd": "https://letterboxd.com/film/el-fin-de-las-primeras-veces",
+    "lead": "Me aburrió totalmente. Muy corta y aun así sentí que no pasa gran cosa. Superficial y sin lograr conectar con el protagonista.",
+    "contenido": [
+      "Ya vi El fin de las primeras veces (2026) y, la verdad, me aburrió totalmente. La película es muy corta y aun así sentí que no pasa gran cosa. Seguimos a un chico bastante apático, serio y encerrado en sí mismo, y durante buena parte de la película me costó muchísimo conectar con él o encontrar algo que realmente me interesara.",
+      "La cinta intenta mostrarnos el despertar sexual y la exploración de un joven que sale de su entorno de rancho para conocer otra vida, pero para mí todo se queda demasiado superficial. Entre fiestas, alcohol, drogas y sexo, siento que la película se enfoca demasiado en ese ambiente y termina presentándolo como algo atractivo, sin desarrollar realmente a sus personajes ni contar una historia que me atrapara.",
+      "Entiendo que busca mostrar una experiencia de descubrimiento y libertad, y que justamente algunos críticos han destacado que evita los dramas LGBT tradicionales. El problema es que, en mi caso, quitar el drama no fue suficiente para hacerla interesante. Me quedé esperando que en algún momento la historia tomara fuerza, pero nunca llegó."
+    ],
+    "cita": "Me quedé esperando que en algún momento la historia tomara fuerza, pero nunca llegó.",
+    "veredicto": "Corta, superficial y aburrida. Evita el drama tradicional, pero tampoco ofrece una historia interesante ni personajes con los que conectar."
   }
 ]
