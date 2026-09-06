@@ -654,7 +654,7 @@
     "etiqueta": "ESTRENO",
     "plataformas": ["Cines"],
     "resumen": "El director de Tren a Busan regresa con infectados que mutan y un humano que se convierte en líder. Premisa interesante y buena acción, pero con fallas en la lógica y un final demasiado fácil.",
-    "poster": "imgs/posters/zonacero.jpg",
+    "poster": "imgs/resenias/zonacero.jpg",
     "posterFallback": {
       "linea1": "Zona Cero",
       "linea2": "(Colony)"
@@ -669,5 +669,33 @@
     ],
     "cita": "Sientes que la película está preparando algo que finalmente no llega.",
     "veredicto": "Premisa interesante y buena acción, pero con fallas lógicas y un final demasiado fácil que deja con ganas de más. Entretenida, aunque pudo ser mejor."
+  },
+  {
+    "id": "rapido-y-furioso",
+    "titulo": "Rápido y Furioso",
+    "anio": 2001,
+    "fecha": "2026-09-06",
+    "duracion": "106 min",
+    "generos": ["Acción", "Crimen"],
+    "puntaje": 3.5,
+    "destacada": false,
+    "etiqueta": "",
+    "plataformas": ["Cines"],
+    "resumen": "Reestreno por el 25 aniversario. La esencia de la saga: carreras, motores y tuning. Entretenida y nostálgica, aunque con ese filtro amarillo exagerado.",
+    "poster": "imgs/resenias/rapidoyfurioso.jpg",
+    "posterFallback": {
+      "linea1": "Rápido y",
+      "linea2": "Furioso"
+    },
+    "letterboxd": "https://letterboxd.com/film/the-fast-and-the-furious",
+    "lead": "25 años después, la primera entrega sigue representando perfectamente la esencia de la saga: carreras, motores y demostrar quién llega primero.",
+    "contenido": [
+      "Hoy tuve la oportunidad de ver en el cine Rápido y Furioso, gracias a su reestreno por el 25 aniversario, y qué mejor manera de reencontrarme con una película que representa perfectamente lo que para mí siempre ha sido esta saga: carreras de carros, motores, tuning y demostrar quién tiene el mejor auto y quién llega primero. Esta es la esencia de Rápido y Furioso.",
+      "Aquí conocemos a Brian como agente encubierto, mientras se acerca a Toretto y a su grupo, además de conocer a Mia, Jesse y compañía. Y verla nuevamente me hizo reconocer varios memes que ya forman parte de la cultura popular, como Jesse fumando o el famoso “casi te gano” de Brian.",
+      "Lo único que no me encantó es ese filtro amarillo que tiene prácticamente toda la película; parece que estamos en México. Y hablando de México, hay varias referencias a nuestro país. Fuera de eso, sigue siendo una película muy entretenida y representa la esencia de lo que alguna vez fue Rápido y Furioso.",
+      "Ahora que tuve la oportunidad de verla en el cine, oficialmente comienza mi maratón de las 10 películas y el spin-off. Poco a poco veremos cómo evolucionó esta saga."
+    ],
+    "cita": "Esta es la esencia de Rápido y Furioso.",
+    "veredicto": "Entretenida y nostálgica. Representa perfectamente lo que alguna vez fue la saga. Buen embrujo para empezar el maratón."
   }
 ]

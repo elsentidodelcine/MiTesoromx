@@ -268,9 +268,6 @@ function renderEstrenos() {
 
           </div>
 
-          <div class="estreno-links">
-            ${linksHTML || '<span style="color:var(--muted);font-size:0.8rem;">Próximamente enlaces de boletos</span>'}
-          </div>
 
           <span class="estreno-countdown">${textoContador(item.fecha)}</span>
         </div>
