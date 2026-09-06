@@ -24,8 +24,11 @@
     <meta property="og:image" content="https://elsentidodelcine.github.io/og-image.jpg">
     <meta name="twitter:card" content="summary_large_image">
 
-    <link rel="icon" href="imgs/logoL.jpeg" type="image/jpeg" sizes="32x32">
-    <link rel="apple-touch-icon" href="imgs/logoL.jpeg">
+    <!-- Favicon moderno -->
+    <link rel="icon" href="imgs/logoLB.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="imgs/logoLB.png" type="image/png" sizes="16x16">
+    <link rel="apple-touch-icon" href="imgs/logoLB.png">
+    <link rel="shortcut icon" href="imgs/logoBL.ico">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -730,7 +733,6 @@
                 <button class="filter-btn" data-filter="fuera">Fuera de cartelera</button>
             </div>
             <!-- Contador de resultados -->
-            <p id="resultados-count" class="resultados-count" aria-live="polite"></p>
             <div class="mes-filter">
                 <label for="filtro-mes">Mes:</label>
                 <select id="filtro-mes">
@@ -738,6 +740,7 @@
                     <!-- se llenan con JS -->
                 </select>
             </div>
+            <p id="resultados-count" class="resultados-count" aria-live="polite"></p>
         </div>
         <!-- GRID -->
         <div id="estrenos-container">

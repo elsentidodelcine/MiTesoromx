@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const filters = document.getElementById('estrenos-filters');
   const selectMes = document.getElementById('filtro-mes');
   const countEl = document.getElementById('resultados-count');
-  const btnTop  = document.getElementById('btn-top');
+
 
   let estrenos = [];
   let filtroTipo = 'todos';
@@ -442,15 +442,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ===== Botón volver arriba =====
+const btnTop = document.getElementById('btn-top');
+
 window.addEventListener('scroll', () => {
   if (!btnTop) return;
-  if (window.scrollY > 500) {
-    btnTop.hidden = false;
-  } else {
-    btnTop.hidden = true;
-  }
+  btnTop.hidden = window.scrollY <= 500;
 });
 
-btnTop?.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+if (btnTop) {
+  btnTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
