@@ -442,6 +442,78 @@
      grid-template-columns: 1fr;
    }
  }
+
+        /* ========== MODO CLARO - ESTRENOS ========== */
+html[data-theme="light"] .filter-btn {
+  background: #fff;
+  border-color: rgba(0,0,0,.12);
+  color: #3d3d46;
+}
+html[data-theme="light"] .filter-btn:hover {
+  border-color: rgba(0,0,0,.25);
+  color: #121214;
+}
+html[data-theme="light"] .filter-btn.active {
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  color: #fff;
+  border-color: transparent;
+}
+
+html[data-theme="light"] .mes-filter select {
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23555555' d='M1 1l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 12px center;
+  color: #121214;
+  border-color: rgba(0,0,0,.15);
+}
+html[data-theme="light"] .mes-filter select option {
+  background: #fff;
+  color: #121214;
+}
+
+html[data-theme="light"] .estreno-card {
+  background: #fff;
+  border-color: rgba(0,0,0,.1);
+}
+html[data-theme="light"] .estreno-card:hover {
+  border-color: rgba(196, 30, 58, 0.3);
+}
+
+html[data-theme="light"] .estreno-poster {
+  background: #f0f0f2;
+}
+
+html[data-theme="light"] .estreno-badge,
+html[data-theme="light"] .estreno-estado {
+  background: rgba(255,255,255,.92);
+  border-color: rgba(0,0,0,.12);
+  color: #121214;
+}
+html[data-theme="light"] .estreno-badge.preventa { color: #0284c7; }
+html[data-theme="light"] .estreno-badge.reestreno { color: #a16207; }
+html[data-theme="light"] .estreno-estado--encartelera,
+html[data-theme="light"] .estreno-estado--hoy { color: #15803d; }
+html[data-theme="light"] .estreno-estado--salio { color: #6b7280; }
+
+html[data-theme="light"] .page-btn {
+  background: #fff;
+  border-color: rgba(0,0,0,.12);
+  color: #3d3d46;
+}
+html[data-theme="light"] .page-btn:hover:not(:disabled) {
+  border-color: rgba(0,0,0,.25);
+  color: #121214;
+}
+html[data-theme="light"] .page-btn.active {
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  color: #fff;
+  border-color: transparent;
+}
+
+        .estreno-nota {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: 0 0 8px;
+  line-height: 1.4;
+}
     </style>
 
     <script>

@@ -664,16 +664,6 @@
     "fechaTexto": "Jueves 10 de Septiembre 2026",
     "poster": "imgs/estrenos/reseñas.jpg",
     "cines": ["Cinemex", "Cinepolis"],
-    "links": [
-      {
-        "cine": "Cinemex",
-        "url": "https://cinemex.com/cartelera/zona-29/leon/pelicula-72844"
-      },
-      {
-        "cine": "Cinepolis",
-        "url": "https://www.cinepolis.com"
-      }
-    ],
     "nota": "Estados Unidos"
   }
 ]

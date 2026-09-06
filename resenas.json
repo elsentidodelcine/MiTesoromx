@@ -697,5 +697,33 @@
     ],
     "cita": "Esta es la esencia de Rápido y Furioso.",
     "veredicto": "Entretenida y nostálgica. Representa perfectamente lo que alguna vez fue la saga. Buen embrujo para empezar el maratón."
+  },
+  {
+    "id": "idiotas",
+    "titulo": "Idiotas",
+    "anio": 2026,
+    "fecha": "2026-09-06",
+    "duracion": "100 min",
+    "generos": ["Comedia", "Crimen"],
+    "puntaje": 1.0,
+    "destacada": false,
+    "etiqueta": "ESTRENO",
+    "plataformas": ["Cines"],
+    "resumen": "Comedia negra y absurda sobre tres verdaderos idiotas en un viaje a rehabilitación. Situaciones ridículas y clichés que no logran divertir; más desesperante que graciosa.",
+    "poster": "imgs/resenias/ifiotas.jpg",
+    "posterFallback": {
+      "linea1": "Idiotas",
+      "linea2": ""
+    },
+    "letterboxd": "https://letterboxd.com/film/idiots-2026",
+    "lead": "Como su nombre lo dice, tres verdaderos idiotas. El humor absurdo no conectó conmigo y terminé más desesperado que divertido. Experiencia olvidable.",
+    "contenido": [
+      "Como su nombre lo dice, aquí tenemos a tres verdaderos idiotas. Un niño rico que se dedica a hacer maldades, un drogadicto sin trabajo y otro que intenta aparentar ser un buen ser humano, pero que termina siendo de los más castrosos de toda la película. Al menos en el doblaje en español, las voces son algo infantiles, pero curiosamente quedan perfectas para hacerlos ver todavía más fracasados e idiotas.",
+      "La película apuesta por una comedia negra y absurda, con situaciones cada vez más ridículas durante este viaje hacia rehabilitación. El problema es que para mí la mayoría de los chistes simplemente no funcionan. La historia recurre constantemente a situaciones exageradas y clichés, y aunque algunos momentos sí consiguen sacar una reacción, la mayor parte del tiempo terminé más desesperado que divertido. Es una lástima porque incluso algunas críticas han destacado la energía de la película y sus personajes secundarios, pero ese humor tan particular simplemente no conectó conmigo.",
+      "Visualmente también busca que todo se sienta sucio, incómodo y caótico, algo que encaja con el tipo de comedia que propone. La fotografía apuesta por esa apariencia deliberadamente desagradable, mientras que la dirección de Macon Blair intenta mantener el ritmo con situaciones absurdas y cambios constantes de tono. Técnicamente hay una intención clara, pero para mí no fue suficiente para compensar un guion que se vuelve repetitivo y unos personajes que terminé soportando más que disfrutando.",
+      "Al final, entiendo perfectamente lo que quiso hacer Idiotas, pero conmigo no funcionó. Más que hacerme reír, sus protagonistas terminaron desesperándome, especialmente ese supuesto buen tipo que resultó ser uno de los más castrosos. Puede que encuentres aquí una comedia divertida si conectas con este tipo de humor absurdo, pero en mi caso fue una experiencia bastante olvidable."
+    ],
+    "cita": "Más que hacerme reír, sus protagonistas terminaron desesperándome.",
+    "veredicto": "Comedia absurda que no funciona. Situaciones ridículas y personajes desesperantes. Mal augurio: experiencia olvidable."
   }
 ]

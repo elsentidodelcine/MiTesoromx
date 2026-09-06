@@ -62,10 +62,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // ===== Tipo dinámico =====
   // Si era "preventa" y ya llegó el día → se convierte en "estreno"
-  function getTipoEfectivo(item) {
-
-    return item.tipo;
-  }
+ function getTipoEfectivo(item) {
+   if (item.tipo !== 'preventa') return item.tipo;
+   return diasRestantes(item.fecha) <= 0 ? 'estreno' : 'preventa';
+ }
 
   // ===== Llenar opciones de mes =====
   function llenarSelectMeses() {
@@ -211,69 +211,37 @@ function renderEstrenos() {
   }
 
   // ===== Crear tarjeta =====
-  function crearCard(item) {
-    const tipo = getTipoEfectivo(item);
+function crearCard(item) {
+  const tipo = getTipoEfectivo(item);
+  const badgeClass = tipo === 'reestreno' ? 'reestreno' : tipo === 'preventa' ? 'preventa' : '';
+  const badgeTexto = tipo === 'reestreno' ? 'Reestreno' : tipo === 'preventa' ? 'Preventa' : 'Estreno';
+  const estado = etiquetaCartelera(item);
+  const estadoHTML = estado
+    ? `<span class="estreno-estado estreno-estado--${estado.key}">${estado.label}</span>`
+    : '';
 
-    const badgeClass = tipo === 'reestreno' ? 'reestreno' :
-                       tipo === 'preventa' ? 'preventa' : '';
+  const cinesHTML = (item.cines || [])
+    .map(c => `<span class="cine-tag">${escapeHTML(c)}</span>`)
+    .join('');
 
-    const badgeTexto = tipo === 'reestreno' ? 'Reestreno' :
-                       tipo === 'preventa' ? 'Preventa' : 'Estreno';
-
-    const estado = etiquetaCartelera(item);
-    const estadoHTML = estado
-        ? `<span class="estreno-estado estreno-estado--${estado.key}">${estado.label}</span>`
-        : '';
-
-    const cinesHTML = (item.cines || [])
-      .map(c => `<span class="cine-tag">${escapeHTML(c)}</span>`)
-      .join('');
-
-    const linksHTML = (item.links || [])
-      .map((link, i) => {
-        const clase = i === 0 ? 'btn-boletos' : 'btn-boletos secondary';
-        return `
-          <a href="${escapeHTML(link.url)}"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="${clase}">
-            Comprar en ${escapeHTML(link.cine)}
-            <span aria-hidden="true">↗</span>
-          </a>
-        `;
-      })
-      .join('');
-
-    return `
-      <article class="estreno-card">
-        <div class="estreno-poster">
-          <img
-            src="${escapeHTML(item.poster)}"
-            alt="Póster de ${escapeHTML(item.titulo)}"
-            loading="lazy"
-            onerror="this.src='imgs/posters/placeholder.jpg'; this.onerror=null;"
-          >
-         <span class="estreno-badge ${badgeClass}">${badgeTexto}</span>
-         ${estadoHTML}
-        </div>
-
-        <div class="estreno-body">
-          <div class="estreno-fecha">${escapeHTML(item.fechaTexto || item.fecha)}</div>
-          <h2 class="estreno-titulo">${escapeHTML(item.titulo)}</h2>
-
-          ${item.nota ? `<p style="font-size:0.82rem;color:var(--muted);margin-bottom:14px;">${escapeHTML(item.nota)}</p>` : ''}
-
-          <div class="estreno-cines">
-            ${cinesHTML}
-
-          </div>
-
-
-          <span class="estreno-countdown">${textoContador(item.fecha)}</span>
-        </div>
-      </article>
-    `;
-  }
+  return `
+    <article class="estreno-card">
+      <div class="estreno-poster">
+        <img src="${escapeHTML(item.poster)}" alt="Póster de ${escapeHTML(item.titulo)}"
+             loading="lazy" onerror="this.src='imgs/posters/placeholder.jpg'; this.onerror=null;">
+        <span class="estreno-badge ${badgeClass}">${badgeTexto}</span>
+        ${estadoHTML}
+      </div>
+      <div class="estreno-body">
+        <div class="estreno-fecha">${escapeHTML(item.fechaTexto || item.fecha)}</div>
+        <h2 class="estreno-titulo">${escapeHTML(item.titulo)}</h2>
+        ${item.nota ? `<p class="estreno-nota">${escapeHTML(item.nota)}</p>` : ''}
+        <div class="estreno-cines">${cinesHTML}</div>
+        <span class="estreno-countdown">${textoContador(item.fecha)}</span>
+      </div>
+    </article>
+  `;
+}
 
   function escapeHTML(str) {
     if (str == null) return '';
@@ -327,10 +295,11 @@ function diasRestantes(fechaStr) {
 
 function textoContador(fechaStr) {
   const d = diasRestantes(fechaStr);
-  if (d > 1) return `Faltan ${d} días`;
+  if (d > 1)  return `Faltan ${d} días`;
   if (d === 1) return 'Falta 1 día';
-  if (d === 0) return 'Hoy';
-  return '---';
+  if (d === 0) return 'Hoy se estrena';
+  if (d > -7)  return 'Estrenada hace poco';
+  return 'Ya estrenada';
 }
 
 function badgeEstreno(item) {
@@ -379,3 +348,20 @@ function etiquetaCartelera(item) {
   }
   return null;
 }
+
+// ===== Toggle tema claro / oscuro =====
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+
+  btn.addEventListener('click', () => {
+    const html = document.documentElement;
+    const actual = html.getAttribute('data-theme') || 'dark';
+    const nuevo = actual === 'dark' ? 'light' : 'dark';
+
+    html.setAttribute('data-theme', nuevo);
+    try {
+      localStorage.setItem('lbdc-theme', nuevo);
+    } catch (e) {}
+  });
+});
