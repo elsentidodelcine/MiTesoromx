@@ -653,10 +653,21 @@
     "fechaTexto": "Jueves 3 de Septiembre 2026",
     "poster": "imgs/estrenos/granja.jpg",
     "cines": ["Cinemex", "Cinepolis"],
+    "nota": "Estados Unidos"
+  },
+  {
+    "id": "oasis",
+    "titulo": "Oasis: Don't Look Back In Anger",
+    "tipo": "preventa",
+    "estadoCartelera": "preventa",
+    "fecha": "2026-09-10",
+    "fechaTexto": "Jueves 10 de Septiembre 2026",
+    "poster": "imgs/estrenos/reseñas.jpg",
+    "cines": ["Cinemex", "Cinepolis"],
     "links": [
       {
         "cine": "Cinemex",
-        "url": "https://cinemex.com/proximamente/4530/rebelion-en-la-granja"
+        "url": "https://cinemex.com/cartelera/zona-29/leon/pelicula-72844"
       },
       {
         "cine": "Cinepolis",

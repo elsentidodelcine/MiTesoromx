@@ -641,5 +641,33 @@
     ],
     "cita": "Me quedé esperando que en algún momento la historia tomara fuerza, pero nunca llegó.",
     "veredicto": "Corta, superficial y aburrida. Evita el drama tradicional, pero tampoco ofrece una historia interesante ni personajes con los que conectar."
+  },
+  {
+    "id": "zona-cero",
+    "titulo": "Zona Cero",
+    "anio": 2026,
+    "fecha": "2026-09-06",
+    "duracion": "123 min",
+    "generos": ["Terror", "Acción"],
+    "puntaje": 3.5,
+    "destacada": false,
+    "etiqueta": "ESTRENO",
+    "plataformas": ["Cines"],
+    "resumen": "El director de Tren a Busan regresa con infectados que mutan y un humano que se convierte en líder. Premisa interesante y buena acción, pero con fallas en la lógica y un final demasiado fácil.",
+    "poster": "imgs/posters/zonacero.jpg",
+    "posterFallback": {
+      "linea1": "Zona Cero",
+      "linea2": "(Colony)"
+    },
+    "letterboxd": "https://letterboxd.com/film/colony-2026",
+    "lead": "Premisa interesante y acción entretenida, pero con fallas lógicas y un final que deja la sensación de que faltó muchísimo por contar. Pudo haber sido mucho mejor.",
+    "contenido": [
+      "Ya vi Zona Cero (Colony) y el director de Tren a Busan regresa con una propuesta de infectados que, de entrada, me pareció bastante interesante. La idea de que un humano genere el virus, se contagie y termine convirtiéndose en una especie de líder de los infectados me gustó, porque le da un giro diferente a este tipo de historias.",
+      "Pero la película también tiene muchas fallas. Hay tantos científicos, biólogos y gente supuestamente preparada que, en varios momentos, parecen unas piedras para tener un cerebro tan grande. Y algo que me desesperó muchísimo es que esperaba que los infectados de afuera y los de adentro terminaran comunicándose o haciendo algo juntos, pero eso prácticamente nunca ocurre. Sientes que la película está preparando algo que finalmente no llega.",
+      "Y después tenemos el final, que para mí es de lo peor. Después de todo lo que pasa dentro del edificio, esperaba que salir fuera significara el inicio de algo mucho más grande. Incluso hubiera preferido que durara tres horas: hora y media dentro del edificio y otra hora y media explorando lo que hay afuera. Pero no, todo termina demasiado fácil y me dejó con la sensación de que faltó muchísimo por contar.",
+      "Aun con todo esto, la premisa, la acción y algunas ideas sobre cómo funcionan estos nuevos infectados me parecieron suficientes para disfrutarla. No es una mala película, pero definitivamente pudo haber sido mucho mejor."
+    ],
+    "cita": "Sientes que la película está preparando algo que finalmente no llega.",
+    "veredicto": "Premisa interesante y buena acción, pero con fallas lógicas y un final demasiado fácil que deja con ganas de más. Entretenida, aunque pudo ser mejor."
   }
 ]

@@ -27,6 +27,17 @@
     },
     {
       "puesto": 3,
+      "titulo": "Spider-Man: Brand New Day",
+      "anio": 2026,
+      "taquilla": 2402762000,
+      "enCartel": true,
+      "taquillaTexto": "$2,402 M",
+      "distribuidora": "Sony Pictures / Columbia Pictures",
+      "director": "Destin Daniel Cretton",
+      "poster": "imgs/taquilla/spidermanday.jpg"
+    },
+    {
+      "puesto": 4,
       "titulo": "Avatar: The Way of Water",
       "anio": 2022,
       "taquilla": 2334484620,
@@ -37,7 +48,7 @@
       "poster": "imgs/taquilla/avatar2.jpg"
     },
     {
-      "puesto": 4,
+      "puesto": 5,
       "titulo": "Ne Zha 2",
       "anio": 2025,
       "taquilla": 2270700370,
@@ -48,7 +59,7 @@
       "poster": "imgs/taquilla/nezha.jpg"
     },
     {
-      "puesto": 5,
+      "puesto": 6,
       "titulo": "Titanic",
       "anio": 1997,
       "taquilla": 2264812968,
@@ -58,18 +69,6 @@
       "director": "James Cameron",
       "poster": "imgs/taquilla/titanic.jpg"
     },
-    {
-      "puesto": 6,
-      "titulo": "Spider-Man: Brand New Day",
-      "anio": 2026,
-      "taquilla": 2219901000,
-      "enCartel": true,
-      "taquillaTexto": "$2,219 M",
-      "distribuidora": "Sony Pictures / Columbia Pictures",
-      "director": "Destin Daniel Cretton",
-      "poster": "imgs/taquilla/spidermanday.jpg"
-    },
-
     {
       "puesto": 7,
       "titulo": "Star Wars: Episodio VII – El despertar de la Fuerza",
@@ -148,6 +147,17 @@
     },
     {
       "puesto": 14,
+      "titulo": "La Odisea",
+      "anio": 2026,
+      "taquilla": 1588718516,
+      "enCartel": true,
+      "taquillaTexto": "$1,588 M",
+      "distribuidora": "Universal Pictures",
+      "director": "Christopher Nolan",
+      "poster": "imgs/taquilla/laodisea.jpg"
+    },
+    {
+      "puesto": 15,
       "titulo": "The Avengers",
       "anio": 2012,
       "taquilla": 1520538536,
@@ -158,7 +168,7 @@
       "poster": "imgs/taquilla/avengers.jpg"
     },
     {
-      "puesto": 15,
+      "puesto": 16,
       "titulo": "Furious 7",
       "anio": 2015,
       "taquilla": 1516045911,
@@ -169,7 +179,7 @@
       "poster": "imgs/taquilla/furi7.jpg"
     },
     {
-      "puesto": 16,
+      "puesto": 17,
       "titulo": "Top Gun: Maverick",
       "anio": 2022,
       "taquilla": 1495696292,
@@ -180,7 +190,7 @@
       "poster": "imgs/taquilla/topgun.jpg"
     },
     {
-      "puesto": 17,
+      "puesto": 18,
       "titulo": "Avatar: Fire and Ash",
       "anio": 2025,
       "taquilla": 1490386712,
@@ -191,7 +201,7 @@
       "poster": "imgs/taquilla/avatar3.jpg"
     },
     {
-      "puesto": 18,
+      "puesto": 19,
       "titulo": "Frozen II",
       "anio": 2019,
       "taquilla": 1453683476,
@@ -202,7 +212,7 @@
       "poster": "imgs/taquilla/frozen2.jpg"
     },
     {
-      "puesto": 19,
+      "puesto": 20,
       "titulo": "Barbie",
       "anio": 2023,
       "taquilla": 1447038421,
@@ -211,17 +221,6 @@
       "distribuidora": "Warner Bros.",
       "director": "Greta Gerwig",
       "poster": "imgs/taquilla/barbie.jpg"
-    },
-    {
-      "puesto": 20,
-      "titulo": "La Odisea",
-      "anio": 2026,
-      "taquilla": 1446195000,
-      "enCartel": true,
-      "taquillaTexto": "$1,446 M",
-      "distribuidora": "Universal Pictures",
-      "director": "Christopher Nolan",
-      "poster": "imgs/taquilla/laodisea.jpg"
     }
   ],
   "porAnio": [

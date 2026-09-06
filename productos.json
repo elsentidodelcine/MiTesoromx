@@ -25,7 +25,7 @@
   { "nombre": "Album de Estampas Liga Bancomer Panini Model1", "categoria": "Album Estampas", "precio": 20, "imagen": "imgs/halbum3.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Album de Estampas La Era de Hielo Panini Model1", "categoria": "Album Estampas", "precio": 20, "imagen": "imgs/halbum4.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Album de Estampas Dory Panini Model1", "categoria": "Album Estampas", "precio": 20, "imagen": "imgs/halbum7.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Album de Estampas La Bella y la Bestia Panini Model1", "categoria": "Album Estampas", "precio": 20, "imagen": "imgs/halbum8.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Album de Estampas La Bella y la Bestia Panini Model1", "categoria": "Album Estampas", "precio": 20, "imagen": "imgs/halbum8.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Album de Estampas AAA Aniversario 25 Panini", "categoria": "Album Estampas", "precio": 100, "imagen": "imgs/halbum16.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Album de Estampas WWE Superstars con Estampas Panini", "categoria": "Album Estampas", "precio": 1000, "imagen": "imgs/halbum17.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Album de Estampas Calaveritas Panini", "categoria": "Album Estampas", "precio": 500, "imagen": "imgs/halbum18.png" ,"badge": "ultimo", "stock": 1},
@@ -34,7 +34,7 @@
   { "nombre": "3 Vasos Ant Man Cinemex Marvel", "categoria": "Ant Man", "precio": 200, "imagen": "imgs/coleccionable115.jpg" ,"badge": "nuevo", "stock": 1},
   { "nombre": "2 Vasos Ant Man Cinepolis Marvel", "categoria": "Ant Man", "precio": 100, "imagen": "imgs/coleccionable116.jpg" ,"badge": "nuevo", "stock": 1},
   { "nombre": "2 Vasos Ant Man Cinepolis 2 Marvel", "categoria": "Ant Man", "precio": 150, "imagen": "imgs/coleccionable117.jpg" ,"badge": "nuevo", "stock": 1},
-  { "nombre": "Vaso Ant Man Cinepolis Model2 Marvel", "categoria": "Ant Man", "precio": 20, "imagen": "imgs/coleccionable114.jpg" ,"badge": "oferta", "stock": 1, "descripcion": "Detalles en todo el vaso"},
+  { "nombre": "Vaso Ant Man Cinepolis Model2 Marvel", "categoria": "Ant Man", "precio": 20, "imagen": "imgs/coleccionable114.jpg" ,"badge": "oferta", "stock": 0, "descripcion": "Detalles en todo el vaso"},
 
 
   { "nombre": "2 Vasos Bob Esponja Figura Calamardo y Gary", "categoria": "Bob Esponja", "precio": 500, "imagen": "imgs/coleccionable87.jpg" ,"badge": "exclusivo", "stock": 1},
@@ -85,7 +85,7 @@
   { "nombre": "Funko Robin DC 377", "categoria": "DC", "precio": 200, "imagen": "imgs/robin.png" ,"badge": "oferta", "stock": 1, "descripcion":  "Detalle en caja"},
   { "nombre": "Album de Estampas Batman Panini Model1", "categoria": "DC", "precio": 100, "imagen": "imgs/fdc1.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Album de Estampas Batman Panini Model2", "categoria": "DC", "precio": 20, "imagen": "imgs/fdc2.png" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Album de Estampas Liga de la Justicia Panini Model1", "categoria": "DC", "precio": 20, "imagen": "imgs/fdc3.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Album de Estampas Liga de la Justicia Panini Model1", "categoria": "DC", "precio": 20, "imagen": "imgs/fdc3.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Funko Wonder Woman 393 DC", "categoria": "DC", "precio": 200, "imagen": "imgs/fdc5.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko Wonder Woman 393 + Vaso Wonder Woman + Llavero Cinepolis DC", "categoria": "DC", "precio": 400, "imagen": "imgs/fdc6.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Figura Mr Freeze", "categoria": "DC", "precio": 100, "imagen": "imgs/dc31.jpeg" ,"badge": "exclusivo", "stock": 1},
@@ -135,7 +135,7 @@
 
   { "nombre": "3 Vasos Godzilla Figuras Cinemex", "categoria": "Godzilla", "precio": 1200, "imagen": "imgs/godzilla30.jpeg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Palomera Metalica Godzilla Cinemex", "categoria": "Godzilla", "precio": 500, "imagen": "imgs/coleccionable1.jpg" ,"badge": "exclusivo", "stock": 1},
-  { "nombre": "Vaso Godzilla Carls Jr Model5 ", "categoria": "Godzilla", "precio": 80, "imagen": "imgs/coleccionable119.jpg" ,"badge": "nuevo", "stock": 1},
+  { "nombre": "Vaso Godzilla Carls Jr Model5 ", "categoria": "Godzilla", "precio": 80, "imagen": "imgs/coleccionable119.jpg" ,"badge": "nuevo", "stock": 0},
   { "nombre": "Vaso Godzilla Carls Jr Model2 ", "categoria": "Godzilla", "precio": 50, "imagen": "imgs/coleccionable120.jpg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Vaso Godzilla Movie Center ", "categoria": "Godzilla", "precio": 50, "imagen": "imgs/coleccionable121.jpg" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Vaso Godzilla Cinemex Incluye Figura King Kong", "categoria": "Godzilla", "precio": 130, "imagen": "imgs/coleccionable122.jpg" ,"badge": "nuevo", "stock": 1},
@@ -335,7 +335,7 @@
   { "nombre": "Peluche Minato Namikaze", "categoria": "Naruto", "precio": 150, "imagen": "imgs/naruto30.jpeg" ,"badge": "exclusivo", "stock": 1},
 
 
-  { "nombre": "Album de Estampas Animales Fantasticos Panini", "categoria": "Peliculas", "precio": 20, "imagen": "imgs/halbum15.png" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Album de Estampas Animales Fantasticos Panini", "categoria": "Peliculas", "precio": 20, "imagen": "imgs/halbum15.png" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Funko Jack Skellington 69 Disney", "categoria": "Peliculas", "precio": 500, "imagen": "imgs/ifunko1.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko Jack Skellington Firmado", "categoria": "Peliculas", "precio": 1000, "imagen": "imgs/ifunko15.png" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Funko Aang on Airscooter 541 Avatar", "categoria": "Peliculas", "precio": 250, "imagen": "imgs/ifunko2.png" ,"badge": "ultimo", "stock": 1},
@@ -388,7 +388,7 @@
   { "nombre": "Poster de Cine Inmaculada", "categoria": "Posters", "precio": 100, "imagen": "imgs/poster21.jpeg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Poster de Cine Templo de Huesos", "categoria": "Posters", "precio": 200, "imagen": "imgs/poster22.jpeg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Poster de Cine Scarlet", "categoria": "Posters", "precio": 150, "imagen": "imgs/poster23.jpeg" ,"badge": "ultimo", "stock": 1},
-  { "nombre": "Poster de Cine Bob Esponja", "categoria": "Posters", "precio": 100, "imagen": "imgs/poster24.jpeg" ,"badge": "ultimo", "stock": 1},
+  { "nombre": "Poster de Cine Bob Esponja", "categoria": "Posters", "precio": 100, "imagen": "imgs/poster24.jpeg" ,"badge": "ultimo", "stock": 0},
   { "nombre": "Poster de Cine El Guardian", "categoria": "Posters", "precio": 100, "imagen": "imgs/poster25.jpeg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Poster de Cine Renfield", "categoria": "Posters", "precio": 150, "imagen": "imgs/poster26.jpeg" ,"badge": "ultimo", "stock": 1},
   { "nombre": "Poster de Cine Morbius", "categoria": "Posters", "precio": 150, "imagen": "imgs/poster27.jpeg" ,"badge": "ultimo", "stock": 1},
