@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   const container = document.getElementById('estrenos-container');
   const filters = document.getElementById('estrenos-filters');
   const selectMes = document.getElementById('filtro-mes');
+  const countEl = document.getElementById('resultados-count');
+  const btnTop  = document.getElementById('btn-top');
 
   let estrenos = [];
   let filtroTipo = 'todos';
@@ -14,19 +16,27 @@ document.addEventListener('DOMContentLoaded', async () => {
   const hoy = new Date();
   hoy.setHours(0, 0, 0, 0);
 
+  // Mostrar skeleton mientras carga
+  mostrarSkeleton(8);
+
   try {
+
     const response = await fetch('estrenos.json');
     if (!response.ok) throw new Error('No se pudo cargar estrenos.json');
     estrenos = await response.json();
 
-
-    // 2. Ordenar por fecha (más próximos primero)
+    // Ordenar por fecha (más próximos primero)
     estrenos.sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
 
-    // 3. Llenar el select de meses
+    // Llenar el select de meses
     llenarSelectMeses();
 
-    renderEstrenos();
+    // Ocultar skeleton
+   const sk = document.getElementById('skeleton-loading');
+   if (sk) sk.style.display = 'none';
+
+   renderEstrenos();
+
   } catch (error) {
     console.error(error);
     container.innerHTML = `
@@ -60,8 +70,28 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
+  // ===== Skeleton =====
+    function mostrarSkeleton(cantidad = 8) {
+      const skeleton = document.getElementById('skeleton-loading');
+      if (!skeleton) return;
+
+      let html = '';
+      for (let i = 0; i < cantidad; i++) {
+        html += `
+          <div class="skeleton-card">
+            <div class="skeleton-poster"></div>
+            <div class="skeleton-body">
+              <div class="skeleton-line short"></div>
+              <div class="skeleton-line medium"></div>
+              <div class="skeleton-line" style="width:40%"></div>
+            </div>
+          </div>`;
+      }
+      skeleton.innerHTML = html;
+      skeleton.style.display = 'grid';
+    }
+
   // ===== Tipo dinámico =====
-  // Si era "preventa" y ya llegó el día → se convierte en "estreno"
  function getTipoEfectivo(item) {
    if (item.tipo !== 'preventa') return item.tipo;
    return diasRestantes(item.fecha) <= 0 ? 'estreno' : 'preventa';
@@ -137,37 +167,59 @@ function renderEstrenos() {
   renderPagina();
 }
 
-  function renderPagina() {
-    const pagNav = document.getElementById('estrenos-pagination');
-    const total = listaFiltrada.length;
-    const totalPaginas = Math.max(1, Math.ceil(total / POR_PAGINA));
+ function renderPagina() {
+   const pagNav = document.getElementById('estrenos-pagination');
+   const total = listaFiltrada.length;
+   const totalPaginas = Math.max(1, Math.ceil(total / POR_PAGINA));
 
-    if (paginaActual > totalPaginas) paginaActual = totalPaginas;
-    if (paginaActual < 1) paginaActual = 1;
+   if (paginaActual > totalPaginas) paginaActual = totalPaginas;
+   if (paginaActual < 1) paginaActual = 1;
 
-    if (total === 0) {
-      container.innerHTML = `
-        <div class="estrenos-empty">
-          No hay estrenos disponibles con estos filtros.
-        </div>`;
-      if (pagNav) {
-        pagNav.hidden = true;
-        pagNav.innerHTML = '';
-      }
-      return;
-    }
+   // Contador de resultados
+   if (countEl) {
+     countEl.textContent = total === 0
+       ? 'No hay resultados'
+       : `${total} estreno${total !== 1 ? 's' : ''} encontrado${total !== 1 ? 's' : ''}`;
+   }
 
-    const inicio = (paginaActual - 1) * POR_PAGINA;
-    const slice = listaFiltrada.slice(inicio, inicio + POR_PAGINA);
+   if (total === 0) {
+     container.innerHTML = `
+       <div class="estrenos-empty">
+         <p style="font-size:1.1rem; margin-bottom:8px;">No hay estrenos con estos filtros</p>
+         <p style="font-size:0.9rem; color:var(--muted); margin-bottom:20px;">Prueba cambiando el tipo o el mes</p>
+         <button type="button" class="filter-btn" id="limpiar-filtros">
+           Ver todos los estrenos
+         </button>
+       </div>`;
 
-    container.innerHTML = `
-      <div class="estrenos-grid">
-        ${slice.map(crearCard).join('')}
-      </div>
-    `;
+     document.getElementById('limpiar-filtros')?.addEventListener('click', () => {
+       filtroTipo = 'todos';
+       filtroMes = 'todos';
+       if (selectMes) selectMes.value = 'todos';
+       filters?.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+       filters?.querySelector('[data-filter="todos"]')?.classList.add('active');
+       paginaActual = 1;
+       renderEstrenos();
+     });
 
-    renderControlesPaginacion(total, totalPaginas);
-  }
+     if (pagNav) {
+       pagNav.hidden = true;
+       pagNav.innerHTML = '';
+     }
+     return;
+   }
+
+   const inicio = (paginaActual - 1) * POR_PAGINA;
+   const slice = listaFiltrada.slice(inicio, inicio + POR_PAGINA);
+
+   container.innerHTML = `
+     <div class="estrenos-grid">
+       ${slice.map(crearCard).join('')}
+     </div>
+   `;
+
+   renderControlesPaginacion(total, totalPaginas);
+ }
 
   function renderControlesPaginacion(total, totalPaginas) {
     const pagNav = document.getElementById('estrenos-pagination');
@@ -213,8 +265,14 @@ function renderEstrenos() {
   // ===== Crear tarjeta =====
 function crearCard(item) {
   const tipo = getTipoEfectivo(item);
-  const badgeClass = tipo === 'reestreno' ? 'reestreno' : tipo === 'preventa' ? 'preventa' : '';
-  const badgeTexto = tipo === 'reestreno' ? 'Reestreno' : tipo === 'preventa' ? 'Preventa' : 'Estreno';
+  const d = diasRestantes(item.fecha);
+
+  const badgeClass = tipo === 'reestreno' ? 'reestreno' :
+                     tipo === 'preventa'  ? 'preventa'  : '';
+
+  const badgeTexto = tipo === 'reestreno' ? 'Reestreno' :
+                     tipo === 'preventa'  ? 'Preventa'  : 'Estreno';
+
   const estado = etiquetaCartelera(item);
   const estadoHTML = estado
     ? `<span class="estreno-estado estreno-estado--${estado.key}">${estado.label}</span>`
@@ -224,20 +282,37 @@ function crearCard(item) {
     .map(c => `<span class="cine-tag">${escapeHTML(c)}</span>`)
     .join('');
 
+  // Clases para resaltar Hoy / Esta semana
+  let extraClass = '';
+  let countdownClass = '';
+  if (d === 0) {
+    extraClass = 'hoy';
+    countdownClass = 'hoy';
+  } else if (d > 0 && d <= 7) {
+    extraClass = 'esta-semana';
+    countdownClass = 'esta-semana';
+  }
+
   return `
-    <article class="estreno-card">
+    <article class="estreno-card ${extraClass}">
       <div class="estreno-poster">
-        <img src="${escapeHTML(item.poster)}" alt="Póster de ${escapeHTML(item.titulo)}"
-             loading="lazy" onerror="this.src='imgs/posters/placeholder.jpg'; this.onerror=null;">
+        <img
+          src="${escapeHTML(item.poster)}"
+          alt="Póster de ${escapeHTML(item.titulo)}"
+          loading="lazy"
+          decoding="async"
+          onerror="this.src='imgs/posters/placeholder.jpg'; this.onerror=null;"
+        >
         <span class="estreno-badge ${badgeClass}">${badgeTexto}</span>
         ${estadoHTML}
       </div>
+
       <div class="estreno-body">
         <div class="estreno-fecha">${escapeHTML(item.fechaTexto || item.fecha)}</div>
         <h2 class="estreno-titulo">${escapeHTML(item.titulo)}</h2>
         ${item.nota ? `<p class="estreno-nota">${escapeHTML(item.nota)}</p>` : ''}
         <div class="estreno-cines">${cinesHTML}</div>
-        <span class="estreno-countdown">${textoContador(item.fecha)}</span>
+        <span class="estreno-countdown ${countdownClass}">${textoContador(item.fecha)}</span>
       </div>
     </article>
   `;
@@ -364,4 +439,18 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('lbdc-theme', nuevo);
     } catch (e) {}
   });
+});
+
+// ===== Botón volver arriba =====
+window.addEventListener('scroll', () => {
+  if (!btnTop) return;
+  if (window.scrollY > 500) {
+    btnTop.hidden = false;
+  } else {
+    btnTop.hidden = true;
+  }
+});
+
+btnTop?.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });

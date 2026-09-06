@@ -35,485 +35,636 @@
 
     <style>
         /* ========== ESTRENOS PAGE ========== */
- .estrenos-page {
-   padding-bottom: 100px;
- }
+         .estrenos-page {
+           padding-bottom: 100px;
+         }
 
- /* Hero */
- .estrenos-hero {
-   position: relative;
-   padding: 70px 0 50px;
-   border-bottom: 1px solid var(--border);
-   overflow: hidden;
-   text-align: center;
- }
- .estrenos-hero::before {
-   content: "";
-   position: absolute;
-   inset: 0;
-   background:
-     radial-gradient(ellipse 80% 60% at 50% -20%, rgba(196, 30, 58, 0.14), transparent 55%),
-     radial-gradient(ellipse 50% 40% at 85% 30%, rgba(201, 162, 39, 0.05), transparent 50%);
-   pointer-events: none;
- }
- .estrenos-hero-inner {
-   position: relative;
-   width: min(700px, calc(100% - 48px));
-   margin: 0 auto;
- }
- .estrenos-hero .eyebrow { margin-bottom: 18px; }
- .estrenos-hero h1 {
-   font-family: 'Playfair Display', Georgia, serif;
-   font-size: clamp(2.4rem, 5.5vw, 3.6rem);
-   font-weight: 800;
-   line-height: 1.05;
-   letter-spacing: -0.03em;
-   margin-bottom: 16px;
- }
- .estrenos-hero h1 em {
-   font-style: italic;
-   color: var(--gold);
- }
- .estrenos-hero p {
-   color: var(--muted);
-   font-size: 1.02rem;
-   line-height: 1.7;
-   max-width: 520px;
-   margin: 0 auto;
- }
+         /* Hero */
+         .estrenos-hero {
+           position: relative;
+           padding: 70px 0 50px;
+           border-bottom: 1px solid var(--border);
+           overflow: hidden;
+           text-align: center;
+         }
+         .estrenos-hero::before {
+           content: "";
+           position: absolute;
+           inset: 0;
+           background:
+             radial-gradient(ellipse 80% 60% at 50% -20%, rgba(196, 30, 58, 0.14), transparent 55%),
+             radial-gradient(ellipse 50% 40% at 85% 30%, rgba(201, 162, 39, 0.05), transparent 50%);
+           pointer-events: none;
+         }
+         .estrenos-hero-inner {
+           position: relative;
+           width: min(700px, calc(100% - 48px));
+           margin: 0 auto;
+         }
+         .estrenos-hero .eyebrow { margin-bottom: 18px; }
+         .estrenos-hero h1 {
+           font-family: 'Playfair Display', Georgia, serif;
+           font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+           font-weight: 800;
+           line-height: 1.05;
+           letter-spacing: -0.03em;
+           margin-bottom: 16px;
+         }
+         .estrenos-hero h1 em {
+           font-style: italic;
+           color: var(--gold);
+         }
+         .estrenos-hero p {
+           color: var(--muted);
+           font-size: 1.02rem;
+           line-height: 1.7;
+           max-width: 520px;
+           margin: 0 auto;
+         }
 
- /* Filtros */
- .estrenos-filters-wrapper {
-   width: min(var(--max), calc(100% - 48px));
-   margin: 32px auto 24px;
-   display: flex;
-   flex-wrap: wrap;
-   align-items: center;
-   justify-content: center;
-   gap: 16px 24px;
- }
- .estrenos-filters {
-   display: flex;
-   flex-wrap: wrap;
-   gap: 8px;
-   justify-content: center;
- }
- .filter-btn {
-   padding: 8px 16px;
-   border-radius: 999px;
-   border: 1px solid var(--border);
-   background: rgba(255,255,255,0.03);
-   color: var(--muted);
-   font-size: 0.76rem;
-   font-weight: 600;
-   letter-spacing: 0.03em;
-   cursor: pointer;
-   transition: all 0.22s ease;
- }
- .filter-btn:hover {
-   border-color: rgba(255,255,255,0.15);
-   color: #fff;
- }
- .filter-btn.active {
-   background: linear-gradient(135deg, var(--red), var(--red-dark));
-   border-color: transparent;
-   color: #fff;
-   box-shadow: 0 6px 20px rgba(196, 30, 58, 0.25);
- }
+         /* Filtros */
+         .estrenos-filters-wrapper {
+           width: min(var(--max), calc(100% - 48px));
+           margin: 32px auto 24px;
+           display: flex;
+           flex-wrap: wrap;
+           align-items: center;
+           justify-content: center;
+           gap: 16px 24px;
+         }
+         .estrenos-filters {
+           display: flex;
+           flex-wrap: wrap;
+           gap: 8px;
+           justify-content: center;
+         }
+         .filter-btn {
+           padding: 8px 16px;
+           border-radius: 999px;
+           border: 1px solid var(--border);
+           background: rgba(255,255,255,0.03);
+           color: var(--muted);
+           font-size: 0.76rem;
+           font-weight: 600;
+           letter-spacing: 0.03em;
+           cursor: pointer;
+           transition: all 0.22s ease;
+         }
+         .filter-btn:hover {
+           border-color: rgba(255,255,255,0.15);
+           color: #fff;
+         }
+         .filter-btn.active {
+           background: linear-gradient(135deg, var(--red), var(--red-dark));
+           border-color: transparent;
+           color: #fff;
+           box-shadow: 0 6px 20px rgba(196, 30, 58, 0.25);
+         }
 
- .mes-filter {
-   display: flex;
-   align-items: center;
-   gap: 10px;
- }
- .mes-filter label {
-   font-size: 0.76rem;
-   font-weight: 600;
-   color: var(--muted);
-   letter-spacing: 0.04em;
- }
- .mes-filter select {
-   appearance: none;
-   -webkit-appearance: none;
-   padding: 8px 34px 8px 14px;
-   border-radius: 999px;
-   border: 1px solid var(--border);
-   background: rgba(255,255,255,0.04) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%239a9aa6' d='M1 1l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 12px center;
-   color: #e8e8ec;
-   font-size: 0.78rem;
-   font-weight: 500;
-   cursor: pointer;
-   outline: none;
- }
- .mes-filter select:hover,
- .mes-filter select:focus {
-   border-color: rgba(255,255,255,0.18);
- }
- .mes-filter select option {
-   background: #121218;
-   color: #e8e8ec;
- }
+         .mes-filter {
+           display: flex;
+           align-items: center;
+           gap: 10px;
+         }
+         .mes-filter label {
+           font-size: 0.76rem;
+           font-weight: 600;
+           color: var(--muted);
+           letter-spacing: 0.04em;
+         }
+         .mes-filter select {
+           appearance: none;
+           -webkit-appearance: none;
+           padding: 8px 34px 8px 14px;
+           border-radius: 999px;
+           border: 1px solid var(--border);
+           background: rgba(255,255,255,0.04) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%239a9aa6' d='M1 1l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 12px center;
+           color: #e8e8ec;
+           font-size: 0.78rem;
+           font-weight: 500;
+           cursor: pointer;
+           outline: none;
+         }
+         .mes-filter select:hover,
+         .mes-filter select:focus {
+           border-color: rgba(255,255,255,0.18);
+         }
+         .mes-filter select option {
+           background: #121218;
+           color: #e8e8ec;
+         }
 
- /* Grid: más cards, menos espacio */
- .estrenos-grid {
-   width: min(var(--max), calc(100% - 48px));
-   margin: 0 auto;
-   display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-   gap: 12px;
- }
- @media (min-width: 900px) {
-   .estrenos-grid {
-     grid-template-columns: repeat(4, 1fr);
-   }
- }
- @media (min-width: 1100px) {
-   .estrenos-grid {
-     grid-template-columns: repeat(4, 1fr);
-   }
- }
+         /* Grid: más cards, menos espacio */
+         .estrenos-grid {
+           width: min(var(--max), calc(100% - 48px));
+           margin: 0 auto;
+           display: grid;
+           grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+           gap: 12px;
+         }
+         @media (min-width: 900px) {
+           .estrenos-grid {
+             grid-template-columns: repeat(4, 1fr);
+           }
+         }
+         @media (min-width: 1100px) {
+           .estrenos-grid {
+             grid-template-columns: repeat(4, 1fr);
+           }
+         }
 
- /* Cards compactas */
- .estreno-card {
-   display: flex;
-   flex-direction: column;
-   border: 1px solid var(--border);
-   border-radius: 12px;
-   background: var(--surface);
-   overflow: hidden;
-   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
- }
- .estreno-card:hover {
-   transform: translateY(-2px);
-   border-color: rgba(196, 30, 58, 0.28);
-   box-shadow: var(--shadow-soft);
- }
+         /* Cards compactas */
+         .estreno-card {
+           display: flex;
+           flex-direction: column;
+           border: 1px solid var(--border);
+           border-radius: 12px;
+           background: var(--surface);
+           overflow: hidden;
+           transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+         }
+         .estreno-card:hover {
+           transform: translateY(-2px);
+           border-color: rgba(196, 30, 58, 0.28);
+           box-shadow: var(--shadow-soft);
+         }
 
- .estreno-poster {
-   position: relative;
-   aspect-ratio: 2 / 2.75;
-   overflow: hidden;
-   background: #0e0e14;
- }
- .estreno-poster img {
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-   display: block;
-   transition: transform 0.5s ease;
- }
- .estreno-card:hover .estreno-poster img {
-   transform: scale(1.04);
- }
+         .estreno-poster {
+           position: relative;
+           aspect-ratio: 2 / 2.75;
+           overflow: hidden;
+           background: #0e0e14;
+         }
+         .estreno-poster img {
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           display: block;
+           transition: transform 0.5s ease;
+         }
+         .estreno-card:hover .estreno-poster img {
+           transform: scale(1.04);
+         }
 
- /* Badge tipo (izq) */
- .estreno-badge {
-   position: absolute;
-   top: 8px;
-   left: 8px;
-   z-index: 2;
-   padding: 3px 7px;
-   border-radius: 5px;
-   background: rgba(0, 0, 0, 0.78);
-   border: 1px solid rgba(255, 255, 255, 0.12);
-   backdrop-filter: blur(8px);
-   font-size: 0.5rem;
-   font-weight: 700;
-   letter-spacing: 0.08em;
-   text-transform: uppercase;
-   color: #e8e8ec;
- }
- .estreno-badge.reestreno {
-   color: var(--gold);
-   border-color: rgba(201, 162, 39, 0.35);
- }
- .estreno-badge.preventa {
-   color: #7dd3fc;
-   border-color: rgba(125, 211, 252, 0.3);
- }
+         /* Badge tipo (izq) */
+         .estreno-badge {
+           position: absolute;
+           top: 8px;
+           left: 8px;
+           z-index: 2;
+           padding: 3px 7px;
+           border-radius: 5px;
+           background: rgba(0, 0, 0, 0.78);
+           border: 1px solid rgba(255, 255, 255, 0.12);
+           backdrop-filter: blur(8px);
+           font-size: 0.5rem;
+           font-weight: 700;
+           letter-spacing: 0.08em;
+           text-transform: uppercase;
+           color: #e8e8ec;
+         }
+         .estreno-badge.reestreno {
+           color: var(--gold);
+           border-color: rgba(201, 162, 39, 0.35);
+         }
+         .estreno-badge.preventa {
+           color: #7dd3fc;
+           border-color: rgba(125, 211, 252, 0.3);
+         }
 
- /* Badge estado cartelera (der) */
- .estreno-estado {
-   position: absolute;
-   top: 8px;
-   right: 8px;
-   z-index: 2;
-   padding: 3px 7px;
-   border-radius: 5px;
-   background: rgba(0, 0, 0, 0.78);
-   border: 1px solid rgba(255, 255, 255, 0.12);
-   font-size: 0.48rem;
-   font-weight: 700;
-   letter-spacing: 0.06em;
-   text-transform: uppercase;
-   max-width: 46%;
-   text-align: center;
-   line-height: 1.2;
- }
- .estreno-estado--encartelera,
- .estreno-estado--hoy {
-   color: #7ddea0;
-   border-color: rgba(125, 222, 160, 0.35);
- }
- .estreno-estado--ultima {
-   color: #ff8a9a;
-   border-color: rgba(196, 30, 58, 0.4);
- }
- .estreno-estado--proximamente {
-   color: #7dd3fc;
-   border-color: rgba(125, 211, 252, 0.3);
- }
- .estreno-estado--salio,
- .estreno-estado--sin-fin {
-   color: #9a9aa6;
-   border-color: rgba(255, 255, 255, 0.12);
- }
+         /* Badge estado cartelera (der) */
+         .estreno-estado {
+           position: absolute;
+           top: 8px;
+           right: 8px;
+           z-index: 2;
+           padding: 3px 7px;
+           border-radius: 5px;
+           background: rgba(0, 0, 0, 0.78);
+           border: 1px solid rgba(255, 255, 255, 0.12);
+           font-size: 0.48rem;
+           font-weight: 700;
+           letter-spacing: 0.06em;
+           text-transform: uppercase;
+           max-width: 46%;
+           text-align: center;
+           line-height: 1.2;
+         }
+         .estreno-estado--encartelera,
+         .estreno-estado--hoy {
+           color: #7ddea0;
+           border-color: rgba(125, 222, 160, 0.35);
+         }
+         .estreno-estado--ultima {
+           color: #ff8a9a;
+           border-color: rgba(196, 30, 58, 0.4);
+         }
+         .estreno-estado--proximamente {
+           color: #7dd3fc;
+           border-color: rgba(125, 211, 252, 0.3);
+         }
+         .estreno-estado--salio,
+         .estreno-estado--sin-fin {
+           color: #9a9aa6;
+           border-color: rgba(255, 255, 255, 0.12);
+         }
 
- .estreno-body {
-   padding: 10px;
-   display: flex;
-   flex-direction: column;
-   flex: 1;
- }
- .estreno-fecha {
-   font-size: 0.58rem;
-   font-weight: 600;
-   letter-spacing: 0.05em;
-   text-transform: uppercase;
-   color: var(--gold);
-   margin-bottom: 4px;
- }
- .estreno-titulo {
-   font-family: 'Playfair Display', Georgia, serif;
-   font-size: 0.9rem;
-   font-weight: 700;
-   line-height: 1.2;
-   letter-spacing: -0.02em;
-   margin: 0 0 8px;
-   color: var(--text, #fff);
- }
- .estreno-cines {
-   display: flex;
-   flex-wrap: wrap;
-   gap: 4px;
-   margin-bottom: 8px;
- }
- .cine-tag {
-   padding: 2px 7px;
-   border-radius: 999px;
-   background: rgba(255, 255, 255, 0.04);
-   border: 1px solid var(--border);
-   font-size: 0.55rem;
-   font-weight: 600;
-   color: var(--muted);
- }
+         .estreno-body {
+           padding: 10px;
+           display: flex;
+           flex-direction: column;
+           flex: 1;
+         }
+         .estreno-fecha {
+           font-size: 0.58rem;
+           font-weight: 600;
+           letter-spacing: 0.05em;
+           text-transform: uppercase;
+           color: var(--gold);
+           margin-bottom: 4px;
+         }
+         .estreno-titulo {
+           font-family: 'Playfair Display', Georgia, serif;
+           font-size: 0.9rem;
+           font-weight: 700;
+           line-height: 1.2;
+           letter-spacing: -0.02em;
+           margin: 0 0 8px;
+           color: var(--text, #fff);
+         }
+         .estreno-cines {
+           display: flex;
+           flex-wrap: wrap;
+           gap: 4px;
+           margin-bottom: 8px;
+         }
+         .cine-tag {
+           padding: 2px 7px;
+           border-radius: 999px;
+           background: rgba(255, 255, 255, 0.04);
+           border: 1px solid var(--border);
+           font-size: 0.55rem;
+           font-weight: 600;
+           color: var(--muted);
+         }
 
- .estreno-links {
-   margin-top: auto;
-   display: flex;
-   flex-direction: column;
-   gap: 5px;
- }
- .btn-boletos {
-   display: inline-flex;
-   align-items: center;
-   justify-content: center;
-   gap: 5px;
-   padding: 6px 10px;
-   border-radius: 999px;
-   border: none;
-   background: linear-gradient(135deg, var(--red), var(--red-dark));
-   color: #fff !important;
-   font-size: 0.65rem;
-   font-weight: 600;
-   text-decoration: none;
-   transition: all 0.2s ease;
- }
- .btn-boletos:hover {
-   transform: translateY(-1px);
-   box-shadow: 0 6px 18px rgba(196, 30, 58, 0.35);
- }
- .btn-boletos.secondary {
-   background: transparent;
-   border: 1px solid var(--border-strong, rgba(255,255,255,0.14));
-   color: #e0e0e6 !important;
-   box-shadow: none;
- }
- .btn-boletos.secondary:hover {
-   background: rgba(255, 255, 255, 0.05);
-   border-color: rgba(255, 255, 255, 0.22);
-   transform: none;
-   box-shadow: none;
- }
+         .estreno-links {
+           margin-top: auto;
+           display: flex;
+           flex-direction: column;
+           gap: 5px;
+         }
+         .btn-boletos {
+           display: inline-flex;
+           align-items: center;
+           justify-content: center;
+           gap: 5px;
+           padding: 6px 10px;
+           border-radius: 999px;
+           border: none;
+           background: linear-gradient(135deg, var(--red), var(--red-dark));
+           color: #fff !important;
+           font-size: 0.65rem;
+           font-weight: 600;
+           text-decoration: none;
+           transition: all 0.2s ease;
+         }
+         .btn-boletos:hover {
+           transform: translateY(-1px);
+           box-shadow: 0 6px 18px rgba(196, 30, 58, 0.35);
+         }
+         .btn-boletos.secondary {
+           background: transparent;
+           border: 1px solid var(--border-strong, rgba(255,255,255,0.14));
+           color: #e0e0e6 !important;
+           box-shadow: none;
+         }
+         .btn-boletos.secondary:hover {
+           background: rgba(255, 255, 255, 0.05);
+           border-color: rgba(255, 255, 255, 0.22);
+           transform: none;
+           box-shadow: none;
+         }
 
- .estreno-countdown {
-   display: block;
-   margin-top: 8px;
-   font-size: 0.62rem;
-   font-weight: 700;
-   color: var(--gold);
- }
+         .estreno-countdown {
+           display: block;
+           margin-top: 8px;
+           font-size: 0.62rem;
+           font-weight: 700;
+           color: var(--gold);
+         }
 
- .estrenos-empty,
- .estrenos-loading {
-   width: min(var(--max), calc(100% - 48px));
-   margin: 60px auto;
-   text-align: center;
-   color: var(--muted);
-   font-size: 1.05rem;
- }
+         .estrenos-empty,
+         .estrenos-loading {
+           width: min(var(--max), calc(100% - 48px));
+           margin: 60px auto;
+           text-align: center;
+           color: var(--muted);
+           font-size: 1.05rem;
+         }
 
- /* Paginación */
- .estrenos-pagination {
-   width: min(var(--max), calc(100% - 48px));
-   margin: 28px auto 0;
-   display: flex;
-   flex-wrap: wrap;
-   align-items: center;
-   justify-content: center;
-   gap: 8px;
- }
- .page-btn {
-   min-width: 38px;
-   height: 38px;
-   padding: 0 12px;
-   border-radius: 999px;
-   border: 1px solid var(--border);
-   background: rgba(255,255,255,0.04);
-   color: var(--muted);
-   font-size: 0.78rem;
-   font-weight: 600;
-   cursor: pointer;
-   transition: all 0.2s ease;
- }
- .page-btn:hover:not(:disabled) {
-   border-color: rgba(255,255,255,0.2);
-   color: #fff;
- }
- .page-btn.active {
-   background: linear-gradient(135deg, var(--red), var(--red-dark));
-   border-color: transparent;
-   color: #fff;
- }
- .page-btn:disabled {
-   opacity: 0.35;
-   cursor: not-allowed;
- }
- .page-info {
-   width: 100%;
-   text-align: center;
-   margin-top: 4px;
-   font-size: 0.72rem;
-   color: var(--muted);
- }
+         /* Paginación */
+         .estrenos-pagination {
+           width: min(var(--max), calc(100% - 48px));
+           margin: 28px auto 0;
+           display: flex;
+           flex-wrap: wrap;
+           align-items: center;
+           justify-content: center;
+           gap: 8px;
+         }
+         .page-btn {
+           min-width: 38px;
+           height: 38px;
+           padding: 0 12px;
+           border-radius: 999px;
+           border: 1px solid var(--border);
+           background: rgba(255,255,255,0.04);
+           color: var(--muted);
+           font-size: 0.78rem;
+           font-weight: 600;
+           cursor: pointer;
+           transition: all 0.2s ease;
+         }
+         .page-btn:hover:not(:disabled) {
+           border-color: rgba(255,255,255,0.2);
+           color: #fff;
+         }
+         .page-btn.active {
+           background: linear-gradient(135deg, var(--red), var(--red-dark));
+           border-color: transparent;
+           color: #fff;
+         }
+         .page-btn:disabled {
+           opacity: 0.35;
+           cursor: not-allowed;
+         }
+         .page-info {
+           width: 100%;
+           text-align: center;
+           margin-top: 4px;
+           font-size: 0.72rem;
+           color: var(--muted);
+         }
 
- /* Modo claro */
- html[data-theme="light"] .estreno-titulo { color: #121214; }
- html[data-theme="light"] .btn-boletos.secondary {
-   color: #121214 !important;
-   border-color: rgba(0,0,0,0.15);
- }
- html[data-theme="light"] .cine-tag {
-   background: rgba(0,0,0,0.04);
-   color: #3d3d46;
- }
- html[data-theme="light"] .filter-btn:hover { color: #121214; }
+         /* Modo claro */
+         html[data-theme="light"] .estreno-titulo { color: #121214; }
+         html[data-theme="light"] .btn-boletos.secondary {
+           color: #121214 !important;
+           border-color: rgba(0,0,0,0.15);
+         }
+         html[data-theme="light"] .cine-tag {
+           background: rgba(0,0,0,0.04);
+           color: #3d3d46;
+         }
+         html[data-theme="light"] .filter-btn:hover { color: #121214; }
 
- /* Móvil: 2 columnas */
- @media (max-width: 700px) {
-   .estrenos-hero { padding: 48px 0 36px; }
-   .estrenos-grid {
-     grid-template-columns: repeat(2, 1fr);
-     gap: 10px;
-   }
-   .estrenos-filters-wrapper {
-     flex-direction: column;
-     gap: 14px;
-   }
-   .filter-btn {
-     padding: 7px 12px;
-     font-size: 0.7rem;
-   }
-   .estreno-titulo { font-size: 0.82rem; }
-   .btn-boletos { font-size: 0.6rem; padding: 5px 8px; }
- }
- @media (max-width: 380px) {
-   .estrenos-grid {
-     grid-template-columns: 1fr;
-   }
- }
+         /* Móvil: 2 columnas */
+         @media (max-width: 700px) {
+           .estrenos-hero { padding: 48px 0 36px; }
+           .estrenos-grid {
+             grid-template-columns: repeat(2, 1fr);
+             gap: 10px;
+           }
+           .estrenos-filters-wrapper {
+             flex-direction: column;
+             gap: 14px;
+           }
+           .filter-btn {
+             padding: 7px 12px;
+             font-size: 0.7rem;
+           }
+           .estreno-titulo { font-size: 0.82rem; }
+           .btn-boletos { font-size: 0.6rem; padding: 5px 8px; }
+         }
+         @media (max-width: 380px) {
+           .estrenos-grid {
+             grid-template-columns: 1fr;
+           }
+         }
 
-        /* ========== MODO CLARO - ESTRENOS ========== */
-html[data-theme="light"] .filter-btn {
-  background: #fff;
-  border-color: rgba(0,0,0,.12);
-  color: #3d3d46;
-}
-html[data-theme="light"] .filter-btn:hover {
-  border-color: rgba(0,0,0,.25);
-  color: #121214;
-}
-html[data-theme="light"] .filter-btn.active {
-  background: linear-gradient(135deg, var(--red), var(--red-dark));
-  color: #fff;
-  border-color: transparent;
-}
+                /* ========== MODO CLARO - ESTRENOS ========== */
+        html[data-theme="light"] .filter-btn {
+          background: #fff;
+          border-color: rgba(0,0,0,.12);
+          color: #3d3d46;
+        }
+        html[data-theme="light"] .filter-btn:hover {
+          border-color: rgba(0,0,0,.25);
+          color: #121214;
+        }
+        html[data-theme="light"] .filter-btn.active {
+          background: linear-gradient(135deg, var(--red), var(--red-dark));
+          color: #fff;
+          border-color: transparent;
+        }
 
-html[data-theme="light"] .mes-filter select {
-  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23555555' d='M1 1l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 12px center;
-  color: #121214;
-  border-color: rgba(0,0,0,.15);
-}
-html[data-theme="light"] .mes-filter select option {
-  background: #fff;
-  color: #121214;
-}
+        html[data-theme="light"] .mes-filter select {
+          background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23555555' d='M1 1l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 12px center;
+          color: #121214;
+          border-color: rgba(0,0,0,.15);
+        }
+        html[data-theme="light"] .mes-filter select option {
+          background: #fff;
+          color: #121214;
+        }
 
-html[data-theme="light"] .estreno-card {
-  background: #fff;
-  border-color: rgba(0,0,0,.1);
-}
-html[data-theme="light"] .estreno-card:hover {
-  border-color: rgba(196, 30, 58, 0.3);
-}
+        html[data-theme="light"] .estreno-card {
+          background: #fff;
+          border-color: rgba(0,0,0,.1);
+        }
+        html[data-theme="light"] .estreno-card:hover {
+          border-color: rgba(196, 30, 58, 0.3);
+        }
 
-html[data-theme="light"] .estreno-poster {
-  background: #f0f0f2;
-}
+        html[data-theme="light"] .estreno-poster {
+          background: #f0f0f2;
+        }
 
-html[data-theme="light"] .estreno-badge,
-html[data-theme="light"] .estreno-estado {
-  background: rgba(255,255,255,.92);
-  border-color: rgba(0,0,0,.12);
-  color: #121214;
-}
-html[data-theme="light"] .estreno-badge.preventa { color: #0284c7; }
-html[data-theme="light"] .estreno-badge.reestreno { color: #a16207; }
-html[data-theme="light"] .estreno-estado--encartelera,
-html[data-theme="light"] .estreno-estado--hoy { color: #15803d; }
-html[data-theme="light"] .estreno-estado--salio { color: #6b7280; }
+        html[data-theme="light"] .estreno-badge,
+        html[data-theme="light"] .estreno-estado {
+          background: rgba(255,255,255,.92);
+          border-color: rgba(0,0,0,.12);
+          color: #121214;
+        }
+        html[data-theme="light"] .estreno-badge.preventa { color: #0284c7; }
+        html[data-theme="light"] .estreno-badge.reestreno { color: #a16207; }
+        html[data-theme="light"] .estreno-estado--encartelera,
+        html[data-theme="light"] .estreno-estado--hoy { color: #15803d; }
+        html[data-theme="light"] .estreno-estado--salio { color: #6b7280; }
 
-html[data-theme="light"] .page-btn {
-  background: #fff;
-  border-color: rgba(0,0,0,.12);
-  color: #3d3d46;
-}
-html[data-theme="light"] .page-btn:hover:not(:disabled) {
-  border-color: rgba(0,0,0,.25);
-  color: #121214;
-}
-html[data-theme="light"] .page-btn.active {
-  background: linear-gradient(135deg, var(--red), var(--red-dark));
-  color: #fff;
-  border-color: transparent;
-}
+        html[data-theme="light"] .page-btn {
+          background: #fff;
+          border-color: rgba(0,0,0,.12);
+          color: #3d3d46;
+        }
+        html[data-theme="light"] .page-btn:hover:not(:disabled) {
+          border-color: rgba(0,0,0,.25);
+          color: #121214;
+        }
+        html[data-theme="light"] .page-btn.active {
+          background: linear-gradient(135deg, var(--red), var(--red-dark));
+          color: #fff;
+          border-color: transparent;
+        }
 
-        .estreno-nota {
-  font-size: 0.75rem;
-  color: var(--muted);
-  margin: 0 0 8px;
-  line-height: 1.4;
-}
+                .estreno-nota {
+          font-size: 0.75rem;
+          color: var(--muted);
+          margin: 0 0 8px;
+          line-height: 1.4;
+        }
+
+                /* ========== CONTADOR DE RESULTADOS ========== */
+        .resultados-count {
+          width: min(var(--max), calc(100% - 48px));
+          margin: 0 auto 18px;
+          font-size: 0.82rem;
+          color: var(--muted);
+          text-align: center;
+        }
+
+        /* ========== SKELETON LOADING ========== */
+        .skeleton-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+          gap: 12px;
+          width: min(var(--max), calc(100% - 48px));
+          margin: 0 auto;
+        }
+        @media (min-width: 900px) {
+          .skeleton-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+        @media (max-width: 700px) {
+          .skeleton-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        }
+
+        .skeleton-card {
+          border-radius: 12px;
+          border: 1px solid var(--border);
+          background: var(--surface);
+          overflow: hidden;
+        }
+        .skeleton-poster {
+          aspect-ratio: 2 / 2.75;
+          background: linear-gradient(90deg, #1a1a22 25%, #252530 50%, #1a1a22 75%);
+          background-size: 200% 100%;
+          animation: skeleton-shine 1.4s ease-in-out infinite;
+        }
+        .skeleton-body {
+          padding: 12px 10px;
+        }
+        .skeleton-line {
+          height: 10px;
+          border-radius: 4px;
+          background: linear-gradient(90deg, #1a1a22 25%, #252530 50%, #1a1a22 75%);
+          background-size: 200% 100%;
+          animation: skeleton-shine 1.4s ease-in-out infinite;
+          margin-bottom: 8px;
+        }
+        .skeleton-line.short { width: 55%; }
+        .skeleton-line.medium { width: 80%; }
+
+        @keyframes skeleton-shine {
+          0% { background-position: 200% 0; }
+          100% { background-position: -200% 0; }
+        }
+
+        html[data-theme="light"] .skeleton-poster,
+        html[data-theme="light"] .skeleton-line {
+          background: linear-gradient(90deg, #e8e8ec 25%, #f4f4f6 50%, #e8e8ec 75%);
+          background-size: 200% 100%;
+        }
+
+        /* ========== RESALTAR HOY / ESTA SEMANA ========== */
+        .estreno-card.hoy {
+          border-color: rgba(125, 222, 160, 0.45);
+          box-shadow: 0 0 0 1px rgba(125, 222, 160, 0.15);
+        }
+        .estreno-card.esta-semana {
+          border-color: rgba(201, 162, 39, 0.4);
+        }
+
+        .estreno-countdown.hoy {
+          color: #7ddea0;
+          font-weight: 800;
+        }
+        .estreno-countdown.esta-semana {
+          color: var(--gold);
+        }
+
+        /* ========== STICKY FILTERS EN MÓVIL ========== */
+        @media (max-width: 700px) {
+          .estrenos-filters-wrapper {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background: var(--bg, #030304);
+            padding: 12px 0;
+            margin-top: 0;
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+          }
+          html[data-theme="light"] .estrenos-filters-wrapper {
+            background: rgba(255,255,255,0.92);
+          }
+        }
+
+        /* ========== ANIMACIÓN SUAVE AL FILTRAR ========== */
+        .estrenos-grid {
+          animation: fadeIn 0.35s ease;
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(8px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ========== FOCUS STATES ========== */
+        .filter-btn:focus-visible,
+        .page-btn:focus-visible,
+        .mes-filter select:focus-visible,
+        .btn-top:focus-visible {
+          outline: 2px solid var(--gold);
+          outline-offset: 3px;
+        }
+
+        /* ========== BOTÓN VOLVER ARRIBA ========== */
+        .btn-top {
+          position: fixed;
+          bottom: 28px;
+          right: 22px;
+          z-index: 90;
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          border: 1px solid var(--border);
+          background: var(--surface);
+          color: var(--text);
+          font-size: 1.2rem;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+          transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+        .btn-top:hover {
+          transform: translateY(-3px);
+          border-color: var(--gold);
+        }
+        .btn-top[hidden] {
+          display: none;
+        }
+
+        html[data-theme="light"] .btn-top {
+          background: #fff;
+          box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        }
+
+        /* ========== PLACEHOLDER MEJORADO ========== */
+        .estreno-poster img {
+          background: linear-gradient(135deg, #1a1a22, #121218);
+        }
     </style>
 
     <script>
@@ -524,122 +675,97 @@ html[data-theme="light"] .page-btn.active {
     </script>
 </head>
 <body>
-<a href="#main-content" class="skip-link">Saltar al contenido</a>
+    <a href="#main-content" class="skip-link">Saltar al contenido</a>
 
-<header class="site-header">
-    <div class="header-inner">
-        <a href="blog.html" class="brand-link" aria-label="Los Brujos del Cine, inicio">
-            <img src="imgs/logoL.jpeg" alt="Los Brujos del Cine" class="site-logo">
-            <div class="logo-text">
-                <h1>Los Brujos del Cine</h1>
-                <span>Mi Tesoro MX</span>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="blog.html" class="brand-link" aria-label="Los Brujos del Cine, inicio">
+                <img src="imgs/logoL.jpeg" alt="Los Brujos del Cine" class="site-logo">
+                <div class="logo-text">
+                    <h1>Los Brujos del Cine</h1>
+                    <span>Mi Tesoro MX</span>
+                </div>
+            </a>
+            <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav"  aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+                <a href="blog.html#resenas">Reseñas</a>
+                <a href="estrenos.html">Estrenos</a>
+                <a href="precios.html">Precios</a>
+                <a href="taquilla-historia.html">Taquilla</a>
+            </nav>
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" title="Modo claro / oscuro">
+                <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+                <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content" class="estrenos-page">
+        <!-- HERO -->
+        <section class="estrenos-hero">
+            <div class="estrenos-hero-inner">
+                <div class="eyebrow">
+                    <span aria-hidden="true"></span>
+                    Cartelera viva
+                </div>
+                <h1>Estrenos & <em>Preventas</em></h1>
+                <p>
+                    Reestrenos, aniversarios y próximas películas en Cinépolis, Cinemex, Cinedot y Movie Center.
+                    Encuentra fechas y compra tus boletos.
+                </p>
             </div>
-        </a>
-
-        <button
-                type="button"
-                class="nav-toggle"
-                id="nav-toggle"
-                aria-expanded="false"
-                aria-controls="main-nav"
-                aria-label="Abrir menú"
-        >
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
-            <a href="blog.html#resenas">Reseñas</a>
-            <a href="estrenos.html">Estrenos</a>
-            <a href="precios.html">Precios</a>
-            <a href="taquilla-historia.html">Taquilla</a>
-        </nav>
-        <button
-                type="button"
-                class="theme-toggle"
-                id="theme-toggle"
-                aria-label="Cambiar tema"
-                title="Modo claro / oscuro"
-        >
-            <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
-            <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
-        </button>
-    </div>
-</header>
-
-<main id="main-content" class="estrenos-page">
-
-    <!-- HERO -->
-    <section class="estrenos-hero">
-        <div class="estrenos-hero-inner">
-            <div class="eyebrow">
-                <span aria-hidden="true"></span>
-                Cartelera viva
+        </section>
+        <!-- FILTROS -->
+        <div class="estrenos-filters-wrapper">
+            <div class="estrenos-filters" id="estrenos-filters">
+                <button class="filter-btn active" data-filter="todos">Todos</button>
+                <button class="filter-btn" data-filter="estreno">Estrenos</button>
+                <!--<button class="filter-btn" data-filter="reestreno">Reestrenos</button>-->
+                <button class="filter-btn" data-filter="preventa">Preventas</button>
+                <button class="filter-btn" data-filter="cartelera">En cartelera</button>
+                <button class="filter-btn" data-filter="fuera">Fuera de cartelera</button>
             </div>
-            <h1>Estrenos & <em>Preventas</em></h1>
-            <p>
-                Reestrenos, aniversarios y próximas películas en Cinépolis, Cinemex, Cinedot y Movie Center.
-                Encuentra fechas y compra tus boletos.
-            </p>
+            <!-- Contador de resultados -->
+            <p id="resultados-count" class="resultados-count" aria-live="polite"></p>
+            <div class="mes-filter">
+                <label for="filtro-mes">Mes:</label>
+                <select id="filtro-mes">
+                    <option value="todos">Todos los meses</option>
+                    <!-- se llenan con JS -->
+                </select>
+            </div>
         </div>
-    </section>
-
-    <!-- FILTROS -->
-    <div class="estrenos-filters-wrapper">
-        <div class="estrenos-filters" id="estrenos-filters">
-            <button class="filter-btn active" data-filter="todos">Todos</button>
-            <button class="filter-btn" data-filter="estreno">Estrenos</button>
-            <!--<button class="filter-btn" data-filter="reestreno">Reestrenos</button>-->
-            <button class="filter-btn" data-filter="preventa">Preventas</button>
-            <button class="filter-btn" data-filter="cartelera">En cartelera</button>
-            <button class="filter-btn" data-filter="fuera">Fuera de cartelera</button>
+        <!-- GRID -->
+        <div id="estrenos-container">
+            <div class="estrenos-loading skeleton-grid" id="skeleton-loading">
+                <!-- se llena con JS -->
+            </div>
         </div>
-<!--
-        <div class="estrenos-toolbar">
-            <select id="filter-cadena">
-                <option value="todas">Todas las cadenas</option>
-                <option value="cinepolis">Cinépolis</option>
-                <option value="cinemex">Cinemex</option>
-                <option value="cinedot">Cinedot</option>
-                <option value="moviecenter">Movie Center</option>
-            </select>
+        <!-- PAGINACIÓN -->
+        <nav class="estrenos-pagination" id="estrenos-pagination" aria-label="Paginación de estrenos" hidden></nav>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="aviso-de-privacidad-LBDC.html">Política de Privacidad</a>
+                <a href="https://losbrujosdelcine.com/#catalogo" target="_blank" rel="noopener noreferrer">Mi Tesoro MX</a>
+                <a href="https://www.facebook.com/LosBrujosDelCine" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://boxd.it/8uSCV" target="_blank" rel="noopener noreferrer">Letterboxd</a>
+            </div>
+            <div class="footer-copy">
+                <p>© 2026 Los Brujos del Cine</p>
+            </div>
         </div>
--->
-        <div class="mes-filter">
-            <label for="filtro-mes">Mes:</label>
-            <select id="filtro-mes">
-                <option value="todos">Todos los meses</option>
-                <!-- se llenan con JS -->
-            </select>
-        </div>
-    </div>
+    </footer>
 
-    <!-- GRID -->
-    <div id="estrenos-container">
-        <div class="estrenos-loading">Cargando estrenos...</div>
-    </div>
-
-    <!-- PAGINACIÓN -->
-    <nav class="estrenos-pagination" id="estrenos-pagination" aria-label="Paginación de estrenos" hidden></nav>
-
-</main>
-
-<footer class="site-footer">
-    <div class="footer-inner">
-        <div class="footer-links">
-            <a href="aviso-de-privacidad-LBDC.html">Política de Privacidad</a>
-            <a href="https://elsentidodelcine.github.io/mitesoromx/index.html" target="_blank" rel="noopener noreferrer">Mi Tesoro MX</a>
-            <a href="https://www.facebook.com/LosBrujosDelCine" target="_blank" rel="noopener noreferrer">Facebook</a>
-            <a href="https://boxd.it/8uSCV" target="_blank" rel="noopener noreferrer">Letterboxd</a>
-        </div>
-
-        <div class="footer-copy">
-            <p>© 2026 Los Brujos del Cine</p>
-        </div>
-    </div>
-</footer>
-
-<script src="estrenos.js"></script>
+    <script src="estrenos.js"></script>
+    <button type="button" id="btn-top" class="btn-top" aria-label="Volver arriba" hidden>
+        ↑
+    </button>
 </body>
 </html>
