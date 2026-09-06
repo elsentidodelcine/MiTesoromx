@@ -682,7 +682,7 @@
     "etiqueta": "",
     "plataformas": ["Cines"],
     "resumen": "Reestreno por el 25 aniversario. La esencia de la saga: carreras, motores y tuning. Entretenida y nostálgica, aunque con ese filtro amarillo exagerado.",
-    "poster": "imgs/resenias/rapidoyfurioso.jpg",
+    "poster": "imgs/resenias/rapidos.jpg",
     "posterFallback": {
       "linea1": "Rápido y",
       "linea2": "Furioso"
@@ -725,5 +725,33 @@
     ],
     "cita": "Más que hacerme reír, sus protagonistas terminaron desesperándome.",
     "veredicto": "Comedia absurda que no funciona. Situaciones ridículas y personajes desesperantes. Mal augurio: experiencia olvidable."
+  },
+  {
+    "id": "ice-cream-man",
+    "titulo": "Ice Cream Man",
+    "anio": 2026,
+    "fecha": "2026-09-06",
+    "duracion": "86 min",
+    "generos": ["Terror", "Comedia"],
+    "puntaje": 3.0,
+    "destacada": false,
+    "etiqueta": "",
+    "plataformas": ["Cines"],
+    "resumen": "Propuesta diferente de slasher donde el villano gana. Gore entretenido y idea curiosa, aunque el CGI feo, personajes planos y el tono de comedia le restan impacto.",
+    "poster": "imgs/resenias/icecreamman.jpg",
+    "posterFallback": {
+      "linea1": "Ice Cream",
+      "linea2": "Man"
+    },
+    "letterboxd": "https://letterboxd.com/film/ice-cream-man-2026",
+    "lead": "Me sorprendió y me entretuvo. Idea diferente donde el villano gana, con buen gore, aunque el tono de comedia y algunos problemas técnicos le restan fuerza.",
+    "contenido": [
+      "Alerta de spoilers. Ice Cream Man me sorprendió porque, aunque tiene varios detalles que no terminan de funcionar, sí me entretuvo y me gustó la idea que propone: llega un hombre de las nieves a un pueblo, comienza a vender helados y termina convirtiéndose en un asesino que va tras los adultos. Y lo más interesante es que, al final, consigue su venganza y gana el villano.",
+      "La película no profundiza demasiado en sus protagonistas y eso hace que cueste conectar con ellos. Además, el CGI en algunos momentos se ve bastante feo y termina restándole impacto a ciertas escenas. Aun así, el gore y las muertes consiguen mantener el entretenimiento, y la propuesta tiene algo que se siente diferente. No he visto todas las películas existentes, pero al menos yo no recuerdo haber visto una historia planteada de esta manera.",
+      "Lo que yo habría cambiado es prácticamente toda la parte de comedia. Para mí, la historia funcionaba mucho mejor cuando se tomaba en serio la venganza del protagonista. Si hubiera apostado más por un tono serio y menos por el humor, creo que el resultado habría sido fenomenal. Incluso el giro final habría tenido mucho más impacto si la película no hubiera tratado de convertir tantos momentos en comedia.",
+      "Al final, dejando de lado cualquier comentario o controversia relacionada con su director, yo prefiero juzgar la película por lo que está en pantalla. Y aunque tiene problemas de historia, personajes, efectos y tono, me pareció una propuesta bastante entretenida, diferente y perfecta para una función de palomitas."
+    ],
+    "cita": "Al final, consigue su venganza y gana el villano.",
+    "veredicto": "Propuesta diferente y entretenida con buen gore. Problemas de CGI, personajes y tono cómico, pero funciona como película de palomitas. Palomera ritual."
   }
 ]
