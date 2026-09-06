@@ -444,10 +444,17 @@ document.addEventListener('DOMContentLoaded', () => {
 // ===== Botón volver arriba =====
 const btnTop = document.getElementById('btn-top');
 
-window.addEventListener('scroll', () => {
+function toggleBtnTop() {
   if (!btnTop) return;
-  btnTop.hidden = window.scrollY <= 500;
-});
+  if (window.scrollY > 400) {
+    btnTop.classList.add('is-visible');
+  } else {
+    btnTop.classList.remove('is-visible');
+  }
+}
+
+window.addEventListener('scroll', toggleBtnTop, { passive: true });
+toggleBtnTop(); // por si la página ya está scrolleada
 
 if (btnTop) {
   btnTop.addEventListener('click', () => {
