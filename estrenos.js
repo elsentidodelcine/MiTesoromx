@@ -176,11 +176,11 @@ function renderEstrenos() {
    if (paginaActual < 1) paginaActual = 1;
 
    // Contador de resultados
-   if (countEl) {
+   /*if (countEl) {
      countEl.textContent = total === 0
        ? 'No hay resultados'
-       : `${total} estreno${total !== 1 ? 's' : ''} encontrado${total !== 1 ? 's' : ''}`;
-   }
+       : `${total} elemento{total !== 1 ? 's' : ''} encontrado${total !== 1 ? 's' : ''}`;
+   }*/
 
    if (total === 0) {
      container.innerHTML = `
