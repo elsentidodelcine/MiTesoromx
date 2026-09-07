@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   const subtitle = document.getElementById('reviews-subtitle');
   const rankingBox = document.getElementById('ranking-list');
   const paginationBox = document.getElementById('reviews-pagination');
-  let paginaActual = 1;
-  const RESEÑAS_POR_PAGINA = 6; // cambia a 4, 8, 9... como prefieras
 
+  let paginaActual = 1;
+  const RESEÑAS_POR_PAGINA = 6;
   let todasResenas = [];
 
   try {
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     llenarGeneros(todasResenas);
 
-    // Hero: total real (sin filtro)
+    // Hero: total real
     const total = todasResenas.length;
     const heroCount = document.getElementById('hero-count');
     const heroLabel = document.getElementById('hero-label');
@@ -27,23 +27,22 @@ document.addEventListener('DOMContentLoaded', async () => {
       heroLabel.textContent = total === 1 ? 'Reseña publicada' : 'Reseñas publicadas';
     }
 
-    // Listeners filtros
-   ['review-search', 'filter-genero', 'filter-puntaje', 'filter-orden'].forEach(id => {
-     const el = document.getElementById(id);
-     if (!el) return;
-     el.addEventListener('input', () => {
-       paginaActual = 1;
-       pintar();
-     });
-     el.addEventListener('change', () => {
-       paginaActual = 1;
-       pintar();
-     });
-   });
+    // Listeners de filtros (si existen en el HTML)
+    ['review-search', 'filter-genero', 'filter-puntaje', 'filter-orden'].forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener('input', () => {
+        paginaActual = 1;
+        pintar();
+      });
+      el.addEventListener('change', () => {
+        paginaActual = 1;
+        pintar();
+      });
+    });
 
     pintar();
     renderRanking(todasResenas);
-
   } catch (error) {
     console.error('Error cargando reseñas:', error);
     if (subtitle) subtitle.textContent = 'No se pudieron cargar las reseñas.';
@@ -57,7 +56,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const filtradas = aplicarFiltros(todasResenas);
     actualizarSubtitulo(filtradas.length, todasResenas.length);
 
-    // Sin reseña destacada
+    // Sin reseña destacada por ahora
     if (featuredContainer) {
       featuredContainer.innerHTML = '';
       featuredContainer.hidden = true;
@@ -71,7 +70,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
-    // Reset de página si los filtros cambian y la página actual ya no existe
     const totalPaginas = Math.ceil(filtradas.length / RESEÑAS_POR_PAGINA) || 1;
     if (paginaActual > totalPaginas) paginaActual = 1;
 
@@ -85,6 +83,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     crearPaginacionResenas(filtradas.length);
   }
+
   function crearPaginacionResenas(totalItems) {
     if (!paginationBox) return;
     paginationBox.innerHTML = '';
@@ -92,7 +91,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const totalPaginas = Math.ceil(totalItems / RESEÑAS_POR_PAGINA) || 1;
     if (totalPaginas <= 1) return;
 
-    // Botón anterior
+    // Anterior
     const prev = document.createElement('button');
     prev.type = 'button';
     prev.textContent = '←';
@@ -105,7 +104,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     };
     paginationBox.appendChild(prev);
 
-    // Números (máx 5 visibles)
+    // Números
     let start = Math.max(1, paginaActual - 2);
     let end = Math.min(totalPaginas, start + 4);
     if (end - start < 4) start = Math.max(1, end - 4);
@@ -126,7 +125,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       paginationBox.appendChild(btn);
     }
 
-    // Botón siguiente
+    // Siguiente
     const next = document.createElement('button');
     next.type = 'button';
     next.textContent = '→';
@@ -148,9 +147,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     window.scrollTo({ top, behavior: 'smooth' });
   }
 
-
   function actualizarSubtitulo(nFiltro, nTotal) {
     if (!subtitle) return;
+
     const busca = (document.getElementById('review-search')?.value || '').trim();
     const gen = document.getElementById('filter-genero')?.value || 'todos';
     const minP = document.getElementById('filter-puntaje')?.value || 'todos';
@@ -169,67 +168,10 @@ document.addEventListener('DOMContentLoaded', async () => {
           : `${nFiltro} reseñas encontradas.`;
       return;
     }
+
     if (nTotal === 1) subtitle.innerHTML = `Una película.<br>Una opinión sin vueltas.`;
     else if (nTotal === 2) subtitle.innerHTML = `Dos películas. Dos mundos.<br>Una opinión sin vueltas.`;
     else subtitle.innerHTML = `${numeroATexto(nTotal)} películas. ${numeroATexto(nTotal)} mundos.<br>Una opinión sin vueltas.`;
-  }
-
-  function cardDestacada(destacada) {
-    const enlace = `review.html?id=${encodeURIComponent(destacada.id)}`;
-    const grimorio = obtenerGrimorio(destacada.puntaje);
-    const estrellas = generarEstrellasHTML(destacada.puntaje);
-    const lectura = tiempoLectura(destacada.contenido);
-    const generosHTML = (destacada.generos || [])
-      .map(g => `<span class="meta-dot" aria-hidden="true"></span><span>${escapeHTML(g)}</span>`)
-      .join('');
-
-    return `
-      <article class="featured-review">
-        <div class="featured-image">
-          <div class="image-overlay"></div>
-          <img
-            src="${escapeHTML(destacada.poster)}"
-            alt="Póster de ${escapeHTML(destacada.titulo)}"
-            loading="eager"
-            onerror="this.onerror=null; this.style.display='none'; this.closest('.featured-image')?.classList.add('poster-placeholder');"
-          >
-          <div class="poster-fallback">
-            <span>${escapeHTML(destacada.posterFallback?.linea1 || destacada.titulo)}</span>
-            <strong>${escapeHTML(destacada.posterFallback?.linea2 || '')}</strong>
-            <small>IMAGEN DEL PÓSTER</small>
-          </div>
-          <span class="review-tag">${escapeHTML(destacada.etiqueta || 'RESEÑA')}</span>
-          <div class="featured-score">
-            <div class="score-number">
-              ${escapeHTML(String(destacada.puntaje))}<small>/5</small>
-            </div>
-            <div class="score-stars" aria-hidden="true">${estrellas}</div>
-          </div>
-        </div>
-        <div class="featured-content">
-          <div class="movie-meta">
-            <span>${escapeHTML(String(destacada.anio))}</span>
-            ${generosHTML}
-          </div>
-          <h2><a href="${enlace}">${escapeHTML(destacada.titulo)}</a></h2>
-          <div class="grimorio-badge">
-            <span class="grimorio-badge-title">${escapeHTML(grimorio.titulo)}</span>
-            <span class="grimorio-badge-desc">${escapeHTML(grimorio.descripcion)}</span>
-          </div>
-          <p class="featured-lead">${escapeHTML(destacada.resumen)}</p>
-          <div class="reading-time">${escapeHTML(lectura)}</div>
-          <div class="review-bottom">
-            <div class="rating-display">
-              <span class="stars" aria-label="${destacada.puntaje} de 5 estrellas">${estrellas}</span>
-              <span class="rating-number">${escapeHTML(String(destacada.puntaje))} / 5</span>
-            </div>
-            <a href="${enlace}" class="read-button">
-              Leer reseña <span aria-hidden="true">→</span>
-            </a>
-          </div>
-        </div>
-      </article>
-    `;
   }
 
   function cardSecundaria(r) {
@@ -248,6 +190,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             src="${escapeHTML(r.poster)}"
             alt="Póster de ${escapeHTML(r.titulo)}"
             loading="lazy"
+            decoding="async"
             onerror="this.onerror=null; this.style.display='none'; this.closest('.card-image')?.classList.add('poster-placeholder');"
           >
           <div class="poster-fallback">
@@ -318,7 +261,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
-/* ===== Helpers (igual que tenías) ===== */
+/* ===== Helpers ===== */
 function escapeHTML(str) {
   if (str == null) return '';
   return String(str)
@@ -383,6 +326,7 @@ function aplicarFiltros(resenas) {
 function obtenerGrimorio(puntaje) {
   const valor = Number(puntaje) || 0;
   const key = Math.round(valor * 2) / 2;
+
   const grimorio = {
     0.5: { titulo: 'HECHIZO FALLIDO', descripcion: 'Se ve por morbo, no por gusto. Al final queda la culpa… y el coraje.' },
     1.0: { titulo: 'MAL AUGURIO', descripcion: 'Nada funciona. Cada minuto duele y terminarla es más mérito del espectador que de la película.' },
@@ -395,7 +339,11 @@ function obtenerGrimorio(puntaje) {
     4.5: { titulo: 'MAGIA MAYOR', descripcion: 'Destaca, conecta y se queda en la memoria. Muy fácil de recomendar.' },
     5.0: { titulo: 'CINE LEGENDARIO', descripcion: 'Pura magia. De esas que justifican amar el cine y querer volver a verla.' }
   };
-  return grimorio[key] || { titulo: 'SIN CLASIFICAR', descripcion: 'Esta película aún no tiene un hechizo asignado en el grimorio.' };
+
+  return grimorio[key] || {
+    titulo: 'SIN CLASIFICAR',
+    descripcion: 'Esta película aún no tiene un hechizo asignado en el grimorio.'
+  };
 }
 
 function generarEstrellasHTML(puntaje) {
@@ -403,6 +351,7 @@ function generarEstrellasHTML(puntaje) {
   const llenas = Math.floor(valor);
   const decimal = valor - llenas;
   let html = '';
+
   for (let i = 1; i <= 5; i++) {
     if (i <= llenas) html += '<span class="star-full">★</span>';
     else if (i === llenas + 1 && decimal >= 0.25 && decimal < 0.75) html += '<span class="star-half">★</span>';
@@ -412,8 +361,7 @@ function generarEstrellasHTML(puntaje) {
   return html;
 }
 
-/* Nav + theme: deja tus otros DOMContentLoaded / IIFE como ya los tienes */
-
+/* ===== Nav móvil ===== */
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.getElementById('nav-toggle');
   const nav = document.getElementById('main-nav');
@@ -425,7 +373,6 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
   });
 
-  // Cerrar al tocar un link
   nav.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       nav.classList.remove('is-open');
@@ -434,7 +381,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Cerrar al hacer click fuera
   document.addEventListener('click', (e) => {
     if (!nav.classList.contains('is-open')) return;
     if (nav.contains(e.target) || toggle.contains(e.target)) return;
@@ -444,52 +390,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Helpers
-function tiempoLectura(contenido) {
-  const texto = Array.isArray(contenido) ? contenido.join(' ') : String(contenido || '');
-  const palabras = texto.trim().split(/\s+/).filter(Boolean).length;
-  const min = Math.max(1, Math.round(palabras / 200));
-  return `${min} min de lectura`;
-}
-
-function llenarGeneros(resenas) {
-  const sel = document.getElementById('filter-genero');
-  if (!sel) return;
-  const set = new Set();
-  resenas.forEach(r => (r.generos || []).forEach(g => set.add(g)));
-  [...set].sort().forEach(g => {
-    const opt = document.createElement('option');
-    opt.value = g;
-    opt.textContent = g;
-    sel.appendChild(opt);
-  });
-}
-
-function aplicarFiltros(resenas) {
-  const q = (document.getElementById('review-search')?.value || '').trim().toLowerCase();
-  const gen = document.getElementById('filter-genero')?.value || 'todos';
-  const minP = document.getElementById('filter-puntaje')?.value || 'todos';
-  const orden = document.getElementById('filter-orden')?.value || 'fecha';
-
-  let list = resenas.filter(r => {
-    const okQ = !q || (r.titulo || '').toLowerCase().includes(q);
-    const okG = gen === 'todos' || (r.generos || []).includes(gen);
-    const okP = minP === 'todos' || Number(r.puntaje) >= Number(minP);
-    return okQ && okG && okP;
-  });
-
-  list = list.slice().sort((a, b) => {
-    if (orden === 'puntaje') return Number(b.puntaje) - Number(a.puntaje);
-    if (orden === 'titulo') return (a.titulo || '').localeCompare(b.titulo || '', 'es');
-    const fa = a.fecha ? new Date(a.fecha) : new Date(0);
-    const fb = b.fecha ? new Date(b.fecha) : new Date(0);
-    return fb - fa;
-  });
-
-  return list;
-}
-
-
+/* ===== Theme toggle ===== */
 (function () {
   const KEY = 'lbdc-theme';
   const root = document.documentElement;
@@ -507,7 +408,6 @@ function aplicarFiltros(resenas) {
     }
   }
 
-  // Preferencia guardada o sistema
   let saved = null;
   try { saved = localStorage.getItem(KEY); } catch (_) {}
   if (saved === 'light' || saved === 'dark') {
