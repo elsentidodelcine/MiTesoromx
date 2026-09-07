@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Los Brujos del Cine | Reseñas de películas</title>
+    <title>Review de Películas | Los Brujos del Cine</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0RVV6RWHTS"></script>
     <script>
@@ -13,18 +13,20 @@
 
         gtag('config', 'G-0RVV6RWHTS');
     </script>
-    <meta name="description" content="Reseña de cine en Los Brujos del Cine">
+    <meta name="description" content="Reseña review de cine en Los Brujos del Cine">
     <meta name="theme-color" content="#030304">
     <link rel="canonical" href="https://elsentidodelcine.github.io/review.html">
 
     <!-- Open Graph (se actualizan con JS) -->
-    <meta property="og:title" content="Reseña | Los Brujos del Cine">
+    <meta property="og:title" content="Reseña Review | Los Brujos del Cine">
     <meta property="og:description" content="Reseñas honestas de cine – Los Brujos del Cine">
     <meta property="og:image" content="https://elsentidodelcine.github.io/mitesoromx/og-image.jpg">
     <meta property="og:url" content="https://elsentidodelcine.github.io/mitesoromx/review.html">
 
-    <link rel="icon" href="imgs/logoL.jpeg" type="image/jpeg" sizes="32x32">
-    <link rel="apple-touch-icon" href="imgs/logoL.jpeg">
+    <link rel="icon" href="imgs/logoLB.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="imgs/logoLB.png" type="image/png" sizes="16x16">
+    <link rel="apple-touch-icon" href="imgs/logoLB.png">
+    <link rel="shortcut icon" href="imgs/logoBL.ico">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -671,6 +673,118 @@
         html[data-theme="light"] .related-title {
           color: #121214;
         }
+
+        /* ===== MODO CLARO COMPLETO ===== */
+        html[data-theme="light"] .review-info h1,
+        html[data-theme="light"] .grimorio-title,
+        html[data-theme="light"] .verdict-header,
+        html[data-theme="light"] .donde-barato h3,
+        html[data-theme="light"] .related-reviews h3,
+        html[data-theme="light"] .related-title,
+        html[data-theme="light"] .review-nav .title {
+          color: #121214;
+        }
+
+        html[data-theme="light"] .review-body .lead,
+        html[data-theme="light"] .review-body blockquote {
+          color: #1a1a1e;
+        }
+
+        html[data-theme="light"] .grimorio-rating {
+          background: linear-gradient(135deg, rgba(196, 30, 58, 0.06), rgba(212, 175, 55, 0.04));
+          border-color: rgba(0,0,0,0.08);
+        }
+
+        html[data-theme="light"] .verdict {
+          background: #fff;
+          border-color: rgba(0,0,0,0.1);
+        }
+
+        html[data-theme="light"] .donde-barato {
+          background: rgba(201, 162, 39, 0.08);
+          border-color: rgba(201, 162, 39, 0.25);
+        }
+
+        html[data-theme="light"] .related-card {
+          background: #fff;
+          border-color: rgba(0,0,0,0.1);
+        }
+
+        html[data-theme="light"] .review-nav a {
+          background: #fff;
+          border-color: rgba(0,0,0,0.1);
+        }
+
+        html[data-theme="light"] .platform-tag {
+          background: rgba(0,0,0,0.04);
+          color: #3d3d46;
+          border-color: rgba(0,0,0,0.1);
+        }
+
+        /* ===== Focus states ===== */
+        .back-link:focus-visible,
+        .btn-letterboxd:focus-visible,
+        .btn-share-wa:focus-visible,
+        .btn-copy-link:focus-visible,
+        .related-card:focus-visible,
+        .review-nav a:focus-visible {
+          outline: 2px solid var(--gold);
+          outline-offset: 3px;
+        }
+
+        /* ===== Botón Copiar enlace ===== */
+        .btn-copy-link {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          min-height: 44px;
+          padding: 10px 18px;
+          border-radius: 999px;
+          font-size: 0.82rem;
+          font-weight: 700;
+          background: rgba(255,255,255,0.06);
+          border: 1px solid rgba(255,255,255,0.14);
+          color: #f0f0f2;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+        .btn-copy-link:hover {
+          background: rgba(255,255,255,0.1);
+          border-color: rgba(255,255,255,0.22);
+        }
+        html[data-theme="light"] .btn-copy-link {
+          background: rgba(0,0,0,0.04);
+          border-color: rgba(0,0,0,0.12);
+          color: #121214;
+        }
+
+        /* ===== Ficha IMDb ===== */
+        .imdb-box {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          margin-top: 12px;
+          padding: 8px 14px;
+          border-radius: 10px;
+          background: rgba(245, 197, 24, 0.1);
+          border: 1px solid rgba(245, 197, 24, 0.35);
+          font-size: 0.85rem;
+          font-weight: 600;
+          color: #f5c518;
+          text-decoration: none;
+        }
+        .imdb-box:hover {
+          background: rgba(245, 197, 24, 0.18);
+        }
+        .imdb-box strong {
+          font-size: 1.05rem;
+          color: #f5c518;
+        }
+        html[data-theme="light"] .imdb-box {
+          background: rgba(245, 197, 24, 0.15);
+          color: #9a7b0a;
+        }
     </style>
     <script>
         try {
@@ -680,71 +794,54 @@
     </script>
 </head>
 <body>
-<a href="#main-content" class="skip-link">Saltar al contenido</a>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="blog.html" class="brand-link" aria-label="Los Brujos del Cine, inicio">
+                <img src="imgs/logoLB.png" alt="Los Brujos del Cine" class="site-logo">
+                <div class="logo-text">
+                    <h1>Los Brujos del Cine</h1>
+                    <span>Mi Tesoro MX</span>
+                </div>
+            </a>
+            <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+                <a href="blog.html#resenas">Reseñas</a>
+                <a href="estrenos.html">Estrenos</a>
+                <a href="precios.html">Precios</a>
+                <a href="taquilla-historia.html">Taquilla</a>
+            </nav>
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" title="Modo claro / oscuro">
+                <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+                <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+            </button>
+        </div>
+    </header>
 
-<header class="site-header">
-    <div class="header-inner">
-        <a href="blog.html" class="brand-link" aria-label="Los Brujos del Cine, inicio">
-            <img src="imgs/logoL.jpeg" alt="Los Brujos del Cine" class="site-logo">
-            <div class="logo-text">
-                <h1>Los Brujos del Cine</h1>
-                <span>Mi Tesoro MX</span>
+    <main id="main-content" class="review-page">
+        <div id="review-container">
+            <div class="loading-state">Cargando reseña...</div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="aviso-de-privacidad-LBDC.html">Política de Privacidad</a>
+                <a href="https://losbrujosdelcine.com/#catalogo" target="_blank" rel="noopener noreferrer">Mi Tesoro MX</a>
+                <a href="https://www.facebook.com/LosBrujosDelCine" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://boxd.it/8uSCV" target="_blank" rel="noopener noreferrer">Letterboxd</a>
             </div>
-        </a>
-
-        <button
-                type="button"
-                class="nav-toggle"
-                id="nav-toggle"
-                aria-expanded="false"
-                aria-controls="main-nav"
-                aria-label="Abrir menú"
-        >
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
-            <a href="blog.html#resenas">Reseñas</a>
-            <a href="estrenos.html">Estrenos</a>
-            <a href="precios.html">Precios</a>
-            <a href="taquilla-historia.html">Taquilla</a>
-        </nav>
-        <button
-                type="button"
-                class="theme-toggle"
-                id="theme-toggle"
-                aria-label="Cambiar tema"
-                title="Modo claro / oscuro"
-        >
-            <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
-            <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
-        </button>
-    </div>
-</header>
-
-<main id="main-content" class="review-page">
-    <div id="review-container">
-        <div class="loading-state">Cargando reseña...</div>
-    </div>
-</main>
-
-<footer class="site-footer">
-    <div class="footer-inner">
-        <div class="footer-links">
-            <a href="aviso-de-privacidad-LBDC.html">Política de Privacidad</a>
-            <a href="https://elsentidodelcine.github.io/mitesoromx/index.html" target="_blank" rel="noopener noreferrer">Mi Tesoro MX</a>
-            <a href="https://www.facebook.com/LosBrujosDelCine" target="_blank" rel="noopener noreferrer">Facebook</a>
-            <a href="https://boxd.it/8uSCV" target="_blank" rel="noopener noreferrer">Letterboxd</a>
+            <div class="footer-copy">
+                <p>© 2026 Los Brujos del Cine</p>
+            </div>
         </div>
+    </footer>
 
-        <div class="footer-copy">
-            <p>© 2026 Los Brujos del Cine</p>
-        </div>
-    </div>
-</footer>
+    <script src="review.js"></script>
 
-<script src="review.js"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const subtitle = document.getElementById('reviews-subtitle');
   const rankingBox = document.getElementById('ranking-list');
   const paginationBox = document.getElementById('reviews-pagination');
+  const countEl = document.getElementById('reviews-count');
 
   let paginaActual = 1;
   const RESEÑAS_POR_PAGINA = 6;
@@ -73,6 +74,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     const totalPaginas = Math.ceil(filtradas.length / RESEÑAS_POR_PAGINA) || 1;
     if (paginaActual > totalPaginas) paginaActual = 1;
 
+    if (countEl) {
+      countEl.textContent = filtradas.length === 0
+        ? 'No hay resultados'
+        : `${filtradas.length} reseña${filtradas.length !== 1 ? 's' : ''}`;
+    }
     const inicio = (paginaActual - 1) * RESEÑAS_POR_PAGINA;
     const fin = inicio + RESEÑAS_POR_PAGINA;
     const pagina = filtradas.slice(inicio, fin);
@@ -179,12 +185,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     const grimorio = obtenerGrimorio(r.puntaje);
     const estrellas = generarEstrellasHTML(r.puntaje);
     const lectura = tiempoLectura(r.contenido);
+    const esTop = Number(r.puntaje) >= 4.5;
     const generosHTML = (r.generos || [])
       .map(g => `<span class="meta-dot" aria-hidden="true"></span><span>${escapeHTML(g)}</span>`)
       .join('');
 
     return `
-      <article class="review-card">
+     <article class="review-card ${esTop ? 'top-rated' : ''}">
         <a href="${enlace}" class="card-image" aria-label="Leer reseña de ${escapeHTML(r.titulo)}">
           <img
             src="${escapeHTML(r.poster)}"

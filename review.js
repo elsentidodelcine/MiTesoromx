@@ -66,6 +66,13 @@ document.addEventListener('DOMContentLoaded', async () => {
       .map(p => `<span class="platform-tag">${escapeHTML(p)}</span>`)
       .join('');
 
+      const imdbHTML = reseña.imdb
+        ? `<a class="imdb-box" href="${escapeHTML(reseña.imdb.url || reseña.imdb)}" target="_blank" rel="noopener noreferrer">
+             IMDb ${reseña.imdb.rating ? `<strong>${escapeHTML(String(reseña.imdb.rating))}</strong>` : ''}
+             <span aria-hidden="true">↗</span>
+           </a>`
+        : '';
+
     const generos = (reseña.generos || []).join(' · ');
     const shareUrl = window.location.href;
     const shareText = `Reseña: ${reseña.titulo} (${reseña.anio}) — ${reseña.puntaje}/5\n${shareUrl}`;
@@ -143,6 +150,7 @@ document.addEventListener('DOMContentLoaded', async () => {
               </div>
 
               ${plataformas ? `<div class="review-platforms">${plataformas}</div>` : ''}
+              ${imdbHTML}
 
               <div class="review-actions">
                 <a href="${escapeHTML(reseña.letterboxd || 'https://boxd.it/8uSCV')}"
@@ -153,6 +161,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                    target="_blank" rel="noopener noreferrer" class="btn-share-wa">
                   Compartir en WhatsApp
                 </a>
+                <button type="button" class="btn-copy-link" id="btn-copy-link">
+                  Copiar enlace
+                </button>
               </div>
             </div>
           </div>
@@ -218,6 +229,19 @@ document.addEventListener('DOMContentLoaded', async () => {
         ` : ''}
       </nav>
     `;
+
+    const copyBtn = document.getElementById('btn-copy-link');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(window.location.href);
+          copyBtn.textContent = '¡Copiado!';
+          setTimeout(() => copyBtn.textContent = 'Copiar enlace', 2000);
+        } catch (e) {
+          copyBtn.textContent = 'Error al copiar';
+        }
+      });
+    }
   } catch (error) {
     console.error(error);
     container.innerHTML = `

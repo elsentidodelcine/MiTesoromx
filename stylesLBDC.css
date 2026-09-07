@@ -2014,3 +2014,76 @@ html[data-theme="light"] .ranking-meta {
   background: var(--gold, #c9a227);
   color: #111;
 }
+
+/* ===== Contador ===== */
+.resultados-count {
+  width: min(var(--max), calc(100% - 48px));
+  margin: 0 auto 18px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ===== Skeleton mejorado ===== */
+.skeleton-card {
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  overflow: hidden;
+  min-height: 380px;
+}
+.skeleton-card::before {
+  content: "";
+  display: block;
+  aspect-ratio: 2 / 3;
+  background: linear-gradient(90deg, #1a1a22 25%, #252530 50%, #1a1a22 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shine 1.4s ease-in-out infinite;
+}
+.skeleton-card::after {
+  content: "";
+  display: block;
+  height: 90px;
+  margin: 14px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #1a1a22 25%, #252530 50%, #1a1a22 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shine 1.4s ease-in-out infinite;
+}
+@keyframes skeleton-shine {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+html[data-theme="light"] .skeleton-card::before,
+html[data-theme="light"] .skeleton-card::after {
+  background: linear-gradient(90deg, #e8e8ec 25%, #f4f4f6 50%, #e8e8ec 75%);
+  background-size: 200% 100%;
+}
+
+/* ===== Resaltar mejores calificadas (4.5+) ===== */
+.review-card.top-rated {
+  border-color: rgba(201, 162, 39, 0.45);
+  box-shadow: 0 0 0 1px rgba(201, 162, 39, 0.15);
+}
+.review-card.top-rated .card-score {
+  background: rgba(201, 162, 39, 0.18);
+  color: var(--gold);
+}
+
+/* ===== Animación suave ===== */
+.review-grid {
+  animation: fadeIn 0.35s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Focus states ===== */
+.review-card a:focus-visible,
+.ranking-row:focus-visible,
+.reviews-pagination button:focus-visible,
+.button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
