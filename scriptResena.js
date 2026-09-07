@@ -74,11 +74,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     const totalPaginas = Math.ceil(filtradas.length / RESEÑAS_POR_PAGINA) || 1;
     if (paginaActual > totalPaginas) paginaActual = 1;
 
-    if (countEl) {
+    /*if (countEl) {
       countEl.textContent = filtradas.length === 0
         ? 'No hay resultados'
         : `${filtradas.length} reseña${filtradas.length !== 1 ? 's' : ''}`;
-    }
+    }*/
     const inicio = (paginaActual - 1) * RESEÑAS_POR_PAGINA;
     const fin = inicio + RESEÑAS_POR_PAGINA;
     const pagina = filtradas.slice(inicio, fin);

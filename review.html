@@ -271,7 +271,56 @@
         .review-actions {
           display: flex;
           flex-wrap: wrap;
-          gap: 12px;
+          gap: 10px;
+          margin-top: 18px;
+          align-items: center;
+        }
+
+        /* Botón IMDb con el mismo estilo que los demás */
+        .btn-imdb {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          min-height: 44px;
+          padding: 10px 18px;
+          border-radius: 999px;
+          font-size: 0.82rem;
+          font-weight: 700;
+          background: rgba(245, 197, 24, 0.12);
+          border: 1px solid rgba(245, 197, 24, 0.4);
+          color: #f5c518;
+          text-decoration: none;
+          transition: all 0.2s ease;
+          white-space: nowrap;
+        }
+        .btn-imdb:hover {
+          background: rgba(245, 197, 24, 0.2);
+          transform: translateY(-1px);
+        }
+        .btn-imdb strong {
+          font-size: 0.95rem;
+        }
+
+        /* Que en móvil se apilen si no caben */
+        @media (max-width: 600px) {
+          .review-actions {
+            flex-direction: column;
+            align-items: stretch;
+          }
+          .btn-imdb,
+          .btn-letterboxd,
+          .btn-share-wa,
+          .btn-copy-link {
+            width: 100%;
+          }
+        }
+
+        /* Modo claro */
+        html[data-theme="light"] .btn-imdb {
+          background: rgba(245, 197, 24, 0.15);
+          border-color: rgba(245, 197, 24, 0.45);
+          color: #9a7b0a;
         }
 
         .btn-letterboxd {
@@ -759,32 +808,7 @@
           color: #121214;
         }
 
-        /* ===== Ficha IMDb ===== */
-        .imdb-box {
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          margin-top: 12px;
-          padding: 8px 14px;
-          border-radius: 10px;
-          background: rgba(245, 197, 24, 0.1);
-          border: 1px solid rgba(245, 197, 24, 0.35);
-          font-size: 0.85rem;
-          font-weight: 600;
-          color: #f5c518;
-          text-decoration: none;
-        }
-        .imdb-box:hover {
-          background: rgba(245, 197, 24, 0.18);
-        }
-        .imdb-box strong {
-          font-size: 1.05rem;
-          color: #f5c518;
-        }
-        html[data-theme="light"] .imdb-box {
-          background: rgba(245, 197, 24, 0.15);
-          color: #9a7b0a;
-        }
+
     </style>
     <script>
         try {

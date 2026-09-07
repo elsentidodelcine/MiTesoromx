@@ -150,17 +150,25 @@ document.addEventListener('DOMContentLoaded', async () => {
               </div>
 
               ${plataformas ? `<div class="review-platforms">${plataformas}</div>` : ''}
-              ${imdbHTML}
 
               <div class="review-actions">
+                ${reseña.imdb ? `
+                  <a class="btn-imdb" href="${escapeHTML(reseña.imdb.url || reseña.imdb)}" target="_blank" rel="noopener noreferrer">
+                    IMDb ${reseña.imdb.rating ? `<strong>${escapeHTML(String(reseña.imdb.rating))}</strong>` : ''}
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                ` : ''}
+
                 <a href="${escapeHTML(reseña.letterboxd || 'https://boxd.it/8uSCV')}"
                    target="_blank" rel="noopener noreferrer" class="btn-letterboxd">
                   Ver en Letterboxd <span aria-hidden="true">↗</span>
                 </a>
+
                 <a href="${escapeHTML(waLink)}"
                    target="_blank" rel="noopener noreferrer" class="btn-share-wa">
                   Compartir en WhatsApp
                 </a>
+
                 <button type="button" class="btn-copy-link" id="btn-copy-link">
                   Copiar enlace
                 </button>
@@ -191,7 +199,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       <aside class="donde-barato">
         <h3>¿Dónde verla más barato?</h3>
         <p>
-          Compara boletos y dulcero en
+          Compara boletos y dulcería en
           <a href="precios.html">Precios de cine</a>
           (San Francisco del Rincón y León).
         </p>
@@ -199,7 +207,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       ${relacionadas.length ? `
       <section class="related-reviews">
-        <h3>También en el grimorio</h3>
+        <h3>También en el Grimorio</h3>
         <div class="related-grid">
           ${relacionadas.map(r => `
             <a class="related-card" href="review.html?id=${encodeURIComponent(r.id)}">
@@ -379,5 +387,22 @@ document.addEventListener('DOMContentLoaded', () => {
     nav.classList.remove('is-open');
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', 'Abrir menú');
+  });
+});
+
+// ===== Toggle tema =====
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+
+  btn.addEventListener('click', () => {
+    const html = document.documentElement;
+    const actual = html.getAttribute('data-theme') || 'dark';
+    const nuevo = actual === 'dark' ? 'light' : 'dark';
+
+    html.setAttribute('data-theme', nuevo);
+    try {
+      localStorage.setItem('lbdc-theme', nuevo);
+    } catch (e) {}
   });
 });
