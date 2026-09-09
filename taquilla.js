@@ -12,6 +12,7 @@ function escapeHTML(str) {
 function rowHTML(p, { showYear = false } = {}) {
   const pos = Number(p.puesto) || 0;
   const top = pos >= 1 && pos <= 3 ? ' top3' : '';
+  const topClass = pos === 1 ? ' top-1' : pos === 2 ? ' top-2' : pos === 3 ? ' top-3' : '';
   const enCartel = p.enCartel === true || Number(p.anio) === new Date().getFullYear();
   const rowClass = enCartel ? ' taquilla-row--cartel' : '';
 
@@ -24,10 +25,12 @@ function rowHTML(p, { showYear = false } = {}) {
   const resultado = p.resultado || calcResultado(p.taquilla, p.presupuesto);
 
   return `
-    <article class="taquilla-row${rowClass}">
+    <article class="taquilla-row${rowClass}${topClass}">
       <span class="taquilla-pos${top}">${pos || '—'}</span>
       <img class="taquilla-poster" src="${escapeHTML(p.poster || '')}" alt=""
-           loading="lazy" onerror="this.style.visibility='hidden'">
+           loading="lazy" decoding="async"
+           onload="this.classList.add('loaded')"
+           onerror="this.style.visibility='hidden'">
       <div class="taquilla-info">
         <strong>
           ${escapeHTML(p.titulo || 'Sin título')}
@@ -52,13 +55,27 @@ async function loadTaquilla() {
 async function initTaquillaHistoria() {
   const list = document.getElementById('taquilla-list');
   const note = document.getElementById('taquilla-note');
+  const countEl = document.getElementById('taquilla-count');
+
   try {
     const data = await loadTaquilla();
     const items = (data.historia || []).slice().sort((a, b) => (a.puesto || 99) - (b.puesto || 99));
+
+    // Ocultar skeleton
+    const sk = document.getElementById('skeleton-loading');
+    if (sk) sk.style.display = 'none';
+
     if (note) {
       note.textContent = data.nota ||
         (data.actualizado ? `Actualizado: ${data.actualizado}` : '');
     }
+
+    if (countEl) {
+      countEl.textContent = items.length
+        ? `${items.length} película${items.length !== 1 ? 's' : ''} en el ranking`
+        : '';
+    }
+
     if (!items.length) {
       list.innerHTML = `<p class="empty-state">Aún no hay datos del ranking histórico.</p>`;
       return;
@@ -75,6 +92,7 @@ async function initTaquillaAnio() {
   const sel = document.getElementById('filtro-anio');
   const tipo = document.getElementById('filtro-tipo');
   const note = document.getElementById('taquilla-note');
+  const ordenSel = document.getElementById('filtro-orden');
 
   try {
     const data = await loadTaquilla();
@@ -96,14 +114,16 @@ async function initTaquillaAnio() {
       ).join('');
     }
 
-    const repintar = () => {
-      const anio = sel?.value || years[0].anio;
-      const modo = tipo?.value || 'general';
-      pintarAnio(years, anio, modo);
-    };
+   const repintar = () => {
+     const anio = sel?.value || years[0].anio;
+     const modo = tipo?.value || 'general';
+     const orden = ordenSel?.value || 'puesto';
+     pintarAnio(years, anio, modo, orden);
+   };
 
     sel?.addEventListener('change', repintar);
     tipo?.addEventListener('change', repintar);
+    ordenSel?.addEventListener('change', repintar);
     repintar();
   } catch (e) {
     console.error(e);
@@ -111,13 +131,19 @@ async function initTaquillaAnio() {
   }
 }
 
-function pintarAnio(years, anio, modo = 'general') {
+function pintarAnio(years, anio, modo = 'general', orden = 'puesto') {
   const box = document.getElementById('taquilla-anio-container');
+  const countEl = document.getElementById('taquilla-count');
   const y = years.find(x => String(x.anio) === String(anio));
   if (!box) return;
 
+  // Ocultar skeleton
+  const sk = document.getElementById('skeleton-loading');
+  if (sk) sk.style.display = 'none';
+
   if (!y) {
     box.innerHTML = `<p class="empty-state">Sin datos para ${escapeHTML(String(anio))}.</p>`;
+    if (countEl) countEl.textContent = '';
     return;
   }
 
@@ -127,15 +153,25 @@ function pintarAnio(years, anio, modo = 'general') {
       (p.genero || '').toLowerCase() === 'terror' ||
       (p.generos || []).some(g => /terror|horror/i.test(g))
     );
-    // Si tienes array dedicado:
     if (Array.isArray(y.terror) && y.terror.length) pelis = y.terror;
   } else {
     pelis = (y.peliculas || []).slice();
   }
 
-  pelis = pelis.slice().sort((a, b) => (a.puesto || 99) - (b.puesto || 99));
+  // Orden
+  if (orden === 'taquilla') {
+    pelis = pelis.slice().sort((a, b) => Number(b.taquilla || 0) - Number(a.taquilla || 0));
+  } else {
+    pelis = pelis.slice().sort((a, b) => (a.puesto || 99) - (b.puesto || 99));
+  }
 
   const tituloLista = modo === 'terror' ? 'Terror' : 'General';
+
+  if (countEl) {
+    countEl.textContent = pelis.length
+      ? `${pelis.length} película${pelis.length !== 1 ? 's' : ''} · ${tituloLista}`
+      : 'Sin resultados';
+  }
 
   box.innerHTML = `
     <div class="year-block">
@@ -233,14 +269,17 @@ function fmtMoney(n, texto) {
 function rowHTMLAnio(p) {
   const pos = Number(p.puesto) || 0;
   const top = pos >= 1 && pos <= 3 ? ' top3' : '';
+  const topClass = pos === 1 ? ' top-1' : pos === 2 ? ' top-2' : pos === 3 ? ' top-3' : '';
   const resultado = p.resultado || calcResultado(p.taquilla, p.presupuesto);
   const meta = [p.distribuidora || null].filter(Boolean).join(' · ');
 
   return `
-    <article class="taquilla-row taquilla-row--anio">
+    <article class="taquilla-row taquilla-row--anio${topClass}">
       <span class="taquilla-pos${top}">${pos || '—'}</span>
       <img class="taquilla-poster" src="${escapeHTML(p.poster || '')}" alt=""
-           loading="lazy" onerror="this.style.visibility='hidden'">
+           loading="lazy" decoding="async"
+           onload="this.classList.add('loaded')"
+           onerror="this.style.visibility='hidden'">
       <div class="taquilla-info">
         <strong>${escapeHTML(p.titulo || 'Sin título')}</strong>
         ${meta ? `<span>${escapeHTML(meta)}</span>` : ''}
@@ -269,5 +308,40 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       localStorage.setItem('lbdc-theme', nuevo);
     } catch (e) {}
+  });
+});
+
+// ===== Botón volver arriba =====
+document.addEventListener('DOMContentLoaded', () => {
+  const btnTop = document.getElementById('btn-top');
+  if (!btnTop) return;
+
+  function toggleBtnTop() {
+    if (window.scrollY > 400) {
+      btnTop.classList.add('is-visible');
+    } else {
+      btnTop.classList.remove('is-visible');
+    }
+  }
+
+  window.addEventListener('scroll', toggleBtnTop, { passive: true });
+  toggleBtnTop();
+
+  btnTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+
+// ===== Toggle tema =====
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+
+  btn.addEventListener('click', () => {
+    const html = document.documentElement;
+    const actual = html.getAttribute('data-theme') || 'dark';
+    const nuevo = actual === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', nuevo);
+    try { localStorage.setItem('lbdc-theme', nuevo); } catch (e) {}
   });
 });

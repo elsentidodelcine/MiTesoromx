@@ -481,7 +481,175 @@
           outline: 2px solid var(--gold);
           outline-offset: 3px;
         }
+        /* ========== CONTADOR ========== */
+        .taquilla-count {
+          width: min(var(--max, 1120px), calc(100% - 48px));
+          margin: 0 auto 16px;
+          text-align: center;
+          font-size: 0.82rem;
+          color: var(--muted);
+        }
 
+        /* ========== SKELETON ========== */
+        .skeleton-list {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          width: min(var(--max, 1120px), calc(100% - 48px));
+          margin: 0 auto;
+        }
+        .skeleton-row {
+          height: 110px;
+          border-radius: 14px;
+          border: 1px solid var(--border);
+          background: linear-gradient(90deg, #1a1a22 25%, #252530 50%, #1a1a22 75%);
+          background-size: 200% 100%;
+          animation: skeleton-shine 1.4s ease-in-out infinite;
+        }
+        @keyframes skeleton-shine {
+          0% { background-position: 200% 0; }
+          100% { background-position: -200% 0; }
+        }
+        html[data-theme="light"] .skeleton-row {
+          background: linear-gradient(90deg, #e8e8ec 25%, #f4f4f6 50%, #e8e8ec 75%);
+          background-size: 200% 100%;
+        }
+
+        /* ========== ESPACIADO MÁS GENEROSO ========== */
+        .taquilla-list {
+          gap: 14px;
+        }
+        .taquilla-row {
+          padding: 16px 18px;
+          gap: 16px;
+        }
+
+        /* ========== TIPOGRAFÍA DEL DINERO ========== */
+        .taquilla-money {
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: 1.15rem;
+          font-weight: 800;
+          letter-spacing: -0.02em;
+        }
+
+        /* ========== RESALTAR TOP 3 ========== */
+        .taquilla-row.top-1 {
+          border-color: rgba(201, 162, 39, 0.55);
+          background: linear-gradient(135deg, rgba(201,162,39,0.1), rgba(201,162,39,0.03));
+          box-shadow: 0 0 0 1px rgba(201,162,39,0.2);
+        }
+        .taquilla-row.top-2 {
+          border-color: rgba(180, 180, 190, 0.45);
+          background: linear-gradient(135deg, rgba(180,180,190,0.08), transparent);
+        }
+        .taquilla-row.top-3 {
+          border-color: rgba(205, 127, 50, 0.45);
+          background: linear-gradient(135deg, rgba(205,127,50,0.08), transparent);
+        }
+        .taquilla-pos.top3 {
+          font-size: 1.5rem;
+        }
+
+        /* ========== BADGE MEJORADO ========== */
+        .badge-cartel {
+          padding: 3px 10px;
+          font-size: 0.62rem;
+          background: rgba(196, 30, 58, 0.2);
+          color: #ff8a9a;
+          border: 1px solid rgba(196, 30, 58, 0.4);
+          box-shadow: 0 0 8px rgba(196, 30, 58, 0.15);
+        }
+
+        /* ========== HOVER ========== */
+        .taquilla-row {
+          transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+        }
+        .taquilla-row:hover {
+          transform: translateY(-2px);
+          border-color: rgba(201, 162, 39, 0.4);
+          box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+        }
+        html[data-theme="light"] .taquilla-row:hover {
+          box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        /* ========== ANIMACIÓN SUAVE ========== */
+        .taquilla-list {
+          animation: fadeIn 0.35s ease;
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ========== FADE-IN IMÁGENES ========== */
+        .taquilla-poster {
+          opacity: 0;
+          transition: opacity 0.4s ease;
+        }
+        .taquilla-poster.loaded {
+          opacity: 1;
+        }
+
+        /* ========== FOCUS STATES ========== */
+        .taquilla-tabs a:focus-visible,
+        .year-select-wrap select:focus-visible,
+        .taquilla-row:focus-visible,
+        .btn-top:focus-visible {
+          outline: 2px solid var(--gold);
+          outline-offset: 3px;
+        }
+
+        /* ========== BOTÓN VOLVER ARRIBA ========== */
+        .btn-top {
+          position: fixed;
+          bottom: 24px;
+          right: 18px;
+          z-index: 999;
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          border: 1px solid var(--border);
+          background: var(--surface);
+          color: var(--text);
+          font-size: 1.25rem;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+          opacity: 0;
+          pointer-events: none;
+          transform: translateY(12px);
+          transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+        .btn-top.is-visible {
+          opacity: 1;
+          pointer-events: auto;
+          transform: translateY(0);
+        }
+        .btn-top:hover {
+          transform: translateY(-3px);
+          border-color: var(--gold);
+        }
+        html[data-theme="light"] .btn-top {
+          background: #fff;
+          box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        }
+
+        /* ========== MICRO INTERACCIONES ========== */
+        .badge-resultado {
+          transition: transform 0.2s ease;
+        }
+        .taquilla-row:hover .badge-resultado {
+          transform: scale(1.05);
+        }
+        .taquilla-pos {
+          transition: transform 0.2s ease;
+        }
+        .taquilla-row:hover .taquilla-pos {
+          transform: scale(1.08);
+        }
 
     </style>
     <script>
@@ -542,11 +710,23 @@
                 <option value="general">General</option>
                 <option value="terror">Terror</option>
             </select>
+
+            <label for="filtro-orden">Orden</label>
+            <select id="filtro-orden">
+                <option value="puesto">Por puesto</option>
+                <option value="taquilla">Por taquilla</option>
+            </select>
         </div>
         <p class="taquilla-note" id="taquilla-note"></p>
-        <!-- Aquí se pinta el ranking del año elegido -->
+        <p id="taquilla-count" class="taquilla-count" aria-live="polite"></p>
+
         <div id="taquilla-anio-container">
-            <div class="loading-state">Cargando...</div>
+            <div class="skeleton-list" id="skeleton-loading">
+                <div class="skeleton-row"></div>
+                <div class="skeleton-row"></div>
+                <div class="skeleton-row"></div>
+                <div class="skeleton-row"></div>
+            </div>
         </div>
     </main>
 
@@ -570,5 +750,6 @@
           initTaquillaAnio();
         });
     </script>
+    <button type="button" id="btn-top" class="btn-top" aria-label="Volver arriba">↑</button>
 </body>
 </html>
