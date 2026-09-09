@@ -25,13 +25,7 @@
     "fechaTexto": "Viernes 28 de Agosto 2026",
     "poster": "imgs/estrenos/gabriel.jpg",
     "cines": ["Cinemex"],
-    "links": [
-      {
-        "cine": "Cinemex",
-        "url": "https://cinemex.com/pelicula/72264/juan-gabriel-mi-primer-bellas-artes"
-      }
-    ],
-    "nota": "Preventa ya disponible"
+    "nota": "México"
   },
   {
     "id": "transformers",
@@ -389,18 +383,13 @@
   {
     "id": "akira",
     "titulo": "AKIRA 4K",
-    "tipo": "preventa",
+    "tipo": "estreno",
+    "estadoCartelera": "estreno",
     "fecha": "2026-09-10",
     "fechaTexto": "Jueves 10 de Septiembre del 2026",
     "poster": "imgs/estrenos/akira.jpg",
     "cines": ["Cinepolis"],
-    "links": [
-      {
-        "cine": "Cinepolis",
-        "url": "https://www.cinepolis.com"
-      }
-    ],
-    "nota": "Preventa ya disponible"
+    "nota": "Japón"
   },
   {
     "id": "nct",
@@ -421,34 +410,24 @@
   {
     "id": "aaa",
     "titulo": "Triplemanía 34 Las Vegas",
-    "tipo": "preventa",
+    "tipo": "estreno",
+    "estadoCartelera": "estreno",
     "fecha": "2026-09-11",
     "fechaTexto": "Viernes 11 de Septiembre del 2026",
     "poster": "imgs/estrenos/vegas.jpg",
     "cines": ["Cinepolis"],
-    "links": [
-      {
-        "cine": "Cinepolis",
-        "url": "https://www.cinepolis.com"
-      }
-    ],
-    "nota": "Preventa ya disponible"
+    "nota": "Estados Unidos"
   },
   {
     "id": "aaa1",
     "titulo": "Triplemanía 34 México",
-    "tipo": "preventa",
+    "tipo": "estreno",
+    "estadoCartelera": "preventa",
     "fecha": "2026-09-13",
     "fechaTexto": "Domingo 13 de Septiembre del 2026",
     "poster": "imgs/estrenos/mexico.jpg",
     "cines": ["Cinepolis"],
-    "links": [
-      {
-        "cine": "Cinepolis",
-        "url": "https://www.cinepolis.com"
-      }
-    ],
-    "nota": "Preventa ya disponible"
+    "nota": "México"
   },
   {
     "id": "historia",
@@ -470,18 +449,13 @@
   {
     "id": "garcia",
     "titulo": "Ryan García Vs Conor Benn",
-    "tipo": "preventa",
+    "tipo": "estreno",
+    "estadoCartelera": "estreno",
     "fecha": "2026-09-12",
     "fechaTexto": "Sábado 12 de Septiembre del 2026",
     "poster": "imgs/estrenos/garcia.jpg",
     "cines": ["Cinepolis"],
-    "links": [
-      {
-        "cine": "Cinepolis",
-        "url": "https://www.cinepolis.com"
-      }
-    ],
-    "nota": "Preventa ya disponible"
+    "nota": "Estados Unidos"
   },
   {
     "id": "zona-cero",
