@@ -560,6 +560,37 @@
             line-height: 1.25;
           }
         }
+
+        /* ===== HEADER SIEMPRE CLICABLE EN MÓVIL ===== */
+        .site-header {
+          position: relative;
+          z-index: 1000;
+        }
+
+        .nav-toggle,
+        .theme-toggle {
+          position: relative;
+          z-index: 1001;
+          pointer-events: auto;
+        }
+
+        /* Evitar que el botón ↑ tape nada del header */
+        .btn-top {
+          z-index: 900;
+        }
+
+        /* Modo claro: dinero más legible */
+        html[data-theme="light"] .taquilla-money {
+          color: #9a7b0a;           /* dorado más oscuro */
+          font-weight: 800;
+        }
+
+        html[data-theme="light"] .taquilla-pos {
+          color: #9a7b0a;
+        }
+        html[data-theme="light"] .taquilla-pos.top3 {
+          color: #c41e3a;
+        }
     </style>
     <script>
         try {

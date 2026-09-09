@@ -581,6 +581,47 @@
             min-width: 0;
           }
         }
+
+        /* ===== HEADER SIEMPRE CLICABLE EN MÓVIL ===== */
+        .site-header {
+          position: relative;
+          z-index: 1000;
+        }
+
+        .nav-toggle,
+        .theme-toggle {
+          position: relative;
+          z-index: 1001;
+          pointer-events: auto;
+        }
+
+        /* Evitar que el botón ↑ tape nada del header */
+        .btn-top {
+          z-index: 900;
+        }
+
+        /* Modo claro: etiquetas de la barra más legibles */
+        html[data-theme="light"] .bar-label--budget {
+          color: #3d3d46;
+          font-weight: 700;
+        }
+        html[data-theme="light"] .bar-label--rentable {
+          color: #9a7b0a;
+        }
+        html[data-theme="light"] .bar-label--exito {
+          color: #15803d;
+        }
+        html[data-theme="light"] .bar-label--now {
+          background: rgba(0, 0, 0, 0.8);
+          color: #fff;
+        }
+
+        html[data-theme="light"] .taquilla-figures {
+          color: #5c5c66;
+        }
+        html[data-theme="light"] .taquilla-figures b {
+          color: #121214;
+        }
     </style>
     <script>
         try {
