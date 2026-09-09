@@ -27,6 +27,8 @@
     <link rel="shortcut icon" href="imgs/logoBL.ico">
     <style>
         .taquilla-page { padding-bottom: 100px; }
+
+        /* ===== HERO ===== */
         .taquilla-hero {
           position: relative;
           padding: 64px 0 40px;
@@ -59,15 +61,23 @@
         .taquilla-hero p { color: var(--muted); font-size: 1rem; line-height: 1.65; }
 
         .taquilla-note {
-          width: min(var(--max, 1120px), calc(100% - 48px));
-          margin: 24px auto 0;
+          width: min(var(--max, 900px), calc(100% - 48px));
+          margin: 20px auto 0;
           text-align: center;
           font-size: .82rem;
           color: var(--muted);
         }
+        .taquilla-count {
+          width: min(var(--max, 900px), calc(100% - 48px));
+          margin: 8px auto 16px;
+          text-align: center;
+          font-size: 0.82rem;
+          color: var(--muted);
+        }
 
+        /* ===== TABS ===== */
         .taquilla-tabs {
-          width: min(var(--max, 1120px), calc(100% - 48px));
+          width: min(var(--max, 900px), calc(100% - 48px));
           margin: 28px auto 20px;
           display: flex;
           flex-wrap: wrap;
@@ -89,14 +99,10 @@
           border-color: transparent;
           color: #fff;
         }
-        html[data-theme="light"] .taquilla-tabs a {
-          background: #fff;
-          border-color: rgba(0,0,0,.12);
-          color: #121214;
-        }
 
+        /* ===== SELECTORES ===== */
         .year-select-wrap {
-          width: min(var(--max, 1120px), calc(100% - 48px));
+          width: min(var(--max, 900px), calc(100% - 48px));
           margin: 0 auto 24px;
           display: flex;
           justify-content: center;
@@ -111,7 +117,7 @@
         }
         .year-select-wrap select {
           min-height: 42px;
-          min-width: 140px;
+          min-width: 130px;
           padding: 8px 16px;
           border-radius: 999px;
           border: 1px solid rgba(255,255,255,.16);
@@ -119,35 +125,55 @@
           color: #fff;
           font-size: .85rem;
         }
-        html[data-theme="light"] .year-select-wrap select {
-          background: #fff;
-          color: #121214;
-          border-color: rgba(0,0,0,.12);
-        }
 
+        /* ===== LISTA ===== */
         .taquilla-list {
-          width: min(var(--max, 1120px), calc(100% - 48px));
+          width: min(var(--max, 900px), calc(100% - 48px));
           margin: 0 auto;
           display: flex;
           flex-direction: column;
-          gap: 12px;
+          gap: 14px;
+          animation: fadeIn 0.35s ease;
         }
-         .taquilla-row {
-          transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== FILA (LO MÁS IMPORTANTE) ===== */
+        .taquilla-row {
+          display: flex;                 /* ← esto faltaba */
+          flex-direction: row;
+          align-items: center;
+          gap: 16px;
+          padding: 14px 16px;
+          border-radius: 14px;
+          border: 1px solid var(--border);
+          background: var(--surface);
+          min-width: 0;
+          width: 100%;
+          box-sizing: border-box;
+          color: var(--text);
+          transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
         }
         .taquilla-row:hover {
-          transform: translateY(-1px);
-          box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+          transform: translateY(-2px);
+          border-color: rgba(201, 162, 39, 0.4);
+          box-shadow: 0 8px 24px rgba(0,0,0,0.18);
         }
+
         .taquilla-pos {
-          flex: 0 0 40px;
+          flex: 0 0 36px;
           font-family: 'Playfair Display', Georgia, serif;
           font-weight: 800;
           font-size: 1.35rem;
           color: var(--gold);
           text-align: center;
+          transition: transform 0.2s ease;
         }
-        .taquilla-pos.top3 { color: var(--red); }
+        .taquilla-pos.top3 { color: var(--red); font-size: 1.5rem; }
+        .taquilla-row:hover .taquilla-pos { transform: scale(1.08); }
+
         .taquilla-poster {
           flex: 0 0 64px;
           width: 64px;
@@ -155,8 +181,16 @@
           object-fit: cover;
           border-radius: 8px;
           background: #121218;
+          flex-shrink: 0;
+          opacity: 0;
+          transition: opacity 0.4s ease;
         }
-        .taquilla-info { flex: 1; min-width: 0; }
+        .taquilla-poster.loaded { opacity: 1; }
+
+        .taquilla-info {
+          flex: 1 1 auto;
+          min-width: 0;
+        }
         .taquilla-info strong {
           display: block;
           font-size: .95rem;
@@ -169,29 +203,42 @@
           font-size: .75rem;
           color: var(--muted);
         }
+
         .taquilla-money {
           flex: 0 0 auto;
+          margin-left: auto;
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: 1.15rem;
           font-weight: 800;
           color: var(--gold);
-          font-size: .95rem;
           white-space: nowrap;
-        }
-        .year-block { margin-bottom: 36px; }
-        .year-block h2 {
-          width: min(var(--max, 1120px), calc(100% - 48px));
-          margin: 0 auto 14px;
-          font-family: 'Playfair Display', Georgia, serif;
-          font-size: 1.5rem;
-          color: var(--text, #fff);
-          padding-bottom: 8px;
-          border-bottom: 1px solid var(--border);
-        }
-        .empty-state, .loading-state {
-          text-align: center;
-          padding: 60px 20px;
-          color: var(--muted);
+          letter-spacing: -0.02em;
         }
 
+        /* Por año: layout especial */
+        .taquilla-row--anio {
+          align-items: flex-start;
+        }
+        .taquilla-row--anio .taquilla-money {
+          display: none; /* el dinero ya está en figures */
+        }
+
+        /* Top 3 */
+        .taquilla-row.top-1 {
+          border-color: rgba(201, 162, 39, 0.55);
+          background: linear-gradient(135deg, rgba(201,162,39,0.1), rgba(201,162,39,0.03));
+          box-shadow: 0 0 0 1px rgba(201,162,39,0.2);
+        }
+        .taquilla-row.top-2 {
+          border-color: rgba(180, 180, 190, 0.45);
+          background: linear-gradient(135deg, rgba(180,180,190,0.08), transparent);
+        }
+        .taquilla-row.top-3 {
+          border-color: rgba(205, 127, 50, 0.45);
+          background: linear-gradient(135deg, rgba(205,127,50,0.08), transparent);
+        }
+
+        /* ===== BADGES ===== */
         .badge-resultado {
           display: inline-block;
           margin-left: 8px;
@@ -202,7 +249,10 @@
           text-transform: uppercase;
           letter-spacing: .04em;
           white-space: nowrap;
+          transition: transform 0.2s ease;
         }
+        .taquilla-row:hover .badge-resultado { transform: scale(1.05); }
+
         .badge-perdida {
           background: rgba(196,30,58,.15);
           color: #ff8a9a;
@@ -223,12 +273,21 @@
           color: var(--muted);
           border: 1px solid var(--border);
         }
-
-        .taquilla-row--anio {
-          align-items: flex-start;
-          padding: 14px 16px;
+        .badge-cartel {
+          display: inline-block;
+          margin-left: 8px;
+          padding: 3px 10px;
+          border-radius: 999px;
+          font-size: 0.62rem;
+          font-weight: 700;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+          background: rgba(196, 30, 58, 0.2);
+          color: #ff8a9a;
+          border: 1px solid rgba(196, 30, 58, 0.4);
         }
 
+        /* ===== FIGURES + BARRA ===== */
         .taquilla-figures {
           display: flex;
           flex-wrap: wrap;
@@ -238,28 +297,19 @@
           font-size: 0.78rem;
           color: var(--muted);
         }
-
         .taquilla-figures b {
           color: var(--text);
           font-weight: 700;
         }
 
-        .bar-wrap {
-          margin-top: 14px;
-          width: 100%;
-        }
-
-        .bar-wrap--empty {
-          font-size: 0.75rem;
-          color: var(--muted-2);
-        }
+        .bar-wrap { margin-top: 14px; width: 100%; }
+        .bar-wrap--empty { font-size: 0.75rem; color: var(--muted); }
 
         .bar-labels {
           position: relative;
           height: 18px;
           margin-bottom: 4px;
         }
-
         .bar-label {
           position: absolute;
           transform: translateX(-50%);
@@ -269,7 +319,6 @@
           line-height: 1;
           pointer-events: none;
         }
-
         .bar-label--budget { color: #c8c8d0; }
         .bar-label--rentable { color: var(--gold); }
         .bar-label--exito { color: #7ddea0; }
@@ -287,215 +336,60 @@
           border-radius: 999px;
           background: rgba(255, 255, 255, 0.08);
           border: 1px solid rgba(255, 255, 255, 0.12);
-          overflow: visible; /* para que se vean las marcas */
+          overflow: visible;
         }
-
-        html[data-theme="light"] .bar-track {
-          background: rgba(0, 0, 0, 0.06);
-        }
-
         .bar-fill {
           position: absolute;
-          left: 0;
-          top: 0;
-          bottom: 0;
+          left: 0; top: 0; bottom: 0;
           border-radius: 999px;
           z-index: 1;
         }
+        .bar-fill--exito { background: linear-gradient(90deg, #1e6b42, #3ecf7a); }
+        .bar-fill--rentable { background: linear-gradient(90deg, #8a7019, #c9a227); }
+        .bar-fill--perdida { background: linear-gradient(90deg, #9a1830, #e85a6b); }
 
-        .bar-fill--exito {
-          background: linear-gradient(90deg, #1e6b42, #3ecf7a);
-        }
-        .bar-fill--rentable {
-          background: linear-gradient(90deg, #8a7019, #c9a227);
-        }
-        .bar-fill--perdida {
-          background: linear-gradient(90deg, #9a1830, #e85a6b);
-        }
-
-      /* Marcas: línea blanca/dorada encima del verde */
         .bar-mark {
           position: absolute;
-          top: -4px;
-          bottom: -4px;
+          top: -4px; bottom: -4px;
           width: 3px;
           transform: translateX(-50%);
           border-radius: 2px;
           z-index: 3;
           box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.45);
         }
-
-        .bar-mark--budget {
-          background: #f0f0f2;
-        }
+        .bar-mark--budget { background: #f0f0f2; }
         .bar-mark--rentable {
           background: var(--gold);
-          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5), 0 0 6px rgba(201, 162, 39, 0.6);
+          box-shadow: 0 0 0 1px rgba(0,0,0,0.5), 0 0 6px rgba(201,162,39,0.6);
         }
         .bar-mark--exito {
           background: #b8f5d0;
-          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5), 0 0 6px rgba(125, 222, 160, 0.5);
+          box-shadow: 0 0 0 1px rgba(0,0,0,0.5), 0 0 6px rgba(125,222,160,0.5);
         }
 
-        .bar-legend {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 6px 12px;
-          margin-top: 6px;
-          font-size: 0.68rem;
-          color: var(--muted);
+        .year-block { margin-bottom: 36px; }
+        .year-block h2 {
+          width: min(var(--max, 900px), calc(100% - 48px));
+          margin: 0 auto 14px;
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: 1.5rem;
+          color: var(--text, #fff);
+          padding-bottom: 8px;
+          border-bottom: 1px solid var(--border);
         }
 
-        .bar-legend-now {
-          color: var(--gold);
-          font-weight: 700;
-        }
-
-        @media (max-width: 600px) {
-          .taquilla-row--anio {
-            flex-wrap: wrap;
-          }
-          .taquilla-info {
-            flex: 1 1 100%;
-          }
-        }
-
-        html[data-theme="light"] .bar-track {
-          background: rgba(0, 0, 0, 0.08);
-          border-color: rgba(0, 0, 0, 0.1);
-        }
-        html[data-theme="light"] .bar-label--now {
-          background: rgba(0, 0, 0, 0.75);
-          color: #fff;
-        }
-        html[data-theme="light"] .bar-mark--budget {
-          background: #121214;
-        }
-
-        /* Móvil: etiquetas más chicas */
-        @media (max-width: 520px) {
-          .bar-label { font-size: 0.55rem; }
-          .bar-label--now { display: none; } /* opcional: el 9.2× se lee en el badge */
-        }
-
-        /* ========== MODO CLARO COMPLETO – TAQUILLA ========== */
-        html[data-theme="light"] .taquilla-tabs a {
-          background: #fff;
-          border-color: rgba(0,0,0,.12);
-          color: #121214;
-        }
-        html[data-theme="light"] .taquilla-tabs a.active {
-          background: linear-gradient(135deg, var(--red), var(--red-dark, #9a1830));
-          color: #fff;
-          border-color: transparent;
-        }
-
-        html[data-theme="light"] .year-select-wrap select {
-          background: #fff;
-          color: #121214;
-          border-color: rgba(0,0,0,.12);
-        }
-        html[data-theme="light"] .year-select-wrap select option {
-          background: #fff;
-          color: #121214;
-        }
-
-        html[data-theme="light"] .taquilla-row {
-          background: #fff;
-          border-color: rgba(0,0,0,.1);
-          color: #121214;
-        }
-        html[data-theme="light"] .taquilla-row:hover {
-          border-color: rgba(201,162,39,.4);
-        }
-
-        html[data-theme="light"] .taquilla-info strong {
-          color: #121214;
-        }
-        html[data-theme="light"] .taquilla-info span {
-          color: #5c5c66;
-        }
-
-        html[data-theme="light"] .taquilla-poster {
-          background: #f0f0f2;
-        }
-
-        html[data-theme="light"] .year-block h2 {
-          color: #121214;
-        }
-
-        html[data-theme="light"] .taquilla-row--cartel {
-          background: linear-gradient(135deg, rgba(196,30,58,.08), rgba(201,162,39,.04));
-          border-color: rgba(196,30,58,.35);
-        }
-
-        html[data-theme="light"] .badge-cartel {
-          background: rgba(196,30,58,.12);
-          color: #c41e3a;
-          border-color: rgba(196,30,58,.3);
-        }
-
-        /* Badges de resultado */
-        html[data-theme="light"] .badge-perdida {
-          background: rgba(196,30,58,.1);
-          color: #c41e3a;
-        }
-        html[data-theme="light"] .badge-rentable {
-          background: rgba(201,162,39,.12);
-          color: #9a7b0a;
-        }
-        html[data-theme="light"] .badge-exito {
-          background: rgba(125,222,160,.15);
-          color: #15803d;
-        }
-        html[data-theme="light"] .badge-sin-dato {
-          background: rgba(0,0,0,.04);
-          color: #5c5c66;
-          border-color: rgba(0,0,0,.1);
-        }
-
-        /* Barras de presupuesto */
-        html[data-theme="light"] .bar-track {
-          background: rgba(0,0,0,.06);
-          border-color: rgba(0,0,0,.1);
-        }
-        html[data-theme="light"] .bar-label--budget {
-          color: #5c5c66;
-        }
-        html[data-theme="light"] .bar-label--now {
-          background: rgba(0,0,0,.75);
-          color: #fff;
-        }
-        html[data-theme="light"] .bar-mark--budget {
-          background: #121214;
-        }
-
-        html[data-theme="light"] .taquilla-figures b {
-          color: #121214;
-        }
-
-        /* Focus states */
-        .taquilla-tabs a:focus-visible,
-        .year-select-wrap select:focus-visible,
-        .taquilla-row:focus-visible {
-          outline: 2px solid var(--gold);
-          outline-offset: 3px;
-        }
-        /* ========== CONTADOR ========== */
-        .taquilla-count {
-          width: min(var(--max, 1120px), calc(100% - 48px));
-          margin: 0 auto 16px;
+        .empty-state, .loading-state {
           text-align: center;
-          font-size: 0.82rem;
+          padding: 60px 20px;
           color: var(--muted);
         }
 
-        /* ========== SKELETON ========== */
+        /* ===== SKELETON ===== */
         .skeleton-list {
           display: flex;
           flex-direction: column;
           gap: 12px;
-          width: min(var(--max, 1120px), calc(100% - 48px));
+          width: min(var(--max, 900px), calc(100% - 48px));
           margin: 0 auto;
         }
         .skeleton-row {
@@ -510,97 +404,8 @@
           0% { background-position: 200% 0; }
           100% { background-position: -200% 0; }
         }
-        html[data-theme="light"] .skeleton-row {
-          background: linear-gradient(90deg, #e8e8ec 25%, #f4f4f6 50%, #e8e8ec 75%);
-          background-size: 200% 100%;
-        }
 
-        /* ========== ESPACIADO MÁS GENEROSO ========== */
-        .taquilla-list {
-          gap: 14px;
-        }
-        .taquilla-row {
-          padding: 16px 18px;
-          gap: 16px;
-        }
-
-        /* ========== TIPOGRAFÍA DEL DINERO ========== */
-        .taquilla-money {
-          font-family: 'Playfair Display', Georgia, serif;
-          font-size: 1.15rem;
-          font-weight: 800;
-          letter-spacing: -0.02em;
-        }
-
-        /* ========== RESALTAR TOP 3 ========== */
-        .taquilla-row.top-1 {
-          border-color: rgba(201, 162, 39, 0.55);
-          background: linear-gradient(135deg, rgba(201,162,39,0.1), rgba(201,162,39,0.03));
-          box-shadow: 0 0 0 1px rgba(201,162,39,0.2);
-        }
-        .taquilla-row.top-2 {
-          border-color: rgba(180, 180, 190, 0.45);
-          background: linear-gradient(135deg, rgba(180,180,190,0.08), transparent);
-        }
-        .taquilla-row.top-3 {
-          border-color: rgba(205, 127, 50, 0.45);
-          background: linear-gradient(135deg, rgba(205,127,50,0.08), transparent);
-        }
-        .taquilla-pos.top3 {
-          font-size: 1.5rem;
-        }
-
-        /* ========== BADGE MEJORADO ========== */
-        .badge-cartel {
-          padding: 3px 10px;
-          font-size: 0.62rem;
-          background: rgba(196, 30, 58, 0.2);
-          color: #ff8a9a;
-          border: 1px solid rgba(196, 30, 58, 0.4);
-          box-shadow: 0 0 8px rgba(196, 30, 58, 0.15);
-        }
-
-        /* ========== HOVER ========== */
-        .taquilla-row {
-          transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
-        }
-        .taquilla-row:hover {
-          transform: translateY(-2px);
-          border-color: rgba(201, 162, 39, 0.4);
-          box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-        }
-        html[data-theme="light"] .taquilla-row:hover {
-          box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-        }
-
-        /* ========== ANIMACIÓN SUAVE ========== */
-        .taquilla-list {
-          animation: fadeIn 0.35s ease;
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(10px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ========== FADE-IN IMÁGENES ========== */
-        .taquilla-poster {
-          opacity: 0;
-          transition: opacity 0.4s ease;
-        }
-        .taquilla-poster.loaded {
-          opacity: 1;
-        }
-
-        /* ========== FOCUS STATES ========== */
-        .taquilla-tabs a:focus-visible,
-        .year-select-wrap select:focus-visible,
-        .taquilla-row:focus-visible,
-        .btn-top:focus-visible {
-          outline: 2px solid var(--gold);
-          outline-offset: 3px;
-        }
-
-        /* ========== BOTÓN VOLVER ARRIBA ========== */
+        /* ===== BOTÓN TOP ===== */
         .btn-top {
           position: fixed;
           bottom: 24px;
@@ -632,25 +437,115 @@
           transform: translateY(-3px);
           border-color: var(--gold);
         }
+
+        /* ===== FOCUS ===== */
+        .taquilla-tabs a:focus-visible,
+        .year-select-wrap select:focus-visible,
+        .taquilla-row:focus-visible,
+        .btn-top:focus-visible {
+          outline: 2px solid var(--gold);
+          outline-offset: 3px;
+        }
+
+        /* ===== MÓVIL ===== */
+        @media (max-width: 600px) {
+          .taquilla-row {
+            gap: 12px;
+            padding: 12px;
+          }
+          .taquilla-pos { flex-basis: 28px; font-size: 1.15rem; }
+          .taquilla-poster { flex-basis: 52px; width: 52px; height: 78px; }
+
+          /* Barra: no amontonar etiquetas */
+          .bar-label--rentable,
+          .bar-label--exito {
+            display: none;
+          }
+          .bar-label { font-size: 0.5rem; }
+          .bar-track { height: 12px; }
+          .bar-mark { width: 2px; }
+        }
+
+        /* ===== MODO CLARO ===== */
+        html[data-theme="light"] .taquilla-tabs a {
+          background: #fff;
+          border-color: rgba(0,0,0,.12);
+          color: #121214;
+        }
+        html[data-theme="light"] .taquilla-tabs a.active {
+          background: linear-gradient(135deg, var(--red), var(--red-dark, #9a1830));
+          color: #fff;
+          border-color: transparent;
+        }
+        html[data-theme="light"] .year-select-wrap select {
+          background: #fff;
+          color: #121214;
+          border-color: rgba(0,0,0,.12);
+        }
+        html[data-theme="light"] .year-select-wrap select option {
+          background: #fff;
+          color: #121214;
+        }
+        html[data-theme="light"] .taquilla-row {
+          background: #fff;
+          border-color: rgba(0,0,0,.1);
+          color: #121214;
+        }
+        html[data-theme="light"] .taquilla-row:hover {
+          border-color: rgba(201,162,39,.4);
+          box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        html[data-theme="light"] .taquilla-info strong { color: #121214; }
+        html[data-theme="light"] .taquilla-info span { color: #5c5c66; }
+        html[data-theme="light"] .taquilla-poster { background: #f0f0f2; }
+        html[data-theme="light"] .year-block h2 { color: #121214; }
+        html[data-theme="light"] .taquilla-figures b { color: #121214; }
+
+        html[data-theme="light"] .badge-perdida {
+          background: rgba(196,30,58,.1);
+          color: #c41e3a;
+        }
+        html[data-theme="light"] .badge-rentable {
+          background: rgba(201,162,39,.12);
+          color: #9a7b0a;
+        }
+        html[data-theme="light"] .badge-exito {
+          background: rgba(125,222,160,.15);
+          color: #15803d;
+        }
+        html[data-theme="light"] .badge-sin-dato {
+          background: rgba(0,0,0,.04);
+          color: #5c5c66;
+          border-color: rgba(0,0,0,.1);
+        }
+        html[data-theme="light"] .badge-cartel {
+          background: rgba(196,30,58,.12);
+          color: #c41e3a;
+          border-color: rgba(196,30,58,.3);
+        }
+
+        html[data-theme="light"] .bar-track {
+          background: rgba(0,0,0,.06);
+          border-color: rgba(0,0,0,.1);
+        }
+        html[data-theme="light"] .bar-label--budget { color: #5c5c66; }
+        html[data-theme="light"] .bar-label--now {
+          background: rgba(0,0,0,.75);
+          color: #fff;
+        }
+        html[data-theme="light"] .bar-mark--budget { background: #121214; }
+
+        html[data-theme="light"] .skeleton-row {
+          background: linear-gradient(90deg, #e8e8ec 25%, #f4f4f6 50%, #e8e8ec 75%);
+          background-size: 200% 100%;
+        }
         html[data-theme="light"] .btn-top {
           background: #fff;
           box-shadow: 0 6px 18px rgba(0,0,0,0.12);
         }
-
-        /* ========== MICRO INTERACCIONES ========== */
-        .badge-resultado {
-          transition: transform 0.2s ease;
+        html[data-theme="light"] .taquilla-row.top-1 {
+          background: linear-gradient(135deg, rgba(201,162,39,0.08), rgba(201,162,39,0.02));
         }
-        .taquilla-row:hover .badge-resultado {
-          transform: scale(1.05);
-        }
-        .taquilla-pos {
-          transition: transform 0.2s ease;
-        }
-        .taquilla-row:hover .taquilla-pos {
-          transform: scale(1.08);
-        }
-
     </style>
     <script>
         try {

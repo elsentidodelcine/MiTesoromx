@@ -332,7 +332,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// ===== Toggle tema =====
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('theme-toggle');
   if (!btn) return;
@@ -342,6 +341,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const actual = html.getAttribute('data-theme') || 'dark';
     const nuevo = actual === 'dark' ? 'light' : 'dark';
     html.setAttribute('data-theme', nuevo);
-    try { localStorage.setItem('lbdc-theme', nuevo); } catch (e) {}
+    try {
+      localStorage.setItem('lbdc-theme', nuevo);
+    } catch (e) {}
   });
 });
