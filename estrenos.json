@@ -110,7 +110,7 @@
     "id": "puella1",
     "titulo": "Puella Magi Madoka Mágica: La Película Parte 1",
     "tipo": "estreno",
-    "estadoCartelera": "cartelera",
+    "estadoCartelera": "fuera",
     "fecha": "2026-08-20",
     "fechaTexto": "Jueves 20 de Agosto del 2026",
     "poster": "imgs/estrenos/puella1.jpg",
@@ -127,7 +127,7 @@
     "id": "puella2",
     "titulo": "Puella Magi Madoka Mágica: La Película Parte 2",
     "tipo": "estreno",
-    "estadoCartelera": "cartelera",
+    "estadoCartelera": "fuera",
     "fecha": "2026-08-20",
     "fechaTexto": "Jueves 20 de Agosto del 2026",
     "poster": "imgs/estrenos/puella2.jpg",
@@ -144,7 +144,7 @@
     "id": "hombres",
     "titulo": "LOS MEJORES AÑOS DE NUESTRA VIDA",
     "tipo": "estreno",
-    "estadoCartelera": "estreno",
+    "estadoCartelera": "fuera",
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre del 2026",
     "poster": "imgs/estrenos/hombres.jpg",
@@ -193,7 +193,7 @@
     "id": "lost",
     "titulo": "Lost Highway",
     "tipo": "estreno",
-    "estadoCartelera": "estreno",
+    "estadoCartelera": "fuera",
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre 2026",
     "poster": "imgs/estrenos/lost.jpg",
@@ -210,7 +210,7 @@
     "id": "blue",
     "titulo": "Blue Velvet",
     "tipo": "estreno",
-    "estadoCartelera": "estreno",
+    "estadoCartelera": "fuera",
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre 2026",
     "poster": "imgs/estrenos/blue.jpg",
@@ -284,7 +284,7 @@
     "id": "puella",
     "titulo": "Puella Magi Madoka Magica: La Rebelión",
     "tipo": "estreno",
-    "estadoCartelera": "estreno",
+    "estadoCartelera": "cartelera",
     "fecha": "2026-09-03",
     "fechaTexto": "Jueves 3 de Septiembre del 2026",
     "poster": "imgs/estrenos/puella3.jpg",
@@ -356,54 +356,35 @@
   {
     "id": "ocho",
     "titulo": "Día Ocho",
-    "tipo": "preventa",
+    "tipo": "estreno",
+    "estadoCartelera": "estreno",
     "fecha": "2026-09-10",
     "fechaTexto": "Jueves 10 de Septiembre del 2026",
     "poster": "imgs/estrenos/ocho.jpg",
     "cines": ["Cinemex"],
-    "links": [
-      {
-        "cine": "Cinemex",
-        "url": "https://cinemex.com/pelicula/72715/dia-ocho"
-      }
-    ],
-    "nota": "Preventa ya disponible"
+    "nota": "República Dominicana"
   },
   {
     "id": "cars",
     "titulo": "Cars (20° Aniversario)",
-    "tipo": "preventa",
+    "tipo": "estreno",
+    "estadoCartelera": "estreno",
     "fecha": "2026-09-10",
     "fechaTexto": "Jueves 10 de Septiembre del 2026",
     "poster": "imgs/estrenos/cars.jpg",
     "cines": ["Cinepolis", "Cinemex"],
-    "links": [
-      {
-        "cine": "Cinemex",
-        "url": "https://cinemex.com/proximamente/4520/cars-20-aniversario"
-      },
-      {
-        "cine": "Cinepolis",
-        "url": "https://www.cinepolis.com"
-      }
-    ],
-    "nota": "Próximamente"
+    "nota": "Estados Unidos"
   },
   {
     "id": "vecino",
     "titulo": "Mi Vecino Totoro",
-    "tipo": "preventa",
+    "tipo": "estreno",
+    "estadoCartelera": "estreno",
     "fecha": "2026-09-10",
     "fechaTexto": "Jueves 10 de Septiembre del 2026",
     "poster": "imgs/estrenos/vecino.jpg",
     "cines": ["Cinemex"],
-    "links": [
-      {
-        "cine": "Cinemex",
-        "url": "https://cinemex.com/proximamente/4526/mi-vecino-totoro"
-      }
-    ],
-    "nota": "Próximamente"
+    "nota": "Japón"
   },
   {
     "id": "akira",
@@ -659,8 +640,8 @@
   {
     "id": "oasis",
     "titulo": "Oasis: Don't Look Back In Anger",
-    "tipo": "preventa",
-    "estadoCartelera": "preventa",
+    "tipo": "estreno",
+    "estadoCartelera": "estreno",
     "fecha": "2026-09-10",
     "fechaTexto": "Jueves 10 de Septiembre 2026",
     "poster": "imgs/estrenos/reseñas.jpg",
@@ -688,5 +669,60 @@
     "poster": "imgs/estrenos/resident.jpg",
     "cines": ["Cinemex"],
     "nota": "Estados Unidos"
+  },
+  {
+    "id": "hechizo",
+    "titulo": "HECHIZO DE AMOR: LA MAGIA CONTINÚA",
+    "tipo": "estreno",
+    "estadoCartelera": "estreno",
+    "fecha": "2026-09-10",
+    "fechaTexto": "Jueves 10 de Septiembre 2026",
+    "poster": "imgs/estrenos/amor.jpg",
+    "cines": ["Cinemex", "Cinepolis"],
+    "nota": "Estados Unidos"
+  },
+  {
+    "id": "izquierdo",
+    "titulo": "El club del pie izquierdo",
+    "tipo": "estreno",
+    "estadoCartelera": "estreno",
+    "fecha": "2026-09-10",
+    "fechaTexto": "Jueves 10 de Septiembre 2026",
+    "poster": "imgs/estrenos/izquierdo.jpg",
+    "cines": ["Cinemex", "Cinepolis"],
+    "nota": "Estados Unidos"
+  },
+  {
+    "id": "evelyn",
+    "titulo": "La Maldición De Evelyn",
+    "tipo": "estreno",
+    "estadoCartelera": "estreno",
+    "fecha": "2026-09-10",
+    "fechaTexto": "Jueves 10 de Septiembre 2026",
+    "poster": "imgs/estrenos/evelyn.jpg",
+    "cines": ["Cinemex"],
+    "nota": "Estados Unidos"
+  },
+  {
+    "id": "boxtrolls",
+    "titulo": "Los Boxtrolls (Re-Estreno)",
+    "tipo": "estreno",
+    "estadoCartelera": "estreno",
+    "fecha": "2026-09-10",
+    "fechaTexto": "Jueves 10 de Septiembre 2026",
+    "poster": "imgs/estrenos/boxtrolls.jpg",
+    "cines": ["Cinemex"],
+    "nota": "Estados Unidos"
+  },
+  {
+    "id": "yourname",
+    "titulo": "Your Name (Re-Estreno)",
+    "tipo": "preventa",
+    "estadoCartelera": "preventa",
+    "fecha": "2026-10-04",
+    "fechaTexto": "Domingo 04 de Octubre 2026",
+    "poster": "imgs/estrenos/your.jpg",
+    "cines": ["Cinepolis"],
+    "nota": "Japón"
   }
 ]
