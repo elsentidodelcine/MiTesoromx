@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Los Brujos del Cine | Reseñas de películas</title>
+    <title>Taquilla Anual | Los Brujos del Cine</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0RVV6RWHTS"></script>
     <script>
@@ -15,11 +15,16 @@
     </script>
     <meta name="description" content="Las 10 películas más taquilleras de cada año.">
     <meta name="theme-color" content="#030304">
-    <link rel="icon" href="imgs/logoL.jpeg" type="image/jpeg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylesLBDC.css">
+
+    <link rel="icon" href="imgs/logoLB.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="imgs/logoLB.png" type="image/png" sizes="16x16">
+    <link rel="apple-touch-icon" href="imgs/logoLB.png">
+    <link rel="shortcut icon" href="imgs/logoBL.ico">
     <style>
         .taquilla-page { padding-bottom: 100px; }
         .taquilla-hero {
@@ -127,16 +132,12 @@
           flex-direction: column;
           gap: 12px;
         }
-        .taquilla-row {
-          display: flex;
-          align-items: center;
-          gap: 14px;
-          padding: 12px 14px;
-          border-radius: 14px;
-          border: 1px solid var(--border);
-          background: var(--surface);
-          min-width: 0;
-          color: var(--text);
+         .taquilla-row {
+          transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .taquilla-row:hover {
+          transform: translateY(-1px);
+          box-shadow: 0 6px 18px rgba(0,0,0,0.12);
         }
         .taquilla-pos {
           flex: 0 0 40px;
@@ -376,6 +377,112 @@
           .bar-label { font-size: 0.55rem; }
           .bar-label--now { display: none; } /* opcional: el 9.2× se lee en el badge */
         }
+
+        /* ========== MODO CLARO COMPLETO – TAQUILLA ========== */
+        html[data-theme="light"] .taquilla-tabs a {
+          background: #fff;
+          border-color: rgba(0,0,0,.12);
+          color: #121214;
+        }
+        html[data-theme="light"] .taquilla-tabs a.active {
+          background: linear-gradient(135deg, var(--red), var(--red-dark, #9a1830));
+          color: #fff;
+          border-color: transparent;
+        }
+
+        html[data-theme="light"] .year-select-wrap select {
+          background: #fff;
+          color: #121214;
+          border-color: rgba(0,0,0,.12);
+        }
+        html[data-theme="light"] .year-select-wrap select option {
+          background: #fff;
+          color: #121214;
+        }
+
+        html[data-theme="light"] .taquilla-row {
+          background: #fff;
+          border-color: rgba(0,0,0,.1);
+          color: #121214;
+        }
+        html[data-theme="light"] .taquilla-row:hover {
+          border-color: rgba(201,162,39,.4);
+        }
+
+        html[data-theme="light"] .taquilla-info strong {
+          color: #121214;
+        }
+        html[data-theme="light"] .taquilla-info span {
+          color: #5c5c66;
+        }
+
+        html[data-theme="light"] .taquilla-poster {
+          background: #f0f0f2;
+        }
+
+        html[data-theme="light"] .year-block h2 {
+          color: #121214;
+        }
+
+        html[data-theme="light"] .taquilla-row--cartel {
+          background: linear-gradient(135deg, rgba(196,30,58,.08), rgba(201,162,39,.04));
+          border-color: rgba(196,30,58,.35);
+        }
+
+        html[data-theme="light"] .badge-cartel {
+          background: rgba(196,30,58,.12);
+          color: #c41e3a;
+          border-color: rgba(196,30,58,.3);
+        }
+
+        /* Badges de resultado */
+        html[data-theme="light"] .badge-perdida {
+          background: rgba(196,30,58,.1);
+          color: #c41e3a;
+        }
+        html[data-theme="light"] .badge-rentable {
+          background: rgba(201,162,39,.12);
+          color: #9a7b0a;
+        }
+        html[data-theme="light"] .badge-exito {
+          background: rgba(125,222,160,.15);
+          color: #15803d;
+        }
+        html[data-theme="light"] .badge-sin-dato {
+          background: rgba(0,0,0,.04);
+          color: #5c5c66;
+          border-color: rgba(0,0,0,.1);
+        }
+
+        /* Barras de presupuesto */
+        html[data-theme="light"] .bar-track {
+          background: rgba(0,0,0,.06);
+          border-color: rgba(0,0,0,.1);
+        }
+        html[data-theme="light"] .bar-label--budget {
+          color: #5c5c66;
+        }
+        html[data-theme="light"] .bar-label--now {
+          background: rgba(0,0,0,.75);
+          color: #fff;
+        }
+        html[data-theme="light"] .bar-mark--budget {
+          background: #121214;
+        }
+
+        html[data-theme="light"] .taquilla-figures b {
+          color: #121214;
+        }
+
+        /* Focus states */
+        .taquilla-tabs a:focus-visible,
+        .year-select-wrap select:focus-visible,
+        .taquilla-row:focus-visible {
+          outline: 2px solid var(--gold);
+          outline-offset: 3px;
+        }
+
+
     </style>
     <script>
         try {
@@ -385,105 +492,83 @@
     </script>
 </head>
 <body>
-<a href="#main-content" class="skip-link">Saltar al contenido</a>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="blog.html" class="brand-link" aria-label="Los Brujos del Cine, inicio">
+                <img src="imgs/logoLB.png" alt="Los Brujos del Cine" class="site-logo">
+                <div class="logo-text">
+                    <h1>Los Brujos del Cine</h1>
+                    <span>Mi Tesoro MX</span>
+                </div>
+            </a>
+            <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+                <a href="blog.html#resenas">Reseñas</a>
+                <a href="estrenos.html">Estrenos</a>
+                <a href="precios.html">Precios</a>
+                <a href="taquilla-historia.html">Taquilla</a>
+            </nav>
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" title="Modo claro / oscuro">
+                <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+                <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+            </button>
+        </div>
+    </header>
 
-<header class="site-header">
-    <div class="header-inner">
-        <a href="blog.html" class="brand-link" aria-label="Los Brujos del Cine, inicio">
-            <img src="imgs/logoL.jpeg" alt="Los Brujos del Cine" class="site-logo">
-            <div class="logo-text">
-                <h1>Los Brujos del Cine</h1>
-                <span>Mi Tesoro MX</span>
+    <main id="main-content" class="taquilla-page">
+        <section class="taquilla-hero">
+            <div class="taquilla-hero-inner">
+                <div class="eyebrow"><span aria-hidden="true"></span> Récords de taquilla</div>
+                <h1>Top 10 <em>por año</em></h1>
+                <p>Las películas más taquilleras de cada año (taquilla mundial de referencia).</p>
             </div>
-        </a>
-
-        <button
-                type="button"
-                class="nav-toggle"
-                id="nav-toggle"
-                aria-expanded="false"
-                aria-controls="main-nav"
-                aria-label="Abrir menú"
-        >
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
-            <a href="blog.html#resenas">Reseñas</a>
-            <a href="estrenos.html">Estrenos</a>
-            <a href="precios.html">Precios</a>
-            <a href="taquilla-historia.html">Taquilla</a>
-        </nav>
-        <button
-                type="button"
-                class="theme-toggle"
-                id="theme-toggle"
-                aria-label="Cambiar tema"
-                title="Modo claro / oscuro"
-        >
-            <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
-            <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
-        </button>
-    </div>
-</header>
-
-<main id="main-content" class="taquilla-page">
-    <section class="taquilla-hero">
-        <div class="taquilla-hero-inner">
-            <div class="eyebrow"><span aria-hidden="true"></span> Récords de taquilla</div>
-            <h1>Top 10 <em>por año</em></h1>
-            <p>Las películas más taquilleras de cada año (taquilla mundial de referencia).</p>
+        </section>
+        <!-- Pestañas: esta página = Por año -->
+        <div class="taquilla-tabs">
+            <a href="taquilla-historia.html">Histórico (Top 20)</a>
+            <a href="taquilla-anio.html" class="active">Por año (Top 10)</a>
         </div>
-    </section>
+        <!-- Selector de año (el JS lo llena) -->
+        <div class="year-select-wrap">
+            <label for="filtro-anio">Año</label>
+            <select id="filtro-anio"></select>
 
-    <!-- Pestañas: esta página = Por año -->
-    <div class="taquilla-tabs">
-        <a href="taquilla-historia.html">Histórico (Top 20)</a>
-        <a href="taquilla-anio.html" class="active">Por año (Top 10)</a>
-    </div>
-
-    <!-- Selector de año (el JS lo llena) -->
-    <div class="year-select-wrap">
-        <label for="filtro-anio">Año</label>
-        <select id="filtro-anio"></select>
-
-        <label for="filtro-tipo">Lista</label>
-        <select id="filtro-tipo">
-            <option value="general">General</option>
-            <option value="terror">Terror</option>
-        </select>
-    </div>
-
-    <p class="taquilla-note" id="taquilla-note"></p>
-
-    <!-- Aquí se pinta el ranking del año elegido -->
-    <div id="taquilla-anio-container">
-        <div class="loading-state">Cargando...</div>
-    </div>
-</main>
-
-<footer class="site-footer">
-    <div class="footer-inner">
-        <div class="footer-links">
-            <a href="aviso-de-privacidad-LBDC.html">Política de Privacidad</a>
-            <a href="https://elsentidodelcine.github.io/mitesoromx/index.html" target="_blank" rel="noopener noreferrer">Mi Tesoro MX</a>
-            <a href="https://www.facebook.com/LosBrujosDelCine" target="_blank" rel="noopener noreferrer">Facebook</a>
-            <a href="https://boxd.it/8uSCV" target="_blank" rel="noopener noreferrer">Letterboxd</a>
+            <label for="filtro-tipo">Lista</label>
+            <select id="filtro-tipo">
+                <option value="general">General</option>
+                <option value="terror">Terror</option>
+            </select>
         </div>
-
-        <div class="footer-copy">
-            <p>© 2026 Los Brujos del Cine</p>
+        <p class="taquilla-note" id="taquilla-note"></p>
+        <!-- Aquí se pinta el ranking del año elegido -->
+        <div id="taquilla-anio-container">
+            <div class="loading-state">Cargando...</div>
         </div>
-    </div>
-</footer>
+    </main>
 
-<script src="taquilla.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-      initTaquillaAnio();
-    });
-</script>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="aviso-de-privacidad-LBDC.html">Política de Privacidad</a>
+                <a href="https://losbrujosdelcine.com/#catalogo" target="_blank" rel="noopener noreferrer">Mi Tesoro MX</a>
+                <a href="https://www.facebook.com/LosBrujosDelCine" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://boxd.it/8uSCV" target="_blank" rel="noopener noreferrer">Letterboxd</a>
+            </div>
+            <div class="footer-copy">
+                <p>© 2026 Los Brujos del Cine</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="taquilla.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          initTaquillaAnio();
+        });
+    </script>
 </body>
 </html>

@@ -8,14 +8,6 @@ function escapeHTML(str) {
     .replace(/'/g, '&#39;');
 }
 
-function fmtMoney(n, texto) {
-  if (texto) return escapeHTML(texto);
-  if (n == null || n === '') return '—';
-  const num = Number(n);
-  if (num >= 1e9) return '$' + (num / 1e9).toFixed(2).replace(/\.?0+$/, '') + ' M';
-  if (num >= 1e6) return '$' + Math.round(num / 1e6) + ' M';
-  return '$' + num.toLocaleString('en-US');
-}
 
 function rowHTML(p, { showYear = false } = {}) {
   const pos = Number(p.puesto) || 0;
@@ -262,3 +254,20 @@ function rowHTMLAnio(p) {
     </article>
   `;
 }
+
+// ===== Toggle tema claro / oscuro =====
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+
+  btn.addEventListener('click', () => {
+    const html = document.documentElement;
+    const actual = html.getAttribute('data-theme') || 'dark';
+    const nuevo = actual === 'dark' ? 'light' : 'dark';
+
+    html.setAttribute('data-theme', nuevo);
+    try {
+      localStorage.setItem('lbdc-theme', nuevo);
+    } catch (e) {}
+  });
+});
