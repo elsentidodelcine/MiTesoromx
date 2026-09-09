@@ -546,11 +546,27 @@
         html[data-theme="light"] .taquilla-row.top-1 {
           background: linear-gradient(135deg, rgba(201,162,39,0.08), rgba(201,162,39,0.02));
         }
+
+        /* Títulos largos en móvil */
+        @media (max-width: 600px) {
+          .taquilla-info strong {
+            white-space: normal;          /* permite salto de línea */
+            overflow: visible;
+            text-overflow: unset;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;        /* máximo 2 líneas */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.25;
+          }
+        }
     </style>
     <script>
         try {
           var t = localStorage.getItem('lbdc-theme');
-          if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+          if (t === 'light' || t === 'dark') {
+            document.documentElement.setAttribute('data-theme', t);
+          }
         } catch (e) {}
     </script>
 </head>
