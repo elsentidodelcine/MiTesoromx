@@ -560,6 +560,27 @@
             line-height: 1.25;
           }
         }
+
+        /* ===== FILTROS EN MÓVIL ===== */
+        @media (max-width: 600px) {
+          .year-select-wrap {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 10px;
+            padding: 0 8px;
+          }
+
+          .year-select-wrap label {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 0.72rem;
+          }
+
+          .year-select-wrap select {
+            width: 100%;
+            min-width: 0;
+          }
+        }
     </style>
     <script>
         try {

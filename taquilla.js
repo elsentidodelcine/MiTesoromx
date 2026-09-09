@@ -294,60 +294,68 @@ function rowHTMLAnio(p) {
   `;
 }
 
-// ===== Toggle tema claro / oscuro =====
-document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.getElementById('theme-toggle');
-  if (!btn) return;
+/// ===== Menú móvil =====
+ document.addEventListener('DOMContentLoaded', () => {
+   const toggle = document.getElementById('nav-toggle');
+   const nav = document.getElementById('main-nav');
+   if (!toggle || !nav) return;
 
-  btn.addEventListener('click', () => {
-    const html = document.documentElement;
-    const actual = html.getAttribute('data-theme') || 'dark';
-    const nuevo = actual === 'dark' ? 'light' : 'dark';
+   toggle.addEventListener('click', () => {
+     const open = nav.classList.toggle('is-open');
+     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+     toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+   });
 
-    html.setAttribute('data-theme', nuevo);
-    try {
-      localStorage.setItem('lbdc-theme', nuevo);
-    } catch (e) {}
-  });
-});
+   nav.querySelectorAll('a').forEach(a => {
+     a.addEventListener('click', () => {
+       nav.classList.remove('is-open');
+       toggle.setAttribute('aria-expanded', 'false');
+       toggle.setAttribute('aria-label', 'Abrir menú');
+     });
+   });
 
-// ===== Botón volver arriba =====
-document.addEventListener('DOMContentLoaded', () => {
-  const btnTop = document.getElementById('btn-top');
-  if (!btnTop) return;
+   document.addEventListener('click', (e) => {
+     if (!nav.classList.contains('is-open')) return;
+     if (nav.contains(e.target) || toggle.contains(e.target)) return;
+     nav.classList.remove('is-open');
+     toggle.setAttribute('aria-expanded', 'false');
+     toggle.setAttribute('aria-label', 'Abrir menú');
+   });
+ });
 
-  function toggleBtnTop() {
-    if (window.scrollY > 400) {
-      btnTop.classList.add('is-visible');
-    } else {
-      btnTop.classList.remove('is-visible');
-    }
-  }
+ // ===== Toggle tema (UNA SOLA VEZ) =====
+ document.addEventListener('DOMContentLoaded', () => {
+   const btn = document.getElementById('theme-toggle');
+   if (!btn) return;
 
-  window.addEventListener('scroll', toggleBtnTop, { passive: true });
-  toggleBtnTop();
+   btn.addEventListener('click', () => {
+     const html = document.documentElement;
+     const actual = html.getAttribute('data-theme') || 'dark';
+     const nuevo = actual === 'dark' ? 'light' : 'dark';
+     html.setAttribute('data-theme', nuevo);
+     try {
+       localStorage.setItem('lbdc-theme', nuevo);
+     } catch (e) {}
+   });
+ });
 
-  btnTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-});
+ // ===== Botón volver arriba =====
+ document.addEventListener('DOMContentLoaded', () => {
+   const btnTop = document.getElementById('btn-top');
+   if (!btnTop) return;
 
-// ===== Toggle tema =====
-document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.getElementById('theme-toggle');
-  if (!btn) {
-    console.warn('No se encontró #theme-toggle');
-    return;
-  }
+   function toggleBtnTop() {
+     if (window.scrollY > 400) {
+       btnTop.classList.add('is-visible');
+     } else {
+       btnTop.classList.remove('is-visible');
+     }
+   }
 
-  btn.addEventListener('click', () => {
-    const html = document.documentElement;
-    const actual = html.getAttribute('data-theme') || 'dark';
-    const nuevo = actual === 'dark' ? 'light' : 'dark';
+   window.addEventListener('scroll', toggleBtnTop, { passive: true });
+   toggleBtnTop();
 
-    html.setAttribute('data-theme', nuevo);
-    try {
-      localStorage.setItem('lbdc-theme', nuevo);
-    } catch (e) {}
-  });
-});
+   btnTop.addEventListener('click', () => {
+     window.scrollTo({ top: 0, behavior: 'smooth' });
+   });
+ });
