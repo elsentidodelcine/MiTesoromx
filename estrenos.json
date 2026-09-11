@@ -109,12 +109,6 @@
     "fechaTexto": "Jueves 20 de Agosto del 2026",
     "poster": "imgs/estrenos/puella1.jpg",
     "cines": ["Cinepolis"],
-    "links": [
-      {
-        "cine": "Cinepolis",
-        "url": "https://www.cinepolis.com"
-      }
-    ],
     "nota": "Proximamente"
   },
   {
@@ -293,39 +287,36 @@
   },
   {
     "id": "encore",
-    "titulo": "Avengers: Endgame Bonus Infinity Vision",
+    "titulo": "Avengers: Endgame Bonus",
     "tipo": "preventa",
+    "estadoCartelera": "preventa",
     "fecha": "2026-09-24",
     "fechaTexto": "Jueves 24 de Septiembre del 2026",
     "poster": "imgs/estrenos/encore.jpg",
-    "cines": ["Cinepolis"],
-    "links": [
-      {
-        "cine": "Cinemex",
-        "url": "https://cinemex.com/pelicula/72603/avengers-endgame-bonus"
-      },
-      {
-        "cine": "Cinepolis",
-        "url": "https://www.cinepolis.com"
-      }
-    ],
-    "nota": "Preventa ya disponible"
+    "cines": ["Cinepolis", "Cinemex"],
+    "nota": "Estados Unidos"
+  },
+  {
+    "id": "encore",
+    "titulo": "Avengers: Endgame Bonus Infinity Vision",
+    "tipo": "preventa",
+    "estadoCartelera": "preventa",
+    "fecha": "2026-09-24",
+    "fechaTexto": "Jueves 24 de Septiembre del 2026",
+    "poster": "imgs/estrenos/encore.jpg",
+    "cines": ["Cinepolis", "Cinemex"],
+    "nota": "Estados Unidos"
   },
   {
     "id": "terminator",
     "titulo": "Terminator 2: El Juicio Final",
     "tipo": "preventa",
+    "estadoCartelera": "preventa",
     "fecha": "2026-09-16",
     "fechaTexto": "Miércoles 16 de Septiembre del 2026",
     "poster": "imgs/estrenos/terminator.jpg",
     "cines": ["Cinepolis"],
-    "links": [
-      {
-        "cine": "Cinepolis",
-        "url": "https://www.cinepolis.com"
-      }
-    ],
-    "nota": "Preventa ya disponible"
+    "nota": "Estados Unidos"
   },
   {
     "id": "queen",
@@ -731,5 +722,16 @@
     "poster": "imgs/estrenos/duna3.jpg",
     "cines": ["Cinemex", "Cinepolis"],
     "nota": "Estados Unidos"
+  },
+  {
+    "id": "puella4",
+    "titulo": "Puella Magi Madoka Magica: Walpurgisnacht Rising",
+    "tipo": "preventa",
+    "estadoCartelera": "preventa",
+    "fecha": "2026-09-01",
+    "fechaTexto": "Jueves 1 de Octubre del 2026",
+    "poster": "imgs/estrenos/puella4.jpg",
+    "cines": ["Cinepolis"],
+    "nota": "Japón"
   }
 ]

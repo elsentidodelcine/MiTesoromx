@@ -857,5 +857,37 @@
     ],
     "cita": "Al final, consigue su venganza y gana el villano.",
     "veredicto": "Propuesta diferente y entretenida con buen gore. Problemas de CGI, personajes y tono cómico, pero funciona como película de palomitas. Palomera ritual."
+  },
+  {
+    "id": "cars",
+    "titulo": "Cars",
+    "anio": 2006,
+    "fecha": "2026-09-10",
+    "duracion": "116 min",
+    "generos": ["Animación", "Aventuras", "Comedia", "Familiar"],
+    "puntaje": 5.0,
+    "destacada": false,
+    "etiqueta": "",
+    "plataformas": ["Cines"],
+    "resumen": "El clásico de Pixar cumple 20 años y sigue intacto. Historia con corazón, personajes entrañables y una lección sobre el camino que sigue funcionando a la perfección.",
+    "poster": "imgs/resenias/cars.jpg",
+    "posterFallback": {
+      "linea1": "Cars",
+      "linea2": ""
+    },
+    "letterboxd": "https://letterboxd.com/film/cars",
+    "imdb": {
+      "url": "https://www.imdb.com/title/tt0317219/",
+      "rating": "7.3"
+    },
+    "lead": "20 años después, Cars sigue siendo una maravilla. Personalidad, corazón y una historia que no necesita explicaciones para entender por qué se convirtió en clásico.",
+    "contenido": [
+      "Hoy tuve la oportunidad de volver a ver Cars en el cine por su 20 aniversario, y hay películas que simplemente no necesitan demasiadas explicaciones para saber por qué se convirtieron en clásicos. Cars es una de ellas. La historia de Rayo McQueen, un corredor arrogante que termina perdido en Radiador Springs y descubre que ganar no siempre significa llegar primero, sigue funcionando exactamente como la recuerdo. Es una película sobre crecer, aprender a valorar a los demás y entender que el camino puede ser mucho más importante que la meta.",
+      "Pero lo que realmente hace especial a Cars es todo lo que construye alrededor de esa historia. Radiador Springs se siente como un lugar con vida propia, sus personajes son entrañables y cada uno tiene algo que aportar. Mate, Sally, Doc Hudson, Luigi, Guido y todos los demás forman parte de una película que tiene muchísimo corazón. Además, la animación de Pixar sigue siendo impresionante, especialmente cuando vemos las carreras, los paisajes y cada detalle de los vehículos. Y la banda sonora, con canciones que quedaron completamente ligadas a esta película, termina de construir esa sensación de aventura y nostalgia.",
+      "Volver a verla en el cine después de 20 años fue una experiencia increíble. Puede que hoy existan películas con animaciones mucho más avanzadas, pero Cars tiene algo que no se puede medir con tecnología: personalidad, corazón y una historia que sigue funcionando. Es de esas películas que puedes volver a ver una y otra vez y todavía encontrar algo que disfrutar.",
+      "Cars no solamente es una película sobre carros. Es una película sobre amistad, humildad, segundas oportunidades y sobre aprender que la vida no se trata únicamente de llegar primero. Para mí, después de 20 años, sigue siendo una maravilla."
+    ],
+    "cita": "El camino puede ser mucho más importante que la meta.",
+    "veredicto": "Un clásico atemporal con corazón, personajes inolvidables y una lección que sigue vigente. Después de 20 años, sigue siendo una maravilla."
   }
 ]
