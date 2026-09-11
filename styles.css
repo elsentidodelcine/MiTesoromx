@@ -3174,16 +3174,7 @@ body.dark .btn-wishlist {
 }
 
 /* === TEMAS === */
-.carousel-slide--paw {
-  background: linear-gradient(135deg, #1565c0 0%, #42a5f5 45%, #ffca28 100%);
-}
-.carousel-slide--paw .banner-btn {
-  color: #1565c0;
-}
-.carousel-slide--paw .banner-btn:hover {
-  background: #fff59d;
-  color: #0d47a1;
-}
+/* === TEMAS === */
 
 .carousel-slide--marvel {
   background: linear-gradient(135deg, #b71c1c 0%, #c62828 40%, #1a237e 100%);
@@ -3196,44 +3187,63 @@ body.dark .btn-wishlist {
   color: #7f0000;
 }
 
-.carousel-slide--harry {
-  background: linear-gradient(135deg, #1a237e 0%, #283593 40%, #4a148c 70%, #f9a825 100%);
-}
-.carousel-slide--harry .banner-btn {
-  color: #1a237e;
-}
-.carousel-slide--harry .banner-btn:hover {
-  background: #ffe082;
-  color: #311b92;
-}
-
-.carousel-slide--ghost {
-  background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 40%, #4a0000 100%);
-  border-color: rgba(255, 255, 255, 0.08);
-}
-.carousel-slide--ghost .banner-btn {
-  background: #c62828;
-  color: #fff;
-}
-.carousel-slide--ghost .banner-btn:hover {
-  background: #ff5252;
-  color: #fff;
-}
-
 .carousel-slide--meli {
   background: linear-gradient(135deg, #2d3277 0%, #1e214d 50%, #12142e 100%);
   border-color: rgba(255, 230, 0, 0.2);
 }
-
 .carousel-slide--meli .banner-btn {
   background: #ffe600;
   color: #333;
   font-weight: 700;
 }
-
 .carousel-slide--meli .banner-btn:hover {
   background: #ffea33;
   color: #000;
+}
+
+/* FedEx / envíos */
+.carousel-slide--envio {
+  background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 40%, #e65100 100%);
+  border-color: rgba(255, 152, 0, 0.25);
+}
+.carousel-slide--envio .banner-btn {
+  background: #ff9800;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+.carousel-slide--envio .banner-btn:hover {
+  background: #ffb74d;
+  color: #000;
+}
+
+/* Universal / La Isla Perdida */
+.carousel-slide--universal {
+  background: linear-gradient(135deg, #01579b 0%, #0277bd 45%, #00838f 100%);
+  border-color: rgba(0, 188, 212, 0.25);
+}
+.carousel-slide--universal .banner-btn {
+  background: #e0f7fa;
+  color: #01579b;
+  font-weight: 700;
+}
+.carousel-slide--universal .banner-btn:hover {
+  background: #fff;
+  color: #013a63;
+}
+
+/* Cinemex / Snoopy */
+.carousel-slide--cinemex {
+  background: linear-gradient(135deg, #b71c1c 0%, #c62828 40%, #f9a825 100%);
+  border-color: rgba(249, 168, 37, 0.3);
+}
+.carousel-slide--cinemex .banner-btn {
+  background: #fff;
+  color: #b71c1c;
+  font-weight: 700;
+}
+.carousel-slide--cinemex .banner-btn:hover {
+  background: #ffe0e0;
+  color: #7f0000;
 }
 
 .carousel-slide--generic {
