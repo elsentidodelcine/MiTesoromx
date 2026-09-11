@@ -1,5 +1,9 @@
 [
 
+  { "nombre": "Preventa Palomera Snoopy Cinemex", "categoria": "Infantil", "precio": 999, "imagen": "imgs/snoopy.jpg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Preventa Palomera La Isla Cinepolis", "categoria": "Infantil", "precio": 999, "imagen": "imgs/isla.jpg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Preventa Palomera Iron Man Encore Cinemex", "categoria": "Marvel", "precio": 999, "imagen": "imgs/encore.jpg" ,"badge": "preventa", "stock": 1},
+
   { "nombre": "4 Figuras Looney Toons", "categoria": "Infantil", "precio": 160, "imagen": "imgs/nuevo1.jpg" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Postal SpiderMan 3D", "categoria": "SpiderMan", "precio": 100, "imagen": "imgs/nuevo2.jpg" ,"badge": "nuevo", "stock": 1},
   { "nombre": "Postal SpiderMan MacroXE", "categoria": "SpiderMan", "precio": 150, "imagen": "imgs/nuevo3.jpg" ,"badge": "nuevo", "stock": 1},
