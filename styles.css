@@ -4285,3 +4285,79 @@ body.dark .btn-ver-referencias:focus-visible {
 body.dark .cart-coupon-activo {
   background: #1b3a1e;
 }
+
+/* Skeleton */
+.ref-skeleton {
+  aspect-ratio: 1;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #1a1a22 25%, #252530 50%, #1a1a22 75%);
+  background-size: 200% 100%;
+  animation: ref-shine 1.4s ease-in-out infinite;
+}
+@keyframes ref-shine {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+[data-theme="light"] .ref-skeleton {
+  background: linear-gradient(90deg, #e8e8ec 25%, #f4f4f6 50%, #e8e8ec 75%);
+  background-size: 200% 100%;
+}
+
+/* CTA final */
+.ref-cta {
+  text-align: center;
+  padding: 48px 20px 60px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.ref-cta h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.ref-cta p {
+  color: var(--text-muted, #9a9aa6);
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+.ref-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+.ref-cta-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--accent, #c41e3a);
+  color: #fff;
+}
+.btn-whatsapp {
+  background: rgba(37, 211, 102, 0.15);
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  color: #25d366;
+}
+
+/* Share en lightbox */
+.ref-lb-share {
+  margin-top: 12px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.ref-lb-share:hover {
+  background: rgba(255,255,255,0.15);
+}

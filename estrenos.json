@@ -698,5 +698,38 @@
     "poster": "imgs/estrenos/your.jpg",
     "cines": ["Cinepolis"],
     "nota": "Japón"
+  },
+  {
+    "id": "coraline",
+    "titulo": "Coraline y la Puerta Secreta (Re-estreno 2026)",
+    "tipo": "preventa",
+    "estadoCartelera": "preventa",
+    "fecha": "2026-09-24",
+    "fechaTexto": "Jueves 24 de Septiembre 2026",
+    "poster": "imgs/estrenos/coraline.jpg",
+    "cines": ["Cinemex"],
+    "nota": "Estados Unidos"
+  },
+  {
+    "id": "tren",
+    "titulo": "Detengan Ese Tren",
+    "tipo": "preventa",
+    "estadoCartelera": "preventa",
+    "fecha": "2026-09-24",
+    "fechaTexto": "Jueves 24 de Septiembre 2026",
+    "poster": "imgs/estrenos/tren.jpg",
+    "cines": ["Cinemex"],
+    "nota": "Estados Unidos"
+  },
+  {
+    "id": "duna3",
+    "titulo": "Duna Parte 3",
+    "tipo": "preventa",
+    "estadoCartelera": "preventa",
+    "fecha": "2026-12-15",
+    "fechaTexto": "Martes 15 de Diciembre 2026",
+    "poster": "imgs/estrenos/duna3.jpg",
+    "cines": ["Cinemex", "Cinepolis"],
+    "nota": "Estados Unidos"
   }
 ]
