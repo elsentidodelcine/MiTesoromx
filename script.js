@@ -204,7 +204,7 @@ function aplicarFiltros() {
 if (filtroExtra === "disponibles") {
   lista = lista.filter((p) => p.stock > 0 && p.precio != 999 && p.precio != 666);
 } else if (filtroExtra === "preventa") {
-  lista = lista.filter((p) => badgeTexto(p).includes("preventa") && p.stock > 0 && p.precio != 999 && p.precio != 666);
+  lista = lista.filter((p) => badgeTexto(p).includes("preventa") && p.stock > 0 && p.precio != 666);
 } else if (filtroExtra === "oferta") {
   lista = lista.filter((p) => badgeTexto(p).includes("oferta") && p.stock > 0 && p.precio != 999 && p.precio != 666);
 } else if (filtroExtra === "ultima") {
@@ -568,7 +568,15 @@ function mostrarProductos() {
 
     if (p.precio == 999) {
       precioHTML = `<p class="precio proximamente-precio">💰 Precio por confirmar</p>`;
-      accionHTML = `<button class="boton proximamente" disabled>Próximamente</button>`;
+      accionHTML = `
+        <button
+          type="button"
+          class="boton btn-lista-espera"
+          data-nombre="${escapeHtml(p.nombre)}"
+        >
+          Avisarme por WhatsApp
+        </button>
+      `;
     } else if (p.precio == 666) {
       precioHTML = `<p class="precio proximamente-precio">⏳ En espera de restock</p>`;
       accionHTML = `<button class="boton proximamente" disabled>Próximamente</button>`;
@@ -1002,7 +1010,7 @@ function actualizarCarritoUI() {
       <label for="inputCP">Código Postal *</label>
       <input type="text" id="inputCP" inputmode="numeric" maxlength="5" placeholder="Ej. 37000" autocomplete="postal-code">
 
-      <p id="envioDatosError" class="envio-datos-error" hidden>Completa Código Postal y Ciudad para continuar</p>
+      <p id="envioDatosError" class="envio-datos-error" hidden>Completa Código Postal para continuar</p>
     </div>
 
   `;
@@ -1538,8 +1546,8 @@ const PREVENTAS_ACTIVAS = [
     id: "avengers-doomsday",
     active: true,
     emoji: "🦸",
-    titulo: "Preventa Avengers: Doomsday",
-    texto: "<br><br> ** Próximamente ** <br><br>",
+    titulo: "Preventa Avengers Endageme: Encore",
+   texto: "Ya puedes apartar el <strong>coleccionable de Iron Man</strong>.<br><br>Ediciones limitadas: reserva la tuya antes de que se agoten.",
     link: "preventas.html",
     linkTexto: "Ver términos de preventa",
     tema: "marvel",
@@ -2150,6 +2158,40 @@ function actualizarEnvioGratisBar(t) {
 });*/
 
 
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest(".btn-lista-espera");
+  if (!btn) return;
 
+  const nombre = (btn.dataset.nombre || "").trim();
+  if (!nombre) return;
+
+  // Lista local (la que ya usas con verListaEspera())
+  if (typeof guardarEnListaEspera === "function") {
+    guardarEnListaEspera(nombre);
+  }
+
+  const msg =
+    `Hola, quiero quedar en lista de espera de *Mi Tesoro MX* para:\n\n` +
+    `• ${nombre}\n\n` +
+    `Aún no tiene precio. Avísenme cuando esté disponible para apartar/comprar.`;
+
+  window.open(
+    `https://wa.me/${WA_NUMERO}?text=${encodeURIComponent(msg)}`,
+    "_blank",
+    "noopener,noreferrer"
+  );
+
+  if (toast && toastText) {
+    if (toastTitle) toastTitle.textContent = "Lista de espera";
+    toastText.textContent = `Te avisaremos cuando "${nombre}" tenga precio`;
+    toast.style.display = "block";
+    toast.classList.add("show");
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(() => {
+      toast.classList.remove("show");
+      toast.style.display = "none";
+    }, 3500);
+  }
+});
 
 

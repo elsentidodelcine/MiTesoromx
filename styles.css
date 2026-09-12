@@ -4520,3 +4520,14 @@ body.dark .sticky-envio-track {
   color: var(--text-muted);
   margin: 4px 0 0;
 }
+
+.boton.btn-lista-espera {
+  background: linear-gradient(135deg, #5c6bc0, #3949ab);
+  color: #fff;
+  cursor: pointer;
+}
+
+.boton.btn-lista-espera:hover {
+  filter: brightness(1.08);
+  transform: scale(1.02);
+}
