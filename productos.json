@@ -2,7 +2,7 @@
 
   { "nombre": "Preventa Palomera Snoopy Cinemex", "categoria": "Infantil", "precio": 999, "imagen": "imgs/snoopy.jpg" ,"badge": "preventa", "stock": 1},
   { "nombre": "Preventa Palomera La Isla Cinepolis", "categoria": "Infantil", "precio": 999, "imagen": "imgs/isla.jpg" ,"badge": "preventa", "stock": 1},
-  { "nombre": "Preventa Palomera Iron Man Encore Cinemex", "categoria": "Marvel", "precio": 999, "imagen": "imgs/encore.jpg" ,"badge": "preventa", "stock": 1},
+  { "nombre": "Preventa Palomera Iron Man Encore Cinepolis", "categoria": "Marvel", "precio": 999, "imagen": "imgs/encore.jpg" ,"badge": "preventa", "stock": 1},
 
 
   { "nombre": "4 Figuras Looney Toons", "categoria": "Infantil", "precio": 160, "imagen": "imgs/nuevo1.jpg" ,"badge": "nuevo", "stock": 1},
@@ -16,8 +16,8 @@
   { "nombre": "Postal Juan Gabriel", "categoria": "Musica", "precio": 150, "imagen": "imgs/nuevo9.jpg" ,"badge": "nuevo", "stock": 1},
 
   { "nombre": "Vaso Casa Gryffindor Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry3.jpg" ,"badge": "exclusivo", "stock": 0},
-  { "nombre": "Vaso Casa Ravenclaw  Harry Potter", "categoria": "Harry Potter", "precio": 550, "imagen": "imgs/hp100.jpeg" ,"badge": "exclusivo", "stock": 1},
-  { "nombre": "Vaso Casa Slytherin  Harry Potter", "categoria": "Harry Potter", "precio": 550, "imagen": "imgs/hp101.jpeg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Vaso Casa Ravenclaw  Harry Potter", "categoria": "Harry Potter", "precio": 500, "imagen": "imgs/hp100.jpeg" ,"badge": "exclusivo", "stock": 1},
+  { "nombre": "Vaso Casa Slytherin  Harry Potter", "categoria": "Harry Potter", "precio": 500, "imagen": "imgs/hp101.jpeg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "2 Postales Conmemorativas Harry Potter", "categoria": "Harry Potter", "precio": 300, "imagen": "imgs/hp102.jpeg" ,"badge": "exclusivo", "stock": 1},
   { "nombre": "Vaso Casa Hufflepuff Harry Potter", "categoria": "Harry Potter", "precio": 465, "imagen": "imgs/harry4.jpg" ,"badge": "exclusivo", "stock": 0},
   { "nombre": "Palomera Sombrero Harry Potter", "categoria": "Harry Potter", "precio": 959, "imagen": "imgs/harry5.jpg" ,"badge": "exclusivo", "stock": 0},

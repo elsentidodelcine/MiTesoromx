@@ -889,5 +889,37 @@
     ],
     "cita": "El camino puede ser mucho más importante que la meta.",
     "veredicto": "Un clásico atemporal con corazón, personajes inolvidables y una lección que sigue vigente. Después de 20 años, sigue siendo una maravilla."
+  },
+  {
+    "id": "el-club-del-pie-izquierdo",
+    "titulo": "El Club del Pie Izquierdo",
+    "anio": 2026,
+    "fecha": "2026-09-12",
+    "duracion": "90 min",
+    "generos": ["Comedia"],
+    "puntaje": 1.0,
+    "destacada": false,
+    "etiqueta": "ESTRENO",
+    "plataformas": ["Cines"],
+    "resumen": "Buena idea sobre adultos atrapados en la rutina que encuentran vida en el baile, pero desperdiciada en comportamientos infantiles y un final predecible. Olvidable.",
+    "poster": "imgs/resenias/elclubdelpieizquierdo.jpg",
+    "posterFallback": {
+      "linea1": "El Club del",
+      "linea2": "Pie Izquierdo"
+    },
+    "letterboxd": "https://letterboxd.com/film/el-club-del-pie-izquierdo",
+    "imdb": {
+      "url": "https://www.imdb.com/title/tt40188247/",
+      "rating": "5.8"
+    },
+    "lead": "Parte de una idea interesante sobre la monotonía adulta, pero la convierte en comedia de comportamientos infantiles y se queda en la superficie. Mal augurio.",
+    "contenido": [
+      "El Club del Pie Izquierdo parte de una idea que me parecía bastante interesante: adultos atrapados en una vida monótona que deciden hacer algo diferente y encuentran en el baile una nueva forma de sentirse vivos. El problema es que la película decide llevarlo por el camino del baile urbano y hacer que varios de estos adultos se comporten prácticamente como niños. Y ahí siento que desperdicia una oportunidad, porque esto pudo haber sido una comedia mucho más enfocada en problemas realmente adultos: la rutina, una crisis de mediana edad, los problemas de pareja o simplemente esa sensación de que dejaste de disfrutar tu propia vida.",
+      "Con Adrián Uribe pasa algo parecido. Su personaje tiene esposa, familia y una vida completamente establecida, pero su relación de pareja está tan apagada que termina encontrando en el baile una especie de vida secreta. La idea de que alguien necesite salir de su rutina está bien, pero la película se queda en la superficie y termina resolviendo todo con el típico final feliz. Y para mí, la supuesta transformación del personaje necesitaba algo más que simplemente descubrir que bailar lo hace feliz.",
+      "Además, el personaje de la señora influencer me pareció todavía peor, porque en lugar de aportar algo diferente a la historia, también cae en comportamientos demasiado infantiles. Y aunque María León tiene experiencia real en danza y eso se nota en las secuencias de baile, la película parece más interesada en hacer chistes con adultos intentando bailar que en aprovechar realmente todo lo que tenía entre manos. La música y las coreografías son probablemente de lo más funcional de la cinta, pero tampoco consiguen levantar una historia que se siente bastante predecible.",
+      "Al final, El Club del Pie Izquierdo tiene una buena idea escondida dentro de una película que no sabe qué hacer con ella. Podía hablar de adultos que sienten que su vida se les fue entre el trabajo, el tráfico, la familia y la rutina, pero prefirió convertir buena parte de eso en una comedia de comportamientos infantiles. Y para mí, eso termina haciendo que una premisa con potencial se quede en algo bastante olvidable."
+    ],
+    "cita": "Tiene una buena idea escondida dentro de una película que no sabe qué hacer con ella.",
+    "veredicto": "Premisa con potencial desperdiciada en comedia infantil y superficial. Predecible y olvidable. Mal augurio."
   }
 ]
