@@ -51,21 +51,12 @@
                         "areaServed": "MX",
                         "availableLanguage": "Spanish"
                     }
-                },
-                {
-                    "@type": "WebSite",
-                    "name": "Mi Tesoro MX",
-                    "url": "https://mitesoromx.com/",
-                    "potentialAction": {
-                        "@type": "SearchAction",
-                        "target": "https://mitesoromx.com/?q={search_term_string}",
-                        "query-input": "required name=search_term_string"
-                    }
                 }
             ]
         }
+    </script>
 
-        <script type="application/ld+json">
+    <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "FAQPage",
@@ -77,50 +68,9 @@
                         "@type": "Answer",
                         "text": "Explora el catálogo, agrega productos al carrito, confirma por WhatsApp, valida disponibilidad y forma de pago. Al confirmar el pago preparamos y enviamos el pedido."
                     }
-                },
-                {
-                    "@type": "Question",
-                    "name": "¿Los productos son originales?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Sí. Todos los artículos son coleccionables originales: palomeras, vasos, promocionales, Funkos y ediciones exclusivas de cine."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "¿Qué métodos de pago aceptan?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Transferencia bancaria y depósito en Oxxo. En entregas personales se acepta efectivo. No solicitamos datos de tarjetas."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "¿Cuánto cuesta el envío?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Con Correos de México: 1 a 3 productos $80 MXN; 3 a 10 productos $100 MXN. Estafeta o FedEx se cotizan. Envío gratis en compras mayores a $550 MXN por Correos (productos participantes)."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "¿Puedo apartar un producto?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Sí, con anticipo del 30%. El apartado es válido al confirmar el anticipo. Plazo máximo de liquidación: 30 días naturales."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "¿La comisión de preventa está incluida en el precio?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Sí. Las preventas incluyen $100 MXN de comisión de servicio por producto y el precio publicado ya la incluye."
-                    }
                 }
             ]
         }
-    </script>
     </script>
 
     <link rel="stylesheet" href="styles.css">
@@ -479,97 +429,21 @@
     </div>
 </main>
 
-<footer class="footer">
-    <div class="footer-links">
-        <a href="politica-privacidad.html">Política de Privacidad</a>
-        <a href="terminos-y-condiciones.html">Términos y Condiciones de Compra</a>
-        <a href="preventas.html">Preventas</a>
-        <a href="aviso-legal-apartado.html">Apartados</a>
-        <a href="https://facebook.com/ElSentidoDelCine" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://wa.me/524761002824" target="_blank" rel="noopener">WhatsApp</a>
-    </div>
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="politica-privacidad.html">Política de Privacidad</a>
+            <a href="terminos-y-condiciones.html">Términos y Condiciones de Compra</a>
+            <a href="preventas.html">Preventas</a>
+            <a href="aviso-legal-apartado.html">Apartados</a>
+            <a href="https://facebook.com/ElSentidoDelCine" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://wa.me/524761002824" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
 
-    <div class="footer-copy">
-        <p>© 2026 Mi Tesoro MX — Todos los derechos reservados</p>
-    </div>
-</footer>
+        <div class="footer-copy">
+            <p>© 2026 Mi Tesoro MX — Todos los derechos reservados</p>
+        </div>
+    </footer>
 
-<script>
-    /* Menú hamburguesa */
-    (() => {
-      const menuToggle = document.getElementById("menuToggle");
-      const headerMenu = document.querySelector(".header-center");
-      if (!menuToggle || !headerMenu) return;
-
-      menuToggle.addEventListener("click", () => {
-        const abierto = headerMenu.classList.toggle("open");
-        menuToggle.textContent = abierto ? "✕" : "☰";
-        menuToggle.setAttribute("aria-expanded", abierto);
-      });
-
-      headerMenu.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          headerMenu.classList.remove("open");
-          menuToggle.textContent = "☰";
-          menuToggle.setAttribute("aria-expanded", "false");
-        });
-      });
-    })();
-
-    /* Tema */
-    const btnTheme = document.getElementById("toggleTheme");
-    const temaGuardado = localStorage.getItem("tema");
-    if (temaGuardado === "dark") {
-      document.body.classList.add("dark");
-      if (btnTheme) btnTheme.textContent = "☀️";
-    }
-    btnTheme?.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      const oscuro = document.body.classList.contains("dark");
-      btnTheme.textContent = oscuro ? "☀️" : "🌙";
-      localStorage.setItem("tema", oscuro ? "dark" : "light");
-    });
-
-    /* Buscador FAQ */
-    (() => {
-      const input = document.getElementById("faqSearch");
-      const info = document.getElementById("faqSearchInfo");
-      if (!input) return;
-
-      const items = [...document.querySelectorAll(".faq-item")];
-      const categories = [...document.querySelectorAll(".faq-category")];
-
-      input.addEventListener("input", () => {
-        const q = input.value.toLowerCase().trim();
-        let visibles = 0;
-
-        items.forEach((item) => {
-          const text = item.textContent.toLowerCase();
-          const match = !q || text.includes(q);
-          item.hidden = !match;
-          if (match) visibles++;
-        });
-
-        categories.forEach((cat) => {
-          const hasVisible = [...cat.querySelectorAll(".faq-item")].some((i) => !i.hidden);
-          cat.hidden = !hasVisible;
-        });
-
-        if (!info) return;
-        if (q) {
-          info.hidden = false;
-          info.textContent =
-            visibles === 0
-              ? `Sin resultados para "${input.value}"`
-              : visibles === 1
-                ? `1 pregunta encontrada`
-                : `${visibles} preguntas encontradas`;
-        } else {
-          info.hidden = true;
-        }
-      });
-    })();
-</script>
-<script src="site.js"></script>
+    <script src="site.js"></script>
 </body>
 </html>

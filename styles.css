@@ -4371,3 +4371,30 @@ body.dark .cart-coupon-activo {
 .ref-lb-share:hover {
   background: rgba(255,255,255,0.15);
 }
+
+.main-header {
+  position: sticky; /* o fixed, según ya uses */
+  top: 0;
+  z-index: 1000;
+  isolation: isolate;
+}
+
+.menu-toggle,
+.theme-btn,
+.header-right {
+  position: relative;
+  z-index: 1001;
+  pointer-events: auto;
+  touch-action: manipulation;
+}
+
+/* El nav abierto por encima del contenido */
+.header-center.open {
+  z-index: 1002;
+}
+
+/* WhatsApp flotante más abajo para no tapar el header */
+.wa-float-wrap,
+#whatsappFloat {
+  z-index: 900;
+}
