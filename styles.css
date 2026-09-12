@@ -4398,3 +4398,125 @@ body.dark .cart-coupon-activo {
 #whatsappFloat {
   z-index: 900;
 }
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-cta {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.hero-cta:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.hero-cta-secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #fff;
+}
+
+.hero-cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.sticky-envio-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 950;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.12);
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+}
+
+.sticky-envio-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.sticky-envio-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.sticky-envio-track {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+body.dark .sticky-envio-track {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.sticky-envio-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #c62828, #00a650);
+  transition: width 0.35s ease;
+}
+
+.sticky-envio-fill.completo {
+  background: linear-gradient(90deg, #00a650, #69f0ae);
+}
+
+/* Que el float de WA no quede debajo del sticky */
+@media (max-width: 768px) {
+  #whatsappFloat {
+    bottom: 78px;
+  }
+  .btn-volver-arriba {
+    bottom: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .filtros-extra-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .filtros-extra {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    width: max-content;
+    padding: 0 4px;
+  }
+
+  .filtro-extra {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+
+.contador-productos {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 4px 0 0;
+}

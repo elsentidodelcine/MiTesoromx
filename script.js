@@ -564,7 +564,6 @@ function mostrarProductos() {
 
     let precioHTML = "";
     let accionHTML = "";
-    const viendo = Math.floor(Math.random() * 5) + 2; // entre 2 y 6
     const esFavorito = wishlist.includes(p.nombre);
 
     if (p.precio == 999) {
@@ -1773,33 +1772,58 @@ function obtenerEstadoWhatsApp() {
     const ahora = new Date(
       new Date().toLocaleString("en-US", { timeZone: "America/Mexico_City" })
     );
-    const dia = ahora.getDay(); // 0=dom ... 6=sab
+    const dia = ahora.getDay(); // 0=dom ... 4=jue ... 6=sáb
     const minutos = ahora.getHours() * 60 + ahora.getMinutes();
+
+    // Jueves cerrado
+    if (dia === 4) {
+      return {
+        abierto: false,
+        etiqueta: "Fuera de horario",
+        detalle: "Hoy cerrado. Te respondemos viernes a las 10:00",
+      };
+    }
 
     let inicio, fin;
     if (dia === 0) {
-      // domingo
+      // Domingo
       inicio = 11 * 60;
-      fin = 18 * 60;
-    } else {
-      // lun–sáb
+      fin = 15 * 60;
+    } else if (dia === 5) {
+      // Viernes
       inicio = 10 * 60;
-      fin = 20 * 60;
+      fin = 17 * 60;
+    } else if (dia === 6) {
+      // Sábado
+      inicio = 11 * 60;
+      fin = 17 * 60;
+    } else {
+      // Lun–Mié
+      inicio = 10 * 60;
+      fin = 18 * 60;
     }
 
     const abierto = minutos >= inicio && minutos < fin;
+
+    let detalle;
+    if (abierto) {
+      detalle = "Respondemos hoy";
+    } else if (minutos < inicio) {
+      const hora = String(Math.floor(inicio / 60)).padStart(2, "0") + ":00";
+      detalle = `Abrimos hoy a las ${hora}`;
+    } else if (dia === 3) {
+      // Miércoles después de cierre → jueves cerrado
+      detalle = "Te respondemos viernes a las 10:00";
+    } else if (dia === 0 && minutos >= fin) {
+      detalle = "Te respondemos lunes a las 10:00";
+    } else {
+      detalle = "Te respondemos mañana en horario de atención";
+    }
+
     return {
       abierto,
       etiqueta: abierto ? "En línea" : "Fuera de horario",
-      detalle: abierto
-        ? "Respondemos hoy"
-        : dia === 0 && minutos >= fin
-          ? "Te respondemos mañana a las 10:00"
-          : minutos < inicio
-            ? dia === 0
-              ? "Abrimos hoy a las 11:00"
-              : "Abrimos hoy a las 10:00"
-            : "Te respondemos mañana a las 10:00",
+      detalle,
     };
   } catch (e) {
     return { abierto: true, etiqueta: "", detalle: "" };
